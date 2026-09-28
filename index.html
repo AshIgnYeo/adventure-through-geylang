@@ -4,24 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#182629" />
-  <meta name="description" content="Explore Lorong 11 and Lorong 13 Geylang in a first-person street study." />
+  <meta name="description" content="Explore a reference-led reconstruction of Lorong 11 Geylang, with real local landmarks." />
   <title>Adventure Through Geylang</title>
 </head>
 <body>
   <canvas id="scene" aria-label="First-person 3D streets of Geylang"></canvas>
-  <header><a class="wordmark" href="/" aria-label="Adventure Through Geylang">ATG<span>ADVENTURE<br>THROUGH GEYLANG</span></a><div class="edition">STREET STUDY <b>01</b></div></header>
+  <header><a class="wordmark" href="/" aria-label="Adventure Through Geylang">ATG<span>ADVENTURE<br>THROUGH GEYLANG</span></a><div class="edition">STREET STUDY <b>02</b></div></header>
   <main id="welcome">
     <div class="eyebrow"><span></span> SINGAPORE · AFTER HOURS</div>
     <h1>Take the<br><em>long way.</em></h1>
-    <p>Two lorongs. A different side of the city.<br>Step into Geylang, one street at a time.</p>
+    <p>Lorong 11, a little closer to life.<br>Real places. A street worth recognising.</p>
     <button id="enter" disabled>Preparing the street… <span>↗</span></button>
-    <div class="intro-meta">LORONG 11 & 13 <span>1:1 STREET SCALE</span></div>
+    <div class="intro-meta">LORONG 11 <span>1:1 STREET SCALE</span></div>
   </main>
   <div id="hud" hidden><span class="exploring">FREE EXPLORATION</span><button id="menu" aria-label="Open exploration settings">Menu</button></div>
   <div id="crosshair" hidden></div>
   <aside id="settings" hidden>
     <div class="panel-heading"><h2>Your evening</h2><button id="close" aria-label="Close settings">×</button></div>
-    <label for="light">Light <select id="light"><option value="dusk">Blue hour</option><option value="night">After dark</option><option value="day">Daylight</option></select></label>
+    <label for="light">Light <select id="light"><option value="dusk">Blue hour</option><option value="night">After dark</option><option value="day" selected>Daylight</option></select></label>
     <label for="quality">Detail <select id="quality"><option value="balanced">Balanced</option><option value="high">High</option><option value="low">Battery saver</option></select></label>
     <label for="touch-toggle">Touch controls <input id="touch-toggle" type="checkbox" /></label>
     <button id="restart">Return to starting point</button>
@@ -31,7 +31,7 @@
   <div id="touch-controls" hidden><div id="stick" aria-label="Movement joystick"><div id="knob"></div></div><span id="look-hint">DRAG TO LOOK</span></div>
   <div id="notice" role="status" aria-live="polite"></div>
   <footer><span id="loading">BUILDING THE NEIGHBOURHOOD</span><button id="about">About this street study ↗</button></footer>
-  <dialog id="credits"><h2>A place, reconstructed.</h2><p>Road centre lines and one-way tags come from OpenStreetMap, projected into metres. Road widths, pavements, façades and building heights are approximate. Business names are fictional.</p><p>The heritage frontage draws on URA’s descriptions of the early shophouses between Lorongs 11 and 13. Individual façades are illustrative, not surveyed replicas.</p><p>This is an exploration prototype. Multiplayer, encounters and a deadline will follow.</p><p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">Map data © OpenStreetMap contributors · ODbL</a></p><p><a href="https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg/" target="_blank" rel="noreferrer">Architectural reference: URA Geylang Conservation Area</a></p><form method="dialog"><button>Back to the street</button></form></dialog>
+  <dialog id="credits"><h2>A place, reconstructed.</h2><p>This pass focuses on Lorong 11. Hotel 81 Joy, Agape Centre and Hok Tek Chi Loke Yah Teng have reference-led exteriors. Heritage textures are AI reconstructions of public reference photographs, with estimated dimensions and some inferred details.</p><p>Lok Fu Lala Pot’s address is sourced; its exterior remains illustrative. Agape’s three-unit extent is provisional because historic, current and mapped address numbering differs. Other buildings remain approximate, and Lorong 13 is retained as background context.</p><p>Road centre lines and one-way tags come from OpenStreetMap, projected into metres. Widths, pavements, heights and props are estimates. No affiliation or endorsement by the depicted organisations is implied.</p><p><a href="https://www.wwhotels.com/hotel-81/joy/" target="_blank" rel="noreferrer">Hotel 81 Joy · operator photographs</a><br><a href="https://agapesingapore.com/contact/?lang=en" target="_blank" rel="noreferrer">Agape Centre · official address</a><br><a href="https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00334/" target="_blank" rel="noreferrer">No. 17 · URA façade reference</a><br><a href="https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00316/" target="_blank" rel="noreferrer">Agape frontage · URA façade reference</a><br><a href="https://www.quandoo.sg/place/lok-fu-lala-pot-106960/about" target="_blank" rel="noreferrer">Lok Fu Lala Pot · address listing</a></p><p>This is an exploration prototype. Multiplayer, encounters and a deadline will follow.</p><p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">Map data © OpenStreetMap contributors · ODbL</a></p><form method="dialog"><button>Back to the street</button></form></dialog>
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

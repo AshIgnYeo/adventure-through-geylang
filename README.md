@@ -1,6 +1,14 @@
 # Adventure Through Geylang
 
-A local browser exploration prototype of Lorong 11 and Lorong 13 Geylang, including their junctions with Geylang Road and Sims Avenue. PlayCanvas + TypeScript + Vite.
+A local browser exploration prototype focused on Lorong 11 Geylang, with Lorong 13 and the connecting main roads retained as background context. PlayCanvas + TypeScript + Vite.
+
+## Lorong 11 reference-led pass
+
+Four real places now have explicit source-linked footprint matches: Hotel 81 Joy, Agape Centre, Hok Tek Chi Loke Yah Teng Association, and Lok Fu Lala Pot. See [reference notes](docs/lorong-11-references.md) and `src/landmarks.mjs` for evidence and uncertainty. The hotel has a bespoke pale-blue tower and recessed entrance; two heritage elevations use AI-generated reconstruction textures based on inspected URA photographs. These are recognisable approximations, not photogrammetric scans or a verified current streetscape. The eating-house exterior is still illustrative. Agape's exact three-unit extent is provisional because source address numbering differs.
+
+The initial view uses daylight for inspection. Blue hour and after dark remain available. Normal walking is 3.3 m/s on keyboard and touch; Shift is 5 m/s. Fictional signs are removed from unverified, Lorong-11-addressed buildings. Surrounding background streets still contain fictional signs.
+
+Developer-only inspection links use `?review=hotel-81-joy`, `?review=agape-centre`, `?review=hok-tek-chi` or `?review=lok-fu` to start opposite a landmark. These are review camera starts, not an in-game map or tracking feature. Remove the query to return to ordinary exploration.
 
 ## Run
 
@@ -31,7 +39,7 @@ Source: https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,
 
 The metre projection is tested against an independent haversine distance, to within 0.6%. Source survey accuracy is separate from projection scale. Road widths are estimates (6.5 m on lorongs, 3.2 m per mapped lane on main roads). Pavements, awnings, street furniture, sign placement and road markings are illustrative. Building outlines are sourced; height uses mapped storeys where supplied, otherwise an estimate. No private interiors are reconstructed.
 
-Heritage reference: https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg/ identifies early shophouses between Lorongs 11 and 13. The prototype includes a heritage-style frontage, but the generated façade atlas is an artistic approximation and includes ornament that may differ from those specific buildings. Business signs are fictional. Address numbers are retained where present in source data.
+Heritage reference: https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg/ identifies early shophouses between Lorongs 11 and 13. The original generic atlas remains on unreviewed buildings. Real names occur only on explicitly matched landmarks, with estimated or reference-led sign designs. Address numbers are retained where present in source data, except where the landmark reconstruction supersedes them. No affiliation or endorsement is implied by depicting these organisations; fictional encounter behaviour must not be attributed to real operators.
 
 ## Current scope and limitations
 
@@ -41,7 +49,7 @@ The browser build and geometry tests are checked locally. Desktop browser visual
 
 ## Generated asset
 
-`public/shophouse-atlas.png` was created with the built-in image-generation tool. It is fictional, not street-survey evidence. The prompt is saved in `docs/asset-prompt.md`.
+`public/shophouse-atlas.png` is the original generic texture, created with the built-in image-generation tool. Its prompt is saved in `docs/asset-prompt.md`. The newer `public/lorong-11-heritage-atlas.png` is a reference-led AI reconstruction, with source notes and the full prompt in `docs/lorong-11-references.md`. Neither asset is street-survey evidence. Public reference photographs are linked, not bundled as original game assets.
 
 ## Intended game
 

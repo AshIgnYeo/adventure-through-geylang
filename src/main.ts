@@ -14,9 +14,9 @@ async function start(){
   const camera=new pc.Entity('First person');camera.addComponent('camera',{fov:65,nearClip:.08,farClip:600,clearColor:new pc.Color(.25,.35,.4),toneMapping:pc.TONEMAP_ACES});app.root.addChild(camera);
   const response=await fetch('/map.json');if(!response.ok)throw new Error('Street data could not be loaded');const data=await response.json() as MapData;
   const world=new World(app,data,camera);await world.build();let pos:Point=[0,0];
-  function reset(){const spawn=world.spawn();pos=[...spawn.p];yaw=spawn.yaw;pitch=-2;camera.setPosition(pos[0],1.68,pos[1]);camera.setEulerAngles(pitch,yaw,0);}
+  function reset(){const review=new URLSearchParams(location.search).get('review');const spawn=(review&&world.reviewSpawns.get(review))||world.spawn();pos=[...spawn.p];yaw=spawn.yaw;pitch=review?9:-2;camera.setPosition(pos[0],1.68,pos[1]);camera.setEulerAngles(pitch,yaw,0);}
   reset();app.start();world.update(0);
-  el('loading').textContent='LORONG 11 / LORONG 13 · SINGAPORE';enter.disabled=false;enter.innerHTML='Explore the streets <span>↗</span>';
+  el('loading').textContent='LORONG 11 · REFERENCE-LED STUDY';enter.disabled=false;enter.innerHTML='Explore the streets <span>↗</span>';
   window.addEventListener('resize',()=>app.resizeCanvas());
   function menu(open:boolean){paused=open;el('settings').hidden=!open;keys.clear();moveX=moveZ=0;if(open&&document.pointerLockElement)document.exitPointerLock();}
   enter.addEventListener('click',()=>{active=true;document.body.classList.add('playing');el('welcome').hidden=true;el('hud').hidden=false;el('crosshair').hidden=false;el('touch-controls').hidden=!matchMedia('(pointer:coarse)').matches;notice(matchMedia('(pointer:coarse)').matches?'Left thumb to walk · Drag right to look':'WASD to walk · Drag to look');});
@@ -38,7 +38,7 @@ async function start(){
   stick.addEventListener('pointerdown',e=>{if(paused)return;joystick=e.pointerId;stick.setPointerCapture(e.pointerId);moveStick(e);});stick.addEventListener('pointermove',moveStick);const endStick=()=>{joystick=null;moveX=moveZ=0;knob.style.transform='';};stick.addEventListener('pointerup',endStick);stick.addEventListener('pointercancel',endStick);
   let lastBoundary=0;
   app.on('update',(elapsed:number)=>{const dt=Math.min(elapsed,.05);world.update(dt);if(!active||paused||document.hidden)return;
-    let x=moveX+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0);let z=moveZ+(keys.has('KeyW')||keys.has('ArrowUp')?1:0)-(keys.has('KeyS')||keys.has('ArrowDown')?1:0);const length=Math.max(1,Math.hypot(x,z));x/=length;z/=length;const rad=yaw*Math.PI/180,speed=keys.has('ShiftLeft')?2.5:1.65;
+    let x=moveX+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0);let z=moveZ+(keys.has('KeyW')||keys.has('ArrowUp')?1:0)-(keys.has('KeyS')||keys.has('ArrowDown')?1:0);const length=Math.max(1,Math.hypot(x,z));x/=length;z/=length;const rad=yaw*Math.PI/180,speed=keys.has('ShiftLeft')?5:3.3;
     const dx=(Math.cos(rad)*x-Math.sin(rad)*z)*speed*dt,dz=(-Math.sin(rad)*x-Math.cos(rad)*z)*speed*dt;
     if(world.canWalk([pos[0]+dx,pos[1]]))pos[0]+=dx;
     if(world.canWalk([pos[0],pos[1]+dz]))pos[1]+=dz;

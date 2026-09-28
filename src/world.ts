@@ -1,5 +1,7 @@
 import * as pc from 'playcanvas';
 import {project, nearestOnSegment, roadWidth, pointInPolygon} from './geo.mjs';
+import { landmarkFor } from './landmarks.mjs';
+import { buildLandmark } from './landmark-models';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
 type Building = {id:string;levels:number|null;street:string|null;number:string|null;coordinates:Point[]};
@@ -15,6 +17,7 @@ export class World {
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
   private batch=-1;
+  reviewSpawns = new Map<string, {p: Point; yaw: number}>();
   constructor(app:pc.AppBase,data:MapData,camera:pc.Entity){
     this.app=app;this.data=data;this.camera=camera;
     const low=project([data.bounds[0],data.bounds[1]],data.origin), high=project([data.bounds[2],data.bounds[3]],data.origin);
@@ -34,12 +37,22 @@ export class World {
   mesh(name:string,positions:number[],uvs:number[],indices:number[],mat:pc.Material){const mesh=new pc.Mesh(this.app.graphicsDevice);mesh.setPositions(positions);mesh.setNormals(pc.calculateNormals(positions,indices));mesh.setUvs(0,uvs);mesh.setIndices(indices);mesh.update();const e=new pc.Entity(name);e.addComponent('render',{meshInstances:[new pc.MeshInstance(mesh,mat)],castShadows:true,batchGroupId:this.batch});this.app.root.addChild(e);return e;}
   panel(a:Point,b:Point,base:number,top:number,mat:pc.Material,uv=[0,0,1,1]){const p=[a[0],base,a[1],b[0],base,b[1],b[0],top,b[1],a[0],top,a[1]];return this.mesh('facade',p,[uv[0],uv[3],uv[2],uv[3],uv[2],uv[1],uv[0],uv[1]],[0,1,2,0,2,3],mat);}
   texture(canvas:HTMLCanvasElement){const t=new pc.Texture(this.app.graphicsDevice,{width:canvas.width,height:canvas.height,mipmaps:true,minFilter:pc.FILTER_LINEAR_MIPMAP_LINEAR,magFilter:pc.FILTER_LINEAR,anisotropy:4});t.setSource(canvas);return t;}
-  textMaterial(text:string,bg:string,fg:string,glow=.3){const canvas=document.createElement('canvas');canvas.width=1024;canvas.height=192;const c=canvas.getContext('2d')!;c.fillStyle=bg;c.fillRect(0,0,1024,192);c.strokeStyle=fg;c.lineWidth=4;c.strokeRect(12,12,1000,168);c.fillStyle=fg;c.font='600 58px sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillText(text,512,99,960);const t=this.texture(canvas),m=new pc.StandardMaterial();m.diffuseMap=t;m.emissiveMap=t;m.emissive=new pc.Color(1,1,1);m.emissiveIntensity=glow;m.cull=pc.CULLFACE_NONE;m.update();return m;}
+  textMaterial(text:string,bg:string,fg:string,glow=.3,aspect=1024/192){
+    const canvas=document.createElement('canvas');canvas.width=Math.min(4096,Math.max(128,Math.round(192*aspect)));canvas.height=Math.round(canvas.width/aspect);
+    const c=canvas.getContext('2d')!,w=canvas.width,h=canvas.height,pad=h*.065;
+    c.fillStyle=bg;c.fillRect(0,0,w,h);c.strokeStyle=fg;c.lineWidth=2;c.strokeRect(pad,pad,w-pad*2,h-pad*2);c.fillStyle=fg;
+    const fontSize=h*.58;c.font=`600 ${fontSize}px sans-serif`;const measured=c.measureText(text).width;c.font=`600 ${fontSize*Math.min(1,(w-pad*4)/measured)}px sans-serif`;
+    c.textAlign='center';c.textBaseline='middle';c.fillText(text,w/2,h*.52);
+    const t=this.texture(canvas),m=new pc.StandardMaterial();m.diffuseMap=t;m.emissiveMap=t;m.emissive=new pc.Color(1,1,1);m.emissiveIntensity=glow;m.cull=pc.CULLFACE_NONE;m.update();return m;
+  }
   async build(){
     const batch=this.app.batcher!;const group=batch.addGroup('Street architecture',false,35);this.batch=group.id;
     const asset=new pc.Asset('Shophouse textures','texture',{url:'/shophouse-atlas.png'});this.app.assets.add(asset);
     const atlas=await new Promise<pc.Texture>((resolve,reject)=>{asset.ready(()=>resolve(asset.resource as pc.Texture));asset.on('error',reject);this.app.assets.load(asset);});atlas.anisotropy=4;
     const facade=new pc.StandardMaterial();facade.diffuseMap=atlas;facade.diffuse=new pc.Color(.94,.94,.94);facade.cull=pc.CULLFACE_NONE;facade.gloss=.12;facade.update();
+    const heritageAsset=new pc.Asset('Lorong 11 reference-led heritage','texture',{url:'/lorong-11-heritage-atlas.png'});this.app.assets.add(heritageAsset);
+    const heritageTexture=await new Promise<pc.Texture>((resolve,reject)=>{heritageAsset.ready(()=>resolve(heritageAsset.resource as pc.Texture));heritageAsset.on('error',reject);this.app.assets.load(heritageAsset);});heritageTexture.anisotropy=4;
+    const heritage=new pc.StandardMaterial();heritage.diffuseMap=heritageTexture;heritage.cull=pc.CULLFACE_NONE;heritage.gloss=.12;heritage.update();
     // Texture colour variation and aggregate are generated deterministically at load time.
     const canvas=document.createElement('canvas');canvas.width=canvas.height=512;const c=canvas.getContext('2d')!;const pixels=c.createImageData(512,512);let rng=731;for(let i=0;i<pixels.data.length;i+=4){rng=(Math.imul(rng,1664525)+1013904223)>>>0;const n=67+(rng%28);pixels.data.set([n,n+3,n+4,255],i);}c.putImageData(pixels,0,0);this.ground.diffuse=new pc.Color(.85,.85,.85);this.ground.diffuseMap=this.texture(canvas);this.ground.diffuseMapTiling.set(2,12);this.ground.update();
     for(const s of this.segments){this.strip(s.a,s.b,s.width+4,.04,this.mat('#939387'));}
@@ -63,14 +76,21 @@ export class World {
       const centre:Point=[poly.reduce((s,p)=>s+p[0],0)/poly.length,poly.reduce((s,p)=>s+p[1],0)/poly.length];
       let front=0,best=Infinity;
       for(let i=0;i<poly.length;i++){const a=poly[i],c=poly[(i+1)%poly.length],mid:Point=[(a[0]+c[0])/2,(a[1]+c[1])/2];const d=this.nearest(mid).distance;if(d<best && Math.hypot(c[0]-a[0],c[1]-a[1])>3){best=d;front=i;}}
-      const levels=Math.min(8,b.levels??(index%11===0?4:2));const height=levels*3.35;const material=this.mat(palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
+      const landmark=landmarkFor(b.id);
+      const levels=Math.min(8,b.levels??(b.street==='Lorong 11 Geylang'?2:index%11===0?4:2));const height=landmark?.height??levels*3.35;
+      const material=this.mat(landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
       let a=poly[front],v=poly[(front+1)%poly.length];const width=Math.hypot(v[0]-a[0],v[1]-a[1]);let dx=(v[0]-a[0])/width,dz=(v[1]-a[1])/width;
       const mid:Point=[(a[0]+v[0])/2,(a[1]+v[1])/2];
       // Keep the textured face outward regardless of the source polygon winding.
       if(-dz*(mid[0]-centre[0])+dx*(mid[1]-centre[1])<0){[a,v]=[v,a];dx=-dx;dz=-dz;}
       const nx=-dz,nz=dx;
-      for(let i=0;i<poly.length;i++)if(i!==front || best>27 || levels>3)this.panel(poly[i],poly[(i+1)%poly.length],.13,height,material);
+      for(let i=0;i<poly.length;i++)if(i!==front || (!landmark&&(best>27||levels>3)))this.panel(poly[i],poly[(i+1)%poly.length],.13,height,material);
       const roofPositions=poly.flatMap(p=>[p[0],height+.05,p[1]]),indices=[];for(let k=1;k<poly.length-1;k++)indices.push(0,k,k+1);const roofMat=this.mat('#754c3b');roofMat.cull=pc.CULLFACE_NONE;roofMat.update();this.mesh('roof',roofPositions,poly.flatMap(p=>[p[0]/4,p[1]/4]),indices,roofMat);
+      if(landmark){
+        const road=this.nearest(mid).point;
+        if(!this.reviewSpawns.has(landmark.id)||b.id==='1223250216')this.reviewSpawns.set(landmark.id,{p:road,yaw:Math.atan2(nx,nz)*180/Math.PI});
+        if(buildLandmark(this,b.id,{a,dx,dz,nx,nz,width},heritage))continue;
+      }
       if(best>27)continue;
       const bays=Math.max(1,Math.round(width/5.5));
       for(let bay=0;bay<bays;bay++){
@@ -80,7 +100,7 @@ export class World {
         const bw=width/bays,cx=(p[0]+q[0])/2,cz=(p[1]+q[1])/2,angle=Math.atan2(nx,nz)*180/Math.PI;
         this.box('cornice',cx+nx*.12,3.5,cz+nz*.12,bw,.22,.4,this.mat('#c7c3aa'),undefined,angle);
         this.box('roof cornice',cx+nx*.1,height-.15,cz+nz*.1,bw,.25,.5,this.mat('#c7c3aa'),undefined,angle);
-        if((index+bay)%3!==0){this.panel([p[0]+nx*.1+dx*.2,p[1]+nz*.1+dz*.2],[q[0]+nx*.1-dx*.2,q[1]+nz*.1-dz*.2],2.65,3.35,signMaterials[(index+bay)%signMaterials.length]);
+        if((index+bay)%3!==0){if(b.street!=='Lorong 11 Geylang')this.panel([p[0]+nx*.1+dx*.2,p[1]+nz*.1+dz*.2],[q[0]+nx*.1-dx*.2,q[1]+nz*.1-dz*.2],2.65,3.35,signMaterials[(index+bay)%signMaterials.length]);
           const awning=this.box('canvas awning',cx+nx*.95,2.57,cz+nz*.95,bw-.1,.12,1.8,this.mat(['#386155','#994d3c','#b29863'][index%3]),undefined,angle);awning.rotateLocal(9,0,0);
           for(const end of [p,q])this.box('five foot way column',end[0]+nx*1.6,1.3,end[1]+nz*1.6,.2,2.6,.2,this.mat('#c7c3aa'));
           this.box('warm shop light',cx+nx*.2,2.3,cz+nz*.2,bw*.65,.09,.12,this.mat('#f8dc96',1.8),undefined,angle);
@@ -100,13 +120,22 @@ export class World {
         this.panel([x+1.325,z-.034],[x-1.325,z-.034],2.7,3.2,m);
       }
     }
-    batch.generate();this.setLight('dusk');
+    batch.generate();this.setLight('day');
   }
   nearest(p:Point){let distance=Infinity,segment=this.segments[0],point:Point=[0,0];for(const s of this.segments){const n=nearestOnSegment(p,s.a,s.b);if(n.distance<distance){distance=n.distance;segment=s;point=n.point as Point;}}return{distance,segment,point};}
   canWalk(p:Point){if(p[0]<this.bounds[0]+3||p[0]>this.bounds[2]-3||p[1]<this.bounds[1]+3||p[1]>this.bounds[3]-3)return false;for(const poly of this.footprints){if(pointInPolygon(p,poly))return false;for(let i=0;i<poly.length;i++)if(nearestOnSegment(p,poly[i],poly[(i+1)%poly.length]).distance<.28)return false;}return true;}
   spawn(){const s=this.segments.find(s=>s.name==='Lorong 11 Geylang'&&s.length>30)!;const p:Point=[s.b[0]-s.dx*16+s.dz*2.1,s.b[1]-s.dz*16-s.dx*2.1];return{p,yaw:Math.atan2(-s.dx,-s.dz)*180/Math.PI+180};}
   lamp(x:number,z:number){this.box('lamp post',x,3.9,z,.1,7.8,.1,this.mat('#6c7976'));this.box('lamp arm',x+.75,7.75,z,1.6,.09,.09,this.mat('#6c7976'));this.box('lamp head',x+1.45,7.69,z,.6,.12,.32,this.mat('#ffdfaa',2));if(this.lamps.length<12){const e=new pc.Entity('street light');e.addComponent('light',{type:'omni',color:color('#ffd393'),intensity:.7,range:13,castShadows:false});e.setPosition(x+1.45,6.8,z);this.app.root.addChild(e);this.lamps.push(e);}}
-  planter(x:number,z:number){this.box('planter',x,.23,z,.46,.45,.46,this.mat('#855e43'));for(let i=0;i<7;i++){const e=new pc.Entity('foliage');e.addComponent('render',{type:'sphere',material:this.mat(['#354b35','#4c6544','#5a7146'][i%3]),batchGroupId:this.batch});e.setPosition(x+Math.cos(i*2.4)*.18,.64+i*.055,z+Math.sin(i*2.4)*.18);e.setLocalScale(.32,.55,.3);this.app.root.addChild(e);}}
+  planter(x:number,z:number){
+    const pot=new pc.Entity('terracotta pot');pot.addComponent('render',{type:'cylinder',material:this.mat('#977665'),batchGroupId:this.batch});pot.setPosition(x,.22,z);pot.setLocalScale(.38,.44,.38);this.app.root.addChild(pot);
+    // Thin curved fronds instead of the original spherical foliage placeholders.
+    for(let i=0;i<11;i++){
+      const angle=i*2.399,length=.35+(i%4)*.075,base=.4,tip=.65+(i%3)*.14;
+      const vx=Math.cos(angle),vz=Math.sin(angle),positions:number[]=[],uvs:number[]=[],indices:number[]=[];
+      for(let j=0;j<=5;j++){const t=j/5,reach=length*t,y=base+(tip-base)*t+.2*Math.sin(t*Math.PI),half=.04*Math.sin(Math.PI*t);positions.push(x+vx*reach-vz*half,y,z+vz*reach+vx*half,x+vx*reach+vz*half,y,z+vz*reach-vx*half);uvs.push(0,t,1,t);if(j<5){const k=j*2;indices.push(k,k+1,k+2,k+1,k+3,k+2);}}
+      const leaf=this.mat(['#3e5b3b','#57704c','#6b8057'][i%3]);leaf.cull=pc.CULLFACE_NONE;leaf.update();this.mesh('palm frond',positions,uvs,indices,leaf);
+    }
+  }
   car(segment:Segment,t:number){if(this.traffic.length>16)return;const root=new pc.Entity('traffic');this.app.root.addChild(root);const mat=this.mat(['#b5c1b9','#2e6864','#993f36','#b7a87d'][this.traffic.length%4]);this.box('car body',0,.65,0,1.7,.65,3.8,mat,root);this.box('car cabin',0,1.12,-.1,1.48,.6,1.85,this.mat('#28404a'),root);for(const x of [-.83,.83])for(const z of [-1.15,1.15]){const wheel=new pc.Entity('wheel');wheel.addComponent('render',{type:'cylinder',material:this.mat('#1b2121')});wheel.setLocalPosition(x,.38,z);wheel.setLocalScale(.58,.2,.58);wheel.setLocalEulerAngles(0,0,90);root.addChild(wheel);}for(const x of [-.58,.58]){this.box('headlamp',x,.7,1.92,.4,.18,.04,this.mat('#ffefbf',1.5),root);this.box('tail light',x,.7,-1.92,.3,.16,.04,this.mat('#ee5239',1),root);}this.traffic.push({root,segment,t,speed:segment.name.startsWith('Lorong')?4:7});}
   update(dt:number){for(const c of this.traffic){c.t=(c.t+dt*c.speed/c.segment.length)%1;const s=c.segment,off=s.name.startsWith('Lorong')?.5:s.width*.22;c.root.setPosition(s.a[0]+s.dx*s.length*c.t+s.dz*off,0,s.a[1]+s.dz*s.length*c.t-s.dx*off);c.root.setEulerAngles(0,Math.atan2(s.dx,s.dz)*180/Math.PI,0);}}
   setLight(mode:string){const day=mode==='day',night=mode==='night';const sky=day?'#a4b9b9':night?'#101d29':'#526e7c';this.camera.camera!.clearColor=color(sky);this.app.scene.ambientLight=color(day?'#b8b8a3':night?'#485b66':'#7d939a');this.sun.light!.intensity=day?1.6:night?.28:1;this.sun.light!.color=color(day?'#fff0d0':'#cad8e2');this.app.scene.fog.type=pc.FOG_LINEAR;this.app.scene.fog.color=color(sky);this.app.scene.fog.start=day?120:65;this.app.scene.fog.end=day?430:260;for(const light of this.lamps)light.light!.intensity=day?.03:night?1.3:.7;}
