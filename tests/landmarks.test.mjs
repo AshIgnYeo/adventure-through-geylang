@@ -2,8 +2,25 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { landmarks, landmarkFor } from '../src/landmarks.mjs';
+import { pointInPolygon } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
+
+test('Faith Mission Home matches the named source point inside No. 12 without claiming adjoining units', () => {
+  const source = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
+  const node = source.match(/<node\b[^>]*id="11346722109"[^>]*>[\s\S]*?<\/node>/)?.[0];
+  assert.ok(node);
+  assert.match(node, /<tag k="name" v="Faith Mission Home"\/>/);
+  assert.match(node, /<tag k="addr:housenumber" v="12"\/>/);
+  const place = landmarks.find(p => p.id === 'faith-mission-home');
+  assert.deepEqual(place.buildingIds, ['1223250210']);
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.number, '12');
+  const point = [Number(node.match(/lon="([^"]+)"/)[1]), Number(node.match(/lat="([^"]+)"/)[1])];
+  assert.equal(pointInPolygon(point, building.coordinates), true);
+  assert.notEqual(landmarkFor('1223250211'), place);
+  assert.notEqual(landmarkFor('1223250217'), place);
+});
 
 test('real landmark identities have unique, existing Lorong 11 footprints and provenance', () => {
   const ids = new Set();

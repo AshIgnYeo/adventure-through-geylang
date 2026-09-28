@@ -46,9 +46,9 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 - **Confidence / uncertainty:** Moderate for listed identity/address, low for detailed appearance. This commercial listing is weaker than operator or government evidence and does not verify present operation. Existing canopy, colours, sign design and furniture are illustrative.
 - **Status / blocker:** Completed (`lok-fu`), as instructed for the existing four models. Current exterior references and stronger operator corroboration are needed before any fidelity upgrade.
 
-## Pending research
+## Research queue
 
-All six entries below are **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; none is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
+Q3 is now **completed**. The other five entries remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
 
 ### Q1. Ho San Kong Hoey premises
 
@@ -64,12 +64,12 @@ All six entries below are **pending, research-blocked**, with no bespoke model o
 - **Confidence / uncertainty:** High for the address published by the operator; medium for footprint assignment. The page is undated and does not establish present tenancy, a visible shopfront or an industrial building form.
 - **Blocker / next evidence:** Obtain current exterior/location corroboration. Do not infer equipment, workshop interiors, branding or street activity from the company name.
 
-### Q3. Faith Mission Home premises
+### Q3. Faith Mission Home premises, completed
 
-- **Address / footprint:** Operator gives 12 Lorong 11 Geylang Road, Singapore 388704; candidate [way 1223250210](https://www.openstreetmap.org/way/1223250210), tagged No. 12. The alternate No. 14A assignment is unresolved.
-- **Sources:** [operator contact](https://faithmissionhome.sg/contact/), [operator home page](https://faithmissionhome.sg/). [Third-party registration listing](https://www.sgpbusiness.com/company/Faith-Mission-Home-Ltd) gives 14A Lorong 11 Geylang, Singapore 388706 and is recorded solely as conflicting evidence.
-- **Confidence / uncertainty:** High that the operator publishes No. 12; low for an exact frontage/extent until the discrepancy is resolved. Do not assume a move or a historic renumbering.
-- **Blocker / next evidence:** Reconcile No. 12 versus 14A using reliable location/exterior evidence; verify which entrance and unit belong to the named premises. No façade or signage approved yet.
+- **Address / footprint:** Operator gives 12 Lorong 11 Geylang Road, Singapore 388704; assigned [way 1223250210](https://www.openstreetmap.org/way/1223250210), tagged No. 12. The retained [named OSM node 11346722109](https://www.openstreetmap.org/node/11346722109) is inside that polygon and also gives No. 12. No neighbouring unit is assigned.
+- **Sources / access:** [operator contact](https://faithmissionhome.sg/contact/), [operator exterior photograph](https://faithmissionhome.sg/wp-content/uploads/2025/07/FaithMissionHomeNight.jpg.webp), both visually inspected in the browser on 29 September 2026. OSM node inspected in the retained 28 September extract. The image URL contains July 2025, but its capture date is unknown. [Third-party registration listing](https://www.sgpbusiness.com/company/Faith-Mission-Home-Ltd) gives 14A and remains weaker, conflicting evidence.
+- **Confidence / uncertainty:** High for the operator-published No. 12 street frontage; medium for extent, supported by the matching named point and footprint. No claim about legal boundaries, whole-building occupancy or the reason for No. 14A. The direct operator exterior and independent mapped point support modelling No. 12 despite that unresolved listing.
+- **Status / blocker:** Completed as `faith-mission-home`, following source inspection. No blocker to this conservative frontage; exact rear massing, current photograph date and No. 14A relationship remain unresolved. See [detailed provenance](lorong-11-references.md#faith-mission-home-no-12) for omitted and estimated features.
 
 ### Q4–Q6. Federation-supported premises requiring exterior confirmation
 
@@ -88,3 +88,19 @@ Broad searches covered Lorong 11 named premises, operator contact pages, URA con
 29 September 2026: checked the clean main checkout, README, reference/asset notes, registry, model implementation, geographic source pipeline and existing tests. Recorded four completed models and six supported research candidates. The initial queue adds no model, asset or geometry. All future façade claims require actual visual source inspection; retrieving page text or a photo caption alone does not satisfy that requirement.
 
 Validation: `npm test` passed all five tests; `npm run build` passed, with Vite's existing large-chunk advisory. An additional read-only check confirmed all 11 referenced way IDs exist in both retained map files and have Lorong 11 street tags in `map.json`. No scene visual check was needed for this documentation-only change.
+
+### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
+
+Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.
+
+- **Q1:** The [federation directory](https://sfcca.sg/en/our-members/) still lists 24/24A; the [2023 heritage hunt](https://www.shhk.com.sg/newsroom/shhk-family-day-2023-hokkien-clans-heritage-hunt/) lists No. 24. Targeted English/Chinese and URA searches did not establish an attributable exterior for modelling. The directory's linked image could not be retrieved by the research tool. No visual claim is made. Way `1223250200` remains a candidate only; the 24A extent, frontage and current signage remain unresolved.
+- **Q2:** The [operator contact page](https://www.pump.com.sg/index_files/contact.htm) still gives No. 36. Its undated address does not resolve the exterior or current occupancy. No model-ready evidence found in this pass.
+- **Q3:** The [operator contact page](https://faithmissionhome.sg/contact/) still gives No. 12. A [DivorceCare listing](https://find.divorcecare.org/ministries/201377) surfaced in search with 12–14, but direct retrieval failed; this is an unverified lead, not a resolution of the existing 14A discrepancy. The operator contact page's image link also failed retrieval. Do not expand the footprint assignment from these results.
+- **Q4–Q5:** The federation directory still lists S.M. Khek Leow at No. 4 and Canton Wong at 31A. Follow-up name searches did not resolve either exterior or the 31A unit extent. Both remain research-blocked.
+- **Q6, new corroboration:** A [federation event notice for 22 March 2026](https://sfcca.sg/en/events/kueh-making-session-2026/) identifies Hainan Goh's venue as the second floor of 20C Lorong 11. This strengthens the dated location evidence, but establishes neither a whole-building occupation nor façade details. The retained map has Nos. 20 and 20B and no exact 20C tag; do not substitute either footprint. Mapping confidence remains low.
+
+**Decision:** Preserve this research update without a commit, as required when research is insufficient. Manual follow-up needs a reliably attributed exterior and unit-to-footprint confirmation for at least one candidate, starting with Q1. Six supported research candidates remain unfinished, so the queue is not complete and the schedule has not been paused. Subsequent automated runs must honour the clean-checkout guard while this update remains uncommitted.
+
+**Validation:** `npm test` passed 5/5 and `npm run build` passed with the existing large-chunk advisory. No scene visual check was applicable because the render is unchanged. No commit or push was made.
+
+29 September 2026, continuation: clean checkout at `7b708e5`. Q1 still lacked an attributed Lorong 11 exterior; [older association material](https://hosankonghoey.blogspot.com/p/blog-page.html) gives different Geylang Road premises and was not used as a façade reference. Q2's undated operator address remains published, but [a third-party record](https://recordowl.com/company/shg-engineering-pte-ltd) reports an Ubi address change; current No. 36 occupancy remains unverified. These blockers prevented promotion. Q3's official contact-page photograph and retained named map point enabled the single Faith Mission Home model. Five candidates remain unfinished. Validation: six tests and production build passed; daylight browser inspection covered the lower entrance, upper screen and name, with no captured runtime warnings/errors. Existing Vite large-chunk advisory remains.

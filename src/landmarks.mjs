@@ -33,6 +33,16 @@ export const landmarks = [
     evidence: 'Address and outdoor seating confirmed by restaurant listing. Exterior, colours, sign design and furniture layout remain illustrative pending street photographs.',
     sources: ['https://www.quandoo.sg/place/lok-fu-lala-pot-106960/about'],
   },
+  {
+    id: 'faith-mission-home', buildingIds: ['1223250210'], kind: 'faith-mission',
+    name: 'Faith Mission Home', address: '12 Lorong 11 Geylang', height: 7.8,
+    evidence: 'Official contact address and inspected exterior photograph; named OSM node 11346722109 lies inside the No. 12 footprint. Street frontage reconstructed with estimated dimensions; rear structure omitted. Third-party No. 14A listing remains unresolved and is not assigned.',
+    sources: [
+      'https://faithmissionhome.sg/contact/',
+      'https://faithmissionhome.sg/wp-content/uploads/2025/07/FaithMissionHomeNight.jpg.webp',
+      'https://www.openstreetmap.org/node/11346722109',
+    ],
+  },
 ];
 
 export function landmarkFor(buildingId) {

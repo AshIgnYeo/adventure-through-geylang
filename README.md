@@ -4,11 +4,11 @@ A local browser exploration prototype focused on Lorong 11 Geylang, with Lorong 
 
 ## Lorong 11 reference-led pass
 
-Four real places now have explicit source-linked footprint matches: Hotel 81 Joy, Agape Centre, Hok Tek Chi Loke Yah Teng Association, and Lok Fu Lala Pot. See [reference notes](docs/lorong-11-references.md) and `src/landmarks.mjs` for evidence and uncertainty. The hotel has a bespoke pale-blue tower and recessed entrance; two heritage elevations use AI-generated reconstruction textures based on inspected URA photographs. These are recognisable approximations, not photogrammetric scans or a verified current streetscape. The eating-house exterior is still illustrative. Agape's exact three-unit extent is provisional because source address numbering differs.
+Five real places now have explicit source-linked footprint matches: Hotel 81 Joy, Agape Centre, Hok Tek Chi Loke Yah Teng Association, Lok Fu Lala Pot, and Faith Mission Home. See [reference notes](docs/lorong-11-references.md) and `src/landmarks.mjs` for evidence and uncertainty. The hotel has a bespoke pale-blue tower and recessed entrance; two heritage elevations use AI-generated reconstruction textures based on inspected URA photographs. These are recognisable approximations, not photogrammetric scans or a verified current streetscape. Faith Mission Home has a code-native street frontage based on its operator’s exterior photograph; its rear structure is not reconstructed. The eating-house exterior is still illustrative. Agape's exact three-unit extent is provisional because source address numbering differs.
 
 The initial view uses daylight for inspection. Blue hour and after dark remain available. Normal walking is 3.3 m/s on keyboard and touch; Shift is 5 m/s. Fictional signs are removed from unverified, Lorong-11-addressed buildings. Surrounding background streets still contain fictional signs.
 
-Developer-only inspection links use `?review=hotel-81-joy`, `?review=agape-centre`, `?review=hok-tek-chi` or `?review=lok-fu` to start opposite a landmark. These are review camera starts, not an in-game map or tracking feature. Remove the query to return to ordinary exploration.
+Developer-only inspection links use `?review=hotel-81-joy`, `?review=agape-centre`, `?review=hok-tek-chi`, `?review=lok-fu` or `?review=faith-mission-home` to start opposite a landmark. These are review camera starts, not an in-game map or tracking feature. Remove the query to return to ordinary exploration.
 
 ## Run
 

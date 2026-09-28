@@ -24,6 +24,48 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'faith-mission') {
+    // Operator photograph: two-storey white frontage, dark vertical screen,
+    // four upper window groups and a central blue display. All dimensions estimated.
+    const plaster = '#dddcd3', screen = '#303936';
+    panel(0, w, .15, place.height, .015, world.mat(plaster));
+    // Opaque glazing represents only the exterior, without reconstructing rooms.
+    panel(w * .06, w * .88, .18, 3.05, .035, world.mat('#53605b'));
+    for (const u of [.025, .265, .445, .575, .77, .975]) {
+      box('faith frontage pier', w * u, 1.62, .11, w * .025, 3, .22, plaster);
+    }
+    for (const [start, span] of [[.095, .16], [.835, .105]]) {
+      panel(w * start, w * span, .18, 3.03, .15, world.mat('#29332f'));
+      for (let i = 0; i <= 8; i++) box('faith entrance grille', w * (start + span * i / 8), 1.6, .2, .035, 2.85, .06, '#747b70');
+    }
+    panel(w * .46, w * .10, .2, 2.95, .17, world.mat('#394642'));
+    box('faith door transom', w * .51, 2.46, .21, w * .10, .045, .06, '#b6bbb0');
+    box('faith door meeting stile', w * .51, 1.2, .21, .035, 2, .06, '#b6bbb0');
+    panel(w * .775, w * .06, .18, 3.05, .23, world.mat(plaster));
+
+    panel(w * .035, w * .93, 3.18, 6.55, .07, world.mat(screen));
+    for (const [u, span] of [[.15, .15], [.365, .10], [.655, .105], [.865, .145]]) {
+      panel(w * (u - span / 2), w * span, 5.04, 6.15, .09, world.mat('#bec7ba'));
+    }
+    // Fine screen spacing is reconstructed, not an asserted measured slat count.
+    const slats = Math.max(2, Math.round(w * .93 / .095));
+    for (let i = 0; i <= slats; i++) {
+      const u = w * (.035 + .93 * i / slats);
+      if (u > w * .448 && u < w * .565) continue;
+      box('faith upper screen slat', u, 4.88, .19, .027, 3.46, .1, screen);
+    }
+    for (const y of [3.25, 4.87, 6.47]) box('faith screen rail', w * .5, y, .16, w * .93, .055, .08, screen);
+    box('faith central display frame', w * .506, 4.84, .28, w * .117, 3.42, .12, '#222c2d');
+    // Only the three large, legible words are reconstructed; fine text is omitted.
+    panel(w * .454, w * .104, 3.2, 6.47, .35, world.mat('#368eae'));
+    for (const [word, y] of [['Grace', 5.6], ['Glory', 4.6], ['Love', 3.6]] as const) {
+      sign(word, w * .459, w * .094, y, .5, '#368eae', '#e6ece4', .36);
+    }
+    sign('FAITH MISSION HOME', w * .10, w * .8, 6.65, .8, plaster, '#202724', .04);
+    box('faith stepped parapet', w * .50, place.height + .12, .04, w * .49, .24, .15, plaster);
+    return true;
+  }
+
   if (place.kind === 'hotel') {
     // The source footprint is set back from the street; preserve that courtyard.
     const blue = '#a9c9df', trim = '#dae3e7';
