@@ -24,6 +24,56 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'ho-san') {
+    // April 2024 Street View: one white shophouse, two dark window groups,
+    // blue-grey upper shade, red awning and projecting association sign.
+    // Dimensions and obscured lower openings are conservative estimates.
+    const plaster = '#deded4', blue = '#82a8bd', red = '#8b3942';
+    panel(0, w, .15, place.height, .015, world.mat(plaster));
+    panel(0, w, .15, 3.35, .04, world.mat(blue));
+    // Retain opaque exterior surfaces; no private interior or temporary displays.
+    panel(w * .055, w * .40, .16, 2.9, .07, world.mat('#303a3b'));
+    for (const u of [.06, .27, .45]) box('ho san entrance frame', w * u, 1.53, .10, .06, 2.76, .06, '#777d78');
+    box('ho san entrance transom', w * .255, 2.57, .11, w * .40, .065, .07, '#777d78');
+    panel(w * .53, w * .435, .16, 3.16, .07, world.mat('#b5b8b0'));
+    for (let y = .24; y < 3.16; y += .13) box('ho san shutter seam', w * .7475, y, .095, w * .435, .017, .025, '#909991');
+    for (const u of [.025, .495, .98]) box('ho san blue pier', w * u, 1.64, .15, .17, 3.04, .26, blue);
+
+    for (const centre of [.255, .745]) {
+      const span = w * .34;
+      box('ho san upper window reveal', w * centre, 5.3, .06, span + .12, 1.94, .12, '#c6c9be');
+      panel(w * centre - span / 2, span, 4.38, 6.22, .13, world.mat('#2c343c'));
+      for (let i = 0; i <= 3; i++) box('ho san window mullion', w * centre - span / 2 + span * i / 3, 5.3, .16, .035, 1.84, .04, '#44494b');
+      box('ho san window sill', w * centre, 4.35, .18, span + .2, .10, .27, '#c6c9be');
+    }
+    box('ho san upper sill course', w / 2, 4.28, .09, w, .09, .19, plaster);
+    const shade = box('ho san upper shade', w / 2, 6.55, .40, w, .07, .85, '#617e87');
+    shade.rotateLocal(7, 0, 0);
+    // Reconstructed rib spacing, not a surveyed count.
+    for (let u = .10; u < w; u += .14) box('ho san shade rib', u, 6.56, .4, .023, .04, .85, '#81979b').rotateLocal(7, 0, 0);
+    for (const u of [.08, .49, .92]) box('ho san shade bracket', w * u, 6.33, .37, .04, .045, .70, '#526969');
+    const awning = box('ho san red awning', w / 2, 3.28, .79, w, .085, 1.65, red);
+    awning.rotateLocal(16, 0, 0);
+    box('ho san awning valance', w / 2, 3.01, 1.56, w, .18, .045, red);
+    box('ho san awning front rail', w / 2, 3.11, 1.57, w, .035, .04, '#c7c1b1');
+
+    // Original lettering on both sides of a perpendicular blade sign.
+    // Fine typography and the physical sign dimensions are estimates.
+    const canvas = document.createElement('canvas'); canvas.width = 192; canvas.height = 768;
+    const c = canvas.getContext('2d')!;
+    c.fillStyle = '#e5ddc5'; c.fillRect(0, 0, 192, 768);
+    c.strokeStyle = '#455b59'; c.lineWidth = 12; c.strokeRect(6, 6, 180, 756);
+    c.fillStyle = '#ae4540'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    c.font = '600 125px sans-serif';
+    [...'禾山公會'].forEach((letter, i) => c.fillText(letter, 96, 110 + i * 155));
+    c.font = '26px sans-serif'; c.fillText('Ho San', 96, 685); c.fillText('Kong Hoey', 96, 721);
+    const mat = new pc.StandardMaterial(); mat.diffuseMap = world.texture(canvas); mat.update();
+    box('ho san projecting sign', .11, 4.86, .70, .10, 2.72, .72, '#455b59');
+    world.panel(pt(.168, 1.06), pt(.168, .34), 3.5, 6.22, mat);
+    world.panel(pt(.052, .34), pt(.052, 1.06), 3.5, 6.22, mat);
+    return true;
+  }
+
   if (place.kind === 'faith-mission') {
     // Operator photograph: two-storey white frontage, dark vertical screen,
     // four upper window groups and a central blue display. All dimensions estimated.

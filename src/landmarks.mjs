@@ -43,6 +43,16 @@ export const landmarks = [
       'https://www.openstreetmap.org/node/11346722109',
     ],
   },
+  {
+    id: 'ho-san-kong-hoey', buildingIds: ['1223250200'], kind: 'ho-san',
+    name: 'Ho San Kong Hoey', address: '24/24A Lorong 11 Geylang', height: 7.4,
+    evidence: 'SFCCA and SHHK addresses corroborated by inspected April 2024 Google Street View and a mapped place point inside No. 24. Single-frontage reconstruction with estimated dimensions; 24A is an entrance within this frontage, not an additional footprint. Current tenancy and legal boundaries are not asserted.',
+    sources: [
+      'https://sfcca.sg/en/our-members/',
+      'https://www.shhk.com.sg/newsroom/shhk-family-day-2023-hokkien-clans-heritage-hunt/',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=15.18&pitch=4.91&fov=37.5',
+    ],
+  },
 ];
 
 export function landmarkFor(buildingId) {

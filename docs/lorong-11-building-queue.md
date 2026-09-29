@@ -4,11 +4,11 @@ Created: 29 September 2026 (Asia/Singapore). First clean automation run, based o
 
 ## How to use this queue
 
-Read the README, [reference notes](lorong-11-references.md), landmark registry, models and tests before each run. Stop without repository edits or commits if the checkout has any pre-existing changes, including untracked files. Work in the main checkout; never push.
+Read the README, [reference notes](lorong-11-references.md), landmark registry, models and tests before each run. Inspect the full staged/unstaged diff, untracked files and recent commits. Resume pre-existing changes only when evidence clearly identifies one unfinished Lorong 11 queue item from an earlier run. Preserve and finish that item before selecting another. Stop without editing or committing conflicting paths if changes are unrelated, mix items, appear user-authored or have uncertain intent. Work in the main checkout; never push. This reconciliation rule supersedes the clean-checkout guard mentioned in historical run records below.
 
 The four existing reference-led models below count as completed. Their documented limitations remain. New entries are ordered for research, with address-supported candidates distinguished from model-ready candidates. Before modelling, make a small fresh source check and record access dates, changed addresses, conflicting evidence and remaining blockers here. An address match alone does not establish a visible façade, a property boundary or current occupancy of the whole building.
 
-For the next run, investigate Q1 first, then the next adequately supported entry if Q1 cannot be resolved. Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
+For the next run, reconcile unfinished work first, then investigate the first pending entry in queue order (currently Q2). Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
 
 Each later successful run models exactly one place. Preserve the original footprint coordinates and metre scale. Use code-native geometry, original or appropriately licensed/generated assets, and explicitly document estimated dimensions and reconstructed details. Do not ship reference photographs or infer private interiors, activities, affiliations, signage or precise ornament. Keep the commit to that place, its provenance/queue updates, related assets and tests. Require `npm test`, `npm run build` and the narrowest useful visual check when possible before committing.
 
@@ -48,14 +48,15 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 
 ## Research queue
 
-Q3 is now **completed**. The other five entries remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
+Q1 and Q3 are now **completed**. The other four entries remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
 
-### Q1. Ho San Kong Hoey premises
+### Q1. Ho San Kong Hoey premises, completed
 
-- **Address / footprint:** 24/24A Lorong 11 Geylang, Singapore 388716; candidate [way 1223250200](https://www.openstreetmap.org/way/1223250200), tagged No. 24. No separate 24A outline is established.
+- **Address / footprint:** 24/24A Lorong 11 Geylang, Singapore 388716; assigned [way 1223250200](https://www.openstreetmap.org/way/1223250200), tagged No. 24. The single No. 24 street frontage is assigned; 24A is not treated as another footprint or a separate legal parcel.
 - **Sources:** [federation member directory](https://sfcca.sg/en/our-members/) and [Singapore Hokkien Huay Kuan's 2023 heritage hunt](https://www.shhk.com.sg/newsroom/shhk-family-day-2023-hokkien-clans-heritage-hunt/), which identifies a visit location at No. 24.
-- **Confidence / uncertainty:** High for the listed address; medium for footprint assignment. A heritage visit location is stronger than a generic registration listing, but does not verify current appearance.
-- **Blocker / next evidence:** Inspect a reliably attributed exterior, verify the 24/24A extent and current signage before modelling. No façade details approved yet.
+- **New exterior / mapping evidence:** [Google Street View, April 2024](https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=15.18&pitch=4.91&fov=37.5), inspected 29 September 2026, shows the association blade sign on the white shophouse between the salmon-coloured No. 26 and the balcony-fronted No. 22. The [mapped association point](https://www.google.com/maps/search/?api=1&query=Ho+San+Kong+Hoey+24+Lorong+11+Geylang) at 1.3132484, 103.8769864 falls within way 1223250200. Supporting user photographs from July 2019 and October 2022 were inspected cautiously; the older close-up shows both 24 and 24A labels within one frontage.
+- **Confidence / uncertainty:** High for the corroborated name/address, medium for the single-frontage assignment and broad 2024 exterior. Current September 2026 condition, legal extent and detailed lower openings remain unverified. The photograph dates are distinct from access date.
+- **Status / blocker:** Completed as `ho-san-kong-hoey`. The conservative frontage follows the 2024 survey, with estimated dimensions, simplified obscured lower openings and original code-native geometry. No private interior, additional unit footprint or current tenancy claim. See [detailed provenance](lorong-11-references.md#ho-san-kong-hoey-no-24).
 
 ### Q2. SHG Engineering premises
 
@@ -118,3 +119,13 @@ Started with a clean main checkout at `5f0f93d`. Reviewed README, project instru
 **Decision:** Five supported candidates remain pending and research-blocked. Manual follow-up requires an attributable exterior and footprint/unit confirmation for at least one candidate, starting with Q1. Preserve this run record uncommitted under the insufficient-research rule. No model, asset, geometry, commit or push in this run. The queue is incomplete, so the schedule is not paused as completed. Subsequent runs must stop at the clean-checkout guard while this note remains uncommitted.
 
 **Validation:** `npm test` passed 6/6; `npm run build` passed with the existing large-chunk advisory. No scene visual check was applicable to the unchanged render.
+
+### 29 September 2026: Ho San Kong Hoey exterior resolved
+
+Started clean at `2803b0d` after the user requested the next building. Re-read the required project context. Fresh SHHK and federation checks retain the listed address. Direct browser inspection of Google Maps supplied previously missing exterior evidence: two Google-captured panoramas dated April 2024 and supporting, older contributor photographs. The mapped point is within No. 24 and outside Nos. 22/26. Q1 was promoted and modelled as exactly one frontage, preserving source geometry. The 2019 lower storefront differs from the later view, so it was used only for number corroboration. Current occupancy and cadastral boundaries remain unverified. Q2/Q4/Q5/Q6 remain research-blocked; the queue is incomplete.
+
+### 29 September 2026: Ho San Kong Hoey resumed and verified
+
+Resumed the seven uncommitted Q1 files at `2803b0d` under the updated reconciliation instructions. The earlier run's recorded file edits and usage-limit interruption establish their origin; no unrelated changes, staged changes or untracked files were present. Preserved the model and re-inspected its April 2024 Google Street View reference. Corrected the review-link punctuation and replaced the obsolete queue guard with the current reconciliation rule.
+
+**Validation:** `npm test` passed 7/7 and `npm run build` passed with the existing large-chunk advisory. Daylight browser inspection covered the lower openings, upper windows, shade and projecting sign at `?review=ho-san-kong-hoey`; no captured runtime warnings or errors. Source map geometry and assets remain unchanged. Q1 is ready for the single focused model commit. Q2/Q4/Q5/Q6 still need exterior/unit evidence; no second item was started and the schedule remains active.

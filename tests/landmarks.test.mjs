@@ -6,6 +6,23 @@ import { pointInPolygon } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 
+test('Ho San Kong Hoey uses only No. 24 containing the corroborating mapped place point', () => {
+  const place = landmarks.find(p => p.id === 'ho-san-kong-hoey');
+  assert.deepEqual(place.buildingIds, ['1223250200']);
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.number, '24');
+  // Coordinates displayed by Google Maps for the association, inspected 29 Sep 2026.
+  const mappedPlace = [103.8769864, 1.3132484];
+  assert.equal(pointInPolygon(mappedPlace, building.coordinates), true);
+  for (const id of ['1223250203', '1223250204']) {
+    assert.notEqual(landmarkFor(id), place);
+    assert.equal(pointInPolygon(mappedPlace, map.buildings.find(b => b.id === id).coordinates), false);
+  }
+  assert.match(place.evidence, /April 2024/);
+  assert.match(place.evidence, /estimated/);
+  assert.match(place.evidence, /not an additional footprint/);
+});
+
 test('Faith Mission Home matches the named source point inside No. 12 without claiming adjoining units', () => {
   const source = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
   const node = source.match(/<node\b[^>]*id="11346722109"[^>]*>[\s\S]*?<\/node>/)?.[0];

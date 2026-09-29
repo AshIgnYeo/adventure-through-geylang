@@ -11,8 +11,27 @@ Research and visual inspection: 28 September 2026. Source retrieval dates do not
 | Hok Tek Chi Loke Yah Teng Association, No. 17 | [URA photograph](https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00334/), [2026 reporting](https://www.zaobao.com.sg/news/singapore/story20260125-8151043), OSM way 1223407885 | Pink two-storey shophouse, cream glass-pane windows and Chinese name. The texture reconstructs occluded areas and differs in some ground-floor details. No invented freestanding temple or religious interior. |
 | Lok Fu Lala Pot, No. 38 | [Restaurant listing](https://www.quandoo.sg/place/lok-fu-lala-pot-106960/about), OSM way 1223250209 | Address and outdoor seating supported. Detailed exterior, canopy, colours, sign typography and table positions are illustrative. Needs current exterior photographs before a fidelity claim. |
 | Faith Mission Home, No. 12 | [Operator contact and exterior](https://faithmissionhome.sg/contact/), OSM way 1223250210 and named node 11346722109; inspected 29 September 2026 | Code-native white frontage, dark screen, upper window groups and central display. Dimensions and typography estimated; rear structure omitted. See detailed notes below. |
+| Ho San Kong Hoey, No. 24 | [SHHK address](https://www.shhk.com.sg/newsroom/shhk-family-day-2023-hokkien-clans-heritage-hunt/), April 2024 Google Street View and place point within OSM way 1223250200; inspected 29 September 2026 | Code-native single frontage with white upper wall, dark windows, red awning and projecting sign. Dimensions and obscured openings estimated; present condition unverified. |
 
 The unreviewed surrounding buildings are still approximations. A registered address alone was not treated as proof of a visible shopfront. No real organisation is assigned NPC harassment, criminal conduct or affiliation with the game.
+
+## Ho San Kong Hoey, No. 24
+
+Research and visual inspection: **29 September 2026**. The [SFCCA directory](https://sfcca.sg/en/our-members/) (marked updated December 2024) lists 24/24A Lorong 11. [SHHK’s October 2023 heritage hunt notice](https://www.shhk.com.sg/newsroom/shhk-family-day-2023-hokkien-clans-heritage-hunt/) independently names No. 24 as a visit location. Neither alone established a façade.
+
+New visual evidence was inspected directly in Google Maps:
+
+- [Google Street View from the south](https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=15.18&pitch=4.91&fov=37.5), image capture **April 2024**, panorama `64XRklcWkCBOa9KyrvJ_PA`, camera at 1.3131502, 103.8769345.
+- [Google Street View from the north](https://www.google.com/maps/@?api=1&map_action=pano&pano=H3-9KS_v_QrrAnpO7y28LQ&heading=124.94&pitch=11.03&fov=75), image capture **April 2024**, panorama `H3-9KS_v_QrrAnpO7y28LQ`, camera at 1.3133244, 103.8768814. The UI labels the camera positions 23 and 28 Lorong 11; these are not the target building’s number.
+- [Association place gallery](https://www.google.com/maps/search/?api=1&query=Ho+San+Kong+Hoey+24+Lorong+11+Geylang): a **July 2019** close-up attributed to **Chee Peng Tan**, image `CIHM0ogKEICAgICU6cu1Tw`, shows adjacent 24 and 24A labels on the blue frontage. An **October 2022** photograph attributed to **JonXu**, image `CIHM0ogKEICAgIDek8CulAE`, corroborates the projecting association sign. These are supporting contributor images, not independent proof of current occupancy. The older lower-door arrangement differs from the later street view and is not reproduced as current.
+
+The Google place point at longitude **103.8769864**, latitude **1.3132484** lies inside retained OSM way **1223250200**, tagged No. 24, between Nos. 22 and 26. The visible association sign and adjoining elevations corroborate this assignment. A regression test checks containment and excludes both neighbouring footprints. No OSM coordinates or metre projection were changed. This assigns one street frontage, not legal boundaries, whole-building occupancy or another parcel for 24A.
+
+The model reconstructs the broad **April 2024** exterior: white two-storey elevation, two groups of dark upper windows, a blue-grey projecting upper shade, muted red lower awning, blue ground-floor piers, a pale right-hand shutter and a dark left-hand entrance area. The perpendicular ivory blade sign carries the observed four Chinese characters and association name in original canvas-rendered typography. No photographed pixels are bundled or fetched by the game.
+
+The source footprint fixes frontage width at approximately **6.10 metres**. The **7.4-metre** height, window proportions, mullion/rib counts, 1.65-metre awning depth, 0.85-metre upper shade depth, 2.72-metre sign height, colours and lettering are estimates. Occluded lower openings are simplified opaque surfaces; small notices, decorative objects, chairs, vehicles, people and private interiors are omitted. The sign’s typeface and border, flat roof closure and side/rear massing are reconstructions. No September 2026 condition, activity, affiliation or endorsement is asserted.
+
+Review: `?review=ho-san-kong-hoey`. Resumed validation on 29 September 2026: seven automated tests and the production build passed, retaining the existing bundle-size advisory. Daylight browser inspection covered the lower openings, upper windows, shade and projecting sign, with no captured runtime warnings or errors. The April 2024 Street View reference was re-inspected. Physical phone performance and present-day street conditions remain unverified.
 
 ## Faith Mission Home, No. 12
 
