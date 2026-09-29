@@ -24,6 +24,57 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'khek-leow') {
+    // April 2024 No. 4 frontage. Relief and tile motifs are simplified original
+    // geometry, not a measured conservation elevation or copied photograph.
+    const green = '#9daf70', cream = '#dedec3', frame = '#c8ceb1';
+    panel(0, w, .15, place.height, .015, world.mat(green));
+    panel(0, w, .15, 4.60, .03, world.mat(cream));
+    panel(w * .055, w * .18, .15, 2.92, .055, world.mat('#626760'));
+    panel(w * .085, w * .075, .44, 2.57, .085, world.mat('#644147'));
+    for (let i = 0; i <= 3; i++) box('leow entrance bar', w * (.085 + .075 * i / 3), 1.51, .12, .022, 2.13, .035, frame);
+    panel(w * .25, w * .70, .15, 2.94, .06, world.mat('#d5ccb0'));
+    for (let i = 0; i <= 8; i++) box('leow folding door stile', w * (.25 + .70 * i / 8), 1.55, .095, .025, 2.79, .035, '#b2ad94');
+    for (const y of [.93, 1.83, 2.72]) box('leow folding door rail', w * .60, y, .10, w * .70, .025, .04, '#b2ad94');
+    for (const u of [.03, .97]) {
+      box('leow arcade pier', w * u, 1.61, .23, .25, 2.92, .46, cream);
+      box('leow pier plinth', w * u, .38, .25, .32, .46, .50, frame);
+      box('leow bracket capital', w * u, 2.91, .24, .43, .17, .51, cream);
+    }
+    for (const y of [3.03, 3.72, 3.88]) box('leow string course', w / 2, y, .15, w, .09, .31, frame);
+    // The observed fascia is read right-to-left. Preserve its visual order.
+    sign('會 公 氏 廖 屬 客 馬 星', .18, w - .36, 3.14, .47, '#e1dacc', '#a67e83', .18);
+    for (const centre of [.20, .50, .80]) {
+      const span = w * .24;
+      panel(w * centre - span / 2, span, 4.76, 6.47, .09, world.mat('#526567'));
+      for (const u of [centre - .125, centre, centre + .125]) box('leow upper window upright', w * u, 5.615, .16, .045, 1.78, .075, cream);
+      for (let i = 0; i <= 8; i++) box('leow window horizontal bar', w * centre, 4.76 + 1.71 * i / 8, .17, span, .035, .045, frame);
+      box('leow window sill', w * centre, 4.73, .16, span + .14, .10, .25, frame);
+      // Shallow cream arched head, faceted conservatively in the façade plane.
+      const base = pt(w * centre, .10), positions = [base[0], 6.90, base[1]], indices: number[] = [];
+      for (let i = 0; i <= 12; i++) {
+        const t = Math.PI * i / 12, p = pt(w * centre + Math.cos(t) * span / 2, .10);
+        positions.push(p[0], 6.90 + Math.sin(t) * .18, p[1]);
+        if (i) indices.push(0, i, i + 1);
+      }
+      panel(w * centre - span / 2, span, 6.47, 6.90, .10, world.mat(cream));
+      world.mesh('leow arched window head', positions, Array(positions.length / 3 * 2).fill(0), indices, world.mat(cream));
+      for (const offset of [-.27, .27]) for (const y of [6.60, 6.76]) box('leow transom vent', w * centre + offset, y, .13, .35, .045, .025, '#757e65');
+    }
+    // Abstract blue/ivory tile fields preserve placement, not historic motifs.
+    for (const centre of [.20, .80]) {
+      panel(w * centre - w * .12, w * .24, 4.07, 4.58, .08, world.mat('#608e88'));
+      for (let row = 0; row < 2; row++) for (let col = 0; col < 5; col++) {
+        box('leow tile motif', w * (centre - .096 + col * .048), 4.19 + row * .23, .105, .10, .10, .025, '#e1d8b4').rotateLocal(0, 0, 45);
+      }
+    }
+    for (const u of [.05, .35, .65, .95]) box('leow upper pilaster', w * u, 5.58, .12, w * .045, 3.08, .17, cream);
+    box('leow green frieze', w / 2, 7.28, .11, w, .21, .23, green);
+    for (let u = .12; u < w; u += .25) box('leow cornice dentil', u, 7.48, .21, .10, .18, .24, green);
+    box('leow eaves', w / 2, 7.71, .25, w, .15, .58, frame);
+    return true;
+  }
+
   if (place.kind === 'shg') {
     // No. 36 in April 2024 Street View. Historical exterior only; present
     // occupancy is unresolved. Proportions and obscured openings are estimates.

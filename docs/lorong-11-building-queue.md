@@ -8,7 +8,7 @@ Read the README, [reference notes](lorong-11-references.md), landmark registry, 
 
 The four existing reference-led models below count as completed. Their documented limitations remain. New entries are ordered for research, with address-supported candidates distinguished from model-ready candidates. Before modelling, make a small fresh source check and record access dates, changed addresses, conflicting evidence and remaining blockers here. An address match alone does not establish a visible façade, a property boundary or current occupancy of the whole building.
 
-For the next run, reconcile unfinished work first, then investigate the first pending entry in queue order (currently Q4). Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
+For the next run, reconcile unfinished work first, then investigate the first pending entry in queue order (currently Q5). Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
 
 Each later successful run models exactly one place. Preserve the original footprint coordinates and metre scale. Use code-native geometry, original or appropriately licensed/generated assets, and explicitly document estimated dimensions and reconstructed details. Do not ship reference photographs or infer private interiors, activities, affiliations, signage or precise ornament. Keep the commit to that place, its provenance/queue updates, related assets and tests. Require `npm test`, `npm run build` and the narrowest useful visual check when possible before committing.
 
@@ -48,7 +48,7 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 
 ## Research queue
 
-Q1, Q2 and Q3 are **completed**. Q2 represents a dated April 2024 exterior. Q4–Q6 remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
+Q1–Q4 are **completed**. Q2 and Q4 represent dated April 2024 exteriors. Q5–Q6 remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
 
 ### Q1. Ho San Kong Hoey premises, completed
 
@@ -73,13 +73,13 @@ Q1, Q2 and Q3 are **completed**. Q2 represents a dated April 2024 exterior. Q4�
 - **Confidence / uncertainty:** High for the operator-published No. 12 street frontage; medium for extent, supported by the matching named point and footprint. No claim about legal boundaries, whole-building occupancy or the reason for No. 14A. The direct operator exterior and independent mapped point support modelling No. 12 despite that unresolved listing.
 - **Status / blocker:** Completed as `faith-mission-home`, following source inspection. No blocker to this conservative frontage; exact rear massing, current photograph date and No. 14A relationship remain unresolved. See [detailed provenance](lorong-11-references.md#faith-mission-home-no-12) for omitted and estimated features.
 
-### Q4–Q6. Federation-supported premises requiring exterior confirmation
+### Q4–Q6. Federation-supported premises
 
-Source for each: [Singapore Federation of Chinese Clan Associations member directory](https://sfcca.sg/en/our-members/), accessed 29 September 2026. This federation publication supports the listed names and addresses, but is not a façade survey. Each remains pending and research-blocked.
+Source for each: [Singapore Federation of Chinese Clan Associations member directory](https://sfcca.sg/en/our-members/), accessed 29 September 2026. This federation publication supports the listed names and addresses, but is not a façade survey. Q4 is completed following exterior corroboration; Q5–Q6 remain pending and research-blocked.
 
 | ID / name | Listed address (Lorong 11 Geylang) | Footprint candidate | Confidence, uncertainty and blocker |
 | --- | --- | --- | --- |
-| Q4. S.M. Khek Leow Clan Association | 4, Singapore 388696 | [1223250215](https://www.openstreetmap.org/way/1223250215), tagged 4 | Moderate address confidence. Exterior, occupancy extent and signage unverified; corroborate before modelling. |
+| Q4. S.M. Khek Leow Clan Association, completed | 4, Singapore 388696 | Assigned [1223250215](https://www.openstreetmap.org/way/1223250215), tagged 4 | High for the name/address link, medium for broad dated appearance and single-frontage assignment. April 2024 Street View shows the Chinese name; the association point falls within No. 4. Current condition and legal extent unverified. Completed as `sm-khek-leow`, with automated and daylight visual validation; [provenance](lorong-11-references.md#sm-khek-leow-clan-association-no-4). |
 | Q5. Canton Wong Clan Association | 31A, Singapore 388723 | [1223407878](https://www.openstreetmap.org/way/1223407878), tagged 31; provisional parent building only | Moderate address confidence. Resolve suffix/unit and exterior; do not assign the whole building. |
 | Q6. Hainan Goh Clan Association | 20C, second storey, Singapore 388712 | Unresolved; no 20C tag in retained map | Moderate address confidence, low mapping confidence. Resolve unit/footprint and exterior; do not substitute mapped 20 or 20B. |
 
@@ -136,3 +136,15 @@ Resumed the seven uncommitted Q1 files at `2803b0d` under the updated reconcilia
 Started clean on main at `38eb410` after the user requested the next item. Read project context, full diffs, queue, registry, models and tests. Fresh operator/directory research retained the current-address discrepancy. Direct Google Maps inspection resolved the previously missing exterior: April 2024 panorama, visible No. 36, corroborating former name and a mapped place point inside the source footprint. Q2 alone was selected and implemented as a dated exterior. Current occupancy and precise relocation timing remain unresolved. No second item started.
 
 **Validation:** `npm test` passed 8/8; `npm run build` passed with the existing large-chunk advisory. Daylight browser inspection covered lower openings/No. 36, upper windows/grille, condensers, shade and roof edge, with no captured runtime warnings or errors. Source map coordinates and assets remain unchanged. Q2 is ready for its focused commit; Q4–Q6 still need research, so the schedule remains active.
+
+### 29 September 2026: S.M. Khek Leow frontage in progress
+
+Started clean on main at `1eba1ea`. Read required project context and inspected status/diffs/recent commits. Fresh SFCCA lookup retained No. 4; direct Google Maps inspection resolved the façade and single-unit assignment. April 2024 panorama `ifUFTPmGn1-kOv6waVHktw` shows the green frontage and association name; the mapped point is contained by No. 4 and excluded from all existing Agape assignments. Implemented Q4 only with original code-native geometry, estimated proportions and simplified ornament. The user interrupted after the four code/test edits, then requested resumption; those exact edits were preserved and documentation completed.
+
+**Remaining / validation:** Run tests, production build and daylight browser inspection; resolve any issues before committing. No commit yet. Current condition and legal extent remain unknown, with no claims about either. If interrupted, resume Q4 only. Q5/Q6 remain research-blocked.
+
+### 29 September 2026: S.M. Khek Leow resumed and validated
+
+Resumed the seven uncommitted Q4 files at `1eba1ea`. The queue, provenance, registry, model and regression test consistently identify one interrupted item; no staged, untracked or unrelated changes were present. Preserved the implementation and re-inspected the recorded April 2024 Street View panorama. No new item started.
+
+**Validation / completion:** `npm test` passed 9/9; `npm run build` passed with the existing large-chunk advisory; `git diff --check` passed. Daylight browser inspection covered the lower doors, readable fascia, tile fields, three upper windows, shallow arched heads, vents and cornice, with no captured runtime warnings or errors. Source map geometry, geographic scale and raster assets are unchanged. Q4 is complete and ready for its focused commit. Current condition and legal extent remain unverified. Q5/Q6 remain research-blocked, so the schedule stays active; investigate Q5 next after reconciling any unfinished work.

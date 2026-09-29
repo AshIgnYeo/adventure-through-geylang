@@ -6,6 +6,24 @@ import { pointInPolygon } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 
+test('S.M. Khek Leow uses only No. 4, without expanding the adjacent Agape assignment', () => {
+  const place = landmarks.find(p => p.id === 'sm-khek-leow');
+  assert.deepEqual(place.buildingIds, ['1223250215']);
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.number, '4');
+  // Association point in Google Maps, inspected 29 September 2026.
+  const mappedPlace = [103.8771349, 1.3127035];
+  assert.equal(pointInPolygon(mappedPlace, building.coordinates), true);
+  const agape = landmarks.find(p => p.id === 'agape-centre');
+  assert.deepEqual(agape.buildingIds, ['1223250213', '1223250216', '1223250217']);
+  for (const id of ['1223250214', ...agape.buildingIds]) {
+    assert.notEqual(landmarkFor(id), place);
+    assert.equal(pointInPolygon(mappedPlace, map.buildings.find(b => b.id === id).coordinates), false);
+  }
+  assert.match(place.evidence, /April 2024/);
+  assert.match(place.evidence, /simplified ornament/);
+});
+
 test('SHG historical frontage uses No. 36 and excludes the adjoining buildings', () => {
   const place = landmarks.find(p => p.id === 'shg-engineering');
   assert.deepEqual(place.buildingIds, ['1223250208']);
