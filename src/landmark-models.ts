@@ -24,6 +24,47 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'shg') {
+    // No. 36 in April 2024 Street View. Historical exterior only; present
+    // occupancy is unresolved. Proportions and obscured openings are estimates.
+    const plaster = '#c2d0c4', trim = '#d3d9cc', dark = '#303b37';
+    panel(0, w, .15, place.height, .015, world.mat(plaster));
+    box('shg parapet coping', w / 2, place.height, .06, w, .12, .25, '#6c7770');
+    box('shg upper sill course', w / 2, 3.96, .12, w, .12, .25, trim);
+    for (const [start, span] of [[.055, .515], [.665, .29]]) {
+      panel(w * start, w * span, 4.98, 6.58, .08, world.mat('#303b3b'));
+      for (const u of [start, start + span]) box('shg window jamb', w * u, 5.78, .14, .065, 1.69, .09, trim);
+      box('shg window sill', w * (start + span / 2), 4.96, .18, w * span + .12, .09, .28, trim);
+    }
+    // Simplified grille and frame spacing, not a measured bar count.
+    for (let i = 0; i <= 12; i++) box('shg upper grille upright', w * (.055 + .515 * i / 12), 5.78, .19, .023, 1.6, .035, '#555b50');
+    for (let i = 1; i <= 7; i++) box('shg upper grille rail', w * .3125, 4.98 + 1.6 * i / 8, .20, w * .515, .022, .04, '#555b50');
+    for (let i = 1; i < 4; i++) box('shg right window mullion', w * (.665 + .29 * i / 4), 5.78, .18, .04, 1.6, .06, '#727d76');
+    box('shg right window transom', w * .81, 6.19, .18, w * .29, .05, .06, '#727d76');
+    const shade = box('shg upper shade', w / 2, 6.72, .40, w, .08, .88, '#aebfaf');
+    shade.rotateLocal(7, 0, 0);
+    for (const u of [.16, .90]) {
+      box('shg condenser bracket', w * u, 4.02, .38, .95, .06, .68, '#777d73');
+      box('shg condenser casing', w * u, 4.39, .39, .91, .64, .44, '#d4d1bb');
+      for (let i = 0; i < 7; i++) box('shg condenser grille', w * u - .08, 4.16 + i * .065, .62, .57, .025, .035, '#92998c');
+    }
+    panel(w * .07, w * .58, .16, 2.87, .055, world.mat(dark));
+    panel(w * .74, w * .18, .16, 2.87, .055, world.mat('#403b32'));
+    for (const u of [.045, .69, .965]) box('shg ground pier', w * u, 1.59, .17, .18, 2.88, .31, trim);
+    for (const start of [.07, .59]) for (let i = 0; i < 4; i++) box('shg folded frontage grille', w * start + i * .065, 1.48, .13, .025, 2.61, .08, '#667e77');
+    for (let i = 0; i <= 5; i++) box('shg doorway grille', w * (.74 + .18 * i / 5), 1.47, .14, .026, 2.6, .045, '#7e8170');
+    for (const y of [.70, 1.38, 2.10]) box('shg doorway rail', w * .83, y, .15, w * .18, .035, .05, '#7e8170');
+    box('shg lower lintel', w / 2, 3.03, .12, w, .26, .23, plaster);
+    sign('36', w * .746, .29, 2.50, .21, '#403b32', '#e4ded1', .18);
+    const awning = box('shg dark awning', w / 2, 3.58, .87, w, .085, 1.8, '#4b4c45');
+    awning.rotateLocal(13, 0, 0);
+    box('shg awning valance', w / 2, 3.32, 1.74, w, .17, .045, '#55554a');
+    // The observed blade is retained, but indistinct lettering and small
+    // product signs are omitted instead of inventing a modern SHG shop sign.
+    box('shg pale blade sign', .09, 4.91, .50, .11, 2.03, .57, '#d8d6be');
+    return true;
+  }
+
   if (place.kind === 'ho-san') {
     // April 2024 Street View: one white shophouse, two dark window groups,
     // blue-grey upper shade, red awning and projecting association sign.

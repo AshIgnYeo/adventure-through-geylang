@@ -53,6 +53,16 @@ export const landmarks = [
       'https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=15.18&pitch=4.91&fov=37.5',
     ],
   },
+  {
+    id: 'shg-engineering', buildingIds: ['1223250208'], kind: 'shg',
+    name: 'SHG Engineering / Seng Hup Guan (April 2024 exterior)', address: '36 Lorong 11 Geylang', height: 7.7,
+    evidence: 'Operator address and former name corroborated by the Seng Hup Guan mapped point within No. 36 and April 2024 Google Street View. Historical frontage with estimated dimensions; current occupancy unresolved because a third-party directory reports a later Ubi address. No neighbouring unit or private interior assigned.',
+    sources: [
+      'https://www.pump.com.sg/index_files/contact.htm',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=hHdVXQD79Suo5Y4VlonoNg&heading=76.07&pitch=15&fov=75',
+      'https://recordowl.com/company/shg-engineering-pte-ltd',
+    ],
+  },
 ];
 
 export function landmarkFor(buildingId) {

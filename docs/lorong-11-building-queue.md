@@ -8,7 +8,7 @@ Read the README, [reference notes](lorong-11-references.md), landmark registry, 
 
 The four existing reference-led models below count as completed. Their documented limitations remain. New entries are ordered for research, with address-supported candidates distinguished from model-ready candidates. Before modelling, make a small fresh source check and record access dates, changed addresses, conflicting evidence and remaining blockers here. An address match alone does not establish a visible façade, a property boundary or current occupancy of the whole building.
 
-For the next run, reconcile unfinished work first, then investigate the first pending entry in queue order (currently Q2). Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
+For the next run, reconcile unfinished work first, then investigate the first pending entry in queue order (currently Q4). Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
 
 Each later successful run models exactly one place. Preserve the original footprint coordinates and metre scale. Use code-native geometry, original or appropriately licensed/generated assets, and explicitly document estimated dimensions and reconstructed details. Do not ship reference photographs or infer private interiors, activities, affiliations, signage or precise ornament. Keep the commit to that place, its provenance/queue updates, related assets and tests. Require `npm test`, `npm run build` and the narrowest useful visual check when possible before committing.
 
@@ -48,7 +48,7 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 
 ## Research queue
 
-Q1 and Q3 are now **completed**. The other four entries remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
+Q1, Q2 and Q3 are **completed**. Q2 represents a dated April 2024 exterior. Q4–Q6 remain **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment; no remaining candidate is currently model-ready. Named organisations are included only as candidates for their externally evidenced premises.
 
 ### Q1. Ho San Kong Hoey premises, completed
 
@@ -58,12 +58,13 @@ Q1 and Q3 are now **completed**. The other four entries remain **pending, resear
 - **Confidence / uncertainty:** High for the corroborated name/address, medium for the single-frontage assignment and broad 2024 exterior. Current September 2026 condition, legal extent and detailed lower openings remain unverified. The photograph dates are distinct from access date.
 - **Status / blocker:** Completed as `ho-san-kong-hoey`. The conservative frontage follows the 2024 survey, with estimated dimensions, simplified obscured lower openings and original code-native geometry. No private interior, additional unit footprint or current tenancy claim. See [detailed provenance](lorong-11-references.md#ho-san-kong-hoey-no-24).
 
-### Q2. SHG Engineering premises
+### Q2. SHG Engineering / Seng Hup Guan premises, completed
 
-- **Address / footprint:** 36 Lorong 11 Geylang, Singapore 388728; candidate [way 1223250208](https://www.openstreetmap.org/way/1223250208), tagged No. 36.
+- **Address / footprint:** 36 Lorong 11 Geylang, Singapore 388728; assigned [way 1223250208](https://www.openstreetmap.org/way/1223250208), tagged No. 36.
 - **Sources:** [operator contact page](https://www.pump.com.sg/index_files/contact.htm).
-- **Confidence / uncertainty:** High for the address published by the operator; medium for footprint assignment. The page is undated and does not establish present tenancy, a visible shopfront or an industrial building form.
-- **Blocker / next evidence:** Obtain current exterior/location corroboration. Do not infer equipment, workshop interiors, branding or street activity from the company name.
+- **Confidence / uncertainty:** High for the historical operator/address link; medium for the corroborated frontage and broad April 2024 appearance. The undated operator page and later directory address differ. Present tenancy, exact dimensions and legal extent remain unverified.
+- **New evidence, accessed 29 September 2026:** [April 2024 Street View](https://www.google.com/maps/@?api=1&map_action=pano&pano=hHdVXQD79Suo5Y4VlonoNg&heading=76.07&pitch=15&fov=75) and the Seng Hup Guan mapped point inside No. 36 support a dated single-frontage reconstruction. The operator explicitly confirms that former name. [RecordOwl](https://recordowl.com/company/shg-engineering-pte-ltd) reports a later Ubi address, with timing that differs from another directory; current occupancy remains unresolved.
+- **Status / blocker:** Completed as `shg-engineering`, representing the April 2024 exterior only. Code-native façade, containment regression test and validation completed; no claim of current tenancy or private interior. See [detailed provenance](lorong-11-references.md#shg-engineering--seng-hup-guan-no-36).
 
 ### Q3. Faith Mission Home premises, completed
 
@@ -129,3 +130,9 @@ Started clean at `2803b0d` after the user requested the next building. Re-read t
 Resumed the seven uncommitted Q1 files at `2803b0d` under the updated reconciliation instructions. The earlier run's recorded file edits and usage-limit interruption establish their origin; no unrelated changes, staged changes or untracked files were present. Preserved the model and re-inspected its April 2024 Google Street View reference. Corrected the review-link punctuation and replaced the obsolete queue guard with the current reconciliation rule.
 
 **Validation:** `npm test` passed 7/7 and `npm run build` passed with the existing large-chunk advisory. Daylight browser inspection covered the lower openings, upper windows, shade and projecting sign at `?review=ho-san-kong-hoey`; no captured runtime warnings or errors. Source map geometry and assets remain unchanged. Q1 is ready for the single focused model commit. Q2/Q4/Q5/Q6 still need exterior/unit evidence; no second item was started and the schedule remains active.
+
+### 29 September 2026: SHG Engineering dated exterior completed
+
+Started clean on main at `38eb410` after the user requested the next item. Read project context, full diffs, queue, registry, models and tests. Fresh operator/directory research retained the current-address discrepancy. Direct Google Maps inspection resolved the previously missing exterior: April 2024 panorama, visible No. 36, corroborating former name and a mapped place point inside the source footprint. Q2 alone was selected and implemented as a dated exterior. Current occupancy and precise relocation timing remain unresolved. No second item started.
+
+**Validation:** `npm test` passed 8/8; `npm run build` passed with the existing large-chunk advisory. Daylight browser inspection covered lower openings/No. 36, upper windows/grille, condensers, shade and roof edge, with no captured runtime warnings or errors. Source map coordinates and assets remain unchanged. Q2 is ready for its focused commit; Q4–Q6 still need research, so the schedule remains active.

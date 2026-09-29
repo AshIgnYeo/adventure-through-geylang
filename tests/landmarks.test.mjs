@@ -6,6 +6,22 @@ import { pointInPolygon } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 
+test('SHG historical frontage uses No. 36 and excludes the adjoining buildings', () => {
+  const place = landmarks.find(p => p.id === 'shg-engineering');
+  assert.deepEqual(place.buildingIds, ['1223250208']);
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.number, '36');
+  // Seng Hup Guan place point in Google Maps, inspected 29 September 2026.
+  const mappedPlace = [103.8768642, 1.3136079];
+  assert.equal(pointInPolygon(mappedPlace, building.coordinates), true);
+  for (const id of ['1223250206', '1223250209']) {
+    assert.notEqual(landmarkFor(id), place);
+    assert.equal(pointInPolygon(mappedPlace, map.buildings.find(b => b.id === id).coordinates), false);
+  }
+  assert.match(place.evidence, /April 2024/);
+  assert.match(place.evidence, /current occupancy unresolved/);
+});
+
 test('Ho San Kong Hoey uses only No. 24 containing the corroborating mapped place point', () => {
   const place = landmarks.find(p => p.id === 'ho-san-kong-hoey');
   assert.deepEqual(place.buildingIds, ['1223250200']);
