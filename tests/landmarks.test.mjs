@@ -6,6 +6,25 @@ import { pointInPolygon } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 
+test('Canton Wong stays on No. 31 beside No. 29, excluding the displaced Maps pin', () => {
+  const place = landmarks.find(p => p.id === 'canton-wong');
+  assert.deepEqual(place.buildingIds, ['1223407878']);
+  assert.equal(place.address, '31A Lorong 11 Geylang');
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.number, '31');
+  const south = map.buildings.find(b => b.id === '1223407879');
+  assert.equal(south.number, '29');
+  const shared = building.coordinates.slice(0, -1).filter(p => south.coordinates.some(q => p[0] === q[0] && p[1] === q[1]));
+  assert.equal(shared.length, 2, 'source No. 31 shares a boundary with visually identified No. 29');
+  // The listing pin is displaced north; it must not determine the assignment.
+  const listingPin = [103.8767557, 1.3134921];
+  assert.equal(pointInPolygon(listingPin, building.coordinates), false);
+  for (const id of ['1223407876', '1223407877', '1223407879']) assert.notEqual(landmarkFor(id), place);
+  assert.match(place.evidence, /upper storey and stair entrance/);
+  assert.match(place.evidence, /ground-floor shop is neutral/);
+  assert.match(place.evidence, /April 2024/);
+});
+
 test('S.M. Khek Leow uses only No. 4, without expanding the adjacent Agape assignment', () => {
   const place = landmarks.find(p => p.id === 'sm-khek-leow');
   assert.deepEqual(place.buildingIds, ['1223250215']);

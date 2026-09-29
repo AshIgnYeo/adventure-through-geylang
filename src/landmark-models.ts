@@ -24,6 +24,59 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'canton-wong') {
+    // April 2024 No. 31/31A. The association signs belong to the upper
+    // premises and stair entrance; the separate shop stays unbranded.
+    const plaster = '#e1e1d8', trim = '#d4d7d0', metal = '#797c76';
+    panel(0, w, .15, place.height, .015, world.mat(plaster));
+    box('wong upper shade', w / 2, 7.48, .30, w, .11, .65, plaster);
+    box('wong lower beam', w / 2, 3.66, .17, w, .20, .38, trim);
+    box('wong roof edge', w / 2, place.height, .12, w, .12, .34, plaster);
+    // Five observed window panes, opaque so no private rooms are depicted.
+    panel(w * .19, w * .66, 4.84, 6.50, .06, world.mat('#38444d'));
+    for (let i = 0; i <= 5; i++) box('wong window mullion', w * (.19 + .66 * i / 5), 5.67, .12, .045, 1.72, .07, metal);
+    for (const y of [4.81, 6.52]) box('wong window rail', w * .52, y, .12, w * .68, .065, .10, trim);
+    box('wong window sill', w * .52, 4.76, .17, w * .70, .09, .28, plaster);
+    box('wong condenser bracket', w * .42, 3.91, .33, 1.03, .07, .61, metal);
+    box('wong condenser casing', w * .42, 4.30, .35, 1.02, .73, .46, '#d2d1c1');
+    // Original simplified grille; no product badge or precise equipment model.
+    panel(w * .42 - .42, .65, 4.03, 4.56, .59, world.mat('#717970'));
+    for (let i = 0; i <= 8; i++) box('wong condenser grille', w * .42 - .095, 4.03 + .53 * i / 8, .615, .65, .018, .025, '#c2c7b8');
+    for (const y of [4.20, 4.57]) panel(w * .53, .17, y, y + .17, .05, world.mat('#83887c'));
+
+    // Narrow left stair entrance and separate opaque shopfront to its right.
+    panel(w * .085, w * .17, .15, 2.63, .06, world.mat('#434a45'));
+    for (const u of [.078, .262]) box('wong entrance jamb', w * u, 1.39, .13, .075, 2.50, .14, trim);
+    panel(w * .30, w * .64, .15, 3.04, .06, world.mat('#535b59'));
+    panel(w * .30, w * .64, 3.06, 3.54, .05, world.mat('#b9bdb5'));
+    for (const u of [.30, .51, .73, .94]) box('wong shop frame', w * u, 1.60, .13, .045, 2.88, .06, metal);
+    box('wong shop transom', w * .62, 2.67, .14, w * .64, .045, .07, metal);
+    for (const start of [.30, .90]) for (let i = 0; i < 5; i++) box('wong folded grille', w * start + i * .045, 1.62, .20, .023, 2.90, .10, trim);
+    for (const u of [.025, .975]) box('wong ground pier', w * u, 1.82, .19, .24, 3.34, .37, plaster);
+
+    // Original two-/three-line lettering in the observed sign positions.
+    // Fonts and proportions are estimates; small dedications are omitted.
+    const nameboard = (entrance: boolean) => {
+      const canvas = document.createElement('canvas'); canvas.width = entrance ? 768 : 1536; canvas.height = 300;
+      const c = canvas.getContext('2d')!, cw = canvas.width;
+      c.fillStyle = entrance ? '#8e3636' : '#292d2e'; c.fillRect(0, 0, cw, 300);
+      c.strokeStyle = entrance ? '#d3c8aa' : '#5b5546'; c.lineWidth = 9; c.strokeRect(5, 5, cw - 10, 290);
+      c.fillStyle = '#d4be76'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      if (entrance) { c.font = '48px serif'; c.fillText('新加坡', cw / 2, 60); }
+      c.font = `600 ${entrance ? 68 : 153}px serif`;
+      c.fillText('廣東黃氏宗親會', cw / 2, entrance ? 147 : 117, cw * .91);
+      c.font = `600 ${entrance ? 29 : 46}px sans-serif`;
+      c.fillText(entrance ? 'SINGAPORE CANTONESE WONG CLAN ASSN' : 'CANTONESE WONG CLAN ASSN.', cw / 2, entrance ? 244 : 245, cw * .92);
+      const mat = new pc.StandardMaterial(); mat.diffuseMap = world.texture(canvas); mat.update();
+      const start = entrance ? .067 : .15, span = entrance ? .21 : .74;
+      const base = entrance ? 2.66 : 6.54, height = entrance ? .72 : .86;
+      box('wong nameboard backing', w * (start + span / 2), base + height / 2, .17, w * span, height, .12, entrance ? '#8e3636' : '#292d2e');
+      panel(w * start, w * span, base, base + height, .235, mat);
+    };
+    nameboard(false); nameboard(true);
+    return true;
+  }
+
   if (place.kind === 'khek-leow') {
     // April 2024 No. 4 frontage. Relief and tile motifs are simplified original
     // geometry, not a measured conservation elevation or copied photograph.

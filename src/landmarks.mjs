@@ -72,6 +72,16 @@ export const landmarks = [
       'https://www.google.com/maps/@?api=1&map_action=pano&pano=ifUFTPmGn1-kOv6waVHktw&heading=70&pitch=15&fov=75',
     ],
   },
+  {
+    id: 'canton-wong', buildingIds: ['1223407878'], kind: 'canton-wong',
+    name: 'Canton Wong Clan Association (April 2024 exterior)', address: '31A Lorong 11 Geylang', height: 7.9,
+    evidence: 'SFCCA lists 31A; April 2024 Street View shows the association upper-storey sign and stair entrance beside visible No. 29, supporting the No. 31 source footprint. Association-specific detail is limited to the upper storey and stair entrance; the separate ground-floor shop is neutral. Dimensions estimated. The displaced Maps place point is rejected; current condition and legal extent remain unverified.',
+    sources: [
+      'https://sfcca.sg/en/our-members/',
+      'https://www.szetoclan.sg/wp-content/uploads/2025/02/V14_SFCCA-%E4%BC%9A%E5%91%98%E6%89%8B%E5%86%8C-2024-2027.pdf',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=QQNp4tBAf9BWzHrMOUczcw&heading=255&pitch=18&fov=60',
+    ],
+  },
 ];
 
 export function landmarkFor(buildingId) {
