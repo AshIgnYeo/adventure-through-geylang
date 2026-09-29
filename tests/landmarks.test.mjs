@@ -6,6 +6,23 @@ import { pointInPolygon } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 
+test('Hainan Goh uses the visibly numbered No. 20B frontage, excluding adjoining units and displaced pin', () => {
+  const place = landmarks.find(p => p.id === 'hainan-goh');
+  assert.deepEqual(place.buildingIds, ['1223250202']);
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.number, '20B');
+  assert.equal(place.address, '20C Lorong 11 Geylang, second storey');
+  for (const [id, number] of [['1223250203', '22'], ['1223250201', '20']]) {
+    const neighbour = map.buildings.find(b => b.id === id);
+    assert.equal(neighbour.number, number);
+    assert.equal(building.coordinates.slice(0, -1).filter(p => neighbour.coordinates.some(q => p[0] === q[0] && p[1] === q[1])).length, 2);
+    assert.notEqual(landmarkFor(id), place);
+  }
+  assert.equal(pointInPolygon([103.8772003, 1.3129254], building.coordinates), false);
+  assert.match(place.evidence, /April 2024/);
+  assert.match(place.evidence, /separate ground-floor shop is neutral/);
+});
+
 test('Canton Wong stays on No. 31 beside No. 29, excluding the displaced Maps pin', () => {
   const place = landmarks.find(p => p.id === 'canton-wong');
   assert.deepEqual(place.buildingIds, ['1223407878']);
@@ -112,6 +129,6 @@ test('real landmark identities have unique, existing Lorong 11 footprints and pr
 test('provisional appearance and historical address matches stay explicitly documented', () => {
   assert.match(landmarks.find(p => p.id === 'lok-fu').evidence, /illustrative/);
   assert.match(landmarks.find(p => p.id === 'agape-centre').evidence, /provisional/);
-  assert.equal(map.buildings.find(b => b.id === landmarks[0].buildingIds[0]).number, '11');
+  assert.equal(map.buildings.find(b => b.id === landmarks.find(p => p.id === 'hotel-81-joy').buildingIds[0]).number, '11');
   assert.equal(map.buildings.find(b => b.id === landmarkFor('1223407885').buildingIds[0]).number, '17');
 });

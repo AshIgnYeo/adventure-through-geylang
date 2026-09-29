@@ -24,6 +24,47 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'hainan-goh') {
+    // April 2024 No. 20B/20C: upper association premises and right entrance.
+    // Separate ground-floor use is neutral; all openings remain opaque.
+    const plaster = '#b4a9bc', pink = '#c9828c', metal = '#acaea4';
+    panel(0, w, .15, place.height, .015, world.mat(plaster));
+    box('goh parapet coping', w / 2, place.height, .08, w, .12, .26, '#a79faa');
+    box('goh upper shade', w / 2, 7.13, .36, w, .14, .78, plaster);
+    for (const [start, span, panes] of [[.085, .36, 4], [.62, .275, 3]]) {
+      panel(w * start, w * span, 4.78, 6.89, .06, world.mat('#46515c'));
+      for (let i = 0; i <= panes; i++) box('goh window upright', w * (start + span * i / panes), 5.835, .12, .04, 2.11, .065, '#555754');
+      box('goh window transom', w * (start + span / 2), 6.43, .13, w * span, .045, .06, '#555754');
+      for (const u of [start - .012, start + span + .012]) box('goh pink window jamb', w * u, 5.81, .17, .10, 2.22, .23, pink);
+      box('goh pink window sill', w * (start + span / 2), 4.73, .19, w * span + .24, .11, .30, pink);
+    }
+    // Original lettering reproduces the visible name, not the source pixels.
+    const canvas = document.createElement('canvas'); canvas.width = 1536; canvas.height = 192;
+    const c = canvas.getContext('2d')!;
+    c.fillStyle = '#d6c28c'; c.font = '600 145px serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    [...'海南吳氏公會'].forEach((letter, i) => c.fillText(letter, 128 + i * 256, 100));
+    const lettering = new pc.StandardMaterial(); lettering.diffuseMap = world.texture(canvas);
+    lettering.opacityMap = lettering.diffuseMap; lettering.opacityMapChannel = 'a'; lettering.blendType = pc.BLEND_NORMAL; lettering.depthWrite = false; lettering.update();
+    panel(w * .15, w * .70, 3.91, 4.51, .06, lettering);
+
+    panel(w * .055, w * .58, .16, 3.08, .06, world.mat('#484d49'));
+    panel(w * .055, w * .58, 3.10, 3.44, .06, world.mat('#b9b8ad'));
+    for (const u of [.055, .405, .635]) box('goh shop frame', w * u, 1.62, .12, .06, 2.96, .09, metal);
+    // Simplified grille spacing, with temporary shop signs and contents omitted.
+    for (let i = 0; i <= 9; i++) box('goh shop grille', w * (.405 + .23 * i / 9), 1.61, .15, .023, 2.90, .035, metal);
+    panel(w * .70, w * .245, .16, 2.90, .06, world.mat('#57483f'));
+    for (let i = 0; i <= 8; i++) box('goh entrance grille', w * (.70 + .245 * i / 8), 1.48, .15, .025, 2.64, .04, metal);
+    for (const y of [1.02, 2.13]) box('goh entrance rail', w * .8225, y, .16, w * .245, .03, .045, metal);
+    for (const u of [.025, .665, .975]) box('goh ground pier', w * u, 1.78, .12, .14, 3.26, .22, plaster);
+    const awning = box('goh grey awning', w / 2, 3.66, .69, w, .08, 1.42, '#686b68');
+    awning.rotateLocal(10, 0, 0);
+    box('goh awning valance', w / 2, 3.49, 1.37, w, .15, .04, '#777a73');
+    box('goh entrance nameboard', w * .775, 3.05, .19, w * .23, .63, .10, '#6e3335');
+    sign('海南吳氏公會', w * .663, w * .224, 3.06, .25, '#292f31', '#d6c28c', .25);
+    sign('HAINAN GOH CLAN ASSOCIATION', w * .663, w * .224, 2.82, .24, '#292f31', '#d6c28c', .25);
+    return true;
+  }
+
   if (place.kind === 'canton-wong') {
     // April 2024 No. 31/31A. The association signs belong to the upper
     // premises and stair entrance; the separate shop stays unbranded.

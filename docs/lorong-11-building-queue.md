@@ -8,7 +8,7 @@ Read the README, [reference notes](lorong-11-references.md), landmark registry, 
 
 The four existing reference-led models below count as completed. Their documented limitations remain. New entries are ordered for research, with address-supported candidates distinguished from model-ready candidates. Before modelling, make a small fresh source check and record access dates, changed addresses, conflicting evidence and remaining blockers here. An address match alone does not establish a visible façade, a property boundary or current occupancy of the whole building.
 
-For the next run, reconcile unfinished work first, then investigate the first pending entry in queue order (currently Q6). Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
+The bounded queue is complete: all ten entries below have models. There is no pending entry; pause the schedule and retarget only when the user selects another scope. For any later retargeted run, reconcile unfinished work first, then investigate the first pending entry in queue order. Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
 
 Each later successful run models exactly one place. Preserve the original footprint coordinates and metre scale. Use code-native geometry, original or appropriately licensed/generated assets, and explicitly document estimated dimensions and reconstructed details. Do not ship reference photographs or infer private interiors, activities, affiliations, signage or precise ornament. Keep the commit to that place, its provenance/queue updates, related assets and tests. Require `npm test`, `npm run build` and the narrowest useful visual check when possible before committing.
 
@@ -48,7 +48,7 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 
 ## Research queue
 
-Q1–Q5 are **completed**. Q2, Q4 and Q5 represent dated April 2024 exteriors. Q6 remains **pending, research-blocked**, with no bespoke model or registry assignment. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment. Named organisations are included only as candidates for their externally evidenced premises.
+Q1–Q6 are **completed**. Q2, Q4, Q5 and Q6 represent dated April 2024 exteriors. No supported pending or resumable item remains in this bounded queue. Source access date for each is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment. Named organisations are included only as candidates for their externally evidenced premises.
 
 ### Q1. Ho San Kong Hoey premises, completed
 
@@ -75,13 +75,13 @@ Q1–Q5 are **completed**. Q2, Q4 and Q5 represent dated April 2024 exteriors. Q
 
 ### Q4–Q6. Federation-supported premises
 
-Source for each: [Singapore Federation of Chinese Clan Associations member directory](https://sfcca.sg/en/our-members/), accessed 29 September 2026. This federation publication supports the listed names and addresses, but is not a façade survey. Q4 and Q5 are completed following exterior corroboration; Q6 remains pending and research-blocked.
+Source for each: [Singapore Federation of Chinese Clan Associations member directory](https://sfcca.sg/en/our-members/), accessed 29 September 2026. This federation publication supports the listed names and addresses, but is not a façade survey. Q4–Q6 are completed following exterior corroboration.
 
 | ID / name | Listed address (Lorong 11 Geylang) | Footprint candidate | Confidence, uncertainty and blocker |
 | --- | --- | --- | --- |
 | Q4. S.M. Khek Leow Clan Association, completed | 4, Singapore 388696 | Assigned [1223250215](https://www.openstreetmap.org/way/1223250215), tagged 4 | High for the name/address link, medium for broad dated appearance and single-frontage assignment. April 2024 Street View shows the Chinese name; the association point falls within No. 4. Current condition and legal extent unverified. Completed as `sm-khek-leow`, with automated and daylight visual validation; [provenance](lorong-11-references.md#sm-khek-leow-clan-association-no-4). |
 | Q5. Canton Wong Clan Association, completed | 31A, Singapore 388723 | Assigned [1223407878](https://www.openstreetmap.org/way/1223407878), tagged 31, for source massing; association-specific treatment is limited to the upper storey and signed stair entrance | High for the federation name/address match; medium for the dated exterior and single-footprint assignment. April 2024 Street View shows association signs immediately north of visible No. 29. The Maps listing pin is displaced and rejected. The ground-floor commercial frontage is neutral; current condition and legal extent are unverified. Completed as `canton-wong`; [provenance and corrections](lorong-11-references.md#canton-wong-clan-association-no-31a). |
-| Q6. Hainan Goh Clan Association | 20C, second storey, Singapore 388712 | Unresolved; no 20C tag in retained map | Moderate address confidence, low mapping confidence. Resolve unit/footprint and exterior; do not substitute mapped 20 or 20B. |
+| Q6. Hainan Goh Clan Association, completed | 20C, second storey, Singapore 388712 | Assigned [1223250202](https://www.openstreetmap.org/way/1223250202), tagged 20B, after visual number/sign corroboration | High for federation address, medium for dated exterior and footprint assignment. April 2024 Street View shows association names and a separate shop sign numbered No. 20B. Displaced Maps pin excluded. Upper premises and signed entrance only; separate shop neutral. Current condition/legal extent unverified. Completed as `hainan-goh`; [provenance](lorong-11-references.md#hainan-goh-clan-association-no-20c). |
 
 ## Research boundaries and run record
 
@@ -164,3 +164,19 @@ Resumed Q5 at `8a94d6f` after the user requested implementation. The only pre-ex
 **Reference corrections:** The full [255-degree April 2024 view](https://www.google.com/maps/@?api=1&map_action=pano&pano=QQNp4tBAf9BWzHrMOUczcw&heading=255&pitch=18&fov=60) shows that the row of square roofline vents noted above belongs to No. 29, so it is omitted. Only the two small openings beside No. 31's condenser are represented, with no function asserted. Small doorway numbering was not reliably transcribed during this pass, so the model has no number plaque; 31A is supported by the federation address and matched association signs. The Maps point at 103.8767557, 1.3134921 falls outside No. 31 and is excluded as assignment evidence. Street View's No. 31 UI label is camera context only. These qualifications supersede the stronger wording in the preliminary research note.
 
 **Validation / completion:** `npm test` passed 10/10, including No. 31/No. 29 adjacency and displaced-pin exclusion; `npm run build` passed with the existing large-chunk advisory; `git diff --check` passed. Daylight browser inspection verified the entrance sign, neutral shopfront, upper lettering, five-pane window, condenser and roof shade, with no captured runtime warnings or errors. Q5 is complete and ready for its focused commit. Q6 remains research-blocked, so the schedule stays active. No second item started.
+
+### 29 September 2026: Hainan Goh exterior resolved
+
+Started clean on main at `bdf36ed`, with no staged, unstaged or untracked changes. Read required context, full diffs, models, tests and recent commits. Fresh SFCCA directory and [22 March 2026 event notice](https://sfcca.sg/en/events/kueh-making-session-2026/) retain second-storey 20C. All accesses were on 29 September 2026.
+
+Direct inspection of [April 2024 Street View](https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=80&pitch=12&fov=75) and its [lower close-up](https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=83&pitch=0&fov=40) resolved the exterior and footprint blocker: large association lettering and a signed right entrance share the lavender frontage with a ground-floor sign visibly numbered NO.20B. Assign source way 1223250202, between Nos. 22 and 20, without treating the second-storey address as another parcel. The Maps listing displays No. 20 and a displaced pin at 103.8772003, 1.3129254; neither determines the assignment.
+
+**Completed work:** Q6 alone implemented as a dated code-native upper elevation and signed entrance, with neutral opaque ground-floor shop. Dimensions estimated; no private interior, copied photograph, map-coordinate change or adjoining restaurant branding. Provenance and assignment regression test added.
+
+**Research decision:** Q6 became model-ready for this conservative April 2024 reconstruction. Present condition and legal extent remain unverified. Validation and completion are recorded below.
+
+### 29 September 2026: Hainan Goh validated, bounded queue complete
+
+**Validation / completion:** `npm test` passed 11/11; `npm run build` passed with the existing bundle-size advisory; `git diff --check` passed. Daylight browser inspection covered the opaque shop/entrance, readable entrance name, upper windows, pink surrounds, upper lettering and roof shade, with no captured runtime warnings or errors. The lower awning partly obscures the upper name from the close pedestrian review position. Source footprints, metre scale and raster assets are unchanged. Q6 is complete and ready for its single focused commit; no second item was started.
+
+All four original landmarks and Q1–Q6 are complete within their documented fidelity limits. No supported pending or resumable item remains. Pause this scheduled task after the commit; the project is ready to be retargeted to another lorong. This is completion of the named-building queue, not a claim that every Lorong 11 façade or current tenant has been surveyed.

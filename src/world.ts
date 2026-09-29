@@ -78,7 +78,7 @@ export class World {
       for(let i=0;i<poly.length;i++){const a=poly[i],c=poly[(i+1)%poly.length],mid:Point=[(a[0]+c[0])/2,(a[1]+c[1])/2];const d=this.nearest(mid).distance;if(d<best && Math.hypot(c[0]-a[0],c[1]-a[1])>3){best=d;front=i;}}
       const landmark=landmarkFor(b.id);
       const levels=Math.min(8,b.levels??(b.street==='Lorong 11 Geylang'?2:index%11===0?4:2));const height=landmark?.height??levels*3.35;
-      const material=this.mat(landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':landmark?.kind==='faith-mission'?'#dddcd3':landmark?.kind==='ho-san'?'#deded4':landmark?.kind==='shg'?'#c2d0c4':landmark?.kind==='khek-leow'?'#dedec3':landmark?.kind==='canton-wong'?'#e1e1d8':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
+      const material=this.mat(landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':landmark?.kind==='faith-mission'?'#dddcd3':landmark?.kind==='ho-san'?'#deded4':landmark?.kind==='shg'?'#c2d0c4':landmark?.kind==='khek-leow'?'#dedec3':landmark?.kind==='canton-wong'?'#e1e1d8':landmark?.kind==='hainan-goh'?'#b4a9bc':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
       let a=poly[front],v=poly[(front+1)%poly.length];const width=Math.hypot(v[0]-a[0],v[1]-a[1]);let dx=(v[0]-a[0])/width,dz=(v[1]-a[1])/width;
       const mid:Point=[(a[0]+v[0])/2,(a[1]+v[1])/2];
       // Keep the textured face outward regardless of the source polygon winding.

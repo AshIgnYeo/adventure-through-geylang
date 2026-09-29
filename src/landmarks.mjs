@@ -2,6 +2,17 @@
 // Reference photographs are not guaranteed to depict the present-day tenancy.
 export const landmarks = [
   {
+    id: 'hainan-goh', buildingIds: ['1223250202'], kind: 'hainan-goh',
+    name: 'Hainan Goh Clan Association (April 2024 exterior)', address: '20C Lorong 11 Geylang, second storey', height: 7.7,
+    evidence: 'SFCCA lists second-storey 20C. April 2024 Street View shows the association upper name and right entrance above/beside a visible No. 20B shop sign, supporting source footprint 1223250202 between Nos. 22 and 20. Association detail is limited to the upper storey and signed entrance; the separate ground-floor shop is neutral. Dimensions estimated. The displaced Maps pin is excluded; current condition and legal extent remain unverified.',
+    sources: [
+      'https://sfcca.sg/en/our-members/',
+      'https://sfcca.sg/en/events/kueh-making-session-2026/',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=80&pitch=12&fov=75',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=64XRklcWkCBOa9KyrvJ_PA&heading=83&pitch=0&fov=40',
+    ],
+  },
+  {
     id: 'hotel-81-joy', buildingIds: ['454274491'], kind: 'hotel',
     name: 'Hotel 81 Joy', address: '11 Lorong 11 Geylang', height: 24.5,
     evidence: 'Official operator address and exterior photographs. Height estimated from photographs.',
