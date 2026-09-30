@@ -3,6 +3,7 @@ import {project, nearestOnSegment, roadWidth, pointInPolygon} from './geo.mjs';
 import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
+import { buildLeongKeeRearContext } from './leong-kee-exterior';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
 type Building = {id:string;levels:number|null;street:string|null;number:string|null;coordinates:Point[]};
@@ -74,6 +75,7 @@ export class World {
     for(let index=0;index<this.data.buildings.length;index++){
       const b=this.data.buildings[index];let poly=b.coordinates.map(p=>project(p,this.data.origin) as Point);if(poly.length>1&&Math.hypot(poly[0][0]-poly.at(-1)![0],poly[0][1]-poly.at(-1)![1])<.1)poly.pop();if(poly.length<3)continue;
       this.footprints.push(poly);
+      if(buildLeongKeeRearContext(this,b.id,poly))continue;
       const centre:Point=[poly.reduce((s,p)=>s+p[0],0)/poly.length,poly.reduce((s,p)=>s+p[1],0)/poly.length];
       const landmark=landmarkFor(b.id);
       let front=0,best=Infinity;
@@ -86,7 +88,11 @@ export class World {
       // Keep the textured face outward regardless of the source polygon winding.
       if(-dz*(mid[0]-centre[0])+dx*(mid[1]-centre[1])<0){[a,v]=[v,a];dx=-dx;dz=-dz;}
       const nx=-dz,nz=dx;
-      for(let i=0;i<poly.length;i++)if(i!==front || (!landmark&&(best>27||levels>3)))this.panel(poly[i],poly[(i+1)%poly.length],.13,height,material);
+      for(let i=0;i<poly.length;i++)if(i!==front || (!landmark&&(best>27||levels>3))){
+        // The corner's west wall opens onto the shallow public dining edge.
+        const base=b.id==='454254214'&&i===3?3.12:.13;
+        this.panel(poly[i],poly[(i+1)%poly.length],base,height,material);
+      }
       const roofPositions=poly.flatMap(p=>[p[0],height+.05,p[1]]),indices=[];for(let k=1;k<poly.length-1;k++)indices.push(0,k,k+1);const roofMat=this.mat('#754c3b');roofMat.cull=pc.CULLFACE_NONE;roofMat.update();this.mesh('roof',roofPositions,poly.flatMap(p=>[p[0]/4,p[1]/4]),indices,roofMat);
       if(landmark){
         const road=landmarkReviewPoint(landmark,mid,this.segments) as Point;
