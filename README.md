@@ -10,6 +10,8 @@ The initial view uses daylight for inspection. Blue hour and after dark remain a
 
 Developer-only inspection links use `?review=hotel-81-joy`, `?review=agape-centre`, `?review=hok-tek-chi`, `?review=lok-fu`, `?review=faith-mission-home`, `?review=ho-san-kong-hoey`, `?review=shg-engineering`, `?review=sm-khek-leow`, `?review=canton-wong` or `?review=hainan-goh` to start opposite a landmark. These are review camera starts, not an in-game map or tracking feature. Remove the query to return to ordinary exploration.
 
+Shan Yuan Tang / 善緣堂 at 249 Geylang Road adds an eleventh place at the Lorong 11 corner. Its red gate, green tiled roofs, boundary walls and cream/red upper elevation follow inspected April/June 2024 Street View. The user approved estimated site placement because the retained map lacks its footprint. Its separate authored site preserves source map geometry and metre scale. Dimensions, occluded surfaces and details are estimated; mural fields are neutral. See the [design and provenance brief](docs/shan-yuan-tang-design-brief.md). Review with `?review=shan-yuan-tang` or `?review=shan-yuan-tang-side`.
+
 ## Run
 
 ```sh
@@ -37,7 +39,7 @@ The downloaded OpenStreetMap extract is retained in `public/osm-source.osm`. `no
 
 Source: https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155, retrieved 28 September 2026. Map data © OpenStreetMap contributors, licensed under ODbL 1.0: https://www.openstreetmap.org/copyright. Derived map data retains that licence. The extract contains 34 relevant road ways and 154 building outlines. The source one-way tags indicate Lorong 11 southbound and Lorong 13 northbound. This is source-data fidelity, not an independently verified current traffic survey.
 
-The metre projection is tested against an independent haversine distance, to within 0.6%. Source survey accuracy is separate from projection scale. Road widths are estimates (6.5 m on lorongs, 3.2 m per mapped lane on main roads). Pavements, awnings, street furniture, sign placement and road markings are illustrative. Building outlines are sourced; height uses mapped storeys where supplied, otherwise an estimate. No private interiors are reconstructed.
+The metre projection is tested against an independent haversine distance, to within 0.6%. Source survey accuracy is separate from projection scale. Road widths are estimates (6.5 m on lorongs, 3.2 m per mapped lane on main roads). Pavements, awnings, street furniture, sign placement and road markings are illustrative. Building outlines are sourced except the explicitly estimated Shan Yuan Tang site; height uses mapped storeys where supplied, otherwise an estimate. No private interiors are reconstructed.
 
 Heritage reference: https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg/ identifies early shophouses between Lorongs 11 and 13. The original generic atlas remains on unreviewed buildings. Real names occur only on explicitly matched landmarks, with estimated or reference-led sign designs. Address numbers are retained where present in source data, except where the landmark reconstruction supersedes them. No affiliation or endorsement is implied by depicting these organisations; fictional encounter behaviour must not be attributed to real operators.
 

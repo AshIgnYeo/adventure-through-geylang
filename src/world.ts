@@ -2,6 +2,7 @@ import * as pc from 'playcanvas';
 import {project, nearestOnSegment, roadWidth, pointInPolygon} from './geo.mjs';
 import { landmarkFor } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
+import { buildShanYuanTang } from './shan-yuan-tang';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
 type Building = {id:string;levels:number|null;street:string|null;number:string|null;coordinates:Point[]};
@@ -110,6 +111,7 @@ export class World {
       }
       if(index%13===0)this.planter(mid[0]+nx*1.2,mid[1]+nz*1.2);
     }
+    buildShanYuanTang(this);
     // Street plates at the observed ends of each lorong, readable in-world only.
     for(const name of ['Lorong 11 Geylang','Lorong 13 Geylang']){
       const segments=this.segments.filter(s=>s.name===name);const points=segments.flatMap(s=>[s.a,s.b]).sort((a,b)=>a[1]-b[1]);

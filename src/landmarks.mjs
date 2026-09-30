@@ -1,5 +1,6 @@
 // Deliberate identity-to-footprint matches. Never assign a real name randomly.
 // Reference photographs are not guaranteed to depict the present-day tenancy.
+export { authoredLandmarks } from './authored-sites.mjs';
 export const landmarks = [
   {
     id: 'hainan-goh', buildingIds: ['1223250202'], kind: 'hainan-goh',

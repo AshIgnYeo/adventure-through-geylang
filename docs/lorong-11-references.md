@@ -2,6 +2,12 @@
 
 Research and visual inspection: 28 September 2026. Source retrieval dates do not establish the dates photographs were taken. No source photograph establishes all current conditions.
 
+## Shan Yuan Tang, 249 Geylang Road corner
+
+Added **30 September 2026** after the user approved relative placement accuracy. Directly inspected June 2024 front/corner and April 2024 Lorong 11 panoramas support the named gate, No. 249, dark green boundary walls, green roofs and cream/red upper elevation. Full source links, capture dates, identity corroboration and exclusions are recorded in the [design and provenance brief](shan-yuan-tang-design-brief.md).
+
+This is a separate authored site, approximately **10.4 × 25.5 m**, because the retained OSM extract has no temple building footprint. It leaves the mapped mosque and all source coordinates unchanged. The gate, layered hip roofs, simplified tile ridges, shutters and nameboards use original code-native geometry. All dimensions and unseen surfaces are estimates, mural fields are neutral, and the enclosed site has no enterable interior. Review starts: `?review=shan-yuan-tang` and `?review=shan-yuan-tang-side`. See Q7 in the queue for final validation.
+
 ## What is in the scene
 
 | Place | Evidence | Reconstruction limits |
