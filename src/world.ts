@@ -15,7 +15,6 @@ const color=(hex:string)=>new pc.Color().fromString(hex);
 export class World {
   app:pc.AppBase;data:MapData; segments:Segment[]=[]; footprints:Point[][]=[];
   bounds:number[]; lamps:pc.Entity[]=[]; emissives:pc.StandardMaterial[]=[];
-  traffic:{root:pc.Entity;segment:Segment;t:number;speed:number}[]=[];
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
   private batch=-1;
@@ -68,7 +67,6 @@ export class World {
       for(let lane=1;lane<lanes;lane++)for(let d=3;d<s.length-3;d+=8){const off=-s.width/2+lane*s.width/lanes;const a:Point=[s.a[0]+s.dx*d+s.dz*off,s.a[1]+s.dz*d-s.dx*off];const b:Point=[a[0]+s.dx*3,a[1]+s.dz*3];this.strip(a,b,.12,.11,this.mat('#c6c7b9'));}
       if(s.length>22){
         for(let d=12;d<s.length;d+=32){const x=s.a[0]+s.dx*d+s.dz*(s.width/2+1.15),z=s.a[1]+s.dz*d-s.dx*(s.width/2+1.15);this.lamp(x,z);}
-        if(s.oneway==='yes')this.car(s,.3);
       }
     }
     const signMaterials=fictional.map((text,i)=>this.textMaterial(text,['#254337','#652f2a','#243c4a','#775926'][i%4],['#ecdcb9','#eee0ae','#c8e0d8'][i%3]));
@@ -145,7 +143,5 @@ export class World {
       const leaf=this.mat(['#3e5b3b','#57704c','#6b8057'][i%3]);leaf.cull=pc.CULLFACE_NONE;leaf.update();this.mesh('palm frond',positions,uvs,indices,leaf);
     }
   }
-  car(segment:Segment,t:number){if(this.traffic.length>16)return;const root=new pc.Entity('traffic');this.app.root.addChild(root);const mat=this.mat(['#b5c1b9','#2e6864','#993f36','#b7a87d'][this.traffic.length%4]);this.box('car body',0,.65,0,1.7,.65,3.8,mat,root);this.box('car cabin',0,1.12,-.1,1.48,.6,1.85,this.mat('#28404a'),root);for(const x of [-.83,.83])for(const z of [-1.15,1.15]){const wheel=new pc.Entity('wheel');wheel.addComponent('render',{type:'cylinder',material:this.mat('#1b2121')});wheel.setLocalPosition(x,.38,z);wheel.setLocalScale(.58,.2,.58);wheel.setLocalEulerAngles(0,0,90);root.addChild(wheel);}for(const x of [-.58,.58]){this.box('headlamp',x,.7,1.92,.4,.18,.04,this.mat('#ffefbf',1.5),root);this.box('tail light',x,.7,-1.92,.3,.16,.04,this.mat('#ee5239',1),root);}this.traffic.push({root,segment,t,speed:segment.name.startsWith('Lorong')?4:7});}
-  update(dt:number){for(const c of this.traffic){c.t=(c.t+dt*c.speed/c.segment.length)%1;const s=c.segment,off=s.name.startsWith('Lorong')?.5:s.width*.22;c.root.setPosition(s.a[0]+s.dx*s.length*c.t+s.dz*off,0,s.a[1]+s.dz*s.length*c.t-s.dx*off);c.root.setEulerAngles(0,Math.atan2(s.dx,s.dz)*180/Math.PI,0);}}
   setLight(mode:string){const day=mode==='day',night=mode==='night';const sky=day?'#a4b9b9':night?'#101d29':'#526e7c';this.camera.camera!.clearColor=color(sky);this.app.scene.ambientLight=color(day?'#b8b8a3':night?'#485b66':'#7d939a');this.sun.light!.intensity=day?1.6:night?.28:1;this.sun.light!.color=color(day?'#fff0d0':'#cad8e2');this.app.scene.fog.type=pc.FOG_LINEAR;this.app.scene.fog.color=color(sky);this.app.scene.fog.start=day?120:65;this.app.scene.fog.end=day?430:260;for(const light of this.lamps)light.light!.intensity=day?.03:night?1.3:.7;}
 }

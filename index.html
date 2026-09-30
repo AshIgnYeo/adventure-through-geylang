@@ -23,9 +23,11 @@
     <div class="panel-heading"><h2>Your evening</h2><button id="close" aria-label="Close settings">×</button></div>
     <label for="light">Light <select id="light"><option value="dusk">Blue hour</option><option value="night">After dark</option><option value="day" selected>Daylight</option></select></label>
     <label for="quality">Detail <select id="quality"><option value="balanced">Balanced</option><option value="high">High</option><option value="low">Battery saver</option></select></label>
+    <label for="look-mode">Look controls <select id="look-mode"><option value="cursor" selected>Cursor</option><option value="keyboard">Arrow keys</option></select></label>
+    <label class="range-setting" for="walk-speed"><span>Walking speed <output id="speed-value" for="walk-speed">3.3 m/s</output></span><input id="walk-speed" type="range" min="1" max="6" step="0.1" value="3.3" /></label>
     <label for="touch-toggle">Touch controls <input id="touch-toggle" type="checkbox" /></label>
     <button id="restart">Return to starting point</button>
-    <p>Walk: WASD / arrow keys. Look: drag, or double-click the street to capture your mouse. Esc releases it.</p>
+    <p id="control-help">Walk with WASD. Move the cursor away from the centre to look around.</p>
     <p>On a phone: left thumb to walk, drag the right side to look. Landscape recommended.</p>
   </aside>
   <div id="touch-controls" hidden><div id="stick" aria-label="Movement joystick"><div id="knob"></div></div><span id="look-hint">DRAG TO LOOK</span></div>
