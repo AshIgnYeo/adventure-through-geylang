@@ -1,10 +1,44 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { landmarks, landmarkFor } from '../src/landmarks.mjs';
-import { pointInPolygon } from '../src/geo.mjs';
+import { landmarks, landmarkFor, landmarkReviewPoint } from '../src/landmarks.mjs';
+import { pointInPolygon, project, nearestOnSegment } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
+
+test('Leong Kee keeps the provisional three-bay corner assignment together without claiming the next unit', () => {
+  const place = landmarks.find(p => p.id === 'leong-kee');
+  assert.deepEqual(place.buildingIds, ['454254214', '454254213', '454254212']);
+  const mappedPoint = [103.877248, 1.3124409];
+  assert.equal(pointInPolygon(mappedPoint, map.buildings.find(b => b.id === '454254213').coordinates), true);
+  assert.equal(pointInPolygon(mappedPoint, map.buildings.find(b => b.id === '454254214').coordinates), false);
+  assert.equal(pointInPolygon(mappedPoint, map.buildings.find(b => b.id === '454254212').coordinates), false);
+  for (const id of place.buildingIds) assert.equal(landmarkFor(id), place);
+  assert.equal(landmarkFor('454254211'), undefined);
+  assert.equal(place.frontEdge, 2);
+  assert.match(place.evidence, /June 2024/);
+  assert.match(place.evidence, /without asserting ownership/);
+  assert.match(place.evidence, /middle board.*left neutral/);
+  assert.match(place.evidence, /provisional/);
+  for (let i = 1; i < place.buildingIds.length; i++) {
+    const a = map.buildings.find(b => b.id === place.buildingIds[i - 1]).coordinates.slice(0, -1);
+    const b = map.buildings.find(b => b.id === place.buildingIds[i]).coordinates.slice(0, -1);
+    assert.equal(a.filter(p => b.some(q => p[0] === q[0] && p[1] === q[1])).length, 2);
+  }
+});
+
+test('Leong Kee front review uses Geylang Road even though Lorong 11 is closer', () => {
+  const place = landmarks.find(p => p.id === 'leong-kee');
+  const poly = map.buildings.find(b => b.id === place.reviewBuildingId).coordinates.map(p => project(p, map.origin));
+  const mid = poly[place.frontEdge].map((v, i) => (v + poly[place.frontEdge + 1][i]) / 2);
+  const segments = map.roads.flatMap(r => r.coordinates.slice(1).map((p, i) => ({name: r.name, a: project(r.coordinates[i], map.origin), b: project(p, map.origin)})));
+  const nearestRoad = segments.map(s => ({...nearestOnSegment(mid, s.a, s.b), name: s.name})).sort((a,b) => a.distance - b.distance)[0];
+  assert.equal(nearestRoad.name, 'Lorong 11 Geylang');
+  const p = landmarkReviewPoint(place, mid, segments);
+  assert.ok(segments.filter(s => s.name === 'Geylang Road').some(s => nearestOnSegment(p, s.a, s.b).distance < 1e-8));
+  assert.ok(p[1] > mid[1], 'review sits south of the front-facing wall');
+  for (const b of map.buildings) assert.equal(pointInPolygon(p, b.coordinates.map(c => project(c, map.origin))), false);
+});
 
 test('Hainan Goh uses the visibly numbered No. 20B frontage, excluding adjoining units and displaced pin', () => {
   const place = landmarks.find(p => p.id === 'hainan-goh');
@@ -109,7 +143,7 @@ test('Faith Mission Home matches the named source point inside No. 12 without cl
   assert.notEqual(landmarkFor('1223250217'), place);
 });
 
-test('real landmark identities have unique, existing Lorong 11 footprints and provenance', () => {
+test('real landmark identities have unique, existing street-study footprints and provenance', () => {
   const ids = new Set();
   for (const place of landmarks) {
     assert.ok(place.sources.length > 0);
@@ -119,7 +153,8 @@ test('real landmark identities have unique, existing Lorong 11 footprints and pr
       assert.equal(ids.has(id), false, `${id} assigned twice`);
       ids.add(id);
       const building = map.buildings.find(b => b.id === id);
-      assert.equal(building?.street, 'Lorong 11 Geylang');
+      if (place.id === 'leong-kee') assert.equal(building?.street, null);
+      else assert.equal(building?.street, 'Lorong 11 Geylang');
       assert.equal(landmarkFor(id), place);
     }
   }

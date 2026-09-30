@@ -1,7 +1,20 @@
 // Deliberate identity-to-footprint matches. Never assign a real name randomly.
 // Reference photographs are not guaranteed to depict the present-day tenancy.
+import { nearestOnSegment } from './geo.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 export const landmarks = [
+  {
+    id: 'leong-kee', buildingIds: ['454254214', '454254213', '454254212'], kind: 'leong-kee',
+    name: 'Leong Kee (Klang) Bak Kut Teh (June 2024 exterior)', address: '251 Geylang Road', height: 7.8,
+    frontEdge: 2, reviewBuildingId: '454254213', reviewRoad: 'Geylang Road',
+    evidence: 'The operator website lists 251 Geylang Road. June 2024 Street View shows the corner coffeeshop and yellow fascias across three visible bays immediately east of Lorong 11, opposite Shan Yuan Tang; Leong Kee appears on the outer boards, while the middle board has different stall wording and is left neutral. The Google Maps place point lies inside middle source footprint 454254213. The three-bay visual assignment is provisional because source ways lack address tags; it does not establish that all three are numbered 251. Exterior reconstruction without asserting ownership, tenancy boundaries or private interior extent. Dimensions and fine ornament are estimated.',
+    sources: [
+      'https://leongkee.com.sg/',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=x9pb4XARIUjp2Lxgfw5uyg&heading=355&pitch=4&fov=75',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=Cyb90czsWHg-VlCqIznp5Q&heading=90&pitch=8&fov=80',
+      'https://eatbook.sg/leong-kee-klang-bak-kut-teh/',
+    ],
+  },
   {
     id: 'hainan-goh', buildingIds: ['1223250202'], kind: 'hainan-goh',
     name: 'Hainan Goh Clan Association (April 2024 exterior)', address: '20C Lorong 11 Geylang, second storey', height: 7.7,
@@ -98,4 +111,10 @@ export const landmarks = [
 
 export function landmarkFor(buildingId) {
   return landmarks.find(landmark => landmark.buildingIds.includes(buildingId));
+}
+
+// Corner buildings can be closer to a side road than the street their signs face.
+export function landmarkReviewPoint(place, frontageMidpoint, segments) {
+  const candidates = place.reviewRoad ? segments.filter(s => s.name === place.reviewRoad) : segments;
+  return candidates.map(s => nearestOnSegment(frontageMidpoint, s.a, s.b)).sort((a, b) => a.distance - b.distance)[0].point;
 }

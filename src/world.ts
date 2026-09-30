@@ -1,6 +1,6 @@
 import * as pc from 'playcanvas';
 import {project, nearestOnSegment, roadWidth, pointInPolygon} from './geo.mjs';
-import { landmarkFor } from './landmarks.mjs';
+import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
 export type Point = [number,number];
@@ -75,11 +75,12 @@ export class World {
       const b=this.data.buildings[index];let poly=b.coordinates.map(p=>project(p,this.data.origin) as Point);if(poly.length>1&&Math.hypot(poly[0][0]-poly.at(-1)![0],poly[0][1]-poly.at(-1)![1])<.1)poly.pop();if(poly.length<3)continue;
       this.footprints.push(poly);
       const centre:Point=[poly.reduce((s,p)=>s+p[0],0)/poly.length,poly.reduce((s,p)=>s+p[1],0)/poly.length];
+      const landmark=landmarkFor(b.id);
       let front=0,best=Infinity;
       for(let i=0;i<poly.length;i++){const a=poly[i],c=poly[(i+1)%poly.length],mid:Point=[(a[0]+c[0])/2,(a[1]+c[1])/2];const d=this.nearest(mid).distance;if(d<best && Math.hypot(c[0]-a[0],c[1]-a[1])>3){best=d;front=i;}}
-      const landmark=landmarkFor(b.id);
+      if(landmark?.frontEdge!==undefined){front=landmark.frontEdge;const a=poly[front],c=poly[(front+1)%poly.length],mid:Point=[(a[0]+c[0])/2,(a[1]+c[1])/2];best=this.nearest(mid).distance;}
       const levels=Math.min(8,b.levels??(b.street==='Lorong 11 Geylang'?2:index%11===0?4:2));const height=landmark?.height??levels*3.35;
-      const material=this.mat(landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':landmark?.kind==='faith-mission'?'#dddcd3':landmark?.kind==='ho-san'?'#deded4':landmark?.kind==='shg'?'#c2d0c4':landmark?.kind==='khek-leow'?'#dedec3':landmark?.kind==='canton-wong'?'#e1e1d8':landmark?.kind==='hainan-goh'?'#b4a9bc':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
+      const material=this.mat(landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':landmark?.kind==='faith-mission'?'#dddcd3':landmark?.kind==='ho-san'?'#deded4':landmark?.kind==='shg'?'#c2d0c4':landmark?.kind==='khek-leow'?'#dedec3':landmark?.kind==='canton-wong'?'#e1e1d8':landmark?.kind==='hainan-goh'?'#b4a9bc':landmark?.kind==='leong-kee'?'#d8c9aa':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
       let a=poly[front],v=poly[(front+1)%poly.length];const width=Math.hypot(v[0]-a[0],v[1]-a[1]);let dx=(v[0]-a[0])/width,dz=(v[1]-a[1])/width;
       const mid:Point=[(a[0]+v[0])/2,(a[1]+v[1])/2];
       // Keep the textured face outward regardless of the source polygon winding.
@@ -88,8 +89,8 @@ export class World {
       for(let i=0;i<poly.length;i++)if(i!==front || (!landmark&&(best>27||levels>3)))this.panel(poly[i],poly[(i+1)%poly.length],.13,height,material);
       const roofPositions=poly.flatMap(p=>[p[0],height+.05,p[1]]),indices=[];for(let k=1;k<poly.length-1;k++)indices.push(0,k,k+1);const roofMat=this.mat('#754c3b');roofMat.cull=pc.CULLFACE_NONE;roofMat.update();this.mesh('roof',roofPositions,poly.flatMap(p=>[p[0]/4,p[1]/4]),indices,roofMat);
       if(landmark){
-        const road=this.nearest(mid).point;
-        if(!this.reviewSpawns.has(landmark.id)||b.id==='1223250216')this.reviewSpawns.set(landmark.id,{p:road,yaw:Math.atan2(nx,nz)*180/Math.PI});
+        const road=landmarkReviewPoint(landmark,mid,this.segments) as Point;
+        if(!this.reviewSpawns.has(landmark.id)||b.id==='1223250216'||b.id===landmark.reviewBuildingId)this.reviewSpawns.set(landmark.id,{p:road,yaw:Math.atan2(nx,nz)*180/Math.PI});
         if(buildLandmark(this,b.id,{a,dx,dz,nx,nz,width},heritage))continue;
       }
       if(best>27)continue;

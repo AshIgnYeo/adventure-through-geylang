@@ -24,6 +24,139 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'leong-kee') {
+    // June 2024 operating frontage. The three signed bays are visually
+    // supported, while their legal and internal extent remains unverified.
+    const unit = place.buildingIds.indexOf(id);
+    const plaster = ['#c5ae85', '#c5ae85', '#d8d1bc'][unit];
+    const trim = ['#b39869', '#b39869', '#c3bca4'][unit];
+    panel(0, w, .15, place.height, .02, world.mat(plaster));
+    panel(0, w, .15, 3.12, .07, world.mat('#343a35'));
+    // Opaque shop opening and simplified frames, with menus, diners and food omitted.
+    for (const u of [.035, .965]) {
+      box('leong kee shop pier', w * u, 1.58, .19, .31, 2.86, .42, '#d7d2b9');
+      box('leong kee pier plinth', w * u, .35, .20, .43, .45, .49, '#c1c4b7');
+      box('leong kee pier capital', w * u, 2.59, .20, .49, .20, .50, '#c9c7b2');
+    }
+    for (const u of [.20, .38, .64, .82]) box('leong kee shop frame', w * u, 1.58, .12, .045, 2.78, .07, '#6c716a');
+    box('leong kee shop transom', w / 2, 2.51, .14, w * .90, .05, .08, '#777d73');
+
+    // The original canvas lettering follows the broad observed yellow/red fascia.
+    const fascia = document.createElement('canvas'); fascia.width = 1536; fascia.height = 330;
+    const c = fascia.getContext('2d')!; c.fillStyle = '#f2e574'; c.fillRect(0, 0, fascia.width, fascia.height);
+    c.strokeStyle = '#dfcf56'; c.lineWidth = 15; c.strokeRect(8, 8, fascia.width - 16, fascia.height - 16);
+    c.fillStyle = '#bd3e35'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    if (unit !== 1) {
+      c.font = '600 142px serif'; c.fillText('梁記（巴生）肉骨茶', fascia.width / 2, 117, fascia.width * .92);
+      c.font = '600 62px sans-serif'; c.fillText('LEONG KEE (KLANG) BAK KUT TEH', fascia.width / 2, 250, fascia.width * .92);
+    }
+    const fasciaMat = new pc.StandardMaterial(); fasciaMat.diffuseMap = world.texture(fascia); fasciaMat.update();
+    panel(.04, w - .08, 2.72, 3.63, .25, fasciaMat);
+    box('leong kee fascia backing', w / 2, 3.175, .16, w - .08, .91, .15, '#e4d363');
+
+    const arch = (u: number, span: number, base: number, rise: number, d: number, colour: string) => {
+      const p = pt(u, d), positions = [p[0], base, p[1]], indices: number[] = [];
+      for (let i = 0; i <= 16; i++) {
+        const t = Math.PI * i / 16, q = pt(u + Math.cos(t) * span / 2, d);
+        positions.push(q[0], base + Math.sin(t) * rise, q[1]);
+        if (i) indices.push(0, i, i + 1);
+      }
+      const mat = world.mat(colour); mat.cull = pc.CULLFACE_NONE; mat.update();
+      world.mesh('leong kee arched fanlight', positions, Array(positions.length / 3 * 2).fill(0), indices, mat);
+    };
+    // Geometric tile fields stand in for fine historic floral artwork.
+    const tileField = (centre: number, span: number, base: number, height: number, cols: number, rows: number) => {
+      panel(centre - span / 2, span, base, base + height, .13, world.mat('#6c9e90'));
+      for (let col = 0; col < cols; col++) for (let row = 0; row < rows; row++) {
+        const u = centre - span / 2 + span * (col + .5) / cols, y = base + height * (row + .5) / rows;
+        box('leong kee tile motif', u, y, .17, .075, .075, .025, '#eee3bb').rotateLocal(0, 0, 45);
+      }
+    };
+    for (const centre of unit < 2 ? [.27, .73] : [.20, .50, .80]) {
+      const span = w * (unit < 2 ? .29 : .20), u = w * centre;
+      panel(u - span / 2 - .10, span + .20, 4.42, 6.66, .08, world.mat(trim));
+      panel(u - span / 2, span, 4.49, 6.65, .14, world.mat('#303835'));
+      for (let row = 0; row < 18; row++) box('leong kee shutter louvre', u, 4.60 + row * .112, .19, span - .10, .027, .035, '#4d5046');
+      box('leong kee shutter stile', u, 5.57, .22, .055, 2.15, .055, '#726952');
+      arch(u, span + .26, 6.64, .40, .15, trim);
+      arch(u, span, 6.64, .28, .18, '#333c36');
+      for (const offset of [-.25, 0, .25]) box('leong kee fanlight vent', u + offset * span, 6.72, .21, .045, .08, .03, '#b3a077');
+      box('leong kee window sill', u, 4.44, .20, span + .22, .10, .34, trim);
+      tileField(u, span, 3.86, .43, Math.round(span / .21), 2);
+    }
+    for (const centre of unit < 2 ? [.06, .50, .94] : [.045, .35, .65, .955]) {
+      box('leong kee pilaster', w * centre, 5.63, .08, w * .055, 3.25, .16, trim);
+      tileField(w * centre, w * .04, 4.78, 1.15, 1, 5);
+      box('leong kee capital', w * centre, 6.98, .18, w * .09, .20, .30, trim);
+    }
+    if (unit < 2) {
+      box('leong kee ornate cornice', w / 2, 7.34, .22, w, .26, .48, '#806746');
+      for (let u = .12; u < w; u += .24) box('leong kee cornice dentil', u, 7.57, .28, .10, .17, .34, '#b9a47c');
+      box('leong kee tiled eave', w / 2, 7.86, .37, w + .12, .16, .83, '#744b3d');
+    } else {
+      box('leong kee plain cornice', w / 2, 7.24, .17, w, .17, .35, '#eee8d7');
+      box('leong kee plain eave', w / 2, 7.73, .25, w, .14, .60, '#6f4c40');
+    }
+
+    // Original roof planes over the source massing, not a flat painted fascia.
+    if (unit !== 1) {
+      const roofWidth = unit === 0 ? w * 2 : w, depth = 11.80;
+      const corners: [number, number, number][] = [[-.16, 7.96, .48], [roofWidth + .16, 7.96, .48], [roofWidth + .16, 7.96, -depth], [-.16, 7.96, -depth]];
+      const ridge = [[roofWidth / 2, 9.12, -roofWidth / 2], [roofWidth / 2, 9.12, -depth + roofWidth / 2]];
+      const slopes = [[corners[0], corners[1], ridge[0]], [corners[1], corners[2], ridge[1], ridge[0]], [corners[2], corners[3], ridge[1]], [corners[3], corners[0], ridge[0], ridge[1]]];
+      for (const [index, vertices] of slopes.entries()) {
+        const positions = vertices.flatMap(([u, y, d]) => {const p = pt(u, d); return [p[0], y, p[1]];});
+        const mat = world.mat(index % 2 ? '#805444' : '#93604a'); mat.cull = pc.CULLFACE_NONE; mat.update();
+        world.mesh('leong kee hip roof', positions, Array(vertices.length * 2).fill(0), vertices.length === 3 ? [0, 1, 2] : [0, 1, 2, 0, 2, 3], mat);
+      }
+      box('leong kee roof ridge', roofWidth / 2, 9.16, -depth / 2, .16, .14, depth - roofWidth, '#aa7960');
+    }
+
+    // The corner bay also presents a long conserved side elevation to Lorong 11.
+    if (id === '454254214') {
+      for (const [id, u, d, targetU, targetD] of [['leong-kee-corner', -7, 14, w * 1.1, -2.5], ['leong-kee-side', -4.6, -5.9, 0, -5.9]] as const) {
+        const p = pt(u, d), target = pt(targetU, targetD);
+        world.reviewSpawns.set(id, { p, yaw: Math.atan2(p[0] - target[0], p[1] - target[1]) * 180 / Math.PI });
+      }
+      const depth = 11.80, sideMat = world.mat('#ddd6bd'); sideMat.cull = pc.CULLFACE_NONE; sideMat.update();
+      world.panel(pt(0, -.03), pt(0, -depth), .15, 7.72, sideMat);
+      const sidePanel = (start: number, end: number, base: number, top: number, offset: number, colour: string) => world.panel(pt(-offset, -end), pt(-offset, -start), base, top, world.mat(colour));
+      sidePanel(.03, depth, .15, 2.84, .06, '#384039');
+      for (const d of [1.2, 2.75, 4.9, 6.45, 8.6, 10.15]) {
+        sidePanel(d - .54, d + .54, 4.48, 6.63, .07, '#303735');
+        for (const [span, rise, offset, colour] of [[1.35, .38, .09, trim], [1.08, .25, .12, '#303735']] as const) {
+          const p = pt(-offset, -d), positions = [p[0], 6.63, p[1]], indices: number[] = [];
+          for (let i = 0; i <= 16; i++) {
+            const t = Math.PI * i / 16, q = pt(-offset, -d + Math.cos(t) * span / 2);
+            positions.push(q[0], 6.63 + Math.sin(t) * rise, q[1]); if (i) indices.push(0, i, i + 1);
+          }
+          const mat = world.mat(colour); mat.cull = pc.CULLFACE_NONE; mat.update();
+          world.mesh('leong kee side arch', positions, Array(positions.length / 3 * 2).fill(0), indices, mat);
+        }
+        for (let row = 0; row < 17; row++) {
+          const p = pt(-.13, -d); world.box('leong kee side louvre', p[0], 4.60 + row * .115, p[1], 1.0, .026, .04, world.mat('#505247'), undefined, angle + 90);
+        }
+      }
+      for (const d of [.20, 3.55, 7.20, 11.55]) {
+        const p = pt(-.10, -d); world.box('leong kee side pilaster', p[0], 5.5, p[1], .22, 3.35, .19, world.mat(trim), undefined, angle + 90);
+      }
+      for (const d of [1.97, 5.68, 9.38]) {
+        sidePanel(d - .10, d + .10, 5.0, 6.1, .16, '#6c9e90');
+        for (let row = 0; row < 5; row++) sidePanel(d - .055, d + .055, 5.07 + row * .20, 5.16 + row * .20, .18, '#eee3bb');
+        // Framed blank bands replace the unresolved sculpted floral scenes.
+        sidePanel(d - 1.55, d + 1.55, 3.82, 4.20, .12, '#eee5cb');
+      }
+      for (const y of [3.64, 4.32, 7.30, 7.61]) {
+        const p = pt(-.16, -depth / 2); world.box('leong kee side cornice', p[0], y, p[1], depth, .12, .34, world.mat(trim), undefined, angle + 90);
+      }
+      const awningPoint = pt(-.69, -depth / 2);
+      const canopy = world.box('leong kee side brown canopy', awningPoint[0], 3.12, awningPoint[1], depth, .09, 1.48, world.mat('#625653'), undefined, angle + 90); canopy.rotateLocal(11, 0, 0);
+      const valance = pt(-1.40, -depth / 2); world.box('leong kee canopy valance', valance[0], 2.97, valance[1], depth, .14, .04, world.mat('#786861'), undefined, angle + 90);
+      for (const d of [1.0, 4.25, 7.55, 10.8]) { const p = pt(-.10, -d); world.box('leong kee side pier', p[0], 1.55, p[1], .28, 2.8, .20, world.mat(trim), undefined, angle + 90); }
+    }
+    return true;
+  }
+
   if (place.kind === 'hainan-goh') {
     // April 2024 No. 20B/20C: upper association premises and right entrance.
     // Separate ground-floor use is neutral; all openings remain opaque.
