@@ -30,9 +30,9 @@ npm test
 
 ## Explore
 
-- Desktop: WASD walks. Cursor mode steers the view from pointer position without clicking; keyboard mode uses the arrow keys to look.
+- Desktop: click the street once to capture the mouse, then use standard FPS mouse-look and WASD movement. Escape opens the menu and releases the mouse. Keyboard mode uses the arrow keys to look.
 - Phone: landscape recommended. Left joystick walks; drag on the right to look.
-- Menu: daylight, blue hour or after dark; rendering detail; cursor or keyboard look controls; walking speed; touch controls; return to start.
+- Menu: daylight, blue hour or after dark; FPS mouse or keyboard look controls; walking speed; touch controls; return to start.
 - No minimap, player tracking, navigation arrows or compass.
 
 ## Geographic fidelity
