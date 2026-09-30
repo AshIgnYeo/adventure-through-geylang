@@ -5,6 +5,18 @@ import { leongKeeExterior } from './leong-kee-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 export const landmarks = [
   {
+    id: 'haji-mohd-salleh-mosque', buildingIds: ['454254204'], kind: 'mosque',
+    name: 'Masjid Haji Mohd Salleh (Geylang)', address: '245 Geylang Road', height: 11.35,
+    frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 6,
+    evidence: 'MUIS confirms the mosque name, No. 245 address and present building, opened in 1999 after rebuilding. The retained source footprint independently carries the same name, address and mosque use. A licensed December 2020 front photograph and the LearnIslam exterior show the cream-and-green street elevation, central arch, four upper window bays, twin corner towers and central gable. Dimensions and fine ornament are estimated. The official four-storey description and mapped three-level tag are recorded without inventing an unseen floor division; no interior is reconstructed.',
+    sources: [
+      'https://www.muis.gov.sg/community/mosque/mosque-directory/haji-mohd-salleh--g/',
+      'https://learnislam.sg/mosque/haji-mohd-salleh-mosque-geylang/',
+      'https://commons.wikimedia.org/wiki/File:Masjid_Haji_Mohd_Salleh.jpg',
+      'https://www.openstreetmap.org/way/454254204',
+    ],
+  },
+  {
     id: 'leong-kee', buildingIds: ['454254214', '454254213', '454254212'], kind: 'leong-kee',
     name: 'Leong Kee (Klang) Bak Kut Teh (June 2024 exterior)', address: '251 Geylang Road', height: leongKeeExterior.eaves,
     frontEdge: 2, reviewBuildingId: '454254213', reviewRoad: 'Geylang Road',

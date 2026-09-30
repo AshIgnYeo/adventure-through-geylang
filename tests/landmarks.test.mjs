@@ -6,6 +6,39 @@ import { pointInPolygon, project, nearestOnSegment } from '../src/geo.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 
+test('Masjid Haji Mohd Salleh keeps its named No. 245 source footprint and Geylang Road frontage', () => {
+  const source = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
+  const way = source.match(/<way id="454254204"[\s\S]*?<\/way>/)?.[0];
+  assert.ok(way);
+  assert.match(way, /<tag k="name" v="Masjid Haji Mohd Salleh"\/>/);
+  assert.match(way, /<tag k="addr:housenumber" v="245"\/>/);
+  assert.match(way, /<tag k="building" v="mosque"\/>/);
+  const place = landmarks.find(p => p.id === 'haji-mohd-salleh-mosque');
+  assert.deepEqual(place.buildingIds, ['454254204']);
+  assert.equal(place.address, '245 Geylang Road');
+  assert.equal(place.frontEdge, 2);
+  assert.equal(place.reviewRoad, 'Geylang Road');
+  assert.equal(place.reviewOffset, 6);
+  const building = map.buildings.find(b => b.id === place.buildingIds[0]);
+  assert.equal(building.street, 'Geylang Road');
+  assert.equal(building.number, '245');
+  const poly = building.coordinates.slice(0, -1).map(p => project(p, map.origin));
+  assert.ok(Math.abs(Math.hypot(poly[3][0] - poly[2][0], poly[3][1] - poly[2][1]) - 22.46) < .02);
+  let a = poly[place.frontEdge], v = poly[(place.frontEdge + 1) % poly.length];
+  const centre = [poly.reduce((sum, p) => sum + p[0], 0) / poly.length, poly.reduce((sum, p) => sum + p[1], 0) / poly.length];
+  const mid = a.map((value, i) => (value + v[i]) / 2);
+  let dx = (v[0] - a[0]) / 22.456078097617418, dz = (v[1] - a[1]) / 22.456078097617418;
+  if (-dz * (mid[0] - centre[0]) + dx * (mid[1] - centre[1]) < 0) { [a, v] = [v, a]; dx = -dx; dz = -dz; }
+  const segments = map.roads.flatMap(r => r.coordinates.slice(1).map((p, i) => ({name: r.name, a: project(r.coordinates[i], map.origin), b: project(p, map.origin)})));
+  const road = landmarkReviewPoint(place, mid, segments);
+  const review = [road[0] - dz * place.reviewOffset, road[1] + dx * place.reviewOffset];
+  assert.ok(Math.hypot(review[0] - mid[0], review[1] - mid[1]) > 17);
+  for (const candidate of map.buildings) assert.equal(pointInPolygon(review, candidate.coordinates.map(c => project(c, map.origin))), false);
+  assert.equal(landmarkFor(building.id), place);
+  assert.match(place.evidence, /four-storey description and mapped three-level tag/);
+  assert.match(place.evidence, /no interior is reconstructed/);
+});
+
 test('Leong Kee keeps the provisional three-bay corner assignment together without claiming the next unit', () => {
   const place = landmarks.find(p => p.id === 'leong-kee');
   assert.deepEqual(place.buildingIds, ['454254214', '454254213', '454254212']);
@@ -154,6 +187,7 @@ test('real landmark identities have unique, existing street-study footprints and
       ids.add(id);
       const building = map.buildings.find(b => b.id === id);
       if (place.id === 'leong-kee') assert.equal(building?.street, null);
+      else if (place.id === 'haji-mohd-salleh-mosque') assert.equal(building?.street, 'Geylang Road');
       else assert.equal(building?.street, 'Lorong 11 Geylang');
       assert.equal(landmarkFor(id), place);
     }

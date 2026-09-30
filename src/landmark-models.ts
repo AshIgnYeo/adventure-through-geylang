@@ -26,6 +26,93 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
 
+  if (place.kind === 'mosque') {
+    // The street elevation follows the licensed December 2020 photograph and
+    // the LearnIslam exterior. Fine ornament and dimensions are estimates.
+    const cream = '#ddd6b8', light = '#eee8d2', green = '#315f58', dark = '#243d3a', gold = '#b69550';
+    panel(0, w, .15, place.height, .025, world.mat(cream));
+
+    // Opaque ground-floor grille and a central arched entrance. No prayer hall
+    // or other private interior is represented behind these surfaces.
+    panel(w * .035, w * .93, .18, 3.15, .07, world.mat('#52635b'));
+    for (let i = 0; i <= 28; i++) box('mosque ground grille upright', w * (.035 + .93 * i / 28), 1.66, .13, .035, 2.96, .05, '#a7ad9d');
+    for (const y of [.55, 1.15, 1.78, 2.42, 3.1]) box('mosque ground grille rail', w / 2, y, .14, w * .93, .035, .05, '#a7ad9d');
+    for (const u of [.025, .31, .69, .975]) box('mosque ground pier', w * u, 1.72, .23, .34, 3.15, .45, cream);
+
+    const archFan = (name: string, centre: number, span: number, base: number, rise: number, d: number, colour: string) => {
+      const p = pt(centre, d), positions = [p[0], base, p[1]], indices: number[] = [];
+      for (let i = 0; i <= 20; i++) {
+        const t = Math.PI * i / 20, q = pt(centre + Math.cos(t) * span / 2, d);
+        positions.push(q[0], base + Math.sin(t) * rise, q[1]);
+        if (i) indices.push(0, i, i + 1);
+      }
+      const mat = world.mat(colour); mat.cull = pc.CULLFACE_NONE; mat.update();
+      world.mesh(name, positions, Array(positions.length / 3 * 2).fill(0), indices, mat);
+    };
+    const disc = (name: string, centre: number, y: number, radius: number, d: number, colour: string) => {
+      const p = pt(centre, d), positions = [p[0], y, p[1]], indices: number[] = [];
+      for (let i = 0; i <= 24; i++) {
+        const t = Math.PI * 2 * i / 24, q = pt(centre + Math.cos(t) * radius, d);
+        positions.push(q[0], y + Math.sin(t) * radius, q[1]);
+        if (i) indices.push(0, i, i + 1);
+      }
+      const mat = world.mat(colour); mat.cull = pc.CULLFACE_NONE; mat.update();
+      world.mesh(name, positions, Array(positions.length / 3 * 2).fill(0), indices, mat);
+    };
+    archFan('mosque entrance arch surround', w / 2, w * .36, 2.25, 2.35, .21, light);
+    archFan('mosque entrance arch glazing', w / 2, w * .29, 2.28, 1.90, .27, dark);
+    panel(w * .355, w * .29, .2, 2.36, .27, world.mat(dark));
+    for (const u of [.39, .445, .50, .555, .61]) box('mosque entrance mullion', w * u, 1.55, .31, .045, 2.65, .055, '#75837a');
+    box('mosque entrance transom', w / 2, 2.31, .31, w * .29, .05, .06, '#75837a');
+    sign('MASJID HAJI MOHD SALLEH', w * .34, w * .32, 3.77, .42, cream, green, .29);
+    box('mosque gold inscription band', w / 2, 4.37, .12, w * .29, .12, .20, gold);
+
+    // Deep green vertical screens frame the four central window bays.
+    for (const [start, span] of [[.025, .115], [.86, .115]]) {
+      panel(w * start, w * span, 3.55, 10.48, .10, world.mat(green));
+      for (let i = 1; i < 7; i++) box('mosque vertical screen fin', w * (start + span * i / 7), 7.02, .18, .055, 6.9, .12, '#79a091');
+      for (const y of [5.72, 8.05]) box('mosque screen rail', w * (start + span / 2), y, .18, w * span, .055, .12, '#244e49');
+    }
+    const centres = [.27, .42, .58, .73];
+    for (const centre of centres) {
+      const span = w * .095;
+      // Middle row is rectangular; the upper row has the observed rounded head.
+      panel(w * centre - span / 2, span, 4.62, 7.02, .10, world.mat('#365d5a'));
+      panel(w * centre - span / 2, span, 7.48, 9.55, .10, world.mat('#365d5a'));
+      archFan('mosque arched upper window', w * centre, span, 9.55, .56, .10, '#365d5a');
+      for (const y of [4.58, 7.05, 7.44]) box('mosque window sill', w * centre, y, .16, span + .18, .10, .28, light);
+      for (const u of [centre - .055, centre + .055]) box('mosque window jamb', w * u, 7.28, .14, .12, 5.55, .24, light);
+      box('mosque middle mullion', w * centre, 5.82, .15, .045, 2.4, .06, '#83978d');
+      box('mosque upper mullion', w * centre, 8.72, .15, .045, 2.5, .06, '#83978d');
+      for (const y of [5.43, 6.22, 8.22, 8.92]) box('mosque window transom', w * centre, y, .15, span, .035, .06, '#83978d');
+    }
+    for (const u of [.165, .835]) box('mosque tall pilaster', w * u, 7.15, .08, .44, 7.35, .24, light);
+    for (const y of [3.42, 7.25, 10.58]) box('mosque horizontal course', w / 2, y, .15, w * .72, .14, .34, light);
+
+    // Twin square towers and the central triangular gable are the distinctive
+    // skyline. Medallions are original geometric abstractions.
+    const gableStart = w * .39, gableEnd = w * .61, gablePeak = w / 2;
+    const oa = pt(w * .375, .08), ob = pt(w * .625, .08), op = pt(gablePeak, .08);
+    world.mesh('mosque gable roof trim', [oa[0], 10.48, oa[1], ob[0], 10.48, ob[1], op[0], 13.25, op[1]], [0, 1, 1, 1, .5, 0], [0, 1, 2], world.mat('#a76e54'));
+    const ga = pt(gableStart, .13), gb = pt(gableEnd, .13), gp = pt(gablePeak, .13);
+    world.mesh('mosque central gable', [ga[0], 10.58, ga[1], gb[0], 10.58, gb[1], gp[0], 13.08, gp[1]], [0, 1, 1, 1, .5, 0], [0, 1, 2], world.mat(cream));
+    archFan('mosque gable recess', w / 2, w * .12, 10.72, .95, .17, green);
+    for (const centre of [.105, .895]) {
+      box('mosque corner tower', w * centre, 11.77, .09, w * .13, 2.38, .34, cream);
+      box('mosque tower cap', w * centre, 13.02, .14, w * .145, .18, .42, light);
+      archFan('mosque tower dome', w * centre, w * .09, 13.08, .38, .18, light);
+      disc('mosque tower medallion', w * centre, 11.77, w * .038, .30, light);
+      for (let i = 0; i < 8; i++) {
+        const a = i * Math.PI / 4, u = w * centre + Math.cos(a) * w * .025;
+        box('mosque medallion ray', u, 11.74 + Math.sin(a) * .40, .32, .055, .42, .045, green).rotateLocal(0, 0, -i * 45);
+      }
+      box('mosque tower finial', w * centre, 13.34, .10, .12, .52, .12, gold);
+    }
+    box('mosque gable finial', w / 2, 13.37, .10, .11, .56, .11, gold);
+    box('mosque parapet coping', w / 2, 10.61, .11, w, .17, .34, light);
+    return true;
+  }
+
   if (place.kind === 'leong-kee') {
     // June 2024 operating frontage. The three signed bays are visually
     // supported, while their legal and internal extent remains unverified.
