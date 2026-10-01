@@ -157,3 +157,7 @@ Use case: photorealistic-natural. Asset type: reference-led diffuse texture atla
 - Metre projection and original one-way geometry are unchanged.
 - Visual browser checks cover each landmark. Actual phone performance is still unmeasured.
 - Next fidelity pass needs current street-level photographs and resolution of the Agape historic/current numbering before further detail is asserted as accurate.
+
+## Temple-side back alley, Lorong 9 to Lorong 11
+
+Added **1 October 2026** after verifying GPT-6 Astra. The [dedicated provenance brief](temple-back-alley-design-brief.md) records the two source ways, dated entrance photographs, reconstructed rear details and unchanged footprints. The preliminary service-road dead-end interpretation was corrected: retained footway `1223458240` and direct April 2024 entrance inspection support the pedestrian continuation beside Shan Yuan Tang. No closing wall, new named premises or copied reference image is introduced. Widths, details and hardstanding remain documented estimates.

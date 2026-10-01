@@ -4,10 +4,11 @@ import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
+import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
 type Building = {id:string;levels:number|null;street:string|null;number:string|null;coordinates:Point[]};
-export type MapData = {origin:Point;bounds:number[];roads:Road[];buildings:Building[]};
+export type MapData = {origin:Point;bounds:number[];roads:Road[];buildings:Building[];contextRoads:Road[];paths:{id:string;highway:string;service:string|null;coordinates:Point[]}[]};
 type Segment={a:Point;b:Point;width:number;name:string;oneway:string;length:number;dx:number;dz:number};
 const palette=['#d4c7a4','#98a796','#c7ad7f','#bc9986','#c2c4b4','#a5b2b0'];
 const fictional=['夜来香 · NIGHT BLOOM','LORONG COFFEE','新月 · NEW MOON','AFTER HOURS','南风 · SOUTH WIND','LUCKY ELEVEN','SILVER SPOON','永安 · EVER PEACE'];
@@ -69,10 +70,12 @@ export class World {
         for(let d=12;d<s.length;d+=32){const x=s.a[0]+s.dx*d+s.dz*(s.width/2+1.15),z=s.a[1]+s.dz*d-s.dx*(s.width/2+1.15);this.lamp(x,z);}
       }
     }
+    buildAlleyGround(this);
     const signMaterials=fictional.map((text,i)=>this.textMaterial(text,['#254337','#652f2a','#243c4a','#775926'][i%4],['#ecdcb9','#eee0ae','#c8e0d8'][i%3]));
     for(let index=0;index<this.data.buildings.length;index++){
       const b=this.data.buildings[index];let poly=b.coordinates.map(p=>project(p,this.data.origin) as Point);if(poly.length>1&&Math.hypot(poly[0][0]-poly.at(-1)![0],poly[0][1]-poly.at(-1)![1])<.1)poly.pop();if(poly.length<3)continue;
       this.footprints.push(poly);
+      if(buildAlleyLowContext(this,b.id,poly))continue;
       if(buildLeongKeeRearContext(this,b.id,poly))continue;
       const centre:Point=[poly.reduce((s,p)=>s+p[0],0)/poly.length,poly.reduce((s,p)=>s+p[1],0)/poly.length];
       const landmark=landmarkFor(b.id);
@@ -118,6 +121,7 @@ export class World {
       if(index%13===0)this.planter(mid[0]+nx*1.2,mid[1]+nz*1.2);
     }
     buildShanYuanTang(this);
+    buildAlleyExteriors(this);
     // Street plates at the observed ends of each lorong, readable in-world only.
     for(const name of ['Lorong 11 Geylang','Lorong 13 Geylang']){
       const segments=this.segments.filter(s=>s.name===name);const points=segments.flatMap(s=>[s.a,s.b]).sort((a,b)=>a[1]-b[1]);

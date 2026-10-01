@@ -16,6 +16,8 @@ Leong Kee (Klang) Bak Kut Teh at 251 Geylang Road adds the twelfth place, the co
 
 Masjid Haji Mohd Salleh at 245 Geylang Road adds the thirteenth place. Its mapped footprint and address agree with MUIS, while a licensed December 2020 photograph and LearnIslam exterior support the cream-and-green frontage, central arch, four upper window bays, twin towers and gable. The official four-storey description differs from the map's three-level tag, so the model follows visible exterior tiers without claiming an exact internal floor division. Fine ornament and dimensions are estimated; the exterior remains closed. Review with `?review=haji-mohd-salleh-mosque`.
 
+The temple-side back alley now links Lorong 9 to Lorong 11 through a narrow pedestrian passage. Both retained OSM ways are preserved, with estimated paving widths, drains, neutral rear façades, service details and the temple's cream/red rear wall. An early dead-end assumption was corrected after finding the mapped footway and inspecting its visible entrance. See the [alley provenance and limitations](docs/temple-back-alley-design-brief.md). Review with `?review=temple-back-alley`, `?review=temple-back-alley-middle` or `?review=temple-back-alley-east`.
+
 ## Run
 
 ```sh
@@ -41,7 +43,7 @@ npm test
 
 The downloaded OpenStreetMap extract is retained in `public/osm-source.osm`. `node scripts/prepare-map.mjs` produces the smaller `public/map.json`, retaining geographic coordinates, way IDs, one-way tags and source building footprints. All projection/rendering uses metres. Longitude is east/X; north is negative Z. No street compression is applied.
 
-Source: https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155, retrieved 28 September 2026. Map data © OpenStreetMap contributors, licensed under ODbL 1.0: https://www.openstreetmap.org/copyright. Derived map data retains that licence. The extract contains 34 relevant road ways and 154 building outlines. The source one-way tags indicate Lorong 11 southbound and Lorong 13 northbound. This is source-data fidelity, not an independently verified current traffic survey.
+Source: https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155, retrieved 28 September 2026. Map data © OpenStreetMap contributors, licensed under ODbL 1.0: https://www.openstreetmap.org/copyright. Derived map data retains that licence. The derived map contains 34 main road ways and 154 building outlines, plus two separate alley/footway ways and one Lorong 9 access-context way. The source one-way tags indicate Lorong 11 southbound and Lorong 13 northbound. This is source-data fidelity, not an independently verified current traffic survey.
 
 The metre projection is tested against an independent haversine distance, to within 0.6%. Source survey accuracy is separate from projection scale. Road widths are estimates (6.5 m on lorongs, 3.2 m per mapped lane on main roads). Pavements, awnings, street furniture, sign placement and road markings are illustrative. Building outlines are sourced except the explicitly estimated Shan Yuan Tang site; height uses mapped storeys where supplied, otherwise an estimate. No private interiors are reconstructed.
 
@@ -49,7 +51,7 @@ Heritage reference: https://www.ura.gov.sg/conservation/find-a-building/conserva
 
 ## Current scope and limitations
 
-This first deliverable is a walkable environment, not the multiplayer game. No lobbies, NPC encounters, group detection, traffic or deadline yet. Building volumes block walking, while decorative props do not. The sampled area's outer boundary blocks walking. Surroundings outside the selected area are incomplete.
+This first deliverable is a walkable environment, not the multiplayer game. No lobbies, NPC encounters, group detection, traffic or deadline yet. Building volumes and the alley bins block walking; other decorative props do not. The sampled area's outer boundary blocks walking. Surroundings outside the selected area are incomplete.
 
 The browser build and geometry tests are checked locally. Desktop browser visual checks do not establish performance on an actual phone. Phone testing and facade/reference refinement are the next milestones. Google Fonts is optional, with local font fallbacks; no live mapping calls are needed during play.
 

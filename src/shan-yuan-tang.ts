@@ -172,8 +172,19 @@ export function buildShanYuanTang(world: World) {
   wall([10.6, 0], [11.8, 1.2], 1, true);
   wall([11.8, 1.2], [11.8, 24.6], 7, false);
   wall([0, 25.5], [0, 0], 7, false);
-  wall([11.8, 24.6], [11.8, 25.5], 1, false);
-  wall([11.8, 25.5], [0, 25.5], 4, false);
+  box('alley cream corner return', 11.70, 1.62, 25.05, .18, 2.98, .9, cream);
+  // Q10: April 2024 view along the rear passage shows cream plaster, small
+  // red-framed openings and a shallow green shade. Retain the estimated site.
+  box('alley rear wall', 5.9, 1.62, 25.40, 11.8, 2.98, .18, cream);
+  box('alley rear fascia', 5.9, 3.21, 25.44, 11.8, .16, .26, red);
+  for (const u of [2.1, 4.4, 6.7, 9.0]) {
+    box('alley window frame', u, 2.62, 25.515, 1.35, .64, .05, red);
+    box('alley opaque window', u, 2.62, 25.548, 1.13, .46, .035, '#55615a');
+    box('alley window mullion', u, 2.62, 25.577, .045, .48, .025, red);
+  }
+  // Shallow roof stays above head height and clear of the footway centreline.
+  face([[0, 3.27, 25.05], [11.8, 3.27, 25.05], [11.8, 3.08, 25.82], [0, 3.08, 25.82]], '#396d50');
+  for (let u = 0; u <= 11.8; u += .25) tube([u, 3.29, 25.05], [u, 3.10, 25.82], .045, '#608467');
 
   // Compact red entrance pavilion, closed with an opaque grille backing.
   const gate = 5.625;
