@@ -1,9 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { project, nearestOnSegment, pointInPolygon } from '../src/geo.mjs';
+import { project, nearestOnSegment, pointInPolygon, roadWidth } from '../src/geo.mjs';
 import { authoredSiteFrame, shanYuanTang } from '../src/authored-sites.mjs';
-import { templeAlley, alleyRoutes, alleyReviews, alleyBins } from '../src/temple-alley-layout.mjs';
+import { templeAlley, alleyRoutes, alleyReviews, alleyBins, alleyEntranceEnclosure } from '../src/temple-alley-layout.mjs';
 
 const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 const source = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
@@ -13,7 +13,7 @@ const nodes = new Map([...source.matchAll(/<node\b[^>]*>/g)].map(([text]) => {
 }));
 const way = id => source.match(new RegExp(`<way id="${id}"[\\s\\S]*?<\\/way>`))[0];
 const coordinates = id => [...way(id).matchAll(/<nd ref="(\d+)"/g)].map(m => nodes.get(m[1]));
-const outlines = [...map.buildings.map(b => b.coordinates.slice(0, -1).map(c => project(c, map.origin))), authoredSiteFrame(shanYuanTang, map.origin).outline];
+const outlines = [...map.buildings.map(b => b.coordinates.slice(0, -1).map(c => project(c, map.origin))), authoredSiteFrame(shanYuanTang, map.origin).outline, alleyEntranceEnclosure(map).outline];
 const clearance = (p, poly) => pointInPolygon(p, poly) ? 0 : Math.min(...poly.map((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance));
 
 test('alley import keeps source geometry and the overlooked Lorong 11 footway', () => {
@@ -45,7 +45,7 @@ test('the entire alley, bend and pedestrian continuation clear unchanged buildin
     }
     // Rendered paving stays outside all building interiors. Width does not use lane tags.
     assert.ok(route.width <= (route.id === templeAlley.serviceId ? 3.5 : 1.4));
-    for (let i = 0; i <= 200; i++) for (const lateral of [-route.width / 2, route.width / 2]) {
+    for (let i = 0; i <= 200; i++) for (const lateral of [-route.widthAt(route.length * i / 200) / 2, route.widthAt(route.length * i / 200) / 2]) {
       const p = route.point(route.length * i / 200, lateral);
       for (const outline of outlines) assert.equal(pointInPolygon(p, outline), false);
     }
@@ -60,5 +60,27 @@ test('review starts and illustrative bins do not obstruct the mapped walking rou
   for (const bin of alleyBins(map)) for (const p of bin.outline) {
     for (const outline of outlines) assert.equal(pointInPolygon(p, outline), false);
     for (const route of alleyRoutes(map)) assert.ok(nearestOnSegment(p, route.a, route.b).distance > route.width / 2 + .28);
+  }
+});
+
+test('the corrected entrance is enclosed at pedestrian scale without moving source geometry', () => {
+  const original = JSON.stringify(map), enclosure = alleyEntranceEnclosure(map), footway = alleyRoutes(map)[1];
+  assert.equal(enclosure.geometrySource, 'authored-estimate');
+  assert.equal(JSON.stringify(map), original);
+  const temple = authoredSiteFrame(shanYuanTang, map.origin).outline;
+  // Measure between the actual facing walls, not just the width of the paving.
+  for (let s = 3; s <= 11.5; s += .25) {
+    const p = enclosure.wall.point(s);
+    const gap = nearestOnSegment(p, temple[3], temple[4]).distance;
+    assert.ok(gap >= 1.8 && gap <= 2.6, `wall-to-wall gap ${gap}`);
+    assert.ok(nearestOnSegment(p, footway.a, footway.b).distance > .85);
+  }
+  for (const road of map.roads) for (let i = 1; i < road.coordinates.length; i++) {
+    const a = project(road.coordinates[i - 1], map.origin), b = project(road.coordinates[i], map.origin);
+    for (const p of enclosure.outline) assert.ok(nearestOnSegment(p, a, b).distance > roadWidth(road) / 2 + .5);
+  }
+  // The extension joins only its source neighbour. It must not invade other premises.
+  for (let t = 0; t <= 1; t += .01) for (const outline of outlines.slice(0, -1)) {
+    assert.equal(pointInPolygon(enclosure.wall.point(12 * t), outline), false);
   }
 });

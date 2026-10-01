@@ -25,9 +25,9 @@ The temple-side route remains better supported than the coffeeshop option. No eq
 - Estimated **3.5 m** service paving and **1.4 m** footway, with simple slab variation, shallow edge drains and sparse grates. No road centre markings, vehicles or invented signs. The narrow connection remains open to walking.
 - Minimal Lorong 9 paving on source way `633797717`, with the project's existing **6.5 m** estimated lorong width. The southern source centreline passes close to a retained corner footprint; broad road-edge accuracy is unverified. No footprint is moved to widen it.
 - Conservative opaque rear surfaces on source edges of `453797939`, `454274485`, `475158359`, `454254204` and `1223407890`. Entrance-side windows, shutters, drainpipes, two utility cabinets and simple unbranded equipment use the observed vocabulary. Deeper surfaces are deliberately sparse; no new upper windows are attributed to the mosque.
-- Source way `1223407890`, the small northern neighbour, has a single-storey cream shell with an estimated **3.35 m** eave and **4.45 m** terracotta ridge, following the April 2024 view. It carries no new name or tenant attribution. Its complete source outline remains the collision boundary.
+- Source way `1223407890`, the small northern neighbour, has a single-storey cream shell with an estimated **3.35 m** eave and **4.45 m** terracotta ridge, following the April 2024 view. It carries no new name or tenant attribution. Its complete source outline remains a collision boundary; the separately authored side enclosure described below adds its own collision.
 - The rear edge of the separately estimated temple site now has cream plaster, small opaque red-framed openings and a shallow green shade. The site origin, outline, geographic rotation and interior collision remain unchanged.
-- Two illustrative bins by the northern rear walls have collisions and clear the walking route. No external stair is placed: the reference supports its existence, but the entrance footprint/clearance evidence is too limited for a reliable placement in this pass.
+- One illustrative bin by the western block has collision and clears the walking route. The former eastern bin was removed during the entrance correction. No external stair is placed: the reference supports its existence, but the entrance footprint/clearance evidence is too limited for a reliable placement in this pass.
 
 Original code-native geometry only. No reference images, new raster textures, private interiors, people, activities or affiliations are shipped.
 
@@ -37,7 +37,19 @@ Confidence is high for the retained source alignment and shared-node pedestrian 
 
 All widths, elevations not supplied by source levels, paint colours, opening counts/positions, equipment positions, drain/grate patterns and roof seams are **estimated reconstructions**. Repeated opaque rear openings are illustrative context, not a measured elevation or claim of exact current doors. The yellow block follows its mapped five levels at the existing 3.35 m/storey scale; other rear shell heights match existing massing. The model does not resolve the mosque's separately documented storey discrepancy.
 
-The retained setbacks are wider than parts of the photographs appear. Simple estimated hardstanding fills the space between the lane and adjacent rear edges; it does not establish boundaries, ownership, parking or a surveyed lane width. Narrow paving and the original metre scale are preserved instead of moving source buildings. Walls/roofs beyond this small corridor retain earlier reconstruction limits.
+The western retained setbacks remain wider than parts of the photographs appear. Estimated hardstanding remains there. At the eastern entrance, the broad apron was removed and an authored side enclosure now narrows the visible gap, as detailed below. No raw source footprint or metre scale was changed. Walls/roofs beyond this small corridor retain earlier reconstruction limits.
+
+## Entrance proportion correction, 1 October 2026
+
+The user supplied **Screenshot 2026-10-01 at 11.06.04 PM.png** (Google Maps overhead view) and **Screenshot 2026-10-01 at 11.06.35 PM.png** (April 2024 Street View at 3 Lorong 11). Both were directly inspected in the conversation. They corroborate a much tighter opening than the first model. The overhead cartography is indicative, not a measured building survey, and the perspective photograph does not supply an exact width. The screenshots are evidence only and are not bundled.
+
+The first pass incorrectly treated a **1.4 m paving strip** as an adequate representation of entrance width. In fact the surrounding model walls were roughly **6–7 m apart**, with broad hardstanding alongside. This was a visible modelling error, missed by tests which checked the strip and collision clearance alone.
+
+The correction adds a separate `authored-estimate` side enclosure to the low northern neighbour, with an opaque wall, shallow tiled lean-to and a single neutral street-facing shutter. Its position follows the close enclosing side visible in the photograph. This is an estimated visual envelope, not an assertion that the source cadastral outline or a surveyed extension is known. All OSM coordinates, original building shells and route centrelines remain unchanged. The added outline participates in collision detection; no interior is accessible.
+
+The wall stands **0.95 m north of the source footway**, from its western endpoint to 12 m east, stopping before Lorong 11's estimated road edge. Opposite the existing authored temple rear, the modelled wall-to-wall separation is roughly **1.9–2.6 m**, narrowing towards the entrance. Paving stays 1.4 m wide. The last **8 m** of the wider service strip taper to that width so the paving cannot run under the new wall. This taper, the enclosure's 3.05 m eave, its roof/door details and all placement dimensions remain estimates. The broad eastern forecourt, repeated side shutters and eastern bin were removed.
+
+Regression coverage now measures the facing walls as well as continuous pedestrian clearance, checks the new collision outline, and excludes the road and other premises. This corrects the entrance's proportions without claiming surveyed accuracy.
 
 ## Review and validation
 

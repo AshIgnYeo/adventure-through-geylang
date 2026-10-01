@@ -1,11 +1,22 @@
 import { project } from './geo.mjs';
 
-// Only centrelines are surveyed map data. Widths and exterior details are estimates.
+// Centrelines are retained OSM data, not a verified survey. Widths/details are estimates.
 export const templeAlley = {
   serviceId: '695010162', footwayId: '1223458240', accessId: '633797717',
   serviceWidth: 3.5, footwayWidth: 1.4,
   evidence: 'June 2024 Lorong 9 and April 2024 Lorong 11 Street View. OSM retains a service lane and a separate pedestrian continuation, not a sealed dead end. Current access rights are unverified.',
 };
+
+// The raw northern footprint omits the close side enclosure visible in the
+// user's April 2024 Street View. A separate estimate fills that gap, without
+// moving the retained footprint or either route. See the Q10 correction notes.
+export function alleyEntranceEnclosure(map) {
+  const route = alleyRoutes(map)[1];
+  const source = map.buildings.find(b => b.id === '1223407890').coordinates.slice(0, -1).map(c => project(c, map.origin));
+  const inner = route.point(0, -.95), mouth = route.point(12, -.95);
+  return { geometrySource: 'authored-estimate', outline: [source[2], source[1], mouth, inner],
+    wall: alleyFrame(inner, mouth), eaves: 3.05, sourceEaves: 3.35 };
+}
 
 // Explicit source-edge selection prevents rear treatment spreading to other places.
 export const alleyElevations = [
@@ -28,8 +39,10 @@ export function alleyRoutes(map) {
     const source = map.paths.find(p => p.id === id);
     // Store source order unchanged in map.json; walk/render consistently west to east.
     const points = source.coordinates.map(c => project(c, map.origin)).reverse();
+    const frame = alleyFrame(points[0], points[1]);
     return { id, width: index ? templeAlley.footwayWidth : templeAlley.serviceWidth,
-      ...alleyFrame(points[0], points[1]) };
+      ...frame, widthAt: along => index ? templeAlley.footwayWidth :
+        templeAlley.serviceWidth - (templeAlley.serviceWidth - templeAlley.footwayWidth) * Math.max(0, Math.min(1, (along - frame.length + 8) / 8)) };
   });
 }
 
@@ -51,10 +64,11 @@ export function alleyReviews(map) {
   ].map(({id, p, target}) => ({id, p, yaw: Math.atan2(p[0] - target[0], p[1] - target[1]) * 180 / Math.PI}));
 }
 
-// Two illustrative bins stand by the northern rear walls, outside the walking strip.
+// One illustrative bin stands by the western block. The former eastern bin
+// is omitted because it would occupy the corrected side enclosure.
 export function alleyBins(map) {
-  return [alleyElevations[0], alleyElevations[4]].map((e, i) => {
-    const f = alleyElevationFrame(map, e), u = f.length * (i ? .7 : .22), out = .5;
+  return [alleyElevations[0]].map(e => {
+    const f = alleyElevationFrame(map, e), u = f.length * .22, out = .5;
     return { p: f.point(u, out), angle: f.angle,
       outline: [[-.32, -.3], [.32, -.3], [.32, .3], [-.32, .3]].map(([x, z]) => f.point(u + x, out + z)) };
   });
