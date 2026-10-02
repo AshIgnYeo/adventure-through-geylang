@@ -18,6 +18,8 @@ Masjid Haji Mohd Salleh at 245 Geylang Road adds the thirteenth place. Its mappe
 
 The temple-side back alley now links Lorong 9 to Lorong 11 through a narrow pedestrian passage. Both retained OSM ways are preserved, with estimated paving widths, drains, neutral rear façades, service details and the temple's cream/red rear wall. A separately documented side enclosure corrects the entrance to an approximately two-metre wall-to-wall gap, based on the supplied Street View; the source footprints remain intact. An early dead-end assumption was corrected after finding the mapped footway and inspecting its visible entrance. See the [alley provenance and limitations](docs/temple-back-alley-design-brief.md). Review with `?review=temple-back-alley`, `?review=temple-back-alley-middle` or `?review=temple-back-alley-east`.
 
+Mongkok Dim Sum at 214 Geylang Road adds a fourteenth place, at the Lorong 8 corner. Its cream three-storey corner, red vertical name, green columns, canopy, balcony railings and sparse outdoor seating follow an October 2016 contributor panorama. The current Maps listing supports the address, while the model remains explicitly historical. Only an estimated corner portion of the larger mapped block receives this identity; source outlines and collisions stay intact. See the [Mongkok brief](docs/mongkok-dim-sum-design-brief.md). Review with `?review=mongkok-dim-sum` or `?review=mongkok-dim-sum-side`.
+
 ## Run
 
 ```sh

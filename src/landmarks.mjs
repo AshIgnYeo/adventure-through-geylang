@@ -2,7 +2,10 @@
 // Reference photographs are not guaranteed to depict the present-day tenancy.
 import { nearestOnSegment } from './geo.mjs';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
+import { mongkok } from './mongkok-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
+// Partial-block identities deliberately stay out of whole-footprint lookup.
+export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
   {
     id: 'haji-mohd-salleh-mosque', buildingIds: ['454254204'], kind: 'mosque',

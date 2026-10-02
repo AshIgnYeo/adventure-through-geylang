@@ -151,6 +151,16 @@ Broad searches covered Lorong 11 named premises, operator contact pages, URA con
 
 Validation: `npm test` passed all five tests; `npm run build` passed, with Vite's existing large-chunk advisory. An additional read-only check confirmed all 11 referenced way IDs exist in both retained map files and have Lorong 11 street tags in `map.json`. No scene visual check was needed for this documentation-only change.
 
+### Q11. Mongkok Dim Sum, 214 Geylang Road, completed manual addition
+
+Manually selected on 2 October 2026 after the user requested another place and rejected HAO Mart. Source access date: **2 October 2026**. HAO's operator store list omits the Lorong 11 branch; no HAO geometry or closure-date claim was added. The hourly schedule remains paused.
+
+- **Address / footprint:** 214 Geylang Road, Singapore 389274; named [OSM node 4345449693](https://www.openstreetmap.org/node/4345449693) within larger [way 454254202](https://www.openstreetmap.org/way/454254202). Only an estimated corner portion is modelled, not the whole block's identity.
+- **Sources:** [current Maps listing](https://www.google.com/maps/search/?api=1&query=Mongkok+Dim+Sum+214+Geylang+Road), [Time Out address, 2019](https://www.timeout.com/singapore/restaurants/mongkok-dim-sum), and the attributed October 2016 contributor exterior linked in the [design brief](mongkok-dim-sum-design-brief.md). Direct URA PDF retrieval failed; indexed mentions are not used as visual evidence.
+- **Confidence / uncertainty:** High for address, moderate for historical exterior and corner match. Height, internal rendering division, canopy and furniture dimensions are estimates; legal extent and present façade condition remain unverified.
+- **Completed work:** Original corner geometry and lettering, dining edge, source-preserving render partition, review starts, provenance and geometry tests. GPT-6 Astra confirmed before implementation.
+- **Validation / completion:** All 27 tests, production build and whitespace check passed. Daylight browser inspection covered the chamfer, upper lettering/windows, balcony return, dining edge and road clearance; no captured runtime warnings or errors. Existing build bundle-size advisory remains. Source geometry and raster assets are unchanged. Completed within the documented historical-reference limits, with no pending blocker. One focused local commit; no push.
+
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 
 Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.

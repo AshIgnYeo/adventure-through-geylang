@@ -161,3 +161,7 @@ Use case: photorealistic-natural. Asset type: reference-led diffuse texture atla
 ## Temple-side back alley, Lorong 9 to Lorong 11
 
 Added **1 October 2026** after verifying GPT-6 Astra. The [dedicated provenance brief](temple-back-alley-design-brief.md) records the two source ways, dated entrance photographs, reconstructed rear details and unchanged footprints. The preliminary service-road dead-end interpretation was corrected: retained footway `1223458240` and direct April 2024 entrance inspection support the pedestrian continuation beside Shan Yuan Tang. No closing wall, new named premises or copied reference image is introduced. Widths, details and hardstanding remain documented estimates.
+
+## Mongkok Dim Sum, 214 Geylang Road
+
+Added **2 October 2026** after verifying GPT-6 Astra. The [Mongkok design brief](mongkok-dim-sum-design-brief.md) records the current address check, attributed October 2016 contributor panorama and estimated corner extent within the larger source block. The original street edges and whole-block collision remain intact; only the corner carries the name. Height and furniture are estimates, and present façade condition remains unverified. All new geometry and lettering are original; no reference images are shipped.

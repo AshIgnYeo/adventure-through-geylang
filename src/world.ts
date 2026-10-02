@@ -4,6 +4,7 @@ import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
+import { buildMongkokCorner } from './mongkok';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
@@ -75,6 +76,8 @@ export class World {
     for(let index=0;index<this.data.buildings.length;index++){
       const b=this.data.buildings[index];let poly=b.coordinates.map(p=>project(p,this.data.origin) as Point);if(poly.length>1&&Math.hypot(poly[0][0]-poly.at(-1)![0],poly[0][1]-poly.at(-1)![1])<.1)poly.pop();if(poly.length<3)continue;
       this.footprints.push(poly);
+      // Split only the rendered corner. Source outline and collision stay intact.
+      const mongkokRemainder=buildMongkokCorner(this,b.id,poly);if(mongkokRemainder)poly=mongkokRemainder;
       if(buildAlleyLowContext(this,b.id,poly))continue;
       if(buildLeongKeeRearContext(this,b.id,poly))continue;
       const centre:Point=[poly.reduce((s,p)=>s+p[0],0)/poly.length,poly.reduce((s,p)=>s+p[1],0)/poly.length];
