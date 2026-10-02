@@ -1,66 +1,108 @@
 # Adventure Through Geylang
 
-A local browser exploration prototype focused on Lorong 11 Geylang, with Lorong 13 and the connecting main roads retained as background context. PlayCanvas + TypeScript + Vite.
+An evolving, browser-based 3D reconstruction of Geylang, Singapore.
 
-## Lorong 11 reference-led pass
+The project documents the character of the neighbourhood through a walkable streetscape: its shophouses, places of worship, clan associations, eating houses, back lanes and the small architectural details that make each stretch recognisable. The current study centres on Lorong 11 and its connections to Geylang Road, Lorong 9 and Lorong 13.
 
-Eleven real places now have explicit source-linked footprint matches: Hotel 81 Joy, Agape Centre, Hok Tek Chi Loke Yah Teng Association, Lok Fu Lala Pot, Faith Mission Home, Ho San Kong Hoey, the April 2024 SHG Engineering / Seng Hup Guan frontage, S.M. Khek Leow Clan Association, Canton Wong Clan Association, Hainan Goh Clan Association, and Masjid Haji Mohd Salleh. See [reference notes](docs/lorong-11-references.md) and `src/landmarks.mjs` for evidence and uncertainty. The hotel has a bespoke pale-blue tower and recessed entrance; two heritage elevations use AI-generated reconstruction textures based on inspected URA photographs. These are recognisable approximations, not photogrammetric scans or a verified current streetscape. Faith Mission Home has a code-native street frontage based on its operator’s exterior photograph; its rear structure is not reconstructed. Ho San Kong Hoey has a code-native frontage based on April 2024 Street View, with estimated dimensions and simplified lower openings. No. 36 depicts the April 2024 SHG / Seng Hup Guan exterior; current occupancy is unresolved, and indistinct signage is omitted. S.M. Khek Leow’s green No. 4 frontage follows April 2024 Street View, with simplified ornament and original geometric tile motifs. Canton Wong’s April 2024 upper elevation and stair entrance are reconstructed at No. 31/31A; the separate ground-floor shop is neutral and no whole-building occupancy is claimed. Hainan Goh’s April 2024 lavender upper elevation and signed entrance use the No. 20B footprint, with the federation-listed second-storey address 20C; the separate shop remains neutral. The eating-house exterior is still illustrative. Agape's exact three-unit extent is provisional because source address numbering differs.
+This is now primarily an environment and rendering project. The walking controls are an inspection tool for exploring the model at street level. The repository is intended to be a useful base for visualisations, interactive documentaries, education, architectural studies, installations, games and other creative work.
 
-The initial view uses daylight for inspection. Blue hour and after dark remain available. Walking speed is adjustable from 1.0 to 6.0 m/s for keyboard and touch controls. Fictional signs are removed from unverified, Lorong-11-addressed buildings. Surrounding background streets still contain fictional signs.
+## What is included
 
-Developer-only inspection links use `?review=hotel-81-joy`, `?review=agape-centre`, `?review=hok-tek-chi`, `?review=lok-fu`, `?review=faith-mission-home`, `?review=ho-san-kong-hoey`, `?review=shg-engineering`, `?review=sm-khek-leow`, `?review=canton-wong` or `?review=hainan-goh` to start opposite a landmark. These are review camera starts, not an in-game map or tracking feature. Remove the query to return to ordinary exploration.
+- A metre-scale street layout derived from retained OpenStreetMap data.
+- A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
+- Daylight, blue-hour and night lighting modes.
+- Reference-led models of 14 named buildings and landmarks.
+- A mapped pedestrian back lane between Lorong 9 and Lorong 11.
+- Source notes, modelling decisions and uncertainty records for reviewed places.
+- Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
 
-Shan Yuan Tang / 善緣堂 at 249 Geylang Road adds an eleventh place at the Lorong 11 corner. Its red gate, green tiled roofs, boundary walls and cream/red upper elevation follow inspected April/June 2024 Street View. The user approved estimated site placement because the retained map lacks its footprint. Its separate authored site preserves source map geometry and metre scale. Dimensions, occluded surfaces and details are estimated; mural fields are neutral. See the [design and provenance brief](docs/shan-yuan-tang-design-brief.md). Review with `?review=shan-yuan-tang` or `?review=shan-yuan-tang-side`.
+The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
 
-Leong Kee (Klang) Bak Kut Teh at 251 Geylang Road adds the twelfth place, the coffeeshop across Lorong 11 from Shan Yuan Tang. Its dated April/June 2024 exterior has yellow/red nameboards, arched shutters, turquoise tile fields, terracotta roofs and a brown side canopy over visible tables and stools. The corrected side has two ornate window pairs, simpler rear bays and a taller rear context, with estimated heights and a shallow visual join across a source-map gap. Three front source bays are provisionally assigned; their missing address tags do not establish that all three are No. 251. The middle stall fascia is neutral and the rear context carries no tenant identity. Dining recesses are backed and retain the source building collisions. See [reference notes](docs/lorong-11-references.md#leong-kee-klang-bak-kut-teh-251-geylang-road). Review with `?review=leong-kee`, `?review=leong-kee-corner`, `?review=leong-kee-side` or `?review=leong-kee-side-rear`.
+## Run locally
 
-Masjid Haji Mohd Salleh at 245 Geylang Road adds the thirteenth place. Its mapped footprint and address agree with MUIS, while a licensed December 2020 photograph and LearnIslam exterior support the cream-and-green frontage, central arch, four upper window bays, twin towers and gable. The official four-storey description differs from the map's three-level tag, so the model follows visible exterior tiers without claiming an exact internal floor division. Fine ornament and dimensions are estimated; the exterior remains closed. Review with `?review=haji-mohd-salleh-mosque`.
-
-The temple-side back alley now links Lorong 9 to Lorong 11 through a narrow pedestrian passage. Both retained OSM ways are preserved, with estimated paving widths, drains, neutral rear façades, service details and the temple's cream/red rear wall. A separately documented side enclosure corrects the entrance to an approximately two-metre wall-to-wall gap, based on the supplied Street View; the source footprints remain intact. An early dead-end assumption was corrected after finding the mapped footway and inspecting its visible entrance. See the [alley provenance and limitations](docs/temple-back-alley-design-brief.md). Review with `?review=temple-back-alley`, `?review=temple-back-alley-middle` or `?review=temple-back-alley-east`.
-
-Mongkok Dim Sum at 214 Geylang Road adds a fourteenth place, at the Lorong 8 corner. Its cream three-storey corner, red vertical name, green columns, canopy, balcony railings and sparse outdoor seating follow an October 2016 contributor panorama. The current Maps listing supports the address, while the model remains explicitly historical. Only an estimated corner portion of the larger mapped block receives this identity; source outlines and collisions stay intact. See the [Mongkok brief](docs/mongkok-dim-sum-design-brief.md). Review with `?review=mongkok-dim-sum` or `?review=mongkok-dim-sum-side`.
-
-## Run
+You need a current Node.js installation.
 
 ```sh
+git clone https://github.com/AshIgnYeo/adventure-through-geylang.git
+cd adventure-through-geylang
 npm install
 npm run dev
 ```
 
-Open the localhost URL printed by Vite. For a phone on the same Wi-Fi, open the printed Network URL while the laptop and server remain running. No account, geolocation or microphone permission is needed. A network firewall or Wi-Fi client isolation can prevent phone access.
+Open the local address printed by Vite. To view it on a phone, use the printed network address while the phone and computer are connected to the same local network.
+
+For a production build and the geometry checks:
 
 ```sh
 npm run build
 npm test
 ```
 
-## Explore
+No account, location access or microphone permission is required. The completed build makes no live mapping requests.
 
-- Desktop: click the street once to capture the mouse, then use standard FPS mouse-look and WASD movement. Escape opens the menu and releases the mouse. Keyboard mode uses the arrow keys to look.
-- Phone: landscape recommended. Left joystick walks; drag on the right to look.
-- Menu: daylight, blue hour or after dark; FPS mouse or keyboard look controls; walking speed; touch controls; return to start.
-- No minimap, player tracking, navigation arrows or compass.
+## Explore the render
 
-## Geographic fidelity
+- **Desktop:** click the scene to capture the mouse, look around as in a first-person game, and use WASD to walk. Press Escape to release the mouse and open the menu.
+- **Keyboard look:** choose keyboard controls in the menu, then use the arrow keys to look and WASD to walk.
+- **Phone or tablet:** landscape orientation is recommended. Use the left joystick to walk and drag on the right to look.
+- **Menu:** choose the time of day, control mode, touch controls and walking speed, or return to the starting position.
 
-The downloaded OpenStreetMap extract is retained in `public/osm-source.osm`. `node scripts/prepare-map.mjs` produces the smaller `public/map.json`, retaining geographic coordinates, way IDs, one-way tags and source building footprints. All projection/rendering uses metres. Longitude is east/X; north is negative Z. No street compression is applied.
+Review URLs can open directly opposite a model. For example:
 
-Source: https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155, retrieved 28 September 2026. Map data © OpenStreetMap contributors, licensed under ODbL 1.0: https://www.openstreetmap.org/copyright. Derived map data retains that licence. The derived map contains 34 main road ways and 154 building outlines, plus two separate alley/footway ways and one Lorong 9 access-context way. The source one-way tags indicate Lorong 11 southbound and Lorong 13 northbound. This is source-data fidelity, not an independently verified current traffic survey.
+```text
+/?review=shan-yuan-tang
+/?review=leong-kee
+/?review=haji-mohd-salleh-mosque
+/?review=mongkok-dim-sum
+/?review=temple-back-alley-east
+```
 
-The metre projection is tested against an independent haversine distance, to within 0.6%. Source survey accuracy is separate from projection scale. Road widths are estimates (6.5 m on lorongs, 3.2 m per mapped lane on main roads). Pavements, awnings, street furniture, sign placement and road markings are illustrative. Building outlines are sourced except the explicitly estimated Shan Yuan Tang site; height uses mapped storeys where supplied, otherwise an estimate. No private interiors are reconstructed.
+These are inspection starts, rather than navigation or tracking features.
 
-Heritage reference: https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg/ identifies early shophouses between Lorongs 11 and 13. The original generic atlas remains on unreviewed buildings. Real names occur only on explicitly matched landmarks, with estimated or reference-led sign designs. Address numbers are retained where present in source data, except where the landmark reconstruction supersedes them. No affiliation or endorsement is implied by depicting these organisations; fictional encounter behaviour must not be attributed to real operators.
+## Geographic and visual fidelity
 
-## Current scope and limitations
+The original OpenStreetMap extract is retained at `public/osm-source.osm`. The preparation script produces `public/map.json`, preserving geographic coordinates, way identifiers, one-way tags and source building footprints. Projection and rendering use metres, without compressing the streets. The metre conversion is tested against an independent haversine calculation.
 
-This first deliverable is a walkable environment, not the multiplayer game. No lobbies, NPC encounters, group detection, traffic or deadline yet. Building volumes and the alley bins block walking; other decorative props do not. The sampled area's outer boundary blocks walking. Surroundings outside the selected area are incomplete.
+The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 34 main road ways, 154 building outlines, two alley or footway ways and one Lorong 9 access-context way.
 
-The browser build and geometry tests are checked locally. Desktop browser visual checks do not establish performance on an actual phone. Phone testing and facade/reference refinement are the next milestones. Google Fonts is optional, with local font fallbacks; no live mapping calls are needed during play.
+This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 
-## Generated asset
+Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings remain generic and are not assigned real names.
 
-`public/shophouse-atlas.png` is the original generic texture, created with the built-in image-generation tool. Its prompt is saved in `docs/asset-prompt.md`. The newer `public/lorong-11-heritage-atlas.png` is a reference-led AI reconstruction, with source notes and the full prompt in `docs/lorong-11-references.md`. Neither asset is street-survey evidence. Public reference photographs are linked, not bundled as original game assets.
+Detailed provenance is available in:
 
-## Intended game
+- [Lorong 11 reference notes](docs/lorong-11-references.md)
+- [Building research queue](docs/lorong-11-building-queue.md)
+- [Shan Yuan Tang design brief](docs/shan-yuan-tang-design-brief.md)
+- [Temple-side back lane brief](docs/temple-back-alley-design-brief.md)
+- [Mongkok Dim Sum design brief](docs/mongkok-dim-sum-design-brief.md)
 
-Private 2–6 player games lasting 5–15 minutes: fixed-address rendezvous and free-roam regrouping; solo mode eventually uses an escape objective. No minimap or other-player location tracking. People who meet can become subtly highlighted while visible. Deadline is the failure condition. Real scale is preserved; spawn selection controls walking distance.
+## Project structure
+
+```text
+public/              retained map data, derived map data and texture atlases
+scripts/             map preparation tools
+src/                 viewer, world generation and landmark models
+tests/               geographic and model-assignment checks
+docs/                research, provenance and modelling limitations
+```
+
+Most landmark detail is built from code-native geometry so it can be adjusted without external modelling software. A small number of façades use original reconstruction texture atlases. Reference photographs are linked in the documentation and are not distributed as project assets.
+
+## Extending the streetscape
+
+A useful addition begins with evidence, rather than geometry. Confirm the place name and address, match it to a source footprint where possible, inspect dated exterior references, and record uncertainty before modelling. Preserve the geographic scale and source coordinates. Keep inferred details conservative, especially when a building contains several premises or the available photograph does not show the full elevation.
+
+New work should include its provenance notes and the narrowest useful geometry checks. Run `npm test` and `npm run build`, then inspect the model from street level before committing it.
+
+## Reuse and licensing
+
+The intention is for the project's original code and original assets to be cloned, adapted and used as a foundation for other work. The repository does not currently contain a project-wide licence file, so this statement of intent is not yet a legal licence. Add an explicit licence before representing the repository as available for unrestricted reuse.
+
+OpenStreetMap data and derived map data are subject to the [Open Database Licence](https://www.openstreetmap.org/copyright). Third-party packages retain their own licences. Linked reference photographs and external source material are not part of the distributed asset set. Any future project licence should preserve those distinctions.
+
+## Status
+
+The Lorong 11 study is usable as a walkable desktop render and remains under active refinement. Surrounding streets are context rather than a complete model of Geylang. Current priorities are expanding the mapped area, improving façade fidelity and documenting each addition carefully.
+
+The earlier multiplayer game concept is on hold. Its absence from the current roadmap keeps the repository focused on the streetscape itself and leaves downstream uses open.
