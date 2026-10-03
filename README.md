@@ -97,9 +97,9 @@ New work should include its provenance notes and the narrowest useful geometry c
 
 ## Reuse and licensing
 
-The intention is for the project's original code and original assets to be cloned, adapted and used as a foundation for other work. The repository does not currently contain a project-wide licence file, so this statement of intent is not yet a legal licence. Add an explicit licence before representing the repository as available for unrestricted reuse.
+The project's original code and project-original assets are available under the [MIT Licence](LICENSE). They may be used, copied, modified and distributed, including for commercial work, subject to the licence terms.
 
-OpenStreetMap data and derived map data are subject to the [Open Database Licence](https://www.openstreetmap.org/copyright). Third-party packages retain their own licences. Linked reference photographs and external source material are not part of the distributed asset set. Any future project licence should preserve those distinctions.
+The retained OpenStreetMap extract and derived map data are separately covered by the [Open Database Licence 1.0](LICENSE-DATA.md). Third-party packages retain their own licences. Linked reference photographs and external source material are not part of the distributed asset set.
 
 ## Status
 
