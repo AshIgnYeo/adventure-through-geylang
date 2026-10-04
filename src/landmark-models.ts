@@ -3,6 +3,7 @@ import type { World, Point } from './world';
 import { landmarkFor } from './landmarks.mjs';
 import { buildLeongKeeSide, leongKeeTable } from './leong-kee-exterior';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
+import { buildAmrise } from './amrise';
 
 export type FacadeFrame = { a: Point; dx: number; dz: number; nx: number; nz: number; width: number };
 
@@ -10,6 +11,7 @@ export type FacadeFrame = { a: Point; dx: number; dz: number; nx: number; nz: nu
 export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: pc.Material) {
   const place = landmarkFor(id);
   if (!place) return false;
+  if (place.kind === 'amrise') return buildAmrise(world, f);
   const { a, dx, dz, nx, nz, width: w } = f;
   const angle = Math.atan2(nx, nz) * 180 / Math.PI;
   const pt = (u: number, d = 0): Point => [a[0] + dx * u + nx * d, a[1] + dz * u + nz * d];
