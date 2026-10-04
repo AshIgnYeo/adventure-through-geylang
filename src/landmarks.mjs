@@ -3,10 +3,12 @@
 import { nearestOnSegment } from './geo.mjs';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
 import { mongkok } from './mongkok-layout.mjs';
+import { frogPorridge } from './frog-porridge-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...frogPorridge, frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 0, reviewBuildingId: '453797927' },
   {
     id: 'haji-mohd-salleh-mosque', buildingIds: ['454254204'], kind: 'mosque',
     name: 'Masjid Haji Mohd Salleh (Geylang)', address: '245 Geylang Road', height: 11.35,

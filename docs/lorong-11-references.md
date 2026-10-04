@@ -165,3 +165,7 @@ Added **1 October 2026** after verifying GPT-6 Astra. The [dedicated provenance 
 ## Mongkok Dim Sum, 214 Geylang Road
 
 Added **2 October 2026** after verifying GPT-6 Astra. The [Mongkok design brief](mongkok-dim-sum-design-brief.md) records the current address check, attributed October 2016 contributor panorama and estimated corner extent within the larger source block. The original street edges and whole-block collision remain intact; only the corner carries the name. Height and furniture are estimates, and present façade condition remains unverified. All new geometry and lettering are original; no reference images are shipped.
+
+## Geylang Lor 9 Fresh Frog Porridge, 235 Geylang Road
+
+Added **4 October 2026**. The [design brief](lor-9-frog-porridge-design-brief.md) records the operator address, named OSM point within way 453797927, postcode discrepancy and two directly inspected June 2026 contributor exterior photographs. The single source shell, original concave footprint and metre scale are preserved. Two-storey height, roof, side-bay repetition and sparse seating are estimated. The existing Lorong 9 width overlaps the source shell; new ground-level fittings remain within the recessed verandah. No private interior, whole-building tenancy, copied photograph or operator affiliation is asserted. Review: `?review=lor-9-frog-porridge` and `?review=lor-9-frog-porridge-side`.
