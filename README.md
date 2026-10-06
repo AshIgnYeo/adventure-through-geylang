@@ -11,7 +11,7 @@ This is now primarily an environment and rendering project. The walking controls
 - A metre-scale street layout derived from retained OpenStreetMap data.
 - A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
 - Daylight, blue-hour and night lighting modes.
-- Reference-led models of 16 named buildings and landmarks.
+- Reference-led models of 17 named buildings and landmarks.
 - A mapped pedestrian back lane between Lorong 9 and Lorong 11.
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
@@ -56,6 +56,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=mongkok-dim-sum
 /?review=lor-9-frog-porridge
 /?review=amrise-hotel
+/?review=thye-seng
 /?review=temple-back-alley-east
 ```
 
@@ -80,6 +81,7 @@ Detailed provenance is available in:
 - [Mongkok Dim Sum design brief](docs/mongkok-dim-sum-design-brief.md)
 - [Geylang Lor 9 Fresh Frog Porridge design brief](docs/lor-9-frog-porridge-design-brief.md)
 - [Amrise Hotel design brief](docs/amrise-hotel-design-brief.md)
+- [Thye Seng Hardware design brief](docs/thye-seng-design-brief.md)
 
 ## Project structure
 

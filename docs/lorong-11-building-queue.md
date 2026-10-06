@@ -183,14 +183,15 @@ Selected for research on **4 October 2026** after the user requested the next bu
 
 ## Next five building targets, researched 6 October 2026
 
-This is a research-only extension requested by the user. No geometry, registry, asset or test changes were made. The current model was not GPT-6 Astra, so implementation remains deferred until Astra is explicitly verified. The targets are ordered to extend the existing scene coherently, starting beside the latest Sims Avenue work and then continuing east along Geylang Road and Lorong 15.
+This extension was first recorded in a research-only pass requested by the user, without geometry changes. Q14 was subsequently built after GPT-6 Astra verification; Q15–Q18 remain pending and require the same model check before implementation. The targets are ordered to extend the existing scene coherently, starting beside the latest Sims Avenue work and then continuing east along Geylang Road and Lorong 15.
 
-### Q14. Thye Seng Hardware Enterprise, 122 Sims Avenue, pending and model-ready
+### Q14. Thye Seng Hardware Enterprise, 122 Sims Avenue, completed
 
 - **Address / footprint:** 122 Sims Avenue, Singapore 387445; [OSM node 6396561545](https://www.openstreetmap.org/node/6396561545) lies inside the addressed three-level [way 682928762](https://www.openstreetmap.org/way/682928762). The source outline has an approximately 6.70 m street edge and a stepped rear; preserve the full polygon.
 - **Sources / exterior:** [operator shop page](https://thyeseng.com/shop/) and [Makita dealer directory](https://makita.com.sg/find-a-dealer/) both publish the name and address. [June 2024 Street View](https://www.google.com/maps/@1.3142249,103.8781813,3a,75y,135.73h,90t/data=!3m7!1e1!3m5!1s2Ajok7bnMLxnkcW7PuS2sQ!2e0!7i16384!8i8192) and a September 2024 contributor frontage photograph were visually inspected through the current Maps listing.
 - **Confidence / scope:** High for current identity, address and single-footprint assignment; moderate for the dated exterior. Model the three-storey cream shophouse, shallow shop awning, blue/red bilingual fascia, upper windows and visible conditioners conservatively. Omit merchandise, people, movable displays and interior depth. Dimensions beyond the retained footprint are estimates.
-- **Status / blocker:** First build target. No research blocker. Recheck the operator page and Street View immediately before implementation.
+- **Completed, 6 October 2026:** Verified `gpt-6-astra` before editing, rechecked the operator/Makita addresses and inspected the full June 2024 elevation. Modelled only No. 122 with paired upper windows, vents, two condensers, cream/ochre walls, red awning, original bilingual fascia and opaque recessed shopfront. Neighbouring Thye Seng signage does not establish another unit assignment; upper organisation lettering remains unverified and is omitted. Preserved the full source outline and rear roof notch. See the [design brief](thye-seng-design-brief.md) for estimates and exclusions.
+- **Validation / completion:** All **36 tests**, production build and whitespace check passed; existing bundle-size advisory only. Daylight front and oblique visual checks passed. Review positions stay within the original walkable boundary and use an explicit upward angle. Browser console capture was unavailable. Q14 is complete within the dated-reference limits; named-place total is seventeen. Q15–Q18 remain pending. One focused local model commit, no push; schedule remains paused.
 
 ### Q15. Buddhist Art Centre, 285 Geylang Road, pending and model-ready
 

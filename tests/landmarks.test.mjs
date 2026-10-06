@@ -187,7 +187,7 @@ test('real landmark identities have unique, existing street-study footprints and
       ids.add(id);
       const building = map.buildings.find(b => b.id === id);
       if (place.id === 'leong-kee') assert.equal(building?.street, null);
-      else if (place.id === 'amrise-hotel') assert.equal(building?.street, 'Sims Avenue');
+      else if (['amrise-hotel', 'thye-seng'].includes(place.id)) assert.equal(building?.street, 'Sims Avenue');
       else if (['haji-mohd-salleh-mosque', 'lor-9-frog-porridge'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
       else assert.equal(building?.street, 'Lorong 11 Geylang');
       assert.equal(landmarkFor(id), place);

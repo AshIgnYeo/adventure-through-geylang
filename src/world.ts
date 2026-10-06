@@ -6,6 +6,7 @@ import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
 import { buildFrogPorridge } from './frog-porridge';
+import { thyeSengRoofTriangles } from './thye-seng-layout.mjs';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
@@ -21,7 +22,7 @@ export class World {
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
   private batch=-1;
-  reviewSpawns = new Map<string, {p: Point; yaw: number}>();
+  reviewSpawns = new Map<string, {p: Point; yaw: number; pitch?: number}>();
   constructor(app:pc.AppBase,data:MapData,camera:pc.Entity){
     this.app=app;this.data=data;this.camera=camera;
     const low=project([data.bounds[0],data.bounds[1]],data.origin), high=project([data.bounds[2],data.bounds[3]],data.origin);
@@ -88,7 +89,7 @@ export class World {
       for(let i=0;i<poly.length;i++){const a=poly[i],c=poly[(i+1)%poly.length],mid:Point=[(a[0]+c[0])/2,(a[1]+c[1])/2];const d=this.nearest(mid).distance;if(d<best && Math.hypot(c[0]-a[0],c[1]-a[1])>3){best=d;front=i;}}
       if(landmark?.frontEdge!==undefined){front=landmark.frontEdge;const a=poly[front],c=poly[(front+1)%poly.length],mid:Point=[(a[0]+c[0])/2,(a[1]+c[1])/2];best=this.nearest(mid).distance;}
       const levels=Math.min(8,b.levels??(b.street==='Lorong 11 Geylang'?2:index%11===0?4:2));const height=landmark?.height??levels*3.35;
-      const material=this.mat(landmark?.kind==='amrise'?'#e3bdc3':landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':landmark?.kind==='faith-mission'?'#dddcd3':landmark?.kind==='ho-san'?'#deded4':landmark?.kind==='shg'?'#c2d0c4':landmark?.kind==='khek-leow'?'#dedec3':landmark?.kind==='canton-wong'?'#e1e1d8':landmark?.kind==='hainan-goh'?'#b4a9bc':landmark?.kind==='leong-kee'?'#d8c9aa':landmark?.kind==='mosque'?'#ddd6b8':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
+      const material=this.mat(landmark?.kind==='thye-seng'?'#dfd9c9':landmark?.kind==='amrise'?'#e3bdc3':landmark?.kind==='hotel'?'#a9c9df':landmark?.kind==='association'?'#e3bdba':landmark?.kind==='agape'?'#c9d9b6':landmark?.kind==='faith-mission'?'#dddcd3':landmark?.kind==='ho-san'?'#deded4':landmark?.kind==='shg'?'#c2d0c4':landmark?.kind==='khek-leow'?'#dedec3':landmark?.kind==='canton-wong'?'#e1e1d8':landmark?.kind==='hainan-goh'?'#b4a9bc':landmark?.kind==='leong-kee'?'#d8c9aa':landmark?.kind==='mosque'?'#ddd6b8':palette[index%palette.length]);material.cull=pc.CULLFACE_NONE;material.update();
       let a=poly[front],v=poly[(front+1)%poly.length];const width=Math.hypot(v[0]-a[0],v[1]-a[1]);let dx=(v[0]-a[0])/width,dz=(v[1]-a[1])/width;
       const mid:Point=[(a[0]+v[0])/2,(a[1]+v[1])/2];
       // Keep the textured face outward regardless of the source polygon winding.
@@ -99,7 +100,10 @@ export class World {
         const base=b.id==='454254214'&&i===3?3.12:.13;
         this.panel(poly[i],poly[(i+1)%poly.length],base,height,material);
       }
-      const roofPositions=poly.flatMap(p=>[p[0],height+.05,p[1]]),indices=[];for(let k=1;k<poly.length-1;k++)indices.push(0,k,k+1);const roofMat=this.mat('#754c3b');roofMat.cull=pc.CULLFACE_NONE;roofMat.update();this.mesh('roof',roofPositions,poly.flatMap(p=>[p[0]/4,p[1]/4]),indices,roofMat);
+      const roofPositions=poly.flatMap(p=>[p[0],height+.05,p[1]]),indices=[];
+      if(landmark?.kind==='thye-seng')indices.push(...thyeSengRoofTriangles.flat());
+      else for(let k=1;k<poly.length-1;k++)indices.push(0,k,k+1);
+      const roofMat=this.mat('#754c3b');roofMat.cull=pc.CULLFACE_NONE;roofMat.update();this.mesh('roof',roofPositions,poly.flatMap(p=>[p[0]/4,p[1]/4]),indices,roofMat);
       if(landmark){
         const road=landmarkReviewPoint(landmark,mid,this.segments) as Point;
         const review=landmark.reviewOffset ? [road[0]+nx*landmark.reviewOffset,road[1]+nz*landmark.reviewOffset] as Point : road;
