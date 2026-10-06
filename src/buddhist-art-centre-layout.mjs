@@ -3,7 +3,7 @@ export const buddhistArtCentre = {
   id: 'buddhist-art-centre', buildingIds: ['454254227'], kind: 'buddhist-art-centre',
   name: 'Buddhist Art Centre (June 2024 exterior)', address: '285 Geylang Road',
   height: 7.7, ridgeHeight: 10.2, ridgeDepth: .32, frontEdge: 0, fiveFootWay: 1.8, eavesOverhang: .45, reviewRoad: 'Geylang Road',
-  evidence: 'The operator store page and web listings give 285 Geylang Road. Named OSM node 4689499461 lies inside unnumbered way 454254227, between the Sik Wai Sin node in the next footprint and No. 283. June 2024 Street View shows the signed NO:285 frontage: two storeys under a pitched tiled roof, three arched upper windows between fluted blue and yellow pilasters, a red scroll frieze, a teal bilingual signboard, two vertical signs, ochre five-foot way piers, a faded red awning and two tiered chandeliers hung in the five-foot way outside the shopfront glass. Only this footprint is assigned. Heights, roof pitch and ornament are estimated; vertical sign wording is not reproduced; no stock, religious objects or private interior are reconstructed.',
+  evidence: 'The operator store page and web listings give 285 Geylang Road. Named OSM node 4689499461 lies inside unnumbered way 454254227, between the Sik Wai Sin node in the next footprint and No. 283. June 2024 Street View shows the signed NO:285 frontage: two storeys under a pitched tiled roof, three casements under banded segmental arches between six fluted blue and yellow pilasters, a red scroll frieze, a teal bilingual signboard, two vertical signs, ochre five-foot way piers, a faded red awning and two tiered chandeliers hung in the five-foot way outside the shopfront glass. Only this footprint is assigned. Heights, roof pitch and ornament are estimated; vertical sign wording and telephone numbers are not reproduced; no stock, religious objects or private interior are reconstructed.',
   sources: [
     'https://www.buddhistartcentre.com/store/',
     'https://www.openstreetmap.org/node/4689499461',
@@ -33,7 +33,8 @@ export function artCentreFrame(poly, edge = buddhistArtCentre.frontEdge) {
 
 export function artCentreLayout(width) {
   const boxes = [];
-  const add = (name, u, y, out, w, h, depth, colour, glow = 0) => boxes.push({ name, u, y, out, w, h, depth, colour, glow });
+  // roll turns a box within the façade plane, for leaf and star ornament.
+  const add = (name, u, y, out, w, h, depth, colour, glow = 0, roll = 0) => boxes.push({ name, u, y, out, w, h, depth, colour, glow, roll });
   const D = buddhistArtCentre.fiveFootWay;
   const ochre = '#b98a34', soffit = '#d9bf72', gold = '#c08a2e', white = '#f3f0e6';
   const blue = '#2f58a8', green = '#3d8a56', red = '#c13b36', teal = '#2f8d86';
@@ -59,42 +60,72 @@ export function artCentreLayout(width) {
   add('pier bracket', width - .20, 2.92, -.02, .22, .26, .08, green);
   add('pier bracket bloom', width - .20, 2.86, .025, .10, .10, .02, red);
 
-  // Lintel, tricolour bands and the bilingual signboard over the five-foot way.
+  // Lintel, painted bands and the bilingual signboard over the five-foot way.
   add('five-foot way lintel', width / 2, 3.60, .02, width, .30, .20, '#ebe6d8');
-  for (const [i, colour] of [red, green, blue, '#e2ad3a'].entries()) add('painted band', width / 2, 3.79 + i * .055, .06, width, .055, .12, colour);
+  for (const [i, colour] of [red, blue, '#e9b23f', green].entries()) add('painted band', width / 2, 3.78 + i * .055, .06, width, .055, .12, colour);
   add('signboard edge', 2.70, 4.48, .12, 4.24, 1.0, .14, '#2f7477');
   add('sign ledge', width / 2, 5.03, .12, width, .08, .30, '#e9dfc4');
-  // Vertical sign colours follow the reference; its wording is not reproduced.
-  add('vertical sign frame', .32, 5.55, .14, .34, 2.68, .10, '#d4552f');
-  add('vertical sign green field', .32, 5.85, .195, .26, 1.90, .01, '#4c9a4a', .15);
-  add('vertical sign red field', .32, 4.62, .195, .26, .60, .01, '#b8322c', .15);
-  add('projecting sign frame', width - .22, 5.30, .45, .06, 2.72, .66, '#1f5f5a');
-  add('projecting sign face', width - .22, 5.30, .45, .10, 2.56, .56, teal);
-  for (const y of [4.10, 6.50]) add('projecting sign bracket', width - .22, y, .08, .04, .04, .16, '#5a5f5c');
+  // Vertical sign colours follow the reference; wording and numbers are not reproduced.
+  add('vertical sign frame', .32, 5.58, .30, .34, 2.74, .08, '#1d1b19');
+  for (const y of [4.45, 6.70]) add('vertical sign bracket', .32, y, .13, .04, .04, .26, '#5c4a3a');
+  add('projecting sign cream edge', width - .10, 5.60, .50, .05, 3.04, .70, '#efe6cf');
+  add('projecting sign face', width - .10, 5.60, .50, .09, 2.92, .60, teal);
+  for (const y of [4.30, 6.90]) add('projecting sign bracket', width - .10, y, .07, .03, .04, .14, '#5a5f5c');
 
-  // Upper storey: four fluted pilasters and three arched casement windows.
-  const pilasters = [.40, 1.80, 3.33, 4.73].map(t => t * width / 5.13);
-  for (const u of pilasters) {
-    add('pilaster base', u, 5.14, .09, .40, .16, .18, '#e2ad3a');
-    add('fluted pilaster shaft', u, 5.885, .08, .32, 1.33, .14, white);
-    for (const s of [-.105, -.035, .035, .105]) add('pilaster flute', u + s, 5.885, .155, .035, 1.20, .02, blue);
-    add('capital necking', u, 6.575, .09, .36, .05, .16, '#e2ad3a');
-    add('capital leaves', u, 6.71, .10, .42, .22, .22, green);
-    add('capital bloom', u, 6.72, .215, .14, .10, .02, red);
-    add('capital abacus', u, 6.855, .10, .46, .07, .24, '#f0e7cf');
-  }
-  const windows = [[(pilasters[0] + pilasters[1]) / 2, .98], [(pilasters[1] + pilasters[2]) / 2, 1.08], [(pilasters[2] + pilasters[3]) / 2, .98]];
+  // Upper storey, from the June 2024 close view: a tall and a short fluted
+  // pilaster at each end, two between the windows, and segmental banded arches.
+  const k = width / 5.13, edge = '#e3a93b', face = '#f3e6bd', star = '#c8453a', leaf = '#3d8a56';
+  const springing = 6.74, glassTop = 6.64, sill = 5.07;
+  const pilaster = (u, w, top, out, kind) => {
+    const shaft = top - .37 - sill;
+    add(`${kind} pilaster base`, u, sill + .07, out + .02, w + .04, .14, .16, '#efe3c0');
+    add(`${kind} pilaster edge`, u, sill + .14 + shaft / 2, out, w, shaft, .12, edge);
+    add(`${kind} pilaster face`, u, sill + .14 + shaft / 2, out + .065, w - .07, shaft - .04, .01, face);
+    for (let i = 1; i <= 4; i++) add(`${kind} pilaster flute`, u - (w - .07) / 2 + (w - .07) * i / 5, sill + .14 + shaft / 2, out + .075, .035, shaft - .14, .012, blue);
+    // Capital: cream block, green leaf scrolls, a red star flower and red cap.
+    // Tall end capitals overhang less, keeping them inside the No. 285 frontage.
+    const y0 = top - .37, over = kind === 'tall' ? .02 : .06;
+    add(`${kind} capital necking`, u, y0 + .02, out + .01, w + .02, .04, .14, edge);
+    add(`${kind} capital block`, u, y0 + .19, out + .03, w + over, .30, .18, '#f0e9d6');
+    for (const side of [-1, 1]) {
+      add(`${kind} capital lower leaf`, u + side * w * .25, y0 + .10, out + .125, w * .48, .07, .02, leaf, 0, side * 28);
+      add(`${kind} capital scroll leaf`, u + side * w * .28, y0 + .235, out + .125, w * .44, .065, .02, leaf, 0, -side * 34);
+      add(`${kind} capital leaf tip`, u + side * w * .42, y0 + .29, out + .125, .06, .06, .02, leaf, 0, 45);
+    }
+    for (const roll of [0, 45]) add(`${kind} capital star flower`, u, y0 + .17, out + .13, .085, .085, .015, star, 0, roll);
+    add(`${kind} capital red cap`, u, y0 + .37, out + .03, w + over + .04, .07, .22, star);
+  };
+  const pilasters = [
+    [.17, .26, 7.32, .03, 'tall'], [.48, .34, springing, .06, 'short'], [1.86, .38, springing, .06, 'inner'],
+    [3.27, .38, springing, .06, 'inner'], [4.645, .34, springing, .06, 'short'], [4.945, .24, 7.32, .03, 'tall'],
+  ].map(([u, w, top, out, kind]) => ({ u: u * k, w: w * k, top, out, kind }));
+  for (const p of pilasters) pilaster(p.u, p.w, p.top, p.out, p.kind);
+
+  // Casements: thick white frames, two leaves with a transom, pale curtained glass.
+  const windows = [[1.165, .99, '#3d8a56'], [2.565, 1.01, '#2d5bb0'], [3.965, .99, '#3d8a56']].map(([u, w, fan]) => ({ u: u * k, w: w * k, fan }));
   const arches = [];
-  for (const [u, w] of windows) {
-    add('window dark recess', u, 5.975, .04, w, 1.85, .03, '#2a2c31');
-    for (const s of [-w / 2 + .03, 0, w / 2 - .03]) add('window stile', u + s, 5.975, .075, .06, 1.85, .04, white);
-    for (const y of [5.08, 6.10, 6.87]) add('window rail', u, y, .075, w, .06, .04, white);
-    arches.push({ u, span: w, base: 6.90, rise: .40 });
+  for (const { u, w, fan } of windows) {
+    const h = glassTop - sill, mid = sill + h / 2;
+    for (const [i, du] of [-w / 4, w / 4].entries()) for (const [j, y] of [[0, (sill + 5.85) / 2], [1, (5.85 + glassTop) / 2]]) {
+      add('curtained window pane', u + du, y, .03, w / 2 - .02, j ? glassTop - 5.85 : 5.85 - sill, .02, (i + j) % 2 ? '#7f888c' : '#8d9497');
+    }
+    for (const s of [-w / 2 + .035, 0, w / 2 - .035]) add('window stile', u + s, mid, .065, s ? .07 : .06, h, .04, white);
+    for (const y of [sill + .035, 5.85, glassTop - .035]) add('window rail', u, y, .065, w, y === 5.85 ? .06 : .07, .04, white);
+    arches.push({ u, span: w, springing, glassTop, rise: .30, fan,
+      // Bands outward from the intrados: [inner, outer, colour], within the pilaster gap.
+      bands: [[0, .06, '#f3efe4'], [.06, .12, '#2d5bb0'], [.12, .16, '#e9b23f'], [.16, .18, star], [.18, .19, leaf]] });
   }
-  add('frieze moulding', width / 2, 7.60, .05, width, .06, .10, '#2f7a5c');
-  add('eaves soffit', width / 2, 7.66, .22, width, .04, .44, '#e8e1cf');
-  add('green eaves fascia', width / 2, 7.70, .44, width, .22, .04, '#2f7a5c');
-  add('shared downpipe', width - .045, 3.90, .08, .07, 7.60, .07, '#3a8a6a');
+
+  // Frieze, eaves bands, gutter and the shared downpipe.
+  add('eaves blue band', width / 2, 7.56, .05, width, .08, .10, '#2d5bb0');
+  add('eaves red line', width / 2, 7.615, .05, width, .03, .10, star);
+  add('eaves soffit', width / 2, 7.64, .24, width, .04, .48, '#5d5148');
+  add('green eaves fascia', width / 2, 7.71, .46, width, .20, .04, '#2f7a5c');
+  add('green gutter', width / 2, 7.82, .42, width, .10, .12, '#2b6f55');
+  add('shared downpipe', width - .018, 3.90, .05, .03, 7.60, .05, '#3a8a6a');
+  // A small chimney stack near the west party wall, position estimated.
+  add('chimney stack', .55, 8.45, -1.0, .32, .70, .32, '#9a8f84');
+  add('chimney cap', .55, 8.83, -1.0, .40, .06, .40, '#7d736a');
 
   // Two tiered chandeliers hang in the five-foot way, outside the glazing.
   const tiers = [[2.90, .22, .10], [2.80, .36, .10], [2.68, .52, .12], [2.55, .66, .14], [2.42, .54, .12], [2.31, .38, .10], [2.21, .22, .09], [2.12, .10, .08]];
@@ -104,7 +135,8 @@ export function artCentreLayout(width) {
   return {
     boxes, arches, chandeliers, pilasters, windows,
     sign: { left: .58, right: 4.82, bottom: 3.98, top: 4.98, out: .195 },
-    frieze: { bottom: 6.92, top: 7.57, out: .012 },
+    verticalSign: { left: .17, right: .47, bottom: 4.28, top: 6.88, out: .345 },
+    frieze: { bottom: springing - .05, top: 7.52, out: .012 },
     awning: { left: .30, right: width - .42, back: .02, front: .55, top: 3.42, bottom: 3.16 },
   };
 }
@@ -141,5 +173,6 @@ export function artCentreReviews(frame) {
     { id: 'buddhist-art-centre', p: point(width / 2, 14), target: point(width / 2, 0), pitch: 15 },
     { id: 'buddhist-art-centre-oblique', p: point(width / 2 - 11, 18), target: point(width / 2, 0), pitch: 12 },
     { id: 'buddhist-art-centre-five-foot-way', p: point(width / 2 + .6, 2.6), target: point(width / 2, -1), pitch: 22 },
+    { id: 'buddhist-art-centre-upper', p: point(width / 2 - 1.2, 5.5), target: point(width / 2, 0), pitch: 27 },
   ].map(r => ({ id: r.id, p: r.p, pitch: r.pitch, yaw: Math.atan2(r.p[0] - r.target[0], r.p[1] - r.target[1]) * 180 / Math.PI }));
 }

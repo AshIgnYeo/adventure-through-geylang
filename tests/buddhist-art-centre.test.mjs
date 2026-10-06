@@ -89,7 +89,7 @@ test('Buddhist Art Centre roof covers the source outline with a street-facing ri
 test('Buddhist Art Centre review starts face the frontage and stay walkable', () => {
   const low = project(map.bounds.slice(0, 2), map.origin), high = project(map.bounds.slice(2), map.origin);
   const reviews = artCentreReviews(frame);
-  assert.deepEqual(reviews.map(r => r.id), ['buddhist-art-centre', 'buddhist-art-centre-oblique', 'buddhist-art-centre-five-foot-way']);
+  assert.deepEqual(reviews.map(r => r.id), ['buddhist-art-centre', 'buddhist-art-centre-oblique', 'buddhist-art-centre-five-foot-way', 'buddhist-art-centre-upper']);
   for (const { p, yaw, pitch } of reviews) {
     assert.ok(p[0] > low[0] + 3 && p[0] < high[0] - 3 && p[1] > high[1] + 3 && p[1] < low[1] - 3);
     assert.ok(pitch > 0 && pitch < 30);
