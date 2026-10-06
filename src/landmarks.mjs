@@ -6,10 +6,12 @@ import { mongkok } from './mongkok-layout.mjs';
 import { frogPorridge } from './frog-porridge-layout.mjs';
 import { amrise } from './amrise-layout.mjs';
 import { thyeSeng } from './thye-seng-layout.mjs';
+import { buddhistArtCentre } from './buddhist-art-centre-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...buddhistArtCentre },
   { ...thyeSeng, reviewOffset: 0, reviewBuildingId: '682928762' },
   { ...amrise, reviewOffset: 0, reviewBuildingId: '682928750' },
   { ...frogPorridge, frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 0, reviewBuildingId: '453797927' },
