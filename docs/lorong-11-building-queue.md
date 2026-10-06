@@ -181,6 +181,47 @@ Selected for research on **4 October 2026** after the user requested the next bu
 - **Completed work:** Verified **gpt-6-astra** in current turn metadata before geometry edits. Resumed the two attributable research documents at `8d0d7c1`. Modelled exactly way 682928750 as a three-storey pale-pink frontage with paired/narrow windows, hoods, stepped parapet, recessed entrance and vertical oval blade sign. Preserved its approximately 8.24 m street edge, full outline and whole-footprint collision; neighbouring units remain independent. Added two review starts, source/clearance tests and updated the [design brief](amrise-hotel-design-brief.md).
 - **Validation / completion:** All **33 tests**, production build and whitespace check passed. Daylight front and oblique browser inspections verified the exterior with no captured runtime warnings or errors. The existing bundle-size advisory remains. No copied reference image or source-coordinate change. Completed within the documented dated-reference limits; one focused local commit, no push. The named-place total is now sixteen; the hourly schedule remains paused.
 
+## Next five building targets, researched 6 October 2026
+
+This is a research-only extension requested by the user. No geometry, registry, asset or test changes were made. The current model was not GPT-6 Astra, so implementation remains deferred until Astra is explicitly verified. The targets are ordered to extend the existing scene coherently, starting beside the latest Sims Avenue work and then continuing east along Geylang Road and Lorong 15.
+
+### Q14. Thye Seng Hardware Enterprise, 122 Sims Avenue, pending and model-ready
+
+- **Address / footprint:** 122 Sims Avenue, Singapore 387445; [OSM node 6396561545](https://www.openstreetmap.org/node/6396561545) lies inside the addressed three-level [way 682928762](https://www.openstreetmap.org/way/682928762). The source outline has an approximately 6.70 m street edge and a stepped rear; preserve the full polygon.
+- **Sources / exterior:** [operator shop page](https://thyeseng.com/shop/) and [Makita dealer directory](https://makita.com.sg/find-a-dealer/) both publish the name and address. [June 2024 Street View](https://www.google.com/maps/@1.3142249,103.8781813,3a,75y,135.73h,90t/data=!3m7!1e1!3m5!1s2Ajok7bnMLxnkcW7PuS2sQ!2e0!7i16384!8i8192) and a September 2024 contributor frontage photograph were visually inspected through the current Maps listing.
+- **Confidence / scope:** High for current identity, address and single-footprint assignment; moderate for the dated exterior. Model the three-storey cream shophouse, shallow shop awning, blue/red bilingual fascia, upper windows and visible conditioners conservatively. Omit merchandise, people, movable displays and interior depth. Dimensions beyond the retained footprint are estimates.
+- **Status / blocker:** First build target. No research blocker. Recheck the operator page and Street View immediately before implementation.
+
+### Q15. Buddhist Art Centre, 285 Geylang Road, pending and model-ready
+
+- **Address / footprint:** 285 Geylang Road, Singapore 389332; retained [OSM node 4689499461](https://www.openstreetmap.org/node/4689499461) lies inside [way 454254227](https://www.openstreetmap.org/way/454254227). The source shophouse is approximately 5.13 m wide and 14.72 m deep.
+- **Sources / exterior:** The [operator store page](https://www.buddhistartcentre.com/store/) publishes the name, full address and current catalogue. [June 2024 Street View](https://www.google.com/maps/@1.3124624,103.8781467,3a,80y,10h,100t/data=!3m7!1e1!3m5!1s70E8HnCOcGqPcYcFVA6kZw!2e0!7i16384!8i8192) was visually inspected and shows the signed, highly ornamented green-and-ochre two-storey frontage between Nos. 283 and 287.
+- **Confidence / scope:** High for identity/address and point-to-footprint assignment; moderate for fine ornament and current condition. Reconstruct the two-storey conserved frontage, pilasters, arched upper openings, green roof edge and projecting signs with simplified original lettering. Do not reproduce religious objects, stock or private interior details.
+- **Status / blocker:** Second build target. No research blocker; ornament must stay simplified where the reference does not resolve it.
+
+### Q16. Eat First / Sik Wai Sin, 287 Geylang Road, pending and model-ready
+
+- **Address / footprint:** 287 Geylang Road, Singapore 389334; the retained 2017 [Sik Wai Sin node 4689499460](https://www.openstreetmap.org/node/4689499460) lies inside [way 454254228](https://www.openstreetmap.org/way/454254228), immediately east of No. 285. The source shophouse is approximately 5.13 m wide and 14.72 m deep.
+- **Sources / exterior:** [ieatishootipost's August 2023 update](https://ieatishootipost.sg/eat-first-tale-two-brothers/) records Eat First's July 2023 return to the original Sik Wai Sin premises at No. 287. The June 2024 Street View linked under Q15 was visually inspected and shows the adjacent white two-storey frontage with red fascia. A current business record lists Eat First at 287A, while a separate Sik Wai Sin registration lists 289; this discrepancy does not justify assigning No. 289 or another footprint.
+- **Confidence / scope:** High for the published No. 287 restaurant location and mapped-point containment; moderate for the current trading name and upper-unit extent. Model only way 454254228 as the dated June 2024 exterior, using `Eat First / Sik Wai Sin` in documentation until a fresh pre-build check resolves the displayed name. Omit menu claims, diners, food and interior activity.
+- **Status / blocker:** Third build target. Model-ready as a dated exterior. The pre-build check must record whether the frontage still displays Eat First, Sik Wai Sin or both.
+
+### Q17. K Hotel 1515, 15 Lorong 15 Geylang, pending and model-ready
+
+- **Address / footprint:** 15 Lorong 15 Geylang, Singapore 388607; [OSM node 4302905933](https://www.openstreetmap.org/node/4302905933) lies inside addressed [way 1223539238](https://www.openstreetmap.org/way/1223539238), approximately 20.18 m by 11.55 m.
+- **Sources / exterior:** The [Hotels Licensing Board notice](https://www.hlb.gov.sg/notices/2021-q1/) records the change to K Hotel 1515 at this address. The [current Google Maps listing](https://www.google.com/maps/search/?api=1&query=K+Hotel+1515+15+Lorong+15+Geylang) links `khotel.co`, shows current reviews and supplies August 2024 exterior photographs; [Booking.com](https://www.booking.com/hotel/sg/k-1515.en-gb.html) continues to list the same name and address in 2026.
+- **Confidence / scope:** High for current name/address and footprint containment; moderate for exterior detail. The retained OSM point still says `Chang Ziang Hotel`, so that stale name must not be used. Model the five-storey pale-blue and white block, regular window bays, central covered driveway and restrained K Hotel fascia. Omit rooms and lobby details.
+- **Status / blocker:** Fourth build target. No research blocker. A fresh street-level view should confirm colours and any post-August 2024 sign changes.
+
+### Q18. Hotel 81 Spring, 22 Lorong 15 Geylang, pending and model-ready
+
+- **Address / footprint:** 22 Lorong 15 Geylang, Singapore 388619; [OSM node 4302906050](https://www.openstreetmap.org/node/4302906050) lies inside [way 454254281](https://www.openstreetmap.org/way/454254281), an approximately 15.39 m by 43.72 m source outline.
+- **Sources / exterior:** A current ACRA-derived [business profile](https://www.sgpbusiness.com/company/Hotel-81---Spring) reports the Hotel 81 Spring entity live at No. 22. [April 2024 Street View](https://www.google.com/maps/@1.313669,103.878108,3a,80y,90h,98t/data=!3m7!1e1!3m5!1sMgS1CqglRPN1fG9C_TToMA!2e0!7i16384!8i8192) was visually inspected and clearly shows the blue Hotel 81 elevation and address context.
+- **Confidence / scope:** High for published identity/address and point containment; moderate for current operation and dated appearance. Model the visible pale-blue front mass, white vertical bands, mixed rectangular/arched windows, shallow fascia and recessed entrance. Preserve the long source footprint, but avoid inventing rear openings or facilities unseen from public views.
+- **Status / blocker:** Fifth build target. No research blocker. Confirm the Hotel 81 branding remains displayed before implementation.
+
+**Rejected lead:** `Da Bao Lorong 15` remains in the retained 2017 map data at 116 Sims Avenue, but the June 2024 Street View frontage displays **ABC Bistro Restaurant Pte Ltd** and a lighting shop instead. It is excluded from this five-building plan because the old place name would misrepresent the dated exterior. No closure date is asserted.
+
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 
 Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.
