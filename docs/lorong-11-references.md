@@ -225,3 +225,7 @@ Implemented **7 October 2026** as a dated April 2024 exterior. SFCCA lists the a
 ## Sui Yuan Ju Buddhist Society, 2–4 Lorong 13 Geylang
 
 Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists the society at 4 Lor 13 Geylang, and April 2024 Street View shows its signboard on No. 4, with a continuous awning and a tiled shrine canopy across No. 2. Addressed ways 1223454593 and 1223454592 carry a provisional two-unit visual assignment; No. 2's tenancy is not asserted. The ornate two-storey upper storeys, fretwork fascia, signboard, canopy and awnings were measured by two-panorama triangulation. Lions, urn, offerings and couplet wording are omitted. Full evidence, method and exclusions are in the [design brief](sui-yuan-ju-design-brief.md). Reviews: `?review=sui-yuan-ju`, `?review=sui-yuan-ju-upper` and `?review=sui-yuan-ju-porch`.
+
+## Singapore Chong Min Association and Yun Teck Sian Tng, 15C Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps gives Chong Min at 15C Lor 13 Geylang, and the Yun Teck temple point lies inside source way 1223773762. April 2024 Street View shows both boards and a 15-C door plate on that frontage. The order of frontages puts it on the way tagged 15B, so the source tag is one letter behind the plate; it is recorded, not changed. Full evidence and exclusions are in the [design brief](chong-min-design-brief.md). Reviews: `?review=chong-min` and `?review=chong-min-ground`.

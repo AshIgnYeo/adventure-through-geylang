@@ -297,6 +297,13 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** a provisional two-unit visual assignment; No. 2's tenancy is not asserted. Dimensions come from two-panorama triangulation, which confirmed the 5.81 m source split. See the [design brief](sui-yuan-ju-design-brief.md).
 - **Validation / completion:** all **70 tests**, the type check and the build passed, with day and night renders. The named-place total is twenty-seven.
 
+### Q26. Singapore Chong Min Association and Yun Teck Sian Tng, 15C Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps gives Chong Min at 15C Lor 13 Geylang, 388656. The Yun Teck temple point lies inside [way 1223773762](https://www.openstreetmap.org/way/1223773762), tagged 15B.
+- **Exterior:** April 2024 Street View shows both boards on one white two-storey frontage with a 15-C door plate. The frontage sequence (13/13A, 15-C, 15D/E, 17) puts it on the way tagged 15B. The tag is recorded, not changed.
+- **Completed:** see the [design brief](chong-min-design-brief.md).
+- **Validation / completion:** all **73 tests**, the type check and the build passed. The named-place total is twenty-eight.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.

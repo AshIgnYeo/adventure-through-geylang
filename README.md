@@ -11,12 +11,12 @@ This is now primarily an environment and rendering project. The walking controls
 - A metre-scale street layout derived from retained OpenStreetMap data.
 - A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
 - Daylight, blue-hour and night lighting modes.
-- Reference-led models of 27 named buildings and landmarks.
+- Reference-led models of 28 named buildings and landmarks.
 - A mapped pedestrian back lane between Lorong 9 and Lorong 11.
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
 
-The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Golden Jade Restaurant, 277 KTV, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
+The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Golden Jade Restaurant, 277 KTV, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
 
 ## Run locally
 
@@ -67,6 +67,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=lam-clan
 /?review=hainan-lim
 /?review=sui-yuan-ju
+/?review=chong-min
 /?review=temple-back-alley-east
 ```
 
@@ -102,6 +103,7 @@ Detailed provenance is available in:
 - [Lam Clan Association design brief](docs/lam-clan-design-brief.md)
 - [Hainan Lim Clan Association building design brief](docs/hainan-lim-design-brief.md)
 - [Sui Yuan Ju Buddhist Society design brief](docs/sui-yuan-ju-design-brief.md)
+- [Chong Min Association and Yun Teck Sian Tng design brief](docs/chong-min-design-brief.md)
 
 ## Project structure
 
