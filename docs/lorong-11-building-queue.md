@@ -334,6 +334,13 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** single-frame photogrammetry of the conserved two-storey frontage with its fretwork eaves. Mister Contracts shares the Maps point, but its signs are on the houses to the north, so it is not assigned. See the [design brief](hong-ye-chen-design-brief.md).
 - **Validation / completion:** all **86 tests**, the type check and the build passed. The named-place total is thirty-four.
 
+### Q31. K Group, 5 Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps gives 5 Lor 13 Geylang, 388643; its point is in the street and not used. April 2024 Street View shows the K Group board on the house between door plates 3 and 7, matching [way 1223773754](https://www.openstreetmap.org/way/1223773754), tagged No. 5.
+- **Completed:** the shared row elevation via the new row module, with No. 7 unchanged. See the [design brief](k-group-design-brief.md).
+- **Validation / completion:** all **89 tests**, the type check and the build passed. The named-place total is thirty-five.
+- **Remaining in this row:** No. 3 (plate 3, red awning) has no identity found. The two northern houses carry Mister Contracts / MC Multi Skills signage, but Maps places Mister Contracts at No. 7. The source also tags two ways as No. 9. These remain locked.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.

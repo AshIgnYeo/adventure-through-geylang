@@ -245,3 +245,7 @@ Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists 
 ## Hong Ye Chen Interior Design, 7 Lorong 13 Geylang
 
 Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists the firm at 7 Lor 13 Geylang, and its point lies in the addressed way 1223773755. Street View shows door number 7 and the 浤業成 signboard. The conserved two-storey frontage has a central French window, pilasters, floral tile panels and the row's timber fretwork eaves. Full evidence, method and exclusions are in the [design brief](hong-ye-chen-design-brief.md). Reviews: `?review=hong-ye-chen` and `?review=hong-ye-chen-ground`.
+
+## K Group, 5 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists K Group Pte Ltd at 5 Lor 13 Geylang, and Street View shows its board on the house between door plates 3 and 7, matching addressed way 1223773754. It shares the row elevation with Hong Ye Chen through a common module. Full evidence and exclusions are in the [design brief](k-group-design-brief.md). Reviews: `?review=k-group` and `?review=lorong-13-row`.

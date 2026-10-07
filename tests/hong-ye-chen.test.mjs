@@ -15,7 +15,8 @@ test('Hong Ye Chen keeps the addressed No. 7 Lorong 13 outline containing its ma
   assert.equal(source.number, '7'); assert.equal(source.street, 'Lorong 13 Geylang');
   assert.equal(pointInPolygon([103.8775078, 1.3128704], source.coordinates), true);
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
-  for (const id of ['1223773754', '1223773756', '1223773757']) assert.equal(landmarkFor(id), undefined);
+  assert.equal(landmarkFor('1223773754').id, 'k-group');
+  for (const id of ['1223773756', '1223773757']) assert.equal(landmarkFor(id), undefined);
   assert.match(hongYeChen.evidence, /Mister Contracts shares the same Maps point/);
   assert.ok(Math.abs(frame.width - 5.02) < .02);
   const nearest = roadSegments.map(s => ({ ...nearestOnSegment(frame.point(frame.width / 2), s.a, s.b), name: s.road.name })).sort((x, y) => x.distance - y.distance)[0];
