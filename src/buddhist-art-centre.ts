@@ -1,6 +1,7 @@
 import * as pc from 'playcanvas';
 import type { World, Point } from './world';
 import { buddhistArtCentre, artCentreFrame, artCentreLayout, artCentreRoof, artCentreReviews } from './buddhist-art-centre-layout.mjs';
+import { buildGableRoof } from './gable-roof';
 
 /** June 2024 exterior of No. 285, using the untouched source outline. */
 export function buildBuddhistArtCentre(world: World, id: string, poly: Point[]) {
@@ -148,26 +149,8 @@ export function buildBuddhistArtCentre(world: World, id: string, poly: Point[]) 
   }
 
   // Weathered tiled gable roof, tile courses and raised party-wall copings.
-  const roof = artCentreRoof(frame), tile = material('#8f5a47'), course = material('#a86a52'), coping = material('#7a4a3b');
-  world.mesh('Buddhist Art Centre estimated tiled roof', roof.vertices.flat(), roof.vertices.flatMap(v => [v[0] / 3, v[2] / 3]), roof.slopes.flat(), tile);
-  for (const g of roof.gables) world.mesh('Buddhist Art Centre gable wall', g.flat(), [0, 0, 1, 0, .5, 1], [0, 1, 2], material(cream));
-  const lerp = (p: number[], q: number[], t: number) => p.map((v, i) => v + (q[i] - v) * t);
-  const v = roof.vertices;
-  for (const [e0, e1] of [[v[0], v[1]], [v[4], v[5]]]) {
-    for (let t = .04; t < .98; t += .05) {
-      const quad = [lerp(e0, v[2], t), lerp(e1, v[3], t), lerp(e1, v[3], t + .012), lerp(e0, v[2], t + .012)];
-      world.mesh('Buddhist Art Centre tile course', quad.flatMap(p => [p[0], p[1] + .015, p[2]]), [0, 0, 1, 0, 1, 1, 0, 1], [0, 1, 2, 0, 2, 3], course);
-    }
-  }
-  for (const [eave, rear, ridge, inward] of [[v[0], v[4], v[2], 1], [v[1], v[5], v[3], -1]] as const) {
-    for (const [p, q] of [[eave, ridge], [ridge, rear]]) {
-      const shift = (s: number[]) => [s[0] + frame.dx * .18 * inward, s[1], s[2] + frame.dz * .18 * inward];
-      const top = [p, q, shift(q), shift(p)].map(s => [s[0], s[1] + .09, s[2]]);
-      world.mesh('Buddhist Art Centre party-wall coping', top.flat(), [0, 0, 1, 0, 1, 1, 0, 1], [0, 1, 2, 0, 2, 3], coping);
-      const face = [shift(p), shift(q), top[2], top[3]];
-      world.mesh('Buddhist Art Centre coping face', face.flat(), [0, 0, 1, 0, 1, 1, 0, 1], [0, 1, 2, 0, 2, 3], coping);
-    }
-  }
+  buildGableRoof(world, 'Buddhist Art Centre', frame, artCentreRoof(frame),
+    { tile: '#8f5a47', course: '#a86a52', coping: '#7a4a3b', gable: cream, copingHeight: .09, copingWidth: .18 });
 
   for (const r of artCentreReviews(frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
   return true;

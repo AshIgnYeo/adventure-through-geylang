@@ -10,7 +10,7 @@ Retained [OSM node 4689499461](https://www.openstreetmap.org/node/4689499461) at
 
 Google Street View from **June 2024** was visually inspected in three panoramas. [Panorama `70E8HnCOcGqPcYcFVA6kZw`](https://www.google.com/maps/@?api=1&map_action=pano&pano=70E8HnCOcGqPcYcFVA6kZw&heading=10&pitch=8&fov=80) gives an oblique view from the No. 281 pavement. [Panorama `LiyhSflRbRfon_vCcaecGQ`](https://www.google.com/maps/@?api=1&map_action=pano&pano=LiyhSflRbRfon_vCcaecGQ&heading=8&pitch=14&fov=55) is a close view of the signboard, piers and five-foot way. [Panorama `_w5yHraTw78BWJJ4wn1RSQ`](https://www.google.com/maps/@?api=1&map_action=pano&pano=_w5yHraTw78BWJJ4wn1RSQ&heading=27&pitch=6&fov=22), from across Geylang Road, shows the full elevation and roof. The signboard displays **NO:285**, and the unit sits between the brown-and-white No. 283 and the white Eat First frontage at No. 287.
 
-Only way 454254227 is assigned. Nos. 283 and 287 remain generic.
+Only way 454254227 is assigned. No. 283 remains generic. No. 287 was modelled separately on 7 October 2026 as [Eat First](eat-first-design-brief.md). Its triangulated ridge sits about 2 m higher and 3 m deeper than this model's estimated ridge, at about the height of the attic described below. That suggests the attic belongs to No. 285, but this model has not been changed.
 
 ## What is modelled
 

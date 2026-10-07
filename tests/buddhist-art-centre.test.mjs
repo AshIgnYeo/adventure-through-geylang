@@ -27,7 +27,7 @@ test('Buddhist Art Centre keeps the single No. 285 outline containing its named 
   assert.equal(pointInPolygon(nodePoint('4689499460'), source.coordinates), false);
   assert.equal(pointInPolygon(nodePoint('4689499460'), map.buildings.find(b => b.id === '454254228').coordinates), true);
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
-  for (const id of ['454254226', '454254228']) assert.equal(landmarkFor(id), undefined);
+  for (const id of ['454254226', '454254228']) assert.notEqual(landmarkFor(id)?.id, buddhistArtCentre.id);
   const way = xml.match(/<way\b[^>]*id="454254227"[^>]*>[\s\S]*?<\/way>/)[0];
   assert.deepEqual(source.coordinates, [...way.matchAll(/<nd ref="(\d+)"/g)].map(([, id]) => nodePoint(id)));
   assert.equal(source.number, null, 'the operator address is provenance, not a source-map edit');

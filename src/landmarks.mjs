@@ -7,10 +7,12 @@ import { frogPorridge } from './frog-porridge-layout.mjs';
 import { amrise } from './amrise-layout.mjs';
 import { thyeSeng } from './thye-seng-layout.mjs';
 import { buddhistArtCentre } from './buddhist-art-centre-layout.mjs';
+import { eatFirst } from './eat-first-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...eatFirst },
   { ...buddhistArtCentre },
   { ...thyeSeng, reviewOffset: 0, reviewBuildingId: '682928762' },
   { ...amrise, reviewOffset: 0, reviewBuildingId: '682928750' },
