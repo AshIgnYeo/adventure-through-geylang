@@ -17,7 +17,7 @@ Each way carries its own landmark. The street front is built once across both ba
 
 ## How dimensions were measured
 
-The square-on frames look along heading 251.3°. In a frame tilted 20° upwards (fov 100), the eave line spans the 12.20 m two-bay frontage, giving a camera distance of **4.71 m**. The base of the frontage in a second frame puts the camera **1.83 m** above the five-foot way.
+The square-on frames look along heading 251.3°. In a frame tilted 20° upwards (fov 100), the eave line spans the 12.20 m two-bay frontage, giving a camera distance of **4.71 m**. The base of the frontage in a second frame puts the camera **1.83 m** above the five-foot way. That second frame used a different field of view. Later tests showed such frames can be offset by a few degrees, so these heights carry about ±0.3 m.
 
 | Feature | Height (m) |
 | --- | --- |

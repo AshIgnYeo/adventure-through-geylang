@@ -19,10 +19,12 @@ import { suiYuanJu } from './sui-yuan-ju-layout.mjs';
 import { chongMin } from './chong-min-layout.mjs';
 import { fooHui, siawLim } from './foo-hui-layout.mjs';
 import { normalStainless, qianjing } from './sims-north-layout.mjs';
+import { fokWaiKee } from './fok-wai-kee-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...fokWaiKee },
   { ...normalStainless },
   { ...qianjing },
   { ...fooHui },

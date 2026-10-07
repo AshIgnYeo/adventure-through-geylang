@@ -237,3 +237,7 @@ Implemented **7 October 2026** as a dated April 2024 exterior of one white two-b
 ## Normal Stainless Steel and QianJing Crystal, 131–133 Sims Avenue
 
 Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists both businesses at their tagged numbers. QianJing's point is inside No. 133, and Normal Stainless's displaced point in No. 127 is rejected. A square-on frame measured frontages of 6.36 m and 4.66 m against the equal 5.51 m source split. Each building's volume follows its measured span and the source outlines are preserved. The frontages straddle the study's north boundary, so the review starts stand on Sims Avenue. Full evidence and exclusions are in the [design brief](sims-north-design-brief.md). Reviews: `?review=normal-stainless`, `?review=qianjing` and `?review=sims-131-133-pair`.
+
+## Fok Wai Kee Hardware, 104 Sims Avenue
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists the shop at 104 Sims Ave, and its point lies in the addressed three-level way 682928754. The white Art Deco frontage has a stepped, scrolled parapet, hooded wide and narrow windows, a dark canopy and the 霍惠記銅鐵 signboard. Heights come from one calibrated frame and agree with the neighbouring Amrise parapet. Full evidence, method and exclusions are in the [design brief](fok-wai-kee-design-brief.md). Reviews: `?review=fok-wai-kee` and `?review=fok-wai-kee-shop`.

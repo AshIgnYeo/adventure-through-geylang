@@ -318,6 +318,16 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** measured frontages of 6.36 m and 4.66 m against the equal source split; each volume follows its measured span and the source outlines are preserved. See the [design brief](sims-north-design-brief.md).
 - **Validation / completion:** all **79 tests**, the type check and the build passed. The named-place total is thirty-two.
 
+### Q29. Fok Wai Kee Hardware, 104 Sims Avenue, completed
+
+- **Address / footprint:** Google Maps gives 104 Sims Ave, 387428 (open), and its point lies in [way 682928754](https://www.openstreetmap.org/way/682928754), tagged No. 104 with three levels.
+- **Exterior:** June 2024 Street View shows the white Art Deco frontage with a stepped parapet and the 霍惠記銅鐵 FOK WAI KEE HARDWARE № 104 signboard.
+- **Completed:** heights from a single square-on frame, with the parapet checked against Amrise; horizontal positions from a second frame. See the [design brief](fok-wai-kee-design-brief.md), which also records the field-of-view offset finding.
+- **Validation / completion:** all **83 tests**, the type check and the build passed. The named-place total is thirty-three.
+- **Other Sims Avenue / Lorong 11 leads seen:**
+  - Artison Engineering Construction and OICO Flooring share the low tiled building beside Hotel 81 Joy. Maps lists them at Nos. 7 and 1 Lor 11 respectively, which conflicts with the frontage's apparent extent across the source ways for Nos. 5 and 7. Locked pending a plan check.
+  - Goodwood (良木林), next to Hok Tek Chi, has no listing found. Not modelled.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
