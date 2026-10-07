@@ -237,6 +237,16 @@ This extension was first recorded in a research-only pass requested by the user,
 
 **Rejected lead:** `Da Bao Lorong 15` remains in the retained 2017 map data at 116 Sims Avenue, but the June 2024 Street View frontage displays **ABC Bistro Restaurant Pte Ltd** and a lighting shop instead. It is excluded from this five-building plan because the old place name would misrepresent the dated exterior. No closure date is asserted.
 
+### Q19. Sik Wai Sin frontage, 289 Geylang Road, completed
+
+Added on 7 October 2026 after the queue's targets were done or blocked. It is the separate check that Q16 said No. 289 needed.
+
+- **Address / footprint:** unnumbered [way 454254229](https://www.openstreetmap.org/way/454254229), the next 5.13 m frontage east of Eat First, sharing its corners.
+- **Sources:** ACRA-derived records list Sik Wai Sin Eating House at 289 Geylang Road #01-289, with an address change on 6 September 2024. Google Maps now gives the business at No. 287, with Eat First's telephone number. June 2024 Street View shows the signed 食為先 SIK WAI SIN fascia numbered 289, a small eating-house board and a closed shutter.
+- **Confidence / scope:** high for the June 2024 signage and the frontage assignment. Current use after June 2024 is unresolved, so the model is a dated exterior that claims nothing about current use.
+- **Completed:** shares the measured No. 287 elevation through a new paired-shophouse module. It adds its own fascia and board, brick-faced piers, a dark timber door and a roller shutter. See the [design brief](sik-wai-sin-design-brief.md).
+- **Validation / completion:** all **52 tests**, the type check and the build passed, and daylight renders covered both review starts. The named-place total is twenty-one.
+
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 
 Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.

@@ -26,8 +26,8 @@ test('Eat First keeps the single No. 287 outline containing the Sik Wai Sin sour
   assert.equal(pointInPolygon(nodePoint('4689499461'), source.coordinates), false, 'the Buddhist Art Centre point stays in No. 285');
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
   assert.equal(landmarkFor('454254227').id, 'buddhist-art-centre');
-  // The Sik Wai Sin frontage at No. 289 needs its own check before any assignment.
-  assert.equal(landmarkFor('454254229'), undefined);
+  // The Sik Wai Sin frontage at No. 289 is a separate, dated identity.
+  assert.equal(landmarkFor('454254229').id, 'sik-wai-sin');
   const way = xml.match(/<way\b[^>]*id="454254228"[^>]*>[\s\S]*?<\/way>/)[0];
   assert.deepEqual(source.coordinates, [...way.matchAll(/<nd ref="(\d+)"/g)].map(([, id]) => nodePoint(id)));
   assert.equal(source.number, null, 'the published address is provenance, not a source-map edit');
