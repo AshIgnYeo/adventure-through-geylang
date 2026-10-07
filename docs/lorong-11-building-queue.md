@@ -311,11 +311,20 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** one white two-bay building with an identity per way. The measured bay pier is about 0.6 m south of the source party line; the source split is preserved. See the [design brief](foo-hui-design-brief.md).
 - **Validation / completion:** all **76 tests**, the type check and the build passed. The named-place total is thirty.
 
+### Q28. Normal Stainless Steel and QianJing Crystal, 131–133 Sims Avenue, completed
+
+- **Footprints:** tagged ways [439168811](https://www.openstreetmap.org/way/439168811) (No. 131) and [439168787](https://www.openstreetmap.org/way/439168787) (No. 133), on the north side of Sims Avenue, straddling the study boundary.
+- **Evidence:** Google Maps lists both at these numbers. QianJing's point is inside No. 133. Normal Stainless's point is displaced into No. 127 and rejected. June 2024 Street View shows both signs.
+- **Completed:** measured frontages of 6.36 m and 4.66 m against the equal source split; each volume follows its measured span and the source outlines are preserved. See the [design brief](sims-north-design-brief.md).
+- **Validation / completion:** all **79 tests**, the type check and the build passed. The named-place total is thirty-two.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
 - **ABC Bistro, 116 Sims Avenue:** Google Maps marks it permanently closed. Not modelled.
 - **Zui Xiang (醉香楼), No. 273:** no corroborating listing found. Not modelled.
+- **Ornate row at Nos. 3–9 Lorong 13 (west side):** five conserved two-storey shophouses. Mister Contracts' Maps address is No. 7, and its point lies in way 1223773755, but its signboard hangs on the fifth house next to No. 11. The source also tags two ways as No. 9. The other tenants (an interior design firm, "HK") are unclear. Locked pending door-plate readings for each house.
+- **Teck Hoe Airconditioning Parts, No. 11 Lorong 13:** the building is signed and plated 11 and matches its source tag, but the company is now listed at 8 Lorong 15. The front-wing setback and side canopy are also not resolved against the 8.77 m source frontage. Locked pending a current-use check and a plan check.
 
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 

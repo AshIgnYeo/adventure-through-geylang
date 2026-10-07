@@ -18,6 +18,7 @@ import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
 import { buildChongMin } from './chong-min';
 import { buildFooHuiSiawLim } from './foo-hui';
+import { buildSimsNorthPair } from './sims-north';
 import { thyeSengRoofTriangles } from './thye-seng-layout.mjs';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
@@ -104,6 +105,7 @@ export class World {
       if(buildSuiYuanJu(this,b.id,poly))continue;
       if(buildChongMin(this,b.id,poly))continue;
       if(buildFooHuiSiawLim(this,b.id,poly))continue;
+      if(buildSimsNorthPair(this,b.id,poly))continue;
       // Split only the rendered corner. Source outline and collision stay intact.
       const mongkokRemainder=buildMongkokCorner(this,b.id,poly);if(mongkokRemainder)poly=mongkokRemainder;
       if(buildAlleyLowContext(this,b.id,poly))continue;

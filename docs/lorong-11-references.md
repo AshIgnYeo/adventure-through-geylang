@@ -233,3 +233,7 @@ Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps gives
 ## Foo Hui Ging Xiu Centre and Siaw Lim Hood Sun Thong, 13–15 Lorong 13 Geylang
 
 Implemented **7 October 2026** as a dated April 2024 exterior of one white two-bay building, with an identity per source way. Foo Hui is listed at 13 Lor 13 Geylang, and its lettering and 13/13A plate are on the south bay. The 少林佛山堂 Siaw Lim Hood Sun Thong board and door number 15 are on the north bay. Both Maps points fall in the matching ways. Siaw Lim's 6B listing text is recorded as a conflict. The measured bay pier sits about 0.6 m south of the preserved source party line. Full evidence and exclusions are in the [design brief](foo-hui-design-brief.md). Reviews: `?review=foo-hui`, `?review=siaw-lim` and `?review=foo-hui-siaw-lim-pair`.
+
+## Normal Stainless Steel and QianJing Crystal, 131–133 Sims Avenue
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists both businesses at their tagged numbers. QianJing's point is inside No. 133, and Normal Stainless's displaced point in No. 127 is rejected. A square-on frame measured frontages of 6.36 m and 4.66 m against the equal 5.51 m source split. Each building's volume follows its measured span and the source outlines are preserved. The frontages straddle the study's north boundary, so the review starts stand on Sims Avenue. Full evidence and exclusions are in the [design brief](sims-north-design-brief.md). Reviews: `?review=normal-stainless`, `?review=qianjing` and `?review=sims-131-133-pair`.
