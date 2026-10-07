@@ -290,6 +290,13 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** a four-storey tiled elevation from square-on photogrammetry, with the top band ±0.5 m. The association is modelled as one signed tenant. See the [design brief](hainan-lim-design-brief.md).
 - **Validation / completion:** all **67 tests**, the type check and the build passed. The named-place total is twenty-six.
 
+### Q25. Sui Yuan Ju Buddhist Society, 2–4 Lorong 13 Geylang, completed
+
+- **Address / footprints:** Google Maps gives 4 Lor 13 Geylang, 388642, and the business is operating. Addressed ways [1223454593](https://www.openstreetmap.org/way/1223454593) (No. 4) and [1223454592](https://www.openstreetmap.org/way/1223454592) (No. 2).
+- **Exterior:** April 2024 Street View shows the yellow Sui Yuan Ju signboard on No. 4, with a continuous red awning and a tiled shrine canopy across No. 2.
+- **Completed:** a provisional two-unit visual assignment; No. 2's tenancy is not asserted. Dimensions come from two-panorama triangulation, which confirmed the 5.81 m source split. See the [design brief](sui-yuan-ju-design-brief.md).
+- **Validation / completion:** all **70 tests**, the type check and the build passed, with day and night renders. The named-place total is twenty-seven.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
