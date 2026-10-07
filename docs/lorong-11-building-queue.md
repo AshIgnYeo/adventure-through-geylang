@@ -257,6 +257,16 @@ Added on 7 October 2026, continuing the row west of the Buddhist Art Centre.
 - **Completed:** the shared row elevation in a new jalousie finish, two different roofs, the shared signboard behind the central pier, shutters and doors. See the [design brief](rr-motor-design-brief.md).
 - **Validation / completion:** all **55 tests**, the type check and the build passed. Renders led to two corrections. The named-place total is twenty-two.
 
+### Q21. Golden Jade Restaurant, 271 Geylang Road, completed
+
+Added on 7 October 2026, at the west end of the same row.
+
+- **Address / footprint:** unnumbered [way 454254220](https://www.openstreetmap.org/way/454254220). It is identified as No. 271 by counting from the closed BN Food Palace at No. 269 (the Lorong 13 corner) and from No. 285.
+- **Sources:** Google Maps (open, 271 Geylang Rd, 389324), Wanderlog, and the June 2024 Street View signboard, numbered 271. The 2017 Golden Jade point lies one unit west and is stale.
+- **Completed:** the shared row elevation in the jalousie finish, with the black marquee signboard mounted proud of the cornice. See the [design brief](golden-jade-design-brief.md).
+- **Validation / completion:** all **58 tests**, the type check and the build passed. The named-place total is twenty-three.
+- **Next in this row:** 277 KTV, which Google Maps lists as open at No. 277, is a candidate. Zui Xiang (醉香楼) at No. 273 has no corroborating listing found yet.
+
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 
 Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.

@@ -205,3 +205,7 @@ Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived recor
 ## RR Motor, 281–283 Geylang Road
 
 Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived records give R R Motor Pte Ltd at No. 281. One RR MOTOR 专卖店 signboard spans unnumbered ways 454254225 and 454254226 directly west of the Buddhist Art Centre, and a 281 plate marks the west door. The two units share the measured row elevation in a jalousie finish with brown trim. They have different estimated roofs: orange corrugated on No. 281 and weathered tiles on No. 283. The 2017 Eros point inside No. 281 is stale and not used. Full evidence, estimates and exclusions are in the [design brief](rr-motor-design-brief.md). Reviews: `?review=rr-motor` and `?review=rr-motor-five-foot-way`.
+
+## Golden Jade Restaurant, 271 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists the restaurant as open at No. 271, and the June 2024 signboard shows 271. Counting from the closed BN Food Palace at No. 269 and from No. 285 identifies unnumbered way 454254220; the stale 2017 point in the corner way is not used. The shared row elevation is used in the jalousie finish with the original marquee signboard. Full evidence and exclusions are in the [design brief](golden-jade-design-brief.md). Reviews: `?review=golden-jade` and `?review=golden-jade-five-foot-way`.

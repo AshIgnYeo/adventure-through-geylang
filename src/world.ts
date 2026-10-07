@@ -11,6 +11,7 @@ import { buildEatFirst } from './eat-first';
 import { buildKHotel } from './k-hotel';
 import { buildSikWaiSin } from './sik-wai-sin';
 import { buildRrMotor } from './rr-motor';
+import { buildGoldenJade } from './golden-jade';
 import { thyeSengRoofTriangles } from './thye-seng-layout.mjs';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
@@ -90,6 +91,7 @@ export class World {
       if(buildKHotel(this,b.id,poly))continue;
       if(buildSikWaiSin(this,b.id,poly))continue;
       if(buildRrMotor(this,b.id,poly))continue;
+      if(buildGoldenJade(this,b.id,poly))continue;
       // Split only the rendered corner. Source outline and collision stay intact.
       const mongkokRemainder=buildMongkokCorner(this,b.id,poly);if(mongkokRemainder)poly=mongkokRemainder;
       if(buildAlleyLowContext(this,b.id,poly))continue;
