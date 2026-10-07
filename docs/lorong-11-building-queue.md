@@ -265,7 +265,14 @@ Added on 7 October 2026, at the west end of the same row.
 - **Sources:** Google Maps (open, 271 Geylang Rd, 389324), Wanderlog, and the June 2024 Street View signboard, numbered 271. The 2017 Golden Jade point lies one unit west and is stale.
 - **Completed:** the shared row elevation in the jalousie finish, with the black marquee signboard mounted proud of the cornice. See the [design brief](golden-jade-design-brief.md).
 - **Validation / completion:** all **58 tests**, the type check and the build passed. The named-place total is twenty-three.
-- **Next in this row:** 277 KTV, which Google Maps lists as open at No. 277, is a candidate. Zui Xiang (醉香楼) at No. 273 has no corroborating listing found yet.
+- **Next in this row:** Zui Xiang (醉香楼) at No. 273 has no corroborating listing found yet, so it is not modelled.
+
+### Q22. 277 KTV, 275–277 Geylang Road, completed
+
+- **Address / footprints:** unnumbered ways [454254222](https://www.openstreetmap.org/way/454254222) (No. 275) and [454254223](https://www.openstreetmap.org/way/454254223) (No. 277). They lie between the #273 Zui Xiang frontage and the Eros unit at No. 279.
+- **Sources:** Google Maps (open, 277 Geylang Rd, 389327) and the June 2024 signboard 芽笼 277 KTV spanning both frontages.
+- **Completed:** the shared row elevation in a new fretwork finish (dusty pink, white fretwork fanlights, mauve-grey casements). Also the proud black signboard and lower board, and a quilted wall closing the five-foot way. Brand panels and cartoon characters are omitted. See the [design brief](ktv-277-design-brief.md).
+- **Validation / completion:** all **61 tests**, the type check and the build passed, with day and night renders. The named-place total is twenty-four.
 
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 

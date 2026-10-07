@@ -27,7 +27,7 @@ export function buildPairedShophouse(world: World, label: string, frame: Frame, 
     if (glow) { mat.emissiveMap = mat.diffuseMap; mat.emissive = new pc.Color(1, 1, 1); mat.emissiveIntensity = glow; }
     mat.cull = pc.CULLFACE_NONE; mat.update(); return mat;
   };
-  const wallTop = spec.height + .08, white = '#f1efe8';
+  const wallTop = spec.height + .08, white = layout.palette.wall, tone = layout.palette;
 
   // Party and rear walls close the volume; the street wall starts above the five-foot way.
   world.panel(frame.a, frame.rearA, .13, wallTop, material(white));
@@ -66,6 +66,20 @@ export function buildPairedShophouse(world: World, label: string, frame: Frame, 
     }
     const fan = [[arch.u, arch.springing], ...arc(R)];
     shape('fanlight', fan, .02, material(arch.fan), fan.slice(1, -1).flatMap((_, i) => [0, i + 1, i + 2]));
+    if (arch.fret) {
+      // White fretwork: a sunburst of spokes and lattice rings, cut out over the dark fanlight.
+      const canvas = document.createElement('canvas'); canvas.width = 512; canvas.height = Math.round(512 * rise / arch.span);
+      const c = canvas.getContext('2d')!, k = 512 / arch.span, ox = 256, oy = canvas.height + (R - rise) * k;
+      c.save(); c.beginPath(); c.arc(ox, oy, R * k - 2, 0, Math.PI * 2); c.clip();
+      c.strokeStyle = '#f4f1ec'; c.lineCap = 'round';
+      c.lineWidth = 7; for (let i = 0; i <= 14; i++) { const a = Math.PI * (1 + i / 14); c.beginPath(); c.moveTo(ox, oy); c.lineTo(ox + Math.cos(a) * 400, oy + Math.sin(a) * 400); c.stroke(); }
+      for (const r of [.45, .7, .9]) { c.lineWidth = r > .8 ? 9 : 6; c.beginPath(); c.arc(ox, oy, R * k * r, Math.PI, Math.PI * 2); c.stroke(); }
+      for (let i = 0; i < 14; i++) { const a = Math.PI * (1 + (i + .5) / 14); c.beginPath(); c.arc(ox + Math.cos(a) * R * k * .58, oy + Math.sin(a) * R * k * .58, 9, 0, Math.PI * 2); c.stroke(); }
+      c.restore();
+      const mat = new pc.StandardMaterial(); mat.diffuseMap = world.texture(canvas); mat.opacityMap = mat.diffuseMap; mat.opacityMapChannel = 'a';
+      mat.alphaTest = .5; mat.cull = pc.CULLFACE_NONE; mat.update();
+      world.panel(pt(arch.u - half, .028), pt(arch.u + half, .028), arch.springing, arch.apex, mat);
+    }
     if (arch.bars) for (let i = 1; i < 6; i++) {
       const u = arch.u - half + arch.span * i / 6, top = cy + Math.sqrt(R * R - (u - arch.u) ** 2);
       const p = pt(u, .03);
@@ -76,9 +90,9 @@ export function buildPairedShophouse(world: World, label: string, frame: Frame, 
   // White relief, drawn as raised plaster: highlight above, shadow below.
   const relief = (c: CanvasRenderingContext2D, draw: () => void, line: number) => {
     c.lineCap = 'round'; c.lineJoin = 'round';
-    c.save(); c.translate(-3, -3); c.strokeStyle = '#ffffff'; c.lineWidth = line; draw(); c.stroke(); c.restore();
-    c.save(); c.translate(4, 5); c.strokeStyle = '#a7a296'; c.lineWidth = line * 1.1; draw(); c.stroke(); c.restore();
-    c.strokeStyle = '#ebe8df'; c.lineWidth = line * .85; draw(); c.stroke();
+    c.save(); c.translate(-3, -3); c.strokeStyle = tone.light; c.lineWidth = line; draw(); c.stroke(); c.restore();
+    c.save(); c.translate(4, 5); c.strokeStyle = tone.dark; c.lineWidth = line * 1.1; draw(); c.stroke(); c.restore();
+    c.strokeStyle = tone.mid; c.lineWidth = line * .85; draw(); c.stroke();
   };
   // Cartouches under the windows: an elongated octagon with mirrored leaf scrolls.
   for (const ca of layout.cartouches) {

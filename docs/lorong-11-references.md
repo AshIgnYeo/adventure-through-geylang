@@ -209,3 +209,7 @@ Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived recor
 ## Golden Jade Restaurant, 271 Geylang Road
 
 Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists the restaurant as open at No. 271, and the June 2024 signboard shows 271. Counting from the closed BN Food Palace at No. 269 and from No. 285 identifies unnumbered way 454254220; the stale 2017 point in the corner way is not used. The shared row elevation is used in the jalousie finish with the original marquee signboard. Full evidence and exclusions are in the [design brief](golden-jade-design-brief.md). Reviews: `?review=golden-jade` and `?review=golden-jade-five-foot-way`.
+
+## 277 KTV, 275–277 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists 277 KTV as open at No. 277. One 芽笼 277 KTV signboard spans unnumbered ways 454254222 and 454254223, between the #273 frontage and No. 279. The pair shares the measured row elevation in a dusty pink fretwork finish. A proud black signboard, a lower board and a quilted wall closing the five-foot way are redrawn originally. Brand panels and cartoon characters are omitted. Full evidence and exclusions are in the [design brief](ktv-277-design-brief.md). Reviews: `?review=ktv-277` and `?review=ktv-277-five-foot-way`.

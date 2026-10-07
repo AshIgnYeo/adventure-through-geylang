@@ -12,10 +12,12 @@ import { kHotel } from './k-hotel-layout.mjs';
 import { sikWaiSin } from './sik-wai-sin-layout.mjs';
 import { rrMotor } from './rr-motor-layout.mjs';
 import { goldenJade } from './golden-jade-layout.mjs';
+import { ktv277 } from './ktv-277-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...ktv277 },
   { ...goldenJade },
   { ...rrMotor },
   { ...sikWaiSin },
