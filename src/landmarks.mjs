@@ -14,10 +14,12 @@ import { rrMotor } from './rr-motor-layout.mjs';
 import { goldenJade } from './golden-jade-layout.mjs';
 import { ktv277 } from './ktv-277-layout.mjs';
 import { lamClan } from './lam-clan-layout.mjs';
+import { hainanLim } from './hainan-lim-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...hainanLim },
   { ...lamClan },
   { ...ktv277 },
   { ...goldenJade },

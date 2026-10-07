@@ -283,9 +283,15 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** a photogrammetric elevation with an estimated hidden roof and a paved forecourt. Three small characters are omitted because one glyph is uncertain. See the [design brief](lam-clan-design-brief.md).
 - **Validation / completion:** all **64 tests**, the type check and the build passed. The named-place total is twenty-five.
 
+### Q24. Hainan Lim Clan Association building, 19 Lorong 13 Geylang, completed
+
+- **Address / footprint:** SFCCA gives 19 Lorong 13 Geylang #04-01, 388662. No way carries No. 19. Unnumbered way [1223773760](https://www.openstreetmap.org/way/1223773760) is the next footprint north of No. 17 (way 454254295), and satellite imagery confirms the stepped front.
+- **Exterior:** April 2024 Street View shows the building numbered 19. The top band carries 新加坡海南林氏公會 HAINAN LIM CLAN ASSOCIATION (SINGAPORE) and 1970, and the band below 瓊崖沙港同鄉會 KHENG JAI SAR KANG ASSOCIATION. RAVE AUTO S.C is in the windows.
+- **Completed:** a four-storey tiled elevation from square-on photogrammetry, with the top band ±0.5 m. The association is modelled as one signed tenant. See the [design brief](hainan-lim-design-brief.md).
+- **Validation / completion:** all **67 tests**, the type check and the build passed. The named-place total is twenty-six.
+
 ### 7 October 2026: other leads checked and locked
 
-- **Hainan Lim Clan Association, 19 Lorong 13 Geylang #04-01 (SFCCA):** no source footprint carries No. 19. The #04-01 unit implies a four-storey or taller building that is not yet matched to a way. Locked pending exterior and footprint confirmation.
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
 - **ABC Bistro, 116 Sims Avenue:** Google Maps marks it permanently closed. Not modelled.
 - **Zui Xiang (醉香楼), No. 273:** no corroborating listing found. Not modelled.
