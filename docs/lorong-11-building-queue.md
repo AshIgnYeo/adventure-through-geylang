@@ -328,12 +328,18 @@ Found through the SFCCA member directory while looking for more clan association
   - Artison Engineering Construction and OICO Flooring share the low tiled building beside Hotel 81 Joy. Maps lists them at Nos. 7 and 1 Lor 11 respectively, which conflicts with the frontage's apparent extent across the source ways for Nos. 5 and 7. Locked pending a plan check.
   - Goodwood (良木林), next to Hok Tek Chi, has no listing found. Not modelled.
 
+### Q30. Hong Ye Chen Interior Design, 7 Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps gives 7 Lor 13 Geylang, 388645, and its point lies in [way 1223773755](https://www.openstreetmap.org/way/1223773755), tagged No. 7. April 2024 Street View shows door number 7 and the 浤業成 HONG YE CHEN INTERIOR DESIGN signboard.
+- **Completed:** single-frame photogrammetry of the conserved two-storey frontage with its fretwork eaves. Mister Contracts shares the Maps point, but its signs are on the houses to the north, so it is not assigned. See the [design brief](hong-ye-chen-design-brief.md).
+- **Validation / completion:** all **86 tests**, the type check and the build passed. The named-place total is thirty-four.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
 - **ABC Bistro, 116 Sims Avenue:** Google Maps marks it permanently closed. Not modelled.
 - **Zui Xiang (醉香楼), No. 273:** no corroborating listing found. Not modelled.
-- **Ornate row at Nos. 3–9 Lorong 13 (west side):** five conserved two-storey shophouses. Mister Contracts' Maps address is No. 7, and its point lies in way 1223773755, but its signboard hangs on the fifth house next to No. 11. The source also tags two ways as No. 9. The other tenants (an interior design firm, "HK") are unclear. Locked pending door-plate readings for each house.
+- **Ornate row at Nos. 3–9 Lorong 13 (west side), partly resolved:** No. 7 is now modelled as Hong Ye Chen (door number 7). The remaining houses are as follows. five conserved two-storey shophouses. Mister Contracts' Maps address is No. 7, and its point lies in way 1223773755, but its signboard hangs on the fifth house next to No. 11. The source also tags two ways as No. 9. The other tenants (an interior design firm, "HK") are unclear. Locked pending door-plate readings for each house.
 - **ibis budget Singapore Gold, 121–127 Sims Avenue:** listed at 123 Sims Ave, with 44 rooms on five levels, built in 2022. Its entrance is in the westernmost bay of the yellow conserved block. The satellite places the block's tiled roofs about one bay west of the source row, and the five-level rear block's footprint and height are unresolved. Locked pending a plan decision.
 - **Gems Ville, 8 Lorong 13 (condominium, completed 2025):** the source way is tagged 6A, is 23.3 × 15.3 m and predates the redevelopment. The completed building covers about 27 × 28 m on satellite imagery. Locked pending an authored footprint approved by the user.
 - **Shi Hao Hotpot BBQ, 267 Geylang Road #01-01 (open):** a two-bay corner building with four arched upper windows, its Maps point in the Lorong 13 corner way. Satellite and two-panorama triangulation show a chamfered corner and a roof extending about 3 m east of the source row. Locked pending an estimated corner footprint.

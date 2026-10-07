@@ -241,3 +241,7 @@ Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists 
 ## Fok Wai Kee Hardware, 104 Sims Avenue
 
 Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists the shop at 104 Sims Ave, and its point lies in the addressed three-level way 682928754. The white Art Deco frontage has a stepped, scrolled parapet, hooded wide and narrow windows, a dark canopy and the 霍惠記銅鐵 signboard. Heights come from one calibrated frame and agree with the neighbouring Amrise parapet. Full evidence, method and exclusions are in the [design brief](fok-wai-kee-design-brief.md). Reviews: `?review=fok-wai-kee` and `?review=fok-wai-kee-shop`.
+
+## Hong Ye Chen Interior Design, 7 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists the firm at 7 Lor 13 Geylang, and its point lies in the addressed way 1223773755. Street View shows door number 7 and the 浤業成 signboard. The conserved two-storey frontage has a central French window, pilasters, floral tile panels and the row's timber fretwork eaves. Full evidence, method and exclusions are in the [design brief](hong-ye-chen-design-brief.md). Reviews: `?review=hong-ye-chen` and `?review=hong-ye-chen-ground`.
