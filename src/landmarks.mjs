@@ -10,10 +10,12 @@ import { buddhistArtCentre } from './buddhist-art-centre-layout.mjs';
 import { eatFirst } from './eat-first-layout.mjs';
 import { kHotel } from './k-hotel-layout.mjs';
 import { sikWaiSin } from './sik-wai-sin-layout.mjs';
+import { rrMotor } from './rr-motor-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...rrMotor },
   { ...sikWaiSin },
   { ...kHotel },
   { ...eatFirst },

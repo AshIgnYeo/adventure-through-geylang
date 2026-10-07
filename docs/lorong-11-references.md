@@ -201,3 +201,7 @@ Heights and the setback come from calibrated photogrammetry and remain estimates
 ## Sik Wai Sin frontage, 289 Geylang Road
 
 Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived records give Sik Wai Sin Eating House at No. 289, with a September 2024 address change; Google Maps now places the business at No. 287. The June 2024 frontage of unnumbered way 454254229 shows the 食為先 SIK WAI SIN fascia numbered 289, a small eating-house board and a closed shutter. It shares Eat First's measured elevation and roof through a common module. Current use after June 2024 is not asserted, and the east pier's partly hidden lettering is omitted. Full evidence and exclusions are in the [design brief](sik-wai-sin-design-brief.md). Reviews: `?review=sik-wai-sin` and `?review=sik-wai-sin-five-foot-way`.
+
+## RR Motor, 281–283 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived records give R R Motor Pte Ltd at No. 281. One RR MOTOR 专卖店 signboard spans unnumbered ways 454254225 and 454254226 directly west of the Buddhist Art Centre, and a 281 plate marks the west door. The two units share the measured row elevation in a jalousie finish with brown trim. They have different estimated roofs: orange corrugated on No. 281 and weathered tiles on No. 283. The 2017 Eros point inside No. 281 is stale and not used. Full evidence, estimates and exclusions are in the [design brief](rr-motor-design-brief.md). Reviews: `?review=rr-motor` and `?review=rr-motor-five-foot-way`.

@@ -3,14 +3,20 @@ import type { World, Point } from './world';
 import type { frontageFrame } from './gable-roof-layout.mjs';
 import { gableRoof } from './gable-roof-layout.mjs';
 import type { pairedShophouseLayout } from './paired-shophouse-layout.mjs';
-import { buildGableRoof } from './gable-roof';
+import { buildGableRoof, type RoofFinish } from './gable-roof';
 
 type Frame = ReturnType<typeof frontageFrame>;
 type Layout = ReturnType<typeof pairedShophouseLayout>;
 type Spec = { height: number; ridgeHeight: number; ridgeDepth: number; eavesOverhang: number };
 
 /** Walls, fittings, arched windows, plaster relief and tiled roof shared by Nos. 287 and 289. */
-export function buildPairedShophouse(world: World, label: string, frame: Frame, layout: Layout, spec: Spec) {
+// Orange clay tiles with raised copings, as triangulated on Nos. 287 and 289.
+const orangeTiles: RoofFinish = {
+  tile: '#c96f45', course: '#ad5a39', coping: '#a64f3a', gable: '#f1efe8',
+  copingHeight: .30, copingWidth: .22, frontCap: { length: .5, height: .28 },
+};
+
+export function buildPairedShophouse(world: World, label: string, frame: Frame, layout: Layout, spec: Spec, finish = orangeTiles) {
   const { width, angle } = frame;
   const pt = (u: number, out = 0) => frame.point(u, out) as Point;
   const material = (colour: string) => {
@@ -59,8 +65,8 @@ export function buildPairedShophouse(world: World, label: string, frame: Frame, 
       shape('arch band', inner.flatMap((p, i) => [p, outer[i]]), out, material(colour), indices);
     }
     const fan = [[arch.u, arch.springing], ...arc(R)];
-    shape('fanlight', fan, .02, material('#3a4448'), fan.slice(1, -1).flatMap((_, i) => [0, i + 1, i + 2]));
-    for (let i = 1; i < 6; i++) {
+    shape('fanlight', fan, .02, material(arch.fan), fan.slice(1, -1).flatMap((_, i) => [0, i + 1, i + 2]));
+    if (arch.bars) for (let i = 1; i < 6; i++) {
       const u = arch.u - half + arch.span * i / 6, top = cy + Math.sqrt(R * R - (u - arch.u) ** 2);
       const p = pt(u, .03);
       world.box(`${label} fanlight bar`, p[0], (arch.springing + top) / 2, p[1], .022, top - arch.springing - .02, .02, world.mat('#f3f2ec'), undefined, angle);
@@ -112,10 +118,7 @@ export function buildPairedShophouse(world: World, label: string, frame: Frame, 
   world.panel(pt(0, fz.out), pt(width, fz.out), fz.bottom, fz.top, textured(friezeCanvas));
 
   // Orange tiled gable roof; its raised copings end in blocks above the gutter.
-  buildGableRoof(world, label, frame, gableRoof(frame, spec), {
-    tile: '#c96f45', course: '#ad5a39', coping: '#a64f3a', gable: white,
-    copingHeight: .30, copingWidth: .22, frontCap: { length: .5, height: .28 },
-  });
+  buildGableRoof(world, label, frame, gableRoof(frame, spec), finish);
 
   return { pt, textured };
 }

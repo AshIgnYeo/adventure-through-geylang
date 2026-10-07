@@ -247,6 +247,16 @@ Added on 7 October 2026 after the queue's targets were done or blocked. It is th
 - **Completed:** shares the measured No. 287 elevation through a new paired-shophouse module. It adds its own fascia and board, brick-faced piers, a dark timber door and a roller shutter. See the [design brief](sik-wai-sin-design-brief.md).
 - **Validation / completion:** all **52 tests**, the type check and the build passed, and daylight renders covered both review starts. The named-place total is twenty-one.
 
+### Q20. RR Motor, 281–283 Geylang Road, completed
+
+Added on 7 October 2026, continuing the row west of the Buddhist Art Centre.
+
+- **Address / footprints:** unnumbered ways [454254225](https://www.openstreetmap.org/way/454254225) (No. 281) and [454254226](https://www.openstreetmap.org/way/454254226) (No. 283), directly west of No. 285.
+- **Sources:** ACRA-derived records give R R Motor Pte Ltd at 281 Geylang Road, with an activity change in July 2025. June 2024 Street View shows one RR MOTOR 专卖店 signboard across both frontages and a 281 door plate.
+- **Confidence / scope:** high for the June 2024 signage and the two-unit order. Medium for occupation of No. 283, which is supported only by the shared signboard. The 2017 Eros point in No. 281 is stale; Eros was one unit west in June 2024.
+- **Completed:** the shared row elevation in a new jalousie finish, two different roofs, the shared signboard behind the central pier, shutters and doors. See the [design brief](rr-motor-design-brief.md).
+- **Validation / completion:** all **55 tests**, the type check and the build passed. Renders led to two corrections. The named-place total is twenty-two.
+
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 
 Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.
