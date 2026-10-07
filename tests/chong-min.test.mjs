@@ -16,7 +16,8 @@ test('The 15-C frontage is the way tagged 15B, north of Nos. 13 and 15 and south
   assert.equal(source.number, '15B', 'source tag recorded, not edited');
   assert.match(chongMin.evidence, /tagged 15B, one letter behind the door plate/);
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
-  for (const id of ['1223773763', '1223773761', '1223773764']) assert.equal(landmarkFor(id), undefined);
+  for (const id of ['1223773763', '1223773761', '1223773764']) assert.notEqual(landmarkFor(id)?.id, 'chong-min');
+  assert.equal(landmarkFor('1223773761'), undefined, 'the 15D/15E way stays generic');
   // The Yun Teck place point lies inside this way.
   assert.equal(pointInPolygon([103.8774431, 1.3132232], source.coordinates), true);
   const way = xml.match(/<way id="1223773762"[^>]*>[\s\S]*?<\/way>/)[0];

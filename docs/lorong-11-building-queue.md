@@ -304,6 +304,13 @@ Found through the SFCCA member directory while looking for more clan association
 - **Completed:** see the [design brief](chong-min-design-brief.md).
 - **Validation / completion:** all **73 tests**, the type check and the build passed. The named-place total is twenty-eight.
 
+### Q27. Foo Hui Ging Xiu Centre and Siaw Lim Hood Sun Thong, 13–15 Lorong 13 Geylang, completed
+
+- **Footprints:** [1223773764](https://www.openstreetmap.org/way/1223773764) (No. 13) and [1223773763](https://www.openstreetmap.org/way/1223773763) (No. 15). Each contains its Google Maps point.
+- **Evidence:** Google Maps lists Foo Hui at 13 Lor 13 Geylang, and April 2024 Street View shows its lettering and a 13/13A plate. The 少林佛山堂 board and door number 15 are on the north bay. Siaw Lim's Maps text gives 6B, a conflict that is recorded and not used.
+- **Completed:** one white two-bay building with an identity per way. The measured bay pier is about 0.6 m south of the source party line; the source split is preserved. See the [design brief](foo-hui-design-brief.md).
+- **Validation / completion:** all **76 tests**, the type check and the build passed. The named-place total is thirty.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.

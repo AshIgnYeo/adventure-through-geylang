@@ -229,3 +229,7 @@ Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists
 ## Singapore Chong Min Association and Yun Teck Sian Tng, 15C Lorong 13 Geylang
 
 Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps gives Chong Min at 15C Lor 13 Geylang, and the Yun Teck temple point lies inside source way 1223773762. April 2024 Street View shows both boards and a 15-C door plate on that frontage. The order of frontages puts it on the way tagged 15B, so the source tag is one letter behind the plate; it is recorded, not changed. Full evidence and exclusions are in the [design brief](chong-min-design-brief.md). Reviews: `?review=chong-min` and `?review=chong-min-ground`.
+
+## Foo Hui Ging Xiu Centre and Siaw Lim Hood Sun Thong, 13–15 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior of one white two-bay building, with an identity per source way. Foo Hui is listed at 13 Lor 13 Geylang, and its lettering and 13/13A plate are on the south bay. The 少林佛山堂 Siaw Lim Hood Sun Thong board and door number 15 are on the north bay. Both Maps points fall in the matching ways. Siaw Lim's 6B listing text is recorded as a conflict. The measured bay pier sits about 0.6 m south of the preserved source party line. Full evidence and exclusions are in the [design brief](foo-hui-design-brief.md). Reviews: `?review=foo-hui`, `?review=siaw-lim` and `?review=foo-hui-siaw-lim-pair`.
