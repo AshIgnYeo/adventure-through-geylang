@@ -274,6 +274,22 @@ Added on 7 October 2026, at the west end of the same row.
 - **Completed:** the shared row elevation in a new fretwork finish (dusty pink, white fretwork fanlights, mauve-grey casements). Also the proud black signboard and lower board, and a quilted wall closing the five-foot way. Brand panels and cartoon characters are omitted. See the [design brief](ktv-277-design-brief.md).
 - **Validation / completion:** all **61 tests**, the type check and the build passed, with day and night renders. The named-place total is twenty-four.
 
+### Q23. Lam Clan Association, 3 Lorong 15 Geylang, completed
+
+Found through the SFCCA member directory while looking for more clan associations in the study area.
+
+- **Address / footprint:** SFCCA gives No 3 Lorong 15 Geylang, 388597. Retained way [1223539233](https://www.openstreetmap.org/way/1223539233) is tagged No. 3 Lorong 15 Geylang.
+- **Exterior:** December 2017 Street View shows LAM CLAN ASSOCIATION on this frontage. April 2024 shows it repainted pale blue with 藍氏総會 on the parapet and on a board over the doors.
+- **Completed:** a photogrammetric elevation with an estimated hidden roof and a paved forecourt. Three small characters are omitted because one glyph is uncertain. See the [design brief](lam-clan-design-brief.md).
+- **Validation / completion:** all **64 tests**, the type check and the build passed. The named-place total is twenty-five.
+
+### 7 October 2026: other leads checked and locked
+
+- **Hainan Lim Clan Association, 19 Lorong 13 Geylang #04-01 (SFCCA):** no source footprint carries No. 19. The #04-01 unit implies a four-storey or taller building that is not yet matched to a way. Locked pending exterior and footprint confirmation.
+- **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
+- **ABC Bistro, 116 Sims Avenue:** Google Maps marks it permanently closed. Not modelled.
+- **Zui Xiang (醉香楼), No. 273:** no corroborating listing found. Not modelled.
+
 ### 29 September 2026, 01:04 SGT: research blocked, manual follow-up
 
 Started on clean `main` at `7b708e5`. Re-read project documentation, registry, models, geographic pipeline and tests. All sources below were accessed on 29 September 2026. No candidate was promoted to model-ready, and no model, asset or map geometry changed.

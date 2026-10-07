@@ -213,3 +213,7 @@ Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists 
 ## 277 KTV, 275–277 Geylang Road
 
 Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists 277 KTV as open at No. 277. One 芽笼 277 KTV signboard spans unnumbered ways 454254222 and 454254223, between the #273 frontage and No. 279. The pair shares the measured row elevation in a dusty pink fretwork finish. A proud black signboard, a lower board and a quilted wall closing the five-foot way are redrawn originally. Brand panels and cartoon characters are omitted. Full evidence and exclusions are in the [design brief](ktv-277-design-brief.md). Reviews: `?review=ktv-277` and `?review=ktv-277-five-foot-way`.
+
+## Lam Clan Association, 3 Lorong 15 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. The SFCCA directory lists the association at No 3 Lorong 15 Geylang, which matches the tag on retained way 1223539233. Street View shows LAM CLAN ASSOCIATION on this frontage in December 2017 and the repainted pale blue frontage with 藍氏総會 in April 2024. Heights come from a square-on frame scaled by the frontage width. The hidden roof is an estimate, and the paved forecourt runs towards the unrendered Lorong 15. Three small characters are omitted because one glyph is uncertain. Full evidence, method and exclusions are in the [design brief](lam-clan-design-brief.md). Reviews: `?review=lam-clan`, `?review=lam-clan-ground` and `?review=lam-clan-oblique`.
