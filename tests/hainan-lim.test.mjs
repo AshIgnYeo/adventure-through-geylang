@@ -16,7 +16,7 @@ test('No. 19 Lorong 13 is the unnumbered way directly north of the addressed No.
   assert.equal(source.street, 'Lorong 13 Geylang'); assert.equal(source.number, null);
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
   const no17 = map.buildings.find(b => b.id === '454254295');
-  assert.equal(no17.number, '17'); assert.equal(landmarkFor(no17.id), undefined);
+  assert.equal(no17.number, '17'); assert.equal(landmarkFor(no17.id).id, 'muhammadiyah-college');
   // No. 17 is the next footprint south: the source ways are not snapped, but no
   // other building lies between them along Lorong 13.
   const p17 = no17.coordinates.slice(0, -1).map(p => project(p, map.origin));

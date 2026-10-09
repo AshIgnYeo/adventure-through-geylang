@@ -377,6 +377,12 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Method:** render-and-compare against the existing No. 24 model confirmed the source frontage after one panorama's yaw proved 8°–13° off. Heights come from the square-on frame, read linearly because its verticals are plumb. See the [design brief](liu-da-ma-design-brief.md).
 - **Validation / completion:** all **105 tests**, the type check and the build passed, with day and night renders. The named-place total is forty.
 
+### Q37. Muhammadiyah Islamic College, 17 Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Kolej Islam Muhammadiyah at 17 Lor 13 Geylang, 388660, matching [way 454254295](https://www.openstreetmap.org/way/454254295), tagged No. 17. The April 2024 signboard reads MUHAMMADIYAH ISLAMIC COLLEGE with this address.
+- **Lock resolved:** the signboard triangulated from two same-drive panoramas (10.7 m) and the bar spacing in a level frame (10.56 m) agree on the face distance. The 1.59 m bars are half-storey cells, and the parapet is at about 23.5 m. See the [design brief](muhammadiyah-design-brief.md).
+- **Validation / completion:** all **109 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-one.
+
 ### 9 October 2026: leads checked and locked
 
 - **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**
@@ -404,11 +410,12 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
   - **Neighbours:** the corner way 1223454594 holds a low tiled hardware shed, consistent with BUILDERSmart's listing at **29 Lor 13** (which also explains the BUILDERSmart lock below). The scaffolded building to the south appears to span two source ways.
   - **Status:** locked pending a resolved frontage width, for example from a square-on historical capture or a plan survey.
 - **River Ash Bakery, 3 Lorong 13:** Google Maps lists it at 3 Lor 13 Geylang, First floor, 388641 (235 reviews). Its point falls in way 1223773758 (No. 1, Bar @ Lorong 13), and ACRA-derived records give a Jalan Pelikat address. April 2024 Street View of the house plated **3** (way 1223773753, between Bar @ Lorong 13 and K Group) shows a red awning, a closed shutter, a glass door and a timber door, but no bakery signage. Locked pending a photographed shopfront; this house completes the conserved row if confirmed.
-- **Muhammadiyah Islamic College / Kolej Islam Muhammadiyah, 17 Lorong 13:** Google Maps lists Kolej Islam Muhammadiyah (KIM) at 17 Lor 13 Geylang, 388660, matching way **454254295**, tagged No. 17. April 2024 Street View shows a green signboard reading **معهد المحمدية الإسلامي / MUHAMMADIYAH ISLAMIC COLLEGE, 17 Lorong 13 Geylang, Singapore 388660**, and a top band reading **MUHAMMADIYAH**, on a slender tower with a teal geometric-lattice screen. The tower has white side columns with sunshade slabs and grilles, a gated forecourt and a rooftop railing. Satellite imagery shows its lattice roof, with what looks like a pool, filling the source footprint.
-  - **Blocker:** the screen's horizontal bars repeat at about 0.15 × the camera distance, which is about 1.4 m if the face is at the source front (about 9.4 m away). That makes them half-floor cells, giving a building of about 17–19 m. If the face were about 21 m away, they would be 3 m floors and the building about 35 m tall.
-  - **Calibration:** renders from the neighbouring panoramas show pose errors of 1–2 m, so two-view triangulation has not separated these two readings. A Floor 8 listing (Muslimah Swim Club) suggests the taller reading.
-  - **Status:** locked pending a resolved floor count and face depth, for example from an elevation drawing or a calibrated distant view from Sims Avenue.
+- **Muhammadiyah Islamic College, 17 Lorong 13:** resolved and built as Q37.
 - **Lorong 11 No. 16:** Kum Huat Shoe Merchant is listed at 16 Lor 11 (no reviews), but no matching signage is visible in 2021, 2022 or April 2024 views. Not modelled.
+- **Red Dot Running Company, 108 Sims Avenue:** Google Maps (213 reviews) and Time Out give 108 Sims Avenue, 387432. June 2024 Street View shows a large **108** on a white pier, with running-wear mannequins, mountain decals and a red-dot logo in the glass of the unit directly west of Amrise's recessed entrance.
+  - **Measurements:** a square-on frame from panorama `YsOoBymJj446X2wJOG9R7w` places Amrise's photographed bay within 0.3–0.6 m of source No. 112. The next bay west, which holds the shop, measures about 7.9 m against source No. 110's 6.41 m. The 108 pier stands at its west end.
+  - **Uncertainty:** that matches neither the source numbering (the shop would be in No. 110) nor a clean one-unit shift. A second panorama's frame disagrees by about 1.5 m along the street.
+  - **Status:** locked pending a resolved unit-to-number mapping for Nos. 106–112. Ming Li's Eating House (114, the white Lorong 15 corner building) and FSL EW LED Lighting (118, across Lorong 15) are noted for the same row.
 - **Amrise Hotel row, 106–114 Sims Avenue:** June 2024 Street View shows the pale-pink three-storey frontage continuing across Nos. 106–110, with a second oval Amrise sign above No. 106/108. That suggests the hotel occupies more than No. 112. The existing model assigns only No. 112; extending it needs an operator or listing confirmation of the hotel's extent.
 
 ### 7 October 2026: other leads checked and locked
