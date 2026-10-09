@@ -351,6 +351,29 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Validation / completion:** all **92 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-six.
 - **Row follow-up:** the shared row elevation's upper storey renders about 0.3 m lower than photographed at Nos. 277–279. It is recorded, not changed.
 
+### 9 October 2026: leads checked and locked
+
+- **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**
+  - **Signed tenants, June 2024:** 新福興, 客来顺 KE LAI SHUN RESTAURANT, INSTYLE HAIR SALON, SAMSUNG Mobile Time (its board is numbered **263**) and the Shi Hao corner.
+  - **Listings:** Google Maps lists Mobile Time (Lor 13) at 263 Geylang Rd (open), with its point in way 454254207. Instyle's listing found is a different branch on Crawford Lane. Ke Lai Shun had no listing found.
+  - **Footprint mismatch:** measured from the June 2024 far-side panoramas, Mobile Time spans about x 26–31 m and Instyle about x 20–26 m. Both straddle source party lines. Satellite imagery shows the row running about 3–4 m further east at the Lorong 13 corner than the source ways, while the Lorong 11 end roughly matches. The source bays (4.84 m) are therefore about 7% too narrow, and the misalignment grows eastward to about 2 m at No. 263.
+  - **Status:** locked pending a re-spaced authored footprint for the row, approved by the user. This also covers the earlier Shi Hao lock.
+- **Zui Xiang Lou (醉香楼), No. 273:** now listed on Google Maps at 273 Geylang Rd, 389326, **permanently closed**. It stays generic, following the ABC Bistro precedent.
+- **Guan Keat (C4 correction lead):** the No. 291 corner coffeeshop carries an awning reading **GUAN KEAT PTE LTD … Esso LPG**, so Guan Keat is an LPG distributor whose branded awnings appear on coffeeshops. The GUAN KEAT valance at No. 38 Lorong 11 therefore does not by itself name that coffeeshop. Recorded against the C4 correction lead.
+- **No. 291 Geylang Road, the Lorong 15 corner coffeeshop (way 454254230):**
+  - **Signs:** June 2024 shows a blade sign reading 291 茶室 291 EATING HOUSE and a 333 砂煲田鸡粥 board on the side elevation.
+  - **Listings:** ACRA-derived records give 291 Geylang Eating House Pte Ltd at this address (live, registered 2020, operating 333 Kitchen). Google Maps marks the "291 Eating House" listing permanently closed, but lists other stalls at No. 291 as open.
+  - **Footprint:** satellite imagery shows the corner building about 3 m wider than the 5.13 m source way and running much further back along Lorong 15. Lorong 15 is also outside the derived road set.
+  - **Status:** locked pending an authored corner footprint.
+- **BUILDERSmart (魯班行), Sims Avenue:** June 2024 shows its signboard on the south-side row two doors west of Fok Wai Kee. Google Maps lists BUILDERSmart at **29 Lor 13 Geylang**, not on Sims Avenue, so the frontage's number and extent are unresolved. Locked.
+- **Lorong 11 west side, Nos. 15–23: source unit widths are wrong.**
+  - **New identities:** Google Maps lists **Goodwood Garments Services & Trading, 19 Lor 11 Geylang, 388711** (operating). Its 良木林 Goodwood board on the house north of Hok Tek Chi carries the number 19, which resolves the earlier "no listing" lock on identity. No. 21 is signed **藏密佛学研究会 Tibetan Buddhist Studies Society** (TBSS.ORG). No. 23 was signed aestmod auto in April 2024 with a 23 plate; that firm now lists an Ang Mo Kio address.
+  - **Measured widths:** triangulating the party downpipes from three April 2024 panoramas about 10 m apart gives No. 15 **8.86 m** (two bays), No. 17 **5.13 m**, No. 19 **5.19 m** and No. 21 **5.38 m**. The source draws each at about 6.4 m. The fitted façade line runs parallel to the source front (342.8° against 342.7°).
+  - **Checks:** the result puts the camera 4.9 m from the façade and 2.4 m above the pier bases, and makes the bollards about 1 m tall. A 6.4 m width would need a 3.05 m camera and 1.3 m bollards.
+  - **Consequence:** the run's total length roughly agrees with the source, but its subdivision does not. Party lines drift by up to about 2.5 m against the source ways. The existing Hok Tek Chi model (No. 17) uses the 6.42 m source width.
+  - **Status:** Goodwood (No. 19) and the Tibetan Buddhist Studies Society (No. 21) are locked pending a user-approved re-spacing of the Lorong 11 west row, which would also correct Hok Tek Chi.
+- **Amrise Hotel row, 106–114 Sims Avenue:** June 2024 Street View shows the pale-pink three-storey frontage continuing across Nos. 106–110, with a second oval Amrise sign above No. 106/108. That suggests the hotel occupies more than No. 112. The existing model assigns only No. 112; extending it needs an operator or listing confirmation of the hotel's extent.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.
