@@ -371,6 +371,12 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Method:** triangulated party lines agree with the source to within 0.25 m, so the east side of Lorong 11 is accurate here. Heights come from a square-on frame and were checked by rendering from the solved pose; the blade sign was triangulated in plan. See the [design brief](jiangsu-design-brief.md).
 - **Validation / completion:** all **102 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-nine.
 
+### Q36. Liu Da Ma BBQ 刘大妈烧烤吧, 26 Lorong 11 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Liu Da Ma BBQ at 26 Lor 11 Geylang, 388718, Floor 1 (open), matching [way 1223250204](https://www.openstreetmap.org/way/1223250204), tagged No. 26. 天府渔香 (Floor 2) is not assigned. April 2024 shows the 刘大妈烧烤吧 blade sign; a square-on March 2022 capture shows the same frontage.
+- **Method:** render-and-compare against the existing No. 24 model confirmed the source frontage after one panorama's yaw proved 8°–13° off. Heights come from the square-on frame, read linearly because its verticals are plumb. See the [design brief](liu-da-ma-design-brief.md).
+- **Validation / completion:** all **105 tests**, the type check and the build passed, with day and night renders. The named-place total is forty.
+
 ### 9 October 2026: leads checked and locked
 
 - **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**
@@ -392,7 +398,7 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
   - **Checks:** the result puts the camera 4.9 m from the façade and 2.4 m above the pier bases, and makes the bollards about 1 m tall. A 6.4 m width would need a 3.05 m camera and 1.3 m bollards.
   - **Consequence:** the run's total length roughly agrees with the source, but its subdivision does not. Party lines drift by up to about 2.5 m against the source ways. The existing Hok Tek Chi model (No. 17) uses the 6.42 m source width.
   - **Status:** Goodwood (No. 19) and the Tibetan Buddhist Studies Society (No. 21) are locked pending a user-approved re-spacing of the Lorong 11 west row, which would also correct Hok Tek Chi.
-- **Lorong 11 east side, other signs seen in April 2024:** HAO mart (single storey) at Nos. 30–32 was rejected by the user earlier. A L L Furniture is listed at 32 Lor 11. 江苏酒家 at No. 20 is now Q35.
+- **Lorong 11 east side, other signs seen in April 2024:** HAO mart (single storey) at Nos. 30–32 was rejected by the user earlier. A L L Furniture is listed at 32 Lor 11. Kum Huat Shoe Merchant is listed at No. 16 (not yet checked against the frontage). 江苏酒家 at No. 20 is Q35 and Liu Da Ma at No. 26 is Q36.
 - **Amrise Hotel row, 106–114 Sims Avenue:** June 2024 Street View shows the pale-pink three-storey frontage continuing across Nos. 106–110, with a second oval Amrise sign above No. 106/108. That suggests the hotel occupies more than No. 112. The existing model assigns only No. 112; extending it needs an operator or listing confirmation of the hotel's extent.
 
 ### 7 October 2026: other leads checked and locked
