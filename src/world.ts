@@ -16,6 +16,7 @@ import { buildKtv277 } from './ktv-277';
 import { buildEros } from './eros';
 import { buildPlusMobile } from './plus-mobile';
 import { buildLannaThai } from './lanna-thai';
+import { buildJiangsu } from './jiangsu';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -109,6 +110,7 @@ export class World {
       if(buildEros(this,b.id,poly))continue;
       if(buildPlusMobile(this,b.id,poly))continue;
       if(buildLannaThai(this,b.id,poly))continue;
+      if(buildJiangsu(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;

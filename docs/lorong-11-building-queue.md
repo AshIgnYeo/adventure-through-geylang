@@ -365,6 +365,12 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Method:** three-panorama triangulation puts the façade corners within about 0.4 m of the source front, with a skewed source rear preserved. Heights come from a square-on frame and were checked by rendering from the solved pose. See the [design brief](lanna-thai-design-brief.md).
 - **Validation / completion:** all **99 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-eight.
 
+### Q35. JiangSu Jiu Jia 江苏酒家, 20 Lorong 11 Geylang, completed
+
+- **Address / footprint:** Google Maps lists JiangSu Jiu Jia at 20 Lor 11 Geylang, 388712 (open), matching [way 1223250201](https://www.openstreetmap.org/way/1223250201), tagged No. 20; its point is displaced into the lane. Kim Chai Hin (supermarket) is also listed at No. 20 and is not assigned.
+- **Method:** triangulated party lines agree with the source to within 0.25 m, so the east side of Lorong 11 is accurate here. Heights come from a square-on frame and were checked by rendering from the solved pose; the blade sign was triangulated in plan. See the [design brief](jiangsu-design-brief.md).
+- **Validation / completion:** all **102 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-nine.
+
 ### 9 October 2026: leads checked and locked
 
 - **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**
@@ -386,7 +392,7 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
   - **Checks:** the result puts the camera 4.9 m from the façade and 2.4 m above the pier bases, and makes the bollards about 1 m tall. A 6.4 m width would need a 3.05 m camera and 1.3 m bollards.
   - **Consequence:** the run's total length roughly agrees with the source, but its subdivision does not. Party lines drift by up to about 2.5 m against the source ways. The existing Hok Tek Chi model (No. 17) uses the 6.42 m source width.
   - **Status:** Goodwood (No. 19) and the Tibetan Buddhist Studies Society (No. 21) are locked pending a user-approved re-spacing of the Lorong 11 west row, which would also correct Hok Tek Chi.
-- **Lorong 11 east side, other signs seen in April 2024:** 江苏酒家 (a restaurant) on the white house at No. 20 next to Hainan Goh, with its vertical sign on the Hainan Goh frontage. HAO mart (single storey) at Nos. 30–32 was rejected by the user earlier. A L L Furniture is listed at 32 Lor 11. None is modelled yet; 江苏酒家 needs a listing check.
+- **Lorong 11 east side, other signs seen in April 2024:** HAO mart (single storey) at Nos. 30–32 was rejected by the user earlier. A L L Furniture is listed at 32 Lor 11. 江苏酒家 at No. 20 is now Q35.
 - **Amrise Hotel row, 106–114 Sims Avenue:** June 2024 Street View shows the pale-pink three-storey frontage continuing across Nos. 106–110, with a second oval Amrise sign above No. 106/108. That suggests the hotel occupies more than No. 112. The existing model assigns only No. 112; extending it needs an operator or listing confirmation of the hotel's extent.
 
 ### 7 October 2026: other leads checked and locked

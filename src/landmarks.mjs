@@ -25,10 +25,12 @@ import { kGroup } from './k-group-layout.mjs';
 import { eros } from './eros-layout.mjs';
 import { plusMobile } from './plus-mobile-layout.mjs';
 import { lannaThai } from './lanna-thai-layout.mjs';
+import { jiangsu } from './jiangsu-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...jiangsu },
   { ...lannaThai },
   { ...plusMobile },
   { ...eros },
