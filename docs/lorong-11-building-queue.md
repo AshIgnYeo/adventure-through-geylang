@@ -351,6 +351,13 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Validation / completion:** all **92 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-six.
 - **Row follow-up:** the shared row elevation's upper storey renders about 0.3 m lower than photographed at Nos. 277–279. It is recorded, not changed.
 
+### Q33. Plus Mobile, 22 Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Plus Mobile at 22 Lor 13 Geylang, 388665 (open); its point lies in [way 1223454587](https://www.openstreetmap.org/way/1223454587), tagged No. 22. April 2024 Street View shows door plate 22 under the Plus Mobile & Accessories signboard numbered No.22.
+- **Method:** party-wall copings triangulated from three panoramas confirm the source's 5.81 m frontages on this row to about 5%. Heights come from a square-on March 2022 frame and were checked by rendering from that pose. See the [design brief](plus-mobile-design-brief.md).
+- **Validation / completion:** all **96 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-seven.
+- **Rest of this row:** No. 28 (signed 28) carries WUNDERFOLKS handmade-tart branding in April 2024, but the bakery's listings are at Kaki Bukit, so its use there is unresolved. No. 20 is plated 20 with no identity found. Both stay generic.
+
 ### 9 October 2026: leads checked and locked
 
 - **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**

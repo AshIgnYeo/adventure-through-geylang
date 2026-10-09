@@ -253,3 +253,7 @@ Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists
 ## Eros Adult Shop, 279 Geylang Road
 
 Implemented **9 October 2026** as a dated June 2024 exterior. Google Maps lists Eros Adult Shop as open at 279 Geylang Rd; its point is displaced behind the row. Unnumbered way 454254224 lies between the 277 KTV pair and RR Motor's door plated 281. The shared row elevation is used in the jalousie finish. The signboard was measured in a square-on May 2023 frame, and the blade sign and back wall were triangulated from two calibrated June 2024 panoramas and checked by rendering from each pose. Full evidence, method and exclusions are in the [design brief](eros-design-brief.md). Reviews: `?review=eros` and `?review=eros-five-foot-way`.
+
+## Plus Mobile, 22 Lorong 13 Geylang
+
+Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists Plus Mobile as open at 22 Lor 13 Geylang, and its point lies in the addressed way 1223454587. Street View shows door plate 22 under the Plus Mobile & Accessories signboard numbered No.22. The single-storey shophouse has a short tiled front slope, a dark low rear roof and a steel walkway canopy. Unit widths were triangulated from the row's party-wall copings and agree with the source; heights come from a square-on March 2022 frame and were checked by rendering from that pose. Full evidence, method and exclusions are in the [design brief](plus-mobile-design-brief.md). Reviews: `?review=plus-mobile` and `?review=plus-mobile-walkway`.
