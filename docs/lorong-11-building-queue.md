@@ -341,6 +341,16 @@ Found through the SFCCA member directory while looking for more clan association
 - **Validation / completion:** all **89 tests**, the type check and the build passed. The named-place total is thirty-five.
 - **Remaining in this row:** No. 3 (plate 3, red awning) has no identity found. The two northern houses carry Mister Contracts / MC Multi Skills signage, but Maps places Mister Contracts at No. 7. The source also tags two ways as No. 9. These remain locked.
 
+### Q32. Eros Adult Shop, 279 Geylang Road, completed
+
+Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
+
+- **Address / footprint:** Google Maps lists Eros Adult Shop at 279 Geylang Rd, 389328 (open); its point is displaced behind the row. Unnumbered [way 454254224](https://www.openstreetmap.org/way/454254224) lies between the KTV pair and RR Motor's door plated 281.
+- **Exterior:** June 2024 shows the EROS signboard and an oval EROS ADULT SHOP blade sign; a square-on May 2023 capture shows the same signboard.
+- **Method:** square-on scaling from the row's pilasters, camera height solved from floor and arch crowns, two-view triangulation of the blade sign, and render-and-compare from each fitted pose. See the [design brief](eros-design-brief.md).
+- **Validation / completion:** all **92 tests**, the type check and the build passed, with day and night renders. The named-place total is thirty-six.
+- **Row follow-up:** the shared row elevation's upper storey renders about 0.3 m lower than photographed at Nos. 277–279. It is recorded, not changed.
+
 ### 7 October 2026: other leads checked and locked
 
 - **Nanyang Lian Clan Association and Foochow Dionglok Association:** their signs were seen in June 2024 on a four-storey building on the south side of Geylang Road, opposite No. 277. Neither is in the SFCCA directory. The building lies inside the coarse 57 m source block 454438330, which spans several separate roofs. Locked pending an address and an estimated partial-block split.

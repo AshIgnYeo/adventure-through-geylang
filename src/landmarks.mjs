@@ -22,10 +22,12 @@ import { normalStainless, qianjing } from './sims-north-layout.mjs';
 import { fokWaiKee } from './fok-wai-kee-layout.mjs';
 import { hongYeChen } from './hong-ye-chen-layout.mjs';
 import { kGroup } from './k-group-layout.mjs';
+import { eros } from './eros-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...eros },
   { ...kGroup },
   { ...hongYeChen },
   { ...fokWaiKee },

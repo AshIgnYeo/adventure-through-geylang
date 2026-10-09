@@ -249,3 +249,7 @@ Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists
 ## K Group, 5 Lorong 13 Geylang
 
 Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists K Group Pte Ltd at 5 Lor 13 Geylang, and Street View shows its board on the house between door plates 3 and 7, matching addressed way 1223773754. It shares the row elevation with Hong Ye Chen through a common module. Full evidence and exclusions are in the [design brief](k-group-design-brief.md). Reviews: `?review=k-group` and `?review=lorong-13-row`.
+
+## Eros Adult Shop, 279 Geylang Road
+
+Implemented **9 October 2026** as a dated June 2024 exterior. Google Maps lists Eros Adult Shop as open at 279 Geylang Rd; its point is displaced behind the row. Unnumbered way 454254224 lies between the 277 KTV pair and RR Motor's door plated 281. The shared row elevation is used in the jalousie finish. The signboard was measured in a square-on May 2023 frame, and the blade sign and back wall were triangulated from two calibrated June 2024 panoramas and checked by rendering from each pose. Full evidence, method and exclusions are in the [design brief](eros-design-brief.md). Reviews: `?review=eros` and `?review=eros-five-foot-way`.

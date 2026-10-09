@@ -15,7 +15,7 @@ const roadSegments = map.roads.flatMap(r => r.coordinates.slice(1).map((p, i) =>
 
 test('RR Motor holds the two unnumbered frontages west of the Buddhist Art Centre, in order', () => {
   for (const id of rrMotor.buildingIds) assert.equal(landmarkFor(id), landmarkFor(rrMotor.buildingIds[0]));
-  assert.equal(landmarkFor('454254224'), undefined, 'the Eros unit stays generic');
+  assert.equal(landmarkFor('454254224').id, 'eros', 'No. 279 west of RR Motor is the separately signed Eros frontage');
   // No. 281 meets No. 283, and No. 283 meets the Buddhist Art Centre.
   assert.ok(Math.hypot(frames[0].b[0] - frames[1].a[0], frames[0].b[1] - frames[1].a[1]) < 1e-9);
   const bac = artCentreFrame(outline('454254227'));

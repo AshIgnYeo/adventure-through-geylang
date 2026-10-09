@@ -15,7 +15,8 @@ const dist = (p, q) => Math.hypot(p[0] - q[0], p[1] - q[1]);
 
 test('277 KTV holds Nos. 275 and 277, between Zui Xiang at No. 273 and the Eros unit at No. 279', () => {
   for (const id of ktv277.buildingIds) assert.equal(landmarkFor(id).id, 'ktv-277');
-  for (const id of ['454254221', '454254224']) assert.equal(landmarkFor(id), undefined, `neighbour ${id} stays generic`);
+  assert.equal(landmarkFor('454254221'), undefined, 'the closed Zui Xiang frontage at No. 273 stays generic');
+  assert.equal(landmarkFor('454254224').id, 'eros', 'No. 279 is the separately signed Eros frontage');
   assert.ok(dist(frames[0].b, frames[1].a) < 1e-9);
   // Two frontages east of Golden Jade (No. 271) and two west of RR Motor (No. 281).
   assert.ok(Math.abs(dist(goldenJadeFrame(outline('454254220')).b, frames[0].a) - 5.13) < .05);

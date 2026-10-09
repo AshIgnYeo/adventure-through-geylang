@@ -13,6 +13,7 @@ import { buildSikWaiSin } from './sik-wai-sin';
 import { buildRrMotor } from './rr-motor';
 import { buildGoldenJade } from './golden-jade';
 import { buildKtv277 } from './ktv-277';
+import { buildEros } from './eros';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -103,6 +104,7 @@ export class World {
       if(buildRrMotor(this,b.id,poly))continue;
       if(buildGoldenJade(this,b.id,poly))continue;
       if(buildKtv277(this,b.id,poly))continue;
+      if(buildEros(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;
