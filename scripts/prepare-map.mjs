@@ -4,7 +4,8 @@ const attrs = text => Object.fromEntries([...text.matchAll(/([\w:]+)="([^"]*)"/g
 const nodes = new Map([...xml.matchAll(/<node\b[^>]*>/g)].map(([s]) => { const a=attrs(s); return [a.id, [+a.lon, +a.lat]]; }));
 // Lorong 15 was added on 10 October 2026 (open question 10), and Lorongs 9, 10 and 12 the same day (open question 24).
 const names = ['Lorong 9 Geylang', 'Lorong 10 Geylang', 'Lorong 11 Geylang', 'Lorong 12 Geylang', 'Lorong 13 Geylang', 'Lorong 15 Geylang', 'Geylang Road', 'Sims Avenue'];
-const bounds = [103.87625, 1.31195, 103.8783, 1.31425];
+// Widened on 10 October 2026 (open question 26) to contain the five boundary blocks west, east and south.
+const bounds = [103.87597, 1.31150, 103.87859, 1.31425];
 const inside = ([lon,lat]) => lon>=bounds[0] && lon<=bounds[2] && lat>=bounds[1] && lat<=bounds[3];
 const roads=[], buildings=[], paths=[], contextRoads=[];
 for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {

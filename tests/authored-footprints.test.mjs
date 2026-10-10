@@ -25,7 +25,7 @@ test('authored groups replace existing source ways, keep them for provenance and
   }
   for (const b of authored) assert.equal(sourceIds.has(b.id), false, b.id);
   assert.equal(new Set(map.buildings.map(b => b.id)).size, map.buildings.length);
-  assert.equal(source.buildings.length, 154, 'map.json itself is unchanged');
+  assert.equal(source.buildings.length, 206, 'map.json itself is unchanged (206 since the open question 26 widening)');
 });
 
 test('authored outlines stay off the roads and clear of the buildings they do not replace', () => {

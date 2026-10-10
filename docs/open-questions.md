@@ -20,6 +20,8 @@ The project owner chose the recommended option for each.
 | 26 | **Yes.** Widen the study bounds by one block where the five generic boundary blocks sit | Rebuild them from June 2024 photographs, named where the listing-and-signage bar is met; No. 291 gets its corner footprint |
 | 27 | **Yes.** Draw Leong Kee's middle board as photographed | 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE |
 
+**Question 26 follow-up, answered the same day.** Containing the five blocks also pulls in 52 more buildings: 22 to the east, 8 to the west and 19 to the south, plus overlaps. The owner chose to **widen fully** rather than rebuild the five within the old bounds. The bounds become 103.87597–103.87859 E and 1.31150–1.31425 N. The new buildings start generic and are rebuilt in later passes.
+
 The original wording of questions 25–27 is kept here:
 
 25. **Masjid Haji Mohd Salleh, 245 Geylang Road: re-author the footprint front to the photographed façade?**

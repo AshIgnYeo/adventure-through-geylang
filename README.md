@@ -181,11 +181,11 @@ These are inspection starts, rather than navigation or tracking features.
 
 The original OpenStreetMap extract is retained at `public/osm-source.osm`. The preparation script produces `public/map.json`, preserving geographic coordinates, way identifiers, one-way tags and source building footprints. Projection and rendering use metres, without compressing the streets. The metre conversion is tested against an independent haversine calculation.
 
-The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 52 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026), 154 building outlines, two alley or footway ways and one Lorong 9 access-context way.
+The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 63 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026), 206 building outlines, two alley or footway ways and one Lorong 9 access-context way. The study bounds were widened the same day (open question 26), to 103.87597–103.87859 E and 1.31150–1.31425 N, to take in the boundary blocks.
 
 This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 
-Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings are not assigned real names. Across the study area they are rebuilt from dated photographs as unnamed exteriors, with blank boards. A few footprints still await owner decisions and remain generic.
+Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings are not assigned real names. Across the study area they are rebuilt from dated photographs as unnamed exteriors, with blank boards. The ring of buildings brought in by the widened bounds starts generic and is being rebuilt the same way.
 
 Detailed provenance is available in:
 
