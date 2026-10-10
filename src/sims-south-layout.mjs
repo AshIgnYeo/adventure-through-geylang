@@ -47,7 +47,46 @@ export const no106 = {
   ],
 };
 
-export const simsSouth = [yapSun, no106];
+// No. 116 (the Lorong 15 corner) and No. 124 share the row's three-storey type too, at FSL's heights.
+const fslType = (spans, extra) => ({
+  height: 10.8, ceiling: F.ceiling, fiveFootWay: 2.3,
+  colours: { wall: '#e9e2d3', trim: '#c8a36a', frame: '#3a3f42', glass: '#4b585d', pier: '#ece7dc', back: '#3a3532', floor: '#a49e95' },
+  bands: [[F.parapetBand[0], 10.8, .25, '#e2dccd'], [F.cornice[0], F.cornice[1], .3, '#e2dccd'], [F.slab[0], F.slab[1], .3, '#e2dccd']],
+  windows: spans.flatMap(u => [{ u, h: [4.69, 6.09], panes: 3, surround: true }, { u, h: [7.95, 9.38], panes: 3, surround: true }]),
+  vents: spans.flatMap(u => [{ u, h: [6.24, 6.59] }, { u, h: [9.59, 10.02] }]),
+  ...extra,
+});
+const rowNote = 'Read on three June 2024 Sims Avenue panoramas rectified 3.25 m in front of the source front, the depth found at FSL and Thye Seng; the source front is kept, as for its neighbours (open question 9), and heights follow FSL\'s on the same five-foot-way datum.';
+
+export const sims116 = {
+  id: 'sims-116', buildingIds: ['682928759'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue',
+  name: 'No. 116 Sims Avenue, Lorong 15 corner (June 2024 exterior, occupant not identified)', address: '116 Sims Avenue (Lorong 15 corner)',
+  ...fslType([[.5, 2.6], [3.4, 5.5]], {
+    blocks: [{ name: 'blank restaurant board', u: [.4, 6.0], h: [3.3, 3.85], out: .08, depth: .06, colour: '#3a3e3c' }],
+    piers: [[0, .4], [5.9, 6.36]],
+    backFittings: [{ name: 'restaurant front', u: [.5, 5.8], h: [.1, 3.0], colour: '#3a332e', glow: .1 }],
+    // The Lorong 15 face (edge 3): windows at the same heights, read obliquely.
+    side: { edge: 3, windows: [1.5, 4.0, 6.5, 9.0, 11.5] },
+  }),
+  evidence: 'Source way 682928759 is tagged No. 116, the Lorong 15 corner of the row. June 2024 Street View shows ABC BISTRO RESTAURANT PTE LTD boards over an open restaurant with green tables; ABC Bistro is listed permanently closed while Tai Say, Da Bao Lorong 15 and Prata Hub are listed open at No. 116, so the signs and listings conflict and no name is given, the board left blank. The building shares the row\'s three-storey type: windows in tan surrounds under louvred vents on both upper floors. ' + rowNote + ' The Lorong 15 face is simplified to windows at the same heights.',
+  sources: ['https://www.openstreetmap.org/way/682928759', pano('GSi02rgoddx_BEQoQuw5bw', 150, 10, 90), pano('u8Gt4GPB01nNd4_FoWchUQ', 190, 10, 90)],
+};
+
+export const sims124 = {
+  id: 'sims-124', buildingIds: ['682928763'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue',
+  name: 'No. 124 Sims Avenue (June 2024 exterior, occupant not identified)', address: '124 Sims Avenue',
+  ...fslType([[1.1, 3.3], [4.2, 6.3]], {
+    blocks: [{ name: 'condenser', u: [1.5, 2.3], h: [7.0, 7.5], out: .3, depth: .4, colour: '#e8e8e4' }, { name: 'condenser', u: [4.6, 5.4], h: [7.0, 7.5], out: .3, depth: .4, colour: '#e8e8e4' }],
+    piers: [[0, .4], [6.3, 6.71]],
+    awning: { from: .4, to: 6.3, wall: 3.15, front: 2.75, depth: 1.6, valance: .3 },
+    backFittings: [{ name: 'shop front', u: [.5, 6.2], h: [.1, 2.95], colour: '#4a4440', glow: .08 }],
+  }),
+  evidence: 'Source way 682928763 is tagged No. 124, east of Thye Seng (No. 122), at the study\'s east edge. June 2024 Street View shows the row\'s three-storey type with condensers on the upper floor and a shop under a striped awning; no listing or sign was matched to it, so no name is given. ' + rowNote,
+  sources: ['https://www.openstreetmap.org/way/682928763', pano('2Ajok7bnMLxnkcW7PuS2sQ', 165, 10, 90)],
+};
+
+export const simsSouth = [yapSun, no106, sims116, sims124];
 export const simsSouthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const simsSouthLayout = (place, width) => simpleHouseLayout(width, place);
-export const simsSouthReviews = (place, frame) => facing(frame, place.id, 10, 16);
+// No. 124 stands at the study's east edge, beyond the walkable bounds, so it has no review start.
+export const simsSouthReviews = (place, frame) => place.id === 'sims-124' ? [] : facing(frame, place.id, 10, 16);

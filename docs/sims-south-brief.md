@@ -16,3 +16,12 @@ Research and implementation: **10 October 2026**. This brief covers the places i
 - **Measurement:** two panoramas rectified at the row's 1.5 m depth disagree with Red Dot's storey spacing by about 17%. Red Dot's heights are kept so the row is continuous, and No. 106's window positions are scaled by the same factor. Positions carry about ±0.3 m.
 
 Use `?review=yap-sun` and `?review=sa-106`.
+
+## Nos. 116 and 124 (unnamed)
+
+Both share the row's three-storey type, built at FSL's heights on the source front: two windows in tan surrounds on each upper floor, under louvred vents. They were read on three June 2024 panoramas rectified at the row's 3.25 m depth.
+
+- **No. 116, the Lorong 15 corner:** ABC BISTRO RESTAURANT PTE LTD boards hang over an open restaurant. ABC Bistro is listed as permanently closed, while Tai Say, Da Bao Lorong 15 and Prata Hub are listed open at No. 116. With signs and listings in conflict, it is unnamed and its board is blank. The Lorong 15 face is simplified to windows at the same heights.
+- **No. 124:** east of Thye Seng, at the study's east edge, with condensers and a striped awning. No listing matched it. It lies beyond the walkable bounds, so it has no review start.
+
+Use `?review=sims-116`.

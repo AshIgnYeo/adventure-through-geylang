@@ -547,7 +547,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 ### Q60. Yap Sun Hardware, 120 Sims Avenue, completed (dated exterior)
 
 - **Lock resolved:** the 10 October Yap Sun lock. Under open question 12, the signed awning on No. 120 is modelled, recording the Chancerlodge Complex listing. No. 106, beside Red Dot, followed as an unnamed exterior.
-- **Validation / completion:** tests, type check and build passed. The named-place total is 68. See the [Sims Avenue south brief](sims-south-brief.md).
+- **Validation / completion:** tests, type check and build passed. The named-place total is 68. See the [Sims Avenue south brief](sims-south-brief.md). Nos. 116 (the conflicting ABC Bistro corner) and 124 followed later as unnamed exteriors.
 
 ### Q61. Lian Seng Weighing Scale Co., 229 Geylang Road, completed
 
