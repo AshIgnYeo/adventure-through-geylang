@@ -227,8 +227,8 @@ export const landmarks = [
   },
   {
     id: 'sm-khek-leow', buildingIds: ['1223250215'], kind: 'khek-leow',
-    name: 'S.M. Khek Leow Clan Association', address: '4 Lorong 11 Geylang', height: 7.8,
-    evidence: 'SFCCA address corroborated by the mapped association point inside No. 4 and its visible name in April 2024 Google Street View. Single-frontage reconstruction with estimated dimensions and simplified ornament. Current condition and legal extent unverified; neighbouring Agape footprints are excluded.',
+    name: 'S.M. Khek Leow Clan Association', address: '4 Lorong 11 Geylang', height: 7.6,
+    evidence: 'SFCCA address corroborated by the mapped association point inside No. 4 and its visible name in April 2024 Google Street View. Single-frontage reconstruction with simplified ornament; the upper-storey heights were triangulated from two April 2024 panoramas on 10 October 2026, and other dimensions are estimates. Current condition and legal extent unverified; neighbouring Agape footprints are excluded.',
     sources: [
       'https://sfcca.sg/en/our-members/',
       'https://www.google.com/maps/@?api=1&map_action=pano&pano=ifUFTPmGn1-kOv6waVHktw&heading=70&pitch=15&fov=75',

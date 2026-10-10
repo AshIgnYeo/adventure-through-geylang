@@ -333,34 +333,49 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     for (const y of [3.03, 3.72, 3.88]) box('leow string course', w / 2, y, .15, w, .09, .31, frame);
     // The observed fascia is read right-to-left. Preserve its visual order.
     sign('會 公 氏 廖 屬 客 馬 星', .18, w - .36, 3.14, .47, '#e1dacc', '#a67e83', .18);
-    for (const centre of [.20, .50, .80]) {
-      const span = w * .24;
-      panel(w * centre - span / 2, span, 4.76, 6.47, .09, world.mat('#526567'));
-      for (const u of [centre - .125, centre, centre + .125]) box('leow upper window upright', w * u, 5.615, .16, .045, 1.78, .075, cream);
-      for (let i = 0; i <= 8; i++) box('leow window horizontal bar', w * centre, 4.76 + 1.71 * i / 8, .17, span, .035, .045, frame);
-      box('leow window sill', w * centre, 4.73, .16, span + .14, .10, .25, frame);
-      // Shallow cream arched head, faceted conservatively in the façade plane.
-      const base = pt(w * centre, .10), positions = [base[0], 6.90, base[1]], indices: number[] = [];
-      for (let i = 0; i <= 12; i++) {
-        const t = Math.PI * i / 12, p = pt(w * centre + Math.cos(t) * span / 2, .10);
-        positions.push(p[0], 6.90 + Math.sin(t) * .18, p[1]);
-        if (i) indices.push(0, i, i + 1);
+    // Upper storey re-measured on 10 October 2026 by triangulating two April 2024 panoramas: glazing
+    // 4.75-5.75 m, louvred transoms to about 6.2 m, arch crowns near 6.6 m, eave edge about 7.55 m.
+    // The three windows are about 1.0 m wide at 1.39 m centres.
+    const span = 1.02, step = 1.385, centres = [-1, 0, 1].map(k => w / 2 + k * step);
+    for (const c of centres) {
+      panel(c - span / 2, span, 4.76, 5.76, .09, world.mat('#526567'));
+      for (const u of [c - span / 2, c, c + span / 2]) box('leow upper window upright', u, 5.26, .16, .045, 1.0, .075, cream);
+      for (let i = 0; i <= 5; i++) box('leow window horizontal bar', c, 4.76 + i / 5, .17, span, .035, .045, frame);
+      box('leow window sill', c, 4.73, .16, span + .14, .10, .25, frame);
+      panel(c - span / 2, span, 5.76, 6.22, .10, world.mat(cream));
+      for (const offset of [-.25, .25]) for (const y of [5.88, 5.98, 6.08]) box('leow transom vent', c + offset, y, .13, .36, .04, .025, '#757e65');
+      // Shallow cream arched head inside a green moulded arch, faceted in the façade plane.
+      for (const [rise, half, d, colour] of [[.48, span / 2 + .1, .085, '#8fa364'], [.38, span / 2, .10, cream]] as const) {
+        const base = pt(c, d), positions = [base[0], 6.22, base[1]], indices: number[] = [];
+        for (let i = 0; i <= 12; i++) {
+          const t = Math.PI * i / 12, p = pt(c + Math.cos(t) * half, d);
+          positions.push(p[0], 6.22 + Math.sin(t) * rise, p[1]);
+          if (i) indices.push(0, i, i + 1);
+        }
+        world.mesh('leow arched window head', positions, Array(positions.length / 3 * 2).fill(0), indices, world.mat(colour));
       }
-      panel(w * centre - span / 2, span, 6.47, 6.90, .10, world.mat(cream));
-      world.mesh('leow arched window head', positions, Array(positions.length / 3 * 2).fill(0), indices, world.mat(cream));
-      for (const offset of [-.27, .27]) for (const y of [6.60, 6.76]) box('leow transom vent', w * centre + offset, y, .13, .35, .045, .025, '#757e65');
     }
-    // Abstract blue/ivory tile fields preserve placement, not historic motifs.
-    for (const centre of [.20, .80]) {
-      panel(w * centre - w * .12, w * .24, 4.07, 4.58, .08, world.mat('#608e88'));
+    // Abstract blue/ivory tile fields under the outer windows preserve placement, not historic motifs.
+    for (const c of [centres[0], centres[2]]) {
+      panel(c - .45, .9, 4.07, 4.58, .08, world.mat('#608e88'));
       for (let row = 0; row < 2; row++) for (let col = 0; col < 5; col++) {
-        box('leow tile motif', w * (centre - .096 + col * .048), 4.19 + row * .23, .105, .10, .10, .025, '#e1d8b4').rotateLocal(0, 0, 45);
+        box('leow tile motif', c + (col - 2) * .17, 4.19 + row * .23, .105, .10, .10, .025, '#e1d8b4').rotateLocal(0, 0, 45);
       }
     }
-    for (const u of [.05, .35, .65, .95]) box('leow upper pilaster', w * u, 5.58, .12, w * .045, 3.08, .17, cream);
-    box('leow green frieze', w / 2, 7.28, .11, w, .21, .23, green);
-    for (let u = .12; u < w; u += .25) box('leow cornice dentil', u, 7.48, .21, .10, .18, .24, green);
-    box('leow eaves', w / 2, 7.71, .25, w, .15, .58, frame);
+    // Tiled pilasters between and beside the windows, with capitals under the arch springing.
+    const pilasters = [w / 2 - 2.075, w / 2 - step / 2, w / 2 + step / 2, w / 2 + 2.075];
+    for (const u of pilasters) {
+      box('leow upper pilaster', u, 5.0, .12, .3, 2.0, .17, cream);
+      box('leow pilaster capital', u, 6.085, .14, .38, .27, .21, cream);
+      for (let y = 4.8; y < 5.8; y += .125) box('leow pilaster tile', u, y, .215, .08, .08, .02, '#d4b3a6').rotateLocal(0, 0, 45);
+      // Round medallion in the green relief above each capital.
+      for (const turn of [0, 45]) box('leow frieze medallion', u, 6.6, .13, .2, .2, .05, '#c6d29f').rotateLocal(0, 0, turn);
+    }
+    box('leow frieze moulding', w / 2, 6.86, .13, w, .08, .26, '#8a9d5e');
+    for (let u = .12; u < w; u += .25) box('leow cornice dentil', u, 7.02, .17, .10, .16, .2, green);
+    box('leow cornice', w / 2, 7.24, .17, w, .2, .34, green);
+    box('leow eaves', w / 2, 7.46, .32, w, .1, .7, frame);
+    box('leow gutter', w / 2, 7.52, .66, w, .12, .1, green);
     return true;
   }
 
