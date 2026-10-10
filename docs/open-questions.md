@@ -47,7 +47,7 @@ The project owner chose the recommended option for each.
 
 | # | Decision | What follows |
 | --- | --- | --- |
-| 15 | **Source front, labelled.** Build the Teck Keow Association (26A) and Sin Chew Tan's Clan Association (28A) on the source front of the `l15-north` strip as labelled estimates | The measured 4.8 m forward offset is recorded in each model's evidence, as a probable pose error on that drive |
+| 15 | **Source front, labelled.** Build the Teck Keow Association (26A) and Sin Chew Tan's Clan Association (28A) on the source front of the `l15-north` strip as labelled estimates | Applied: the northern 13 m strip is split into `l15-28a` and `l15-26a`; the 4.8 m offset is recorded in each model's evidence |
 | 16 | **Source front, labelled.** Split Geylang Road block 454438330 (Nos. 236–248) on the source front as labelled estimates | Applied: eight strips, Nos. 236–250. Triangulation puts the façades 2.4 m forward, which is this drive's position error; the 6 m correlation peak proved spurious |
 | 17 | **Not yet.** Finish every footprint inside the current study bounds before widening them | No. 291 stays generic for now; widening is a later decision |
 | 18 | **Yes.** Rebuild unnamed footprints from their 2024 photographs as unnamed exteriors | Real massing, colours, openings and awnings; boards left blank; no business names unless the existing evidence bar is met |

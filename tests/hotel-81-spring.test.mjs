@@ -9,7 +9,7 @@ const poly = outline('l15-22'), frame = hotel81SpringFrame(poly);
 test('Hotel 81 Spring takes the No. 22 strip of the split Lorong 15 block', () => {
   assert.equal(building('l15-22').number, '22'); assert.ok(building('l15-22').replaces.includes('454254281'));
   assert.equal(landmarkFor('l15-22').id, hotel81Spring.id);
-  for (const id of ['l15-north', 'l15-south']) assert.equal(landmarkFor(id), undefined);
+  assert.equal(landmarkFor('l15-south'), undefined);
   assert.equal(nearestRoad(frame.point(frame.width / 2)).name, 'Lorong 15 Geylang');
   assert.ok(Math.abs(frame.width - 16.2) < .02);
   assert.match(hotel81Spring.evidence, /current operation is uncertain/);

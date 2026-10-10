@@ -11,12 +11,12 @@ This is now primarily an environment and rendering project. The walking controls
 - A metre-scale street layout derived from retained OpenStreetMap data.
 - A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
 - Daylight, blue-hour and night lighting modes.
-- Reference-led models of 72 named buildings and landmarks, and photograph-led unnamed exteriors on Lorong 13.
+- Reference-led models of 74 named buildings and landmarks, and photograph-led unnamed exteriors on Lorong 13.
 - A mapped pedestrian back lane between Lorong 9 and Lorong 11.
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
 
-The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Ming Li's Eating House, Lian Seng Weighing Scale Co., Monster Ink, Shadow Tattoo (a dated exterior), the Nanyang Lian Clan Association building, Hotel 81 Spring, the Public Free Clinic Society headquarters, Cico Flooring, Gems Ville, Thirteen BBQ Bar, BUILDERSmart, Teck Hoe Airconditioning Parts, Wunderfolks, Instyle Hair Salon and Yap Sun Hardware (dated exteriors), Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
+The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Ming Li's Eating House, Lian Seng Weighing Scale Co., Monster Ink, Shadow Tattoo (a dated exterior), the Nanyang Lian Clan Association building, Sin Chew Tan's Clan Association, the Teck Keow Association, Hotel 81 Spring, the Public Free Clinic Society headquarters, Cico Flooring, Gems Ville, Thirteen BBQ Bar, BUILDERSmart, Teck Hoe Airconditioning Parts, Wunderfolks, Instyle Hair Salon and Yap Sun Hardware (dated exteriors), Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
 
 ## Run locally
 
@@ -111,6 +111,8 @@ Review URLs can open directly opposite a model. For example:
 /?review=guan-keat
 /?review=ming-li
 /?review=hotel-81-spring
+/?review=sin-chew-tan
+/?review=teck-keow
 /?review=public-free-clinic-society
 /?review=cico-flooring
 /?review=gems-ville
@@ -212,6 +214,7 @@ Detailed provenance is available in:
 - [Sims Avenue south row infill brief](docs/sims-south-brief.md)
 - [Geylang Road north side: Lian Seng and No. 231](docs/geylang-north-brief.md)
 - [Geylang Road south side, Nos. 236–250](docs/geylang-south-brief.md)
+- [Lorong 15: Sin Chew Tan's and Teck Keow](docs/lorong-15-brief.md)
 
 ## Project structure
 

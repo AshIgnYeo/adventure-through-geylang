@@ -15,7 +15,7 @@ Research and implementation: **10 October 2026**. Q18, previously research-block
 - **The block:** source way [454254281](https://www.openstreetmap.org/way/454254281) is a 2016 trace, 15.4 × 43.7 m, spanning several roofs.
 - **Measurement:** parallax on the HOTEL 81 sign and the building edges across the three panoramas puts the hotel frontage at about **13.0–29.2 m** along the source front from its north end, with the façade about 0.55 m behind the front.
 - **Footprints:** the block is cut square to the front into three strips:
-  - `l15-north`: the Teck Keow Association building at 26A Lorong 15, with a 昱歡美食閣 eating house, generic;
+  - `l15-north`: since split under open question 15 into `l15-28a` (Sin Chew Tan's Clan Association) and `l15-26a` (the Teck Keow Association); see the [Lorong 15 brief](lorong-15-brief.md);
   - `l15-22`: the hotel, 16.2 m;
   - `l15-south`: the beige Singapore Ship Chandlers Association building, generic.
 - **Satellite disagreement:** the registered satellite roof places the hotel about 3–4 m further north. The satellite registration is uncertain by a similar amount here, so the street measurement is used.

@@ -108,10 +108,10 @@ test('Sims Avenue Nos. 106–110 are re-spaced at the measured 106/108 pier, joi
 });
 
 test('the merged Lorong 15 block is split around the measured Hotel 81 Spring frontage', () => {
-  const parts = ['l15-north', 'l15-22', 'l15-south'].map(id => poly(map.buildings.find(b => b.id === id)));
+  const parts = ['l15-28a', 'l15-26a', 'l15-22', 'l15-south'].map(id => poly(map.buildings.find(b => b.id === id)));
   const before = area(poly(source.buildings.find(b => b.id === '454254281')));
   assert.ok(Math.abs(parts.reduce((s, p) => s + area(p), 0) - before) < .01, 'the strips tile the source block');
-  const hotel = parts[1], frontLen = Math.hypot(hotel[3][0] - hotel[2][0], hotel[3][1] - hotel[2][1]);
+  const hotel = parts[2], frontLen = Math.hypot(hotel[3][0] - hotel[2][0], hotel[3][1] - hotel[2][1]);
   assert.ok(Math.abs(frontLen - 16.2) < .02, `${frontLen}`);
 });
 

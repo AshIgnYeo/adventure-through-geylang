@@ -190,15 +190,18 @@ export const authoredFootprintGroups = [
   },
   {
     id: 'lorong-15-22', question: 11, approved: '2026-10-10',
-    evidence: 'Partial-block split of source block 454254281 on Lorong 15 (east side), which spans several roofs. Three April 2024 Lorong 15 panoramas (MgS1…, 4VkQ…, dwar…) agree, by parallax on the HOTEL 81 sign and the building edges, that the blue Hotel 81 Spring frontage runs from about 13.0 m to 29.2 m along the source front from its north end, about 0.55 m behind it. North of it stands the Teck Keow Association building (26A Lorong 15, with a 昱歡美食閣 eating house), south of it the beige Singapore Ship Chandlers Association building; both stay generic. The registered satellite roof places the hotel about 3–4 m further north; the satellite registration is uncertain by a similar amount here, so the street measurement is used. Cut lines run square to the front.',
+    evidence: 'Partial-block split of source block 454254281 on Lorong 15 (east side), which spans several roofs. Three April 2024 Lorong 15 panoramas (MgS1…, 4VkQ…, dwar…) agree, by parallax on the HOTEL 81 sign and the building edges, that the blue Hotel 81 Spring frontage runs from about 13.0 m to 29.2 m along the source front from its north end, about 0.55 m behind it. North of it stand the Teck Keow Association building (26A) and the Sin Chew Tan\'s Clan Association building (28A), split at 6.6 m in the ratio of their photographed widths (open question 15); south of it the beige Singapore Ship Chandlers Association building stays generic. The registered satellite roof places the hotel about 3–4 m further north; the satellite registration is uncertain by a similar amount here, so the street measurement is used. Cut lines run square to the front.',
     replaces: ['454254281'],
     build(map) {
       const src = map.buildings.find(b => b.id === '454254281').coordinates.slice(0, -1).map(c => project(c, map.origin));
       const P0 = src[0], P3 = src[3], len = Math.hypot(P3[0] - P0[0], P3[1] - P0[1]), front = [(P3[0] - P0[0]) / len, (P3[1] - P0[1]) / len];
       const inward = [-front[1], front[0]], cut = (inward[0] * (src[1][0] - P0[0]) + inward[1] * (src[1][1] - P0[1])) > 0 ? inward : neg(inward);
-      const [north, hotel, south] = strips(src, P0, front, cut, [13.0, 29.2]);
+      // The northern 13 m holds two houses (open question 15): Sin Chew Tan's (28A) and Teck Keow (26A),
+      // photographed about 5.4 m and 5.1 m wide and split in that ratio.
+      const [n28, n26, hotel, south] = strips(src, P0, front, cut, [6.6, 13.0, 29.2]);
       return [
-        { id: 'l15-north', street: 'Lorong 15 Geylang', number: null, levels: 4, outline: north },
+        { id: 'l15-28a', street: 'Lorong 15 Geylang', number: '28A', levels: 3, outline: n28 },
+        { id: 'l15-26a', street: 'Lorong 15 Geylang', number: '26A', levels: 3, outline: n26 },
         { id: 'l15-22', street: 'Lorong 15 Geylang', number: '22', levels: 5, outline: hotel },
         { id: 'l15-south', street: 'Lorong 15 Geylang', number: null, levels: 4, outline: south },
       ];
