@@ -16,11 +16,16 @@ test('Lorong 11 module places take west-row footprints and face Lorong 11', () =
 
 test('each Lorong 11 elevation keeps its bays ordered and its fittings in the frontage', () => {
   for (const place of lorong11) {
-    const poly = outline(place.buildingIds[0]), frame = lorong11Frame(poly, place), B = place.bays ?? {};
-    const edges = [...(B.windows ?? []), ...(B.pilasters ?? [])].sort((a, b) => a[0] - b[0]);
-    for (let i = 1; i < edges.length; i++) assert.ok(edges[i][0] >= edges[i - 1][1] - 1e-9, `${place.id} overlap at ${edges[i][0]}`);
-    assert.ok(edges.at(-1)[1] <= frame.width + .01, place.id);
-    for (const g of place.ground ?? []) assert.ok(g.h[1] <= peranakan.ceiling && g.u[0] >= 0 && g.u[1] <= frame.width, `${place.id} ${g.name}`);
+    const poly = outline(place.buildingIds[0]), frame = lorong11Frame(poly, place);
+    if (place.style === 'peranakan') {
+      const B = place.bays, edges = [...B.windows, ...B.pilasters].sort((a, b) => a[0] - b[0]);
+      for (let i = 1; i < edges.length; i++) assert.ok(edges[i][0] >= edges[i - 1][1] - 1e-9, `${place.id} overlap at ${edges[i][0]}`);
+      assert.ok(edges.at(-1)[1] <= frame.width + .01, place.id);
+      for (const g of place.ground ?? []) assert.ok(g.h[1] <= peranakan.ceiling && g.u[0] >= 0 && g.u[1] <= frame.width, `${place.id} ${g.name}`);
+    } else {
+      for (const w of place.windows) assert.ok(w.u[0] > 0 && w.u[1] < frame.width && w.h[0] >= place.ceiling - .01 && w.h[1] < Math.max(place.height, ...(place.rooftop ?? []).map(r => r.top)), place.id);
+      if (place.awning) assert.ok(place.awning.to <= frame.width && place.awning.wall <= place.ceiling + .1, place.id);
+    }
     assertFittings(frame, poly, lorong11Layout(place, frame.width).boxes, .12);
   }
 });

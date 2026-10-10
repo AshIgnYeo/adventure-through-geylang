@@ -17,3 +17,17 @@ Unnamed places (open question 18) carry no business name and leave their boards 
 - **Check:** render-and-compare from the `H9_p…` pose, moved 0.6 m back for the façade depth, puts the five windows, the central pier and the ground-floor openings on their photographed positions.
 
 Use `?review=l11-15`.
+
+## Nos. 23, 25, 27, 29A and 33 (unnamed)
+
+The plainer houses of the same re-spaced row (open question 1). Each was read square-on on the nearest April 2024 panorama, rectified at the row's 0.6 m façade depth, with the 0.5 m walkway step taken off. All are white or weathered two-storey houses with tall parapets, except No. 23.
+
+| No. | Listings | Why unnamed | Elevation |
+| --- | --- | --- | --- |
+| 23 | Canton (Foshan) Wong Clan Lion Dance Association; Choo Chin Meng Construction | only a small aestmod auto sign (that firm now lists Ang Mo Kio) | a narrow three-storey block over the south 3.5 m with window bands under sheet-metal canopies; a single-storey gated yard to the north, with No. 25's party wall above it |
+| 25 | E-Cool Technology; Honeycomb Design Studio | no sign; ground floor behind hoarding | parapet to 8.2 m; a long and a short window under a corrugated canopy; condenser |
+| 27 | Hwa Kwang Temple 華光神壇 at 27A | no temple sign on the frontage | parapet to 8.45 m; the north window under a hood; collapsible gate and red banner |
+| 29A | LG Renov Services | the two small red boards could not be read | parapet to 8.55 m; two windows under square vents; two shops either side of a central pier |
+| 33 | none found | the 悠雅 SPA board has no listing | parapet to 8.73 m; a hooded and a vented window; three condensers; navy awning over glazed shopfronts |
+
+Render-and-compare from the `8kEp…` pose, moved 0.6 m back, puts No. 25's windows, vents, condenser and hoarding on their photographed positions. Use `?review=l11-23`, `?review=l11-25`, `?review=l11-27`, `?review=l11-29a` and `?review=l11-33`.
