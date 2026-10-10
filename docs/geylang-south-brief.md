@@ -1,4 +1,4 @@
-# Geylang Road south side, Nos. 236–250
+# Geylang Road south side, Nos. 218–250
 
 Research and implementation: **10 October 2026**. Open question 16, answered "source front, labelled": the 57 m source block 454438330 is split into eight strips on its source front. This brief covers `src/geylang-south-layout.mjs`.
 
@@ -51,3 +51,30 @@ Render-and-compare from the `cBqb…`, `qlix…` and `jYF-…` poses, each moved
 Stock, menus, lanterns' wording, posters, vehicles and interiors. The corner chamfer at Lorong 10 is simplified onto the source corner.
 
 Use `?review=gr-236`, `?review=gr-238`, `?review=monster-ink`, `?review=gr-242`, `?review=shadow-tattoo`, `?review=gr-246`, `?review=nanyang-lian` and `?review=gr-250`.
+
+## Nos. 218–230, between Lorong 8 and Lorong 10 (open question 11)
+
+- **Depth:** the 49.5 m source block 454438340 lies opposite Shan Yuan Tang and Leong Kee. Triangulating the party piers either side of TakeToys from `yLxd…` and `x9pb…` puts the street piers about **0.9 m in front of** the source front, where three panoramas then agree. That differs from the 2.4 m found east of Lorong 10, a reminder that each stretch needs its own check.
+- **Party lines,** measured from the Lorong 8 end:
+
+  | Party line | s (m) |
+  | --- | --- |
+  | corner restaurant \| Tian Tian Minimart | 11.65 |
+  | \| TakeToys | 17.9 |
+  | \| the blue building | 23.6 |
+  | \| the cream house | 35.8 |
+  | \| the tall white block | 41.2 |
+
+- **Footprints:** the authored strips are `gr-218`, `gr-220`, `gr-222`, `gr-224`, `gr-228` and `gr-230`. Only TakeToys's number (222) is carried; the others are keys, not addresses.
+
+| Strip | Model | Evidence |
+| --- | --- | --- |
+| `gr-218` | unnamed | grey four-storey corner; LẬP PHƯƠNG NAM is listed at No. 218, permanently closed |
+| `gr-220` | **Tian Tian Minimart 天天超市** | listed at 218 Geylang Rd; red board on the next grey house |
+| `gr-222` | **TakeToys** | listed at #1/F, Singapore 389282 (No. 222); pink boards and taketoys.sg |
+| `gr-224` | unnamed | wide blue building with four bays, a floral band and a crest; 7-Eleven's listing (222) does not match this frontage |
+| `gr-228` | unnamed | cream four-storey house; its sign could not be read |
+| `gr-230` | unnamed | tall plain white block with slit windows and a fruit stall |
+
+Use `?review=gr-218`, `?review=tian-tian`, `?review=taketoys`, `?review=gr-224`, `?review=gr-228` and `?review=gr-230`.
+

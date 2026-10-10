@@ -158,6 +158,19 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'geylang-218-234', question: 11, approved: '2026-10-10',
+    evidence: 'Partial-block split of the 49.5 m source block 454438340 on the south side of Geylang Road, between Lorong 8 and Lorong 10. Triangulating the two party piers either side of the TakeToys shop from two June 2024 panoramas puts the street piers about 0.9 m in front of the source front, where three panoramas then agree; the source front is kept. Party lines read at that depth, measured along the front from the Lorong 8 end: 11.65 (the corner restaurant | Tian Tian Minimart), 17.9 (| TakeToys), 23.6 (| the blue building), 35.8 (| the cream house) and 41.2 m (| the tall white block). Cut lines run square to the front.',
+    replaces: ['454438340'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '454438340').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const P1 = src[1], P2 = src[2], len = Math.hypot(P2[0] - P1[0], P2[1] - P1[1]);
+      const front = [(P2[0] - P1[0]) / len, (P2[1] - P1[1]) / len];
+      const inward = [-front[1], front[0]], cut = (inward[0] * (src[0][0] - P1[0]) + inward[1] * (src[0][1] - P1[1])) > 0 ? inward : neg(inward);
+      const pieces = strips(src, P1, front, cut, [11.65, 17.9, 23.6, 35.8, 41.2]);
+      return ['218', '220', '222', '224', '228', '230'].map((key, i) => ({ id: `gr-${key}`, street: 'Geylang Road', number: key === '222' ? '222' : null, levels: null, outline: pieces[i] }));
+    },
+  },
+  {
     id: 'sims-106-110', question: '8a', approved: '2026-10-10',
     evidence: 'Re-spacing of Sims Avenue Nos. 106–110, measured on 10 October 2026 from June 2024 ground-floor frames rectified 1.5 m in front of the source front, where the 108 pier aligns across three panoramas. The ground-floor piers confirm the source party lines at 20.76 m (the pier lettered 108) and 27.17 m (Amrise, No. 112, unchanged), measured along the front from the Fok Wai Kee corner. The 106/108 pier stands at about 15.0 m against the source 12.45 m. Red Dot Running Company\'s shopfront runs from that pier to Amrise, across the 108 pier, so the former Nos. 108 and 110 form one unit. An earlier reading of four uniform 7.1 m upper-storey bays was not borne out at ground level and is superseded.',
     replaces: ['682928753', '682928752', '682928751'],

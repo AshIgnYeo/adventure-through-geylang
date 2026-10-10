@@ -571,6 +571,11 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Address / footprints:** both listed and signed. The southern strip of block 454254281 was split at measured party lines, photographed 4.4 m forward and treated like open question 15. The lean-to beside them and the cream building on way 454254268 are unnamed.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 76. See the [Lorong 15 brief](lorong-15-brief.md).
 
+### Q69–Q70. Tian Tian Minimart and TakeToys, Geylang Road south side between Lorong 8 and Lorong 10, completed
+
+- **Address / footprints:** block 454438340 is split at measured party lines, read where triangulation puts the street piers 0.9 m forward (open question 11). Both are listed and signed. The corner, the blue building, the cream house and the white block are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 78. See the [Geylang Road south brief](geylang-south-brief.md).
+
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
 
 - **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).

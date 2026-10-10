@@ -50,6 +50,19 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
     ],
     awning: '#c8463a', valance: plain('#b23c32'),
   },
+  'tian-tian': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#c42b2b'; c.fillRect(0, 0, w, h);
+      text(c, '天 天 超 市', w * .42, h * .55, h * .55, '#f4f1ea', '"Kaiti SC", "STKaiti", serif', '900', w * .6);
+      text(c, 'Tian Tian Minimart', w * .5, h * .14, h * .16, '#f4f1ea', 'Georgia, serif', '700');
+    }],
+  },
+  taketoys: {
+    boards: [
+      (c, w, h) => { c.fillStyle = '#9a1f4c'; c.fillRect(0, 0, w, h); text(c, '10,000+ items  成人用品超级市场  taketoys.sg', w / 2, h * .5, h * .55, '#f6eef2', '"Helvetica Neue", Arial, sans-serif', '700', w * .95); },
+      (c, w, h) => { c.fillStyle = '#b0346a'; c.fillRect(0, 0, w, h); text(c, 'Adult Toys', w * .55, h * .38, h * .3, '#ffffff'); text(c, 'Supermarket', w * .55, h * .72, h * .26, '#ffffff'); },
+    ],
+  },
   'gr-238': { awning: '#a85a4c', valance: plain('#934c40') },
   'gr-242': { awning: '#7a2a28', valance: plain('#6a2422') },
   'gr-250': { awning: '#5b6a5a', valance: plain('#4c5a4b') },

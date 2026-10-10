@@ -15,7 +15,8 @@ test('block 454438330 is split into eight strips that tile it, numbered 236 to 2
   assert.equal(map.buildings.find(b => b.id === '454438330'), undefined);
 });
 
-test('named units are Monster Ink (240), Shadow Tattoo (244) and the Nanyang Lian building (248); the rest are unnamed', () => {
+test('named units are Tian Tian, TakeToys, Monster Ink, Shadow Tattoo and the Nanyang Lian building; the rest are unnamed', () => {
+  assert.equal(landmarkFor('gr-220').id, 'tian-tian'); assert.equal(landmarkFor('gr-222').id, 'taketoys');
   assert.equal(landmarkFor('gr-240').id, monsterInk.id); assert.equal(landmarkFor('gr-244').id, shadowTattoo.id); assert.equal(landmarkFor('gr-248').id, nanyangLian.id);
   assert.match(shadowTattoo.evidence, /open question 12/);
   for (const place of geylangSouth.filter(p => p.unnamed)) { assert.equal(landmarkFor(place.buildingIds[0]), undefined); assert.match(place.evidence, /no name is given/); }
