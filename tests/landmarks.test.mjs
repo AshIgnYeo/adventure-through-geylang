@@ -195,7 +195,7 @@ test('real landmark identities have unique, existing street-study footprints and
       else if (['hainan-lim', 'sui-yuan-ju', 'chong-min', 'foo-hui', 'siaw-lim', 'hong-ye-chen', 'plus-mobile', 'k-group', 'muhammadiyah-college', 'bar-lorong-13', 'mister-contracts'].includes(place.id)) assert.equal(building?.street, 'Lorong 13 Geylang');
       else if (['amrise-hotel', 'thye-seng', 'normal-stainless', 'qianjing', 'fok-wai-kee', 'fsl-led-lighting'].includes(place.id)) assert.equal(building?.street, 'Sims Avenue');
       else if (['k-hotel-1515', 'lam-clan'].includes(place.id)) assert.equal(building?.street, 'Lorong 15 Geylang');
-      else if (['haji-mohd-salleh-mosque', 'lor-9-frog-porridge', 'chen-hing', 'ting-yu-xuan', 'ke-lai-shun', 'mobile-time', 'shi-hao', 'lor-9-beef-kway-teow'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
+      else if (['haji-mohd-salleh-mosque', 'lor-9-frog-porridge', 'chen-hing', 'ting-yu-xuan', 'ke-lai-shun', 'mobile-time', 'shi-hao', 'lor-9-beef-kway-teow', 'wat-dhammasatis'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
       else assert.equal(building?.street, 'Lorong 11 Geylang');
       assert.equal(landmarkFor(id), place);
     }

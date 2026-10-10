@@ -9,6 +9,32 @@ const sub = (p, q) => [p[0] - q[0], p[1] - q[1]];
 const add = (p, q) => [p[0] + q[0], p[1] + q[1]];
 const sourcePoint = (map, id, i) => project(map.buildings.find(b => b.id === id).coordinates[i], map.origin);
 
+/** Sutherland–Hodgman clip of a polygon to the side of the line (p, d) where cross(d, x - p) >= 0. */
+function clip(poly, p, d) {
+  const side = q => d[0] * (q[1] - p[1]) - d[1] * (q[0] - p[0]), out = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i], b = poly[(i + 1) % poly.length], sa = side(a), sb = side(b);
+    if (sa >= 0) out.push(a);
+    if ((sa >= 0) !== (sb >= 0)) { const t = sa / (sa - sb); out.push([a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]); }
+  }
+  return out;
+}
+const neg = v => [-v[0], -v[1]];
+
+/** Split a source outline into strips at measured distances along its front, with cut lines in a given direction. */
+function strips(outline, frontStart, frontDir, cutDir, cuts) {
+  const pieces = [];
+  let rest = outline;
+  for (const c of cuts) {
+    const p = at(frontStart, frontDir, c);
+    // Keep the part nearer frontStart, then continue with the remainder.
+    const startSide = cutDir[0] * (frontStart[1] - p[1]) - cutDir[1] * (frontStart[0] - p[0]);
+    const towards = startSide >= 0 ? cutDir : neg(cutDir);
+    pieces.push(clip(rest, p, towards)); rest = clip(rest, p, neg(towards));
+  }
+  return [...pieces, rest];
+}
+
 /**
  * A terrace re-spaced along an unchanged straight front line. `lines` are measured party-line
  * distances from the front start; the rear line keeps the source depth.
@@ -73,6 +99,24 @@ export const authoredFootprintGroups = [
       return [
         { id: 'gr-237', street: 'Geylang Road', number: '237', levels: 3, outline: [P4, at(P5, front, -cut), at(P5, side, cut), P0, R] },
         { id: 'gr-237-annex', street: 'Geylang Road', number: null, levels: null, outline: [P4, R, P1, P2, CH] },
+      ];
+    },
+  },
+  {
+    id: 'geylang-229-233', question: 11, approved: '2026-10-10',
+    evidence: 'Partial-block split of the 15.8 m source block 475158360 west of the Frog Porridge corner. Three June 2024 panoramas agree on the widths along its front from the Frog Porridge party line, though not on absolute positions: the white No. 233 building (Wat Dhammasatis upstairs, a durian shop below) about 6.0 m, the teal-shuttered Peranakan No. 231 about 4.2 m and the Lian Seng Peranakan No. 229 about 5.2 m. Their 15.4 m total was scaled to the 15.8 m source front (factor 1.026). Cut lines run square to the front.',
+    replaces: ['475158360'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '475158360').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const P1 = src[1], P0 = src[0], len = Math.hypot(P0[0] - P1[0], P0[1] - P1[1]);
+      const front = [(P0[0] - P1[0]) / len, (P0[1] - P1[1]) / len];
+      // Cut lines run square to the front, 1.6° from the Frog Porridge side wall.
+      const inward = [front[1], -front[0]], cut = (inward[0] * (src[4][0] - src[0][0]) + inward[1] * (src[4][1] - src[0][1])) > 0 ? inward : neg(inward);
+      const k = len / 15.4, [p233, p231, p229] = strips(src, P1, front, cut, [6.0 * k, 10.2 * k]);
+      return [
+        { id: 'gr-233', street: 'Geylang Road', number: '233', levels: 3, outline: p233 },
+        { id: 'gr-231', street: 'Geylang Road', number: '231', levels: 2, outline: p231 },
+        { id: 'gr-229', street: 'Geylang Road', number: '229', levels: 2, outline: p229 },
       ];
     },
   },

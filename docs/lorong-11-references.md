@@ -329,3 +329,7 @@ Implemented **10 October 2026** as a dated June 2024 exterior on the owner-appro
 ## Geylang Lor 9 Beef Kway Teow 芽龍九巷牛肉河粉, 237 Geylang Road
 
 Implemented **10 October 2026** on an owner-approved authored footprint (open question 3). Source way 454274485 is split at the step in its outline into the pink three-storey Lorong 9 corner building, signed 芽龍九巷牛肉河粉 GEYLANG LOR 9 BEEF KWAY TEOW, and a generic annex flush with Chen Hing. The split is supported by the photographed proportions and a satellite mosaic registered to the source frame. See the [design brief](beef-kway-teow-design-brief.md).
+
+## Wat Dhammasatis วัดธรรมสาทิส, No. 233 Geylang Road
+
+Implemented **10 October 2026** on an owner-approved partial-block footprint (open question 11). Google Maps lists Wat Dhammasatis at 233B Geylang Rd, #03-233, and its WAT DHAMMASATIS BUDDHIST CENTRE board and a Buddha image are on the upper floors of the white building west of Frog Porridge. Source block 475158360 is split by measured widths into Nos. 233, 231 and 229. See the [design brief](wat-dhammasatis-design-brief.md).

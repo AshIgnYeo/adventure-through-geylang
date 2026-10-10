@@ -86,3 +86,14 @@ test('No. 237 is split at the step into the Lorong 9 corner building and an anne
   const front = Math.hypot(corner[1][0] - corner[0][0], corner[1][1] - corner[0][1]);
   assert.ok(Math.abs(front - (10.23 - 2.6 / Math.SQRT2)) < .05, `${front}`);
 });
+
+test('the 229–233 block is split by measured widths into three strips that tile the source outline', () => {
+  const ids = ['gr-233', 'gr-231', 'gr-229'], parts = ids.map(id => poly(map.buildings.find(b => b.id === id)));
+  const before = area(poly(source.buildings.find(b => b.id === '475158360')));
+  assert.ok(Math.abs(parts.reduce((s, p) => s + area(p), 0) - before) < .01, 'the strips tile the source outline');
+  const fronts = parts.map(p => Math.hypot(p[1][0] - p[0][0], p[1][1] - p[0][1]));
+  [6.15, 4.3, 5.33].forEach((w, i) => assert.ok(Math.abs(fronts[i] - w) < .03, `${ids[i]}: ${fronts[i]}`));
+  // No. 233 keeps the shared wall with the Frog Porridge corner.
+  const frog = poly(map.buildings.find(b => b.id === '453797927'));
+  assert.ok(parts[0].filter(a => frog.some(b => Math.hypot(a[0] - b[0], a[1] - b[1]) < 1e-6)).length >= 4);
+});
