@@ -487,6 +487,9 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
   - **Depth:** the 108 pier aligns across three June 2024 panoramas when the façade is about 1.5 m in front of the source front, not 3.25 m as east of Lorong 15.
   - **Bays:** at that depth the upper storeys show four uniform bays of about 7.1 m, with party lines at about 7.0, 14.1, 21.2, 28.3 and 35.4 m from Fok Wai Kee's west corner. The source widths are 6.16, 8.31, 6.41 and 8.24 m, and the 108 pier stands on the third party line.
   - **Status:** locked pending re-spacing (open question 8a).
+- **River Ash Bakery, 3 Lorong 13, historical check:** Street View captures from February 2018, September 2020, September 2021 and March 2022 show the house plated 3 with a red awning, shutters and a timber door, and no bakery signage in any of them. The lock stands.
+- **Durian Culture, 77 Sims Avenue, re-checked:** June 2024 ground-level frames show the tiled fruit stall but no Durian Culture name. The lock stands.
+- **Pu Guang Tang Buddhist Society (5 Lorong 9) and Ji Yang Cai Clan Association (3 Lorong 9):** both are listed, but both sites (unnumbered ways 453797936 and 453797937) were behind construction hoarding in June 2024. Not modelled.
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked
