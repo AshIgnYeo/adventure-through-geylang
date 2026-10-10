@@ -8,12 +8,18 @@ import { peranakan, type peranakanLayout } from './peranakan-layout.mjs';
 type Frame = ReturnType<typeof frontageFrame>;
 
 /** Party, rear and upper street walls, boxes and tiled roof shared by the measured Peranakan houses. */
-export function buildPeranakanHouse(world: World, label: string, frame: Frame, layout: ReturnType<typeof peranakanLayout>, wall: string) {
+export function buildPeranakanHouse(world: World, label: string, frame: Frame, layout: ReturnType<typeof peranakanLayout>, wall: string, poly?: Point[]) {
   const { width, angle } = frame;
   const pt = (u: number, out = 0) => frame.point(u, out) as Point;
   const m = world.mat(wall); m.cull = pc.CULLFACE_NONE; m.update();
   const top = peranakan.height + .06;
-  world.panel(frame.a, frame.rearA, .13, top, m); world.panel(frame.b, frame.rearB, .13, top, m); world.panel(frame.rearA, frame.rearB, .13, top, m);
+  if (poly) {
+    // An irregular outline: wall every edge but the street front.
+    for (let i = 0; i < poly.length; i++) {
+      const a = poly[i], b = poly[(i + 1) % poly.length], onFront = [a, b].every(p => Math.abs((p[0] - frame.a[0]) * frame.nx + (p[1] - frame.a[1]) * frame.nz) < .05);
+      if (!onFront) world.panel(a, b, .13, top, m);
+    }
+  } else { world.panel(frame.a, frame.rearA, .13, top, m); world.panel(frame.b, frame.rearB, .13, top, m); world.panel(frame.rearA, frame.rearB, .13, top, m); }
   world.panel(pt(0), pt(width), peranakan.ceiling, top, m);
   for (const b of layout.boxes) {
     const p = pt(b.u, b.out);

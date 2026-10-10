@@ -548,6 +548,10 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 
 - **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
 
+### Lorong 11 unnamed exteriors, from 10 October 2026 (open question 18)
+
+- **No. 15** (`l11w-15`) is modelled from April 2024 as an unnamed exterior on the shared Peranakan elevation, which now takes per-house bays. See the [Lorong 11 street brief](lorong-11-street-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

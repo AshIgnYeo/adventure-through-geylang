@@ -121,6 +121,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=sims-96
 /?review=gr-269-corner
 /?review=temple-back-alley-east
+/?review=l11-15
 ```
 
 These are inspection starts, rather than navigation or tracking features.
@@ -188,6 +189,7 @@ Detailed provenance is available in:
 - [Cico Flooring design brief](docs/cico-design-brief.md)
 - [Gems Ville design brief](docs/gems-ville-design-brief.md)
 - [Lorong 13 street module design brief](docs/lorong-13-design-brief.md)
+- [Lorong 11 street module brief](docs/lorong-11-street-brief.md)
 
 ## Project structure
 
