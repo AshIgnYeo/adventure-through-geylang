@@ -60,6 +60,10 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     if (unit !== 1) {
       c.font = '600 142px serif'; c.fillText('梁記（巴生）肉骨茶', fascia.width / 2, 117, fascia.width * .92);
       c.font = '600 62px sans-serif'; c.fillText('LEONG KEE (KLANG) BAK KUT TEH', fascia.width / 2, 250, fascia.width * .92);
+    } else {
+      // The middle board, as photographed in June 2024 (open question 27).
+      c.font = '600 142px serif'; c.fillText('梁记沙煲田鸡粥', fascia.width / 2, 117, fascia.width * .92);
+      c.font = '600 62px sans-serif'; c.fillText('LEONG KEE CLAYPOT FROG PORRIDGE', fascia.width / 2, 250, fascia.width * .92);
     }
     const fasciaMat = new pc.StandardMaterial(); fasciaMat.diffuseMap = world.texture(fascia); fasciaMat.update();
     panel(.04, w - .08, 2.72, 3.63, .25, fasciaMat);

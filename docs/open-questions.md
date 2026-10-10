@@ -6,6 +6,22 @@ Started: 10 October 2026.
 
 ## Open
 
+None at present.
+
+## Settled
+
+### Fourth batch, answered 10 October 2026
+
+The project owner chose the recommended option for each.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 25 | **Yes.** Re-author the mosque footprint front to the photographed façade | 20.3 m front parallel to Geylang Road; east 2.2 m left as an open yard; west tower in its photographed place |
+| 26 | **Yes.** Widen the study bounds by one block where the five generic boundary blocks sit | Rebuild them from June 2024 photographs, named where the listing-and-signage bar is met; No. 291 gets its corner footprint |
+| 27 | **Yes.** Draw Leong Kee's middle board as photographed | 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE |
+
+The original wording of questions 25–27 is kept here:
+
 25. **Masjid Haji Mohd Salleh, 245 Geylang Road: re-author the footprint front to the photographed façade?**
     - **Evidence:** three June 2024 panoramas, triangulated, put the façade parallel to Geylang Road. The source front (way 454254204) is turned about 8° from it. The façade is about 20.3 m wide against the 22.46 m source front, and ends about 2.2 m short of the east corner, where a yard separates it from Shan Yuan Tang. Allowing for the panorama position error recorded at Chen Hing, the façade lies about 1.9 m behind the source front at the west and 1.0 m in front of it at the east.
     - **What happens now:** the rebuilt model keeps the source front. The east 2.2 m is a plain return. The west tower is drawn 1.45 m east of its photographed position to stay inside the outline.
@@ -27,8 +43,6 @@ Started: 10 October 2026.
     - **Evidence:** in June 2024 the middle board of the three Leong Kee bays reads 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE. The model leaves it blank under an earlier decision, because its wording differs from the outer boards.
     - **Recommendation:** yes. The board carries the Leong Kee name, so drawing it is faithful to the photograph.
     - **Also recorded, no change proposed:** the ochre corner building ends about 8.9 m from the Lorong 11 corner, against the source party line at 9.70 m.
-
-## Settled
 
 ### Third batch, answered 10 October 2026
 

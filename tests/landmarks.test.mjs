@@ -55,7 +55,7 @@ test('Leong Kee keeps the provisional three-bay corner assignment together witho
   assert.equal(place.frontEdge, 2);
   assert.match(place.evidence, /June 2024/);
   assert.match(place.evidence, /without asserting ownership/);
-  assert.match(place.evidence, /middle board.*left neutral/);
+  assert.match(place.evidence, /middle one 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE/);
   assert.match(place.evidence, /provisional/);
   for (let i = 1; i < place.buildingIds.length; i++) {
     const a = map.buildings.find(b => b.id === place.buildingIds[i - 1]).coordinates.slice(0, -1);
