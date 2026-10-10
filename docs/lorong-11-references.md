@@ -345,3 +345,7 @@ Re-identified and rebuilt on **10 October 2026** under open question 8. Lok Fu L
 ## Ming Li's Eating House 明利美食阁, 114 Sims Avenue
 
 Implemented **10 October 2026** on the source corner outline (way 682928749, No. 114). Open question 4 allowed an authored outline, but the registered satellite roof agrees with the source within about 1.5 m. The white three-storey corner block carries its 明利美食阁 board on the chamfer, a food-photograph board on Sims Avenue and a SingGas awning on Lorong 15. See the [design brief](ming-li-design-brief.md).
+
+## Hotel 81 Spring, 22 Lorong 15 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior, on a partial-block split of the merged source block 454254281 (open questions 10 and 11). Google Maps lists Hotel 81 Spring at 22 Lor 15 Geylang, though the operator site no longer does. Three panoramas measure its 16.2 m pale-blue frontage, with the HOTEL 81 sign and SPRING plate. See the [design brief](hotel-81-spring-design-brief.md).

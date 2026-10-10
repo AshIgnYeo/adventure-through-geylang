@@ -227,7 +227,7 @@ This extension was first recorded in a research-only pass requested by the user,
 - **Logged context gap:** Lorong 15 is not in the derived map's four-road set, and the study's east boundary runs along it. The hotel's frontage therefore faces bare ground beyond its forecourt. Q18 faces the same road from the other side and lies partly outside the study bounds. Adding Lorong 15 is a map-scope decision for the user.
 - **Validation / completion:** All **49 tests**, the type check and the production build passed. Headless renders covered four review starts by day and the front by night, and led to a steeper turret roof (within the measured range) and a raised pediment. The named-place total is twenty.
 
-### Q18. Hotel 81 Spring, 22 Lorong 15 Geylang, research-blocked
+### Q18. Hotel 81 Spring, 22 Lorong 15 Geylang, research-blocked (resolved 10 October 2026, see below)
 
 - **Address / footprint:** 22 Lorong 15 Geylang, Singapore 388619; [OSM node 4302906050](https://www.openstreetmap.org/node/4302906050) lies inside [way 454254281](https://www.openstreetmap.org/way/454254281), an approximately 15.39 m by 43.72 m source outline.
 - **Sources / exterior:** A current ACRA-derived [business profile](https://www.sgpbusiness.com/company/Hotel-81---Spring) reports the Hotel 81 Spring entity live at No. 22. [April 2024 Street View](https://www.google.com/maps/@1.313669,103.878108,3a,80y,90h,98t/data=!3m7!1e1!3m5!1sMgS1CqglRPN1fG9C_TToMA!2e0!7i16384!8i8192) was visually inspected and clearly shows the blue Hotel 81 elevation and address context.
@@ -490,6 +490,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Address / footprint:** listed at 114 Sims Ave, matching the source way tagged No. 114. The source corner outline is kept: under open question 4 the satellite was checked and supports it, and the earlier 2.6 m offset is a pose error.
 - **Method:** square-on frames scaled to the source faces, with corner render-and-compare. All **159 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 58. See the [design brief](ming-li-design-brief.md).
+
+### Q18 resolved. Hotel 81 Spring, 22 Lorong 15 Geylang, completed
+
+- **Unblocked by:** the owner's answers to open questions 10 (Lorong 15 added to the road set) and 11 (partial-block splits). Block 454254281 is split into `l15-north`, `l15-22` and `l15-south` by parallax measurement of the hotel frontage.
+- **Identity:** a dated exterior. The listing and the April 2024 signage agree; current operation is uncertain. All **163 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 59. See the [design brief](hotel-81-spring-design-brief.md).
 
 ### Authored footprints, from 10 October 2026
 
