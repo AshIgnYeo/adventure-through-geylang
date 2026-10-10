@@ -124,6 +124,17 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 - **Heights:** read on the square-on `TkVx…` frame, with the raised walkway (about 0.7 m) taken off. They carry about ±0.3 m.
 - **Sims Avenue face:** the short face follows the November 2022 capture, with its signs omitted.
 
+## No. 269 Geylang Road, the west corner of Lorong 13 (unnamed)
+
+- **Identity:** unnumbered way [454254219](https://www.openstreetmap.org/way/454254219) counts as No. 269. Hong Wah Coffee Shop and Geylang Food Corner are listed there, but the 2024 frontage carries Khim Seng gas awnings, a 麻辣空间 board and the closed BN Food Palace's board. With listings and signs in conflict, it is unnamed, its boards are blank and its supplier awnings plain.
+- **Building:** a conserved two-storey corner shophouse with:
+  - arched windows with fanlights and green louvred shutters, in pairs between Corinthian pilasters;
+  - a moulded frieze;
+  - a hipped tiled roof with a corner gablet;
+  - a coffeeshop under five-foot ways on both faces, behind columns with red-and-white striped bases.
+- **Measurement:** heights come from the square-on `KZ8g…` frame. Three panoramas and the satellite put the face 2–4 m in front of the source line, so the frame was scaled about the camera until the eaves sit at about 8.4 m. Positions are measured from the corner and carry about ±0.5 m.
+- **Continuation:** the photographed building continues about 13.5 m north beyond the source way, as a two-storey bay and then a single-storey wing. That needs an authored footprint, so it is open question 21.
+
 ## Omitted and estimated
 
 - **Omitted:** stock, pallets, vehicles, menus, furniture, posters, banners, vending machines, plants and interiors.
@@ -131,4 +142,4 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 
 ## Review
 
-Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16`, `?review=l13-12a` and `?review=sims-96`.
+Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16`, `?review=l13-12a`, `?review=sims-96` and `?review=gr-269-corner`.

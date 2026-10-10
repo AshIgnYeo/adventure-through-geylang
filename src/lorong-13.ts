@@ -38,6 +38,7 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
     valance: (c, w, h) => { c.fillStyle = '#3a3b40'; c.fillRect(0, 0, w, h); text(c, 'B I S T R O   &   B A R', w * .5, h * .5, h * .42, '#f2f2ee', '"Helvetica Neue", Arial, sans-serif', '500'); },
   },
   'sims-96': { awning: '#e8e6df' },
+  'gr-269-corner': { awning: '#8e2f3e', valance: (c, w, h) => { c.fillStyle = '#7e2836'; c.fillRect(0, 0, w, h); } },
   'teck-hoe': {
     boards: [(c, w, h) => {
       c.clearRect(0, 0, w, h);

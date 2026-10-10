@@ -310,7 +310,45 @@ export const sims96 = {
   },
 };
 
-export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96];
+// No. 269 Geylang Road, the west corner of Lorong 13: a conserved two-storey corner coffeeshop. Its long
+// Lorong 13 face is the modelled front (edge 1, u south from the source way's north end to the corner);
+// the 5.13 m Geylang Road face is the side (edge 0, u east from the corner).
+const stripedBase = u => [{ name: 'red column base', u, h: [0, 1.15], out: -.2, depth: .44, colour: '#c8322d' }, ...[.42, .78].map(y => ({ name: 'white base band', u: [u[0] - .01, u[1] + .01], h: [y, y + .1], out: -.2, depth: .46, colour: '#f1efe9' }))];
+export const no269 = {
+  id: 'gr-269-corner', buildingIds: ['454254219'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 13 Geylang',
+  name: 'No. 269 Geylang Road, Lorong 13 corner coffeeshop (April 2024 exterior, occupant not identified)', address: '269 Geylang Road (Lorong 13 corner)',
+  height: 8.4, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'hip', ridge: 10.6, colour: '#8e5a46' },
+  evidence: 'Unnumbered source way 454254219 is the Lorong 13 corner of the Geylang Road row, west of Golden Jade (No. 271), and counts as No. 269. Hong Wah Coffee Shop and Geylang Food Corner are listed open there, while the April and June 2024 frontage shows Khim Seng gas awnings, a 麻辣空间 board and the closed BN Food Palace\'s board, so the listings and signs conflict and no name is given; boards are blank and the supplier awnings plain. The building is a conserved two-storey corner shophouse: arched windows with fanlights and green louvred shutters in pairs between pilasters with Corinthian capitals, a moulded frieze, a hipped tiled roof with a corner gablet, and a coffeeshop under the five-foot way behind columns with red-and-white striped bases. The photographed building continues about 13.5 m north along Lorong 13, beyond the source way, as a further two-storey bay and a single-storey wing with a balustraded parapet; that part needs an authored footprint (open question 21) and is not built. Heights were read on a square-on April 2024 frame and scaled so the eaves sit at about 8.4 m, with the frame\'s along-street positions scaled about the camera to match; three panoramas and satellite imagery put the face 2-4 m in front of the source line, so positions carry about ±0.5 m. Tables, crates, railings and the interior are not reconstructed.',
+  sources: [way('454254219'), pano('KZ8gY_VJ15F7O0jKFFNB8w', 60, 12, 100), pano('DHtc5rApLUxTA9opxcXm8A', 75, 15, 100), pano('pE_LD86BSAb8LSBZLrANuA', 75, 10, 100), 'https://www.google.com/maps/search/?api=1&query=Hong+Wah+Coffee+Shop+269+Geylang+Road'],
+  colours: { wall: '#eceae3', trim: '#e2ddd0', frame: '#5f7a4a', glass: '#3a4245', pier: '#efeee9', back: '#6e2a26', floor: '#b8b5ad' },
+  bands: [[8.25, 8.4, .5, '#6b4b3e'], [7.55, 7.75, .25], [5.46, 5.62, .2], [4.2, 4.7, .3]],
+  windows: [[4.38, 5.69], [6.72, 7.94], [10.2, 11.58], [12.08, 13.01]].map(u => ({ u, h: [5.62, 7.3], panes: 2, arched: true, shutters: true })),
+  vents: [{ u: [.3, .8], h: [6.9, 7.3] }, { u: [1.7, 2.2], h: [6.9, 7.3] }],
+  pilasters: [[2.62, 3.2, 4.7, 7.55], [8.96, 9.5, 4.7, 7.55], [14.15, 14.72, 4.7, 7.55]],
+  blocks: [
+    { name: 'moulded frieze', u: [0, 14.72], h: [7.75, 8.25], out: .02, depth: .04, colour: '#e6e2d6' },
+    ...[[2.62, 3.2], [8.96, 9.5], [14.15, 14.72]].map(([l, r]) => ({ name: 'pilaster capital', u: [l - .05, r + .03 > 14.72 ? 14.72 : r + .05], h: [7.3, 7.6], out: .1, depth: .2, colour: '#e2ddd0' })),
+    ...stripedBase([2.62, 3.2]), ...stripedBase([8.96, 9.5]), ...stripedBase([14.15, 14.72]),
+  ],
+  piers: [[2.62, 3.2], [8.96, 9.5], [14.15, 14.72]],
+  backFittings: [
+    { name: 'red coffeeshop doors', u: [.4, 2.5], h: [.1, 3.2], colour: '#a8302a' }, { name: 'open coffeeshop front', u: [3.3, 8.8], h: [.1, 3.4], colour: '#3b2522' },
+    { name: 'open coffeeshop front', u: [9.6, 14.0], h: [.1, 3.4], colour: '#3b2522' }, { name: 'grey tile dado', u: [.4, 14.0], h: [.1, 1.0], colour: '#8d8f8e', out: .02 },
+  ],
+  awning: { from: .2, to: 14.3, wall: 4.3, front: 3.2, depth: 2.2, valance: .45 },
+  side: {
+    edge: 0, opening: { u: [.5, 4.9], h: [.13, 3.4] }, awning: { from: .3, to: 4.95, wall: 4.3, front: 3.9, depth: .7, valance: .3 },
+    blocks: [
+      { name: 'Geylang Road arched window', u: [1.0, 2.1], h: [5.62, 7.3], out: .03, depth: .04, colour: '#3a4245' }, { name: 'Geylang Road arched window', u: [2.9, 4.0], h: [5.62, 7.3], out: .03, depth: .04, colour: '#3a4245' },
+      ...[[.7, 1.0], [2.1, 2.4], [2.6, 2.9], [4.0, 4.3]].map(u => ({ name: 'Geylang Road open shutter', u, h: [5.62, 7.3], out: .1, depth: .04, colour: '#5f7a4a' })),
+      { name: 'blank red board', u: [.6, 4.4], h: [3.4, 4.3], out: .1, depth: .06, colour: '#a4282a' },
+      { name: 'Geylang Road frieze', u: [0, 5.13], h: [7.55, 8.25], out: .05, depth: .1, colour: '#e6e2d6' },
+      { name: 'Geylang Road floor band', u: [0, 5.13], h: [4.3, 4.7], out: .15, depth: .3, colour: '#e2ddd0' },
+    ],
+  },
+};
+
+export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96, no269];
 /** The outline the elevation stands on: for a set-back place, the source outline with its front moved back. */
 export function lorong13Outline(poly, place) {
   if (!place.setback) return poly;
@@ -332,5 +370,5 @@ export function lorong13Layout(place, width) {
   for (const g of place.ground ?? []) base.add(g.name, mid(...g.u), mid(...g.h), g.out, g.u[1] - g.u[0], g.h[1] - g.h[0], g.depth ?? .03, g.colour, g.glow ?? 0);
   return base;
 }
-const reviewDistance = { 'sims-96': [12, 14], buildersmart: [12, 8], 'teck-hoe': [9, 12], 'l13-18': [10, 8], 'l13-16': [10, 8], 'l13-12a': [12, 24] };
+const reviewDistance = { 'gr-269-corner': [10, 14], 'sims-96': [12, 14], buildersmart: [12, 8], 'teck-hoe': [9, 12], 'l13-18': [10, 8], 'l13-16': [10, 8], 'l13-12a': [12, 24] };
 export const lorong13Reviews = (place, frame) => facing(frame, place.id, ...(reviewDistance[place.id] ?? [7.5, 20]));

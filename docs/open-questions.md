@@ -12,6 +12,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Author three footprints along the source front and rear lines, with the No. 25 | 21/23 line moved 1.8 m south.
     - **Unlocks:** No. 25, a three-storey house scaffolded in April 2024 and photographed whole in March 2022, and the four-storey Nos. 21/23 block, both as unnamed exteriors.
     - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
+21. **No. 269 Geylang Road (the Lorong 13 corner coffeeshop): author a footprint for its continuation about 13.5 m north along Lorong 13?**
+    - **Evidence:** April 2024 frames and satellite imagery show the conserved two-storey corner building continuing north beyond source way 454254219: about 5.5 m more of the two-storey block (two small vents and a downpipe), then a single-storey wing with a balustraded parapet. That reaches a side passage beside Sui Yuan Ju (No. 2). The source has no building there.
+    - **Current state:** the source way is built as an unnamed exterior. The continuation is open ground.
+    - **Recommendation:** yes. Author a footprint about 13.5 m long and 8 m deep on the same front line, as a labelled estimate.
+    - **Unlocks:** the last gap on the east side of Lorong 13.
+    - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
 
 ## Settled
 
