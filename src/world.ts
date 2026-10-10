@@ -25,6 +25,8 @@ import { buildChenHing } from './chen-hing';
 import { buildAiSecurity } from './aisecurity';
 import { buildMisterContracts } from './mister-contracts';
 import { buildEngLeeHuat } from './eng-lee-huat';
+import { buildGoodwood } from './goodwood';
+import { buildTbss } from './tbss';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -127,6 +129,8 @@ export class World {
       if(buildAiSecurity(this,b.id,poly))continue;
       if(buildMisterContracts(this,b.id,poly))continue;
       if(buildEngLeeHuat(this,b.id,poly))continue;
+      if(buildGoodwood(this,b.id,poly))continue;
+      if(buildTbss(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;

@@ -423,6 +423,18 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** square-on rectification at the solved 0.6 m depth, then render-and-compare. All **131 tests**, the type check and the build passed, with day and night renders.
 - **Validation / completion:** the named-place total is 47. See the [design brief](eng-lee-huat-design-brief.md).
 
+### Q44. Goodwood Garments Services & Trading, 19 Lorong 11 Geylang, completed
+
+- **Address / footprint:** listed at 19 Lor 11 Geylang, 388711, with its signed board. The model stands on the re-spaced footprint `l11w-19` (5.3 m) under open question 1, and resolves the 9 October lock.
+- **Method:** square-on rectification at the solved 0.6 m depth, with back-wall openings corrected for the 1.8 m five-foot way. It uses the shared `peranakan-layout.mjs` elevation with No. 21. All **134 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 48. See the [design brief](goodwood-design-brief.md).
+
+### Q45. Tibetan Buddhist Studies Society, 21 Lorong 11 Geylang, completed
+
+- **Address / footprint:** signed 藏密佛学研究会 / Tibetan Buddhist Studies Society (TBSS.ORG) at No. 21. The model stands on the re-spaced footprint `l11w-21` (5.2 m) under open question 1, and resolves the 9 October lock.
+- **Method:** shared Peranakan elevation with No. 19, with the board and ornaments read at full resolution. All **134 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 49. See the [design brief](tbss-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

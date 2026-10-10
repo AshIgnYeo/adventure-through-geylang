@@ -34,10 +34,14 @@ import { chenHing } from './chen-hing-layout.mjs';
 import { aiSecurity } from './aisecurity-layout.mjs';
 import { misterContracts } from './mister-contracts-layout.mjs';
 import { engLeeHuat } from './eng-lee-huat-layout.mjs';
+import { goodwood } from './goodwood-layout.mjs';
+import { tbss } from './tbss-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...goodwood },
+  { ...tbss },
   { ...engLeeHuat },
   { ...misterContracts },
   { ...aiSecurity },

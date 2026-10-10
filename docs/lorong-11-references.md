@@ -297,3 +297,11 @@ Implemented **10 October 2026** under the owner's decision on open question 12. 
 ## Eng Lee Huat Hardware, 29 Lorong 11 Geylang
 
 Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 29 footprint (4.0 m), which replaces source way 1223407879. Google Maps lists Eng Lee Huat Hardware at 29 Lor 11 Geylang. The white two-storey house carries its black signboard and door plate 29, with a large grilled window over a triangular pediment. See the [design brief](eng-lee-huat-design-brief.md).
+
+## Goodwood Garments Services & Trading, 19 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 19 footprint (5.3 m), which replaces source way 1223407886. Google Maps lists Goodwood Garments at 19 Lor 11 Geylang, and its 良木林 Goodwood board hangs in the five-foot way of the pale grey-green conserved shophouse north of Hok Tek Chi. See the [design brief](goodwood-design-brief.md).
+
+## Tibetan Buddhist Studies Society 藏密佛学研究会, 21 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 21 footprint (5.2 m), which replaces source way 1223407883. The white conserved shophouse carries the red 藏密佛学研究会 / Tibetan Buddhist Studies Society board under a gilded Dharma wheel and deer. No listing was found; the identity rests on the signage at a sourced address. See the [design brief](tbss-design-brief.md).
