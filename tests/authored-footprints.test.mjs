@@ -57,3 +57,19 @@ test('the Lorong 11 west row is re-spaced into twelve measured frontages along t
   }
   for (const b of row) assert.equal(b.street, 'Lorong 11 Geylang');
 });
+
+test('Geylang Road Nos. 255–267 are re-spaced on the source front, leaving Leong Kee untouched', () => {
+  const row = authored.filter(b => b.group === 'geylang-253-267');
+  assert.deepEqual(row.map(b => b.number), ['255', '257', '259', '261', '263', '267']);
+  for (const id of ['454254212', '454254213', '454254214']) assert.ok(map.buildings.some(b => b.id === id), 'Leong Kee keeps its source ways');
+  const leongKee = poly(map.buildings.find(b => b.id === '454254212')), first = poly(row[0]);
+  assert.equal(first.filter(p => leongKee.some(q => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-6)).length, 2, 'No. 255 meets Leong Kee');
+  const widths = row.slice(0, 5).map(b => { const o = poly(b); return Math.hypot(o[1][0] - o[0][0], o[1][1] - o[0][1]); });
+  [5.18, 5.2, 5.25, 5.85, 5.4].forEach((w, i) => assert.ok(Math.abs(widths[i] - w) < .02, `${row[i].number}: ${widths[i]}`));
+  for (let i = 1; i < row.length; i++) assert.equal(poly(row[i]).filter(p => poly(row[i - 1]).some(q => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-6)).length, 2, row[i].number);
+  // The chamfered Shi Hao corner reaches about 2.1 m past the source east edge and stays clear of Lorong 13.
+  const corner = poly(row[5]), sourceEast = project(source.buildings.find(b => b.id === '454254205').coordinates[2], map.origin);
+  assert.equal(corner.length, 5);
+  const reach = Math.max(...corner.map(p => (p[0] - sourceEast[0]) * .9857 + (p[1] - sourceEast[1]) * -.1684));
+  assert.ok(Math.abs(reach - 2.09) < .1, `${reach}`);
+});

@@ -42,6 +42,22 @@ export const authoredFootprintGroups = [
       return terrace(map, { frontStart, frontEnd, rear, lines, houses });
     },
   },
+  {
+    id: 'geylang-253-267', question: 2, approved: '2026-10-10',
+    evidence: 'Party lines measured on 10 October 2026 from six June 2024 far-side panoramas rectified on the source street front, where they agree with the façade about 0.5 m behind it. Measured along the front from the Leong Kee corner: 听雨轩 / 新福興 19.7 m, 新福興 / 客来顺 24.9 m, 客来顺 / Instyle 30.15 m, Instyle / Mobile Time 36.0 m and Mobile Time / Shi Hao 41.4 m, against source bays every 4.85 m. The Leong Kee / 听雨轩 line measured 14.1 m and keeps the source 14.52 m, within the measurement spread, so the existing Leong Kee model is unchanged. The Shi Hao corner block was measured from both streets: its Lorong 13 face stands about 2.1 m east of the source east edge, consistent across three Lorong 13 panoramas, with an estimated 1.4 m chamfer at the corner. It keeps the source rear line; a possible rear annex with a blue side door, about 2 m further north, is not drawn.',
+    replaces: ['454254211', '454254210', '454254209', '454254208', '454254207', '454254206', '454254205'],
+    build(map) {
+      const frontStart = sourcePoint(map, '454254211', 3), frontEnd = sourcePoint(map, '454254205', 2);
+      const rear = sub(sourcePoint(map, '454254205', 1), frontEnd);
+      const lines = [0, 5.18, 10.38, 15.63, 21.48, 26.88, 36.03];
+      const depth = Math.hypot(rear[0], rear[1]), back = [rear[0] / depth, rear[1] / depth], chamfer = 1.4;
+      const houses = ['255', '257', '259', '261', '263', '267'].map(number => ({
+        id: `gr-${number}`, street: 'Geylang Road', number, levels: null,
+        outline: number === '267' ? ({ f0, f1, rear: r, e }) => [f0, at(f0, e, lines[6] - lines[5] - chamfer), at(f1, back, chamfer), add(f1, r), add(f0, r)] : undefined,
+      }));
+      return terrace(map, { frontStart, frontEnd, rear, lines, houses });
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

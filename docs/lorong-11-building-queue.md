@@ -445,6 +445,10 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
 
+- **Geylang Road Nos. 255–267 (open question 2), applied:** six houses replace the seven source bays (ways 454254205–211) between Leong Kee and Lorong 13: 255 (听雨轩), 257 (新福興), 259 (客来顺), 261 (Instyle), 263 (Mobile Time) and the 267 Shi Hao corner.
+  - **Measurement:** party lines were read from six June 2024 far-side panoramas on the street front, where they agree with the façade 0.5 m behind it. The table is in the group's evidence.
+  - **Leong Kee:** it keeps its three source bays. Its measured end, 14.1 m, is within 0.4 m of the source line, so No. 253 stays part of the corner building, consistent with 新福興's board reading #257.
+  - **Shi Hao corner:** its Lorong 13 face is 2.1 m east of the source edge, with an estimated 1.4 m chamfer.
 - **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
   - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).
   - **Check:** render-and-compare from two April 2024 panoramas puts both models on their photographed frontages.
