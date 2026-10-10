@@ -38,6 +38,7 @@ import { buildHotel81Spring } from './hotel-81-spring';
 import { buildPfcs } from './pfcs';
 import { buildCico } from './cico';
 import { buildGemsVille } from './gems-ville';
+import { buildLorong13 } from './lorong-13';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -153,6 +154,7 @@ export class World {
       if(buildPfcs(this,b.id,poly))continue;
       if(buildCico(this,b.id,poly))continue;
       if(buildGemsVille(this,b.id,poly))continue;
+      if(buildLorong13(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;

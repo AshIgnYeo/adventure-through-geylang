@@ -27,6 +27,8 @@ export function simpleHouseLayout(width, spec) {
     add('vent frame', mid(l, r), mid(b, t), .01, r - l, t - b, .03, C.trim);
     for (let y = b + .04; y < t - .02; y += .065) add('vent louvre', mid(l, r), y, .03, r - l - .06, .025, .03, '#6f706c');
   }
+  // Free-standing pieces in the frontage frame: colour fields, hoods, stepped parapets, goods. `out` is the box centre.
+  for (const b of S.blocks ?? []) add(b.name ?? 'block', mid(...b.u), mid(...b.h), b.out ?? 0, b.u[1] - b.u[0], b.h[1] - b.h[0], b.depth ?? .1, b.colour ?? C.trim, b.glow ?? 0);
   for (const [l, r] of S.piers ?? []) add('pier', mid(l, r), S.ceiling / 2, -.2, r - l, S.ceiling, .4, C.pier ?? C.trim);
   add('five-foot way floor', width / 2, .04, -D / 2, width - .04, .08, D, C.floor ?? '#9d978c');
   add('five-foot way ceiling', width / 2, S.ceiling + .03, -D / 2, width - .04, .06, D, '#e4e2dc');

@@ -517,6 +517,18 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** frontage from the parallax of four April 2024 panoramas, depth from the lot area. All **174 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 62. See the [design brief](gems-ville-design-brief.md).
 
+### Q55. Thirteen BBQ Bar 十三烤吧, 27 Lorong 13 Geylang, completed
+
+- **Address / footprint:** listed at 27 Lor 13 Geylang, 388670 (open), with its point in unnumbered way [1223454595](https://www.openstreetmap.org/way/1223454595). April 2024 shows its board, blade and awning.
+- **Lock resolved:** three-panorama triangulation gives a 6.1 m frontage on the source way, settling the 9 October width lock. The row stands about 2.6 m in front of its source line; the model keeps the source front (open question 20).
+- **Validation / completion:** all **178 tests**, the type check and the build passed. The named-place total is 63. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Q56. BUILDERSmart 魯班行, 29 Lorong 13 Geylang (Sims Avenue corner), completed
+
+- **Address / footprint:** listed at 29 Lor 13 Geylang, 388672 (open), with its point in unnumbered corner way [1223454594](https://www.openstreetmap.org/way/1223454594). June 2024 Sims Avenue frames show its boards, loft and awnings.
+- **Lock resolved:** the BUILDERSmart boards at No. 100 Sims Avenue are a second frontage; listing and signage agree at this corner.
+- **Validation / completion:** as Q55. The named-place total is 64. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

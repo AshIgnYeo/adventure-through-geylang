@@ -6,7 +6,17 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+20. **Lorong 13 west row, Nos. 21–29: the façades stand about 2.6 m in front of the source front line, and the No. 25 | Nos. 21/23 party line is about 1.8 m off.**
+    - **Evidence:** three methods agree on the forward offset:
+      - three-panorama triangulation of Thirteen BBQ's party lines (2.2–2.9 m);
+      - the façade base in two level frames (2.7–2.8 m);
+      - the Nos. 21/23 block's side return, visible beyond Hainan Lim.
+    - **Why it is not a pose error:** a separate June 2024 Sims Avenue drive agrees. Hainan Lim, next door, measures on its own source front.
+    - **Party line:** No. 25 measures about 8.0 m wide (source 6.1 m) and Nos. 21/23 about 12.4 m (source 14.1 m). The BUILDERSmart and Thirteen BBQ ways fit to within 0.4 m.
+    - **Current state:** BUILDERSmart and Thirteen BBQ are built on the source front, measured at the true depth. No. 25 (a three-storey house, scaffolded in April 2024, photographed whole in March 2022) and the Nos. 21/23 block are not yet built.
+    - **Recommendation:** yes, author the five footprints 2.6 m forward, and re-space Nos. 21–25 at the measured party line. Unlike the Sims Avenue row (question 9), three methods agree and the neighbour's side return is visible.
+    - **Unlocks:** Nos. 21/23 and No. 25 as unnamed exteriors, and moves the two existing models onto their photographed front.
+    - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
 
 ## Settled
 

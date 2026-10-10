@@ -361,3 +361,8 @@ Implemented **10 October 2026** under open question 7. The single-storey timber-
 ## Gems Ville, 8 Lorong 13 Geylang
 
 Implemented **10 October 2026** under open question 6, as an April 2024 exterior of the nearly finished seven-storey condominium, signed GEMS VILLE. It stands on an authored 27.4 × 26 m footprint, from the measured frontage and the 731 m² lot, replacing the older 6A source way. See the [design brief](gems-ville-design-brief.md).
+
+## Thirteen BBQ Bar 十三烤吧 and BUILDERSmart 魯班行, 27–29 Lorong 13 Geylang
+
+Implemented **10 October 2026**, the first places of the Lorong 13 street module. Both listings place their points in the two unnumbered ways at the Sims Avenue end of the west row. Triangulated party lines fit the source ways to within 0.4 m. The row's façades stand about 2.6 m in front of the source line, which is logged as open question 20. See the [Lorong 13 brief](lorong-13-design-brief.md).
+

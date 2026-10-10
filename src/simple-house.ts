@@ -1,7 +1,8 @@
 import * as pc from 'playcanvas';
 import type { World, Point } from './world';
-import type { frontageFrame } from './gable-roof-layout.mjs';
+import { gableRoof, type frontageFrame } from './gable-roof-layout.mjs';
 import type { simpleHouseLayout } from './simple-house-layout.mjs';
+import { buildGableRoof } from './gable-roof';
 
 type Frame = ReturnType<typeof frontageFrame>;
 type Layout = ReturnType<typeof simpleHouseLayout>;
@@ -12,7 +13,7 @@ export type Draw = (c: CanvasRenderingContext2D, w: number, h: number) => void;
  * Walls of the whole outline (the street wall above the five-foot way), a flat or hipped roof, the
  * layout boxes, and signs drawn by callbacks: board(s), double-faced blade signs and a sloping awning.
  */
-export function buildSimpleHouse(world: World, label: string, frame: Frame, poly: Point[], spec: { height: number; ceiling: number; roof?: { type: string; ridge?: number; colour?: string }; colours: { wall: string } }, layout: Layout,
+export function buildSimpleHouse(world: World, label: string, frame: Frame, poly: Point[], spec: { height: number; ceiling: number; roof?: { type: string; ridge?: number; colour?: string; ridgeDepth?: number; overhang?: number; gable?: string }; colours: { wall: string } }, layout: Layout,
   draw: { boards?: Draw[]; blades?: Draw[]; awning?: string; valance?: Draw } = {}) {
   const { width, angle } = frame;
   const pt = (u: number, out = 0) => frame.point(u, out) as Point;
@@ -23,11 +24,13 @@ export function buildSimpleHouse(world: World, label: string, frame: Frame, poly
     m.opacityMap = m.diffuseMap; m.opacityMapChannel = 'a'; m.alphaTest = .5; m.cull = pc.CULLFACE_NONE; m.update(); return m;
   };
   const H = spec.height, wall = material(spec.colours.wall);
+  // A gable roof's eaves sit 8 cm above the wall head (gableRoof), so its walls run up to meet them.
+  const wallTop = spec.roof?.type === 'gable' ? H + .08 : H;
   for (let i = 0; i < poly.length; i++) {
     const a = poly[i], b = poly[(i + 1) % poly.length];
     const mid: Point = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
     const front = Math.abs((mid[0] - frame.a[0]) * frame.nx + (mid[1] - frame.a[1]) * frame.nz) < .05;
-    world.panel(a, b, front ? spec.ceiling : .13, H, wall);
+    world.panel(a, b, front ? spec.ceiling : .13, wallTop, wall);
   }
   const roof = spec.roof ?? { type: 'flat' }, roofMat = material(roof.colour ?? '#9b9993');
   if (roof.type === 'hip') {
@@ -38,6 +41,11 @@ export function buildSimpleHouse(world: World, label: string, frame: Frame, poly
     for (let i = 0; i < n; i++) { const j = (i + 1) % n; idx.push(i, j, n + j, i, n + j, n + i); }
     for (let k = 1; k < n - 1; k++) idx.push(n, n + k, n + k + 1);
     world.mesh(`${label} hipped roof`, v, v.flatMap((_, i) => i % 3 === 1 ? [] : [v[i] / 3]).slice(0, (v.length / 3) * 2), idx, roofMat);
+  } else if (roof.type === 'gable') {
+    // Ridge parallel to the street, party walls carried up as gables; the front slope is usually hidden by the parapet.
+    const g = gableRoof(frame, { height: H, ridgeHeight: roof.ridge ?? H + 2, ridgeDepth: roof.ridgeDepth ?? .5, eavesOverhang: roof.overhang ?? 0 });
+    const tile = roof.colour ?? '#8a5a48', gable = roof.gable ?? spec.colours.wall;
+    buildGableRoof(world, label, frame, g, { tile, course: tile, coping: gable, gable, copingHeight: .12, copingWidth: .2 });
   } else {
     world.mesh(`${label} flat roof`, poly.flatMap(p => [p[0], H - .1, p[1]]), poly.flatMap(p => [p[0] / 4, p[1] / 4]), poly.slice(1, -1).flatMap((_, i) => [0, i + 1, i + 2]), roofMat);
   }
