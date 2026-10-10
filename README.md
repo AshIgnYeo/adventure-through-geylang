@@ -101,6 +101,7 @@ Detailed provenance is available in:
 
 - [Lorong 11 reference notes](docs/lorong-11-references.md)
 - [Building research queue](docs/lorong-11-building-queue.md)
+- [Open questions](docs/open-questions.md)
 - [Shan Yuan Tang design brief](docs/shan-yuan-tang-design-brief.md)
 - [Temple-side back lane brief](docs/temple-back-alley-design-brief.md)
 - [Mongkok Dim Sum design brief](docs/mongkok-dim-sum-design-brief.md)
