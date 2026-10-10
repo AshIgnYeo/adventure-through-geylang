@@ -23,6 +23,21 @@ Started: 10 October 2026.
     - **Side note:** the same satellite frame shows the corner's tiled roof reaching about 4 m further east than the authored Shi Hao outline. That may be a local registration error, so it is not acted on.
     - **Recommendation:** yes. Author a footprint about 3.5 × 14 m on the Shi Hao front line, as a labelled estimate. Model it as an unnamed exterior, with Shi Hao's board continuing at its base.
     - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
+23. **Sims Avenue south row, Nos. 98–102: re-space at the measured party lines?**
+    - **Evidence:** the green BUILDERSmart board, triangulated from two June 2024 panoramas, puts this stretch about 2.3 m in front of its source front. Rectified at that depth, the June 2024 `eLBm…` frame shows these party lines, measured from the No. 96 corner:
+
+      | Party line | Measured | Source |
+      | --- | --- | --- |
+      | 96 \| 98 | 0 m | 0 m |
+      | 98 \| 100 | 5.0 m | 6.42 m |
+      | 100 \| 102 | 10.0 m | 12.53 m |
+      | 102 \| 104 | 15.9 m | 16.33 m |
+
+      No. 102 is a white three-storey house about 5.9 m wide, where the source draws 3.8 m. The total length agrees.
+    - **Recommendation:** yes. Author three footprints along the source front and rear lines at the measured party lines, as for the Lorong 11 west row (question 1).
+    - **Unlocks:**
+      - BUILDERSmart's second frontage at No. 100, with its board, blade sign and awning;
+      - the light-blue No. 98 and the white No. 102 as unnamed exteriors.
 
 ## Settled
 
