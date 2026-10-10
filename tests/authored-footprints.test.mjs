@@ -73,3 +73,16 @@ test('Geylang Road Nos. 255–267 are re-spaced on the source front, leaving Leo
   const reach = Math.max(...corner.map(p => (p[0] - sourceEast[0]) * .9857 + (p[1] - sourceEast[1]) * -.1684));
   assert.ok(Math.abs(reach - 2.09) < .1, `${reach}`);
 });
+
+test('No. 237 is split at the step into the Lorong 9 corner building and an annex flush with Chen Hing', () => {
+  const corner = poly(map.buildings.find(b => b.id === 'gr-237')), annex = poly(map.buildings.find(b => b.id === 'gr-237-annex'));
+  const chenHing = poly(map.buildings.find(b => b.id === '475158359'));
+  const shared = (p, q) => p.filter(a => q.some(b => Math.hypot(a[0] - b[0], a[1] - b[1]) < 1e-6)).length;
+  assert.equal(shared(corner, annex), 2, 'the split wall');
+  assert.ok(shared(annex, chenHing) >= 2, 'the annex meets Chen Hing');
+  const before = area(poly(source.buildings.find(b => b.id === '454274485')));
+  // The pair covers the source way plus the filled front step, less the corner chamfer.
+  assert.ok(area(corner) + area(annex) > before + 30 && area(corner) + area(annex) < before + 45, "the filled front step adds about 39 m²");
+  const front = Math.hypot(corner[1][0] - corner[0][0], corner[1][1] - corner[0][1]);
+  assert.ok(Math.abs(front - (10.23 - 2.6 / Math.SQRT2)) < .05, `${front}`);
+});

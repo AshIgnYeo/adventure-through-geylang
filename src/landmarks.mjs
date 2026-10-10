@@ -38,10 +38,12 @@ import { goodwood } from './goodwood-layout.mjs';
 import { tbss } from './tbss-layout.mjs';
 import { zhengLi } from './zheng-li-layout.mjs';
 import { tingYuXuan, keLaiShun, mobileTime, shiHao } from './geylang-row-layout.mjs';
+import { beefKwayTeow } from './beef-kway-teow-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...beefKwayTeow },
   { ...tingYuXuan },
   { ...keLaiShun },
   { ...mobileTime },

@@ -465,6 +465,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 54. See the [design brief](geylang-row-design-brief.md).
 
+### Q51. Geylang Lor 9 Beef Kway Teow, 237 Geylang Road, completed
+
+- **Address / footprint:** listed at 237 Geylang Rd, with its boards and blade sign on the Lorong 9 corner building. Source way 454274485 is split into `gr-237` and `gr-237-annex` under open question 3.
+- **Method:** junction and Geylang Road views, a projection check of the source corners, and a satellite mosaic registered about 4.5 m west and 2 m south of the source frame. All **145 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 55. See the [design brief](beef-kway-teow-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
@@ -473,6 +479,8 @@ The owner's answers to the open questions allow re-spaced and authored footprint
   - **Measurement:** party lines were read from six June 2024 far-side panoramas on the street front, where they agree with the façade 0.5 m behind it. The table is in the group's evidence.
   - **Leong Kee:** it keeps its three source bays. Its measured end, 14.1 m, is within 0.4 m of the source line, so No. 253 stays part of the corner building, consistent with 新福興's board reading #257.
   - **Shi Hao corner:** its Lorong 13 face is 2.1 m east of the source edge, with an estimated 1.4 m chamfer.
+- **No. 237 Geylang Road (open question 3), applied:** source way 454274485 is split at the step in its outline into the Lorong 9 corner building (`gr-237`) and a generic annex flush with Chen Hing (`gr-237-annex`). The temple-alley rear elevation now finds replaced source ways.
+- **Satellite imagery:** the scratchpad mosaic tool registers Google satellite tiles to the source frame, with the imagery about 4.5 m west and 2 m south of it. Earlier notes that roofs sit "one bay west" are explained by this offset.
 - **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
   - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).
   - **Check:** render-and-compare from two April 2024 panoramas puts both models on their photographed frontages.

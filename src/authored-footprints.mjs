@@ -58,6 +58,24 @@ export const authoredFootprintGroups = [
       return terrace(map, { frontStart, frontEnd, rear, lines, houses });
     },
   },
+  {
+    id: 'geylang-237', question: 3, approved: '2026-10-10',
+    evidence: 'Source way 454274485 holds two buildings. June 2024 Street View from the Lorong 9 junction and from Geylang Road shows a pink three-storey corner building at Lorong 9: a three-bay Geylang Road front, a chamfered corner and a long Lorong 9 face. Its front ends where the source outline steps back (about 10.2 m from the Lorong 9 corner), which the photographed proportions and the registered satellite roof (a brown roof about 10 m wide) both support. East of the step, a separate annex under a grey skylit roof comes forward flush with Chen Hing, as the satellite roof and the continuous street front show. The split runs from the step parallel to the Lorong 9 face; the corner chamfer (about 2.6 m) is estimated from the junction views.',
+    replaces: ['454274485'],
+    build(map) {
+      const P = i => sourcePoint(map, '454274485', i), P0 = P(0), P1 = P(1), P2 = P(2), P4 = P(4), P5 = P(5);
+      const unit = v => { const l = Math.hypot(v[0], v[1]); return [v[0] / l, v[1] / l]; };
+      const front = unit(sub(P5, P4)), side = unit(sub(P0, P5)), cut = 2.6 / Math.SQRT2;
+      // Where a line from the step, parallel to the Lorong 9 face, meets the rear edge P0–P1.
+      const r = sub(P1, P0), d = side, den = d[0] * r[1] - d[1] * r[0], w = sub(P0, P4);
+      const t = (w[0] * r[1] - w[1] * r[0]) / den, R = at(P4, d, t);
+      const CH = sourcePoint(map, '475158359', 3);
+      return [
+        { id: 'gr-237', street: 'Geylang Road', number: '237', levels: 3, outline: [P4, at(P5, front, -cut), at(P5, side, cut), P0, R] },
+        { id: 'gr-237-annex', street: 'Geylang Road', number: null, levels: null, outline: [P4, R, P1, P2, CH] },
+      ];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

@@ -1,5 +1,8 @@
 import { project } from './geo.mjs';
 
+// A source way, whether or not an owner-approved authored footprint has replaced it in the rendered map.
+const sourceWay = (map, id) => map.buildings.find(b => b.id === id) ?? map.replacedBuildings?.find(b => b.id === id);
+
 // Centrelines are retained OSM data, not a verified survey. Widths/details are estimates.
 export const templeAlley = {
   serviceId: '695010162', footwayId: '1223458240', accessId: '633797717',
@@ -12,7 +15,7 @@ export const templeAlley = {
 // moving the retained footprint or either route. See the Q10 correction notes.
 export function alleyEntranceEnclosure(map) {
   const route = alleyRoutes(map)[1];
-  const source = map.buildings.find(b => b.id === '1223407890').coordinates.slice(0, -1).map(c => project(c, map.origin));
+  const source = sourceWay(map, '1223407890').coordinates.slice(0, -1).map(c => project(c, map.origin));
   const inner = route.point(0, -.95), mouth = route.point(12, -.95);
   return { geometrySource: 'authored-estimate', outline: [source[2], source[1], mouth, inner],
     wall: alleyFrame(inner, mouth), eaves: 3.05, sourceEaves: 3.35 };
@@ -47,7 +50,7 @@ export function alleyRoutes(map) {
 }
 
 export function alleyElevationFrame(map, elevation) {
-  const poly = map.buildings.find(b => b.id === elevation.id).coordinates.slice(0, -1).map(c => project(c, map.origin));
+  const poly = sourceWay(map, elevation.id).coordinates.slice(0, -1).map(c => project(c, map.origin));
   const centre = poly.reduce((sum, p) => sum.map((v, i) => v + p[i] / poly.length), [0, 0]);
   let a = poly[elevation.edge], b = poly[(elevation.edge + 1) % poly.length];
   const mid = a.map((v, i) => (v + b[i]) / 2), dx = b[0] - a[0], dz = b[1] - a[1];

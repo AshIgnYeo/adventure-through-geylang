@@ -15,7 +15,7 @@ Only this way is assigned. All source coordinates are unchanged. The No. 237 sid
 ## How it was measured
 
 - **Pose problem:** the three panoramas disagree with the source frame. Rays to the shared mosque party line do not meet on the source front. Rendered from the recorded poses, the existing mosque model appears about 1.2 times too large and shifted along the street.
-- **Correction:** moving the square-on panorama's camera **2.8 m** further from the façade and **1.5 m** west along the street fixes both. Renders of the mosque model, of the source frontage and of the finished model then sit on the photograph: party walls, windows, hoods, lettering and awning all match. At that pose the photographed frontage between the mosque and No. 237 spans the 10.08 m source edge. The correction is recorded as a panorama position error; no source geometry is changed.
+- **Correction:** moving the square-on panorama's camera **2.8 m** further from the façade and **1.5 m** east along the street fixes both. Renders of the mosque model, of the source frontage and of the finished model then sit on the photograph: party walls, windows, hoods, lettering and awning all match. At that pose the photographed frontage between the mosque and No. 237 spans the 10.08 m source edge. The correction is recorded as a panorama position error; no source geometry is changed.
 - **Heights:** these were read on the corrected, rectified square-on frame, from the five-foot-way floor.
 
 | Element | Position from the west line (m) | Height (m) |
