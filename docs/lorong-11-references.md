@@ -366,3 +366,7 @@ Implemented **10 October 2026** under open question 6, as an April 2024 exterior
 
 Implemented **10 October 2026**, the first places of the Lorong 13 street module. Both listings place their points in the two unnumbered ways at the Sims Avenue end of the west row. Triangulated party lines fit the source ways to within 0.4 m. The row photographs about 2.6 m in front of its source line, which a panorama position error explains as well; both models keep the source front. The No. 25 party line is open question 20. See the [Lorong 13 brief](lorong-13-design-brief.md).
 
+## Teck Hoe Airconditioning Parts (11) and Wunderfolks (26), Lorong 13 Geylang
+
+Both are dated exteriors of signed houses whose businesses now list other addresses. Teck Hoe's lettering and plate 11 are on the No. 11 house, under open question 12. Wunderfolks's board is on No. 26, which matches its 2023 Time Out address. See the [Lorong 13 brief](lorong-13-design-brief.md).
+

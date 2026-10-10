@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews, thirteenBbq, builderSmart, teckHoe } from '../src/lorong-13-layout.mjs';
 import { row13 } from '../src/row13-layout.mjs';
+import { singleRow } from '../src/single-row-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { project, pointInPolygon } from '../src/geo.mjs';
 import { map, building, outline, nearestRoad, assertFittings, assertClearOfCarriageway, assertReviews } from './helpers.mjs';
@@ -68,7 +69,19 @@ test('Teck Hoe is a dated exterior of the signed No. 11 house, with the listing 
   assert.equal(nearestRoad(frame.point(frame.width / 2)).name, 'Lorong 13 Geylang');
 });
 
+test('the single-storey row houses share No. 22\'s form and the source spacing', () => {
+  for (const place of lorong13.filter(p => p.single)) {
+    const poly = outline(place.buildingIds[0]), frame = lorong13Frame(poly, place);
+    assert.ok(Math.abs(frame.width - 5.81) < .02, place.id); assert.equal(place.height, 4.31);
+    assert.equal(nearestRoad(frame.point(frame.width / 2)).name, 'Lorong 13 Geylang');
+    for (const f of place.front ?? []) assert.ok(f.h[1] < singleRow.canopy.inner, place.id);
+  }
+  // Copings recur every second party line: 28|26, 24|22 (drawn by Plus Mobile) and the end of No. 20.
+  assert.deepEqual(lorong13.filter(p => p.single && p.coping).map(p => p.id), ['l13-28', 'l13-20']);
+  assert.match(lorong13.find(p => p.id === 'wunderfolks').evidence, /Time Out \(27 September 2023\)/);
+});
+
 test('Lorong 13 review starts face their frontages and stay walkable', () => {
   for (const place of lorong13) { const frame = lorong13Frame(outline(place.buildingIds[0]), place); assertReviews(frame, lorong13Reviews(place, frame)); }
-  assert.equal(named.length, 3);
+  assert.equal(named.length, 4);
 });

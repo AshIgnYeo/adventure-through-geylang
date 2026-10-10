@@ -5,6 +5,7 @@
 import { frontageFrame } from './gable-roof-layout.mjs';
 import { simpleHouseLayout, facing } from './simple-house-layout.mjs';
 import { row13, row13Layout } from './row13-layout.mjs';
+import { singleRow, addShutter, addRowFittings, rowBrackets } from './single-row-layout.mjs';
 
 const pano = (id, heading, pitch = 10, fov = 80) => `https://www.google.com/maps/@?api=1&map_action=pano&pano=${id}&heading=${heading}&pitch=${pitch}&fov=${fov}`;
 const way = id => `https://www.openstreetmap.org/way/${id}`;
@@ -138,9 +139,70 @@ export const no3 = rowHouse('3', {
   awning: { from: .7, to: 4.91, wall: 3.4, front: 2.9, depth: .9, colour: '#93384a' },
 });
 
-export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3];
+// The single-storey row at Nos. 20-28 (east side) shares No. 22's measured form. Frames were rectified
+// about 1 m behind the source front, where three panoramas agree; u runs south from each north party line.
+const rowShop = (extra) => ({ single: true, frontEdge: 2, reviewRoad: 'Lorong 13 Geylang', height: singleRow.height, ridgeHeight: singleRow.ridgeHeight, ridgeDepth: singleRow.ridgeDepth, eavesOverhang: singleRow.eavesOverhang, ...extra });
+const eastRowDepth = 'Party lines read on frames rectified about 1 m behind the source front, where three April 2024 panoramas agree, fall within about 0.3 m of the source subdivision. The house shares the single-storey form measured at No. 22 (Plus Mobile): a short tiled front slope over a dark rear roof and a steel lattice canopy over a tiled walkway.';
+
+export const no28 = rowShop({ ...unnamed('28', {}), frontEdge: 2,
+  id: 'l13-28', buildingIds: ['1223454584'], coping: 'b',
+  evidence: 'Source way 1223454584 is tagged No. 28, at the north end of the single-storey row, and April 2024 Street View shows plate 28 between a blue-framed door and a display window. Its glazing carries Wunderfolks tart posters, but Wunderfolks published its address as No. 26 next door, and Ganh Xua (GX) Minimart, listed here as temporarily closed, has no sign, so no name is given; the posters are blank panels. ' + eastRowDepth + ' The salmon party-wall coping on its south side recurs every second party line.',
+  sources: [way('1223454584'), pano('I_hhtdchIOdknrryrI3yng', 71.5, 0, 90), pano('io0FBYoICWg1rVxKcWqTJQ', 100, 5, 80)],
+  front: [
+    { name: 'blue door frame', u: [.46, 2.77], h: [0, 2.42], out: .03, depth: .06, colour: '#2a6fb5' }, { name: 'door glazing', u: [.56, 2.67], h: [.1, 2.32], out: .065, depth: .01, colour: '#3b4a55' },
+    { name: 'blank poster', u: [1.55, 2.55], h: [.9, 2.2], out: .075, depth: .01, colour: '#e3d6c2' },
+    { name: 'blue window frame', u: [3.14, 5.68], h: [.3, 2.31], out: .03, depth: .06, colour: '#2a6fb5' }, { name: 'window glazing', u: [3.24, 5.58], h: [.4, 2.21], out: .065, depth: .01, colour: '#3b4a55' },
+    { name: 'blank poster', u: [3.3, 5.5], h: [.5, 2.1], out: .075, depth: .01, colour: '#d9b07a' },
+  ],
+  plate: { u: [2.86, 3.05], h: [2.45, 2.62], text: '28' },
+});
+
+export const wunderfolks = rowShop({
+  id: 'wunderfolks', buildingIds: ['1223454585'], kind: 'wunderfolks', coping: null,
+  name: 'Wunderfolks handmade tarts (April 2024 exterior)', address: '26 Lorong 13 Geylang',
+  evidence: 'Time Out (27 September 2023) gives Wunderfolks, a handmade-tart bakery, at 26 Lor 13 Geylang, Singapore 388669, open daily for collection, and April 2024 Street View shows its blue WUNDERFOLKS board (HOME OF HANDMADE TARTS, www.wunderfolks.com) over the blue-framed door of the house on source way 1223454585, tagged No. 26. Google Maps now lists Wunderfolks only at 1 Kaki Bukit View, so this is a dated exterior that claims nothing about current use. ' + eastRowDepth + ' Posters, the fridge, stools and stock are not reconstructed.',
+  sources: ['https://www.timeout.com/singapore/restaurants/wunderfolks', way('1223454585'), pano('I_hhtdchIOdknrryrI3yng', 71.5, 0, 90), pano('yo_MuatdX6WE9xNVY4PqBg', 71.5, 0, 90)],
+  front: [
+    { name: 'blue door frame', u: [.47, 2.84], h: [0, 2.12], out: .03, depth: .06, colour: '#2a6fb5' }, { name: 'door glazing', u: [.57, 2.74], h: [.1, 2.02], out: .065, depth: .01, colour: '#3b4a55' },
+    { name: 'blank poster', u: [1.7, 2.65], h: [.6, 1.9], out: .075, depth: .01, colour: '#e3d6c2' },
+  ],
+  shutters: [{ at: [4.6, 5.7, 2.45], leaves: 1 }],
+  board: { u: [.54, 3.54], h: [2.2, 2.9], out: .06 },
+});
+
+export const no24 = rowShop({ ...unnamed('24', {}), frontEdge: 2,
+  id: 'l13-24', buildingIds: ['1223454586'], coping: null,
+  evidence: 'Source way 1223454586 is tagged No. 24. April 2024 Street View shows a closed roller shutter and a key-cutting booth signed 配锁匙 / DUPLICATING under a small canopy. Bookland Library Services is listed open at No. 24, but no Bookland sign was seen and the key sign is a generic trade sign, so no name is given. ' + eastRowDepth + ' The booth\'s signs, keys and stock are not reconstructed.',
+  sources: [way('1223454586'), pano('yo_MuatdX6WE9xNVY4PqBg', 71.5, 0, 90), 'https://www.google.com/maps/search/?api=1&query=Bookland+Library+Services+24+Lorong+13+Geylang'],
+  shutters: [{ at: [.2, 2.38, 2.15], leaves: 1 }],
+  front: [
+    { name: 'dark shopfront', u: [2.5, 5.2], h: [0, 2.05], out: .02, depth: .03, colour: '#3a3330' },
+    { name: 'key booth canopy', u: [2.5, 5.2], h: [2.05, 2.15], out: .4, depth: .8, colour: '#e9e6dd' },
+    { name: 'key booth counter', u: [3.5, 4.8], h: [0, 1.5], out: .3, depth: .5, colour: '#e8e4dc' },
+    { name: 'condenser', u: [1.25, 2.0], h: [2.25, 2.75], out: .2, depth: .3, colour: '#e9e9e4' }, { name: 'condenser', u: [3.87, 4.87], h: [2.25, 2.75], out: .2, depth: .3, colour: '#e9e9e4' },
+  ],
+});
+
+export const no20 = rowShop({ ...unnamed('20', {}), frontEdge: 2,
+  id: 'l13-20', buildingIds: ['1223454588'], coping: 'b',
+  evidence: 'Source way 1223454588 is tagged No. 20, the south end of the single-storey row before an open yard. April 2024 Street View shows two closed roller shutters with plate 20 between them and a louvred panel above the first; no business sign was seen, so no name is given. ' + eastRowDepth + ' The salmon party-wall coping on its south side recurs every second party line.',
+  sources: [way('1223454588'), pano('0lzllny6dnDfGwAbWWI8_Q', 71.5, 0, 90), pano('D4Uk9t7JuM7EbZHDIk3xog', 40, 5, 80)],
+  shutters: [{ at: [.31, 2.31, 2.2], leaves: 1 }, { at: [2.85, 5.38, 2.3], leaves: 2 }],
+  front: [{ name: 'louvred panel', u: [.4, 2.2], h: [2.45, 2.9], out: .03, depth: .04, colour: '#ecebe6' }, ...Array.from({ length: 5 }, (_, i) => ({ name: 'panel louvre', u: [.45, 2.15], h: [2.5 + i * .08, 2.53 + i * .08], out: .06, depth: .01, colour: '#a9aca8' }))],
+  plate: { u: [2.4, 2.62], h: [1.95, 2.18], text: '20' },
+});
+
+export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20];
 export const lorong13Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export function lorong13Layout(place, width) {
+  if (place.single) {
+    const boxes = [], mid = (a, b) => (a + b) / 2;
+    const add = (name, u, y, out, w, h, depth, colour, glow = 0) => boxes.push({ name, u, y, out, w, h, depth, colour, glow });
+    for (const sh of place.shutters ?? []) addShutter(add, sh.at, sh.leaves);
+    for (const f of place.front ?? []) add(f.name, mid(...f.u), mid(...f.h), f.out ?? .03, f.u[1] - f.u[0], f.h[1] - f.h[0], f.depth ?? .03, f.colour, f.glow ?? 0);
+    addRowFittings(add, width);
+    return { boxes, canopy: { ...singleRow.canopy, from: 0, to: width }, brackets: rowBrackets([.35, 2.9, 5.45]), blades: [] };
+  }
   if (!place.row) return simpleHouseLayout(width, place);
   const base = row13Layout(width, place.bays), mid = (a, b) => (a + b) / 2;
   for (const g of place.ground ?? []) base.add(g.name, mid(...g.u), mid(...g.h), g.out, g.u[1] - g.u[0], g.h[1] - g.h[0], g.depth ?? .03, g.colour, g.glow ?? 0);

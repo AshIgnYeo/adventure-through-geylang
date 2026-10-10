@@ -76,6 +76,27 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 - **Ground floor:** a maroon awning over a roller shutter, the glass door and a timber door, with two condensers.
 - **Check:** render-and-compare moved the awning's south end in and made it shallower.
 
+## The single-storey east row, Nos. 20–28
+
+- **Shared form:** Plus Mobile (No. 22) measured the row's form, and its walls, canopy and roof now live in a shared single-row module, with unchanged output:
+  - a short tiled front slope over a dark rear roof;
+  - a steel lattice canopy over a tiled walkway;
+  - salmon party-wall copings on every second party line, at 28|26, 24|22 (drawn by Plus Mobile) and the south end of No. 20.
+- **Depth and spacing:** frames rectified about **1 m behind** the source front, where three April 2024 panoramas agree, put every party line within about 0.3 m of the source subdivision.
+- **Gap:** the source's gap between Nos. 20 and 18 is an open yard with umbrellas, with no building.
+- **Walkway:** render-and-compare shows the real walkway raised about 0.6 m above the road. The shared base keeps it at road level, so fronts sit about 0.6 m low throughout the row, Plus Mobile included.
+
+### Wunderfolks, 26 Lorong 13 (dated exterior)
+
+- **Identity:** [Time Out (27 September 2023)](https://www.timeout.com/singapore/restaurants/wunderfolks) gives Wunderfolks, a handmade-tart bakery, at 26 Lor 13 Geylang, Singapore 388669, open daily for collection. April 2024 shows its blue WUNDERFOLKS board over the blue-framed door on the way tagged No. 26.
+- **Current use:** Google Maps now lists Wunderfolks only at 1 Kaki Bukit View, so the model claims nothing about current use. This settles the 9 October WUNDERFOLKS lock in the same way as Sik Wai Sin.
+
+### Nos. 28, 24 and 20 (unnamed)
+
+- **No. 28:** plate 28 between a blue-framed door and a display window. The Wunderfolks posters in its glazing are blank panels: the bakery published No. 26, and Ganh Xua (listed at No. 28, temporarily closed) has no sign.
+- **No. 24:** a roller shutter and a key-cutting booth with a generic 配锁匙 / DUPLICATING sign. Bookland Library Services is listed here, but has no sign.
+- **No. 20:** two roller shutters, with plate 20 and a louvred panel.
+
 ## Omitted and estimated
 
 - **Omitted:** stock, pallets, vehicles, menus, furniture, posters, banners, vending machines, plants and interiors.
@@ -83,4 +104,4 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 
 ## Review
 
-Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s` and `?review=l13-3`.
+Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24` and `?review=l13-20`.

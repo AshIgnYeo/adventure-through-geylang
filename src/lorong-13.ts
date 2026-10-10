@@ -4,6 +4,8 @@ import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews } from './loro
 import { buildSimpleHouse, type Draw } from './simple-house';
 import { frontageFrame } from './gable-roof-layout.mjs';
 import { buildRow13House } from './row13';
+import { buildSingleRowHouse } from './single-row';
+import { singleRow } from './single-row-layout.mjs';
 
 const text = (c: CanvasRenderingContext2D, s: string, x: number, y: number, size: number, colour: string, font = 'sans-serif', weight = '700', maxWidth?: number) => {
   c.fillStyle = colour; c.font = `${weight} ${size}px ${font}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(s, x, y, maxWidth);
@@ -42,6 +44,14 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
       text(c, '11', w * .47, h * .82, h * .26, '#3a3c3c', 'Arial, sans-serif', '700');
     }],
   },
+  wunderfolks: {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#1f5aa6'; c.fillRect(0, 0, w, h);
+      text(c, 'HOME OF HANDMADE TARTS', w / 2, h * .14, h * .09, '#e8eef6', '"Helvetica Neue", Arial, sans-serif', '600');
+      text(c, 'WUNDERFOLKS', w / 2, h * .52, h * .42, '#ffffff', '"Arial Black", "Helvetica Neue", sans-serif', '900', w * .9);
+      text(c, 'www.wunderfolks.com', w / 2, h * .86, h * .11, '#e8eef6', '"Helvetica Neue", Arial, sans-serif', '500');
+    }],
+  },
   buildersmart: {
     boards: [(c, w, h) => {
       c.fillStyle = '#e4dcc4'; c.fillRect(0, 0, w, h); c.strokeStyle = '#7c6f4f'; c.lineWidth = h * .06; c.strokeRect(0, 0, w, h);
@@ -73,6 +83,16 @@ export function buildLorong13(world: World, id: string, poly: Point[]) {
   const place = lorong13.find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   const frame = lorong13Frame(poly, place), layout = lorong13Layout(place, frame.width) as any;
+  if (place.single) {
+    // A house of the single-storey row at Nos. 20-28, on the form measured at No. 22.
+    const { pt, textured, board } = buildSingleRowHouse(world, place.name, frame, singleRow, layout, place.coping);
+    const bd = place.board, fn = draws[place.id]?.boards?.[0];
+    if (bd && fn) world.panel(pt(bd.u[0], bd.out), pt(bd.u[1], bd.out), bd.h[0], bd.h[1], textured(board(bd.u[1] - bd.u[0], bd.h[1] - bd.h[0], fn), .05));
+    const pl = place.plate;
+    if (pl) world.panel(pt(pl.u[0], .05), pt(pl.u[1], .05), pl.h[0], pl.h[1], world.textMaterial(pl.text, '#f4f4f0', '#181818', 0, (pl.u[1] - pl.u[0]) / (pl.h[1] - pl.h[0])));
+    for (const r of lorong13Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+    return true;
+  }
   if (place.row) {
     // A house of the conserved row at Nos. 3-9, on the shared row elevation.
     const { pt } = buildRow13House(world, place.name, frame, layout);

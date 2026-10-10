@@ -534,9 +534,14 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Lock resolved:** the 9 October lock (current use, plan) is settled. Under open question 12 the signed and plated house is a dated exterior, recording that Teck Hoe now lists 8 Lor 15 Geylang. Three panoramas resolve the main block, the lower south wing, the yard and the canopy on source way 1223773759.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 65. See the [Lorong 13 brief](lorong-13-design-brief.md).
 
+### Q58. Wunderfolks, 26 Lorong 13 Geylang, completed (dated exterior)
+
+- **Lock resolved:** the 9 October WUNDERFOLKS lock. Time Out (27 September 2023) published 26 Lor 13 Geylang, which matches the April 2024 board on the way tagged No. 26. Maps now lists Kaki Bukit only, so this is a dated exterior.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 66. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
 
-- **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
+- **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
 
 ### Authored footprints, from 10 October 2026
 
