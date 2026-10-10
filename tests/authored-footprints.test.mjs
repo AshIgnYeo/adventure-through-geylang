@@ -44,10 +44,11 @@ test('the Lorong 11 west row is re-spaced into twelve measured frontages along t
   assert.deepEqual(row.map(b => b.number), ['15', '17', '19', '21', '23', '25', '27', '29', '29A', '31', '33', '35']);
   const replaced = map.replacedBuildings.filter(b => authoredFootprintGroups[0].replaces.includes(b.id));
   const total = row.reduce((s, b) => s + area(poly(b)), 0), before = replaced.reduce((s, b) => s + area(poly(b)), 0);
-  assert.ok(Math.abs(total - before) / before < .005, 'the row keeps the source plan area');
+  // The plan area grows only by the 0.66 m end extension at the source depth.
+  assert.ok(Math.abs(total - before - .66 * 24.32) < 1, `${total - before}`);
   // Front widths match the measured party lines.
   const widths = row.map(b => { const o = poly(b); return Math.hypot(o[1][0] - o[0][0], o[1][1] - o[0][1]); });
-  const expected = [9.3, 5.2, 5.3, 5.2, 6.0, 6.1, 7.2, 4.0, 5.9, 3.7, 6.3];
+  const expected = [9.3, 5.2, 5.3, 5.2, 6.0, 6.1, 7.2, 4.0, 5.9, 3.7, 6.3, 6.9];
   expected.forEach((w, i) => assert.ok(Math.abs(widths[i] - w) < .02, `${row[i].number}: ${widths[i]}`));
   // Neighbours share their party-line corners exactly.
   for (let i = 1; i < row.length; i++) {

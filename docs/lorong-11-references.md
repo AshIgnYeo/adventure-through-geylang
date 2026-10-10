@@ -305,3 +305,7 @@ Implemented **10 October 2026** as a dated April 2024 exterior on the owner-appr
 ## Tibetan Buddhist Studies Society 藏密佛学研究会, 21 Lorong 11 Geylang
 
 Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 21 footprint (5.2 m), which replaces source way 1223407883. The white conserved shophouse carries the red 藏密佛学研究会 / Tibetan Buddhist Studies Society board under a gilded Dharma wheel and deer. No listing was found; the identity rests on the signage at a sourced address. See the [design brief](tbss-design-brief.md).
+
+## Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 35 footprint (6.9 m), which replaces source way 1223407876 and ends 0.66 m past it at the measured end pier. Google Maps lists Zheng Li Hearty Kitchen at 35 Lor 11 Geylang, and its 正利心厨 blade sign hangs on the end pier over an open restaurant. See the [design brief](zheng-li-design-brief.md).

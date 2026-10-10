@@ -435,6 +435,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** shared Peranakan elevation with No. 19, with the board and ornaments read at full resolution. All **134 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 49. See the [design brief](tbss-design-brief.md).
 
+### Q46. Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11 Geylang, completed
+
+- **Address / footprint:** listed at 35 Lor 11 Geylang, with its blade sign. The model stands on the re-spaced footprint `l11w-35` (6.9 m) under open question 1. The row end moved to the measured end pier, 0.66 m past the source end.
+- **Method:** square-on rectification at the 0.6 m depth, with the projecting bay corrected for its 0.45 m projection. All **137 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 50. See the [design brief](zheng-li-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
@@ -513,7 +519,7 @@ The owner's answers to the open questions allow re-spaced and authored footprint
   | 29A / 31 | about 54.2 | 51.24 | start of the Canton Wong board |
   | 31 / 33 | about 57.9 | 57.65 | ground-floor pier after the Canton Wong window, re-read square-on from `aHF7…` |
   | 33 / 35 | 64.2 | 64.04 | ground-floor pier and upper-storey setback, read square-on from `aHF7…` |
-  | Row end (No. 35) | source end kept, 70.44 | 70.44 | end pier near 70.5–71.0; Zheng Li's restaurant fills 64.2 to the end |
+  | Row end (No. 35) | 71.1 | 70.44 | end pier, re-read square-on from `aHF7…`; Zheng Li's restaurant fills 64.2–71.1, extending 0.66 m past the source end onto open ground |
 
   - **Uncertainty:** about ±0.3–0.5 m up to the 31 / 33 line, and more beyond it, where a 1 m disagreement between panoramas remains.
 - **Red Dot Running / Amrise row, 106–112 Sims Avenue, re-checked:**
