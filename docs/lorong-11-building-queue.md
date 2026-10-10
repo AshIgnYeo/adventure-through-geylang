@@ -910,3 +910,18 @@ Direct inspection of [April 2024 Street View](https://www.google.com/maps/@?api=
 **Validation / completion:** `npm test` passed 11/11; `npm run build` passed with the existing bundle-size advisory; `git diff --check` passed. Daylight browser inspection covered the opaque shop/entrance, readable entrance name, upper windows, pink surrounds, upper lettering and roof shade, with no captured runtime warnings or errors. The lower awning partly obscures the upper name from the close pedestrian review position. Source footprints, metre scale and raster assets are unchanged. Q6 is complete and ready for its single focused commit; no second item was started.
 
 All four original landmarks and Q1–Q6 are complete within their documented fidelity limits. No supported pending or resumable item remains. Pause this scheduled task after the commit; the project is ready to be retargeted to another lorong. This is completion of the named-building queue, not a claim that every Lorong 11 façade or current tenant has been surveyed.
+
+### 11 October 2026: rebuilding the widened ring (open question 26)
+
+The widened bounds brought 57 unmodelled buildings into the map: the original five boundary blocks and 52 more. About 33 front a modelled road within 27 m and showed stock shop signs. The rest front lanes outside the road set and render as plain volumes. They are being rebuilt from June 2024 photographs, unnamed unless a listing and signage agree.
+
+- **No. 291 Geylang Road, the Lorong 15 corner (way 454254230), unnamed exterior:**
+  - Triangulating the party pilaster and the corner pier from two June 2024 panoramas puts the front on the source front, about 4.0 m wide against the 5.13 m source way.
+  - The authored corner footprint proposed under open question 5 was **not needed**. The earlier "3 m wider" reading came from satellite roofs, which register loosely here, and a deeper footprint along Lorong 15 could not be confirmed.
+  - The 291 Eating House listing is marked closed while the company stays live, so the boards and blade are blank.
+- **Row east of Lorong 12, south side (`gr-260-east`), unnamed exterior:**
+  - It holds three two-storey shophouses (green, yellow and white) and part of the grey house signed 268.
+  - The party lines were triangulated from two June 2024 panoramas. They lie 4.8 m in front of the source front (the drive's position error) and give bays of about 5.0, 4.6 and 5.2 m. The grey|green line falls at 16.7 m, against the earlier split's 16.8 m.
+  - The HAPPY PLACE TATTOO banner hangs over a closed frontage, so it is blank.
+  - **Noted, not changed:** from Geylang Road, the ChongQingXiaoMian split (`gr-258`) shows a plain side wall where a grey shophouse with a red 串 board stands, between the corner building's short Geylang Road end and the green house.
+
