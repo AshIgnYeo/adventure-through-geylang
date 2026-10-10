@@ -6,6 +6,13 @@ Started: 10 October 2026.
 
 ## Open
 
+29. **Geylang Road south side, east of Lorong 12: move the row's front 4.8 m north and re-split the ChongQingXiaoMian strip?**
+    - **Row depth:** party lines triangulated from two June 2024 panoramas (`-tVu…`, `Y1Sv…`) put the façades of the grey, green, yellow and white shophouses about 4.8 m north of the source front of block 454438318. That is towards Geylang Road. A third panorama from a different drive (`GoN_…`) agrees to within 0.1 m. The same drive measures the north-side façades (No. 291) onto their source front, so this is not a pose error. Satellite roofs also run north of the source outline here.
+    - **Corner strip:** the grey house with the red 串 board spans about 11.0–16.7 m along the front from Lorong 12, inside the east part of `gr-258`. The earlier split gave all 16.8 m to the ChongQingXiaoMian building, whose Geylang Road face stands near the source front. As a result, the model draws a plain side wall where the grey house stands.
+    - **What happens now:** `gr-260-east` is modelled on the source front, with the bays in the right order. The grey house is missing, and the ChongQingXiaoMian model is unchanged.
+    - **Recommendation:** yes. Re-split `gr-258` at 11.0 m, giving the grey house its own unnamed strip. Author the row's footprints with their front 4.8 m north, after checking clearance from Geylang Road's modelled carriageway; if the clearance fails, keep the source front and record the offset.
+    - **Unlocks:** the missing house and the correct street line east of Lorong 12.
+
 28. **Geylang Road Nos. 217–229 (north side, between Lorong 7 and Lian Seng): re-space at the triangulated party lines?**
     - **Evidence:** party lines triangulated from two June 2024 panoramas (`i-vtfVn07QFERJ6yuTUUtA`, `U23wEgPybSSNqmMh7jNGZQ`) put the Lorong 7 corner pier on the source front, 1.6 m short of the source corner. Going east, the houses measure 4.6 m (Gong He Guan, No. 217), 4.5 m (No. 219), 4.4 m (No. 221), and then the house with the red Geylang Lor 9 Fresh Frog Porridge board.
     - **Problem:** that board, which identified No. 223 in the earlier split, falls in the east 4.5 m of `gr-221-west`. The modelled Nos. 223, 225 and 227 therefore stand about 4.5 m east of their photographed houses, each showing its western neighbour's frontage. The earlier split laid its widths from Lian Seng's strip edge and allowed about ±1 m for this drive's position errors, which is too little here.

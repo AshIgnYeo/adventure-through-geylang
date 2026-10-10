@@ -40,14 +40,14 @@ export const no291 = {
 
 // East of Lorong 12 on the south side: the rest of block 454438318 after the ChongQingXiaoMian split.
 // Triangulating the four party lines from two June 2024 panoramas puts them 4.8 m in front of the source
-// front (the drive's position error) and gives bays of about 5.0, 4.6 and 5.2 m from the split, which the
+// front, confirmed from a second drive (open question 29), and gives bays of about 5.0, 4.6 and 5.2 m from the split, which the
 // grey|green line meets at 16.7 m against the split's 16.8 m; the fourth bay runs past the block's end.
 const W260 = 17.2;
 export const no260East = {
   id: 'gr-260-east', buildingIds: ['gr-260-east'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road',
   name: 'Shophouses east of Lorong 12, Geylang Road south side (June 2024 exterior, occupants not identified)', address: 'Geylang Road, south side, east of Lorong 12',
   height: 7.9, ceiling: 3.7, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 9.6, colour: '#6a6460' },
-  evidence: 'Three two-storey shophouses and part of a fourth, east of the Lorong 12 corner building. June 2024 Street View shows a green house with two large casement windows over a dark green blind, a yellow house with three louvred windows over a yellow tarpaulin and a HAPPY PLACE TATTOO banner, a white house with three windows over a teal blind, and the grey house signed 268 beyond. The banner is a temporary sign over a closed frontage, so it is blank and no name is given. Heights were read on the triangulated plane, where the two panoramas agree; the façades are kept on the source front of the owner-approved split (open question 11).',
+  evidence: 'Three two-storey shophouses and part of a fourth, east of the Lorong 12 corner strip. Cross-drive triangulation shows the photographed façades stand about 4.8 m north of the source front, and a grey house with a red board stands inside the corner strip; both are open question 29. June 2024 Street View shows a green house with two large casement windows over a dark green blind, a yellow house with three louvred windows over a yellow tarpaulin and a HAPPY PLACE TATTOO banner, a white house with three windows over a teal blind, and the grey house signed 268 beyond. The banner is a temporary sign over a closed frontage, so it is blank and no name is given. Heights were read on the triangulated plane, where the two panoramas agree; the façades are kept on the source front of the owner-approved split (open question 11).',
   sources: [way('454438318'), pano('Y1SvdAjAS2SvYC5qQMSPuw', 200, 12, 100), pano('-tVuCuhwTBBFqueftEw2DQ', 200, 12, 110)],
   colours: { wall: '#e9e8e2', trim: '#e1dfd8', frame: '#2e3436', glass: '#3c4649', pier: '#e9e8e2', back: '#3a3633', floor: '#a39b90' },
   ...fromWest({
