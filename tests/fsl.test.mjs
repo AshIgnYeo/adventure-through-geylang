@@ -16,7 +16,8 @@ const touches = (p, o) => o.some(q => Math.hypot(q[0] - p[0], q[1] - p[1]) < 1e-
 test('FSL EW LED Lighting takes the addressed No. 118 Sims Avenue outline between Nos. 116 and 120', () => {
   assert.equal(source.number, '118'); assert.equal(source.street, 'Sims Avenue'); assert.equal(source.levels, 3);
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
-  for (const id of ['682928759', '682928761']) assert.equal(landmarkFor(id), undefined, `${id} stays generic`);
+  assert.equal(landmarkFor('682928759'), undefined, 'the No. 116 corner stays generic');
+  assert.equal(landmarkFor('682928761').id, 'yap-sun', 'No. 120 is Yap Sun Hardware, a separate dated exterior');
   // u runs from the No. 120 party line (east) to No. 116, facing Sims Avenue.
   assert.ok(touches(frame.a, outline('682928761')) && touches(frame.b, outline('682928759')));
   assert.ok(Math.abs(frame.width - 6.77) < .01);
