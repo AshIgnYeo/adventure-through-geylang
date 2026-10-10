@@ -45,6 +45,7 @@ import { buildGeylangNorth } from './geylang-north';
 import { buildGeylangSouth } from './geylang-south';
 import { buildLorong15 } from './lorong-15';
 import { buildIbisGold } from './ibis-gold';
+import { buildSimsNorthRow } from './sims-north-row';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -167,6 +168,7 @@ export class World {
       if(buildGeylangSouth(this,b.id,poly))continue;
       if(buildLorong15(this,b.id,poly))continue;
       if(buildIbisGold(this,b.id,poly))continue;
+      if(buildSimsNorthRow(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;
