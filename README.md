@@ -127,6 +127,11 @@ Review URLs can open directly opposite a model. For example:
 /?review=l11-27
 /?review=l11-29a
 /?review=l11-33
+/?review=l11-16
+/?review=l11-18
+/?review=l11-22
+/?review=l11-28
+/?review=l11-30-32
 ```
 
 These are inspection starts, rather than navigation or tracking features.
@@ -139,7 +144,7 @@ The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on
 
 This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 
-Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings are not assigned real names. On Lorong 13 and at other finished spots they are rebuilt from dated photographs as unnamed exteriors, with blank boards; elsewhere they remain generic.
+Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings are not assigned real names. On Lorong 13, Lorong 11 and at other finished spots they are rebuilt from dated photographs as unnamed exteriors, with blank boards; elsewhere they remain generic.
 
 Detailed provenance is available in:
 

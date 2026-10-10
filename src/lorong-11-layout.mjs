@@ -116,7 +116,84 @@ export const no33 = unnamed('33', {
   backFittings: [{ name: 'glazed shopfront', u: [.4, 6.0], h: [.1, 2.4], colour: '#3d474b', glow: .08 }],
 });
 
-export const lorong11 = [no15, no23, no25, no27, no29a, no33];
+// The east side (even numbers): frames rectified on the source front, which triangulation at JiangSu
+// confirmed; u runs south from each house's north party line, heights 0.1 m below the road datum.
+const east = (number, extra) => unnamed(number, { style: 'simple', frontEdge: 2, ...extra });
+const pairEvidence16 = 'Nos. 16 and 18 share one white two-storey façade with a continuous cornice and parapet at about 7.5 m, read on the 73in panorama rectified on the source front, which triangulation at JiangSu (No. 20) confirmed for this side.';
+const whiteHouse = { wall: '#ecebe6', trim: '#dedcd5', frame: '#2c3033', glass: '#3c4549', pier: '#ecebe6', back: '#33302d' };
+
+export const no16 = east('16', {
+  id: 'l11-16', buildingIds: ['1223250211'], height: 7.5, ceiling: 3.2, fiveFootWay: 1.8,
+  evidence: 'Source way 1223250211 is tagged No. 16. Kum Huat Shoe Merchant is listed at 16 Lor 11 but no matching sign was seen in 2021, 2022 or April 2024, so no name is given. ' + pairEvidence16 + ' No. 16 has a large gridded window and a smaller window under a louvred vent, a grey scalloped awning and grilled windows and doors under the five-foot way. A rooftop room behind the party line is estimated.',
+  sources: [way('1223250211'), pano('73intX-f7jQoMaTMSJ_4Mg', 72, 10, 90)],
+  colours: whiteHouse,
+  bands: [[7.0, 7.5, .3, '#e3e1da'], [3.2, 3.5, .25]],
+  windows: [{ u: [.7, 2.5], h: [4.69, 5.84], panes: 2, surround: true }, { u: [3.2, 5.9], h: [3.96, 6.57], panes: 6 }],
+  vents: [{ u: [.7, 2.5], h: [6.15, 6.6] }],
+  blocks: [{ name: 'scalloped awning', u: [0, 6.1], h: [3.0, 3.15], out: .7, depth: 1.4, colour: '#cfcfc9' }],
+  rooftop: [{ u: [.1, 1.5], top: 8.8, setback: 3, depth: 4, colour: '#dedcd5' }],
+  backFittings: [{ name: 'grilled window', u: [.4, 2.0], h: [.9, 2.3], colour: '#3e4a4c' }, { name: 'blue grilled door', u: [2.7, 3.7], h: [.1, 2.4], colour: '#4f6f8f' }, { name: 'grilled window', u: [4.1, 6.0], h: [.9, 2.3], colour: '#3e4a4c' }],
+});
+
+export const no18 = east('18', {
+  id: 'l11-18', buildingIds: ['1223250212'], height: 7.5, ceiling: 3.2, fiveFootWay: 1.8,
+  evidence: 'Source way 1223250212 is tagged No. 18; no listing or sign was found, so no name is given. ' + pairEvidence16 + ' No. 18 has a large gridded window and a framed window, a grey scalloped awning, and a roller shutter, a door and two windows under the five-foot way.',
+  sources: [way('1223250212'), pano('73intX-f7jQoMaTMSJ_4Mg', 72, 10, 90)],
+  colours: whiteHouse,
+  bands: [[7.0, 7.5, .3, '#e3e1da'], [3.2, 3.5, .25]],
+  windows: [{ u: [.15, 2.7], h: [4.84, 6.6], panes: 5 }, { u: [3.7, 5.2], h: [4.69, 5.84], panes: 2, surround: true }],
+  blocks: [{ name: 'scalloped awning', u: [0, 6.1], h: [3.0, 3.15], out: .7, depth: 1.4, colour: '#cfcfc9' }],
+  rooftop: [{ u: [5.0, 6.0], top: 8.8, setback: 3, depth: 4, colour: '#dedcd5' }],
+  backFittings: [{ name: 'roller shutter', u: [0, 2.7], h: [.1, 2.5], colour: '#b9bbb6' }, { name: 'door', u: [2.9, 3.8], h: [.1, 2.3], colour: '#3a3532' }, { name: 'grilled window', u: [4.0, 4.8], h: [.9, 2.3], colour: '#3e4a4c' }, { name: 'window', u: [4.9, 6.0], h: [.9, 2.3], colour: '#4a5558' }],
+});
+
+export const no22 = east('22', {
+  id: 'l11-22', buildingIds: ['1223250203'], height: 7.5, ceiling: 3.0, fiveFootWay: 1.8,
+  evidence: 'Source way 1223250203 is tagged No. 22, between Hainan Goh (No. 20B) and Ho San Kong Hoey (No. 24). The Hakka Association (Singapore) is listed at 22 Lor 11, but April 2024 Street View shows no association sign, so no name is given. A white two-storey house with a parapet to about 7.5 m: two upper windows under a scalloped terracotta canopy, a brown-panelled balcony rail, three condensers on the beam, and a low red awning over the five-foot way. Read on the 8kEp panorama rectified on the source front.',
+  sources: [way('1223250203'), pano('8kEpH_Q3jNSaUef89yiXtQ', 60, 10, 80)],
+  colours: whiteHouse,
+  bands: [[7.2, 7.5, .3, '#e1dfd8']],
+  windows: [{ u: [.3, 2.1], h: [4.02, 5.4], panes: 3 }, { u: [3.6, 5.5], h: [4.02, 5.4], panes: 3 }],
+  blocks: [
+    { name: 'terracotta canopy', u: [0, 6.1], h: [6.35, 6.5], out: .55, depth: 1.1, colour: '#c27a5c' },
+    { name: 'balcony rail', u: [2.05, 5.5], h: [3.48, 4.06], out: .3, depth: .08, colour: '#8a5a3e' },
+    ac([.4, 1.4], [2.9, 3.45]), ac([2.0, 3.25], [2.85, 3.5]), ac([4.6, 6.0], [2.9, 3.45]),
+  ],
+  awning: { from: .05, to: 6.05, wall: 2.85, front: 2.1, depth: 1.5, valance: .4 },
+  backFittings: [{ name: 'dark shop', u: [.4, 5.7], h: [.1, 2.6], colour: '#2f2b28' }],
+});
+
+export const no28 = east('28', {
+  id: 'l11-28', buildingIds: ['1223250205'], height: 7.6, ceiling: 3.6, fiveFootWay: 1.8,
+  evidence: 'Source way 1223250205 is tagged No. 28. Nai Ghee Hardware & Trading is listed at No. 28, but April 2024 shows only a yellow abrasives notice upstairs and closed shutters, so no name is given and the notice is blank. A cream two-storey house with a parapet to about 7.6 m: three upper windows under a corrugated canopy, two condensers, and a blue-and-white striped awning over two roller shutters and a door. Read on the H3-9 panorama rectified on the source front.',
+  sources: [way('1223250205'), pano('H3-9KS_v_QrrAnpO7y28LQ', 72, 10, 90)],
+  colours: { ...whiteHouse, wall: '#ebe6d6' },
+  bands: [[7.4, 7.6, .3, '#d9d4c4']],
+  windows: [{ u: [.5, 1.8], h: [4.5, 5.9], panes: 2 }, { u: [1.85, 2.65], h: [4.5, 5.9], panes: 1 }, { u: [3.7, 5.6], h: [4.5, 5.9], panes: 3 }],
+  blocks: [
+    { name: 'corrugated canopy', u: [0, 6.1], h: [6.15, 6.3], out: .5, depth: 1.0, colour: '#a9adab' },
+    { name: 'blank yellow notice', u: [2.7, 3.35], h: [4.6, 5.5], out: .03, depth: .02, colour: '#e8c43a' },
+    ac([3.7, 4.6], [4.0, 4.7]), ac([4.8, 5.8], [4.0, 4.6]),
+  ],
+  awning: { from: .05, to: 6.05, wall: 3.6, front: 2.65, depth: 1.5, valance: .3 },
+  backFittings: [{ name: 'roller shutter', u: [1.2, 3.2], h: [.1, 2.6], colour: '#b9bbb6' }, { name: 'roller shutter', u: [3.4, 4.5], h: [.1, 2.6], colour: '#b9bbb6' }, { name: 'dark door', u: [4.65, 5.55], h: [.1, 2.4], colour: '#2b2826' }, { name: 'yellow wall', u: [.3, 1.1], h: [.1, 2.6], colour: '#e0c64a' }],
+});
+
+export const no3032 = east('30-32', {
+  id: 'l11-30-32', buildingIds: ['1223250207'], height: 4.9, ceiling: 3.0, fiveFootWay: 1.0,
+  evidence: 'Source way 1223250207, tagged No. 32 and 13.9 m wide on Lorong 11, holds the single-storey minimart at Nos. 30-32; A L L Furniture is also listed at No. 32. The project owner declined a named model of this shop in October 2026, so no name is given and its boards are blank. April 2024 Street View shows a green corrugated fascia to about 4.9 m with two long boards and two end lightboxes, over a deep salmon awning shading an open shopfront; the weathered party walls of No. 28 and No. 34 rise either side. Satellite imagery shows lower roofs behind the front, which are kept at the fascia height. Read on the QQNp panorama rectified on the source front. Produce, crates and the interior are not reconstructed.',
+  sources: [way('1223250207'), pano('QQNp4tBAf9BWzHrMOUczcw', 72, 10, 100)],
+  colours: { ...whiteHouse, wall: '#e2e0d8' },
+  blocks: [
+    { name: 'green corrugated fascia', u: [1.0, 12.5], h: [3.15, 4.9], out: .1, depth: .2, colour: '#a7c58e' },
+    ...[[1.7, 6.1], [6.6, 12.0]].map(u => ({ name: 'blank board', u, h: [3.9, 4.25], out: .22, depth: .04, colour: '#f1ece6' })),
+    ...[[.1, .9], [12.6, 13.4]].map(u => ({ name: 'blank lightbox', u, h: [4.0, 4.45], out: .3, depth: .2, colour: '#f1ece6' })),
+  ],
+  awning: { from: .05, to: 13.85, wall: 3.0, front: 1.9, depth: 2.0, valance: .3 },
+  backFittings: [{ name: 'open shopfront', u: [.3, 13.6], h: [.1, 2.9], colour: '#3b3530' }],
+});
+
+export const lorong11 = [no15, no23, no25, no27, no29a, no33, no16, no18, no22, no28, no3032];
 export const lorong11Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 /** Rear corners for an irregular outline: the deepest vertices near each end of the front. */
 export function lorong11RoofFrame(poly, place) {

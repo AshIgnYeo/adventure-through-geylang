@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import { lorong11, lorong11Frame, lorong11RoofFrame, lorong11Layout, lorong11Reviews } from '../src/lorong-11-layout.mjs';
 import { peranakan } from '../src/peranakan-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
-import { building, outline, nearestRoad, assertFittings, assertReviews } from './helpers.mjs';
+import { building, outline, nearestRoad, assertFittings, assertReviews, assertClearOfCarriageway } from './helpers.mjs';
 
-test('Lorong 11 module places take west-row footprints and face Lorong 11', () => {
+test('Lorong 11 module places take their footprints and face Lorong 11', () => {
   for (const place of lorong11) {
     const poly = outline(place.buildingIds[0]), frame = lorong11Frame(poly, place);
     assert.equal(nearestRoad(frame.point(frame.width / 2)).name, 'Lorong 11 Geylang', place.id);
@@ -23,8 +23,11 @@ test('each Lorong 11 elevation keeps its bays ordered and its fittings in the fr
       assert.ok(edges.at(-1)[1] <= frame.width + .01, place.id);
       for (const g of place.ground ?? []) assert.ok(g.h[1] <= peranakan.ceiling && g.u[0] >= 0 && g.u[1] <= frame.width, `${place.id} ${g.name}`);
     } else {
-      for (const w of place.windows) assert.ok(w.u[0] > 0 && w.u[1] < frame.width && w.h[0] >= place.ceiling - .01 && w.h[1] < Math.max(place.height, ...(place.rooftop ?? []).map(r => r.top)), place.id);
-      if (place.awning) assert.ok(place.awning.to <= frame.width && place.awning.wall <= place.ceiling + .1, place.id);
+      for (const w of place.windows ?? []) assert.ok(w.u[0] > 0 && w.u[1] < frame.width && w.h[0] >= place.ceiling - .01 && w.h[1] < Math.max(place.height, ...(place.rooftop ?? []).map(r => r.top)), place.id);
+      if (place.awning) {
+        assert.ok(place.awning.to <= frame.width && place.awning.wall <= place.ceiling + .1, place.id);
+        assertClearOfCarriageway([frame.point(place.awning.from, place.awning.depth), frame.point(place.awning.to, place.awning.depth)]);
+      }
     }
     assertFittings(frame, poly, lorong11Layout(place, frame.width).boxes, .12);
   }

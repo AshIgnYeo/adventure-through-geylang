@@ -550,7 +550,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 
 ### Lorong 11 unnamed exteriors, from 10 October 2026 (open question 18)
 
-- **No. 15** (`l11w-15`) is modelled from April 2024 as an unnamed exterior on the shared Peranakan elevation, which now takes per-house bays. **Nos. 23, 25, 27, 29A and 33** follow on the simple-house elevation, completing the west row. See the [Lorong 11 street brief](lorong-11-street-brief.md).
+- **No. 15** (`l11w-15`) is modelled from April 2024 as an unnamed exterior on the shared Peranakan elevation, which now takes per-house bays. **Nos. 23, 25, 27, 29A and 33** follow on the simple-house elevation, completing the west row, and **Nos. 16, 18, 22, 28 and 30–32** complete the east side. See the [Lorong 11 street brief](lorong-11-street-brief.md).
 
 ### Authored footprints, from 10 October 2026
 

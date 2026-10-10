@@ -31,3 +31,18 @@ The plainer houses of the same re-spaced row (open question 1). Each was read sq
 | 33 | none found | the 悠雅 SPA board has no listing | parapet to 8.73 m; a hooded and a vented window; three condensers; navy awning over glazed shopfronts |
 
 Render-and-compare from the `8kEp…` pose, moved 0.6 m back, puts No. 25's windows, vents, condenser and hoarding on their photographed positions. Use `?review=l11-23`, `?review=l11-25`, `?review=l11-27`, `?review=l11-29a` and `?review=l11-33`.
+
+## The east side: Nos. 16, 18, 22, 28 and 30–32 (unnamed)
+
+Read on frames rectified on the source front, which triangulation at JiangSu (No. 20) confirmed for this side. Heights are 0.1 m below the road datum, from the 2.4 m camera height above the five-foot way measured at JiangSu and Liu Da Ma.
+
+| No. | Listings | Why unnamed | Elevation |
+| --- | --- | --- | --- |
+| 16 | Kum Huat Shoe Merchant | no matching sign in 2021, 2022 or 2024 | shares one white two-storey façade with No. 18, parapet at 7.5 m; a gridded window and a vented window; grilled openings below |
+| 18 | none | — | the other half of the same façade; a gridded and a framed window; a roller shutter, door and windows below |
+| 22 | Hakka Association (Singapore) | no association sign | parapet at 7.5 m; two windows under a scalloped terracotta canopy; a brown balcony rail, three condensers and a low red awning |
+| 28 | Nai Ghee Hardware & Trading | only a yellow abrasives notice (blank) | parapet at 7.6 m; three windows under a corrugated canopy; a blue-and-white striped awning over shutters |
+| 30–32 | the minimart; A L L Furniture | the owner declined a named model of the minimart | single storey to 4.9 m; green corrugated fascia with blank boards and lightboxes; a deep salmon awning |
+
+Use `?review=l11-16`, `?review=l11-18`, `?review=l11-22`, `?review=l11-28` and `?review=l11-30-32`.
+
