@@ -405,7 +405,51 @@ export function no2123Layout(width) {
   return { boxes, back: -1.76, board: undefined, boards: [], blades: [], awning: undefined };
 }
 
-export const lorong13 = [no25, no2123, thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96, no269];
+// The No. 269 coffeeshop's continuation north (open question 21): a two-storey bay continuing the corner's
+// elevation, then a tall single-storey wing with a balustraded parapet; u runs from the frame's start.
+export const no269North = unnamed('269 (north part)', {
+  id: 'l13-269-north', buildingIds: ['l13-269-north'], frontEdge: 0, name: 'No. 269 Geylang Road coffeeshop, Lorong 13 wing (April 2024 exterior, occupant not identified)', address: '269 Geylang Road (Lorong 13 side)',
+  height: 8.0, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9893' },
+  evidence: 'The continuation of the No. 269 corner coffeeshop north along Lorong 13, on the owner-approved authored footprint (open question 21): a two-storey bay about 6 m long with paired vents and a pilaster under the tiled eaves, then a tall single-storey wing with a white balustraded parapet, all under the Khim Seng gas-supplier awning, which is shown plain. As at the corner, listings and signs conflict, so no name is given. Read on the pE_L panorama at the depth its vents triangulate; heights carry about ±0.4 m. Crates, tables and the interior are not reconstructed.',
+  sources: ['https://www.openstreetmap.org/way/454254219', pano('pE_LD86BSAb8LSBZLrANuA', 75, 10, 100), pano('KZ8gY_VJ15F7O0jKFFNB8w', 60, 12, 100)],
+  colours: { wall: '#eceae3', trim: '#e2ddd0', frame: '#5f7a4a', glass: '#3a4245', pier: '#efeee9', back: '#6e2a26', floor: '#b8b5ad' },
+  u269: true,
+});
+export function no269NorthLayout(width, bayFromStart) {
+  // bayFromStart: true when u = 0 is at the corner (south) end.
+  const bay = bayFromStart ? [0, 6.0] : [width - 6.0, width], wing = bayFromStart ? [6.0, width] : [0, width - 6.0];
+  const boxes = [], add = (name, u, h, out, depth, colour) => boxes.push({ name, u: (u[0] + u[1]) / 2, y: (h[0] + h[1]) / 2, out, w: u[1] - u[0], h: h[1] - h[0], depth, colour, glow: 0 });
+  add('bay upper wall', bay, [4.0, 8.0], -.05, .04, '#eceae3');
+  add('bay eaves', bay, [7.7, 8.0], .4, .8, '#8e5a46');
+  for (const v of [1.7, 4.8]) { const u = bayFromStart ? v : width - v; add('vent', [u - .3, u + .3], [6.7, 7.0], .03, .04, '#5d6b62'); }
+  add('pilaster', bayFromStart ? [5.6, 6.0] : [width - 6.0, width - 5.6], [4.0, 7.7], .08, .16, '#e2ddd0');
+  add('wing upper wall', wing, [4.0, 4.9], -.05, .04, '#eceae3');
+  add('wing parapet coping', wing, [6.1, 6.25], .05, .3, '#e2ddd0');
+  add('wing parapet rail', wing, [4.9, 5.05], .05, .3, '#e2ddd0');
+  for (let u = wing[0] + .15; u < wing[1] - .1; u += .3) add('baluster', [u, u + .12], [5.05, 6.1], .05, .12, '#f1efe9');
+  add('awning', [0, width], [2.9, 3.1], .9, 1.8, '#8e2f3e');
+  add('awning valance', [0, width], [2.6, 2.9], 1.78, .04, '#7e2836');
+  for (const u of [.2, 3.0, 6.0, 8.6, width - .2]) add('red-and-white column', [u - .2, u + .2], [0, 2.9], .3, .4, '#c8322d');
+  add('five-foot way floor', [0, width], [0, .08], -1.0, 2.0, '#b8b5ad');
+  add('five-foot way ceiling', [0, width], [3.9, 4.0], -1.0, 2.0, '#e4e2dc');
+  add('coffeeshop interior', [.3, width - .3], [.1, 3.6], -1.96, .03, '#3b2522');
+  return { boxes, back: -1.96, board: undefined, boards: [], blades: [], awning: undefined };
+}
+
+// The narrow four-storey building between the back lane and the Shi Hao corner (open question 22).
+export const shiHaoNorth = unnamed('267A', {
+  id: 'l13-shi-hao-north', buildingIds: ['l13-shi-hao-north'], frontEdge: 3, name: 'Narrow building north of Shi Hao, Lorong 13 (April 2024 exterior, occupant not identified)', address: 'Lorong 13 Geylang, east side of No. 267',
+  height: 12.4, ceiling: 3.9, fiveFootWay: 1.5, roof: { type: 'flat', colour: '#9a9893' },
+  evidence: 'A narrow cream four-storey building between the back lane and the Shi Hao corner, on the owner-approved authored footprint (open question 22): banded storeys with a single arched casement on each upper floor, a plain parapet at about 12.4 m, and a blue double door below a continuation of the SHI HAO Hot Pot BBQ board, which belongs to the corner and is shown on its model. No separate sign or listing identifies it, so no name is given. Read on the pE_L panorama rectified on the extension of Shi Hao\'s Lorong 13 face; heights carry about ±0.4 m.',
+  sources: [pano('pE_LD86BSAb8LSBZLrANuA', 245, 10, 100), pano('KZ8gY_VJ15F7O0jKFFNB8w', 255, 12, 100)],
+  colours: { wall: '#ece6d8', trim: '#ddd5c4', frame: '#f2f2ee', glass: '#3e474b', pier: '#ece6d8', back: '#3a3532', floor: '#9a978f' },
+  bands: [[12.2, 12.4, .3], [10.75, 10.95, .2], [7.85, 8.05, .2], [4.9, 5.1, .2]],
+  windows: [{ u: [1.4, 2.4], h: [9.0, 10.1], panes: 2, arched: true }, { u: [1.4, 2.4], h: [5.5, 6.9], panes: 2, arched: true }],
+  blocks: [{ name: 'blue double door', u: [1.2, 2.8], h: [.1, 2.4], out: -1.46, depth: .04, colour: '#4f7fb3' }, { name: 'dark board', u: [0, 4.0], h: [3.9, 4.9], out: .08, depth: .06, colour: '#3b3c3d' }],
+  piers: [[0, .3], [3.6, 4.0]],
+});
+
+export const lorong13 = [no269North, shiHaoNorth, no25, no2123, thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96, no269];
 /** The outline the elevation stands on: for a set-back place, the source outline with its front moved back. */
 export function lorong13Outline(poly, place) {
   if (!place.setback) return poly;
@@ -415,6 +459,8 @@ export function lorong13Outline(poly, place) {
 export const lorong13Frame = (poly, place) => frontageFrame(lorong13Outline(poly, place), place.frontEdge);
 export function lorong13Layout(place, width) {
   if (place.id === 'l13-21-23') return no2123Layout(width);
+  // Its frame runs north to south, so the two-storey bay by the corner is at the far end.
+  if (place.id === 'l13-269-north') return no269NorthLayout(width, false);
   if (place.single) {
     const boxes = [], mid = (a, b) => (a + b) / 2;
     const add = (name, u, y, out, w, h, depth, colour, glow = 0) => boxes.push({ name, u, y, out, w, h, depth, colour, glow });

@@ -149,12 +149,12 @@ On a single rectified frame, the party line between No. 25 and Nos. 21/23 appear
 - **Elevation:** two four-storey white houses sharing a blue stair tower with stacked hopper windows. Each upper floor has two windows under blue concrete hoods and louvred vents, and the north house's floors sit about 0.4 m above the south house's.
 - **Identity:** the south house has a Chinese hall signed 仁濟堂, and a door placard reads 21/23 GEYLANG LORONG 13. No listing for 仁濟堂 was found, and Yong Li Electrical Services (listed at 21B) has no sign, so the block is unnamed.
 
-## Still open on Lorong 13
+## The No. 269 continuation and the building north of Shi Hao (open questions 21 and 22)
 
-- **No. 269 continuation:** the coffeeshop's two-storey bay and single-storey wing north of its source way (open question 21).
-- **Narrow building by Shi Hao:** the four-storey building between the back lane and the Shi Hao corner (open question 22).
+- **No. 269's Lorong 13 wing (unnamed):** the corner coffeeshop continues north beyond its source way, where the source has no building. Rectified on `pE_L…` at the depth its vents triangulate (about 3.6 m forward, this drive's position error), it runs about **11 m**. That is less than the 13.5 m estimated in the question. It is a two-storey bay of about 6 m with paired vents, a pilaster and tiled eaves, then a tall single-storey wing with a white balustraded parapet to about 6.2 m, all under the shared awning. The authored footprint `l13-269-north` continues the source way's Lorong 13 face 11.0 m north and runs 8 m deep, its south edge on the Geylang Road row's rear line.
+- **The narrow building north of Shi Hao (unnamed):** a cream four-storey building about 4.0 m wide on Lorong 13, with banded storeys, a single arched casement on each upper floor, a parapet at about 12.4 m and a blue double door. The SHI HAO board continues along its base and is drawn on the corner's model. The authored footprint `l13-shi-hao-north` continues Shi Hao's Lorong 13 face 4.0 m north and runs 14 m back along the row's rear line, leaving the back lane open.
 
-Every other footprint on both sides of Lorong 13 is now modelled.
+Every footprint on both sides of Lorong 13 is now modelled.
 
 ## Omitted and estimated
 
@@ -163,4 +163,4 @@ Every other footprint on both sides of Lorong 13 is now modelled.
 
 ## Review
 
-Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16`, `?review=l13-12a`, `?review=sims-96` and `?review=gr-269-corner`.
+Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16`, `?review=l13-12a`, `?review=sims-96`, `?review=gr-269-corner`, `?review=l13-269-north` and `?review=l13-shi-hao-north`.

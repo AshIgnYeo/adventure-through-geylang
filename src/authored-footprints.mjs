@@ -243,6 +243,28 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'lorong-13-269-north', question: 21, approved: '2026-10-10',
+    evidence: 'The No. 269 corner coffeeshop continues north along Lorong 13 beyond source way 454254219, where the source has no building: a two-storey bay about 6 m long, then a tall single-storey wing with a balustraded parapet, about 11 m in all, read on the pE_L panorama rectified at the depth its vents triangulate (about 3.6 m in front of the source line, this drive\'s position error). The footprint continues the source way\'s Lorong 13 face 11.0 m north and runs 8 m deep, its south edge on the source rear line of the Geylang Road row.',
+    replaces: [],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '454254219').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const A = src[2], B = src[1], len = Math.hypot(B[0] - A[0], B[1] - A[1]), north = [(A[0] - B[0]) / len, (A[1] - B[1]) / len];
+      const east = [(src[3][0] - A[0]) / Math.hypot(src[3][0] - A[0], src[3][1] - A[1]), (src[3][1] - A[1]) / Math.hypot(src[3][0] - A[0], src[3][1] - A[1])];
+      const P1 = at(A, north, 11.0);
+      return [{ id: 'l13-269-north', street: 'Lorong 13 Geylang', number: null, levels: 2, outline: [A, P1, at(P1, east, 8), at(A, east, 8)] }];
+    },
+  },
+  {
+    id: 'lorong-13-shi-hao-north', question: 22, approved: '2026-10-10',
+    evidence: 'A narrow four-storey building stands between the back lane and the Shi Hao corner (No. 267), where the source has no building. Rectified on the extension of Shi Hao\'s Lorong 13 face, its front measures about 4.0 m; satellite imagery shows a flat roof strip about 3-4 m wide running back about 14 m from Lorong 13 along the rear line of the Geylang Road row. The footprint continues Shi Hao\'s authored Lorong 13 face 4.0 m north and runs 14 m back along that rear line.',
+    replaces: [],
+    build() {
+      const P0 = [38.32, 60.57], dirN = [-.170, -.985], west = [-.986, .168];
+      const P1 = at(P0, dirN, 4.0);
+      return [{ id: 'l13-shi-hao-north', street: 'Lorong 13 Geylang', number: null, levels: 4, outline: [P0, at(P0, west, 14), at(P1, west, 14), P1] }];
+    },
+  },
+  {
     id: 'sims-106-110', question: '8a', approved: '2026-10-10',
     evidence: 'Re-spacing of Sims Avenue Nos. 106–110, measured on 10 October 2026 from June 2024 ground-floor frames rectified 1.5 m in front of the source front, where the 108 pier aligns across three panoramas. The ground-floor piers confirm the source party lines at 20.76 m (the pier lettered 108) and 27.17 m (Amrise, No. 112, unchanged), measured along the front from the Fok Wai Kee corner. The 106/108 pier stands at about 15.0 m against the source 12.45 m. Red Dot Running Company\'s shopfront runs from that pier to Amrise, across the 108 pier, so the former Nos. 108 and 110 form one unit. An earlier reading of four uniform 7.1 m upper-storey bays was not borne out at ground level and is superseded.',
     replaces: ['682928753', '682928752', '682928751'],
