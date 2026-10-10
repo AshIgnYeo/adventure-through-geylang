@@ -462,6 +462,31 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
   - **Status:** none can be modelled yet.
 - **No. 96 Sims Avenue:** a plain white two-storey block with shutters and no signage. Not modelled.
 - **The pagoda-style building north of Sims Avenue, behind the Brandsbridge tent (way 475915911):** it stands beyond the study's north boundary. Not modelled.
+- **Lorong 11 west row, measured party lines (for open question 1):**
+  - **Method:** April 2024 panoramas `s5xU…`, `H9_p…`, `73in…`, `64XR…`, `8kEp…`, `H3-9…`, `QQNp…` and `aHF7…` stand about 10 m apart along the lane. They were rectified at the 0.6 m façade depth solved for Nos. 27–33. Each party line is read from the most square-on panorama and checked against its neighbours.
+  - **Position datum:** s is measured from No. 15's south front corner (-38.26, 19.94) towards No. 35's north corner (-59.42, -47.25), along the source front.
+
+  | Party line | Measured s (m) | Source s (m) | Evidence |
+  | --- | --- | --- | --- |
+  | Row start (No. 15) | 0.3 | 0 | building edge beside Hotel 81 Joy's yard |
+  | 15 / 17 | 9.3 | 6.40 | downpipe; No. 15 is a two-bay house (earlier triangulation 8.86 m) |
+  | 17 / 19 | 14.5 | 12.81 | downpipe beside Hok Tek Chi's blue windows |
+  | 19 / 21 | 19.8 | 19.22 | pilaster beside the Goodwood house |
+  | 21 / 23 | 25.0 | 25.62 | end of the Tibetan Buddhist Studies Society façade; plate 23 hangs there |
+  | 23 / 25 | about 31.0 | 32.03 | end of the plain three-storey No. 23 |
+  | 25 / 27 | 37.1 | 38.43 | pilaster; plate 27 beside it; No. 25 hoarded below a corrugated canopy |
+  | 27 / 29 | 44.3 | 44.83 | three-panorama parallax, spread under 0.3 m |
+  | 29 / 29A | 48.3 | — | roofline vents; Eng Lee Huat is about 4.0 m wide |
+  | 29A / 31 | about 54.2 | 51.24 | start of the Canton Wong board |
+  | 31 / 33 | about 58.3 | 57.65 | downpipe after the Canton Wong window |
+  | 33 / 35 | not resolved | 64.04 | plain continuous façade |
+  | Row end (No. 35) | about 69.5 | 70.44 | Zheng Li blade signs near 66–68 |
+
+  - **Uncertainty:** about ±0.3–0.5 m up to the 31 / 33 line, and more beyond it, where a 1 m disagreement between panoramas remains.
+- **Red Dot Running / Amrise row, 106–112 Sims Avenue, re-checked:**
+  - **Depth:** the 108 pier aligns across three June 2024 panoramas when the façade is about 1.5 m in front of the source front, not 3.25 m as east of Lorong 15.
+  - **Bays:** at that depth the upper storeys show four uniform bays of about 7.1 m, with party lines at about 7.0, 14.1, 21.2, 28.3 and 35.4 m from Fok Wai Kee's west corner. The source widths are 6.16, 8.31, 6.41 and 8.24 m, and the 108 pier stands on the third party line.
+  - **Status:** locked pending re-spacing (open question 8a).
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked
