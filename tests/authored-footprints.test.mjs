@@ -114,3 +114,10 @@ test('the merged Lorong 15 block is split around the measured Hotel 81 Spring fr
   const hotel = parts[1], frontLen = Math.hypot(hotel[3][0] - hotel[2][0], hotel[3][1] - hotel[2][1]);
   assert.ok(Math.abs(frontLen - 16.2) < .02, `${frontLen}`);
 });
+
+test('Lorong 11 Nos. 1–7 are merged behind a 5 m forecourt', () => {
+  const o = poly(map.buildings.find(b => b.id === 'l11-1-7'));
+  const before = ['1223407887', '1223407888', '1223407889', '1223407890'].reduce((s, id) => s + area(poly(source.buildings.find(b => b.id === id))), 0);
+  assert.ok(Math.abs(area(o) - (before - 21.07 * 5)) < 2, `${area(o)} vs ${before}`);
+  assert.equal(o.length, 4);
+});

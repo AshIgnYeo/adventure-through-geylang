@@ -353,3 +353,7 @@ Implemented **10 October 2026** as a dated April 2024 exterior, on a partial-blo
 ## Public Free Clinic Society 大眾醫院 headquarters, 10 Lorong 9 Geylang
 
 Implemented **10 October 2026** under open question 11. Three Lorong 9 panoramas agree only on a plane 8 m behind the source front, where the green curtain-wall tower spans the full 13.1 m frontage. The tower stands on a set-back authored footprint behind an open forecourt, which resolves the 9 October half-width blocker. See the [design brief](pfcs-design-brief.md).
+
+## Cico Flooring 志高地板, Nos. 1–7 Lorong 11 Geylang
+
+Implemented **10 October 2026** under open question 7. The single-storey timber-clad building with two hipped roofs, signed CICO FLOORING 志高地板 (listed at Nos. 1 and 7), stands on a merged footprint of the four source ways, behind a 5 m forecourt where three panoramas agree the façade stands. See the [design brief](cico-design-brief.md).

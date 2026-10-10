@@ -204,6 +204,24 @@ export const authoredFootprintGroups = [
       return [{ id: 'l9-10', street: 'Lorong 9 Geylang', number: '10', levels: 9, outline: clip(src, P, keepInward) }];
     },
   },
+  {
+    id: 'lorong-11-1-7', question: 7, approved: '2026-10-10',
+    evidence: 'One single-storey building with two orange-tiled hipped roofs and herringbone timber cladding stands across the four source ways for Nos. 1–7 Lorong 11, set back behind a paved forecourt. Three April 2024 panoramas rectified on planes parallel to the source front agree (the CICO FLOORING logo to within about 0.5 m) on a façade about 5 m behind it, along the whole 21 m run. The four ways are merged and the front 5 m is left open as the forecourt.',
+    replaces: ['1223407887', '1223407888', '1223407889', '1223407890'],
+    build(map) {
+      const out = id => map.buildings.find(b => b.id === id).coordinates.slice(0, -1).map(c => project(c, map.origin));
+      let whole = out('1223407887');
+      for (const id of ['1223407888', '1223407889', '1223407890']) whole = merge(whole, out(id));
+      const F0 = project(map.buildings.find(b => b.id === '1223407887').coordinates[0], map.origin);
+      const F1 = project(map.buildings.find(b => b.id === '1223407890').coordinates[1], map.origin);
+      const len = Math.hypot(F1[0] - F0[0], F1[1] - F0[1]), along = [(F1[0] - F0[0]) / len, (F1[1] - F0[1]) / len];
+      let inward = [-along[1], along[0]];
+      const c = whole.reduce((s, p) => [s[0] + p[0] / whole.length, s[1] + p[1] / whole.length], [0, 0]);
+      if (inward[0] * (c[0] - F0[0]) + inward[1] * (c[1] - F0[1]) < 0) inward = neg(inward);
+      const P = at(F0, inward, 5), keep = (along[0] * inward[1] - along[1] * inward[0]) >= 0 ? along : neg(along);
+      return [{ id: 'l11-1-7', street: 'Lorong 11 Geylang', number: '1–7', levels: 1, outline: clip(whole, P, keep) }];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {
