@@ -173,7 +173,7 @@ These are inspection starts, rather than navigation or tracking features.
 
 The original OpenStreetMap extract is retained at `public/osm-source.osm`. The preparation script produces `public/map.json`, preserving geographic coordinates, way identifiers, one-way tags and source building footprints. Projection and rendering use metres, without compressing the streets. The metre conversion is tested against an independent haversine calculation.
 
-The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 41 main road ways (Lorong 15 was added to the derived road set on 10 October 2026), 154 building outlines, two alley or footway ways and one Lorong 9 access-context way.
+The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 52 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026), 154 building outlines, two alley or footway ways and one Lorong 9 access-context way.
 
 This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 

@@ -6,6 +6,24 @@ Started: 10 October 2026.
 
 ## Open
 
+None at present.
+
+## Settled
+
+### Third batch, answered 10 October 2026
+
+The project owner chose the recommended option for each.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 20 | **Yes.** Re-space Lorong 13 Nos. 21–25 at the measured No. 25 \| 21/23 party line | Author three footprints; build No. 25 and Nos. 21/23 as unnamed exteriors |
+| 21 | **Yes.** Author a footprint for the No. 269 coffeeshop's continuation north along Lorong 13 | Labelled estimate, unnamed exterior |
+| 22 | **Yes.** Author a footprint for the narrow four-storey building between the back lane and the Shi Hao corner | Labelled estimate, unnamed exterior |
+| 23 | **Yes.** Re-space Sims Avenue Nos. 98–102 at the measured party lines | Author three footprints; BUILDERSmart's second frontage at No. 100, Nos. 98 and 102 unnamed |
+| 24 | **Yes.** Add Lorong 9, 10 and 12 to the derived road set | Regenerate `map.json`; footprints unchanged |
+
+The original wording of questions 20–24 is kept here:
+
 20. **Lorong 13 west row, Nos. 21–25: re-space at the measured party line?**
     - **Party line:** the line between No. 25 and the Nos. 21/23 block falls about 1.8 m south of the source line. No. 25 measures about 8.0 m wide (source 6.1 m), and Nos. 21/23 together about 12.4 m (source 14.1 m). The BUILDERSmart and Thirteen BBQ ways fit to within 0.4 m and are built.
     - **Depth, recorded rather than asked:** the April 2024 frames place this row about 2.6 m in front of its source line. Triangulation, the façade base in level frames and a June 2024 Sims Avenue frame all agree on that. However, the façade-to-façade street width measured from the same April panorama matches the source to within about 1 m, so a panorama position error explains it equally well; earlier sessions found 2–3 m errors at Bar @ Lorong 13 and the mosque. The row stays on its source front, as Sims Avenue did under question 9, and widths and heights do not depend on which explanation is right.
@@ -42,8 +60,6 @@ Started: 10 October 2026.
     - **Why:** Lorong 9 is in the retained OSM extract but not in the derived road set, like Lorong 15 before question 10. The newly modelled PFCS row, YWAM Singapore, Kim Court and The Diamond face bare ground where the road should be. ChongQingXiaoMian's signed face is on Lorong 12, which is likewise not derived.
     - **Recommendation:** yes. Add Lorong 9 (and Lorong 12, if its ways are in the extract) to `scripts/prepare-map.mjs` and regenerate `map.json`, as for Lorong 15. Building footprints are unchanged.
     - **Unlocks:** carriageways, markings and lamps on Lorong 9, and review starts on its west side, which currently straddles the study edge.
-
-## Settled
 
 ### Second batch, answered 10 October 2026
 

@@ -25,9 +25,10 @@ test('alley import keeps source geometry and the overlooked Lorong 11 footway', 
   // Protect every previously retained footprint, not just the adjacent buildings.
   for (const b of map.buildings) assert.deepEqual(b.coordinates, coordinates(b.id), b.id);
   assert.equal(map.buildings.length, 154);
-  // 34 road ways, plus the seven Lorong 15 ways added under open question 10; the Lorong 9 access way stays context only.
-  assert.equal(map.roads.length, 41, 'access context must not change existing frontage selection');
-  assert.equal(map.roads.some(r => r.id === '633797717'), false);
+  // 34 road ways, plus the seven Lorong 15 ways added under open question 10.
+  // 41 roads before Lorongs 9, 10 and 12 joined the derived set (open question 24); the access way is now one of them.
+  assert.equal(map.roads.length, 52, 'the derived road set is unchanged apart from the approved additions');
+  assert.ok(map.roads.some(r => r.id === templeAlley.accessId), 'the Lorong 9 access way is now a derived road');
   const [service, footway] = alleyRoutes(map);
   assert.deepEqual(service.b, footway.a);
   assert.ok(Math.abs(service.length - 53.2426) < .001);
