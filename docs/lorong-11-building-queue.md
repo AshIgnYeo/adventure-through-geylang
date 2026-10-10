@@ -943,4 +943,12 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
     - The sign reading ibis budget SAPPHIRE is on a building whose point is listed as ibis budget Singapore Tulip.
     - The sign reading ibis budget HOTEL AMETRINE is on a building whose point is listed as ibis budget Singapore Olive.
   - **Left unnamed, three hotels on one way:** D'Nova Hotel and JXIN HOTEL are listed, but both share way 454438326 with the ibis block. Naming them needs that way split (open question 30).
+- **Lorong 15 east and Sims Avenue Nos. 126–130 (`src/ring-a-layout.mjs`), unnamed exteriors:**
+  - The four-storey commercial block on the Geylang Road / Lorong 15 east corner (No. 301), with its corner and two side faces.
+  - No. 2 Lorong 15.
+  - The two- and three-storey row north of No. 2, set 3.2–3.4 m in front of its source front.
+  - The yard with shrine sheds and an old single-storey house.
+  - Sims Avenue Nos. 126, 128 and 130 (the Lorong 17 west corner).
+  - **Capture dates:** Lorong 15 has no June 2024 drive, so its faces are dated April 2024.
+  - **Skipped:** No. 134 (682928733), the Lorong 17 east corner. Its outline lies almost entirely outside the bounds, the two drives disagree on its position by 3–4 m, and its long face is on Lorong 17, which is not modelled. It stays generic.
 
