@@ -1,16 +1,18 @@
 // A visible corner within a larger OSM block, not a whole-block tenancy claim.
 export const mongkok = {
-  id: 'mongkok-dim-sum', name: 'Mongkok Dim Sum (October 2016 exterior)',
+  id: 'mongkok-dim-sum', name: 'Mongkok Dim Sum (June 2024 exterior)',
   address: '214 Geylang Road', sourceBuildingId: '454254202',
   geometrySource: 'source-edges-with-estimated-internal-division',
-  height: 10.1, streetReturn: 8.8, rearReturn: 15.8, canopyDepth: 1.3,
-  evidence: 'The named OSM point at No. 214 lies inside a larger, unnumbered block outline. The current Maps listing and Time Out address corroborate the corner location. The Red Marker SG panorama has October 2016 capture metadata (August 2017 displayed beside the contributor). Three visible exterior tiers, cream walls, red vertical lettering, green lower columns, red canopy and balcony railings guide this dated reconstruction. Height, internal division, fittings and furniture arrangement are estimates. The remainder of the block has no Mongkok identity; no private interior or legal boundary is asserted.',
+  height: 11.6, streetReturn: 8.8, rearReturn: 15.8, canopyDepth: 1.3,
+  evidence: 'The named OSM point at No. 214 lies inside a larger, unnumbered block outline. The current Maps listing and Time Out address corroborate the corner location. June 2024 Street View from Geylang Road and Lorong 8 shows the corner repainted since the October 2016 contributor panorama: taupe walls, red ground-floor walls and columns, dark red awnings, a red MONGKOK DIMSUM 24 HRS board and red vertical 旺角点心 lettering on the chamfer, balconies on the Geylang Road return with a blade sign at its west end, and windows and an awning along Lorong 8. Re-checked on 10 October 2026: the parapet stands about 11.5–12.5 m above the road, against an earlier 10.1 m estimate; panorama position errors here leave heights and the internal division as estimates. The remainder of the block has no Mongkok identity; no private interior or legal boundary is asserted.',
   sources: [
     'https://www.openstreetmap.org/node/4345449693',
     'https://www.openstreetmap.org/way/454254202',
     'https://www.timeout.com/singapore/restaurants/mongkok-dim-sum',
     'https://www.google.com/maps/search/?api=1&query=Mongkok+Dim+Sum+214+Geylang+Road',
     'https://www.google.com/maps/@1.3120804,103.8768422,12a,90y,200h,100t/data=!3m4!1e1!3m2!1sCIHM0ogKEICAgICEzfWY1gE!2e10',
+    'https://www.google.com/maps/@?api=1&map_action=pano&pano=kbMaxdnGfSxxcW_ZWuryZw&heading=169&pitch=10&fov=90',
+    'https://www.google.com/maps/@?api=1&map_action=pano&pano=Ek8gN_rkboAVG9ytJd-CNA&heading=230&pitch=10&fov=90',
   ],
 };
 

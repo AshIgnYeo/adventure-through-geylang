@@ -653,6 +653,15 @@ The owner's answers to the open questions allow re-spaced and authored footprint
     - The photographed front is about 20.3 m wide and runs parallel to Geylang Road, 8° off the source front. This is open question 25.
     - The same geometry explains the 2.8 m "pose error" recorded at Chen Hing: the façade simply stands behind much of the source front.
     - See the [references](lorong-11-references.md).
+  - **Mongkok Dim Sum (214 Geylang Road)** was rebuilt as a June 2024 exterior:
+    - The corner was repainted after the 2016 panorama. It is now taupe, with a red ground floor and a red 24 HRS board.
+    - The parapet is raised from 10.1 m to 11.6 m.
+    - The Lorong 8 face gains its windows and awning.
+    - See the [brief](mongkok-dim-sum-design-brief.md).
+  - **Leong Kee (251 Geylang Road)** was checked from June 2024 panoramas and kept:
+    - Its front plane agrees to within about 0.2 m along the frontage.
+    - The eave is about 6.8 m, against the model's 7.05 m.
+    - Recorded, not corrected: the ochre corner building ends about 8.9 m from the Lorong 11 corner, against the source party line at 9.70 m.
   - S.M. Khek Leow (No. 4) was re-measured by two-panorama triangulation. Its upper storey was rebuilt: the windows are about 1.0 m tall rather than 1.7 m, the arch crowns sit near 6.6 m rather than 7.1 m, and the eave is at about 7.55 m. See the [references](lorong-11-references.md).
 - **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
   - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).

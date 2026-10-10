@@ -20,6 +20,15 @@ Canopy projection is estimated at 1.3 m, with a 1.45 m concrete dining apron. Sp
 
 Confidence is high for the corroborated street address, moderate for the corner assignment and broad historical exterior, and low for exact height, internal division and present appearance. The restaurant's present listing does not establish that its October 2016 façade is unchanged.
 
+## June 2024 update (10 October 2026)
+
+The model was rebuilt as a dated **June 2024** exterior, following the approved re-check of older estimated models (open question 13). June 2024 Street View from Geylang Road (`kbMaxdnGfSxxcW_ZWuryZw`) and from the Lorong 8 junction (`Ek8gN_rkboAVG9ytJd-CNA`) shows the corner repainted since the 2016 contributor panorama.
+
+- **Appearance:** taupe walls, red ground-floor walls and columns, dark red awnings, and a red **MONGKOK DIMSUM 24 HRS** board above the chamfer awning, under the red vertical 旺角点心 lettering. A dark red blade sign stands at the west end of the Geylang Road return. The Lorong 8 face has three windows on each upper storey and an awning along its northern 10 m.
+- **Height:** the parapet stands about 11.5–12.5 m above the road. The two panoramas disagree here by up to 1 m, because of position errors; triangulating the chamfer from them does not close consistently, so the source outline is kept. The height is raised from 10.1 m to 11.6 m, and the storey bands, windows, balconies and lettering are raised in proportion.
+- **Estimates:** the internal division, five-foot-way depth, furniture and fine fittings.
+- **Lettering:** the board and glyphs are redrawn in original type.
+
 ## Review and validation
 
 Use `?review=mongkok-dim-sum` for the chamfer and `?review=mongkok-dim-sum-side` for the Geylang Road return. These starts remain within the existing walkable bounds; the far southern rear remains outside them.
