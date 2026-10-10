@@ -34,12 +34,23 @@ Under the queue rules, re-spaced or authored footprints need explicit approval. 
     - **Unlocks:** Hotel 81 Spring, the Lorong 15 west-side walk-ups (AhlulBayt Educational & Cultural Centre, Fu Shan Tan, Myths KTV) and the 291 corner.
     - **Related:** the Qionghai Association at about 137–139 Sims Avenue sits on source ways outside the derived map entirely.
 11. **Allow estimated partial-block splits of coarse source blocks?**
+    - **Also unlocks:** Wat Dhammasatis (233B Geylang Road), Hakka Chong's Association and Hailin Buddhist Centre (212A Geylang Road).
     - **Why:** the Mongkok precedent treats a partial-block identity as an explicit estimate.
     - **Unlocks:** Geylang Road south side (for example way 454438330), including the Nanyang Lian and Foochow Dionglok associations; the Public Free Clinic Society at 10 Lorong 9; and Hotel 81 Spring (way 454254281).
 
+## Evidence policy
+
+13. **Accept a signed occupant when published addresses disagree?**
+    - **Case:** the Mister Contracts signboard hangs on the house tagged No. 9 Lorong 13, but reads No. 5, while Google Maps gives No. 7.
+    - **Current rule:** both listing and signage must agree.
+    - **Decision needed:** whether a dated exterior named after a clearly signed occupant is acceptable, recording the conflict.
+14. **Re-measure older estimated models with the photogrammetry now in use?**
+    - **Candidates:** Hotel 81 Joy, Agape Centre, Hok Tek Chi and the Lok Fu (Guan Keat) corner use estimated heights and openings.
+    - **Method now available:** rectified panoramas with render-and-compare could replace those estimates.
+
 ## Project instructions
 
-12. **Remove or update the "verify GPT-6 Astra before building work" instruction in the building queue?** It was written for another model and was not followed in the 10 October 2026 session.
+15. **Remove or update the "verify GPT-6 Astra before building work" instruction in the building queue?** It was written for another model and was not followed in the 10 October 2026 session.
 
 ## Settled
 

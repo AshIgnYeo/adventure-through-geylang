@@ -426,7 +426,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **AiSecurityReady, 2 Lorong 11 (the grey conserved shophouse beside S.M. Khek Leow):** listed open at 2 Lor 11. April 2024 shows a CCTV supply-and-install shop under a WINA SALON board; Wina Salon is listed as permanently closed. The AiSecurityReady name itself was not seen. This is a candidate for a dated exterior, pending a frame that shows the name.
 - **Ming Li's Eating House 明利美食阁, 114 Sims Avenue (the Lorong 15 corner):** listed open 24 hours at 114 Sims Ave, with its signboard on the corner building in June 2024. A candidate, needing the corner and Lorong 15 elevations.
 - **Panorama position errors:** on Geylang Road (Nos. 237–245) and Lorong 13 (No. 1), the recorded panorama positions are 2–3 m off the source frame. Recorded camera positions alone should not be trusted for depth; calibrate against an existing model or the source frontage width.
-- **Sin Chew Tan's Clan Association 星洲陳氏公會:** its signboard was seen in June 2024 on a three-storey building on the Lorong 13 east side, above GANH XUA (Ganh Xua minimart, listed at 28 Lor 13 and temporarily closed). No listing for the association was found. Locked pending an address.
+- **Sin Chew Tan's Clan Association 星洲陳氏公會 (corrected):** its signboard was seen in June 2024 on a three-storey building on **Lorong 15**, above Ganh Xua by Homely Vietnam (listed at 28 Lor 15). It is not on Lorong 13 as first noted. That listing's point lies in Hotel 81 Spring's merged block, way 454254281. No address for the association was found. Locked with the Lorong 15 scope and partial-block questions.
 - **Geylang Road south side (Nos. 204–258):** Shaxian Eatery 沙县小吃 (210), ChongQingXiaoMian (258, at the Lorong 12 corner), Chang Beer (218), the TakeToys adult store and others are listed and signed in June 2024. Most of their source ways are coarse blocks (for example 454438330) that span several frontages, so they need partial-block splits first.
 - **Geylang Lor 9 Beef Kway Teow 芽龍九巷牛肉河粉, 237 Geylang Road:**
   - **Identity:** listed open as a hawker stall at No. 237. Its fascia and a 牛河大王 blade sign are on the pink four-storey block west of Chen Hing (green shutters, 藤樓 on the chamfered west corner).
@@ -443,6 +443,25 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Kim Court, Lorong 9:** listed at 11 Lor 9 Geylang (with Star Glass), but the KIM COURT lettering in June 2024 is on the yellow apartment block tagged No. 17, beside The Diamond. Both ways lie on the study's west boundary. Locked pending the address conflict.
 - **Key duplicating, 24 Lorong 13:** a key-cutting booth signed 配锁匙 / DUPLICATING matches the listing at No. 24, which Bookland Library Services shares. It is a generic trade sign rather than a name, so it is not modelled.
 - **No. 269 Geylang Road, the Lorong 13 corner:** Hong Wah Coffee Shop and Geylang Food Corner are listed open there, but the frontage shows a Khim Seng gas awning, a 麻辣空间 board and the closed BN Food Palace's 24-hour board. These conflict. Not modelled.
+- **Mister Contracts, the northern No. 9 house on Lorong 13 (way 1223773757):**
+  - **What the signboard says:** a full-resolution April 2024 frame reads its address line as **5 LORONG 13 GEYANG [sic], SINGAPORE 388643**, which is K Group's address. Google Maps gives No. 7.
+  - **Where it hangs:** on the house the source tags No. 9. Its southern neighbour (also tagged No. 9) has the MC Multi Skills banner and a vending machine.
+  - **Status:** with three different numbers for one signboard, the lock stands. See open question 13.
+- **Wat Dhammasatis วัดธรรมสาทิส, 233B Geylang Road #03-233:**
+  - **Identity:** listed open as a Buddhist temple. June 2024 shows its WAT DHAMMASATIS BUDDHIST CENTRE board and a Buddha image in the upper windows of the white four-storey building directly west of the Lorong 9 corner. A Durian & Fruits Experience Centre 榴莲鲜果体验馆 occupies the ground floor, where Fuyuan restaurant is also listed (No. 233).
+  - **Footprint:** source way 475158360 is a 15.8 m frontage block covering this building and two Peranakan shophouses to its west (Vietnam Unisex Concept, Lian Seng Weighing Scale).
+  - **Status:** locked pending a partial-block split (open question 11).
+- **Nos. 21/23 Lorong 13 (ways 1223454598 and 1223454597), the four-storey blue-and-white block:**
+  - **Signs:** a door placard reads 21/23 GEYLANG LORONG 13, and door plate 21 is visible. A Chinese hall signed 仁濟堂 occupies the south bay, with couplets and product posters. Yong Li Electrical Services is listed at 21B.
+  - **Gap:** no listing or published address for 仁濟堂 was found.
+  - **Status:** locked pending an identity source for the signed tenant.
+- **Other associations from the SFCCA directory:**
+  - **Ji Yang Cai Clan Association, 3 Lorong 9:** the site was under hoarding in June 2024, with "No 3" painted on it.
+  - **Teck Keow Association, 26A Lorong 15:** in the merged Lorong 15 block.
+  - **Hakka Chong's Association, 212A Geylang Road:** in the Mongkok block.
+  - **Status:** none can be modelled yet.
+- **No. 96 Sims Avenue:** a plain white two-storey block with shutters and no signage. Not modelled.
+- **The pagoda-style building north of Sims Avenue, behind the Brandsbridge tent (way 475915911):** it stands beyond the study's north boundary. Not modelled.
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked
