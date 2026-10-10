@@ -190,6 +190,24 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'geylang-223-227', question: 11, approved: '2026-10-10',
+    evidence: 'Partial-block split of the large source block 453797929 west of Lian Seng (No. 229), whose Geylang Road frontage runs past the study\'s west edge. On the NR4z panorama rectified 1.4 m in front of the source front, where triangulation puts the street piers, the three houses inside the study measure about 4.6, 5.2 and 4.8 m from Lian Seng\'s west wall; that wall itself appears about 4 m west of the source strip edge, which matches this drive\'s known along-street position error, so the widths are laid out from the strip edge. Cut lines run square to the front; the rest of the block, mostly beyond the study edge, stays one generic remainder.',
+    replaces: ['453797929'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '453797929').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const P0 = src[11], P1 = src[0], len = Math.hypot(P1[0] - P0[0], P1[1] - P0[1]);
+      const front = [(P1[0] - P0[0]) / len, (P1[1] - P0[1]) / len];
+      const inward = [-front[1], front[0]], cut = (inward[0] * (src[5][0] - P0[0]) + inward[1] * (src[5][1] - P0[1])) > 0 ? inward : neg(inward);
+      const [h227, h225, h223, rest] = strips(src, P0, front, cut, [4.6, 9.8, 14.6]);
+      return [
+        { id: 'gr-227', street: 'Geylang Road', number: null, levels: 2, outline: h227 },
+        { id: 'gr-225', street: 'Geylang Road', number: null, levels: 2, outline: h225 },
+        { id: 'gr-223', street: 'Geylang Road', number: null, levels: 2, outline: h223 },
+        { id: 'gr-221-west', street: 'Geylang Road', number: null, levels: null, outline: rest },
+      ];
+    },
+  },
+  {
     id: 'sims-106-110', question: '8a', approved: '2026-10-10',
     evidence: 'Re-spacing of Sims Avenue Nos. 106–110, measured on 10 October 2026 from June 2024 ground-floor frames rectified 1.5 m in front of the source front, where the 108 pier aligns across three panoramas. The ground-floor piers confirm the source party lines at 20.76 m (the pier lettered 108) and 27.17 m (Amrise, No. 112, unchanged), measured along the front from the Fok Wai Kee corner. The 106/108 pier stands at about 15.0 m against the source 12.45 m. Red Dot Running Company\'s shopfront runs from that pier to Amrise, across the 108 pier, so the former Nos. 108 and 110 form one unit. An earlier reading of four uniform 7.1 m upper-storey bays was not borne out at ground level and is superseded.',
     replaces: ['682928753', '682928752', '682928751'],

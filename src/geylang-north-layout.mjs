@@ -62,7 +62,44 @@ export const annex237 = {
   backFittings: [{ name: 'coffeeshop interior', u: [.6, 7.1], h: [.1, 3.1], colour: '#4a403a', glow: .05 }],
 };
 
-export const geylangNorth = [lianSeng, no231, annex237];
+// Nos. 223-227 (keys only), west of Lian Seng on the split of block 453797929 (open question 11); frames
+// run east to west from each house's east party line (u = 0 at the Lian Seng side for gr-227).
+const westNote = 'It stands on the owner-approved split of block 453797929 (open question 11), whose widths were read on the NR4z panorama rectified at the triangulated depth; this drive\'s along-street position error puts every frontage here about 4 m west of the source lines, so the widths are laid out from the source strip edge. Heights carry about ±0.4 m.';
+const westPanos = [pano('NR4z2s7rbrbx9IaXh2FIFg', 345, 8, 90), pano('2Y21iC-Tp9xBEWdsRjwK4w', 320, 12, 100)];
+const peranakanWest = (id, extra) => ({ id, buildingIds: [id], kind: 'unnamed', unnamed: true, frontEdge: { 'gr-227': 5, 'gr-225': 4, 'gr-223': 2 }[id], reviewRoad: 'Geylang Road',
+  height: 6.87, ceiling: 2.67, fiveFootWay: 2.0, shellInset: .1, roof: { type: 'gable', ridge: 8.6, ridgeDepth: .4, colour: '#8e5a46' }, sources: westPanos, ...extra });
+
+export const no227 = peranakanWest('gr-227', {
+  name: 'Red Leaf Karaoke house, Geylang Road (June 2024 exterior, occupant not identified)', address: 'Geylang Road, west of No. 229',
+  evidence: 'The cream Peranakan shophouse directly west of Lian Seng, with arched shuttered windows under the shared ornamented frieze, a yellow clan-association board upstairs and a RED LEAF Karaoke Pub board over a lantern-hung front. Redleaf Karaoke is listed only at 73 Maude Road and as temporarily closed, and the association board could not be read in full, so no name is given and the boards are blank. ' + westNote,
+  colours: { wall: '#e6e2cf', trim: '#dfe2d2', frame: '#8aa48a', glass: '#c9d9b4', pier: '#e8e5d6', back: '#3a2f2c' },
+  windows: [{ u: [.8, 1.9], h: [3.08, 4.83], panes: 2, arched: true }, { u: [2.6, 3.7], h: [3.08, 4.83], panes: 2, arched: true }],
+  blocks: [...frieze(4.6), ...roundels([.5, 2.25, 4.0]), { name: 'blank yellow association board', u: [1.0, 3.6], h: [5.0, 5.5], out: .08, depth: .05, colour: '#e3c46a' }, { name: 'blank red-and-black board', u: [.3, 4.3], h: [2.2, 2.65], out: .08, depth: .06, colour: '#2b1f1d' }],
+  piers: [[.1, .35], [4.3, 4.6]],
+  backFittings: [{ name: 'lantern-hung front', u: [.4, 4.2], h: [.1, 2.1], colour: '#4a2a2a', glow: .1 }],
+});
+export const no225 = peranakanWest('gr-225', {
+  name: 'Karaoke-mural house, Geylang Road (June 2024 exterior, occupant not identified)', address: 'Geylang Road, west of No. 229',
+  evidence: 'The next Peranakan shophouse west, partly hidden by a street tree, with the same frieze and a purple butterfly KARAOKE mural across its ground floor; no listing could be matched to it, so no name is given and the mural is a plain panel. ' + westNote,
+  colours: { wall: '#e6e2cf', trim: '#dfe2d2', frame: '#5f7a6a', glass: '#c9d9b4', pier: '#e8e5d6', back: '#3a2f2c' },
+  windows: [{ u: [1.0, 2.1], h: [3.08, 4.83], panes: 2, arched: true }, { u: [3.1, 4.2], h: [3.08, 4.83], panes: 2, arched: true }],
+  blocks: [...frieze(5.2), ...roundels([.6, 2.6, 4.6]), { name: 'purple mural panel', u: [.4, 3.2], h: [.1, 2.4], out: -1.9, depth: .03, colour: '#6a4a8a' }],
+  piers: [[.1, .4], [4.9, 5.2]],
+  backFittings: [{ name: 'dark doorway', u: [3.4, 4.6], h: [.1, 2.3], colour: '#2b2826' }],
+});
+export const no223 = peranakanWest('gr-223', {
+  name: 'Shuttered Peranakan house, Geylang Road (June 2024 exterior, occupant not identified)', address: 'Geylang Road, west of No. 229',
+  evidence: 'A cream Peranakan shophouse with louvred windows between tiled pilasters under the ornamented frieze, and a roller shutter under a black fascia carrying a red board reading Geylang Lor 9 Fresh F[rog Porridge]. The Frog Porridge operator lists only 235 Geylang Road (modelled) and this shop was shuttered, so no name is given and the board is blank. ' + westNote,
+  colours: { wall: '#e6e2cf', trim: '#dfe2d2', frame: '#4a4f52', glass: '#3c4549', pier: '#e8e5d6', back: '#3a2f2c' },
+  windows: [{ u: [.9, 2.0], h: [3.08, 4.83], panes: 2 }, { u: [2.8, 3.9], h: [3.08, 4.83], panes: 2 }],
+  blocks: [...frieze(4.8), ...pilasterTiles([[.4, .8], [2.15, 2.65], [4.05, 4.45]], '#9fc4c0'), { name: 'black fascia', u: [.2, 4.6], h: [2.3, 2.67], out: .06, depth: .05, colour: '#1c1c1d' }, { name: 'blank red board', u: [1.5, 3.4], h: [2.0, 2.3], out: .08, depth: .04, colour: '#8a2a2a' }],
+  piers: [[.1, .4], [4.5, 4.8]],
+  backFittings: [{ name: 'roller shutter', u: [.4, 4.4], h: [.1, 2.0], colour: '#b9bbb6' }],
+});
+
+export const geylangNorth = [lianSeng, no231, annex237, no227, no225, no223];
 export const geylangNorthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const geylangNorthLayout = (place, width) => simpleHouseLayout(width, place);
-export const geylangNorthReviews = (place, frame) => facing(frame, place.id, 11, 14);
+// The road is near the study's south edge here, so the houses west of Lian Seng are reviewed from closer in.
+const closeReview = { 'gr-227': 7.5, 'gr-225': 7.5, 'gr-223': 5.5 };
+export const geylangNorthReviews = (place, frame) => facing(frame, place.id, closeReview[place.id] ?? 11, 14);

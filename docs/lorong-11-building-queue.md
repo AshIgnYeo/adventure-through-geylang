@@ -552,7 +552,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 ### Q61. Lian Seng Weighing Scale Co., 229 Geylang Road, completed
 
 - **Address / footprint:** listed at 229 Geylang Rd, 389289, with its board on the `gr-229` strip west of Wat Dhammasatis (open question 11). No. 231 next door (Vietnam Unisex Concept, no listing) is an unnamed exterior.
-- **Validation / completion:** tests, type check and build passed. The named-place total is 69. See the [Geylang Road north brief](geylang-north-brief.md).
+- **Validation / completion:** tests, type check and build passed. The named-place total is 69. See the [Geylang Road north brief](geylang-north-brief.md). The three in-bounds houses west of Lian Seng followed later as unnamed exteriors on a split of block 453797929.
 
 ### Q62–Q64. Monster Ink (240), Shadow Tattoo (244) and the Nanyang Lian Clan Association building (248), Geylang Road south side, completed
 

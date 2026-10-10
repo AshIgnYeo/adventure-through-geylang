@@ -100,6 +100,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=wat-dhammasatis
 /?review=lian-seng
 /?review=gr-231
+/?review=gr-227
 /?review=gr-237-annex
 /?review=tian-tian
 /?review=taketoys
@@ -236,7 +237,7 @@ Detailed provenance is available in:
 - [ibis budget Singapore Gold design brief](docs/ibis-gold-brief.md)
 - [Sims Avenue north side brief](docs/sims-north-row-brief.md)
 - [Lorong 9 brief](docs/lorong-9-brief.md)
-- [Geylang Road north side: Lian Seng and No. 231](docs/geylang-north-brief.md)
+- [Geylang Road north side, west of the Lorong 9 corner](docs/geylang-north-brief.md)
 - [Geylang Road south side, Nos. 218–250](docs/geylang-south-brief.md)
 - [Lorong 15 brief](docs/lorong-15-brief.md)
 
