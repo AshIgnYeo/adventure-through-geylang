@@ -129,7 +129,87 @@ export const no200 = {
   ],
 };
 
-export const ringWest = [no221West, corner1939, no198, no200];
+// Sims Avenue west of Lorong 9 and Lorong 9's west side.
+// Rozel Furniture: triangulated from lKJT... and 7hgj..., the five-foot-way columns stand 0.4-0.6 m in front of
+// the source front at 0.7, 5.2, 10.0 and 14.6 m from the west end and the building ends at 24.8 m. Heights x0.94.
+export const rozel = {
+  id: 'rozel-furniture', buildingIds: ['439168683'], kind: 'rozel-furniture', frontEdge: 3, reviewRoad: 'Sims Avenue',
+  name: 'Rozel Furniture (June 2024 exterior)', address: '51 Sims Avenue',
+  height: 8.7, ceiling: 3.8, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a7a39c' },
+  evidence: 'Google Maps lists Rozel Furniture Sims Avenue, a furniture store open in October 2026, at 51 Sims Ave, Singapore 387414, and its point lies inside this source way. June 2024 Street View shows maroon Rozel furniture 一站式家具广场 boards and furniture photo banners across the five-foot way of a pale pink two-storey building with black-framed windows under louvred vents, a yellow eave and a set-back yellow-edged top storey, on the north side of Sims Avenue. The listing places the store in the Geylang Square Flatted Factory Building; no claim is made about the rest of that building. Columns and building ends were triangulated from two June 2024 panoramas and heights read on that plane; the façade is kept on the source front, whose east 2.6 m is drawn as part of the building although the photographed building ends there. Banners are plain panels; stock and the interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Rozel+Furniture+51+Sims+Avenue', way('439168683'), pano('lKJTqy9UA5LpPhL8wtwzcw', 14, 15, 100), pano('7hgj4HMwK3e8jI1KlxTaMQ', 344, 15, 100)],
+  colours: { wall: '#e9dcd8', trim: '#ddd2ce', frame: '#1f2224', glass: '#2e3437', pier: '#ece2de', back: '#3a3532', floor: '#b8b2a6' },
+  bands: [[8.45, 8.7, .3, '#efe6e2'], [7.65, 7.98, .7, '#e3c13a']],
+  windows: [[1.7, 4.3], [6.8, 9.4], [11.1, 13.8], [15.2, 17.8], [19.2, 21.8], [22.8, 23.5], [23.8, 24.6]].map(u => ({ u, h: [5.29, 6.52], panes: u[1] - u[0] > 1 ? 4 : 1 })),
+  vents: [[1.7, 4.3], [6.8, 9.4], [11.1, 13.8], [15.2, 17.8], [19.2, 21.8], [22.8, 24.6]].map(u => ({ u, h: [6.8, 7.32] })),
+  blocks: [
+    { name: 'photo banner', u: [4.4, 14.0], h: [3.85, 5.1], out: .08, depth: .04, colour: '#8a7e6e' },
+    { name: 'photo banner', u: [18.0, 24.8], h: [3.85, 5.1], out: .08, depth: .04, colour: '#4c4a4a' },
+  ],
+  boards: [{ u: [.4, 4.3], h: [3.85, 5.15], out: .1 }, { u: [14.1, 17.9], h: [3.85, 5.15], out: .1 }],
+  piers: [[.45, .9], [4.95, 5.4], [9.75, 10.2], [14.35, 14.8], [19.1, 19.55], [24.4, 24.85]],
+  rooftop: [{ u: [4.4, 10.2], top: 9.9, setback: 3.0, depth: 6.0, colour: '#efe6e2' }],
+  backFittings: [{ name: 'showroom glazing', u: [10.3, 24.3], h: [.3, 3.3], colour: '#5a4a3e', glow: .15 }, { name: 'closed bay', u: [.9, 10.0], h: [.1, 3.6], colour: '#e2d6d2' }],
+};
+
+// The block behind Rozel Furniture, mostly hidden from Sims Avenue: drawn as massing only.
+export const behindRozel = {
+  id: 'sims-51-rear', buildingIds: ['1223603464'], kind: 'unnamed', unnamed: true, massing: true, height: 9.9, colour: '#e6dcd6',
+  name: 'Block behind Rozel Furniture, Sims Avenue (massing only)', address: 'Sims Avenue, north side, west of Lorong 9',
+  evidence: 'A source way directly behind the Rozel Furniture building, hidden from Sims Avenue in June 2024 Street View apart from roof structures above the eave. Drawn as plain massing at the height of the set-back storey seen over Rozel; its form and use are not established.',
+  sources: [way('1223603464'), pano('7hgj4HMwK3e8jI1KlxTaMQ', 344, 15, 100)],
+};
+
+// No. 56 Sims Avenue: triangulated from lKJT... and UAXP..., the front runs 0.45-12.76 m west from the east corner,
+// 0.6-0.75 m in front of the source front, with round columns at 3.5 and 9.7 m. Heights x0.93.
+export const no56Sims = {
+  id: 'sims-56', buildingIds: ['1223603461'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Sims Avenue', review: [-13, 9],
+  name: 'Neoclassical hotel building, 56 Sims Avenue (June 2024 exterior, operator not identified)', address: '56 Sims Avenue',
+  height: 16.0, ceiling: 4.7, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a5a39e' },
+  evidence: 'June 2024 Street View shows a white four-storey neoclassical building with a pedimented centre bay of projecting windows between two round full-height columns, balconied side wings, an arched top window, round windows on its east side and a HI HOTEL board and 56 SIMS AVENUE plate over the entrance. Google Maps now lists Amrise Hotel Geylang at this point, so the operator conflicts and no name is given; the boards are blank. Columns and edges were triangulated from two June 2024 panoramas and heights read on that plane.',
+  sources: [way('1223603461'), pano('lKJTqy9UA5LpPhL8wtwzcw', 193, 15, 100), pano('UAXPg6N3nfoHWJGHpB3X6g', 160, 15, 100)],
+  colours: { wall: '#ecebe6', trim: '#d6d5cf', frame: '#e6e5df', glass: '#4a5558', pier: '#ecebe6', back: '#3a3836', floor: '#b4b0a8' },
+  bands: [[15.6, 16.0, .4], [4.7, 4.85, .3]],
+  windows: [
+    ...[[1.0, 2.9], [10.4, 12.3]].flatMap(u => [6.02, 9.41, 12.67].map(b => ({ u, h: [b, b + 1.5], panes: 2 }))),
+    ...[[4.2, 6.5], [6.7, 9.0]].flatMap(u => [6.02, 9.41, 12.67].map(b => ({ u, h: [b, b + 1.6], panes: 3, out: .35 }))),
+    { u: [4.4, 8.8], h: [14.4, 15.3], panes: 4, arched: true },
+  ],
+  blocks: [
+    ...[3.5, 9.67].map(c => ({ name: 'round column', u: [c - .28, c + .28], h: [4.85, 15.6], out: .3, depth: .56, colour: '#f2f1ec' })),
+    { name: 'pediment', u: [3.9, 9.3], h: [16.0, 17.2], out: .1, depth: .3, colour: '#ecebe6' },
+    ...[[.6, 3.2], [10.1, 12.6]].flatMap(u => [8.0, 11.3].map(y => ({ name: 'balcony', u, h: [y, y + 1.0], out: .45, depth: .9, colour: '#e3e2dc' }))),
+    { name: 'blank hotel board', u: [3.4, 9.6], h: [4.76, 5.79], out: .15, depth: .08, colour: '#2f3236' },
+    { name: 'blank address plate', u: [9.9, 12.3], h: [4.6, 5.2], out: .12, depth: .05, colour: '#2f3236' },
+  ],
+  piers: [[.45, .9], [12.3, 12.75]],
+  backFittings: [{ name: 'hotel lobby', u: [3.6, 9.6], h: [.6, 3.4], colour: '#3a3a36', glow: .2 }, { name: 'glass blocks', u: [10.2, 12.0], h: [.5, 3.6], colour: '#c9d0cf' }],
+};
+
+// No. 21 Lorong 9: two June 2024 panoramas 10 m apart agree on the source front to 0.2 m. The frame runs north
+// from the south corner; the louvred core and balcony slabs every 3.45 m rise to a roof at about 26.8 m.
+const l9Slabs = [5.0, 8.45, 11.9, 15.35, 18.8, 22.25];
+export const no21L9 = {
+  id: 'l9-21', buildingIds: ['1223407892'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 9 Geylang',
+  name: 'Apartment block, 21 Lorong 9 Geylang (June 2024 exterior)', address: '21 Lorong 9 Geylang',
+  height: 26.8, ceiling: 3.9, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f918f' },
+  evidence: 'June 2024 Street View shows an eight-storey apartment block set behind a beige boundary wall and street trees: a full-height timber-louvred core, glass-railed balconies on every upper storey, a corrugated canopy over the ground floor and a roof pergola. No name was seen, so none is given. Two panoramas 10 m apart agree on the source front to 0.2 m; heights were read there, the roofline to about ±1.5 m. The pergola is omitted.',
+  sources: [way('1223407892'), pano('XSJ66Zf6ViZ31eb-BNXBhg', 275, 20, 100), pano('v1pxfTUV-xtUOnPRv9LHTw', 285, 15, 100)],
+  colours: { wall: '#d9d7d0', trim: '#c9c7c0', frame: '#9ea7a8', glass: '#4f5c60', pier: '#d9d7d0', back: '#3a3836', floor: '#a9a59c' },
+  bands: [[26.5, 26.8, .3]],
+  windows: [[.6, 3.6], [7.8, 10.6]].flatMap(u => l9Slabs.map(y => ({ u, h: [y + .2, y + 2.6], panes: 3 }))),
+  blocks: [
+    { name: 'louvred core', u: [4.2, 7.3], h: [4.6, 26.6], out: .15, depth: .3, colour: '#a59684' },
+    ...[[.3, 4.1], [7.4, 10.9]].flatMap(u => l9Slabs.map(y => ({ name: 'balcony slab', u, h: [y - .2, y], out: .6, depth: 1.2, colour: '#e2e0d9' }))),
+    ...[[.3, 4.1], [7.4, 10.9]].flatMap(u => l9Slabs.map(y => ({ name: 'glass railing', u, h: [y, y + 1.0], out: 1.15, depth: .05, colour: '#a7c3c6' }))),
+    { name: 'corrugated canopy', u: [1.0, 10.0], h: [3.8, 4.1], out: 1.0, depth: 2.0, colour: '#9fa3a2' },
+    { name: 'boundary wall', u: [0, 11.0], h: [0, 2.5], out: 3.5, depth: .2, colour: '#d6b483' },
+  ],
+  piers: [[0, .35], [10.7, 11.05]],
+  backFittings: [{ name: 'ground floor', u: [.4, 10.6], h: [.1, 3.6], colour: '#4a4842' }],
+};
+
+export const ringWest = [no221West, corner1939, no198, no200, rozel, behindRozel, no56Sims, no21L9];
 export const ringWestFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringWestLayout = (place, width) => simpleHouseLayout(width, place);
 // Buildings straddling the west edge are reviewed from an oblique start inside the walkable bounds.

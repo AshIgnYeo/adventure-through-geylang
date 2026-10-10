@@ -930,4 +930,9 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - No. 198 (454254201): a grey four-storey office block with multiple tenants, plus a narrow cream house at its west end.
   - Way 454254200: cream Art Deco shophouses with a curved west corner.
   - **Method:** all four were triangulated from two June 2024 panoramas. Their depth offsets range from 0.9 m behind to 1.3 m in front of the source fronts, and heights were corrected for that. The two blocks that straddle the west edge use oblique review starts inside the walkable bounds.
+- **North-west corner (also in `src/ring-west-layout.mjs`):**
+  - **Rozel Furniture**, 51 Sims Avenue (439168683), **named**: listed open, with its Maps point inside the way and its maroon boards on the building in June 2024. Its columns were triangulated from two panoramas.
+  - The block behind it (1223603464) is drawn as massing only, since it is hidden from Sims Avenue.
+  - The neoclassical building at **56 Sims Avenue** (1223603461) is signed HI HOTEL in June 2024, but Google Maps now lists Amrise Hotel Geylang at its point. The operator conflicts, so it is unnamed.
+  - **21 Lorong 9** (1223407892) is an eight-storey apartment block with a louvred core and glass-railed balconies, roof at about 26.8 m.
 
