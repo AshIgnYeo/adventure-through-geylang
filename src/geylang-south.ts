@@ -50,6 +50,13 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
     ],
     awning: '#c8463a', valance: plain('#b23c32'),
   },
+  'chongqing-xiaomian': {
+    boards: [
+      (c, w, h) => { c.fillStyle = '#d42a2b'; c.fillRect(0, 0, w, h); text(c, '重 庆 小 面', w / 2, h * .55, h * .7, '#f6f1ec', '"Kaiti SC", "STKaiti", serif', '900', w * .9); },
+      (c, w, h) => { c.fillStyle = '#1c1c1d'; c.fillRect(0, 0, w, h); for (const [i, ch] of [...'重庆小面'].entries()) { c.fillStyle = '#e8c890'; c.beginPath(); c.arc(w * (.12 + i * .13), h * .45, h * .32, 0, Math.PI * 2); c.fill(); text(c, ch, w * (.12 + i * .13), h * .47, h * .4, '#3a2a1e', '"Kaiti SC", serif', '900'); } text(c, 'Chong Qing Noodles', w * .3, h * .9, h * .14, '#f2f2ee'); },
+    ],
+    awning: '#a8322e', valance: (c, w, h) => { c.fillStyle = '#962a28'; c.fillRect(0, 0, w, h); },
+  },
   'tian-tian': {
     boards: [(c, w, h) => {
       c.fillStyle = '#c42b2b'; c.fillRect(0, 0, w, h);

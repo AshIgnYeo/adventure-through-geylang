@@ -78,3 +78,10 @@ Use `?review=gr-236`, `?review=gr-238`, `?review=monster-ink`, `?review=gr-242`,
 
 Use `?review=gr-218`, `?review=tian-tian`, `?review=taketoys`, `?review=gr-224`, `?review=gr-228` and `?review=gr-230`.
 
+## ChongQingXiaoMian 重庆小面, No. 258 (the Lorong 12 east corner)
+
+- **Identity:** Google Maps lists ChongQingXiaoMian - Geylang Lor 12, a coffee shop, at 258 Geylang Rd, open in October 2026, with its point inside the corner. June 2024 shows its red 重庆小面 boards and a Chong Qing Noodles picture board on the cream-and-orange two-storey corner building east of Lorong 12, with tables under a red awning along Lorong 12.
+- **Footprint:** source block 454438318 runs past the study's east edge. The registered satellite roof of the corner building ends about 16.8 m along the Geylang Road front, so the block is split there (open question 11), as `gr-258`, leaving a generic remainder.
+- **Modelling:** the signed long face on Lorong 12 is the front. Lorong 12 is not a derived road, and the building lies beyond the walkable bounds, so it has no review start.
+- **Heights:** from two oblique frames, ±1 m. The ground storey reaches about 4 m and the eaves about 8 m.
+

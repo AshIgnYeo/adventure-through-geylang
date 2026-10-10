@@ -208,6 +208,22 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'geylang-258', question: 11, approved: '2026-10-10',
+    evidence: 'Partial-block split of source block 454438318 east of Lorong 12, which runs past the study\'s east edge. The registered satellite roof of the two-storey ChongQingXiaoMian corner building ends about 16.8 m along the Geylang Road front from the Lorong 12 corner, where a row of pitched roofs begins; the cut runs square to the front there, and the rest of the block, mostly beyond the study edge, stays one generic remainder.',
+    replaces: ['454438318'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '454438318').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const P0 = src[0], P1 = src[1], len = Math.hypot(P1[0] - P0[0], P1[1] - P0[1]);
+      const front = [(P1[0] - P0[0]) / len, (P1[1] - P0[1]) / len];
+      const inward = [-front[1], front[0]], cut = (inward[0] * (src[2][0] - P0[0]) + inward[1] * (src[2][1] - P0[1])) > 0 ? inward : neg(inward);
+      const [corner, rest] = strips(src, P0, front, cut, [16.8]);
+      return [
+        { id: 'gr-258', street: 'Geylang Road', number: '258', levels: 2, outline: corner },
+        { id: 'gr-260-east', street: 'Geylang Road', number: null, levels: null, outline: rest },
+      ];
+    },
+  },
+  {
     id: 'sims-106-110', question: '8a', approved: '2026-10-10',
     evidence: 'Re-spacing of Sims Avenue Nos. 106–110, measured on 10 October 2026 from June 2024 ground-floor frames rectified 1.5 m in front of the source front, where the 108 pier aligns across three panoramas. The ground-floor piers confirm the source party lines at 20.76 m (the pier lettered 108) and 27.17 m (Amrise, No. 112, unchanged), measured along the front from the Fok Wai Kee corner. The 106/108 pier stands at about 15.0 m against the source 12.45 m. Red Dot Running Company\'s shopfront runs from that pier to Amrise, across the 108 pier, so the former Nos. 108 and 110 form one unit. An earlier reading of four uniform 7.1 m upper-storey bays was not borne out at ground level and is superseded.',
     replaces: ['682928753', '682928752', '682928751'],

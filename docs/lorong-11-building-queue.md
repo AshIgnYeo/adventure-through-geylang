@@ -611,6 +611,11 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Lock resolved:** the 10 October Kim Court lock. The KIM COURT / 11 pillar triangulates inside the way tagged 11, and The Diamond's lettering is on the way tagged 17; listings, plates and tags agree. No. 7A is unnamed, and the No. 3 and No. 5 construction sites are shown hoarded.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 86. See the [Lorong 9 brief](lorong-9-brief.md).
 
+### Q79. ChongQingXiaoMian 重庆小面, 258 Geylang Road (the Lorong 12 corner), completed
+
+- **Address / footprint:** listed at No. 258 with its point in the corner. Block 454438318 is split at the corner building's satellite roof edge (open question 11). This settles the 10 October lead.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 87. See the [Geylang Road south brief](geylang-south-brief.md).
+
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
 
 - **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).

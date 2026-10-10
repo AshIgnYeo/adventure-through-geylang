@@ -239,7 +239,27 @@ export const no230 = {
   backFittings: [{ name: 'fruit stall', u: [2.0, 7.8], h: [.1, 3.0], colour: '#6a3a2a', glow: .08 }],
 };
 
-export const geylangSouth = [no218, tianTian, takeToys, no224, no228, no230, no236, no238, monsterInk, no242, shadowTattoo, no246, nanyangLian, no250];
+// No. 258, ChongQingXiaoMian, the two-storey corner east of Lorong 12 on the split of block 454438318.
+// Its signed long face is on Lorong 12 (edge 3, u south from the Geylang Road corner), behind covered
+// dining; Lorong 12 is not in the derived road set.
+export const chongQing = {
+  id: 'chongqing-xiaomian', buildingIds: ['gr-258'], kind: 'chongqing-xiaomian', frontEdge: 3, reviewRoad: 'Geylang Road',
+  name: 'ChongQingXiaoMian 重庆小面 (June 2024 exterior)', address: '258 Geylang Road (Lorong 12 corner)',
+  height: 8.0, ceiling: 4.0, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'Google Maps lists ChongQingXiaoMian - Geylang Lor 12, a coffee shop, at 258 Geylang Rd, Singapore 389314, open in October 2026, its point inside the corner strip, and June 2024 Street View shows its red 重庆小面 boards and a picture board reading Chong Qing Noodles on the cream-and-orange two-storey corner building east of Lorong 12, with tables under a red awning along Lorong 12. The building stands on the owner-approved split of block 454438318 (open question 11), whose east part runs beyond the study edge. Heights come from two oblique June 2024 frames with the wall somewhere between the source edge and the satellite roof edge 3.5 m inside it, so they carry about ±1 m: the ground storey to about 4 m, eaves about 8 m. The Geylang Road face is simplified to its windows. Tables, menus and the interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=ChongQingXiaoMian+258+Geylang+Road', 'https://www.openstreetmap.org/way/454438318', pano('GoN_sSIIHBlMwIISLNgVww', 120, 12, 90), pano('_w5yHraTw78BWJJ4wn1RSQ', 150, 10, 100)],
+  colours: { wall: '#efd89a', trim: '#e8a072', frame: '#3a3e40', glass: '#3e474b', pier: '#efe3c4', back: '#3a2f2a', floor: '#a49a8f' },
+  bands: [[7.8, 8.0, .6, '#e9cf8a'], [4.0, 4.4, .3, '#e8a072']],
+  windows: [{ u: [1.2, 3.2], h: [5.0, 6.6], panes: 2 }, { u: [5.8, 7.6], h: [5.0, 6.6], panes: 2 }, { u: [10.2, 11.8], h: [5.0, 6.6], panes: 2 }, { u: [13.2, 14.2], h: [5.0, 6.6], panes: 1 }],
+  blocks: [{ name: 'orange upper wall', u: [8.6, 19.9], h: [4.4, 7.8], out: .02, depth: .04, colour: '#e8a072' }],
+  board: { u: [1.0, 5.6], h: [4.45, 5.0], out: .08 },
+  boards: [{ u: [8.8, 13.0], h: [4.45, 5.0], out: .08 }],
+  awning: { from: .2, to: 19.7, wall: 3.9, front: 2.9, depth: 3.0, valance: .35 },
+  piers: [[0, .5], [19.5, 19.98]],
+  backFittings: [{ name: 'coffeeshop front', u: [.6, 19.3], h: [.1, 3.6], colour: '#4a3a2e', glow: .1 }],
+};
+
+export const geylangSouth = [chongQing, no218, tianTian, takeToys, no224, no228, no230, no236, no238, monsterInk, no242, shadowTattoo, no246, nanyangLian, no250];
 export const geylangSouthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const geylangSouthLayout = (place, width) => simpleHouseLayout(width, place);
-export const geylangSouthReviews = (place, frame) => facing(frame, place.id, 12, 18);
+export const geylangSouthReviews = (place, frame) => place.id === 'chongqing-xiaomian' ? [] : facing(frame, place.id, 12, 18);
