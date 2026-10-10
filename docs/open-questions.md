@@ -16,7 +16,7 @@ The project owner chose the recommended option for each.
 
 | # | Decision | What follows |
 | --- | --- | --- |
-| 20 | **Yes.** Re-space Lorong 13 Nos. 21–25 at the measured No. 25 \| 21/23 party line | Author three footprints; build No. 25 and Nos. 21/23 as unnamed exteriors |
+| 20 | **Yes.** Re-space Lorong 13 Nos. 21–25 at the measured No. 25 \| 21/23 party line | Not needed on closer measurement. Two-panorama triangulation puts the line only 0.6 m south of the source line (the 1.8 m in the question came from a single-frame rectification), so the source split is kept, as at Foo Hui. No. 25 and Nos. 21/23 are built on their source ways as unnamed exteriors |
 | 21 | **Yes.** Author a footprint for the No. 269 coffeeshop's continuation north along Lorong 13 | Labelled estimate, unnamed exterior |
 | 22 | **Yes.** Author a footprint for the narrow four-storey building between the back lane and the Shi Hao corner | Labelled estimate, unnamed exterior |
 | 23 | **Yes.** Re-space Sims Avenue Nos. 98–102 at the measured party lines | Author three footprints; BUILDERSmart's second frontage at No. 100, Nos. 98 and 102 unnamed |

@@ -36,6 +36,12 @@ test('each Lorong 13 elevation is ordered and keeps its fittings in the frontage
     if (place.board && place.ceiling > .5) assert.ok(place.board.h[0] >= place.ceiling - .01, place.id);
     if (place.roof?.ridge) assert.ok(place.roof.ridge > place.height, place.id);
     for (const r of place.rooftop ?? []) assert.ok(r.setback + r.depth < 6.1 && r.top > place.height, place.id);
+    if (place.buildingIds.length > 1) {
+      // One elevation over adjoining ways: every box lies within their combined frontage.
+      const total = place.buildingIds.reduce((sum, id) => sum + lorong13Frame(outline(id), place).width, 0), W = lorong13Layout(place, total);
+      for (const b of W.boxes) assert.ok(b.u - b.w / 2 >= -.12 && b.u + b.w / 2 <= total + .12, `${place.id} ${b.name}`);
+      continue;
+    }
     assertFittings(frame, poly, L.boxes, .12);
     const awning = L.awning ?? place.awning;
     assertClearOfCarriageway([...(L.blades ?? []).map(b => frame.point(b.u, b.out[1])), ...(awning ? [frame.point(awning.from, awning.depth), frame.point(awning.to, awning.depth)] : [])]);

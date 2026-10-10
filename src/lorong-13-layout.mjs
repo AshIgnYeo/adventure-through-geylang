@@ -348,7 +348,64 @@ export const no269 = {
   },
 };
 
-export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96, no269];
+// Nos. 25 and 21/23, north of Hainan Lim, on their source ways (open question 20: the measured party line
+// lies 0.6-2.0 m south of the source line depending on method, so the source split is kept, as at Foo Hui).
+// Frames run south to north (u from each south party line); heights were read at the photographed depth.
+const q20Note = 'Two-panorama triangulation puts the No. 25 | Nos. 21/23 party line 0.6 m south of the source line and single-frame rectification up to 2.0 m south; within that spread the source split is kept (open question 20), as at Foo Hui.';
+export const no25 = unnamed('25', {
+  id: 'l13-25', buildingIds: ['1223454596'], frontEdge: 0,
+  height: 11.5, ceiling: 3.3, fiveFootWay: 1.8, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'Source way 1223454596 is No. 25, between Thirteen BBQ (No. 27) and the Nos. 21/23 block. In April 2024 it was wrapped in scaffolding and netting, so its March 2022 exterior is modelled: a cream three-storey house with two windows on each upper floor under deep concrete hoods, small relief panels, louvred vents and a stepped parapet, over a green 乐王子 歌舞厅 board and a Le Prince lounge with an arched doorway. Le Prince is listed at 27 Lor 13, not here, and the 2024 use is unknown, so no name is given and the boards are blank. Heights come from the March 2022 frame scaled so its parapet matches Thirteen BBQ\'s measured 11.5 m, which it equals in the photograph; they carry about ±0.4 m. ' + q20Note,
+  sources: [way('1223454596'), pano('Pux6vZ62VTrqmhLGTQ9rGA', 255, 30, 90), pano('io0FBYoICWg1rVxKcWqTJQ', 245, 15, 60)],
+  colours: { wall: '#ecdcc0', trim: '#e3d3b6', frame: '#2f3437', glass: '#3e474b', pier: '#ecdcc0', back: '#2b3a52', floor: '#9a978f' },
+  bands: [[11.3, 11.5, .3]],
+  windows: [[.9, 2.85], [3.8, 5.7]].flatMap(u => [{ u, h: [4.6, 5.9], panes: 2 }, { u, h: [7.7, 9.0], panes: 2 }]),
+  vents: [{ u: [.9, 2.85], h: [9.1, 9.4] }, { u: [3.8, 5.7], h: [9.1, 9.4] }],
+  blocks: [
+    { name: 'deep hood', u: [0, 6.1], h: [6.5, 6.7], out: .55, depth: 1.1, colour: '#d6c4a4' }, { name: 'deep hood', u: [0, 6.1], h: [9.7, 9.9], out: .55, depth: 1.1, colour: '#d6c4a4' },
+    ...[[.9, 2.85], [3.8, 5.7]].map(u => ({ name: 'relief panel', u, h: [6.05, 6.35], out: .03, depth: .03, colour: '#e3d3b6' })),
+    { name: 'stepped parapet', u: [1.5, 4.6], h: [11.5, 11.9], out: -.05, depth: .25, colour: '#ecdcc0' },
+    { name: 'blank green board', u: [.2, 5.9], h: [3.35, 4.1], out: .08, depth: .06, colour: '#2f6b5a' },
+    { name: 'white lounge awning', u: [.1, 6.0], h: [3.05, 3.2], out: .5, depth: 1.0, colour: '#eeeeea' },
+  ],
+  piers: [[0, .3], [5.8, 6.1]],
+  backFittings: [{ name: 'lounge front', u: [.4, 5.7], h: [.1, 2.9], colour: '#2b3a52', glow: .08 }, { name: 'arched doorway', u: [3.6, 4.6], h: [.1, 2.6], colour: '#ecebe6', out: .02 }],
+});
+
+// Nos. 21 and 23: two four-storey white houses sharing a blue stair tower, their floors offset by about
+// 0.4 m; one elevation across both ways, u north from Hainan Lim's party line.
+export const no2123 = unnamed('21/23', {
+  id: 'l13-21-23', buildingIds: ['1223454598', '1223454597'], frontEdge: 0,
+  height: 13.0, ceiling: 3.1, fiveFootWay: 1.8, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'Source ways 1223454598 and 1223454597 are Nos. 21 and 23, north of Hainan Lim (No. 19). April 2024 Street View shows two four-storey white houses sharing a blue stair tower with stacked hopper windows: two windows on each upper floor under blue concrete hoods and louvred vents, the north house\'s floors about 0.4 m above the south house\'s. The south house has a Chinese hall signed 仁濟堂 with couplets, and a door placard reads 21/23 GEYLANG LORONG 13; no listing for 仁濟堂 was found, and Yong Li Electrical Services, listed at 21B, has no sign, so no name is given and the boards are blank. Heights were read on frames rectified at the photographed depth and carry about ±0.4 m. The elevation is laid out from Hainan Lim\'s line; the last 1.7 m of No. 23\'s way, where the photographed block ends sooner, is plain wall. ' + q20Note + ' The vending machine, bicycles and the interior are not reconstructed.',
+  sources: [way('1223454598'), way('1223454597'), pano('I_hhtdchIOdknrryrI3yng', 265, 15, 60), pano('yo_MuatdX6WE9xNVY4PqBg', 300, 15, 60)],
+  colours: { wall: '#ecebe6', trim: '#dedcd5', frame: '#f2f2ee', glass: '#3e474b', pier: '#ecebe6', back: '#3a3532', floor: '#9a978f' },
+});
+const S21 = { hoods: [[6.0, 6.5], [8.8, 9.6], [11.7, 12.7]], wins: [[4.4, 5.5], [7.3, 8.4], [10.1, 11.1]], vents: [[5.7, 6.0], [8.45, 8.75], [11.2, 11.5]] };
+const lift = ([a, b]) => [a + .4, b + .4];
+export function no2123Layout(width) {
+  const blue = '#2f6fa8', boxes = [], add = (name, u, h, out, depth, colour) => boxes.push({ name, u: (u[0] + u[1]) / 2, y: (h[0] + h[1]) / 2, out, w: u[1] - u[0], h: h[1] - h[0], depth, colour, glow: 0 });
+  for (const [bay, f] of [[[1.1, 4.0], x => x], [[7.5, 10.5], lift]]) {
+    const [l, r] = bay, wins = [[l, l + 1.15], [r - 1.15, r]];
+    for (const hood of S21.hoods) add('blue hood', [l - .4, r + .4], f([hood[1] - .2, hood[1]]), .6, 1.2, blue);
+    for (const v of S21.vents) add('louvred vent', [l, r], f(v), .03, .04, '#cfcfca');
+    for (const w of S21.wins) for (const u of wins) { add('window glazing', u, f(w), .02, .03, '#3e474b'); add('window frame', [u[0] - .05, u[1] + .05], f([w[0] - .05, w[0]]), .05, .08, '#f2f2ee'); }
+  }
+  add('blue stair tower', [5.0, 7.0], [0, 13.8], .3, .6, blue);
+  for (let y = 4.0; y < 13; y += 1.25) add('stair hopper window', [5.5, 6.4], [y, y + .9], .62, .04, '#5a6a72');
+  add('blue tower portal', [4.5, 7.8], [0, 3.1], .35, .2, blue);
+  add('hall front', [1.2, 4.5], [.1, 2.8], -1.76, .03, '#5a3a2a');
+  add('north shop posters', [7.9, 10.6], [.3, 2.6], -1.76, .03, '#e8d7a0');
+  add('north shop door', [10.7, 11.6], [.1, 2.4], -1.76, .03, '#2b2826');
+  add('plain north wall', [12.3, width], [.1, 12.9], .01, .02, '#ecebe6');
+  add('five-foot way floor', [0, width], [0, .08], -.9, 1.8, '#9a978f');
+  add('five-foot way ceiling', [0, width], [3.08, 3.14], -.9, 1.8, '#e4e2dc');
+  add('back wall', [0, width], [0, 3.1], -1.8, .06, '#3a3532');
+  add('parapet', [0, width], [12.8, 13.0], .1, .25, '#dedcd5');
+  return { boxes, back: -1.76, board: undefined, boards: [], blades: [], awning: undefined };
+}
+
+export const lorong13 = [no25, no2123, thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96, no269];
 /** The outline the elevation stands on: for a set-back place, the source outline with its front moved back. */
 export function lorong13Outline(poly, place) {
   if (!place.setback) return poly;
@@ -357,6 +414,7 @@ export function lorong13Outline(poly, place) {
 }
 export const lorong13Frame = (poly, place) => frontageFrame(lorong13Outline(poly, place), place.frontEdge);
 export function lorong13Layout(place, width) {
+  if (place.id === 'l13-21-23') return no2123Layout(width);
   if (place.single) {
     const boxes = [], mid = (a, b) => (a + b) / 2;
     const add = (name, u, y, out, w, h, depth, colour, glow = 0) => boxes.push({ name, u, y, out, w, h, depth, colour, glow });

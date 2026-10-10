@@ -144,6 +144,8 @@ Review URLs can open directly opposite a model. For example:
 /?review=l13-15de
 /?review=l13-9s
 /?review=l13-3
+/?review=l13-25
+/?review=l13-21-23
 /?review=wunderfolks
 /?review=l13-28
 /?review=l13-24

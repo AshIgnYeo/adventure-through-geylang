@@ -74,3 +74,12 @@ export function buildSimpleHouse(world: World, label: string, frame: Frame, poly
   }
   return { pt, textured };
 }
+
+/** Keep the part of each box between `from` and `to` along a frontage, re-based at `from`: one elevation sliced across adjoining footprints. */
+export function sliceBoxes<T extends { u: number; w: number }>(boxes: T[], from: number, to: number): T[] {
+  return boxes.flatMap(b => {
+    const l = Math.max(b.u - b.w / 2, from), r = Math.min(b.u + b.w / 2, to);
+    return r - l > .005 ? [{ ...b, u: (l + r) / 2 - from, w: r - l }] : [];
+  });
+}
+

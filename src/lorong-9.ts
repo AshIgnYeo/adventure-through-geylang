@@ -1,17 +1,7 @@
 import type { World, Point } from './world';
 import { lorong9, lorong9Frame, lorong9Layout, lorong9Reviews, constructionSites } from './lorong-9-layout.mjs';
-import { buildSimpleHouse } from './simple-house';
+import { buildSimpleHouse, sliceBoxes as slice } from './simple-house';
 import { project } from './geo.mjs';
-
-type Box = { u: number; w: number };
-
-/** Keep the part of each box between `from` and `to` along the frontage, re-based at `from`. */
-function slice<T extends Box>(boxes: T[], from: number, to: number): T[] {
-  return boxes.flatMap(b => {
-    const l = Math.max(b.u - b.w / 2, from), r = Math.min(b.u + b.w / 2, to);
-    return r - l > .005 ? [{ ...b, u: (l + r) / 2 - from, w: r - l }] : [];
-  });
-}
 
 /** June 2024 exteriors on the east side of Lorong 9. */
 export function buildLorong9(world: World, id: string, poly: Point[]) {

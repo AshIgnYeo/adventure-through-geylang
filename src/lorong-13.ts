@@ -1,7 +1,8 @@
 import * as pc from 'playcanvas';
 import type { World, Point } from './world';
 import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews, lorong13Outline } from './lorong-13-layout.mjs';
-import { buildSimpleHouse, type Draw } from './simple-house';
+import { buildSimpleHouse, sliceBoxes, type Draw } from './simple-house';
+import { project } from './geo.mjs';
 import { frontageFrame } from './gable-roof-layout.mjs';
 import { buildRow13House } from './row13';
 import { buildSingleRowHouse } from './single-row';
@@ -84,7 +85,21 @@ const iconPanel = (c: CanvasRenderingContext2D, w: number, h: number) => {
 export function buildLorong13(world: World, id: string, poly: Point[]) {
   const place = lorong13.find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
-  const frame = lorong13Frame(poly, place), layout = lorong13Layout(place, frame.width) as any;
+  const frame = lorong13Frame(poly, place);
+  let layout = lorong13Layout(place, frame.width) as any;
+  if (place.buildingIds.length > 1) {
+    // One elevation across adjoining ways: lay it out over their combined width, then give each way its slice.
+    const widths = place.buildingIds.map((bid: string) => {
+      const b = world.data.buildings.find(x => x.id === bid)!, o = b.coordinates.slice(0, -1).map(c => project(c, world.data.origin) as Point);
+      return lorong13Frame(o, place).width;
+    });
+    const index = place.buildingIds.indexOf(id), from = widths.slice(0, index).reduce((s: number, w: number) => s + w, 0);
+    const whole = lorong13Layout(place, widths.reduce((s: number, w: number) => s + w, 0)) as any;
+    layout = { ...whole, boxes: sliceBoxes(whole.boxes, from, from + frame.width) };
+    buildSimpleHouse(world, `${place.name} ${id}`, frame, poly, place, layout);
+    if (index === 0) for (const r of lorong13Reviews(place, { ...frame, width: widths[0] + widths[1] } as any)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+    return true;
+  }
   if (place.single) {
     // A house of the single-storey row at Nos. 20-28, on the form measured at No. 22.
     const { pt, textured, board } = buildSingleRowHouse(world, place.name, frame, singleRow, layout, place.coping);

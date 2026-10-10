@@ -24,7 +24,7 @@ The same April panorama `I_hh…` also gives a façade-to-façade street width o
 
 The models keep the source front. Measurements are taken on frames rectified at the photographed depth, which is equivalent to moving the camera onto the source front. Widths and heights therefore do not depend on which explanation is right. Render-and-compare frames are taken with the camera moved 2.6 m towards the façade.
 
-The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the source line. No. 25 measures about 8.0 m against the source's 6.1 m, and Nos. 21/23 together measure about 12.4 m against 14.1 m. Those three ways wait for open question 20.
+On a single rectified frame, the party line between No. 25 and Nos. 21/23 appeared about 1.8–2.0 m south of the source line. Two-panorama triangulation later put it only **0.6 m** south (s 18.6–19.1 against the source's 18.3), and the March 2022 frame agrees with the source to within about 0.5 m. The source split is therefore kept (open question 20), as at Foo Hui.
 
 ## Thirteen BBQ Bar 十三烤吧, 27 Lorong 13
 
@@ -135,9 +135,22 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 - **Measurement:** heights come from the square-on `KZ8g…` frame. Three panoramas and the satellite put the face 2–4 m in front of the source line, so the frame was scaled about the camera until the eaves sit at about 8.4 m. Positions are measured from the corner and carry about ±0.5 m.
 - **Continuation:** the photographed building continues about 13.5 m north beyond the source way, as a two-storey bay and then a single-storey wing. That needs an authored footprint, so it is open question 21.
 
+## No. 25 (unnamed)
+
+- **Footprint:** source way 1223454596.
+- **Dating:** in April 2024 the house was wrapped in scaffolding and netting, so its **March 2022** exterior (`Pux6…`) is modelled.
+- **Elevation:** a cream three-storey house with two windows on each upper floor under deep concrete hoods, small relief panels, louvred vents and a stepped parapet. Below are a green 乐王子 歌舞厅 board and a Le Prince lounge with an arched doorway.
+- **Identity:** Le Prince is listed at 27 Lor 13, not here, and the 2024 use is unknown, so it is unnamed and the boards are blank.
+- **Heights:** the 2022 frame was scaled so that its parapet matches Thirteen BBQ's measured 11.5 m, which it equals in the photograph. The same scale gives the Nos. 21/23 block about 13.9 m, matching the 2024 reading of about 14 m.
+
+## Nos. 21 and 23 (unnamed)
+
+- **Footprints:** source ways 1223454598 and 1223454597. One elevation is laid out across both from Hainan Lim's line and sliced into each way. The last 1.7 m of No. 23's way, where the photographed block ends sooner, is plain wall.
+- **Elevation:** two four-storey white houses sharing a blue stair tower with stacked hopper windows. Each upper floor has two windows under blue concrete hoods and louvred vents, and the north house's floors sit about 0.4 m above the south house's.
+- **Identity:** the south house has a Chinese hall signed 仁濟堂, and a door placard reads 21/23 GEYLANG LORONG 13. No listing for 仁濟堂 was found, and Yong Li Electrical Services (listed at 21B) has no sign, so the block is unnamed.
+
 ## Still open on Lorong 13
 
-- **Nos. 21/23 and No. 25:** waiting for the party-line re-spacing (open question 20).
 - **No. 269 continuation:** the coffeeshop's two-storey bay and single-storey wing north of its source way (open question 21).
 - **Narrow building by Shi Hao:** the four-storey building between the back lane and the Shi Hao corner (open question 22).
 
