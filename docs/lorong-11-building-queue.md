@@ -18,7 +18,7 @@ The user subsequently added the coffeeshop at 251 Geylang Road as Q8. It is now 
 
 The user subsequently selected Masjid Haji Mohd Salleh at 245 Geylang Road as Q9. It is completed within its documented source-footprint and exterior-reference limits, bringing the scene to thirteen named places. The hourly schedule remains paused.
 
-The user subsequently requested a back-alley streetscape behind either Shan Yuan Tang or Leong Kee. Q10 below records the supported temple-side option. It is completed with a sourced pedestrian connection to Lorong 11. GPT-6 Astra was verified before implementation. Explicitly verify GPT-6 Astra before all future building work, as requested by the user.
+The user subsequently requested a back-alley streetscape behind either Shan Yuan Tang or Leong Kee. Q10 below records the supported temple-side option. It is completed with a sourced pedestrian connection to Lorong 11. GPT-6 Astra was verified before implementation. The standing instruction to verify GPT-6 Astra before later building work was retired by the project owner on 10 October 2026 (open question 14).
 
 ## Mapping evidence
 
