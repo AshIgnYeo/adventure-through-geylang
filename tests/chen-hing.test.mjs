@@ -19,7 +19,7 @@ test('Chen Hing takes the source way directly west of the mosque, containing its
   assert.equal(landmarkFor('454274485'), undefined, 'the No. 237 side stays generic');
   // u runs from the west party line to the shared corner with Masjid Haji Mohd Salleh.
   assert.ok(outline('454254204').some(p => Math.hypot(p[0] - frame.b[0], p[1] - frame.b[1]) < 1e-9));
-  assert.equal(landmarkFor('454254204').id, 'haji-mohd-salleh-mosque');
+  assert.equal(landmarkFor('gr-245').id, 'haji-mohd-salleh-mosque');
   assert.equal(pointInPolygon(project([103.8767864, 1.3122656], map.origin), poly), true, 'Google Maps point for No. 241');
   assert.ok(Math.abs(frame.width - 10.08) < .01);
   const nearest = roadSegments.map(s => ({ ...nearestOnSegment(frame.point(frame.width / 2), s.a, s.b), name: s.road.name })).sort((x, y) => x.distance - y.distance)[0];

@@ -26,7 +26,7 @@ export const alleyElevations = [
   { id: '453797939', edge: 4, height: 16.75, colour: '#d7ce9e', floors: 5, style: 'block' },
   { id: '454274485', edge: 0, height: 6.7, colour: '#e1d6ca', floors: 2, style: 'shophouse' },
   { id: '475158359', edge: 0, height: 6.7, colour: '#d7d5c5', floors: 2, style: 'plain' },
-  { id: '454254204', edge: 0, height: 11.35, colour: '#ddd6b8', floors: 3, style: 'plain' },
+  { id: 'gr-245', edge: 2, height: 15.8, colour: '#ddd6b8', floors: 4, style: 'plain' },
   { id: '1223407890', edge: 1, height: 3.35, colour: '#d5d0bc', floors: 1, style: 'low' },
 ];
 

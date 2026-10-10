@@ -2,7 +2,7 @@
 // by triangulating three Geylang Road panoramas. u runs east from the Chen Hing party wall along the
 // source front, out towards the street (negative is behind the façade), heights above the façade base.
 export const mosqueElevation = {
-  // The photographed front is 20.3 m wide; the source front is 22.46 m, leaving a 2.16 m strip at the east.
+  // The photographed front is 20.3 m wide, the width of the authored footprint (open question 25).
   facade: 20.3, parapet: 15.8, height: 15.8,
   ground: { top: 2.8, openingTop: 2.45, piers: [[0, .5], [2.6, 3.1], [6.45, 7.06], [13.22, 13.8], [17.15, 17.78], [19.85, 20.3]] },
   // Cream recessed panels per storey, inside the orange frame.
@@ -18,9 +18,8 @@ export const mosqueElevation = {
   stair: { u: [17.4, 19.85], h: [3.75, 15.1] },
   parapetBand: { from: 3.6, to: 16.9, h: [14.75, 15.05], step: .56 },
   // Roof features stand behind the parapet: the towers about 2.5 m back, the gable about 4.8 m back.
-  // The west tower is photographed centred about 1.0 m from the west wall; it is drawn 1.45 m further east
-  // because the source outline's west wall runs back about 10 degrees off square to the source front.
-  towers: [{ u: 2.45, script: 'محمد' }, { u: 18.82, script: 'الله' }],
+  // Both towers stand flush with the façade ends; the west one is nudged 0.2 m in, as the party wall leans slightly.
+  towers: [{ u: 1.7, script: 'محمد' }, { u: 18.8, script: 'الله' }],
   tower: { size: 2.95, setback: 2.5, top: 19.95, medallion: { y: 18.3, radius: 1.0 }, dome: { radius: 1.1, rise: 1.4 } },
   gable: { setback: 4.8, back: 17, peak: 22.1, eaves: 15.5, halfWidth: 6.83, vent: { base: 18.95, radius: 1.0 } },
   colours: {

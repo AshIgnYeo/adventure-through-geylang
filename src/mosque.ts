@@ -9,7 +9,7 @@ import { mosqueElevation as M, mosqueLayout } from './mosque-layout.mjs';
  * tiled gable above the parapet. Lettering and calligraphy are redrawn in original canvas typography.
  */
 export function buildMosque(world: World, f: FacadeFrame) {
-  const { a, dx, dz, nx, nz, width } = f, C = M.colours;
+  const { a, dx, dz, nx, nz } = f, C = M.colours;
   const pt = (u: number, out: number): Point => [a[0] + dx * u + nx * out, a[1] + dz * u + nz * out];
   const angle = Math.atan2(nx, nz) * 180 / Math.PI;
   const mat = (colour: string) => { const m = world.mat(colour); m.cull = pc.CULLFACE_NONE; m.update(); return m; };
@@ -31,20 +31,13 @@ export function buildMosque(world: World, f: FacadeFrame) {
     world.mesh(name, positions, Array(positions.length / 3 * 2).fill(0), indices, mat(colour));
   };
 
-  // The orange frame above the ground floor, open over the recessed stair bay, and a plain return wall
-  // over the source strip east of the photographed front.
+  // The orange frame above the ground floor, open over the recessed stair bay.
   const frame = mat(C.orange), [sl0, sr0] = M.stair.u, [sb0, st0] = M.stair.h;
   world.panel(pt(0, 0), pt(sl0, 0), M.ground.openingTop + .28, M.parapet, frame);
   world.panel(pt(sr0, 0), pt(M.facade, 0), M.ground.openingTop + .28, M.parapet, frame);
   world.panel(pt(sl0, 0), pt(sr0, 0), M.ground.openingTop + .28, sb0, frame);
   world.panel(pt(sl0, 0), pt(sr0, 0), st0, M.parapet, frame);
   for (const u of [sl0, sr0]) world.panel(pt(u, 0), pt(u, -.6), sb0, st0, frame);
-  if (width > M.facade + .05) {
-    world.panel(pt(M.facade, -.3), pt(width, -.3), .15, M.parapet - .3, mat('#e6dfc8'));
-    world.panel(pt(M.facade, 0), pt(M.facade, -.3), .15, M.parapet, mat(C.orange));
-    const gate = pt((M.facade + width) / 2, -.28);
-    world.box('mosque east yard opening', gate[0], 1.3, gate[1], width - M.facade - .3, 2.3, .04, world.mat('#3b4240'), undefined, angle);
-  }
   for (const b of mosqueLayout()) {
     const p = pt(b.u, b.out);
     world.box(`mosque ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour), undefined, angle);

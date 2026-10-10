@@ -362,6 +362,28 @@ export const authoredFootprintGroups = [
       return [{ id: 'l13-8', street: 'Lorong 13 Geylang', number: '8', levels: 7, outline: [P(-2.2, 1), P(25.2, 1), P(25.2, 27), P(-2.2, 27)] }];
     },
   },
+  {
+    id: 'mosque-245', question: 25, approved: '2026-10-10',
+    evidence: 'Masjid Haji Mohd Salleh, 245 Geylang Road. Three June 2024 panoramas, triangulated, put the façade on a line parallel to Geylang Road, about 8° off the source front of way 454254204, and 20.3 m wide against the 22.46 m source front. After the 2.8 m (depth) and 1.5 m (along-street) panorama position error recorded at Chen Hing, the line meets the source west wall (the Chen Hing party wall) about 1.2 m behind the source front corner. The front runs 20.3 m east from there; a new east wall runs square to it back to the source rear edge, leaving the source strip of about 2 m beside Shan Yuan Tang as an open yard. The source west and rear lines are kept.',
+    replaces: ['454254204'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '454254204').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const [rearWest, rearEast, , frontWest] = src;
+      // The triangulated façade line (scene metres), corrected for the shared panorama position error.
+      const W = [-52.21 + 2.28, 89.45 + 2.69], E = [-32.52 + 2.28, 83.72 + 2.69];
+      const len = Math.hypot(E[0] - W[0], E[1] - W[1]), east = [(E[0] - W[0]) / len, (E[1] - W[1]) / len], back = [east[1], -east[0]];
+      // Where a line from p along d meets the line through q and r.
+      const meet = (p, d, q, r) => {
+        const e = sub(r, q), det = d[0] * -e[1] + d[1] * e[0];
+        const t = ((q[0] - p[0]) * -e[1] + (q[1] - p[1]) * e[0]) / det;
+        return at(p, d, t);
+      };
+      const frontWestCorner = meet(W, east, frontWest, rearWest);
+      const frontEastCorner = at(frontWestCorner, east, 20.3);
+      const rearEastCorner = meet(frontEastCorner, back, rearEast, rearWest);
+      return [{ id: 'gr-245', street: 'Geylang Road', number: '245', levels: 4, outline: [frontWestCorner, frontEastCorner, rearEastCorner, rearWest] }];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

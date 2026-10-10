@@ -650,7 +650,7 @@ The owner's answers to the open questions allow re-spaced and authored footprint
   - Hainan Goh, Ho San Kong Hoey, SHG Engineering and Faith Mission Home were checked by render-and-compare from the April 2024 Lorong 11 panoramas, alongside the new east-side neighbours. They overlay their photographs closely enough to be kept. The same check lowered the new No. 22's canopy and parapet by about 0.4 m.
   - **Masjid Haji Mohd Salleh**, re-measured from three June 2024 panoramas and rebuilt:
     - The 2020-based model showed a cream three-storey front with an 11.35 m wall. The building was repainted in 2021 and has four storeys to a parapet at about 15.8 m.
-    - The photographed front is about 20.3 m wide and runs parallel to Geylang Road, 8° off the source front. This is open question 25.
+    - The photographed front is about 20.3 m wide and runs parallel to Geylang Road, 8° off the source front. Under open question 25, it now stands on authored footprint `gr-245`, with an open yard of about 2 m at the east.
     - The same geometry explains the 2.8 m "pose error" recorded at Chen Hing: the façade simply stands behind much of the source front.
     - See the [references](lorong-11-references.md).
   - **Mongkok Dim Sum (214 Geylang Road)** was rebuilt as a June 2024 exterior:
