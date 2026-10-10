@@ -3,8 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { landmarks, landmarkFor, landmarkReviewPoint } from '../src/landmarks.mjs';
 import { pointInPolygon, project, nearestOnSegment } from '../src/geo.mjs';
+import { withAuthoredFootprints } from '../src/authored-footprints.mjs';
 
-const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
+const sourceMap = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
+// Landmarks are checked against the rendered map, with the owner-approved authored footprints applied.
+const map = withAuthoredFootprints(sourceMap);
 
 test('Masjid Haji Mohd Salleh keeps its named No. 245 source footprint and Geylang Road frontage', () => {
   const source = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
@@ -90,14 +93,16 @@ test('Hainan Goh uses the visibly numbered No. 20B frontage, excluding adjoining
   assert.match(place.evidence, /separate ground-floor shop is neutral/);
 });
 
-test('Canton Wong stays on No. 31 beside No. 29, excluding the displaced Maps pin', () => {
+test('Canton Wong stays on No. 31, now the re-spaced footprint beside No. 29A, excluding the displaced Maps pin', () => {
   const place = landmarks.find(p => p.id === 'canton-wong');
-  assert.deepEqual(place.buildingIds, ['1223407878']);
+  assert.deepEqual(place.buildingIds, ['l11w-31']);
   assert.equal(place.address, '31A Lorong 11 Geylang');
   const building = map.buildings.find(b => b.id === place.buildingIds[0]);
-  assert.equal(building.number, '31');
-  const south = map.buildings.find(b => b.id === '1223407879');
-  assert.equal(south.number, '29');
+  assert.equal(building.number, '31'); assert.equal(building.geometrySource, 'authored-estimate');
+  assert.ok(building.replaces.includes('1223407878'));
+  const south = map.buildings.find(b => b.id === 'l11w-29a');
+  assert.equal(south.number, '29A');
+  assert.ok(south.coordinates.slice(0, -1).filter(p => building.coordinates.some(q => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-9)).length === 2, 'No. 31 meets No. 29A');
   const shared = building.coordinates.slice(0, -1).filter(p => south.coordinates.some(q => p[0] === q[0] && p[1] === q[1]));
   assert.equal(shared.length, 2, 'source No. 31 shares a boundary with visually identified No. 29');
   // The listing pin is displaced north; it must not determine the assignment.
@@ -202,5 +207,6 @@ test('provisional appearance and historical address matches stay explicitly docu
   assert.match(landmarks.find(p => p.id === 'lok-fu').evidence, /illustrative/);
   assert.match(landmarks.find(p => p.id === 'agape-centre').evidence, /provisional/);
   assert.equal(map.buildings.find(b => b.id === landmarks.find(p => p.id === 'hotel-81-joy').buildingIds[0]).number, '11');
-  assert.equal(map.buildings.find(b => b.id === landmarkFor('1223407885').buildingIds[0]).number, '17');
+  assert.equal(map.buildings.find(b => b.id === landmarkFor('l11w-17').buildingIds[0]).number, '17');
+  assert.equal(landmarkFor('1223407885'), undefined, 'the replaced source way is not rendered');
 });

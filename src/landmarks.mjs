@@ -122,9 +122,9 @@ export const landmarks = [
     ],
   },
   {
-    id: 'hok-tek-chi', buildingIds: ['1223407885'], kind: 'association',
+    id: 'hok-tek-chi', buildingIds: ['l11w-17'], kind: 'association',
     name: 'Hok Tek Chi Loke Yah Teng Association', address: '17 Lorong 11 Geylang', height: 7.8,
-    evidence: 'URA exterior photograph and 2026 reporting confirm a pink conserved shophouse. Reconstructed façade, not a freestanding temple.',
+    evidence: 'URA exterior photograph and 2026 reporting confirm a pink conserved shophouse. Reconstructed façade, not a freestanding temple. Since 10 October 2026 it stands on the owner-approved re-spaced No. 17 footprint (5.2 m, measured), replacing source way 1223407885 (6.42 m).',
     sources: [
       'https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00334/',
       'https://www.zaobao.com.sg/news/singapore/story20260125-8151043',
@@ -176,9 +176,9 @@ export const landmarks = [
     ],
   },
   {
-    id: 'canton-wong', buildingIds: ['1223407878'], kind: 'canton-wong',
+    id: 'canton-wong', buildingIds: ['l11w-31'], kind: 'canton-wong',
     name: 'Canton Wong Clan Association (April 2024 exterior)', address: '31A Lorong 11 Geylang', height: 7.9,
-    evidence: 'SFCCA lists 31A; April 2024 Street View shows the association upper-storey sign and stair entrance beside visible No. 29, supporting the No. 31 source footprint. Association-specific detail is limited to the upper storey and stair entrance; the separate ground-floor shop is neutral. Dimensions estimated. The displaced Maps place point is rejected; current condition and legal extent remain unverified.',
+    evidence: 'SFCCA lists 31A; April 2024 Street View shows the association upper-storey sign and stair entrance beside visible No. 29, supporting the No. 31 source footprint. Association-specific detail is limited to the upper storey and stair entrance; the separate ground-floor shop is neutral. Dimensions estimated. The displaced Maps place point is rejected; current condition and legal extent remain unverified. Since 10 October 2026 it stands on the owner-approved re-spaced No. 31 footprint (3.7 m, measured), replacing source way 1223407878 (6.41 m); the measured row adds No. 29A to its south.',
     sources: [
       'https://sfcca.sg/en/our-members/',
       'https://www.szetoclan.sg/wp-content/uploads/2025/02/V14_SFCCA-%E4%BC%9A%E5%91%98%E6%89%8B%E5%86%8C-2024-2027.pdf',

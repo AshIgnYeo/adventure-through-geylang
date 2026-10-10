@@ -417,6 +417,15 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Footprint:** [way 1223773757](https://www.openstreetmap.org/way/1223773757), the northern No. 9 house. The southern No. 9 house stays generic.
 - **Validation / completion:** all **124 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-six. See the [design brief](mister-contracts-design-brief.md).
 
+### Authored footprints, from 10 October 2026
+
+The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
+
+- **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
+  - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).
+  - **Check:** render-and-compare from two April 2024 panoramas puts both models on their photographed frontages.
+  - **Unlocked:** Goodwood (19), the Tibetan Buddhist Studies Society (21), Eng Lee Huat (29) and Zheng Li (35).
+
 ### 10 October 2026: leads checked and locked
 
 - **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.
@@ -484,9 +493,9 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
   | 27 / 29 | 44.3 | 44.83 | three-panorama parallax, spread under 0.3 m |
   | 29 / 29A | 48.3 | — | roofline vents; Eng Lee Huat is about 4.0 m wide |
   | 29A / 31 | about 54.2 | 51.24 | start of the Canton Wong board |
-  | 31 / 33 | about 58.3 | 57.65 | downpipe after the Canton Wong window |
-  | 33 / 35 | not resolved | 64.04 | plain continuous façade |
-  | Row end (No. 35) | about 69.5 | 70.44 | Zheng Li blade signs near 66–68 |
+  | 31 / 33 | about 57.9 | 57.65 | ground-floor pier after the Canton Wong window, re-read square-on from `aHF7…` |
+  | 33 / 35 | 64.2 | 64.04 | ground-floor pier and upper-storey setback, read square-on from `aHF7…` |
+  | Row end (No. 35) | source end kept, 70.44 | 70.44 | end pier near 70.5–71.0; Zheng Li's restaurant fills 64.2 to the end |
 
   - **Uncertainty:** about ±0.3–0.5 m up to the 31 / 33 line, and more beyond it, where a 1 m disagreement between panoramas remains.
 - **Red Dot Running / Amrise row, 106–112 Sims Avenue, re-checked:**

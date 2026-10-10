@@ -6,6 +6,13 @@ export function project([lon,lat], [lon0,lat0]) {
   const lonMetres=111412.84*Math.cos(phi)-93.5*Math.cos(3*phi);
   return [(lon-lon0)*lonMetres,-(lat-lat0)*latMetres];
 }
+// Exact inverse of project(), for authored outlines measured in metres.
+export function unproject([x,z], [lon0,lat0]) {
+  const rad=Math.PI/180, phi=lat0*rad;
+  const latMetres=111132.92-559.82*Math.cos(2*phi)+1.175*Math.cos(4*phi);
+  const lonMetres=111412.84*Math.cos(phi)-93.5*Math.cos(3*phi);
+  return [lon0+x/lonMetres, lat0-z/latMetres];
+}
 export function nearestOnSegment(p,a,b) {
   const dx=b[0]-a[0], dz=b[1]-a[1], length2=dx*dx+dz*dz;
   const t=length2?Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dz)/length2)):0;
