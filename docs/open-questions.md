@@ -40,17 +40,17 @@ Under the queue rules, re-spaced or authored footprints need explicit approval. 
 
 ## Evidence policy
 
-13. **Accept a signed occupant when published addresses disagree?**
+12. **Accept a signed occupant when published addresses disagree?**
     - **Case:** the Mister Contracts signboard hangs on the house tagged No. 9 Lorong 13, but reads No. 5, while Google Maps gives No. 7.
     - **Current rule:** both listing and signage must agree.
     - **Decision needed:** whether a dated exterior named after a clearly signed occupant is acceptable, recording the conflict.
-14. **Re-measure older estimated models with the photogrammetry now in use?**
+13. **Re-measure older estimated models with the photogrammetry now in use?**
     - **Candidates:** Hotel 81 Joy, Agape Centre, Hok Tek Chi and the Lok Fu (Guan Keat) corner use estimated heights and openings.
     - **Method now available:** rectified panoramas with render-and-compare could replace those estimates.
 
 ## Project instructions
 
-15. **Remove or update the "verify GPT-6 Astra before building work" instruction in the building queue?** It was written for another model and was not followed in the 10 October 2026 session.
+14. **Remove or update the "verify GPT-6 Astra before building work" instruction in the building queue?** It was written for another model and was not followed in the 10 October 2026 session.
 
 ## Settled
 

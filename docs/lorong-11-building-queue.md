@@ -446,7 +446,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Mister Contracts, the northern No. 9 house on Lorong 13 (way 1223773757):**
   - **What the signboard says:** a full-resolution April 2024 frame reads its address line as **5 LORONG 13 GEYANG [sic], SINGAPORE 388643**, which is K Group's address. Google Maps gives No. 7.
   - **Where it hangs:** on the house the source tags No. 9. Its southern neighbour (also tagged No. 9) has the MC Multi Skills banner and a vending machine.
-  - **Status:** with three different numbers for one signboard, the lock stands. See open question 13.
+  - **Status:** with three different numbers for one signboard, the lock stands. See open question 12.
 - **Wat Dhammasatis วัดธรรมสาทิส, 233B Geylang Road #03-233:**
   - **Identity:** listed open as a Buddhist temple. June 2024 shows its WAT DHAMMASATIS BUDDHIST CENTRE board and a Buddha image in the upper windows of the white four-storey building directly west of the Lorong 9 corner. A Durian & Fruits Experience Centre 榴莲鲜果体验馆 occupies the ground floor, where Fuyuan restaurant is also listed (No. 233).
   - **Footprint:** source way 475158360 is a 15.8 m frontage block covering this building and two Peranakan shophouses to its west (Vietnam Unisex Concept, Lian Seng Weighing Scale).
