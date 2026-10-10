@@ -4,6 +4,7 @@
 // listing-plus-signage bar; unnamed ones (open question 18) carry no business name and leave boards blank.
 import { frontageFrame } from './gable-roof-layout.mjs';
 import { simpleHouseLayout, facing } from './simple-house-layout.mjs';
+import { row13, row13Layout } from './row13-layout.mjs';
 
 const pano = (id, heading, pitch = 10, fov = 80) => `https://www.google.com/maps/@?api=1&map_action=pano&pano=${id}&heading=${heading}&pitch=${pitch}&fov=${fov}`;
 const way = id => `https://www.openstreetmap.org/way/${id}`;
@@ -62,7 +63,88 @@ export const builderSmart = {
   side: { edge: 0, opening: { u: [.4, 5.7], h: [.13, 2.9] }, awning: { from: .1, to: 6.0, wall: 3.25, front: 2.3, depth: 1.8, valance: .35 } },
 };
 
-export const lorong13 = [thirteenBbq, builderSmart];
+// Unnamed exteriors carry no business name (open question 18); their ids start with l13-.
+const unnamed = (number, extra) => ({ kind: 'unnamed', unnamed: true, reviewRoad: 'Lorong 13 Geylang', frontEdge: 0, name: `No. ${number} Lorong 13 Geylang (April 2024 exterior, occupant not identified)`, address: `${number} Lorong 13 Geylang`, ...extra });
+
+export const no15de = unnamed('15D/E', {
+  id: 'l13-15de', buildingIds: ['1223773761'],
+  height: 8.2, ceiling: 3.0, fiveFootWay: 1.8,
+  evidence: 'Unnumbered source way 1223773761 lies between Muhammadiyah (No. 17) and the Chong Min house plated 15-C on the way tagged 15B; April 2024 Street View shows door plates 15E and 15D on this two-storey cream house. Hiap Lian Friendly Association is listed at 15D, but no association sign was seen, so no name is given. Rectifications from the panoramas either side agree with the façade about 0.9 m in front of the source front, inside the usual tolerance, so the source front is kept. A small window in a moulded surround under a louvred vent and a wide four-pane window sit under a deep hood and a plain parapet; below are a timber door, the grilled 15E door and two roller shutters. The small white board by the door is left blank.',
+  sources: [way('1223773761'), pano('D4Uk9t7JuM7EbZHDIk3xog', 230), pano('8k_BeNJ16snqOq6gubtsYw', 290, 8, 85), 'https://www.google.com/maps/search/?api=1&query=Hiap+Lian+Friendly+Association+15D+Lorong+13+Geylang'],
+  colours: { wall: '#eadfbf', trim: '#efe6c8', frame: '#3e403c', glass: '#4d5a60', pier: '#ece3c6', back: '#e5dcc0' },
+  bands: [[7.86, 8.2, .25], [7.07, 7.27, .9, '#e2d6b2'], [2.95, 3.05, .2]],
+  windows: [{ u: [.88, 2.24], h: [4.64, 5.86], panes: 3, surround: true }, { u: [3.17, 5.88], h: [4.76, 6.79], panes: 4 }],
+  blocks: [{ name: 'window transom', u: [3.17, 5.88], h: [5.97, 6.03], out: .02, depth: .02, colour: '#3e403c' }],
+  vents: [{ u: [.77, 2.27], h: [6.07, 6.57] }],
+  piers: [[0, .25], [5.9, 6.14]],
+  backFittings: [
+    { name: 'timber door', u: [1.41, 2.2], h: [.1, 2.2], colour: '#4a2a20' }, { name: 'grilled door 15E', u: [2.37, 3.17], h: [.1, 2.5], colour: '#5a3a2a' },
+    { name: 'roller shutter', u: [3.42, 4.35], h: [.1, 2.65], colour: '#b9bbb6' }, { name: 'roller shutter', u: [4.56, 5.95], h: [.1, 2.65], colour: '#b9bbb6' },
+    { name: 'blank board', u: [1.2, 2.06], h: [2.29, 2.79], colour: '#efefe8', out: .02 },
+  ],
+});
+
+// No. 11 is a detached house behind a walled yard: frame u runs north from the south party line.
+export const teckHoe = {
+  id: 'teck-hoe', buildingIds: ['1223773759'], kind: 'teck-hoe', frontEdge: 1, reviewRoad: 'Lorong 13 Geylang',
+  name: 'Teck Hoe Airconditioning Parts (April 2024 exterior)', address: '11 Lorong 13 Geylang',
+  height: 5.2, ceiling: .13, fiveFootWay: .05, roof: { type: 'hip', ridge: 7.8, colour: '#9c5a46' },
+  evidence: 'April 2024 Street View shows TECK HOE AIRCONDITIONING PARTS PTE LTD lettered across the front wall and door plate 11 on the detached two-storey house of source way 1223773759, which is tagged No. 11. Google Maps now lists Teck Hoe Airconditioning Parts at 8 Lor 15 Geylang (and a branch at 54 Dunlop Street), so the addresses conflict; under the owner\'s answer to open question 12 the signed house is modelled as a dated exterior, without claiming the company is there now. Rectifications from the panoramas north and south agree with the front wall about 1.4 m in front of the source front; the source front is kept. That resolves the earlier plan lock: the main block (about 4 m, under a hipped tiled roof with a ventilated gablet) and a lower south wing (about 2.3 m) share one front line, with an open yard at the south end and a metal canopy over the north passage. A walled yard stands about 2.2 m in front, its wall about 1.75 m high under a mesh fence to about 2.7 m, from the ground line in a level frame. The hipped roof rises to about 7.8 m: its apex shows above the eaves from the street. Plants, the flag and the interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Teck+Hoe+Airconditioning+Parts+Pte+Ltd', way('1223773759'), pano('8U4ZM41vQ-4RzwAUOCWcrg', 252, 10, 100), pano('HaY-y7EfW3SXOm-83rKMAw', 300, 10, 80), pano('J1TCFhzakKX2wiHsdsUgGQ', 220, 10, 80)],
+  colours: { wall: '#ece8da', trim: '#2f6b63', frame: '#2f6b63', glass: '#3e4a4c', pier: '#ece8da', back: '#ece8da' },
+  windows: [{ u: [4.87, 5.87], h: [3.36, 4.55], panes: 2 }, { u: [6.37, 7.37], h: [3.36, 4.55], panes: 2 }, { u: [3.47, 4.17], h: [3.3, 4.3], panes: 1 }, { u: [4.5, 7.6], h: [1.36, 2.36], panes: 6 }],
+  blocks: [
+    { name: 'fretwork eaves band', u: [1.6, 8.0], h: [4.64, 4.95], out: .05, depth: .04, colour: '#4d4a42' },
+    { name: 'teal fascia', u: [1.4, 8.2], h: [5.05, 5.25], out: .45, depth: .9, colour: '#2f6b63' },
+    { name: 'lower south wing eaves', u: [1.5, 3.97], h: [4.3, 4.45], out: .4, depth: .8, colour: '#9c5a46' },
+    { name: 'north passage canopy', u: [7.97, 8.75], h: [4.2, 4.3], out: .5, depth: 1.0, colour: '#cfd2cf' },
+    { name: 'yard wall', u: [0, 8.77], h: [0, 1.75], out: 2.2, depth: .2, colour: '#e9e6dc' },
+    { name: 'teal yard gate', u: [.1, 1.6], h: [.05, 1.75], out: 2.2, depth: .22, colour: '#2f6b63' },
+    { name: 'fence rail', u: [0, 8.77], h: [2.65, 2.7], out: 2.2, depth: .04, colour: '#b8bcb8' },
+    ...Array.from({ length: 58 }, (_, i) => ({ name: 'fence bar', u: [.08 + i * .15, .11 + i * .15], h: [1.75, 2.7], out: 2.2, depth: .02, colour: '#b8bcb8' })),
+  ],
+  board: { u: [4.32, 7.95], h: [2.5, 3.15], out: .03 },
+};
+
+// The conserved row at Nos. 3-9 shares the row module measured at No. 7; each house supplies
+// its own bays (u north from the south party line) and ground floor.
+const rowHouse = (number, extra) => unnamed(number, { row: true, height: row13.height, ridgeHeight: row13.ridgeHeight, ridgeDepth: row13.ridgeDepth, eavesOverhang: row13.eavesOverhang, fiveFootWay: row13.fiveFootWay, ceiling: 3.28, ...extra });
+
+export const no9South = rowHouse('9', {
+  id: 'l13-9s', buildingIds: ['1223773756'],
+  name: 'No. 9 Lorong 13 Geylang, southern house (April 2024 exterior, occupant not identified)', address: '9 Lorong 13 Geylang (southern of two houses tagged No. 9)',
+  evidence: 'The southern of the two source ways tagged No. 9, between Hong Ye Chen (No. 7) and the Mister Contracts house. April 2024 Street View shows a free-standing MC Multi Skills banner and a vending machine in its five-foot way, but no fixed sign; Expert Sliding Door Repair SG is listed at 9 Lor 13 #01-01 without a matching sign. No name is given. It shares the row elevation measured at No. 7: shuttered windows either side of a full-height French window, floral tile panels under the outer windows and the fretwork eaves, read on a square-on frame at the row\'s 0.5 m forward depth. A full-height white grille closes the five-foot way, as next door. The banner, vending machine and interior are not reconstructed.',
+  sources: [way('1223773756'), pano('uh9Y_1rGJSeI8vjJVZDDHg', 290, 8, 60), pano('HaY-y7EfW3SXOm-83rKMAw', 230, 8, 60)],
+  bays: { windows: [[.65, 1.69, 5.41, 7.49], [2.09, 3.36, 4.2, 7.49], [3.63, 4.83, 5.41, 7.49]], pilasters: [[0, .55], [1.69, 2.09], [3.36, 3.63], [4.83, 5.01]], tilesUnder: [0, 2], piers: [[.25, .5], [4.81, .4]], floor: '#b9a98c' },
+  ground: [
+    { name: 'grille rail', u: [.5, 4.6], h: [3.12, 3.18], out: -.05, depth: .05, colour: '#f1f0eb' }, { name: 'grille rail', u: [.5, 4.6], h: [2.02, 2.08], out: -.05, depth: .05, colour: '#f1f0eb' },
+    ...Array.from({ length: 22 }, (_, i) => ({ name: 'grille bar', u: [.55 + i * .185, .585 + i * .185], h: [.1, 3.15], out: -.05, depth: .035, colour: '#f1f0eb' })),
+    { name: 'dark shop interior', u: [.3, 4.7], h: [.1, 3.2], out: -1.46, depth: .03, colour: '#2d2c2a' },
+  ],
+});
+
+export const no3 = rowHouse('3', {
+  id: 'l13-3', buildingIds: ['1223773753'],
+  evidence: 'Source way 1223773753 is tagged No. 3, between Bar @ Lorong 13 (No. 1) and K Group (No. 5), and April 2024 Street View shows the plate 3 over its glass door. River Ash Bakery is listed at 3 Lor 13, but no bakery sign appears in captures from 2018 to April 2024, so no name is given. It shares the row elevation measured at No. 7: three tall windows with fretwork transoms between pilasters, the middle one full height, and floral tile panels under the outer two, read on a square-on frame at the row\'s 0.5 m forward depth. A maroon awning shades a roller shutter, the glass door and a timber door, with two condensers on the beam. The chest freezer, plants and interior are not reconstructed.',
+  sources: [way('1223773753'), pano('f-IHSXdP88-BA3LwDO6R0Q', 252, 8, 60), pano('pX6bAWhW7vPxweoZ77FCbg', 252, 8, 60), 'https://www.google.com/maps/search/?api=1&query=River+Ash+Bakery+3+Lorong+13+Geylang'],
+  bays: { windows: [[.91, 1.91, 5.41, 7.49], [2.24, 3.34, 4.5, 7.49], [3.6, 4.75, 5.41, 7.49]], pilasters: [[0, .7], [1.91, 2.24], [3.34, 3.6], [4.75, 5.01]], tilesUnder: [0, 2], piers: [[.25, .5], [4.81, .4]], floor: '#a9a39a' },
+  ground: [
+    { name: 'roller shutter', u: [1.3, 2.5], h: [.1, 2.6], out: -1.46, depth: .03, colour: '#b4b6b2' },
+    { name: 'glass door', u: [2.58, 3.58], h: [.1, 2.5], out: -1.46, depth: .03, colour: '#56656b', glow: .05 },
+    { name: 'timber door', u: [3.9, 4.78], h: [.1, 2.4], out: -1.46, depth: .03, colour: '#9a5a3a' },
+    { name: 'condenser', u: [.85, 1.45], h: [2.55, 3.0], out: -.35, depth: .3, colour: '#e9e9e4' },
+    { name: 'condenser', u: [4.25, 4.7], h: [2.6, 2.95], out: -.35, depth: .3, colour: '#e9e9e4' },
+  ],
+  awning: { from: .7, to: 4.91, wall: 3.4, front: 2.9, depth: .9, colour: '#93384a' },
+});
+
+export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3];
 export const lorong13Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
-export const lorong13Layout = (place, width) => simpleHouseLayout(width, place);
-export const lorong13Reviews = (place, frame) => facing(frame, place.id, place.id === 'buildersmart' ? 12 : 7.5, place.id === 'buildersmart' ? 8 : 22);
+export function lorong13Layout(place, width) {
+  if (!place.row) return simpleHouseLayout(width, place);
+  const base = row13Layout(width, place.bays), mid = (a, b) => (a + b) / 2;
+  for (const g of place.ground ?? []) base.add(g.name, mid(...g.u), mid(...g.h), g.out, g.u[1] - g.u[0], g.h[1] - g.h[0], g.depth ?? .03, g.colour, g.glow ?? 0);
+  return base;
+}
+const reviewDistance = { buildersmart: [12, 8], 'teck-hoe': [9, 12] };
+export const lorong13Reviews = (place, frame) => facing(frame, place.id, ...(reviewDistance[place.id] ?? [7.5, 20]));

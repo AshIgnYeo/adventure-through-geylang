@@ -3,6 +3,7 @@ import type { World, Point } from './world';
 import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews } from './lorong-13-layout.mjs';
 import { buildSimpleHouse, type Draw } from './simple-house';
 import { frontageFrame } from './gable-roof-layout.mjs';
+import { buildRow13House } from './row13';
 
 const text = (c: CanvasRenderingContext2D, s: string, x: number, y: number, size: number, colour: string, font = 'sans-serif', weight = '700', maxWidth?: number) => {
   c.fillStyle = colour; c.font = `${weight} ${size}px ${font}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(s, x, y, maxWidth);
@@ -34,6 +35,13 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
     awning: '#3a3b40',
     valance: (c, w, h) => { c.fillStyle = '#3a3b40'; c.fillRect(0, 0, w, h); text(c, 'B I S T R O   &   B A R', w * .5, h * .5, h * .42, '#f2f2ee', '"Helvetica Neue", Arial, sans-serif', '500'); },
   },
+  'teck-hoe': {
+    boards: [(c, w, h) => {
+      c.clearRect(0, 0, w, h);
+      text(c, 'TECK HOE AIRCONDITIONING PARTS PTE LTD', w / 2, h * .32, h * .42, '#3a3c3c', '"Arial Narrow", "Helvetica Neue", Arial, sans-serif', '700', w * .98);
+      text(c, '11', w * .47, h * .82, h * .26, '#3a3c3c', 'Arial, sans-serif', '700');
+    }],
+  },
   buildersmart: {
     boards: [(c, w, h) => {
       c.fillStyle = '#e4dcc4'; c.fillRect(0, 0, w, h); c.strokeStyle = '#7c6f4f'; c.lineWidth = h * .06; c.strokeRect(0, 0, w, h);
@@ -64,8 +72,21 @@ const iconPanel = (c: CanvasRenderingContext2D, w: number, h: number) => {
 export function buildLorong13(world: World, id: string, poly: Point[]) {
   const place = lorong13.find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
-  const frame = lorong13Frame(poly, place), layout = lorong13Layout(place, frame.width);
-  const { pt, textured } = buildSimpleHouse(world, place.name, frame, poly, place, layout as any, draws[place.id] ?? {});
+  const frame = lorong13Frame(poly, place), layout = lorong13Layout(place, frame.width) as any;
+  if (place.row) {
+    // A house of the conserved row at Nos. 3-9, on the shared row elevation.
+    const { pt } = buildRow13House(world, place.name, frame, layout);
+    const aw = place.awning;
+    if (aw) {
+      const m = world.mat(aw.colour); m.cull = pc.CULLFACE_NONE; m.update();
+      const corners = [pt(aw.from, 0), pt(aw.to, 0), pt(aw.to, aw.depth), pt(aw.from, aw.depth)], ys = [aw.wall, aw.wall, aw.front, aw.front];
+      world.mesh(`${place.name} awning`, corners.flatMap((p, i) => [p[0], ys[i], p[1]]), [0, 0, 1, 0, 1, 1, 0, 1], [0, 1, 2, 0, 2, 3], m);
+      world.panel(pt(aw.from, aw.depth), pt(aw.to, aw.depth), aw.front - .22, aw.front, m);
+    }
+    for (const r of lorong13Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+    return true;
+  }
+  const { pt, textured } = buildSimpleHouse(world, place.name, frame, poly, place, layout, draws[place.id] ?? {});
   if (place.id === 'buildersmart') {
     const panel = place.blocks.find((b: any) => b.name === 'tool-icon panel'), canvas = document.createElement('canvas');
     canvas.width = 256; canvas.height = Math.round(256 * (panel.h[1] - panel.h[0]) / (panel.u[1] - panel.u[0])); iconPanel(canvas.getContext('2d')!, canvas.width, canvas.height);

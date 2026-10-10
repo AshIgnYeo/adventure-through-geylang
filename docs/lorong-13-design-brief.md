@@ -48,11 +48,38 @@ The same measurements show that the party line between No. 25 and Nos. 21/23 fal
   - **Height:** parallax gives 7.7–8.2 m; a render from the June 2024 `6rAI…` pose matches about 7 m. It is modelled at **7.3 m**.
 - **Front:** the 19.4 m Sims Avenue face is the modelled front. The 6.1 m Lorong 13 face has its own opening and awning.
 
+## Teck Hoe Airconditioning Parts, 11 Lorong 13 (dated exterior)
+
+- **Signage and conflict:** April 2024 shows TECK HOE AIRCONDITIONING PARTS PTE LTD lettered on the front wall and door plate 11, on source way [1223773759](https://www.openstreetmap.org/way/1223773759), which is tagged No. 11. Google Maps now lists the company at 8 Lor 15 Geylang, with a branch at 54 Dunlop Street.
+- **Decision:** under open question 12, the signed house is modelled as a dated exterior. The conflict is recorded, and no current occupancy is claimed.
+- **Depth:** rectifications from `J1TC…`, `8U4Z…` and `HaY-…` cross over with the front wall about 1.4 m in front of the source front. The source front is kept.
+- **Plan lock resolved:** the main two-storey block (about 4 m) and a lower south wing (about 2.3 m) share one front line. An open yard takes the south end, and a metal canopy covers the north passage.
+- **Roof:** from the street, the hipped roof's apex shows above the eaves. That puts the ridge at about **7.8 m**, against eaves at about 5.2 m. The ventilated gablet is simplified away.
+- **Yard:** the ground line in a level frame puts the yard wall about 2.2 m in front of the house, about 1.75 m high under a mesh fence to about 2.7 m. The gate is teal.
+
+## No. 15D/E Lorong 13 (unnamed)
+
+- **Identity:** unnumbered way [1223773761](https://www.openstreetmap.org/way/1223773761) lies between Muhammadiyah (No. 17) and the Chong Min house (plate 15-C, way tagged 15B). Its door plates read 15E and 15D. Hiap Lian Friendly Association is listed at 15D, but no association sign was seen, so the house is unnamed.
+- **Depth:** the two panoramas either side (`D4Uk…` and `8k_B…`) cross over about 0.9 m in front of the source front.
+- **Elevation:** two storeys under a deep hood (about 7.1 m) and a plain parapet (8.2 m). Upstairs, a small window sits in a moulded surround under a louvred vent, beside a wide four-pane window with a transom. Below are a timber door, the grilled 15E door and two roller shutters.
+
+## No. 9 Lorong 13, southern house (unnamed)
+
+- **Identity:** the southern of the two ways tagged No. 9 ([1223773756](https://www.openstreetmap.org/way/1223773756)). Its five-foot way holds a free-standing MC Multi Skills banner and a vending machine, but no fixed sign, so the house is unnamed.
+- **Elevation:** the row elevation measured at No. 7, with the bays read on a square-on `uh9Y…` frame at the row's 0.5 m forward depth: shuttered windows either side of a full-height French window, and tile panels under the outer windows. A white grille closes the five-foot way, as at the Mister Contracts house.
+
+## No. 3 Lorong 13 (unnamed)
+
+- **Identity:** way [1223773753](https://www.openstreetmap.org/way/1223773753), tagged No. 3, with plate 3 over its glass door. River Ash Bakery is listed at No. 3, but no bakery sign appears in any capture from 2018 to April 2024 (the 10 October lock stands), so the house is unnamed.
+- **Elevation:** the row elevation, with three tall windows with fretwork transoms (the middle one full height) and tile panels under the outer two. The bays were read on a square-on `f-IH…` frame.
+- **Ground floor:** a maroon awning over a roller shutter, the glass door and a timber door, with two condensers.
+- **Check:** render-and-compare moved the awning's south end in and made it shallower.
+
 ## Omitted and estimated
 
-- **Omitted:** stock, pallets, vehicles, menus, furniture, posters and interiors.
+- **Omitted:** stock, pallets, vehicles, menus, furniture, posters, banners, vending machines, plants and interiors.
 - **Estimated:** five-foot-way depths, awning depths, the loft depth and the roof forms.
 
 ## Review
 
-Use `?review=thirteen-bbq` and `?review=buildersmart`.
+Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s` and `?review=l13-3`.

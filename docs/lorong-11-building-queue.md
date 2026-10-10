@@ -529,6 +529,15 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Lock resolved:** the BUILDERSmart boards at No. 100 Sims Avenue are a second frontage; listing and signage agree at this corner.
 - **Validation / completion:** as Q55. The named-place total is 64. See the [Lorong 13 brief](lorong-13-design-brief.md).
 
+### Q57. Teck Hoe Airconditioning Parts, 11 Lorong 13 Geylang, completed (dated exterior)
+
+- **Lock resolved:** the 9 October lock (current use, plan) is settled. Under open question 12 the signed and plated house is a dated exterior, recording that Teck Hoe now lists 8 Lor 15 Geylang. Three panoramas resolve the main block, the lower south wing, the yard and the canopy on source way 1223773759.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 65. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
+
+- **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
