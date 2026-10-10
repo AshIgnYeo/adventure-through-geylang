@@ -6,7 +6,12 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+28. **Geylang Road Nos. 217–229 (north side, between Lorong 7 and Lian Seng): re-space at the triangulated party lines?**
+    - **Evidence:** party lines triangulated from two June 2024 panoramas (`i-vtfVn07QFERJ6yuTUUtA`, `U23wEgPybSSNqmMh7jNGZQ`) put the Lorong 7 corner pier on the source front, 1.6 m short of the source corner. Going east, the houses measure 4.6 m (Gong He Guan, No. 217), 4.5 m (No. 219), 4.4 m (No. 221), and then the house with the red Geylang Lor 9 Fresh Frog Porridge board.
+    - **Problem:** that board, which identified No. 223 in the earlier split, falls in the east 4.5 m of `gr-221-west`. The modelled Nos. 223, 225 and 227 therefore stand about 4.5 m east of their photographed houses, each showing its western neighbour's frontage. The earlier split laid its widths from Lian Seng's strip edge and allowed about ±1 m for this drive's position errors, which is too little here.
+    - **What happens now:** `gr-221-west` is rebuilt as photographed, unnamed with blank boards. The modelled Nos. 223–227 are unchanged.
+    - **Recommendation:** yes. Re-cut source way 453797929 at the triangulated lines anchored on the Lorong 7 corner, re-target the Nos. 223–227 models to their photographed houses, and name **Gong He Guan** (listed at 217 Geylang Rd, a dessert restaurant, and signed) on its own strip. BBQ Home at No. 219 is permanently closed and stays unnamed.
+    - **Unlocks:** correct house order on this stretch and one named place.
 
 ## Settled
 

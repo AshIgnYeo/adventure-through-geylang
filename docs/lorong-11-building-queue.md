@@ -924,4 +924,10 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - The party lines were triangulated from two June 2024 panoramas. They lie 4.8 m in front of the source front (the drive's position error) and give bays of about 5.0, 4.6 and 5.2 m. The grey|green line falls at 16.7 m, against the earlier split's 16.8 m.
   - The HAPPY PLACE TATTOO banner hangs over a closed frontage, so it is blank.
   - **Noted, not changed:** from Geylang Road, the ChongQingXiaoMian split (`gr-258`) shows a plain side wall where a grey shophouse with a red 串 board stands, between the corner building's short Geylang Road end and the green house.
+- **West end (`src/ring-west-layout.mjs`), unnamed exteriors:**
+  - `gr-221-west`: the Peranakan row east of the Lorong 7 corner. It holds Gong He Guan (No. 217, listed and signed), BBQ Home (No. 219, closed), a white house, and the house with the Lor 9 Fresh Frog Porridge board. The triangulated party lines show the earlier Nos. 223–227 split sits about 4.5 m east of its photographed houses. That is open question 28; until it is settled, the boards are blank.
+  - Way 453797928: the white Art Deco block dated 1939 on the west corner of Lorong 7.
+  - No. 198 (454254201): a grey four-storey office block with multiple tenants, plus a narrow cream house at its west end.
+  - Way 454254200: cream Art Deco shophouses with a curved west corner.
+  - **Method:** all four were triangulated from two June 2024 panoramas. Their depth offsets range from 0.9 m behind to 1.3 m in front of the source fronts, and heights were corrected for that. The two blocks that straddle the west edge use oblique review starts inside the walkable bounds.
 
