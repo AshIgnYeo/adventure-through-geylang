@@ -2,7 +2,8 @@ import fs from 'node:fs';
 const xml = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
 const attrs = text => Object.fromEntries([...text.matchAll(/([\w:]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
 const nodes = new Map([...xml.matchAll(/<node\b[^>]*>/g)].map(([s]) => { const a=attrs(s); return [a.id, [+a.lon, +a.lat]]; }));
-const names = ['Lorong 11 Geylang', 'Lorong 13 Geylang', 'Geylang Road', 'Sims Avenue'];
+// Lorong 15 was added on 10 October 2026 (open question 10).
+const names = ['Lorong 11 Geylang', 'Lorong 13 Geylang', 'Lorong 15 Geylang', 'Geylang Road', 'Sims Avenue'];
 const bounds = [103.87625, 1.31195, 103.8783, 1.31425];
 const inside = ([lon,lat]) => lon>=bounds[0] && lon<=bounds[2] && lat>=bounds[1] && lat<=bounds[3];
 const roads=[], buildings=[], paths=[], contextRoads=[];
