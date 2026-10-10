@@ -18,3 +18,16 @@ Research and implementation: **10 October 2026**. This brief covers `src/sims-no
 - **Uncertainty:** heights carry about ±0.3 m. The roof is estimated as hipped.
 
 Use `?review=sims-north-pair`, `?review=sa-107`, `?review=sa-109` and `?review=red-flag-davco`.
+
+## Yi Xiu Factory Building, 65 Sims Avenue
+
+- **Identity:** Google Maps lists Yi Xiu Factory Building at 65 Sims Ave, Singapore 387418, with tenants on levels 2 to 7. June 2024 Street View shows FACTORY BUILDING lettering on the parapet of the salmon flatted factory filling source way 439168856. The lower characters 厂大厦 of a vertical name are on its pale stair core; only those are drawn, because the rest was hidden by a tree.
+- **Height:** in the `YZf1…` panorama the east wing's base sits on the ground at the source line, and its roofline elevation puts the roof about **36 m** up. A 6 m ground storey and nine upper storeys of about 3.3 m fit that.
+- **Modelling:** the whole source outline is walled to the roof, with window bands and salmon spandrels on four faces, a canopy over the ground storey, and the stair core near the east end of the Sims face. Part of the outline lies beyond the study's north edge. The rear elevations are simplified to the same bands.
+
+## The fruit-stall buildings at No. 77 (unnamed)
+
+Ways 439168813 and 439168845 hold a single-storey building under weathered tiled roofs, with fruit and vegetable stalls under striped awnings. Way 439168847 behind them holds a small shed. Durian Culture (SG) is listed at 77 Sims Ave, but no sign naming it was seen (the 10 October lock stands), so they are unnamed.
+
+Use `?review=yi-xiu-factory-building` and `?review=sa-77`.
+

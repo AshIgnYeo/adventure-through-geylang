@@ -72,7 +72,43 @@ export const redFlagDavco = {
   backFittings: [{ name: 'building-materials shop', u: [.4, 6.3], h: [.1, 2.3], colour: '#4a3a32', glow: .08 }],
 };
 
-export const simsNorthRow = [whitePair, saWest, saWhite, redFlagDavco];
+// The low tiled fruit-stall buildings at No. 77 (ways 439168813 and 439168845) and the small shed behind.
+const fruitNote = 'June 2024 Street View shows a single-storey building under weathered tiled roofs with fruit and vegetable stalls under striped and dark awnings in its open front. Durian Culture (SG) is listed at 77 Sims Ave with its point in way 439168813, and fruit stalls are listed nearby, but no sign naming either was seen, so no name is given. Read on the 49OM and qzPH panoramas at the source front, where the roofs and awnings fit; heights carry about ±0.3 m. Produce, crates and vehicles are not reconstructed.';
+const fruitShed = (id, way, frontEdge, extra) => ({
+  id, buildingIds: [way], kind: 'unnamed', unnamed: true, frontEdge, reviewRoad: 'Sims Avenue',
+  name: `Fruit-stall building at 77 Sims Avenue, way ${way} (June 2024 exterior, occupant not identified)`, address: '77 Sims Avenue (north side, by Lorong 11)',
+  height: 3.4, ceiling: 3.0, fiveFootWay: .3, roof: { type: 'hip', ridge: 5.6, colour: '#7a5a48' },
+  evidence: fruitNote, sources: [`https://www.openstreetmap.org/way/${way}`, pano('49OMf9AQc8HWnOxc6MrJFQ', 330, 10, 100), pano('qzPH3ywF_WDqHNnMt4xojA', 340, 10, 100)],
+  colours: { wall: '#d9d4c6', trim: '#c9c4b6', frame: '#3a3e40', glass: '#3e474b', pier: '#d9d4c6', back: '#3a3532', floor: '#9a978f' },
+  backFittings: [{ name: 'open stall front', u: [.3, 5.8], h: [.1, 2.8], colour: '#4a3a2e', glow: .05 }],
+  ...extra,
+});
+export const fruit77 = fruitShed('sa-77', '439168813', 0, { awning: { from: .1, to: 6.2, wall: 3.0, front: 2.4, depth: 2.6, valance: .3 } });
+export const fruit77b = fruitShed('sa-77b', '439168845', 2, { awning: { from: .1, to: 5.0, wall: 3.0, front: 2.4, depth: 2.6, valance: .3 }, backFittings: [{ name: 'open stall front', u: [.3, 4.8], h: [.1, 2.8], colour: '#4a3a2e', glow: .05 }] });
+export const fruitBack = fruitShed('sa-77c', '439168847', 0, { height: 3.0, roof: { type: 'flat', colour: '#8f9596' }, backFittings: [] });
+
+// Yi Xiu Factory Building, 65 Sims Avenue: a salmon ten-storey flatted factory over its whole source way,
+// its west part fronting Sims Avenue (edge 5) and its east wing set back (edge 3).
+export const yiXiu = {
+  id: 'yi-xiu-factory-building', buildingIds: ['439168856'], kind: 'yi-xiu-factory-building', frontEdge: 5, reviewRoad: 'Sims Avenue',
+  name: 'Yi Xiu Factory Building (June 2024 exterior)', address: '65 Sims Avenue',
+  height: 36.0, ceiling: 6.0, fiveFootWay: 1.5, roof: { type: 'flat', colour: '#9a9893' },
+  evidence: 'Google Maps lists Yi Xiu Factory Building at 65 Sims Ave, Singapore 387418, with tenants on levels 2 to 7, and June 2024 Street View shows FACTORY BUILDING lettering on its parapet and the lower characters 厂大厦 of a vertical name on its pale stair core (the rest hidden by a tree, so left blank), with the English name shown in full only on the parapet as listed, on the salmon flatted factory filling source way 439168856 north of Sims Avenue by Lorong 11. Bands of dark windows run across every upper storey between salmon spandrels, over a tall ground storey with loading bays. The roof is about 36 m up, from the roofline elevation in the YZf1 panorama at the source line, where the wing\'s base sits on the ground; a 6 m ground storey and nine upper storeys of about 3.3 m fit it. The model fills the whole source outline, part of which lies beyond the study\'s north edge; the rear elevations are simplified to the same bands. Air-conditioner units, vehicles and the interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Yi+Xiu+Factory+Building+65+Sims+Avenue', 'https://www.openstreetmap.org/way/439168856', pano('YZf1yddH0WodqqcVAH4tUA', 345, 15, 100), pano('49OMf9AQc8HWnOxc6MrJFQ', 290, 22, 30)],
+  colours: { wall: '#de6f5f', trim: '#c95a4d', frame: '#3a3e40', glass: '#3e474b', pier: '#de6f5f', back: '#3a3532', floor: '#9a978f' },
+  storeys: Array.from({ length: 9 }, (_, i) => 6.3 + i * 3.3),
+};
+export function yiXiuBands(width) {
+  const boxes = [], add = (name, u, y, out, w, h, depth, colour) => boxes.push({ name, u, y, out, w, h, depth, colour, glow: 0 });
+  for (const f of yiXiu.storeys) {
+    add('window band', width / 2, f + 1.55, .03, width - .6, 1.7, .04, '#3e474b');
+    add('spandrel ledge', width / 2, f + .2, .25, width, .3, .5, '#c95a4d');
+  }
+  add('parapet', width / 2, yiXiu.height - .4, .1, width, .8, .2, '#c95a4d');
+  return boxes;
+}
+
+export const simsNorthRow = [whitePair, saWest, saWhite, redFlagDavco, fruit77, fruit77b, fruitBack];
 export const simsNorthRowFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const simsNorthRowLayout = (place, width) => simpleHouseLayout(width, place);
 export const simsNorthRowReviews = (place, frame) => facing(frame, place.id, 10, 12);

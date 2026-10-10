@@ -596,6 +596,11 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Lock resolved:** the 9 October Lorong 15 west-side lock. Their joint board names both numbers. The rest of the west side (Nos. 1–33) followed as unnamed walk-up exteriors.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 82. See the [Lorong 15 brief](lorong-15-brief.md).
 
+### Q75. Yi Xiu Factory Building, 65 Sims Avenue, completed
+
+- **Address / footprint:** listed at 65 Sims Ave and signed FACTORY BUILDING. The salmon ten-storey flatted factory fills way 439168856, with its roof at about 36 m from the roofline elevation. The fruit-stall buildings at No. 77 in front of it are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 83. See the [Sims Avenue north brief](sims-north-row-brief.md).
+
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
 
 - **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
