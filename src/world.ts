@@ -7,6 +7,7 @@ import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
 import { buildRingEast } from './ring-east';
 import { buildRingWest } from './ring-west';
+import { buildRingC } from './ring-c';
 import { buildFrogPorridge } from './frog-porridge';
 import { buildBuddhistArtCentre } from './buddhist-art-centre';
 import { buildEatFirst } from './eat-first';
@@ -175,6 +176,7 @@ export class World {
       if(buildLorong9(this,b.id,poly))continue;
       if(buildRingEast(this,b.id,poly))continue;
       if(buildRingWest(this,b.id,poly))continue;
+      if(buildRingC(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;
