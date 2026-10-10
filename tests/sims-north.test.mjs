@@ -20,7 +20,7 @@ test('Nos. 131 and 133 Sims Avenue each carry their listed identity on the tagge
   // QianJing's point is inside No. 133; the displaced Normal Stainless point falls in No. 127 and is not used.
   assert.equal(pointInPolygon([103.8779886, 1.3142791], map.buildings.find(b => b.id === '439168787').coordinates), true);
   assert.equal(pointInPolygon([103.8779151, 1.3142433], map.buildings.find(b => b.id === '439168660').coordinates), true);
-  assert.equal(landmarkFor('439168660'), undefined);
+  assert.notEqual(landmarkFor('439168660')?.id, normalStainless.id, 'No. 127 is not Normal Stainless (it is now part of the ibis block)');
   assert.match(normalStainless.evidence, /displaced into No\. 127/);
   assert.ok(Math.abs(frame.width - 11.02) < .03 && Math.abs(frame.split - 5.51) < .02);
   // The measured party wall sits east of the equal source split, inside No. 133's way.

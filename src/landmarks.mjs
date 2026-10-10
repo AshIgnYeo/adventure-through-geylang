@@ -52,6 +52,7 @@ import { yapSun } from './sims-south-layout.mjs';
 import { lianSeng } from './geylang-north-layout.mjs';
 import { monsterInk, shadowTattoo, nanyangLian, tianTian, takeToys } from './geylang-south-layout.mjs';
 import { sinChewTan, teckKeow, hongShengKoon, shipChandlers } from './lorong-15-layout.mjs';
+import { ibisGold } from './ibis-gold-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
@@ -71,6 +72,7 @@ export const landmarks = [
   { ...teckKeow },
   { ...hongShengKoon },
   { ...shipChandlers },
+  { ...ibisGold },
   { ...gemsVille },
   { ...cico },
   { ...pfcs },
