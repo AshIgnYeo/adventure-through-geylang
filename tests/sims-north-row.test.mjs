@@ -10,6 +10,7 @@ test('the Sims Avenue north-side places face Sims Avenue with their fittings in 
     assert.equal(nearestRoad(frame.point(frame.width / 2, 3)).name, 'Sims Avenue', place.id);
     if (place.unnamed) { assert.equal(landmarkFor(place.buildingIds[0]), undefined); assert.match(place.evidence, /no name is given/); }
     for (const w of place.windows ?? []) assert.ok(w.u[0] >= 0 && w.u[1] <= frame.width && w.h[1] < place.height, place.id);
+    if (place.id === 'shi-cheng-temple') assert.match(place.evidence, /No name board could be read/);
     assertFittings(frame, poly, simsNorthRowLayout(place, frame.width).boxes, .12);
   }
 });

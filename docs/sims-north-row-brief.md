@@ -31,3 +31,11 @@ Ways 439168813 and 439168845 hold a single-storey building under weathered tiled
 
 Use `?review=yi-xiu-factory-building` and `?review=sa-77`.
 
+## Shi Cheng Temple 真佛宗狮城雷藏寺, 117 Sims Avenue
+
+- **Identity:** Google Maps lists Shi Cheng Temple, a True Buddha School temple, at 117 Sims Ave. Its point lies about 1 m beyond the north edge of source way 475915911. June 2024 Street View shows temple architecture on that building above the Brandsbridge tent. No name board could be read, because the ground floor is hidden by the temporary tent and a red hoarding. Neither is reconstructed.
+- **Elevation:** a cream front between two octagonal towers banded in brown, red columns with carved bracket capitals, red balcony railings on two levels, green-tiled eaves with a central pediment, and a pavilion with a flared roof on top.
+- **Heights:** from roofline elevations in the `-vjb…` panorama on the front plane. The towers reach about 18.6 m, the eaves about 8.3 and 11.3 m, and the upper railing about 13.3 m. The set-back upper tiers are estimates, and part of the outline lies beyond the study's north edge.
+
+Use `?review=shi-cheng-temple`.
+

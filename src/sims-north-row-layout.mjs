@@ -108,7 +108,52 @@ export function yiXiuBands(width) {
   return boxes;
 }
 
-export const simsNorthRow = [whitePair, saWest, saWhite, redFlagDavco, fruit77, fruit77b, fruitBack];
+// Shi Cheng Temple 真佛宗狮城雷藏寺, 117 Sims Avenue: a cream temple front between two octagonal towers.
+// u runs east along the Sims front (edge 0) from its west corner; heights from roofline elevations in the
+// -vjb panorama on the front plane, the set-back upper tiers estimated.
+const T = { towers: [[0, 3.2], [14.4, 17.59]], bands: [5.0, 8.4, 11.8, 15.2, 18.4], eaves: [8.3, 11.3], railings: [12.6, 15.6], columns: [5.6, 8.0, 10.4, 12.0] };
+export const shiCheng = {
+  id: 'shi-cheng-temple', buildingIds: ['475915911'], kind: 'shi-cheng-temple', frontEdge: 0, reviewRoad: 'Sims Avenue',
+  name: 'Shi Cheng Temple 真佛宗狮城雷藏寺 (June 2024 exterior)', address: '117 Sims Avenue',
+  height: 17.0, ceiling: 4.5, fiveFootWay: .5, roof: { type: 'flat', colour: '#9a9893' },
+  evidence: 'Google Maps lists Shi Cheng Temple 真佛宗狮城雷藏寺, a True Buddha School temple, at 117 Sims Ave, its point about 1 m beyond the north edge of source way 475915911, and June 2024 Street View shows the temple architecture of that building above the tent: a cream front between two octagonal towers banded in brown, red columns with carved bracket capitals, red balcony railings on two levels, green-tiled eaves with a central pediment, and a pavilion with a flared roof on top. No name board could be read, the ground floor being hidden by the temporary tent and a red hoarding, which are not reconstructed. Heights come from roofline elevations in the -vjb panorama on the front plane (towers about 18.6 m, eaves about 8.3 and 11.3 m, the upper railing about 13.3 m); the set-back upper tiers are estimates, and part of the outline lies beyond the study\'s north edge.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Shi+Cheng+Temple+117+Sims+Avenue', 'https://www.openstreetmap.org/way/475915911', pano('-vjbkWOXAP_tX2wp_eg-4w', 325, 25, 90), pano('eLBmJpBQgY1u_CPP4C8XGw', 352, 28, 40)],
+  colours: { wall: '#ece6d6', trim: '#8a5a44', frame: '#a8322e', glass: '#3e474b', pier: '#ece6d6', back: '#3a3532', floor: '#a49e95' },
+};
+export function shiChengLayout(width) {
+  const red = '#a8322e', green = '#4f6f66', brown = '#8a5a44', cream = '#ece6d6';
+  const blocks = [];
+  for (const [l, r] of T.towers) {
+    blocks.push({ name: 'octagonal tower', u: [l, Math.min(r, width)], h: [0, 18.6], out: .4, depth: .8, colour: cream });
+    for (const b of T.bands) blocks.push({ name: 'tower band', u: [l - .05, Math.min(r + .05, width)], h: [b, b + .35], out: .85, depth: .1, colour: brown });
+    for (const y of [6.2, 9.6, 13.0, 16.4]) blocks.push({ name: 'tower window', u: [(l + r) / 2 - .3, (l + r) / 2 + .3], h: [y, y + 1.0], out: .82, depth: .03, colour: '#4a5658' });
+  }
+  const mid = [3.4, 14.2];
+  for (const e of T.eaves) {
+    blocks.push({ name: 'green-tiled eave', u: mid, h: [e - .2, e + .25], out: 1.0, depth: 2.0, colour: green });
+    blocks.push({ name: 'eave ridge tiles', u: mid, h: [e + .25, e + .4], out: .3, depth: .6, colour: '#3e5a52' });
+  }
+  blocks.push({ name: 'central pediment', u: [6.8, 10.8], h: [8.6, 9.6], out: 1.6, depth: .2, colour: '#d9cf9a' });
+  for (const u of [4.2, 6.6, 8.8, 11.0, 13.4]) for (const [b, t] of [[4.6, 8.1], [8.7, 11.1]]) {
+    blocks.push({ name: 'red column', u: [u - .14, u + .14], h: [b, t], out: .6, depth: .28, colour: red });
+    blocks.push({ name: 'carved bracket capital', u: [u - .35, u + .35], h: [t - .45, t], out: .65, depth: .5, colour: '#7a2a24' });
+  }
+  for (const y of T.railings) {
+    blocks.push({ name: 'red railing', u: mid, h: [y, y + .1], out: .7, depth: .06, colour: red });
+    for (let u = mid[0] + .1; u < mid[1]; u += .22) blocks.push({ name: 'railing baluster', u: [u, u + .05], h: [y - .7, y], out: .7, depth: .05, colour: red });
+  }
+  blocks.push({ name: 'top pavilion', u: [5.5, 12.1], h: [17.0, 20.0], out: -3.0, depth: 4.0, colour: cream });
+  blocks.push({ name: 'pavilion flared roof', u: [5.0, 12.6], h: [20.0, 20.7], out: -3.0, depth: 5.0, colour: green });
+  blocks.push({ name: 'pavilion ridge', u: [5.8, 11.8], h: [20.7, 21.2], out: -3.0, depth: .8, colour: '#3e5a52' });
+  return simpleHouseLayout(width, {
+    ...shiCheng, blocks,
+    windows: [{ u: [5.2, 7.8], h: [5.6, 7.4], panes: 3 }, { u: [9.8, 12.4], h: [5.6, 7.4], panes: 3 }, { u: [5.2, 7.8], h: [9.4, 10.8], panes: 3 }, { u: [9.8, 12.4], h: [9.4, 10.8], panes: 3 }],
+    piers: [[3.2, 3.6], [14.0, 14.4]],
+    backFittings: [{ name: 'temple entrance', u: [6.6, 11.0], h: [.1, 4.0], colour: '#5a2a24' }],
+  });
+}
+
+export const simsNorthRow = [whitePair, saWest, saWhite, redFlagDavco, fruit77, fruit77b, fruitBack, shiCheng];
 export const simsNorthRowFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
-export const simsNorthRowLayout = (place, width) => simpleHouseLayout(width, place);
-export const simsNorthRowReviews = (place, frame) => facing(frame, place.id, 10, 12);
+export const simsNorthRowLayout = (place, width) => place.id === 'shi-cheng-temple' ? shiChengLayout(width) : simpleHouseLayout(width, place);
+export const simsNorthRowReviews = (place, frame) => facing(frame, place.id, place.id === 'shi-cheng-temple' ? 14 : 10, place.id === 'shi-cheng-temple' ? 30 : 12);
