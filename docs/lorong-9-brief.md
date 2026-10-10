@@ -1,4 +1,4 @@
-# Lorong 9 east side, around the Public Free Clinic Society
+# Lorong 9 Geylang
 
 Research and implementation: **10 October 2026**. This brief covers `src/lorong-9-layout.mjs`.
 
@@ -17,3 +17,15 @@ Lorong 9 is outside the derived road set, so the frames face west onto open grou
 Heights carry about ±1 m: the near frames are oblique, and the grey building's top is out of frame (estimated at eight storeys, 25 m).
 
 Use `?review=l9-12`, `?review=l9-6-8` and `?review=ywam-singapore`.
+
+## The west side
+
+These ways straddle the study's west edge. Heights come from roofline elevations in June 2024 Lorong 9 panoramas and carry about ±2 m.
+
+- **Kim Court, No. 11** (way 453797935, named): Google Maps lists Kim Court at 11 Lor 9 Geylang. KIM COURT lettering over the plate **11** stands on the pale entrance pillar of the yellow eight-storey apartment block. Triangulating the pillar from `CCVS…` and `TWmJ…` puts it 2.2 m behind the front line of the way tagged No. 11. The 10 October lock had placed the lettering on the way tagged 17, which was wrong. The block has stacks of curved balconies framed in maroon, a pale stair core and a car porch behind red gates, with its roof at about 24.7 m.
+- **The Diamond, No. 17** (way 453797934, named): listed at 17 Lor 9 Geylang, with THE DIAMOND lettering over its car porch. A cream block with green trim, bay windows and diamond-lattice balustrades.
+- **No. 7A** (way 453797930, unnamed): a weathered white four-storey block with ribbon windows, a timber-screened top floor and a glazed stair tower.
+- **Nos. 3 and 5** (ways 453797937 and 453797936): construction sites in June 2024, with white corrugated hoarding painted No. 3, under scaffolding hung with sound-barrier sheeting about 8 m high. The Ji Yang Cai Clan Association (No. 3) and the Pu Guang Tang Buddhist Society (No. 5) are listed there. What is being built is not known, so the sites are shown as photographed, unnamed.
+
+Use `?review=kim-court`, `?review=the-diamond` and `?review=l9-7a`.
+

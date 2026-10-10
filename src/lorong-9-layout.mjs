@@ -77,6 +77,74 @@ export const ywam = {
 };
 
 export const lorong9 = [no12, greyBuilding, ywam];
+// The west-side places are appended below their definitions.
 export const lorong9Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong9Layout = (place, width) => place.id === 'l9-6-8' ? greyBuildingLayout(width) : simpleHouseLayout(width, place);
 export const lorong9Reviews = (place, frame) => facing(frame, place.id, 14, 24);
+
+// The west side of Lorong 9 (frames face east, u running north from each south corner). Lorong 9 is outside
+// the derived road set; these ways straddle the study's west edge.
+const westDepth = 'Heights come from roofline elevations in June 2024 Lorong 9 panoramas and carry about ±2 m; the façades are kept on the source front.';
+const balconyStack = (us, floors, colour) => us.flatMap(u => floors.map(y => ({ name: 'curved balcony', u, h: [y, y + 1.0], out: .45, depth: .9, colour })));
+export const kimCourt = {
+  id: 'kim-court', buildingIds: ['453797935'], kind: 'kim-court', frontEdge: 2, reviewRoad: 'Lorong 9 Geylang',
+  name: 'Kim Court (June 2024 exterior)', address: '11 Lorong 9 Geylang',
+  height: 24.7, ceiling: 3.6, fiveFootWay: 1.0, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'Google Maps lists Kim Court at 11 Lor 9 Geylang, and June 2024 Street View shows KIM COURT lettering over the plate 11 on the pale entrance pillar of the yellow apartment block on source way 453797935, tagged No. 11; triangulating the pillar from two panoramas puts it 2.2 m behind the way\'s front line. This resolves the 10 October lock, which had placed the lettering on the way tagged 17 (where The Diamond stands). An eight-storey block of yellow walls with stacks of curved balconies framed in maroon, a pale stair core and a car porch behind red gates. ' + westDepth + ' The interior and parked cars are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Kim+Court+11+Lorong+9+Geylang', 'https://www.openstreetmap.org/way/453797935', pano('TWmJ4hHNCuOUbKyqstqd7g', 255, 15, 100), pano('CCVSJEitT2kunabTWNPGyQ', 260, 15, 100)],
+  colours: { wall: '#d9a93a', trim: '#8a3a2e', frame: '#2b2e30', glass: '#3e474b', pier: '#d9a93a', back: '#ecebe6', floor: '#a49e95' },
+  bands: [[24.4, 24.7, .3, '#8a3a2e']],
+  windows: [3, 6.5, 13.0, 19.5].flatMap(u => [6.0, 8.9, 11.8, 14.7, 17.6, 20.5].map(y => ({ u: [u, u + 1.6], h: [y, y + 1.4], panes: 2 }))),
+  blocks: [
+    ...balconyStack([[1.0, 4.2], [7.6, 10.8], [15.0, 18.2]], [5.0, 7.9, 10.8, 13.7, 16.6, 19.5, 22.4], '#8a3a2e'),
+    { name: 'pale stair core', u: [11.2, 13.4], h: [0, 24.9], out: .3, depth: .6, colour: '#efe3c4' },
+    { name: 'red gate', u: [.3, 10.8], h: [0, 1.9], out: 1.8, depth: .06, colour: '#a8433a' },
+  ],
+  board: { u: [11.3, 13.3], h: [3.9, 4.6], out: .62 },
+  piers: [[0, .4], [22.8, 23.23]],
+  backFittings: [{ name: 'car porch', u: [.5, 10.8], h: [.1, 3.4], colour: '#3a3735' }, { name: 'entrance', u: [13.6, 17.0], h: [.1, 3.0], colour: '#4a4440' }],
+};
+
+export const theDiamond = {
+  id: 'the-diamond', buildingIds: ['453797934'], kind: 'the-diamond', frontEdge: 1, reviewRoad: 'Lorong 9 Geylang',
+  name: 'The Diamond (June 2024 exterior)', address: '17 Lorong 9 Geylang',
+  height: 25.0, ceiling: 3.6, fiveFootWay: 1.0, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'Google Maps lists The Diamond, an apartment building, at 17 Lor 9 Geylang, and June 2024 Street View shows THE DIAMOND lettering on the green-trimmed band over the car porch of the cream apartment block north of Kim Court, on source way 453797934, tagged No. 17. Cream walls with green trim, bay windows with white diamond-lattice balustrades, and a tall rear tower with glazed balconies. ' + westDepth + ' The car porch, gates and interior are simplified.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=The+Diamond+17+Lorong+9+Geylang', 'https://www.openstreetmap.org/way/453797934', pano('TWmJ4hHNCuOUbKyqstqd7g', 300, 20, 100), pano('TWmJ4hHNCuOUbKyqstqd7g', 320, 40, 100)],
+  colours: { wall: '#eee8d2', trim: '#7fb24a', frame: '#f2f2ee', glass: '#3e474b', pier: '#eee8d2', back: '#3a3735', floor: '#a49e95' },
+  bands: [[24.7, 25.0, .3, '#7fb24a'], [3.6, 4.0, .4, '#7fb24a']],
+  windows: [2.0, 6.0, 10.5].flatMap(u => [5.0, 8.0, 11.0, 14.0, 17.0, 20.0].map(y => ({ u: [u, u + 1.8], h: [y, y + 1.6], panes: 3, surround: true }))),
+  blocks: [6.6, 9.6, 12.6].map(y => ({ name: 'diamond-lattice balustrade', u: [5.6, 8.4], h: [y - 1.6, y - .8], out: .35, depth: .7, colour: '#f2f2ee' })),
+  board: { u: [3.0, 9.0], h: [3.65, 3.95], out: .42 },
+  piers: [[0, .4], [15.2, 15.61]],
+  backFittings: [{ name: 'car porch', u: [.5, 15.0], h: [.1, 3.4], colour: '#3a3735' }],
+};
+
+export const no7a = {
+  id: 'l9-7a', buildingIds: ['453797930'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 9 Geylang',
+  name: 'No. 7A Lorong 9 Geylang (June 2024 exterior, occupant not identified)', address: '7A Lorong 9 Geylang',
+  height: 13.0, ceiling: 3.4, fiveFootWay: 1.0, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'Source way 453797930 is tagged 7A, south of Kim Court. June 2024 Street View shows a weathered white four-storey block of the 1960s-70s with ribbon windows, a timber-screened top floor, a glazed stair tower and a car porch with mailboxes for 7A and 7B; no sign or listing identifies it, so no name is given. ' + westDepth,
+  sources: ['https://www.openstreetmap.org/way/453797930', pano('N-T15W1WRThGKvX1Uv669w', 250, 15, 100)],
+  colours: { wall: '#d9d8d1', trim: '#cfcec7', frame: '#3a3e40', glass: '#3e474b', pier: '#d9d8d1', back: '#2f2d2b', floor: '#9a978f' },
+  bands: [[12.7, 13.0, .3], [3.4, 3.7, .6]],
+  windows: [{ u: [4.5, 13.0], h: [4.4, 6.1], panes: 6 }, { u: [4.5, 13.0], h: [7.4, 9.1], panes: 6 }],
+  blocks: [
+    { name: 'timber screen', u: [4.5, 13.0], h: [10.3, 12.2], out: .05, depth: .05, colour: '#8a5a3e' },
+    { name: 'glazed stair tower', u: [.6, 2.4], h: [3.7, 12.5], out: .3, depth: .6, colour: '#3e474b' },
+  ],
+  piers: [[0, .4], [13.8, 14.21]],
+  backFittings: [{ name: 'car porch', u: [3.0, 13.6], h: [.1, 3.2], colour: '#2f2d2b' }, { name: 'stair door', u: [.6, 2.4], h: [.1, 2.4], colour: '#5a3a2a' }],
+};
+
+// The construction sites at Nos. 3 and 5 (ways 453797937 and 453797936): white corrugated hoarding under
+// scaffolding hung with sound-barrier sheeting, as in June 2024.
+export const constructionSites = [
+  { id: 'l9-3-site', buildingIds: ['453797937'], number: '3', listed: 'the Ji Yang Cai Clan Association' },
+  { id: 'l9-5-site', buildingIds: ['453797936'], number: '5', listed: 'the Pu Guang Tang Buddhist Society' },
+].map(s => ({ ...s, kind: 'unnamed', unnamed: true, name: `Construction site at No. ${s.number} Lorong 9 Geylang (June 2024)`, hoarding: 2.4, sheeting: 8.0,
+  evidence: `Source way ${s.buildingIds[0]}, at No. ${s.number} Lorong 9 by the Geylang Road corner, was a construction site in June 2024: white corrugated hoarding painted No. ${s.number} under scaffolding hung with sound-barrier sheeting about 8 m high. ${s.listed[0].toUpperCase() + s.listed.slice(1)} is listed at No. ${s.number}; what is being built is not known, so the site is shown as photographed, unnamed.`,
+  sources: [`https://www.openstreetmap.org/way/${s.buildingIds[0]}`, pano('Rf3W33Key9E8E81TUuh2Cw', 250, 10, 100), pano('d9Up2Z9zfeNguauN5DT6Dw', 255, 10, 100)] }));
+
+export const lorong9West = [kimCourt, theDiamond, no7a];
+lorong9.push(...lorong9West);

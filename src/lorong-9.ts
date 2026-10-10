@@ -1,5 +1,5 @@
 import type { World, Point } from './world';
-import { lorong9, lorong9Frame, lorong9Layout, lorong9Reviews } from './lorong-9-layout.mjs';
+import { lorong9, lorong9Frame, lorong9Layout, lorong9Reviews, constructionSites } from './lorong-9-layout.mjs';
 import { buildSimpleHouse } from './simple-house';
 import { project } from './geo.mjs';
 
@@ -15,6 +15,17 @@ function slice<T extends Box>(boxes: T[], from: number, to: number): T[] {
 
 /** June 2024 exteriors on the east side of Lorong 9. */
 export function buildLorong9(world: World, id: string, poly: Point[]) {
+  const site = constructionSites.find(p => p.buildingIds.includes(id));
+  if (site) {
+    // Hoarding on every edge, with scaffold sheeting above it and no roof.
+    const hoard = world.mat('#eeeeea'), sheet = world.mat('#b9b2a2'), pole = world.mat('#8a8a86');
+    for (let i = 0; i < poly.length; i++) {
+      const a = poly[i], b = poly[(i + 1) % poly.length];
+      world.panel(a, b, 0, site.hoarding, hoard); world.panel(a, b, site.hoarding, site.sheeting, sheet);
+      world.box('scaffold pole', a[0], site.sheeting / 2, a[1], .08, site.sheeting + .6, .08, pole);
+    }
+    return true;
+  }
   const place = lorong9.find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   const frame = lorong9Frame(poly, place);
