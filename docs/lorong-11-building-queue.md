@@ -397,6 +397,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** two-panorama rectification did not converge. Measurements therefore come from one level, square-on frame scaled by the 12.36 m source frontage, which the photograph matches to within about 2%. A 2.0 m (depth) and 1.0 m (along-street) panorama position error was corrected for render-and-compare, which then aligns square-on and oblique frames. See the [design brief](bar-lorong-13-design-brief.md).
 - **Validation / completion:** all **115 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-three.
 
+### Q40. Chen Hing Trading 增興貿易, 241 Geylang Road, completed
+
+- **Address / footprint:** Google Maps lists CHEN HING TRADING PTE. LTD. at 241 Geylang Rd, 389296 (open). Its point lies inside unnumbered [way 475158359](https://www.openstreetmap.org/way/475158359), directly west of the mosque (No. 245). June 2024 Street View shows its lettering on the grey three-storey block between the mosque and Geylang Lor 9 Beef Kway Teow (No. 237).
+- **Method:** the panoramas' recorded positions were calibrated against the existing mosque model, giving 2.8 m in depth and 1.5 m along the street. After that correction, the photographed frontage matches the 10.08 m source edge, and renders overlay the photograph. The rear wing keeps the 6.7 m back-lane elevation height. The awning is shortened to stay clear of the carriageway. See the [design brief](chen-hing-design-brief.md).
+- **Validation / completion:** all **118 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-four.
+
 ### 10 October 2026: leads checked and locked
 
 - **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.
@@ -411,6 +417,9 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Yap Sun Hardware, 120 Sims Avenue:** its name is on the blue awning in June 2024, but Google Maps lists Yap Sun Hardware Mfy at 105 Sims Ave, #04-09 Chancerlodge Complex. As with WUNDERFOLKS at 28 Lor 13, its use at No. 120 is unresolved. Not modelled.
 - **AiSecurityReady, 2 Lorong 11 (the grey conserved shophouse beside S.M. Khek Leow):** listed open at 2 Lor 11. April 2024 shows a CCTV supply-and-install shop under a WINA SALON board; Wina Salon is listed as permanently closed. The AiSecurityReady name itself was not seen. This is a candidate for a dated exterior, pending a frame that shows the name.
 - **Ming Li's Eating House 明利美食阁, 114 Sims Avenue (the Lorong 15 corner):** listed open 24 hours at 114 Sims Ave, with its signboard on the corner building in June 2024. A candidate, needing the corner and Lorong 15 elevations.
+- **Panorama position errors:** on Geylang Road (Nos. 237–245) and Lorong 13 (No. 1), the recorded panorama positions are 2–3 m off the source frame. Recorded camera positions alone should not be trusted for depth; calibrate against an existing model or the source frontage width.
+- **Sin Chew Tan's Clan Association 星洲陳氏公會:** its signboard was seen in June 2024 on a three-storey building on the Lorong 13 east side, above GANH XUA (Ganh Xua minimart, listed at 28 Lor 13 and temporarily closed). No listing for the association was found. Locked pending an address.
+- **Geylang Road south side (Nos. 204–258):** Shaxian Eatery 沙县小吃 (210), ChongQingXiaoMian (258, at the Lorong 12 corner), Chang Beer (218), the TakeToys adult store and others are listed and signed in June 2024. Most of their source ways are coarse blocks (for example 454438330) that span several frontages, so they need partial-block splits first.
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked

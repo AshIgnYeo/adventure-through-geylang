@@ -281,3 +281,7 @@ Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists
 ## Bar @ Lorong 13, No. 1 Lorong 13 Geylang
 
 Implemented **10 October 2026** as a dated April 2024 exterior. Google Maps lists Bar @ Lorong 13 at 1A Lor 13 Geylang; the white three-storey Art Deco block plated 1, the source way tagged No. 1, carries its yellow BAR@LORONG13 sign over the north wing, a stair tower lettered 協華大厦 and a restaurant signed 忆滋味 in the south bay. Koh Hwee Cheng, also listed at No. 1, and the displaced River Ash Bakery point are not assigned. Measured from one square-on frame scaled by the 12.36 m source frontage; a 2 m panorama position error was corrected for render-and-compare. See the [design brief](bar-lorong-13-design-brief.md).
+
+## Chen Hing Trading 增興貿易, 241 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists Chen Hing Trading at 241 Geylang Rd, with its point inside the unnumbered source way directly west of Masjid Haji Mohd Salleh. The grey-tiled three-storey block carries raised gold lettering reading 增興貿易私人有限公司 / CHEN HING TRADING PTE. LTD. over a red awning and an open stall. The panoramas here carry a position error of about 2.8 m in depth and 1.5 m along the street, calibrated against the existing mosque model; with it removed, the photographed frontage matches the source edge. See the [design brief](chen-hing-design-brief.md).
