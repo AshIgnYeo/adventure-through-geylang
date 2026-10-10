@@ -191,6 +191,19 @@ export const authoredFootprintGroups = [
       ];
     },
   },
+  {
+    id: 'lorong-9-10', question: 11, approved: '2026-10-10',
+    evidence: 'Partial-block estimate for No. 10 Lorong 9 (source way 1223603460). Three June 2024 Lorong 9 panoramas rectified on planes parallel to the source front agree only on a plane about 8 m behind it: there the green Public Free Clinic Society tower spans the full 13.1 m frontage (to within about 0.5 m in all three), with its lettered top band at about 24.4–26 m. The front 8 m is an open forecourt where the clinic vans park, and the registered satellite roof shows the tower set back by a similar amount. This resolves the earlier blocker, in which a rectification at the source front showed the tower only half as wide. The footprint keeps the source rear and sides behind a cut 8 m inside the front.',
+    replaces: ['1223603460'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '1223603460').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const F0 = src[3], F1 = src[0], len = Math.hypot(F1[0] - F0[0], F1[1] - F0[1]), along = [(F1[0] - F0[0]) / len, (F1[1] - F0[1]) / len];
+      let inward = [-along[1], along[0]];
+      if (inward[0] * (src[1][0] - F1[0]) + inward[1] * (src[1][1] - F1[1]) < 0) inward = neg(inward);
+      const P = at(F0, inward, 8), keepInward = (along[0] * inward[1] - along[1] * inward[0]) >= 0 ? along : neg(along);
+      return [{ id: 'l9-10', street: 'Lorong 9 Geylang', number: '10', levels: 9, outline: clip(src, P, keepInward) }];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

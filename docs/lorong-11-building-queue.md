@@ -497,6 +497,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Identity:** a dated exterior. The listing and the April 2024 signage agree; current operation is uncertain. All **163 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 59. See the [design brief](hotel-81-spring-design-brief.md).
 
+### PFCS. Public Free Clinic Society headquarters, 10 Lorong 9 Geylang, completed
+
+- **Address / footprint:** listed at 10 Lor 9 Geylang, with its point in the No. 10 source way. The tower is set back 8 m behind a forecourt, so it stands on the authored footprint `l9-10` under open question 11.
+- **Method:** depth found by agreement of three rectified panoramas, then render-and-compare. All **166 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 60. See the [design brief](pfcs-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

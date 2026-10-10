@@ -349,3 +349,7 @@ Implemented **10 October 2026** on the source corner outline (way 682928749, No.
 ## Hotel 81 Spring, 22 Lorong 15 Geylang
 
 Implemented **10 October 2026** as a dated April 2024 exterior, on a partial-block split of the merged source block 454254281 (open questions 10 and 11). Google Maps lists Hotel 81 Spring at 22 Lor 15 Geylang, though the operator site no longer does. Three panoramas measure its 16.2 m pale-blue frontage, with the HOTEL 81 sign and SPRING plate. See the [design brief](hotel-81-spring-design-brief.md).
+
+## Public Free Clinic Society 大眾醫院 headquarters, 10 Lorong 9 Geylang
+
+Implemented **10 October 2026** under open question 11. Three Lorong 9 panoramas agree only on a plane 8 m behind the source front, where the green curtain-wall tower spans the full 13.1 m frontage. The tower stands on a set-back authored footprint behind an open forecourt, which resolves the 9 October half-width blocker. See the [design brief](pfcs-design-brief.md).

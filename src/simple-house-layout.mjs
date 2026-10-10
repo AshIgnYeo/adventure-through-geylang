@@ -30,7 +30,7 @@ export function simpleHouseLayout(width, spec) {
   for (const [l, r] of S.piers ?? []) add('pier', mid(l, r), S.ceiling / 2, -.2, r - l, S.ceiling, .4, C.pier ?? C.trim);
   add('five-foot way floor', width / 2, .04, -D / 2, width - .04, .08, D, C.floor ?? '#9d978c');
   add('five-foot way ceiling', width / 2, S.ceiling + .03, -D / 2, width - .04, .06, D, '#e4e2dc');
-  for (const u of [.02, width - .02]) add('five-foot way return', u, S.ceiling / 2, -D / 2, .03, S.ceiling, D, C.trim);
+  for (const u of [.05, width - .05]) add('five-foot way return', u, S.ceiling / 2, -D / 2, .03, S.ceiling, D, C.trim);
   const back = -D + .04;
   add('back wall', width / 2, S.ceiling / 2, -D, width - .04, S.ceiling, .06, C.back ?? '#2f2c2a');
   for (const f of S.backFittings ?? []) add(f.name, mid(...f.u), mid(...f.h), back + (f.out ?? 0), f.u[1] - f.u[0], f.h[1] - f.h[0], f.depth ?? .03, f.colour, f.glow ?? 0);
