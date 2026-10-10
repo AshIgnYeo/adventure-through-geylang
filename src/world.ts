@@ -33,6 +33,7 @@ import { buildBeefKwayTeow } from './beef-kway-teow';
 import { buildWatDhammasatis } from './wat-dhammasatis';
 import { buildRedDot } from './red-dot';
 import { buildGuanKeat } from './guan-keat';
+import { buildMingLi } from './ming-li';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -143,6 +144,7 @@ export class World {
       if(buildWatDhammasatis(this,b.id,poly))continue;
       if(buildRedDot(this,b.id,poly))continue;
       if(buildGuanKeat(this,b.id,poly))continue;
+      if(buildMingLi(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;

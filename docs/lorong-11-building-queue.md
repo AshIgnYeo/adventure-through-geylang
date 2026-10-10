@@ -485,6 +485,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Correction:** the earlier uniform-bay reading is superseded by ground-floor piers matching the source at 20.76 m and 27.17 m. All **153 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 57. See the [design brief](red-dot-design-brief.md).
 
+### Q54. Ming Li's Eating House 明利美食阁, 114 Sims Avenue, completed
+
+- **Address / footprint:** listed at 114 Sims Ave, matching the source way tagged No. 114. The source corner outline is kept: under open question 4 the satellite was checked and supports it, and the earlier 2.6 m offset is a pose error.
+- **Method:** square-on frames scaled to the source faces, with corner render-and-compare. All **159 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 58. See the [design brief](ming-li-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

@@ -17,7 +17,7 @@ All fourteen questions below were answered on **10 October 2026**. The project o
 | 1 | **Yes.** Re-space the Lorong 11 west row (Nos. 15–35) using the measured party lines | Author twelve footprints, including 29A, and retarget Hok Tek Chi and Canton Wong |
 | 2 | **Yes.** Re-space Geylang Road Nos. 253–267 | Author footprints for the row and the Shi Hao corner |
 | 3 | **Yes.** Authored footprint for No. 237 Geylang Road | Labelled estimate |
-| 4 | **Yes.** Authored corner outline for Ming Li's, 114 Sims Avenue | Labelled estimate |
+| 4 | **Yes.** Authored corner outline for Ming Li's, 114 Sims Avenue | Not needed: the registered satellite supports the source corner outline, so Ming Li's is modelled on it |
 | 5 | **Yes.** Authored corner footprint for No. 291 Geylang Road | Labelled estimate |
 | 6 | **Yes.** Authored footprint for Gems Ville, 8 Lorong 13 | Labelled estimate |
 | 7 | **Yes.** Authored footprint for Lorong 11 Nos. 1–7 | Labelled estimate |

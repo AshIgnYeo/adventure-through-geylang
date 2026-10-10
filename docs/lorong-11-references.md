@@ -341,3 +341,7 @@ Implemented **10 October 2026** on the owner-approved re-spaced Sims Avenue row 
 ## Guan Keat coffeeshop, No. 38 Lorong 11 (formerly Lok Fu Lala Pot, C4)
 
 Re-identified and rebuilt on **10 October 2026** under open question 8. Lok Fu Lala Pot was a stall inside this coffeeshop in April 2024. The awning reads GUAN KEAT PTE LTD; Guan Keat is an LPG distributor whose branded awnings appear on coffeeshops. The mint-green three-storey corner block is modelled on an authored chamfered footprint that keeps the 23.17 m source side. See the [design brief](guan-keat-design-brief.md).
+
+## Ming Li's Eating House 明利美食阁, 114 Sims Avenue
+
+Implemented **10 October 2026** on the source corner outline (way 682928749, No. 114). Open question 4 allowed an authored outline, but the registered satellite roof agrees with the source within about 1.5 m. The white three-storey corner block carries its 明利美食阁 board on the chamfer, a food-photograph board on Sims Avenue and a SingGas awning on Lorong 15. See the [design brief](ming-li-design-brief.md).
