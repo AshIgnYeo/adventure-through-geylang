@@ -30,11 +30,13 @@ export function simpleHouseLayout(width, spec) {
   // Free-standing pieces in the frontage frame: colour fields, hoods, stepped parapets, goods. `out` is the box centre.
   for (const b of S.blocks ?? []) add(b.name ?? 'block', mid(...b.u), mid(...b.h), b.out ?? 0, b.u[1] - b.u[0], b.h[1] - b.h[0], b.depth ?? .1, b.colour ?? C.trim, b.glow ?? 0);
   for (const [l, r] of S.piers ?? []) add('pier', mid(l, r), S.ceiling / 2, -.2, r - l, S.ceiling, .4, C.pier ?? C.trim);
-  add('five-foot way floor', width / 2, .04, -D / 2, width - .04, .08, D, C.floor ?? '#9d978c');
-  add('five-foot way ceiling', width / 2, S.ceiling + .03, -D / 2, width - .04, .06, D, '#e4e2dc');
-  for (const u of [.05, width - .05]) add('five-foot way return', u, S.ceiling / 2, -D / 2, .03, S.ceiling, D, C.trim);
+  // The shell stands `shellInset` inside each party wall, more where a party wall is off square.
+  const I = S.shellInset ?? .02;
+  add('five-foot way floor', width / 2, .04, -D / 2, width - 2 * I, .08, D, C.floor ?? '#9d978c');
+  add('five-foot way ceiling', width / 2, S.ceiling + .03, -D / 2, width - 2 * I, .06, D, '#e4e2dc');
+  for (const u of [I + .03, width - I - .03]) add('five-foot way return', u, S.ceiling / 2, -D / 2, .03, S.ceiling, D, C.trim);
   const back = -D + .04;
-  add('back wall', width / 2, S.ceiling / 2, -D, width - .04, S.ceiling, .06, C.back ?? '#2f2c2a');
+  add('back wall', width / 2, S.ceiling / 2, -D, width - 2 * I, S.ceiling, .06, C.back ?? '#2f2c2a');
   for (const f of S.backFittings ?? []) add(f.name, mid(...f.u), mid(...f.h), back + (f.out ?? 0), f.u[1] - f.u[0], f.h[1] - f.h[0], f.depth ?? .03, f.colour, f.glow ?? 0);
   for (const r of S.rooftop ?? []) add('rooftop shed', mid(...r.u), mid(S.height, r.top), -r.setback - r.depth / 2, r.u[1] - r.u[0], r.top - S.height, r.depth, r.colour ?? C.trim);
   const panel = s => s && ({ left: s.u[0], right: s.u[1], bottom: s.h[0], top: s.h[1], out: s.out ?? .03 });

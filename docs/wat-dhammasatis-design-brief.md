@@ -38,6 +38,6 @@ The awning is kept to 0.35 m, because the source front lies within half a metre 
 
 - **Modelled:** the stepped white front, the temple and durian boards (redrawn originally), the Buddha image behind the top glazing, and the fruit stall.
 - **Not modelled:** stall goods, lights beyond the valance pattern, the shrine and interior.
-- **Neighbours:** Nos. 229 and 231 stay generic.
+- **Neighbours:** No. 229 is now Lian Seng Weighing Scale Co. and No. 231 an unnamed exterior; see the [Geylang Road north brief](geylang-north-brief.md).
 
 Use `?review=wat-dhammasatis`. All **149 tests**, the type check and the build passed, with day and night renders and no console errors.
