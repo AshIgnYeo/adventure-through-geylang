@@ -41,10 +41,12 @@ import { tingYuXuan, keLaiShun, mobileTime, shiHao } from './geylang-row-layout.
 import { beefKwayTeow } from './beef-kway-teow-layout.mjs';
 import { watDhammasatis } from './wat-dhammasatis-layout.mjs';
 import { redDot } from './red-dot-layout.mjs';
+import { guanKeat } from './guan-keat-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...guanKeat },
   { ...redDot },
   { ...watDhammasatis },
   { ...beefKwayTeow },
@@ -148,12 +150,6 @@ export const landmarks = [
       'https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00334/',
       'https://www.zaobao.com.sg/news/singapore/story20260125-8151043',
     ],
-  },
-  {
-    id: 'lok-fu', buildingIds: ['1223250209'], kind: 'eating-house',
-    name: 'Lok Fu Lala Pot', address: '38 Lorong 11 Geylang', height: 7.2,
-    evidence: 'Address and outdoor seating confirmed by restaurant listing. Exterior, colours, sign design and furniture layout remain illustrative pending street photographs.',
-    sources: ['https://www.quandoo.sg/place/lok-fu-lala-pot-106960/about'],
   },
   {
     id: 'faith-mission-home', buildingIds: ['1223250210'], kind: 'faith-mission',

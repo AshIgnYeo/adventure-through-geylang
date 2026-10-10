@@ -337,3 +337,7 @@ Implemented **10 October 2026** on an owner-approved partial-block footprint (op
 ## Red Dot Running Company, 108 Sims Avenue
 
 Implemented **10 October 2026** on the owner-approved re-spaced Sims Avenue row (open question 8a). Ground-floor piers confirm the source party lines at the 108 pier and at Amrise. Only the 106/108 line moves, to about 15.0 m, and the former Nos. 108 and 110 form Red Dot Running's single 12.17 m unit, whose decalled shopfront runs across the 108 pier. See the [design brief](red-dot-design-brief.md).
+
+## Guan Keat coffeeshop, No. 38 Lorong 11 (formerly Lok Fu Lala Pot, C4)
+
+Re-identified and rebuilt on **10 October 2026** under open question 8. Lok Fu Lala Pot was a stall inside this coffeeshop in April 2024. The awning reads GUAN KEAT PTE LTD; Guan Keat is an LPG distributor whose branded awnings appear on coffeeshops. The mint-green three-storey corner block is modelled on an authored chamfered footprint that keeps the 23.17 m source side. See the [design brief](guan-keat-design-brief.md).

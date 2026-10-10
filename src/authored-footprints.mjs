@@ -162,6 +162,19 @@ export const authoredFootprintGroups = [
       ];
     },
   },
+  {
+    id: 'lorong-11-38', question: 8, approved: '2026-10-10',
+    evidence: 'The Guan Keat coffeeshop corner block at No. 38 Lorong 11 and Sims Avenue. June 2024 Street View from four Sims Avenue panoramas shows one mint-green three-storey block along the whole Sims face, and the registered satellite roof agrees with the 23.17 m source side; an earlier 18.6 m triangulation is not confirmed, so the source length is kept. The rounded Lorong 11 corner is authored as a 3 m chamfer.',
+    replaces: ['1223250209'],
+    build(map) {
+      const src = map.buildings.find(b => b.id === '1223250209').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      // Vertex 3 is the Lorong 11 / Sims Avenue corner; cut it 2.12 m along each side.
+      const c = src[3], toL11 = [(src[2][0] - c[0]), (src[2][1] - c[1])], toSims = [(src[0][0] - c[0]), (src[0][1] - c[1])];
+      const u = v => { const l = Math.hypot(v[0], v[1]); return [v[0] / l, v[1] / l]; }, cut = 3 / Math.SQRT2;
+      return [{ id: 'l11-38', street: 'Lorong 11 Geylang', number: '38', levels: 3,
+        outline: [src[0], src[1], src[2], at(c, u(toL11), cut), at(c, u(toSims), cut)] }];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

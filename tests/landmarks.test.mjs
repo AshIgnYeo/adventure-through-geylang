@@ -140,7 +140,7 @@ test('SHG historical frontage uses No. 36 and excludes the adjoining buildings',
   // Seng Hup Guan place point in Google Maps, inspected 29 September 2026.
   const mappedPlace = [103.8768642, 1.3136079];
   assert.equal(pointInPolygon(mappedPlace, building.coordinates), true);
-  for (const id of ['1223250206', '1223250209']) {
+  for (const id of ['1223250206', 'l11-38']) {
     assert.notEqual(landmarkFor(id), place);
     assert.equal(pointInPolygon(mappedPlace, map.buildings.find(b => b.id === id).coordinates), false);
   }
@@ -204,7 +204,8 @@ test('real landmark identities have unique, existing street-study footprints and
 });
 
 test('provisional appearance and historical address matches stay explicitly documented', () => {
-  assert.match(landmarks.find(p => p.id === 'lok-fu').evidence, /illustrative/);
+  assert.equal(landmarks.find(p => p.id === 'lok-fu'), undefined, 'C4 was re-identified as the Guan Keat coffeeshop');
+  assert.match(landmarks.find(p => p.id === 'guan-keat').evidence, /Lok Fu was a stall here/);
   assert.match(landmarks.find(p => p.id === 'agape-centre').evidence, /provisional/);
   assert.equal(map.buildings.find(b => b.id === landmarks.find(p => p.id === 'hotel-81-joy').buildingIds[0]).number, '11');
   assert.equal(map.buildings.find(b => b.id === landmarkFor('l11w-17').buildingIds[0]).number, '17');

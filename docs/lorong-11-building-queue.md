@@ -58,6 +58,8 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 
 Q1–Q6 are **completed**. Q2, Q4, Q5 and Q6 represent dated April 2024 exteriors. The original bounded queue is complete; manually added Q7 is recorded separately below. Source access date for Q1–Q6 is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment. Named organisations are included only as candidates for their externally evidenced premises.
 
+- **Superseded, 10 October 2026:** re-identified as the Guan Keat coffeeshop (Lok Fu stall, 2024) and rebuilt on an authored chamfered footprint, `l11-38` (open question 8). See the [design brief](guan-keat-design-brief.md).
+
 ### Q1. Ho San Kong Hoey premises, completed
 
 - **Address / footprint:** 24/24A Lorong 11 Geylang, Singapore 388716; assigned [way 1223250200](https://www.openstreetmap.org/way/1223250200), tagged No. 24. The single No. 24 street frontage is assigned; 24A is not treated as another footprint or a separate legal parcel.

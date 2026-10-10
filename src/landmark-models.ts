@@ -549,23 +549,6 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     return true;
   }
 
-  // Address-confirmed eating house. Its detailed exterior remains explicitly provisional.
-  panel(0, w, 3.2, place.height, .015, world.mat('#d4d1bd'));
-  for (const u of [.2, .5, .8]) window(w * u, 5.3, w * .2, 1.55);
-  panel(0, w, .15, 3.2, -.12, world.mat('#2b3431'));
-  box('eating-house fascia', w / 2, 3.04, 2.3, w, .74, .28, '#e0d6b6');
-  sign('六福啦啦煲', .15, w - .3, 2.94, .47, '#d7c59a', '#423d32', 2.45);
-  sign('LOK FU LALA POT', .25, w - .5, 2.7, .23, '#d7c59a', '#423d32', 2.45);
-  box('eating-house canopy', w / 2, 2.62, 1.25, w, .14, 2.5, '#798875');
-  for (const u of [.1, w - .1]) box('canopy support', u, 1.3, 2.3, .085, 2.6, .085, '#b5beb3');
-  box('fluorescent strip', w / 2, 2.46, .7, w * .7, .055, .09, '#e4e1c9', 1);
-  for (const u of [w * .28, w * .72]) {
-    box('table top', u, .76, 1.05, .8, .065, .75, '#c5c3b6');
-    box('table pedestal', u, .4, 1.05, .09, .7, .09, '#5e6560');
-    for (const offset of [-.55, .55]) {
-      box('plastic stool', u + offset, .45, 1.07, .34, .09, .34, '#9e3d32');
-      for (const leg of [-.12, .12]) box('stool legs', u + offset + leg, .22, 1.07, .055, .44, .25, '#8c3930');
-    }
-  }
-  return true;
+  // The provisional Lok Fu Lala Pot fallback was retired on 10 October 2026: No. 38 is now the measured Guan Keat model.
+  return false;
 }

@@ -16,7 +16,7 @@ This is now primarily an environment and rendering project. The walking controls
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
 
-The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
+The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
 
 ## Run locally
 
@@ -96,6 +96,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=lor-9-beef-kway-teow
 /?review=wat-dhammasatis
 /?review=red-dot-running
+/?review=guan-keat
 /?review=temple-back-alley-east
 ```
 
@@ -157,6 +158,7 @@ Detailed provenance is available in:
 - [Geylang Lor 9 Beef Kway Teow design brief](docs/beef-kway-teow-design-brief.md)
 - [Wat Dhammasatis design brief](docs/wat-dhammasatis-design-brief.md)
 - [Red Dot Running Company design brief](docs/red-dot-design-brief.md)
+- [Guan Keat coffeeshop design brief](docs/guan-keat-design-brief.md)
 
 ## Project structure
 
