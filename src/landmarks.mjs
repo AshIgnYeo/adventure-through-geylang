@@ -133,8 +133,8 @@ export const landmarks = [
   },
   {
     id: 'hotel-81-joy', buildingIds: ['454274491'], kind: 'hotel',
-    name: 'Hotel 81 Joy', address: '11 Lorong 11 Geylang', height: 24.5,
-    evidence: 'Official operator address and exterior photographs. Height estimated from photographs.',
+    name: 'Hotel 81 Joy', address: '11 Lorong 11 Geylang', height: 31.0,
+    evidence: 'Official operator address and exterior photographs. Re-measured on 10 October 2026 (open question 13) from April 2024 Lorong 11 panoramas rectified on the tower front: seven window storeys at about 3.53 m centres from 5.8 m above an open car porch, and a roof edge at about 31 m (the earlier estimate was 24.5 m with 2.8 m storeys). Window columns, the stair fins and the forecourt sign position were checked by render-and-compare; the stepped balcony bands remain simplified.',
     sources: ['https://www.wwhotels.com/hotel-81/joy/'],
   },
   {

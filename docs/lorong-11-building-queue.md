@@ -33,6 +33,8 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 - **Confidence / uncertainty:** High for name and street address; mapped number agrees. Existing height, fins, windows and entrance dimensions are estimates from photographs, not measured elevations.
 - **Status / blocker:** Completed (`hotel-81-joy` in registry and model code). No blocker to counting it as completed; current façade accuracy remains limited by reference dates.
 
+- **Re-measured, 10 October 2026 (open question 13):** April 2024 Lorong 11 panoramas rectified on the tower front give seven window storeys at about 3.53 m centres from 5.8 m above the car porch, and a roof edge at about 31 m. The height rises from 24.5 m to 31.0 m, the stair fins run full height, and the forecourt HOTEL 81 sign moves onto its photographed pier, about 2 m up. Render-and-compare now aligns the storeys and the roofline.
+
 ### C2. Agape Centre
 
 - **Address / footprints:** Operator gives 8 Lorong 11 Geylang, Singapore 388700. Existing model uses ways [1223250213](https://www.openstreetmap.org/way/1223250213), [1223250216](https://www.openstreetmap.org/way/1223250216), [1223250217](https://www.openstreetmap.org/way/1223250217), provisionally.

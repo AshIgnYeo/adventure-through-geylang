@@ -502,23 +502,25 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     const blue = '#a9c9df', trim = '#dae3e7';
     panel(0, w, 3.25, place.height, .015, world.mat(blue));
     box('lift and stair tower', w * .22, place.height / 2, -.2, w * .34, place.height, .32, blue);
+    // Re-measured 10 October 2026 from rectified April 2024 frames: seven window storeys at 3.53 m centres from 5.8 m.
     for (let floor = 0; floor < 7; floor++) {
-      const y = 4.75 + floor * 2.8;
+      const y = 5.8 + floor * 3.53;
       window(w * .13, y, w * .105, 1.7);
       window(w * .28, y, w * .105, 1.7);
       for (const u of [.55, .77]) window(w * u, y, w * .105, 1.35);
       for (const u of [.44, .92]) window(w * u, y + .42, .48, .48);
       box('projecting horizontal band', w * .69, y - 1.1, .3, w * .61, .38, .65, blue);
     }
-    for (const u of [.055, .205, .37]) box('vertical stair fin', w * u, 13.8, .32, .16, 21.4, .62, trim);
+    for (const u of [.055, .205, .37]) box('vertical stair fin', w * u, (place.height - .6) / 2 + .3, .32, .16, place.height - .6, .62, trim);
     box('hotel parapet', w / 2, place.height + .17, .1, w + .2, .36, .7, trim);
     box('entrance pier', w - .23, 1.6, .05, .46, 3.2, .8, blue);
     box('covered driveway ceiling', w * .69, 3.15, 1.7, w * .61, .22, 4, blue);
     panel(w * .4, w * .58, .15, 3.05, -.2, world.mat('#263c45'));
     box('courtyard paving', w / 2, .08, 3.3, w, .12, 6.5, '#929e9f');
     box('low entrance wall', w * .17, .72, 5.5, w * .34, 1.45, .28, blue);
-    sign('HOTEL 81', .12, w * .32, 1.43, .64, '#288799', '#ffffff', 5.67);
-    sign('JOY · 11', .12, w * .32, 1.1, .27, '#dbe6e9', '#34566e', 5.67);
+    sign('HOTEL 81', 2.1, w * .26, 2.0, .64, '#288799', '#ffffff', 5.67);
+    sign('JOY · 11', 2.1, w * .26, 1.67, .27, '#dbe6e9', '#34566e', 5.67);
+    box('sign pier', 2.1 + w * .13, 1.0, 5.4, w * .27, 2.0, .3, blue);
     for (const u of [.035, .965]) box('courtyard boundary wall', w * u, 1.05, 3.2, .16, 2.1, 6.3, blue);
     box('driveway yellow edge', w * .72, .151, 3.2, .08, .014, 6.2, '#bda150');
     return true;
