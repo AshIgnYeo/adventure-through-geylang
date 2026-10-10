@@ -544,6 +544,11 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Decision:** under open question 12, the clearly signed salon on the re-spaced No. 261 footprint is modelled, recording that its only listing is on Crawford Lane. No. 257 next door, whose 新福興 listing is permanently closed, is an unnamed exterior, as is No. 273 (Zui Xiang, closed) beside Golden Jade.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 67. See the [Geylang row brief](geylang-row-design-brief.md).
 
+### Q60. Yap Sun Hardware, 120 Sims Avenue, completed (dated exterior)
+
+- **Lock resolved:** the 10 October Yap Sun lock. Under open question 12, the signed awning on No. 120 is modelled, recording the Chancerlodge Complex listing. No. 106, beside Red Dot, followed as an unnamed exterior.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 68. See the [Sims Avenue south brief](sims-south-brief.md).
+
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
 
 - **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
