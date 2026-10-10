@@ -417,6 +417,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Footprint:** [way 1223773757](https://www.openstreetmap.org/way/1223773757), the northern No. 9 house. The southern No. 9 house stays generic.
 - **Validation / completion:** all **124 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-six. See the [design brief](mister-contracts-design-brief.md).
 
+### Q43. Eng Lee Huat Hardware, 29 Lorong 11 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Eng Lee Huat Hardware at 29 Lor 11 Geylang, 388721. April 2024 shows its signboard and door plate 29. The model stands on the re-spaced footprint `l11w-29` (4.0 m) under open question 1.
+- **Method:** square-on rectification at the solved 0.6 m depth, then render-and-compare. All **131 tests**, the type check and the build passed, with day and night renders.
+- **Validation / completion:** the named-place total is 47. See the [design brief](eng-lee-huat-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

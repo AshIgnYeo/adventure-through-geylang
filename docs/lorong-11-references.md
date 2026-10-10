@@ -293,3 +293,7 @@ Implemented **10 October 2026** as a dated April 2024 exterior. The operator web
 ## Mister Contracts / MC Multi Skills, northern No. 9 Lorong 13
 
 Implemented **10 October 2026** under the owner's decision on open question 12. The MISTER CONTRACTS PTE. LTD. / MC MULTI SKILLS signboard hangs on the northern of the two source ways tagged No. 9, beside No. 11. The signboard reads No. 5 and Google Maps gives No. 7; both conflicts are recorded in the model's evidence. The house shares the conserved row elevation. See the [design brief](mister-contracts-design-brief.md).
+
+## Eng Lee Huat Hardware, 29 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 29 footprint (4.0 m), which replaces source way 1223407879. Google Maps lists Eng Lee Huat Hardware at 29 Lor 11 Geylang. The white two-storey house carries its black signboard and door plate 29, with a large grilled window over a triangular pediment. See the [design brief](eng-lee-huat-design-brief.md).
