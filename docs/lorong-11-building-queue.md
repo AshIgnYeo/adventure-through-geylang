@@ -511,6 +511,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** depth from the agreement of three rectified panoramas, then render-and-compare. All **170 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 61. See the [design brief](cico-design-brief.md).
 
+### Q6 resolved. Gems Ville, 8 Lorong 13, completed
+
+- **Address / footprint:** listed at 8 Lor 13. Listing records give 7 storeys, 24 units and a 731 m² lot. The authored footprint `l13-8` replaces the 6A way under open question 6.
+- **Method:** frontage from the parallax of four April 2024 panoramas, depth from the lot area. All **174 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 62. See the [design brief](gems-ville-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

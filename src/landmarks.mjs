@@ -46,10 +46,12 @@ import { mingLi } from './ming-li-layout.mjs';
 import { hotel81Spring } from './hotel-81-spring-layout.mjs';
 import { pfcs } from './pfcs-layout.mjs';
 import { cico } from './cico-layout.mjs';
+import { gemsVille } from './gems-ville-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...gemsVille },
   { ...cico },
   { ...pfcs },
   { ...hotel81Spring },

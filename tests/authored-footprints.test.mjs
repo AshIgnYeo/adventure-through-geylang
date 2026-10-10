@@ -121,3 +121,11 @@ test('Lorong 11 Nos. 1–7 are merged behind a 5 m forecourt', () => {
   assert.ok(Math.abs(area(o) - (before - 21.07 * 5)) < 2, `${area(o)} vs ${before}`);
   assert.equal(o.length, 4);
 });
+
+test('Gems Ville replaces the older 6A way with a 27.4 × 26 m footprint that meets Sui Yuan Ju', () => {
+  const o = poly(map.buildings.find(b => b.id === 'l13-8'));
+  assert.ok(Math.abs(area(o) - 27.4 * 26) < 1, `${area(o)}`);
+  const no4 = poly(map.buildings.find(b => b.id === '1223454593'));
+  const near = p => Math.min(...no4.map((q, i) => nearestOnSegment(p, q, no4[(i + 1) % no4.length]).distance));
+  assert.ok(near(o[1]) < .4, 'its south front corner meets the No. 4 party line');
+});

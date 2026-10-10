@@ -357,3 +357,7 @@ Implemented **10 October 2026** under open question 11. Three Lorong 9 panoramas
 ## Cico Flooring 志高地板, Nos. 1–7 Lorong 11 Geylang
 
 Implemented **10 October 2026** under open question 7. The single-storey timber-clad building with two hipped roofs, signed CICO FLOORING 志高地板 (listed at Nos. 1 and 7), stands on a merged footprint of the four source ways, behind a 5 m forecourt where three panoramas agree the façade stands. See the [design brief](cico-design-brief.md).
+
+## Gems Ville, 8 Lorong 13 Geylang
+
+Implemented **10 October 2026** under open question 6, as an April 2024 exterior of the nearly finished seven-storey condominium, signed GEMS VILLE. It stands on an authored 27.4 × 26 m footprint, from the measured frontage and the 731 m² lot, replacing the older 6A source way. See the [design brief](gems-ville-design-brief.md).

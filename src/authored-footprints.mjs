@@ -222,6 +222,19 @@ export const authoredFootprintGroups = [
       return [{ id: 'l11-1-7', street: 'Lorong 11 Geylang', number: '1–7', levels: 1, outline: clip(whole, P, keep) }];
     },
   },
+  {
+    id: 'gems-ville', question: 6, approved: '2026-10-10',
+    evidence: 'Gems Ville, 8 Lorong 13, a seven-storey condominium completed in 2025 on a 731 m² lot (listing records), replaces the earlier 6A source way (23.3 × 15.3 m), which predates it. April 2024 Street View shows the nearly finished building from four Lorong 13 panoramas; rectified on the old source front, its left (north) edge drifts with the camera in a way that places the façade about 1 m behind that line, at about 2.2 m north of the old way. Its south edge meets the source line of No. 4 (Sui Yuan Ju). The depth, 26 m, follows from the 731 m² lot and the measured 27.4 m frontage; the registered satellite imagery predates completion.',
+    replaces: ['452646018'],
+    build(map) {
+      const out = map.buildings.find(b => b.id === '452646018').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const A = out[3], B = out[2], len = Math.hypot(B[0] - A[0], B[1] - A[1]), e = [(B[0] - A[0]) / len, (B[1] - A[1]) / len];
+      let inward = [-e[1], e[0]];
+      if (inward[0] * (out[0][0] - A[0]) + inward[1] * (out[0][1] - A[1]) < 0) inward = neg(inward);
+      const P = (s, d) => at(at(A, e, s), inward, d);
+      return [{ id: 'l13-8', street: 'Lorong 13 Geylang', number: '8', levels: 7, outline: [P(-2.2, 1), P(25.2, 1), P(25.2, 27), P(-2.2, 27)] }];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {
