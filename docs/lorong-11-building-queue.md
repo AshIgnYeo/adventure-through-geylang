@@ -391,6 +391,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** three panoramas rectified onto the façade agree only with the wall about 3.25 m in front of the source front. At that depth the photographed frontage lies wholly inside the 6.77 m source edge, from 0.49 m inside the No. 120 line to the No. 116 line. The signboard was triangulated on the shop front, 2.3 m behind the piers. See the [design brief](fsl-design-brief.md).
 - **Validation / completion:** all **112 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-two.
 
+### Q39. Bar @ Lorong 13, No. 1 Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Bar @ Lorong 13 at 1A Lor 13 Geylang, 388674 (open). [Way 1223773758](https://www.openstreetmap.org/way/1223773758), tagged No. 1, is the white three-storey Art Deco block plated 1, with the BAR@LORONG13 sign over its north wing and a stair tower lettered 協華大厦. Koh Hwee Cheng (No. 1) and the River Ash Bakery point are not assigned.
+- **Method:** two-panorama rectification did not converge. Measurements therefore come from one level, square-on frame scaled by the 12.36 m source frontage, which the photograph matches to within about 2%. A 2.0 m (depth) and 1.0 m (along-street) panorama position error was corrected for render-and-compare, which then aligns square-on and oblique frames. See the [design brief](bar-lorong-13-design-brief.md).
+- **Validation / completion:** all **115 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-three.
+
 ### 10 October 2026: leads checked and locked
 
 - **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.
@@ -402,6 +408,9 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Hakka Association (Singapore), 22 Lorong 11:** listed at No. 22 (way 1223250203, between Hainan Goh and Ho San Kong Hoey). April 2024 shows a plain white two-storey house with a corrugated canopy and a red awning, and no association signage. Not modelled.
 - **Nai Ghee Hardware & Trading, 28 Lorong 11:** listed at No. 28. April 2024 shows only an English Abrasives notice upstairs and closed shutters. Not modelled.
 - **No. 116 Sims Avenue, the Lorong 15 corner:** June 2024 boards read ABC BISTRO RESTAURANT PTE LTD, whose listing is marked permanently closed. Tai Say (coffee shop), Da Bao Lorong 15 and Prata Hub are listed open at No. 116. This conflicts, following the ABC Bistro precedent. Not modelled.
+- **Yap Sun Hardware, 120 Sims Avenue:** its name is on the blue awning in June 2024, but Google Maps lists Yap Sun Hardware Mfy at 105 Sims Ave, #04-09 Chancerlodge Complex. As with WUNDERFOLKS at 28 Lor 13, its use at No. 120 is unresolved. Not modelled.
+- **AiSecurityReady, 2 Lorong 11 (the grey conserved shophouse beside S.M. Khek Leow):** listed open at 2 Lor 11. April 2024 shows a CCTV supply-and-install shop under a WINA SALON board; Wina Salon is listed as permanently closed. The AiSecurityReady name itself was not seen. This is a candidate for a dated exterior, pending a frame that shows the name.
+- **Ming Li's Eating House 明利美食阁, 114 Sims Avenue (the Lorong 15 corner):** listed open 24 hours at 114 Sims Ave, with its signboard on the corner building in June 2024. A candidate, needing the corner and Lorong 15 elevations.
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked

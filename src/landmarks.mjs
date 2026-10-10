@@ -29,10 +29,12 @@ import { jiangsu } from './jiangsu-layout.mjs';
 import { liuDaMa } from './liu-da-ma-layout.mjs';
 import { muhammadiyah } from './muhammadiyah-layout.mjs';
 import { fsl } from './fsl-layout.mjs';
+import { barLorong13 } from './bar-lorong-13-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...barLorong13 },
   { ...fsl },
   { ...muhammadiyah },
   { ...liuDaMa },

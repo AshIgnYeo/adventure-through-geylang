@@ -277,3 +277,7 @@ Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists
 ## FSL EW LED Lighting, 118 Sims Avenue
 
 Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists FSL EW LED Lighting at 118 Sims Ave, matching the source way tagged No. 118; Hua Bian Assn and the Singapore Paper Merchants Association share the address and are not assigned. The stained three-storey frontage between Yap Sun Hardware and the ABC Bistro corner carries a red FSL LED LIGHTING blade lightbox, an orange FSL disc and a red FSL EW LED LIGHTING signboard. Three rectified panoramas place the real façades of this row about 3.25 m in front of the source front, which the model records but does not correct. The photographed frontage lies wholly inside the source footprint. See the [design brief](fsl-design-brief.md).
+
+## Bar @ Lorong 13, No. 1 Lorong 13 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior. Google Maps lists Bar @ Lorong 13 at 1A Lor 13 Geylang; the white three-storey Art Deco block plated 1, the source way tagged No. 1, carries its yellow BAR@LORONG13 sign over the north wing, a stair tower lettered 協華大厦 and a restaurant signed 忆滋味 in the south bay. Koh Hwee Cheng, also listed at No. 1, and the displaced River Ash Bakery point are not assigned. Measured from one square-on frame scaled by the 12.36 m source frontage; a 2 m panorama position error was corrected for render-and-compare. See the [design brief](bar-lorong-13-design-brief.md).
