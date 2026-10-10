@@ -935,4 +935,12 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - The block behind it (1223603464) is drawn as massing only, since it is hidden from Sims Avenue.
   - The neoclassical building at **56 Sims Avenue** (1223603461) is signed HI HOTEL in June 2024, but Google Maps now lists Amrise Hotel Geylang at its point. The operator conflicts, so it is unnamed.
   - **21 Lorong 9** (1223407892) is an eight-storey apartment block with a louvred core and glass-railed balconies, roof at about 26.8 m.
+- **Lorong 10 group (`src/ring-c-layout.mjs`):** seven ways, rebuilt from the June 2024 Lorong 10 drive. Both sides read about 2.4–2.7 m east of their sources; the shift is nearly equal on both sides, so it is treated as the drive's position error.
+  - **Named after a listing check:**
+    - **JH Hotel 嘉華酒店:** listed, point inside way 1223401721, board photographed.
+    - **Nanyang Fan Clan General Association 南洋范氏總會:** listed at 11 Lor 10, point inside way 454438323, raised lettering photographed.
+  - **Left unnamed, signs conflict with listings:**
+    - The sign reading ibis budget SAPPHIRE is on a building whose point is listed as ibis budget Singapore Tulip.
+    - The sign reading ibis budget HOTEL AMETRINE is on a building whose point is listed as ibis budget Singapore Olive.
+  - **Left unnamed, three hotels on one way:** D'Nova Hotel and JXIN HOTEL are listed, but both share way 454438326 with the ibis block. Naming them needs that way split (open question 30).
 

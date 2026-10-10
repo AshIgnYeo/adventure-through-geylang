@@ -6,6 +6,15 @@ Started: 10 October 2026.
 
 ## Open
 
+30. **Lorong 10 east side: split way 454438326 into its three hotel blocks?**
+    - **Evidence:** one 51 m source way carries three separate buildings, photographed in June 2024 and measured along a shared plane:
+      - a taupe six-storey block signed D'Nova Hotel, at 0.4–13.3 m from the north corner;
+      - a seven-storey block signed ibis budget SAPPHIRE, at 13.3–38.5 m;
+      - a white eight-storey block signed 嘉鑫酒店 JXIN HOTEL, at 38.5–51.8 m.
+    - **Listings:** D'Nova Hotel@Kallang and JXIN HOTEL are listed with points inside the way. The middle block's point is listed as ibis budget Singapore Tulip, which conflicts with its sign.
+    - **Recommendation:** yes. Split the way square to its front at 13.3 m and 38.5 m, scaled to the source front, as a labelled estimate. Name D'Nova Hotel and JXIN HOTEL, and leave the middle block unnamed until its name is settled.
+    - **Unlocks:** two named hotels, and the correct roof heights per block, which are now drawn as blocks inside one shell.
+
 29. **Geylang Road south side, east of Lorong 12: move the row's front 4.8 m north and re-split the ChongQingXiaoMian strip?**
     - **Row depth:** party lines triangulated from two June 2024 panoramas (`-tVu…`, `Y1Sv…`) put the façades of the grey, green, yellow and white shophouses about 4.8 m north of the source front of block 454438318. That is towards Geylang Road. A third panorama from a different drive (`GoN_…`) agrees to within 0.1 m. The same drive measures the north-side façades (No. 291) onto their source front, so this is not a pose error. Satellite roofs also run north of the source outline here.
     - **Corner strip:** the grey house with the red 串 board spans about 11.0–16.7 m along the front from Lorong 12, inside the east part of `gr-258`. The earlier split gave all 16.8 m to the ChongQingXiaoMian building, whose Geylang Road face stands near the source front. As a result, the model draws a plain side wall where the grey house stands.

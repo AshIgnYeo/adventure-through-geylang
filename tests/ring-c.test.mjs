@@ -2,9 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ringC, ringCFrame, ringCLayout, ringCReviews } from '../src/ring-c-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
-import { assertFittings, assertReviews, outline, nearestRoad } from './helpers.mjs';
+import { assertFittings, assertReviews, outline, nearestRoad, map } from './helpers.mjs';
+import { pointInPolygon, project } from '../src/geo.mjs';
 
 const byId = id => ringC.find(p => p.id === id);
+// Named where a current listing's point lies in the way and the photographed sign agrees.
+const named = ['jh-hotel', 'nanyang-fan-clan'];
 const fitted = place => { const poly = outline(place.buildingIds[0]), frame = ringCFrame(poly, place); return { poly, frame, layout: ringCLayout(place, frame.width) }; };
 
 test('the Lorong 10 exteriors fit their outlines and keep their review starts clear', () => {
@@ -13,6 +16,7 @@ test('the Lorong 10 exteriors fit their outlines and keep their review starts cl
     assertFittings(frame, poly, layout.boxes);
     assertReviews(frame, ringCReviews(place, frame));
     assert.match(place.evidence, /June 2024/);
+    if (named.includes(place.id)) continue;
     // Unnamed exteriors carry no registered identity, and signs stay blank.
     assert.equal(place.unnamed, true); assert.equal(place.kind, 'unnamed');
     assert.match(place.name, /June 2024 exterior, occupants? not identified/); assert.match(place.evidence, /no name is given/);
@@ -44,4 +48,17 @@ test('measured runs land the right way round on their frames', () => {
   // The white block's upper floors rise above the shell to its 29.1 m roof, inside the outline.
   const upper = h.layout.boxes.find(b => b.name === 'white block upper floors');
   assert.ok(Math.abs(upper.y + upper.h / 2 - 29.1) < 1e-9 && upper.out + upper.depth / 2 <= 0);
+});
+
+test('JH Hotel and the Nanyang Fan Clan hall are named from listing points inside their ways', () => {
+  for (const [id, way, point] of [['jh-hotel', '1223401721', [103.8774994, 1.3116221]], ['nanyang-fan-clan', '454438323', [103.8778339, 1.3114626]]]) {
+    const place = byId(id);
+    assert.deepEqual(place.buildingIds, [way]);
+    assert.equal(landmarkFor(way).id, id);
+    assert.equal(pointInPolygon(project(point, map.origin), outline(way)), true);
+    assert.match(place.evidence, /Google Maps lists/);
+    assert.ok(fitted(place).layout.boards.length > 0);
+  }
+  // The ibis signs conflict with current listings at their points (Tulip, Olive), so those stay unnamed.
+  for (const id of ['l10-yellow-block', 'l10-hotel-row']) assert.equal(landmarkFor(byId(id).buildingIds[0]), undefined);
 });

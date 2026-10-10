@@ -24,7 +24,7 @@ export function placeOnFront(spec, width) {
   return {
     ...spec,
     windows: list(spec.windows), vents: list(spec.vents), blocks: list(spec.blocks), backFittings: list(spec.backFittings),
-    piers: spec.piers?.map(m).filter(Boolean),
+    piers: spec.piers?.map(m).filter(Boolean), boards: list(spec.boards),
   };
 }
 
@@ -119,11 +119,11 @@ export const creamHouse = {
 // 1.0 m east of the source front (s runs north from the source's south corner), where four panoramas agree best.
 const jhRows = [[5.45, 7.6], [8.7, 11.0], [12.1, 14.5], [15.7, 17.9], [19.3, 21.5], [22.8, 25.0]];
 export const ledgeBlock = {
-  id: 'l10-ledge-hotel', buildingIds: ['1223401721'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 10 Geylang', shellInset: .1,
-  name: 'Eight-storey hotel block, Lorong 10 west side (June 2024 exterior, occupant not identified)', address: 'Lorong 10 Geylang, west side',
+  id: 'jh-hotel', buildingIds: ['1223401721'], kind: 'jh-hotel', frontEdge: 0, reviewRoad: 'Lorong 10 Geylang', shellInset: .1,
+  name: 'JH Hotel 嘉華酒店 (June 2024 exterior)', address: 'Lorong 10 Geylang, west side',
   height: 26.0, ceiling: 4.2, fiveFootWay: 5.0, roof: { type: 'flat', colour: '#8f8d88' },
-  evidence: 'A cream eight-storey hotel block on the west side of Lorong 10 between the terrace houses and the yellow block. June 2024 Street View shows two columns of white-framed bay windows on seven storeys, black ledges projecting at every floor, a deep black roof slab, a set-back attic storey over the southern half with one window column, and a car porch under a blue board reading 嘉華酒店 JH HOTEL with an LED price panel. The board is recorded here but no listing was checked, so no name is given; ' + blank + ' The façade measures 13.3 m across the ledges against the 14.81 m source front and is scaled to it; the main roof is about 26 m and the attic about 29 m, with floors about 3.5 m apart. Four panoramas fit best on a plane 1.0 m east of the source front, about 1.4 m behind it once the drive\'s 2.4 m shift on this side is removed; the model keeps the source front.',
-  sources: [way('1223401721'), pano(P.nbA2, 265, 20, 110), pano(P.akP, 265, 20, 110), pano(P.RxYL, 265, 25, 110)],
+  evidence: 'A cream eight-storey hotel block on the west side of Lorong 10 between the terrace houses and the yellow block. June 2024 Street View shows two columns of white-framed bay windows on seven storeys, black ledges projecting at every floor, a deep black roof slab, a set-back attic storey over the southern half with one window column, and a car porch under a blue board reading 嘉華酒店 JH HOTEL with an LED price panel. Google Maps lists JH Hotel, a hotel taking bookings in October 2026, with its point inside this source way, so the board names it; its lettering is redrawn in original type and the LED panel is blank. The façade measures 13.3 m across the ledges against the 14.81 m source front and is scaled to it; the main roof is about 26 m and the attic about 29 m, with floors about 3.5 m apart. Four panoramas fit best on a plane 1.0 m east of the source front, about 1.4 m behind it once the drive\'s 2.4 m shift on this side is removed; the model keeps the source front.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=JH+Hotel+Lorong+10+Geylang', way('1223401721'), pano(P.nbA2, 265, 20, 110), pano(P.akP, 265, 20, 110), pano(P.RxYL, 265, 25, 110)],
   colours: { wall: '#ebe5d4', trim: '#d8d1bd', frame: '#efefea', glass: '#4a5560', pier: '#ebe5d4', back: '#2c2a28', floor: '#9e988e' },
   photo: [1.6, 14.9],
   bands: [[25.3, 26.0, 1.0, '#2e2e30']],
@@ -136,9 +136,10 @@ export const ledgeBlock = {
     ...grid([[3.6, 6.55], [9.85, 12.95]], jhRows.map(([b]) => [b - .3, b - .05])).map(b => ({ ...b, name: 'window ledge', out: .35, depth: .7, colour: '#2e2e30' })),
     { name: 'attic storey', u: [1.7, 8.5], h: [26.0, 28.6], out: -3.9, depth: 6.2, colour: '#ebe5d4' },
     { name: 'attic roof slab', u: [1.7, 8.6], h: [28.6, 29.3], out: -3.6, depth: 6.8, colour: '#2e2e30' },
-    { name: 'blank hotel board', u: [5.25, 11.2], h: [4.3, 5.3], out: .1, depth: .08, colour: '#1f3a8c' },
+    { name: 'hotel board backing', u: [5.25, 11.2], h: [4.3, 5.3], out: .1, depth: .08, colour: '#1f3a8c' },
     { name: 'blank LED panel', u: [5.25, 7.45], h: [3.95, 4.25], out: .1, depth: .06, colour: '#1b1b1b' },
   ],
+  boards: [{ u: [5.3, 11.15], h: [4.35, 5.25], out: .15 }],
   piers: [[1.6, 2.0], [14.5, 14.9]],
   backFittings: [
     { name: 'lobby entrance', u: [5.6, 7.4], h: [.1, 3.0], colour: '#5a5a52', glow: .15 },
@@ -254,11 +255,11 @@ export const hotelRow = {
 // panoramas to a plane 3.3 m behind the source front, about 0.6 m behind it once the drive shift is removed;
 // s runs south from the source's north corner.
 export const no11 = {
-  id: 'l10-11', buildingIds: ['454438323'], kind: 'unnamed', unnamed: true, frontEdge: 8, reviewRoad: 'Lorong 10 Geylang', shellInset: .25,
-  name: 'Association hall at No. 11 Lorong 10 Geylang (June 2024 exterior, occupant not identified)', address: '11 Lorong 10 Geylang',
+  id: 'nanyang-fan-clan', buildingIds: ['454438323'], kind: 'nanyang-fan-clan', frontEdge: 8, reviewRoad: 'Lorong 10 Geylang', shellInset: .25,
+  name: 'Nanyang Fan Clan General Association 南洋范氏總會 (June 2024 exterior)', address: '11 Lorong 10 Geylang',
   height: 9.0, ceiling: 3.9, fiveFootWay: 2.5, roof: { type: 'flat', colour: '#9a9893' },
-  evidence: 'A beige two-storey hall with a long ribbon window, two small windows and a louvred vent above an open ground-floor hall with brown doors, behind a black railing on a white planter wall whose gatepost carries the plate NO. 11. June 2024 Street View shows large raised lettering on the upper wall reading 南洋范氏總會 NANYANG FAN CLAN GENERAL ASSOCIATION and 旺源樓; it is recorded here but no listing was checked, so no name is given and no lettering is modelled. Rectified from two panoramas, the façade measures 13.06 m against the 13.44 m source front and is scaled to it; the parapet is 9.0 m and the ribbon window 5.8-7.0 m. Its upper corners triangulate from the two panoramas 3.3 m behind the source front, about 0.6 m behind it once the drive\'s 2.7 m shift on this side is removed; the model keeps the source front.',
-  sources: [way('454438323'), pano(P.RxYL, 80, 20, 110), pano(P.oiWz, 70, 20, 110)],
+  evidence: 'A beige two-storey hall with a long ribbon window, two small windows and a louvred vent above an open ground-floor hall with brown doors, behind a black railing on a white planter wall whose gatepost carries the plate NO. 11. June 2024 Street View shows large raised lettering on the upper wall reading 南洋范氏總會 NANYANG FAN CLAN GENERAL ASSOCIATION and 旺源樓; Google Maps lists Nanyang Fan Clan General Assn at 11 Lor 10 Geylang, Singapore 399044, with its point inside this source way, so the hall is named; the raised lettering is redrawn in original type. Rectified from two panoramas, the façade measures 13.06 m against the 13.44 m source front and is scaled to it; the parapet is 9.0 m and the ribbon window 5.8-7.0 m. Its upper corners triangulate from the two panoramas 3.3 m behind the source front, about 0.6 m behind it once the drive\'s 2.7 m shift on this side is removed; the model keeps the source front.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Nanyang+Fan+Clan+General+Association+11+Lorong+10+Geylang', way('454438323'), pano(P.RxYL, 80, 20, 110), pano(P.oiWz, 70, 20, 110)],
   colours: { wall: '#d8c9a2', trim: '#cdbd94', frame: '#3a3a36', glass: '#2f3538', pier: '#d8c9a2', back: '#3a3530', floor: '#a49e95' },
   photo: [.84, 13.9],
   bands: [[8.82, 9.0, .2], [3.9, 4.15, .1]],
@@ -270,6 +271,8 @@ export const no11 = {
     { name: 'railing top rail', u: [1.0, 8.8], h: [2.8, 2.9], out: 1.5, depth: .05, colour: '#26282a' },
     { name: 'gatepost', u: [8.7, 8.95], h: [0, 3.0], out: 1.5, depth: .25, colour: '#e8e6df' },
   ],
+  // Raised lettering on the upper wall, read on a rectified June 2024 frame and scaled to this elevation.
+  boards: [{ u: [2.6, 11.8], h: [7.72, 8.54], out: .04 }, { u: [3.0, 11.4], h: [7.13, 7.5], out: .04 }, { u: [5.6, 9.0], h: [4.7, 5.32], out: .04 }],
   piers: [[.92, 1.25], [13.55, 13.9]],
   backFittings: [
     { name: 'brown doors', u: [1.9, 3.3], h: [.1, 2.6], colour: '#6a3f2e' },

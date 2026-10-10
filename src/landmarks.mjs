@@ -57,11 +57,14 @@ import { redFlagDavco, yiXiu, shiCheng } from './sims-north-row-layout.mjs';
 import { ywam, kimCourt, theDiamond } from './lorong-9-layout.mjs';
 import { mosqueElevation } from './mosque-layout.mjs';
 import { rozel } from './ring-west-layout.mjs';
+import { ledgeBlock as jhHotel, no11 as nanyangFan } from './ring-c-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
 export const landmarks = [
   { ...rozel },
+  { ...jhHotel },
+  { ...nanyangFan },
   { ...thirteenBbq },
   { ...builderSmart },
   { ...teckHoe },
