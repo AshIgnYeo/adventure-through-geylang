@@ -135,6 +135,14 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 - **Measurement:** heights come from the square-on `KZ8g…` frame. Three panoramas and the satellite put the face 2–4 m in front of the source line, so the frame was scaled about the camera until the eaves sit at about 8.4 m. Positions are measured from the corner and carry about ±0.5 m.
 - **Continuation:** the photographed building continues about 13.5 m north beyond the source way, as a two-storey bay and then a single-storey wing. That needs an authored footprint, so it is open question 21.
 
+## Still open on Lorong 13
+
+- **Nos. 21/23 and No. 25:** waiting for the party-line re-spacing (open question 20).
+- **No. 269 continuation:** the coffeeshop's two-storey bay and single-storey wing north of its source way (open question 21).
+- **Narrow building by Shi Hao:** the four-storey building between the back lane and the Shi Hao corner (open question 22).
+
+Every other footprint on both sides of Lorong 13 is now modelled.
+
 ## Omitted and estimated
 
 - **Omitted:** stock, pallets, vehicles, menus, furniture, posters, banners, vending machines, plants and interiors.

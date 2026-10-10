@@ -18,6 +18,11 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Author a footprint about 13.5 m long and 8 m deep on the same front line, as a labelled estimate.
     - **Unlocks:** the last gap on the east side of Lorong 13.
     - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
+22. **Lorong 13 west side: author a footprint for the narrow four-storey building between the back lane and the Shi Hao corner?**
+    - **Evidence:** April 2024 frames show a cream four-storey building with banded storeys and arched windows, about 4 m wide on Lorong 13, directly north of the Shi Hao corner (No. 267). The SHI HAO Hot Pot BBQ board continues along its base. Satellite imagery shows a flat roof strip about 3–4 m wide running back about 14 m from Lorong 13, between the Shi Hao outline (`gr-267`) and the back lane south of Bar @ Lorong 13. The source has no building there.
+    - **Side note:** the same satellite frame shows the corner's tiled roof reaching about 4 m further east than the authored Shi Hao outline. That may be a local registration error, so it is not acted on.
+    - **Recommendation:** yes. Author a footprint about 3.5 × 14 m on the Shi Hao front line, as a labelled estimate. Model it as an unnamed exterior, with Shi Hao's board continuing at its base.
+    - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
 
 ## Settled
 
