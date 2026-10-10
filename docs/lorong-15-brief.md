@@ -21,3 +21,14 @@ Research and implementation: **10 October 2026**. Open question 15, answered "so
 - **Ground floor:** the 昱歡美食閣 eating-house board has no listing and is left plain.
 
 Use `?review=sin-chew-tan` and `?review=teck-keow`.
+
+## South of the hotel: Hong Sheng Koon, the Ship-Chandlers and No. 454254268
+
+- **Depth:** triangulating the hotel's south edge and the next party downpipe from `4VkQ…` and `dwar…` puts this stretch about **4.4 m in front of** the source block. Three panoramas agree at that depth. It gets the same treatment as open question 15: the southern 14.5 m strip, `l15-south`, is split at the measured party lines, shifted onto the hotel's line, into three strips.
+  - `l15-20e`, 6.4 m: **Hong Sheng Koon Chinese Koontow & Lion Dance Society 鴻勝館**. It is listed at 20E Lor 15, and its yellow vertical 鴻勝館 sign hangs on the top storey. It is a cream four-storey house with two windows on each upper floor under long louvred vents, over a recessed ground floor with a diamond-vent band.
+  - `l15-20`, 6.8 m: **Singapore Ship-Chandlers Association**. It is listed at 20 Lor 15 (ssca.sg), with its knotted-rope board on a weathered cream four-storey house.
+  - `l15-shed`, 1.3 m: an unnamed single-storey lean-to.
+- **No. 454254268:** the source way south of the block. It holds a cream two-storey building with a stepped parapet and a blue shade over four upper windows. No listing matched it, so it is unnamed. Its photographed frontage spans the source way at the same 4.4 m depth.
+- **Check:** render-and-compare from `4VkQ…`, moved 4.4 m back, puts the hotel edge, windows, vents and the 鴻勝館 sign on their photographed positions.
+
+Use `?review=hong-sheng-koon`, `?review=ship-chandlers`, `?review=l15-shed` and `?review=l15-cream`.

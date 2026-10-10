@@ -17,7 +17,7 @@ Research and implementation: **10 October 2026**. Q18, previously research-block
 - **Footprints:** the block is cut square to the front into three strips:
   - `l15-north`: since split under open question 15 into `l15-28a` (Sin Chew Tan's Clan Association) and `l15-26a` (the Teck Keow Association); see the [Lorong 15 brief](lorong-15-brief.md);
   - `l15-22`: the hotel, 16.2 m;
-  - `l15-south`: the beige Singapore Ship Chandlers Association building, generic.
+  - `l15-south`: since split into `l15-20e` (Hong Sheng Koon), `l15-20` (the Singapore Ship-Chandlers Association) and `l15-shed`; see the [Lorong 15 brief](lorong-15-brief.md).
 - **Satellite disagreement:** the registered satellite roof places the hotel about 3–4 m further north. The satellite registration is uncertain by a similar amount here, so the street measurement is used.
 
 ## Elevation (approximate)

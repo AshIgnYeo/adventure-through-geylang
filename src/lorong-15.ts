@@ -7,7 +7,7 @@ const text = (c: CanvasRenderingContext2D, s: string, x: number, y: number, size
 };
 const brush = '"Kaiti SC", "STKaiti", "Songti SC", serif';
 
-const draws: Record<string, { boards?: Draw[]; awning?: string; valance?: Draw }> = {
+const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string; valance?: Draw }> = {
   'sin-chew-tan': {
     boards: [
       (c, w, h) => {
@@ -18,6 +18,18 @@ const draws: Record<string, { boards?: Draw[]; awning?: string; valance?: Draw }
       (c, w, h) => { c.clearRect(0, 0, w, h); text(c, 'Ganh', w / 2, h * .3, h * .38, '#f4f1ea', 'Georgia, serif', '700'); text(c, 'Xua', w / 2, h * .75, h * .38, '#f4f1ea', 'Georgia, serif', '700'); },
     ],
     awning: '#b8423a', valance: (c, w, h) => { c.fillStyle = '#a63a33'; c.fillRect(0, 0, w, h); },
+  },
+  'hong-sheng-koon': {
+    blades: [(c, w, h) => { c.fillStyle = '#e8b83a'; c.fillRect(0, 0, w, h); [...'鴻勝館'].forEach((ch, i) => text(c, ch, w / 2, h * (.2 + i * .3), w * .62, '#b0272a', brush, '900')); }],
+  },
+  'ship-chandlers': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#efece4'; c.fillRect(0, 0, w, h);
+      c.fillStyle = '#244a8a'; c.fillRect(h * .1, h * .1, h * .8, h * .8); c.strokeStyle = '#f4f4ef'; c.lineWidth = h * .08;
+      for (const dy of [-.15, .15]) { c.beginPath(); c.arc(h * .5, h * (.5 + dy), h * .2, 0, Math.PI * 2); c.stroke(); }
+      text(c, '新 加 坡 船 務 供 應 商 公 會', w * .58, h * .3, h * .3, '#7a7466', '"Songti SC", serif', '700', w * .75);
+      text(c, 'SINGAPORE SHIP-CHANDLERS ASSOCIATION', w * .58, h * .74, h * .26, '#244a8a', '"Helvetica Neue", Arial, sans-serif', '700', w * .78);
+    }],
   },
   'teck-keow': {
     boards: [
