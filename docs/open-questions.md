@@ -38,6 +38,10 @@ Started: 10 October 2026.
     - **Unlocks:**
       - BUILDERSmart's second frontage at No. 100, with its board, blade sign and awning;
       - the light-blue No. 98 and the white No. 102 as unnamed exteriors.
+24. **Extend the derived road set to Lorong 9 (and Lorong 12, if in the extract)?**
+    - **Why:** Lorong 9 is in the retained OSM extract but not in the derived road set, like Lorong 15 before question 10. The newly modelled PFCS row, YWAM Singapore, Kim Court and The Diamond face bare ground where the road should be. ChongQingXiaoMian's signed face is on Lorong 12, which is likewise not derived.
+    - **Recommendation:** yes. Add Lorong 9 (and Lorong 12, if its ways are in the extract) to `scripts/prepare-map.mjs` and regenerate `map.json`, as for Lorong 15. Building footprints are unchanged.
+    - **Unlocks:** carriageways, markings and lamps on Lorong 9, and review starts on its west side, which currently straddles the study edge.
 
 ## Settled
 
