@@ -41,8 +41,11 @@ test('each Lorong 13 elevation is ordered and keeps its fittings in the frontage
     assertClearOfCarriageway([...(L.blades ?? []).map(b => frame.point(b.u, b.out[1])), ...(awning ? [frame.point(awning.from, awning.depth), frame.point(awning.to, awning.depth)] : [])]);
     if (place.side) {
       const side = lorong13Frame(poly, { frontEdge: place.side.edge });
-      assert.ok(place.side.awning.to <= side.width);
-      assertClearOfCarriageway([side.point(place.side.awning.from, place.side.awning.depth), side.point(place.side.awning.to, place.side.awning.depth)]);
+      for (const b of place.side.blocks ?? []) assert.ok(b.u[0] >= 0 && b.u[1] <= side.width + .01, `${place.id} ${b.name}`);
+      if (place.side.awning) {
+        assert.ok(place.side.awning.to <= side.width);
+        assertClearOfCarriageway([side.point(place.side.awning.from, place.side.awning.depth), side.point(place.side.awning.to, place.side.awning.depth)]);
+      }
     }
   }
 });
@@ -58,7 +61,7 @@ test('unnamed Lorong 13 exteriors carry no business name and are not registered 
   for (const place of lorong13.filter(p => p.unnamed)) {
     assert.equal(landmarkFor(place.buildingIds[0]), undefined, place.id);
     assert.match(place.name, /occupant not identified/); assert.match(place.evidence, /no name is given/i);
-    assert.equal(place.board, undefined); assert.ok(place.id.startsWith('l13-'));
+    assert.equal(place.board, undefined); assert.equal(place.kind, 'unnamed');
   }
 });
 

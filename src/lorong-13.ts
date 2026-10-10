@@ -37,6 +37,7 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
     awning: '#3a3b40',
     valance: (c, w, h) => { c.fillStyle = '#3a3b40'; c.fillRect(0, 0, w, h); text(c, 'B I S T R O   &   B A R', w * .5, h * .5, h * .42, '#f2f2ee', '"Helvetica Neue", Arial, sans-serif', '500'); },
   },
+  'sims-96': { awning: '#e8e6df' },
   'teck-hoe': {
     boards: [(c, w, h) => {
       c.clearRect(0, 0, w, h);
@@ -118,11 +119,14 @@ export function buildLorong13(world: World, id: string, poly: Point[]) {
     const side = frontageFrame(poly, place.side.edge), sp = (u: number, out = 0) => side.point(u, out) as Point;
     const { opening: o, awning: aw } = place.side;
     const dark = world.mat('#2f2e2b'); world.panel(sp(o.u[0], .02), sp(o.u[1], .02), o.h[0], o.h[1], dark);
+    for (const b of place.side.blocks ?? []) { const p = sp((b.u[0] + b.u[1]) / 2, b.out); world.box(`${place.name} ${b.name}`, p[0], (b.h[0] + b.h[1]) / 2, p[1], b.u[1] - b.u[0], b.h[1] - b.h[0], b.depth, world.mat(b.colour), undefined, side.angle); }
+    if (aw) {
     const m = world.mat(draws[place.id]?.awning ?? '#555'); m.cull = pc.CULLFACE_NONE; m.update();
     const corners = [sp(aw.from, 0), sp(aw.to, 0), sp(aw.to, aw.depth), sp(aw.from, aw.depth)], ys = [aw.wall, aw.wall, aw.front, aw.front];
     world.mesh(`${place.name} side awning`, corners.flatMap((p, i) => [p[0], ys[i], p[1]]), [0, 0, 1, 0, 1, 1, 0, 1], [0, 1, 2, 0, 2, 3], m);
     const v = place.id === 'buildersmart' ? sideValance : draws[place.id]?.valance;
     if (v) { const canvas = document.createElement('canvas'); canvas.width = 1024; canvas.height = Math.round(1024 * aw.valance / (aw.to - aw.from)); v(canvas.getContext('2d')!, canvas.width, canvas.height); world.panel(sp(aw.from, aw.depth), sp(aw.to, aw.depth), aw.front - aw.valance, aw.front, textured(canvas)); }
+    }
   }
   for (const r of lorong13Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
   return true;

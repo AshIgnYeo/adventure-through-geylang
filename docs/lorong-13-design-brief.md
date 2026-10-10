@@ -112,6 +112,18 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 - **Upper storeys:** they stand about **2 m behind** the front wall, where `J1TC…` and `8U4Z…` agree. Grilled first-floor windows sit under a tiled eave band, then two storeys of balconies with white railings under striped awnings. A deep parapet tops out at about 14.4 m, with a rooftop railing above.
 - **Identity:** Brilliant Electronics is listed at 14A, but has no sign, so the block is unnamed. Heights carry several per cent of uncertainty.
 
+## No. 96 Sims Avenue, the east corner of Lorong 13 (unnamed)
+
+- **Building:** way [454254303](https://www.openstreetmap.org/way/454254303), tagged 96 Sims Avenue, three levels. It is a white two-storey Art Deco corner block. Its long face is on Lorong 13: a five-bay arcade of fluted piers with stained bases, closed roller shutters, and seven windows under thin concrete hoods and louvred vents.
+- **Dates:**
+  - **November 2022:** the corner traded as Gu Thai House under Union Energy Group awnings.
+  - **April 2024:** the Lorong 13 face is shuttered.
+  - **June 2024:** Sims Avenue frames show the whole block wrapped in hoarding and sound barriers.
+- **Identity:** the April 2024 state is modelled, with no name.
+- **Depth:** triangulating the south pier from `TkVx…` and `I_hh…` puts the arcade about **2 m in front of** the source Lorong 13 face. Three panoramas agree at that depth. The source outline is kept, and positions are scaled from the photographed 19.6 m face onto the source's 20.98 m.
+- **Heights:** read on the square-on `TkVx…` frame, with the raised walkway (about 0.7 m) taken off. They carry about ±0.3 m.
+- **Sims Avenue face:** the short face follows the November 2022 capture, with its signs omitted.
+
 ## Omitted and estimated
 
 - **Omitted:** stock, pallets, vehicles, menus, furniture, posters, banners, vending machines, plants and interiors.
@@ -119,4 +131,4 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 
 ## Review
 
-Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16` and `?review=l13-12a`.
+Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16`, `?review=l13-12a` and `?review=sims-96`.

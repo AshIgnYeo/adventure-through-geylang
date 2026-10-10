@@ -275,7 +275,42 @@ export const no12a = unnamed('12A', {
   },
 });
 
-export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a];
+// No. 96 Sims Avenue, the east corner of Lorong 13: its long face is on Lorong 13 (edge 5, u south from
+// the Sims corner) and its short face on Sims Avenue (edge 0, u west from the east party wall).
+const hood = (u, h = [7.05, 7.25]) => ({ name: 'window hood', u, h, out: .35, depth: .7, colour: '#e3e6e5' });
+const shutterBay = u => ({ name: 'roller shutter', u, h: [.1, 2.7], colour: '#b9bbb6' });
+export const sims96 = {
+  id: 'sims-96', buildingIds: ['454254303'], kind: 'unnamed', unnamed: true, frontEdge: 5, reviewRoad: 'Lorong 13 Geylang',
+  name: 'No. 96 Sims Avenue, Lorong 13 corner (April 2024 exterior, occupant not identified)', address: '96 Sims Avenue (Lorong 13 corner)',
+  height: 7.7, ceiling: 3.0, fiveFootWay: 2.0,
+  evidence: 'Source way 454254303 is tagged No. 96 Sims Avenue, three levels, and fills the east corner of Lorong 13. April 2024 Lorong 13 Street View shows a white two-storey Art Deco corner block with closed roller shutters behind a five-bay arcade of fluted piers with stained bases, and seven windows under thin concrete hoods and louvred vents on its Lorong 13 face. In November 2022 the corner traded as Gu Thai House under Union Energy Group awnings; by June 2024 the whole block was wrapped in hoarding and sound barriers, so the April 2024 state is modelled and no name is given. Three April 2024 panoramas agree with the arcade piers about 2 m in front of the source Lorong 13 face, by triangulation of the south pier; the source outline is kept and positions are scaled from the photographed 19.6 m face onto the source 20.98 m. Heights are read on the square-on frame and carry about ±0.3 m. The short Sims Avenue face follows the November 2022 capture with its signs omitted. The hoarding, signs and interior are not reconstructed.',
+  sources: [way('454254303'), pano('TkVxod6FJdS-GoG9rWW7YQ', 100, 10, 90), pano('ChoF67Y2VEMaqvc2BplW8A', 75, 12, 100), pano('I_hhtdchIOdknrryrI3yng', 15, 0, 60), pano('c7liVC51Dfz3zrFqgzF7lw', 165, 12, 90), pano('_B2cTM1WvKqosc0_vduiqA', 160, 10, 100)],
+  colours: { wall: '#e0e4e3', trim: '#e9ecea', frame: '#2f3437', glass: '#3e484c', pier: '#e4e7e5', back: '#d9dcd8', floor: '#b6b4ac' },
+  bands: [[7.55, 7.7, .2], [3.9, 4.25, .35], [4.35, 4.45, .15]],
+  windows: [[1.6, 3.5], [5.35, 7.3], [8.0, 10.0], [11.0, 13.05], [13.6, 15.5], [18.4, 19.8]].map(u => ({ u, h: [4.5, 6.0], panes: 3 })),
+  vents: [[1.6, 3.5], [5.35, 7.3], [8.0, 10.0], [11.0, 13.05], [13.6, 15.5], [18.4, 19.8]].map(u => ({ u, h: [6.3, 6.65] })),
+  blocks: [
+    hood([.5, 4.1]), hood([4.3, 10.5]), hood([10.9, 17.4]), hood([18.0, 20.9]),
+    { name: 'pilaster', u: [10.5, 11.0], h: [4.45, 7.55], out: .05, depth: .1, colour: '#e9ecea' },
+    ...[[0, .6], [4.3, 4.9], [9.6, 10.25], [15.4, 16.0], [20.2, 20.98]].map(u => ({ name: 'stained pier base', u, h: [0, 1.6], out: -.2, depth: .42, colour: '#8a5d3e' })),
+  ],
+  piers: [[0, .6], [4.3, 4.9], [9.6, 10.25], [15.4, 16.0], [20.2, 20.98]],
+  backFittings: [shutterBay([.7, 4.2]), shutterBay([5.0, 9.5]), shutterBay([10.35, 15.3]), shutterBay([16.1, 20.1])],
+  awning: { from: .7, to: 4.2, wall: 2.95, front: 2.4, depth: 1.6, valance: .2 },
+  side: {
+    edge: 0, opening: { u: [.8, 6.0], h: [.13, 2.9] },
+    blocks: [
+      { name: 'Sims Avenue window', u: [1.46, 3.56], h: [4.5, 6.0], out: .03, depth: .04, colour: '#3e484c' },
+      { name: 'Sims Avenue corner window', u: [5.9, 6.5], h: [4.5, 6.0], out: .03, depth: .04, colour: '#3e484c' },
+      { name: 'Sims Avenue vent', u: [1.46, 3.56], h: [6.3, 6.65], out: .03, depth: .04, colour: '#8b8f8d' },
+      { name: 'Sims Avenue window hood', u: [1.06, 4.06], h: [7.05, 7.25], out: .35, depth: .7, colour: '#e3e6e5' },
+      { name: 'Sims Avenue corner hood', u: [5.5, 6.66], h: [7.05, 7.25], out: .35, depth: .7, colour: '#e3e6e5' },
+      { name: 'Sims Avenue cornice', u: [0, 6.66], h: [3.9, 4.25], out: .17, depth: .35, colour: '#e9ecea' },
+    ],
+  },
+};
+
+export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a, sims96];
 /** The outline the elevation stands on: for a set-back place, the source outline with its front moved back. */
 export function lorong13Outline(poly, place) {
   if (!place.setback) return poly;
@@ -297,5 +332,5 @@ export function lorong13Layout(place, width) {
   for (const g of place.ground ?? []) base.add(g.name, mid(...g.u), mid(...g.h), g.out, g.u[1] - g.u[0], g.h[1] - g.h[0], g.depth ?? .03, g.colour, g.glow ?? 0);
   return base;
 }
-const reviewDistance = { buildersmart: [12, 8], 'teck-hoe': [9, 12], 'l13-18': [10, 8], 'l13-16': [10, 8], 'l13-12a': [12, 24] };
+const reviewDistance = { 'sims-96': [12, 14], buildersmart: [12, 8], 'teck-hoe': [9, 12], 'l13-18': [10, 8], 'l13-16': [10, 8], 'l13-12a': [12, 24] };
 export const lorong13Reviews = (place, frame) => facing(frame, place.id, ...(reviewDistance[place.id] ?? [7.5, 20]));
