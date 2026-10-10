@@ -405,6 +405,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** the panoramas' recorded positions were calibrated against the existing mosque model, giving 2.8 m in depth and 1.5 m along the street. After that correction, the photographed frontage matches the 10.08 m source edge, and renders overlay the photograph. The rear wing keeps the 6.7 m back-lane elevation height. The awning is shortened to stay clear of the carriageway. See the [design brief](chen-hing-design-brief.md).
 - **Validation / completion:** all **118 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-four.
 
+### Q41. AiSecurityReady CCTV shop, No. 2 Lorong 11 Geylang, completed
+
+- **Address / footprint:** the operator website and Google Maps give AiSecurityReady at 2 Lor 11 Geylang, 388694, matching [way 1223250214](https://www.openstreetmap.org/way/1223250214), tagged No. 2. April 2024 Street View shows SUPPLY / INSTALL / WHOLESALE / CCTV lettering under the closed Wina Salon's board. The operator name is not displayed, and the model's name records that.
+- **Method:** three rectified panoramas agree on the No. 4 party line. The photographed frontage matches the 5.26 m source edge, after removing a 0.64 m along-street pose offset shared by the panoramas. Renders of this model and of Khek Leow then overlay the photographs. See the [design brief](aisecurity-design-brief.md).
+- **Validation / completion:** all **121 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-five.
+
 ### 10 October 2026: leads checked and locked
 
 - **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.

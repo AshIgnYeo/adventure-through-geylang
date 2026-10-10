@@ -31,10 +31,12 @@ import { muhammadiyah } from './muhammadiyah-layout.mjs';
 import { fsl } from './fsl-layout.mjs';
 import { barLorong13 } from './bar-lorong-13-layout.mjs';
 import { chenHing } from './chen-hing-layout.mjs';
+import { aiSecurity } from './aisecurity-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...aiSecurity },
   { ...chenHing },
   { ...barLorong13 },
   { ...fsl },

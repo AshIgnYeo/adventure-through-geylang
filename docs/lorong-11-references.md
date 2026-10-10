@@ -285,3 +285,7 @@ Implemented **10 October 2026** as a dated April 2024 exterior. Google Maps list
 ## Chen Hing Trading 增興貿易, 241 Geylang Road
 
 Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists Chen Hing Trading at 241 Geylang Rd, with its point inside the unnumbered source way directly west of Masjid Haji Mohd Salleh. The grey-tiled three-storey block carries raised gold lettering reading 增興貿易私人有限公司 / CHEN HING TRADING PTE. LTD. over a red awning and an open stall. The panoramas here carry a position error of about 2.8 m in depth and 1.5 m along the street, calibrated against the existing mosque model; with it removed, the photographed frontage matches the source edge. See the [design brief](chen-hing-design-brief.md).
+
+## AiSecurityReady CCTV shop, No. 2 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior. The operator website and Google Maps give AiSecurityReady's CCTV shop at 2 Lor 11 Geylang, matching the source way tagged No. 2 beside S.M. Khek Leow. The ornate charcoal-grey conserved shophouse has arched shuttered openings, Peranakan tiles and carved pilasters. Its ground floor shows lit CCTV lettering under the board of the closed Wina Salon, and the operator's name is not displayed. The photographed frontage matches the 5.26 m source edge. See the [design brief](aisecurity-design-brief.md).
