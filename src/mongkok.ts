@@ -1,11 +1,14 @@
 import * as pc from 'playcanvas';
 import type { Point, World } from './world';
-import { mongkok, mongkokFrame, mongkokLayout } from './mongkok-layout.mjs';
+import { mongkok, mongkokFrame, mongkokLayout, blockUnits } from './mongkok-layout.mjs';
+import { frontageFrame } from './gable-roof-layout.mjs';
+import { simpleHouseLayout, facing } from './simple-house-layout.mjs';
+import { buildSimpleHouse, type Draw } from './simple-house';
 
 /** Only the corner receives the real identity. The remaining block stays generic. */
 export function buildMongkokCorner(world: World, id: string, source: Point[]): Point[] | null {
   if (id !== mongkok.sourceBuildingId) return null;
-  const { corner, remainder } = mongkokLayout(source) as { corner: Point[]; remainder: Point[] };
+  const { corner, units, remainder } = mongkokLayout(source) as { corner: Point[]; units: Point[][]; remainder: Point[] };
   // June 2024 colours: taupe plaster, red ground floor and lettering, dark red awnings.
   const cream = '#ab9a8f', green = '#9a3a35', red = '#8a3436', lettering = '#c8443a', dark = '#303c39';
   const letters = Array.from('旺角点心').map(letter => {
@@ -110,6 +113,29 @@ export function buildMongkokCorner(world: World, id: string, source: Point[]): P
     box('side awning valance', f.width - 5.0, 3.08, .9, 9.6, .2, .05, red);
     box('side lower wall', f.width - 5.0, .7, .04, 9.6, 1.1, .08, green);
   }
+  // Nos. 212 and 210, west of the corner, as dated exteriors on their measured frontages.
+  const text = (c: CanvasRenderingContext2D, t: string, x: number, y: number, size: number, colour: string, weight: string, family: string, maxWidth?: number) => {
+    c.fillStyle = colour; c.font = `${weight} ${Math.round(size)}px ${family}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(t, x, y, maxWidth);
+  };
+  const draws: Record<string, Draw[]> = {
+    'nanyang-dentist': [(c, w, h) => {
+      c.fillStyle = '#f4f4f0'; c.fillRect(0, 0, w, h);
+      text(c, 'NANYANG DENTIST', w * .34, h * .55, h * .62, '#16181a', '700', '"Helvetica Neue", Arial, sans-serif', w * .62);
+      text(c, '南洋齿科', w * .82, h * .55, h * .6, '#16181a', '700', '"Kaiti SC", "STKaiti", serif', w * .3);
+    }],
+    'shaxian-eatery': [(c, w, h) => {
+      c.fillStyle = '#6e2620'; c.fillRect(0, 0, w, h);
+      text(c, '沙县小吃', w * .4, h * .42, h * .55, '#f6f1ec', '900', '"PingFang SC", "Heiti SC", sans-serif', w * .66);
+      text(c, 'SHAXIAN SNACKS', w * .4, h * .82, h * .16, '#e9d9c8', '700', 'Arial, sans-serif', w * .5);
+      c.fillStyle = '#d83030'; c.beginPath(); c.arc(w * .86, h * .46, h * .34, 0, Math.PI * 2); c.fill();
+      c.strokeStyle = '#f6f1ec'; c.lineWidth = h * .05; c.beginPath(); c.arc(w * .86, h * .46, h * .28, 0, Math.PI * 2); c.stroke();
+    }],
+  };
+  units.forEach((poly, i) => {
+    const place = blockUnits[i], frame = frontageFrame(poly, 0);
+    buildSimpleHouse(world, place.name, frame, poly, place as any, simpleHouseLayout(frame.width, place) as any, { boards: draws[place.id] });
+    for (const r of facing(frame, place.id, 10)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+  });
   const front = mongkokFrame(corner, 1);
   world.reviewSpawns.set(mongkok.id, { p: front.point(front.width / 2, 14) as Point, yaw: front.angle });
   const side = mongkokFrame(corner, 0);

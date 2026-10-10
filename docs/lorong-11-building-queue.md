@@ -658,6 +658,11 @@ The owner's answers to the open questions allow re-spaced and authored footprint
     - The parapet is raised from 10.1 m to 11.6 m.
     - The Lorong 8 face gains its windows and awning.
     - See the [brief](mongkok-dim-sum-design-brief.md).
+  - **Nanyang Dentist (212) and Shaxian Eatery (210)**, modelled on 10 October 2026 under open question 11 (estimated partial-block splits):
+    - They are two further units of the Mongkok block, on measured frontages of 7.05 m and 6.7 m.
+    - Both are listed and signed in June 2024.
+    - The Mongkok return is corrected to 5.8 m.
+    - See the [Mongkok brief](mongkok-dim-sum-design-brief.md).
   - **Leong Kee (251 Geylang Road)** was checked from June 2024 panoramas and kept:
     - Its front plane agrees to within about 0.2 m along the frontage.
     - The eave is about 6.8 m, against the model's 7.05 m.

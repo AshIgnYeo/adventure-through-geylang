@@ -2,7 +2,7 @@
 // Reference photographs are not guaranteed to depict the present-day tenancy.
 import { nearestOnSegment } from './geo.mjs';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
-import { mongkok } from './mongkok-layout.mjs';
+import { mongkok, nanyangDentist, shaxianEatery } from './mongkok-layout.mjs';
 import { frogPorridge } from './frog-porridge-layout.mjs';
 import { amrise } from './amrise-layout.mjs';
 import { thyeSeng } from './thye-seng-layout.mjs';
@@ -58,7 +58,7 @@ import { ywam, kimCourt, theDiamond } from './lorong-9-layout.mjs';
 import { mosqueElevation } from './mosque-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
-export const partialBlockLandmarks = [mongkok];
+export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
 export const landmarks = [
   { ...thirteenBbq },
   { ...builderSmart },
