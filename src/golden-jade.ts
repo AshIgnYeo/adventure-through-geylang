@@ -1,9 +1,18 @@
 import type { World, Point } from './world';
-import { goldenJade, goldenJadeFrame, goldenJadeLayout, goldenJadeReviews } from './golden-jade-layout.mjs';
+import { goldenJade, goldenJadeFrame, goldenJadeLayout, goldenJadeReviews, no273, no273Layout, no273Reviews } from './golden-jade-layout.mjs';
 import { buildPairedShophouse } from './paired-shophouse';
 
 /** June 2024 exterior of No. 271, using the untouched source outline. */
 export function buildGoldenJade(world: World, id: string, poly: Point[]) {
+  if (no273.buildingIds.includes(id)) {
+    // No. 273 next door: the same jalousie elevation, unnamed, with a blank board.
+    const frame = goldenJadeFrame(poly);
+    buildPairedShophouse(world, no273.name, frame, no273Layout(frame.width), no273, {
+      tile: '#8e5846', course: '#a26a55', coping: '#6f7d6a', gable: '#f1efe8', copingHeight: .25, copingWidth: .2, frontCap: { length: .45, height: .3 },
+    });
+    for (const r of no273Reviews(frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+    return true;
+  }
   if (!goldenJade.buildingIds.includes(id)) return false;
   const frame = goldenJadeFrame(poly), { width } = frame;
   const layout = goldenJadeLayout(width);

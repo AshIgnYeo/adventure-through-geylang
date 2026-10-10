@@ -40,3 +40,25 @@ export function goldenJadeReviews(frame) {
     { id: 'golden-jade-five-foot-way', p: point(width / 2 + .5, 3.0), target: point(width / 2, -1), pitch: 16 },
   ].map(r => ({ id: r.id, p: r.p, pitch: r.pitch, yaw: Math.atan2(r.p[0] - r.target[0], r.p[1] - r.target[1]) * 180 / Math.PI }));
 }
+
+// No. 273, next door: Zui Xiang (醉香楼) is listed permanently closed, so the house is unnamed (open question 18).
+export const no273 = {
+  id: 'gr-273', buildingIds: ['454254221'], kind: 'unnamed', unnamed: true,
+  name: 'No. 273 Geylang Road (June 2024 exterior, occupant not identified)', address: '273 Geylang Road',
+  ...pairedShophouse, reviewRoad: 'Geylang Road',
+  evidence: 'Unnumbered source way 454254221 lies between Golden Jade (No. 271) and the 277 KTV pair (Nos. 275-277), so it counts as No. 273. June 2024 Street View shows a brown 醉香樓 ZUI XIANG board with a 566 seafood strip over a lit restaurant front; Zui Xiang Lou is listed at 273 Geylang Rd, 389326, permanently closed, so no name is given and the board is blank, following the ABC Bistro precedent. The upper storey is the shared row elevation in the jalousie finish, as at No. 271, with its white jalousies closed, read on two far-side panoramas. Menus, lanterns and the interior are not reconstructed.',
+  sources: ['https://www.openstreetmap.org/way/454254221', 'https://www.google.com/maps/@?api=1&map_action=pano&pano=jYF-BzVq__RpGZWD3Tplwg&heading=20&pitch=8&fov=60', 'https://www.google.com/maps/@?api=1&map_action=pano&pano=1udsor6p2plZzO-0C3V8yg&heading=345&pitch=8&fov=60'],
+};
+
+export function no273Layout(width) {
+  const base = pairedShophouseLayout(width, { piers: [{ u: .16, w: .30 }, { u: width - .17, w: .30 }], style: 'jalousie' });
+  const { add } = base, D = no273.fiveFootWay;
+  add('blank brown board', width / 2, 3.38, .2, width - .3, .75, .12, '#6b3a2c');
+  add('lit restaurant front', 2.6, 1.35, -D + .06, 3.9, 2.4, .04, '#d9c9a8', .35);
+  add('restaurant door', 4.55, 1.25, -D + .07, .8, 2.3, .04, '#3a2a24');
+  return base;
+}
+
+export const no273Reviews = frame => [{ id: 'gr-273', p: frame.point(frame.width / 2, 14), target: frame.point(frame.width / 2, 0), pitch: 15 }]
+  .map(r => ({ id: r.id, p: r.p, pitch: r.pitch, yaw: Math.atan2(r.p[0] - r.target[0], r.p[1] - r.target[1]) * 180 / Math.PI }));
+

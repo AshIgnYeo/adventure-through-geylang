@@ -60,6 +60,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=sims-131-133-pair
 /?review=fok-wai-kee
 /?review=golden-jade
+/?review=gr-273
 /?review=ktv-277
 /?review=eros
 /?review=rr-motor

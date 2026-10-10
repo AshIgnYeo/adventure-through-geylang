@@ -541,7 +541,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 
 ### Q59. Instyle Hair Salon, 261 Geylang Road, completed (dated exterior)
 
-- **Decision:** under open question 12, the clearly signed salon on the re-spaced No. 261 footprint is modelled, recording that its only listing is on Crawford Lane. No. 257 next door, whose 新福興 listing is permanently closed, is an unnamed exterior.
+- **Decision:** under open question 12, the clearly signed salon on the re-spaced No. 261 footprint is modelled, recording that its only listing is on Crawford Lane. No. 257 next door, whose 新福興 listing is permanently closed, is an unnamed exterior, as is No. 273 (Zui Xiang, closed) beside Golden Jade.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 67. See the [Geylang row brief](geylang-row-design-brief.md).
 
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)

@@ -40,3 +40,8 @@ All **58 tests** and the type check passed. New checks cover:
 - walkable starts.
 
 Renders found the cornice cutting through the signboard, which was corrected by mounting the board proud as photographed.
+
+## No. 273 next door (added 10 October 2026)
+
+Unnumbered way [454254221](https://www.openstreetmap.org/way/454254221), between Golden Jade and the 277 KTV pair, counts as No. 273. June 2024 shows a brown 醉香樓 ZUI XIANG board over a lit restaurant front. Zui Xiang Lou is listed permanently closed, so the house is an unnamed exterior (open question 18), and its board is blank. The upper storey is the same jalousie elevation, read on the `jYF-…` and `1uds…` panoramas. Use `?review=gr-273`.
+
