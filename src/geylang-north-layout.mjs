@@ -3,6 +3,7 @@
 // heights are read on the same road datum as the Wat Dhammasatis model next door.
 import { frontageFrame } from './gable-roof-layout.mjs';
 import { simpleHouseLayout, facing } from './simple-house-layout.mjs';
+import { beefKwayTeow, floors as bktFloors } from './beef-kway-teow-layout.mjs';
 
 const pano = (id, heading, pitch = 10, fov = 80) => `https://www.google.com/maps/@?api=1&map_action=pano&pano=${id}&heading=${heading}&pitch=${pitch}&fov=${fov}`;
 const pilasterTiles = (spans, colour) => spans.map(u => ({ name: 'tiled pilaster panel', u, h: [3.2, 4.8], out: .07, depth: .02, colour }));
@@ -43,7 +44,25 @@ export const no231 = {
   backFittings: [{ name: 'lantern-hung salon front', u: [.3, 3.9], h: [.1, 2.2], colour: '#4a2a2a', glow: .1 }],
 };
 
-export const geylangNorth = [lianSeng, no231];
+// The annex east of the Lorong 9 corner building, under its own grey skylit roof: from the street the
+// pink four-storey front continues to Chen Hing with one more window bay, so the corner building's
+// storeys and colours carry on across it. Frame u runs east from the step in the source outline.
+export const annex237 = {
+  id: 'gr-237-annex', buildingIds: ['gr-237-annex'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Geylang Road',
+  name: 'Annex east of 237 Geylang Road (June 2024 exterior, occupant not identified)', address: 'Geylang Road, between Nos. 237 and 241',
+  height: beefKwayTeow.height, ceiling: beefKwayTeow.ceiling, fiveFootWay: 1.2, shellInset: .5, upperInset: .05, roof: { type: 'flat', colour: '#8f9396' },
+  evidence: 'The annex half of source way 454274485 (open question 3), between the Lorong 9 corner building (Geylang Lor 9 Beef Kway Teow) and Chen Hing. Satellite imagery shows it under a separate grey skylit roof, but June 2024 Street View shows the pink four-storey front continuing unbroken to Chen Hing, with one more bay of green-shuttered windows under hoods and the red ground storey carrying the coffeeshop on. It is unnamed and takes the corner building\'s storey heights and colours. The panoramas here carry large position errors (calibrated at Chen Hing), so the bay position and the plain wall beyond it are estimates within about ±1 m. Its east party wall slants back towards the west, so the five-foot way is kept shallow (1.2 m).',
+  sources: ['https://www.openstreetmap.org/way/454274485', pano('CRxDzspjrX6PxmNqInWfPw', 330, 10, 90), pano('BPsxlk0ALSJFfWvTXn51NA', 30, 10, 90)],
+  colours: beefKwayTeow.colours,
+  bands: beefKwayTeow.bands,
+  windows: [{ u: [.9, 2.1], h: bktFloors.lower, panes: 2 }, { u: [.9, 2.1], h: bktFloors.upper, panes: 2 }],
+  vents: bktFloors.vents.map(h => ({ u: [.9, 2.1], h })),
+  blocks: bktFloors.hoods.map(h => ({ name: 'window hood', u: [.75, 2.25], h: [h, h + .12], out: .3, depth: .6, colour: '#f3e3df' })),
+  piers: [[3.7, 4.1], [7.1, 7.5]],
+  backFittings: [{ name: 'coffeeshop interior', u: [.6, 7.1], h: [.1, 3.1], colour: '#4a403a', glow: .05 }],
+};
+
+export const geylangNorth = [lianSeng, no231, annex237];
 export const geylangNorthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const geylangNorthLayout = (place, width) => simpleHouseLayout(width, place);
 export const geylangNorthReviews = (place, frame) => facing(frame, place.id, 11, 14);

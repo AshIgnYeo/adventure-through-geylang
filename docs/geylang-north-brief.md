@@ -14,3 +14,10 @@ Research and implementation: **10 October 2026**. The two Peranakan shophouses w
 - **Elevation:** the same elevation as No. 229, with teal shutters and pink tiled panels.
 
 Use `?review=lian-seng` and `?review=gr-231`.
+
+## The annex east of No. 237 (unnamed)
+
+- **Footprint:** `gr-237-annex`, the annex half of source way 454274485 (open question 3), between the Lorong 9 corner building and Chen Hing.
+- **What it looks like:** satellite imagery shows it under its own grey skylit roof. June 2024 Street View, though, shows the pink four-storey front continuing unbroken to Chen Hing, with one more bay of green-shuttered windows under hoods and the red ground storey carrying the coffeeshop on.
+- **Modelling:** the corner building's storeys and colours continue across the annex. Before this, it rendered as a generic yellow shophouse with an invented sign.
+- **Uncertainty:** the panoramas here carry large position errors (calibrated at Chen Hing), so the bay position is an estimate within about ±1 m. The east party wall slants back, so the five-foot way is kept 1.2 m deep. The simple-house module gains an `upperInset` option for this; its default output is unchanged.

@@ -6,7 +6,7 @@ export function simpleHouseLayout(width, spec) {
   const boxes = [];
   const add = (name, u, y, out, w, h, depth, colour, glow = 0) => boxes.push({ name, u, y, out, w, h, depth, colour, glow });
   const S = spec, C = S.colours, D = S.fiveFootWay, mid = (a, b) => (a + b) / 2;
-  add('upper wall', width / 2, mid(S.ceiling, S.height), -.05, width, S.height - S.ceiling, .04, C.wall);
+  add('upper wall', width / 2, mid(S.ceiling, S.height), -.05, width - 2 * (S.upperInset ?? 0), S.height - S.ceiling, .04, C.wall);
   for (const [b, t, depth = .2, colour = C.trim] of S.bands ?? []) add('band', width / 2, mid(b, t), depth / 2, width, t - b, depth, colour);
   for (const [l, r, b, t] of S.pilasters ?? []) add('pilaster', mid(l, r), mid(b, t), .06, r - l, t - b, .12, C.trim);
   for (const w of S.windows ?? []) {

@@ -24,7 +24,7 @@ Source way [454274485](https://www.openstreetmap.org/way/454274485) holds two bu
 - **Satellite registration:** a new satellite mosaic tool registers the imagery to the source frame. The imagery sits about 4.5 m west and 2 m south of it.
 - **Authored footprints:** the way is split from the step, parallel to the Lorong 9 face:
   - `gr-237`, the corner building, with an estimated 2.6 m chamfer;
-  - `gr-237-annex`, generic, its front filled forward to Chen Hing's corner.
+  - `gr-237-annex`, its front filled forward to Chen Hing's corner; since 10 October 2026 an unnamed exterior continuing the pink elevation (see the [Geylang Road north brief](geylang-north-brief.md)).
 - **Back lane:** the reviewed back-lane rear elevation still finds the replaced source way.
 
 ## Measurement limits

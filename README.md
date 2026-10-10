@@ -100,6 +100,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=wat-dhammasatis
 /?review=lian-seng
 /?review=gr-231
+/?review=gr-237-annex
 /?review=red-dot-running
 /?review=sa-106
 /?review=yap-sun

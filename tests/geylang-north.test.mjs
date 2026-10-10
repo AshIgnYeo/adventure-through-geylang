@@ -17,6 +17,7 @@ test('Geylang Road north infill keeps its bays inside the frontage', () => {
   for (const place of geylangNorth) {
     const poly = outline(place.buildingIds[0]), frame = geylangNorthFrame(poly, place);
     for (const w of place.windows) assert.ok(w.u[0] > 0 && w.u[1] < frame.width && w.h[0] > place.ceiling && w.h[1] < place.height, place.id);
+    if (place.id === 'gr-237-annex') assert.ok(Math.abs(frame.width - 7.72) < .05 && place.height === 13.0);
     assertFittings(frame, poly, geylangNorthLayout(place, frame.width).boxes, .12);
   }
 });
