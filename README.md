@@ -11,7 +11,7 @@ This is now primarily an environment and rendering project. The walking controls
 - A metre-scale street layout derived from retained OpenStreetMap data.
 - A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
 - Daylight, blue-hour and night lighting modes.
-- Reference-led models of 87 named buildings and landmarks, and photograph-led unnamed exteriors on Lorong 13.
+- Reference-led models of 88 named buildings and landmarks, and photograph-led unnamed exteriors on Lorong 13.
 - A mapped pedestrian back lane between Lorong 9 and Lorong 11.
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
@@ -113,6 +113,8 @@ Review URLs can open directly opposite a model. For example:
 /?review=sa-106
 /?review=yap-sun
 /?review=sims-116
+/?review=buildersmart-sims
+/?review=sa-98
 /?review=ibis-budget-gold
 /?review=red-flag-davco
 /?review=sims-north-pair

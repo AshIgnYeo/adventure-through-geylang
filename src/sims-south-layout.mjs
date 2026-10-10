@@ -85,7 +85,53 @@ export const sims124 = {
   sources: ['https://www.openstreetmap.org/way/682928763', pano('2Ajok7bnMLxnkcW7PuS2sQ', 165, 10, 90)],
 };
 
-export const simsSouth = [yapSun, no106, sims116, sims124];
+// Nos. 98-102 on the owner-approved re-spacing (open question 23), read on panorama eLBm at the
+// triangulated 2.3 m depth and scaled onto the source run; frames run west from each east party line.
+const q23Note = 'It stands on the owner-approved re-spacing of Sims Avenue Nos. 98-102 (open question 23), read on a June 2024 panorama at the depth where the board ends triangulate; positions are scaled by 1.027 onto the source run and heights carry about ±0.4 m.';
+const twoStorey = (spans, extra) => ({
+  height: 8.5, ceiling: 4.0, fiveFootWay: 1.8, roof: { type: 'flat', colour: '#a9a69e' }, reviewRoad: 'Sims Avenue', frontEdge: 0,
+  windows: spans.map(u => ({ u, h: [5.3, 6.6], panes: 2 })),
+  vents: spans.map(u => ({ u, h: [6.7, 7.2] })),
+  ...extra,
+});
+export const no98 = {
+  id: 'sa-98', buildingIds: ['sa-98'], kind: 'unnamed', unnamed: true, name: 'No. 98 Sims Avenue (June 2024 exterior, occupant not identified)', address: '98 Sims Avenue',
+  ...twoStorey([[.51, 2.16], [2.77, 4.42]], {
+    colours: { wall: '#a9c9df', trim: '#d6e3ea', frame: '#2f3437', glass: '#3e474b', pier: '#ecebe6', back: '#3a3532', floor: '#9a978f' },
+    bands: [[8.3, 8.5, .3, '#d6e3ea'], [7.7, 8.0, .9, '#8fb3cc']],
+    awning: { from: .05, to: 5.3, wall: 4.3, front: 2.8, depth: 1.7, valance: .3 },
+    backFittings: [{ name: 'shop front', u: [.4, 5.0], h: [.1, 2.8], colour: '#4a4440', glow: .06 }],
+  }),
+  evidence: 'The westernmost of the three re-spaced houses, next to the No. 96 Lorong 13 corner: a pale-blue two-storey house with two windows under louvres and a deep hood, a stepped parapet and a deep blue awning over its shop. No sign or listing identifies it, so no name is given. ' + q23Note,
+  sources: ['https://www.openstreetmap.org/way/682928757', pano('eLBmJpBQgY1u_CPP4C8XGw', 162, 15, 70)],
+};
+export const builderSmartSims = {
+  id: 'buildersmart-sims', buildingIds: ['sa-100'], kind: 'buildersmart-sims', name: 'BUILDERSmart 魯班行, Sims Avenue frontage (June 2024 exterior)', address: '100 Sims Avenue',
+  ...twoStorey([[.62, 2.26], [2.88, 4.52]], {
+    colours: { wall: '#ecebe6', trim: '#dedcd5', frame: '#2f3437', glass: '#3e474b', pier: '#ecebe6', back: '#3a3532', floor: '#9a978f' },
+    bands: [[8.3, 8.5, .3], [7.55, 7.9, .9, '#dedcd5']],
+    windows: [[.62, 2.26], [2.88, 4.52]].map(u => ({ u, h: [5.85, 6.5], panes: 2 })),
+    board: { u: [.15, 5.1], h: [4.7, 5.75], out: .06 },
+    blades: [{ u: .15, out: [.25, .95], h: [5.0, 8.3] }],
+    awning: { from: .05, to: 5.2, wall: 4.2, front: 3.0, depth: 1.6, valance: .4 },
+    backFittings: [{ name: 'hardware store front', u: [.4, 4.9], h: [.1, 3.0], colour: '#3a3532', glow: .05 }],
+  }),
+  evidence: 'June 2024 Street View shows BUILDERSmart\'s green board and its BUILDERSmart 魯班行 www.buildersmart.com.sg awning, with the telephone number 67413639, on this house, two doors west of Fok Wai Kee, and a green blade sign on the party pier to its east. BUILDERSmart is listed at 29 Lor 13 (its Lorong 13 corner shed, modelled separately), and KBC Bargain Centre is listed at No. 100 without a sign; under the owner\'s answer to open question 12 the clearly signed occupant is modelled as a second BUILDERSmart frontage. A two-storey cream house with two small windows under louvres and a hood above the board. ' + q23Note + ' Stock and the interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=BUILDERSmart+Singapore', 'https://www.openstreetmap.org/way/682928756', pano('eLBmJpBQgY1u_CPP4C8XGw', 162, 15, 70), pano('-vjbkWOXAP_tX2wp_eg-4w', 215, 15, 70)],
+};
+export const no102 = {
+  id: 'sa-102', buildingIds: ['sa-102'], kind: 'unnamed', unnamed: true, name: 'No. 102 Sims Avenue (June 2024 exterior, occupant not identified)', address: '102 Sims Avenue',
+  ...twoStorey([[1.64, 2.77], [3.9, 5.03]], {
+    colours: { wall: '#ecebe6', trim: '#dedcd5', frame: '#2f3437', glass: '#3e474b', pier: '#ecebe6', back: '#3a3532', floor: '#9a978f' },
+    bands: [[8.3, 8.5, .3], [7.55, 7.9, .9, '#dedcd5'], [4.1, 4.3, .5, '#cfcfca']],
+    blocks: [{ name: 'condenser', u: [2.9, 3.4], h: [5.4, 5.8], out: .3, depth: .4, colour: '#e8e8e4' }],
+    backFittings: [{ name: 'roller shutter', u: [.4, 2.8], h: [.1, 3.0], colour: '#b9bbb6' }, { name: 'collapsible gate', u: [3.0, 5.4], h: [.1, 3.0], colour: '#8c8f8c' }],
+  }),
+  evidence: 'The easternmost of the three re-spaced houses, directly west of Fok Wai Kee: a white two-storey house with two windows under louvres and a hood, a condenser, a narrow canopy and a shuttered ground floor. No sign or listing identifies it, so no name is given. ' + q23Note,
+  sources: ['https://www.openstreetmap.org/way/682928755', pano('eLBmJpBQgY1u_CPP4C8XGw', 162, 15, 70)],
+};
+
+export const simsSouth = [yapSun, no106, sims116, sims124, no98, builderSmartSims, no102];
 export const simsSouthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const simsSouthLayout = (place, width) => simpleHouseLayout(width, place);
 // No. 124 stands at the study's east edge, beyond the walkable bounds, so it has no review start.

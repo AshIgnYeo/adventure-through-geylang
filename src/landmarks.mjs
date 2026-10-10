@@ -48,7 +48,7 @@ import { pfcs } from './pfcs-layout.mjs';
 import { cico } from './cico-layout.mjs';
 import { gemsVille } from './gems-ville-layout.mjs';
 import { thirteenBbq, builderSmart, teckHoe, wunderfolks } from './lorong-13-layout.mjs';
-import { yapSun } from './sims-south-layout.mjs';
+import { yapSun, builderSmartSims } from './sims-south-layout.mjs';
 import { lianSeng } from './geylang-north-layout.mjs';
 import { monsterInk, shadowTattoo, nanyangLian, tianTian, takeToys, chongQing } from './geylang-south-layout.mjs';
 import { sinChewTan, teckKeow, hongShengKoon, shipChandlers, aecc } from './lorong-15-layout.mjs';
@@ -64,6 +64,7 @@ export const landmarks = [
   { ...teckHoe },
   { ...wunderfolks },
   { ...yapSun },
+  { ...builderSmartSims },
   { ...lianSeng },
   { ...monsterInk },
   { ...shadowTattoo },

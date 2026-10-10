@@ -224,6 +224,25 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'sims-98-102', question: 23, approved: '2026-10-10',
+    evidence: 'Re-spacing of Sims Avenue Nos. 98-102 between the No. 96 Lorong 13 corner and Fok Wai Kee. Triangulating both ends of the green BUILDERSmart board on No. 100 from two June 2024 panoramas puts the frontage about 2.3 m in front of the source front; read at that depth on panorama eLBm, the party lines fall at about -0.2, 5.0, 10.1 and 15.7 m along the front from the No. 96 line, against the source\'s 0, 6.42, 12.53 and 16.33 m. The total agrees, so the measured lines are scaled onto the source run (factor 1.027), giving cuts at 5.34 and 10.58 m. The three ways are merged along their shared party walls and cut square to the front; the stepped source rear is kept.',
+    replaces: ['682928757', '682928756', '682928755'],
+    build(map) {
+      const out = id => map.buildings.find(b => b.id === id).coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const whole = merge(merge(out('682928757'), out('682928756')), out('682928755'));
+      const F0 = out('682928757')[0], F1 = out('682928755')[1], len = Math.hypot(F1[0] - F0[0], F1[1] - F0[1]);
+      const front = [(F1[0] - F0[0]) / len, (F1[1] - F0[1]) / len];
+      const inward = [-front[1], front[0]], c = whole.reduce((s, p) => [s[0] + p[0] / whole.length, s[1] + p[1] / whole.length], [0, 0]);
+      const cut = (inward[0] * (c[0] - F0[0]) + inward[1] * (c[1] - F0[1])) > 0 ? inward : neg(inward);
+      const [p98, p100, p102] = strips(whole, F0, front, cut, [5.34, 10.58]);
+      return [
+        { id: 'sa-98', street: 'Sims Avenue', number: '98', levels: 2, outline: p98 },
+        { id: 'sa-100', street: 'Sims Avenue', number: '100', levels: 2, outline: p100 },
+        { id: 'sa-102', street: 'Sims Avenue', number: '102', levels: 2, outline: p102 },
+      ];
+    },
+  },
+  {
     id: 'sims-106-110', question: '8a', approved: '2026-10-10',
     evidence: 'Re-spacing of Sims Avenue Nos. 106–110, measured on 10 October 2026 from June 2024 ground-floor frames rectified 1.5 m in front of the source front, where the 108 pier aligns across three panoramas. The ground-floor piers confirm the source party lines at 20.76 m (the pier lettered 108) and 27.17 m (Amrise, No. 112, unchanged), measured along the front from the Fok Wai Kee corner. The 106/108 pier stands at about 15.0 m against the source 12.45 m. Red Dot Running Company\'s shopfront runs from that pier to Amrise, across the 108 pier, so the former Nos. 108 and 110 form one unit. An earlier reading of four uniform 7.1 m upper-storey bays was not borne out at ground level and is superseded.',
     replaces: ['682928753', '682928752', '682928751'],

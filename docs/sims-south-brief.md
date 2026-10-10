@@ -25,3 +25,13 @@ Both share the row's three-storey type, built at FSL's heights on the source fro
 - **No. 124:** east of Thye Seng, at the study's east edge, with condensers and a striped awning. No listing matched it. It lies beyond the walkable bounds, so it has no review start.
 
 Use `?review=sims-116`.
+
+## Nos. 98, 100 and 102 (open question 23)
+
+- **Re-spacing:** triangulating both ends of the green BUILDERSmart board on No. 100 from `eLBm…` and `-vjb…` puts this stretch about 2.3 m in front of the source front. Read at that depth, the party lines fall at about −0.2, 5.0, 10.1 and 15.7 m from the No. 96 line, against the source's 0, 6.42, 12.53 and 16.33 m. The total agrees, so the measured lines are scaled onto the source run (×1.027), with cuts at 5.34 and 10.58 m. The three ways are merged along their party walls and cut square to the front, keeping the stepped source rear.
+- **No. 98 (unnamed):** a pale-blue two-storey house with two windows under louvres and a deep hood, and a blue awning.
+- **No. 100, BUILDERSmart 魯班行 (Sims Avenue frontage):** its green board, a BUILDERSmart 魯班行 www.buildersmart.com.sg awning with the telephone number, and a green blade sign on the party pier. BUILDERSmart is listed at 29 Lor 13 (modelled separately), and KBC Bargain Centre is listed at No. 100 without a sign. Under open question 12, the clearly signed occupant is modelled as a second BUILDERSmart frontage.
+- **No. 102 (unnamed):** a white two-storey house with a condenser and a shuttered ground floor, directly west of Fok Wai Kee.
+
+Heights carry about ±0.4 m. Use `?review=sa-98`, `?review=buildersmart-sims` and `?review=sa-102`.
+
