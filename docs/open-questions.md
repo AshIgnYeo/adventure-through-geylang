@@ -12,6 +12,21 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Author a footprint whose front follows the photographed façade, parallel to Geylang Road and 20.3 m wide, keeping the source rear and side lines. Leave the east strip as an unbuilt yard.
     - **Unlocks:** a square front for the mosque, the west tower in its photographed place, and an open yard beside Shan Yuan Tang.
     - **Evidence:** [references](lorong-11-references.md#masjid-haji-mohd-salleh-245-geylang-road).
+26. **Widen the study bounds to take in the five boundary blocks?**
+    - **Background:** every footprint inside the bounds is now modelled. Question 17 deferred widening until the current area was finished.
+    - **Blocks at the edge:** five blocks still render generically, with stock shop signs:
+      - No. 291 Geylang Road, the Lorong 15 corner coffeeshop (way 454254230);
+      - the Sian Chay Charity Centre at No. 208 (the rest of the Mongkok block);
+      - the Lorong 10 block (454438326);
+      - the Lorong 12 block (454438320);
+      - the two Geylang Road strips `gr-221-west` and `gr-260-east`.
+    - **Why it matters:** single bays of three of them already poke inside the bounds, and all five are in view from modelled streets.
+    - **Recommendation:** yes. Widen the bounds by one block on each side where these sit, and rebuild them from June 2024 photographs: named where the listing-and-signage bar is met, unnamed otherwise. No. 291 would need its corner footprint (question 5's original evidence).
+    - **Unlocks:** the last generic façades in view.
+27. **Leong Kee: draw the middle signboard as photographed?**
+    - **Evidence:** in June 2024 the middle board of the three Leong Kee bays reads 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE. The model leaves it blank under an earlier decision, because its wording differs from the outer boards.
+    - **Recommendation:** yes. The board carries the Leong Kee name, so drawing it is faithful to the photograph.
+    - **Also recorded, no change proposed:** the ochre corner building ends about 8.9 m from the Lorong 11 corner, against the source party line at 9.70 m.
 
 ## Settled
 
