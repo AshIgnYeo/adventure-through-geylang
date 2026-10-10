@@ -192,8 +192,97 @@ export const no20 = rowShop({ ...unnamed('20', {}), frontEdge: 2,
   plate: { u: [2.4, 2.62], h: [1.95, 2.18], text: '20' },
 });
 
-export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20];
-export const lorong13Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
+// Houses whose upper block stands back from the source front over a single-storey strip: the upper
+// block is a simple-house elevation on the inset outline (lorong13Outline), the strip is in the source frame.
+const setbackColours = { wall: '#e9e7e0', trim: '#dcd9d0', frame: '#2d3033', glass: '#3a4245', back: '#2b2a28', pier: '#e9e7e0' };
+const pairEvidence = 'The two-storey building over Nos. 16 and 18 has its upper storey about 1.2 m behind the ground-floor front, where three April 2024 panoramas agree, under one continuous weathered tiled roof with eaves at about 6.3 m. A tiled lean-to covers the ground floor of No. 16 and the south end of No. 18; a white steel canopy shelters the rest of No. 18\'s front.';
+
+export const no18 = unnamed('18', {
+  id: 'l13-18', buildingIds: ['1223454591'], frontEdge: 2,
+  height: 6.27, ceiling: 3.0, fiveFootWay: .3, roof: { type: 'gable', ridge: 8.0, ridgeDepth: .25, colour: '#6b5146', gable: '#e9e7e0' },
+  evidence: 'Source way 1223454591 is tagged No. 18, south of the open yard that ends the single-storey row; no business sign was seen in April 2024, so no name is given. ' + pairEvidence + ' Under the canopy are a dark recessed ground floor and parked cars; one dark window and service pipes mark the upper wall. The roof ridge, set about 4 m back, is estimated; cars, lanterns and the interior are not reconstructed.',
+  sources: [way('1223454591'), pano('8k_BeNJ16snqOq6gubtsYw', 71, 0, 90), pano('D4Uk9t7JuM7EbZHDIk3xog', 100, 10, 80), pano('J1TCFhzakKX2wiHsdsUgGQ', 45, 10, 80)],
+  colours: setbackColours,
+  windows: [{ u: [2.64, 4.09], h: [4.78, 5.55], panes: 2 }],
+  blocks: [{ name: 'eaves fascia', u: [0, 5.81], h: [6.15, 6.3], out: .3, depth: .6, colour: '#5b4a40' }],
+  setback: {
+    depth: 1.2,
+    canopy: { u: [0, 4.1], wall: 4.4, front: 3.8, out: 2.0, colour: '#cfd2cf', posts: [.2, 3.9] },
+    leanTo: { u: [4.1, 5.81], low: 3.05, high: 4.67, colour: '#6b5146' },
+    front: [
+      { name: 'front wall', u: [4.1, 5.81], h: [.13, 3.05], out: -.07, colour: '#e9e7e0' },
+      { name: 'glass sliding door', u: [5.0, 5.81], h: [.1, 2.6], colour: '#4b5a5e', glow: .05 },
+      { name: 'grey-blue awning', u: [4.1, 5.81], h: [3.0, 3.1], out: .35, depth: .7, colour: '#9fb3bf' },
+    ],
+  },
+});
+
+export const no16 = unnamed('16', {
+  id: 'l13-16', buildingIds: ['1223454590'], frontEdge: 2,
+  height: 6.27, ceiling: 3.0, fiveFootWay: .3, roof: { type: 'gable', ridge: 8.0, ridgeDepth: .25, colour: '#6b5146', gable: '#e9e7e0' },
+  evidence: 'Source way 1223454590 is tagged No. 16. April 2024 Street View shows a glass sliding door, a dark doorway and a yellow barber shopfront under grey-blue and pink corrugated awnings. A barber shop is listed at 16 Lor 13 Geylang without a trading name, and Kum Huat Shoe Merchant is listed at 16 Lor 11, not here; no name is given and the barber poster is a blank panel. ' + pairEvidence + ' A small window and a timber hatch mark the upper wall. The roof ridge is estimated; chairs, plants and the interior are not reconstructed.',
+  sources: [way('1223454590'), pano('8k_BeNJ16snqOq6gubtsYw', 71, 0, 90), pano('J1TCFhzakKX2wiHsdsUgGQ', 60, 10, 80)],
+  colours: setbackColours,
+  windows: [{ u: [.1, .5], h: [4.67, 5.13], panes: 1 }],
+  blocks: [
+    { name: 'eaves fascia', u: [0, 5.81], h: [6.15, 6.3], out: .3, depth: .6, colour: '#5b4a40' },
+    { name: 'timber hatch', u: [2.29, 2.79], h: [4.55, 5.1], out: .02, depth: .03, colour: '#9a6a3c' },
+  ],
+  setback: {
+    depth: 1.2,
+    leanTo: { u: [0, 5.81], low: 3.05, high: 4.67, colour: '#6b5146' },
+    front: [
+      { name: 'front wall', u: [0, 5.81], h: [.13, 3.05], out: -.07, colour: '#e9e7e0' },
+      { name: 'glass sliding door', u: [0, 1.19], h: [.1, 2.6], colour: '#4b5a5e', glow: .05 },
+      { name: 'dark doorway', u: [2.19, 3.19], h: [.1, 2.4], colour: '#2a2826' },
+      { name: 'yellow shopfront', u: [3.19, 5.59], h: [.1, 2.9], colour: '#e8c43a' },
+      { name: 'blank poster', u: [3.4, 4.1], h: [1.2, 2.2], out: .05, colour: '#f2efe8' },
+      { name: 'shop window', u: [4.5, 5.3], h: [.9, 2.3], out: .05, colour: '#56656b', glow: .05 },
+      { name: 'grey-blue awning', u: [0, 1.19], h: [3.0, 3.1], out: .35, depth: .7, colour: '#9fb3bf' },
+      { name: 'pink awning', u: [1.19, 5.81], h: [2.95, 3.05], out: .35, depth: .7, colour: '#d98a86' },
+    ],
+  },
+});
+
+const railing = (u, h) => [{ name: 'balcony railing', u, h: [h[1] - .06, h[1]], out: .35, depth: .05, colour: '#f1f0eb' }, ...Array.from({ length: Math.floor((u[1] - u[0]) / .14) }, (_, i) => ({ name: 'railing bar', u: [u[0] + .05 + i * .14, u[0] + .08 + i * .14], h, out: .35, depth: .03, colour: '#f1f0eb' }))];
+const balconyWall = (u, h) => ({ name: 'balcony wall', u, h, out: .35, depth: .12, colour: '#e3dfd6' });
+
+export const no12a = unnamed('12A', {
+  id: 'l13-12a', buildingIds: ['1223454589'], frontEdge: 2,
+  height: 14.4, ceiling: 3.6, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#cfccc4' },
+  evidence: 'Source way 1223454589 is tagged 12A and spans three bays south of No. 16. April 2024 Street View shows a five-storey apartment block, its flat roof filling the source outline on satellite imagery, behind a white front wall with a slatted brown gate and a planted bed. Brilliant Electronics S\'pore (1989) is listed at 14A Lor 13 with its point in this way, but no sign was seen, so no name is given. The upper storeys stand about 2 m behind the front wall, where the J1TC and 8U4Z panoramas agree; heights were read at that depth and carry several per cent of uncertainty. Grilled first-floor windows sit under a tiled eave band, then two storeys of balconies with white railings under striped awnings, a deep parapet at about 14.4 m and a rooftop railing. Plants, the mailbox and interiors are not reconstructed.',
+  sources: [way('1223454589'), pano('J1TCFhzakKX2wiHsdsUgGQ', 72, 18, 100), pano('8U4ZM41vQ-4RzwAUOCWcrg', 40, 15, 90), 'https://www.google.com/maps/search/?api=1&query=Brilliant+Electronics+14A+Lorong+13+Geylang'],
+  colours: { wall: '#e8e4da', trim: '#ddd8cc', frame: '#2b2f31', glass: '#3c4549', back: '#d8d3c8', pier: '#e8e4da', floor: '#a9a59c' },
+  bands: [[3.6, 3.9, .3], [6.95, 7.3, .5, '#b36b52'], [9.95, 10.1, .3], [12.7, 14.4, .25, '#e3dfd6']],
+  windows: [{ u: [1.4, 6.9], h: [5.0, 6.35], panes: 8 }, { u: [11.4, 15.6], h: [5.0, 6.35], panes: 6 }, { u: [1.0, 16.4], h: [7.95, 9.6], panes: 10, out: .02 }, { u: [1.0, 16.4], h: [11.2, 12.6], panes: 10, out: .02 }],
+  blocks: [
+    ...railing([4.8, 7.4], [6.85, 7.95]), ...railing([10.9, 12.4], [6.85, 7.95]), balconyWall([.4, 4.8], [6.85, 7.95]), balconyWall([7.4, 10.9], [6.85, 7.95]), balconyWall([12.4, 16.6], [6.85, 7.95]),
+    ...railing([4.9, 7.4], [10.1, 11.2]), ...railing([10.0, 12.4], [10.1, 11.2]), balconyWall([.4, 4.9], [10.1, 11.2]), balconyWall([7.4, 10.0], [10.1, 11.2]), balconyWall([12.4, 16.6], [10.1, 11.2]),
+    { name: 'striped awning', u: [.4, 16.6], h: [8.8, 9.0], out: .7, depth: 1.3, colour: '#b9b2a2' }, { name: 'striped awning', u: [.4, 16.6], h: [11.95, 12.15], out: .7, depth: 1.3, colour: '#b9b2a2' },
+    { name: 'roof railing', u: [.2, 17.2], h: [15.1, 15.16], out: -.1, depth: .05, colour: '#5a4a46' },
+    ...Array.from({ length: 12 }, (_, i) => ({ name: 'railing post', u: [.25 + i * 1.5, .3 + i * 1.5], h: [14.4, 15.15], out: -.1, depth: .05, colour: '#5a4a46' })),
+  ],
+  setback: {
+    depth: 2.0,
+    front: [
+      { name: 'front wall', u: [0, 1.8], h: [0, 2.0], colour: '#ecebe5' }, { name: 'gate pillar', u: [6.1, 6.8], h: [0, 2.2], colour: '#ecebe5' },
+      { name: 'garden wall', u: [6.8, 17.44], h: [0, 1.4], colour: '#ecebe5' },
+      { name: 'slatted gate', u: [1.8, 6.1], h: [.05, 2.0], out: .05, depth: .06, colour: '#5a4234' },
+      ...Array.from({ length: 14 }, (_, i) => ({ name: 'gate slat', u: [1.9 + i * .3, 2.0 + i * .3], h: [.1, 1.95], out: .1, depth: .03, colour: '#8a6a52' })),
+      { name: 'planted bed', u: [6.9, 17.3], h: [0, .5], out: -.8, depth: 1.4, colour: '#4f6a3e' },
+      ...Array.from({ length: 7 }, (_, i) => ({ name: 'shrub', u: [7.2 + i * 1.45, 8.2 + i * 1.45], h: [.5, 1.6], out: -.8, depth: 1.0, colour: '#3f5e35' })),
+    ],
+  },
+});
+
+export const lorong13 = [thirteenBbq, builderSmart, no15de, teckHoe, no9South, no3, no28, wunderfolks, no24, no20, no18, no16, no12a];
+/** The outline the elevation stands on: for a set-back place, the source outline with its front moved back. */
+export function lorong13Outline(poly, place) {
+  if (!place.setback) return poly;
+  const f = frontageFrame(poly, place.frontEdge), d = place.setback.depth;
+  return poly.map(p => p === f.a || p === f.b ? [p[0] - f.nx * d, p[1] - f.nz * d] : p);
+}
+export const lorong13Frame = (poly, place) => frontageFrame(lorong13Outline(poly, place), place.frontEdge);
 export function lorong13Layout(place, width) {
   if (place.single) {
     const boxes = [], mid = (a, b) => (a + b) / 2;
@@ -208,5 +297,5 @@ export function lorong13Layout(place, width) {
   for (const g of place.ground ?? []) base.add(g.name, mid(...g.u), mid(...g.h), g.out, g.u[1] - g.u[0], g.h[1] - g.h[0], g.depth ?? .03, g.colour, g.glow ?? 0);
   return base;
 }
-const reviewDistance = { buildersmart: [12, 8], 'teck-hoe': [9, 12] };
+const reviewDistance = { buildersmart: [12, 8], 'teck-hoe': [9, 12], 'l13-18': [10, 8], 'l13-16': [10, 8], 'l13-12a': [12, 24] };
 export const lorong13Reviews = (place, frame) => facing(frame, place.id, ...(reviewDistance[place.id] ?? [7.5, 20]));

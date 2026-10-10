@@ -1,6 +1,6 @@
 import * as pc from 'playcanvas';
 import type { World, Point } from './world';
-import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews } from './lorong-13-layout.mjs';
+import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews, lorong13Outline } from './lorong-13-layout.mjs';
 import { buildSimpleHouse, type Draw } from './simple-house';
 import { frontageFrame } from './gable-roof-layout.mjs';
 import { buildRow13House } from './row13';
@@ -106,7 +106,8 @@ export function buildLorong13(world: World, id: string, poly: Point[]) {
     for (const r of lorong13Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
     return true;
   }
-  const { pt, textured } = buildSimpleHouse(world, place.name, frame, poly, place, layout, draws[place.id] ?? {});
+  const { pt, textured } = buildSimpleHouse(world, place.name, frame, lorong13Outline(poly, place) as Point[], place, layout, draws[place.id] ?? {});
+  if (place.setback) buildSetbackStrip(world, place, poly);
   if (place.id === 'buildersmart') {
     const panel = place.blocks.find((b: any) => b.name === 'tool-icon panel'), canvas = document.createElement('canvas');
     canvas.width = 256; canvas.height = Math.round(256 * (panel.h[1] - panel.h[0]) / (panel.u[1] - panel.u[0])); iconPanel(canvas.getContext('2d')!, canvas.width, canvas.height);
@@ -125,4 +126,34 @@ export function buildLorong13(world: World, id: string, poly: Point[]) {
   }
   for (const r of lorong13Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
   return true;
+}
+
+/** The single-storey strip between the source front and a set-back upper block: front pieces, a lean-to and a canopy. */
+function buildSetbackStrip(world: World, place: any, poly: Point[]) {
+  const S = place.setback, f = frontageFrame(poly, place.frontEdge), d = S.depth;
+  const pt = (u: number, out = 0) => f.point(u, out) as Point, mid = (a: number[]) => (a[0] + a[1]) / 2;
+  const material = (colour: string) => { const m = world.mat(colour); m.cull = pc.CULLFACE_NONE; m.update(); return m; };
+  for (const b of S.front ?? []) {
+    const p = pt(mid(b.u), b.out ?? -.02);
+    world.box(`${place.name} ${b.name}`, p[0], mid(b.h), p[1], b.u[1] - b.u[0], b.h[1] - b.h[0], b.depth ?? .04, world.mat(b.colour, b.glow ?? 0), undefined, f.angle);
+  }
+  const slope = (name: string, u: number[], near: number, nearY: number, far: number, farY: number, colour: string) =>
+    world.mesh(`${place.name} ${name}`, [pt(u[0], near), pt(u[1], near), pt(u[1], far), pt(u[0], far)].flatMap((p, i) => [p[0], i < 2 ? nearY : farY, p[1]]), [0, 0, 1, 0, 1, 1, 0, 1], [0, 1, 2, 0, 2, 3], material(colour));
+  const L = S.leanTo;
+  if (L) {
+    slope('tiled lean-to', L.u, 0, L.low, -d, L.high, L.colour);
+    // Close the lean-to's ends where they meet the party walls.
+    const wall = material(place.colours.wall);
+    for (const u of L.u) if (u < .01 || u > f.width - .01) {
+      world.panel(pt(u, 0), pt(u, -d), .13, L.low, wall);
+      world.mesh(`${place.name} lean-to end`, [pt(u, 0), pt(u, -d), pt(u, -d)].flatMap((p, i) => [p[0], i === 1 ? L.high : L.low, p[1]]), [0, 0, 1, 1, 1, 0], [0, 1, 2], wall);
+    }
+  }
+  const C = S.canopy;
+  if (C) {
+    slope('steel canopy', C.u, -d, C.wall, C.out - d, C.front, C.colour);
+    const e = pt((C.u[0] + C.u[1]) / 2, C.out - d);
+    world.box(`${place.name} canopy fascia`, e[0], C.front - .08, e[1], C.u[1] - C.u[0], .16, .05, world.mat('#eeeeea'), undefined, f.angle);
+    for (const u of C.posts ?? []) { const p = pt(u, C.out - d - .1); world.box(`${place.name} canopy post`, p[0], C.front / 2, p[1], .08, C.front, .08, world.mat('#d8d6cf'), undefined, f.angle); }
+  }
 }

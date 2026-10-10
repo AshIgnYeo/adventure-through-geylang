@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews, thirteenBbq, builderSmart, teckHoe } from '../src/lorong-13-layout.mjs';
+import { lorong13, lorong13Frame, lorong13Layout, lorong13Reviews, lorong13Outline, thirteenBbq, builderSmart, teckHoe } from '../src/lorong-13-layout.mjs';
+import { frontageFrame } from '../src/gable-roof-layout.mjs';
 import { row13 } from '../src/row13-layout.mjs';
 import { singleRow } from '../src/single-row-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
@@ -25,7 +26,7 @@ test('Thirteen BBQ and BUILDERSmart take the two Sims Avenue end ways that conta
 
 test('each Lorong 13 elevation is ordered and keeps its fittings in the frontage', () => {
   for (const place of lorong13) {
-    const poly = outline(place.buildingIds[0]), frame = lorong13Frame(poly, place), L = lorong13Layout(place, frame.width);
+    const source = outline(place.buildingIds[0]), poly = lorong13Outline(source, place), frame = lorong13Frame(source, place), L = lorong13Layout(place, frame.width);
     for (const w of place.windows ?? []) assert.ok(w.u[0] > 0 && w.u[1] < frame.width && w.h[0] > place.ceiling && w.h[1] < place.height, place.id);
     if (place.row) {
       assert.ok(Math.abs(frame.width - 5.01) < .03, place.id);
@@ -81,7 +82,21 @@ test('the single-storey row houses share No. 22\'s form and the source spacing',
   assert.match(lorong13.find(p => p.id === 'wunderfolks').evidence, /Time Out \(27 September 2023\)/);
 });
 
+test('set-back houses keep their upper block inside the source outline and their strip inside the frontage', () => {
+  for (const place of lorong13.filter(p => p.setback)) {
+    const source = outline(place.buildingIds[0]), inner = lorong13Outline(source, place), f = frontageFrame(source, place.frontEdge), S = place.setback;
+    const c = [0, 1].map(k => source.reduce((sum, p) => sum + p[k], 0) / source.length);
+    for (const p of inner) { const d = Math.hypot(c[0] - p[0], c[1] - p[1]); assert.equal(pointInPolygon([p[0] + (c[0] - p[0]) * .05 / d, p[1] + (c[1] - p[1]) * .05 / d], source), true, place.id); }
+    assert.ok(Math.abs(lorong13Frame(source, place).width - f.width) < .01, place.id);
+    for (const b of S.front ?? []) assert.ok(b.u[0] >= 0 && b.u[1] <= f.width + .01 && b.h[0] >= 0, `${place.id} ${b.name}`);
+    for (const r of [S.leanTo, S.canopy].filter(Boolean)) assert.ok(r.u[0] >= 0 && r.u[1] <= f.width + .01, place.id);
+    if (S.leanTo) assert.ok(S.leanTo.high > S.leanTo.low && S.leanTo.high < place.height, place.id);
+    if (S.canopy) assertClearOfCarriageway(S.canopy.u.map(u => f.point(u, S.canopy.out - S.depth)));
+  }
+});
+
 test('Lorong 13 review starts face their frontages and stay walkable', () => {
   for (const place of lorong13) { const frame = lorong13Frame(outline(place.buildingIds[0]), place); assertReviews(frame, lorong13Reviews(place, frame)); }
+  assert.ok(lorong13.length >= 13);
   assert.equal(named.length, 4);
 });

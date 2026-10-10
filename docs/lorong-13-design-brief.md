@@ -97,6 +97,21 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 - **No. 24:** a roller shutter and a key-cutting booth with a generic 配锁匙 / DUPLICATING sign. Bookland Library Services is listed here, but has no sign.
 - **No. 20:** two roller shutters, with plate 20 and a louvred panel.
 
+## Nos. 18 and 16 (unnamed)
+
+- **Building:** one two-storey house over both ways. Its upper storey stands about **1.2 m behind** the ground-floor front, where three panoramas agree, under one continuous weathered tiled roof with eaves at about 6.3 m.
+- **Front strip:** a tiled lean-to covers No. 16's ground floor and the south end of No. 18. A white steel canopy shelters the rest of No. 18's front, over a dark recessed ground floor.
+- **No. 16:** a glass sliding door, a dark doorway and a yellow barber shopfront under grey-blue and pink awnings. The listed barber has no trading name, so the house is unnamed.
+- **Modelling:** a new set-back option builds the upper block on the source outline with its front moved back, and the strip in front on the source frame. The roof ridge, about 4 m back, is estimated.
+- **Gap to the north:** the yard between No. 20 and No. 18, a gap in the source, has no building.
+
+## No. 12A (unnamed)
+
+- **Building:** a five-storey apartment block whose flat roof fills the source outline on satellite imagery.
+- **Front:** a white wall with a slatted brown gate and a planted bed stands on the source front, with a car porch behind it.
+- **Upper storeys:** they stand about **2 m behind** the front wall, where `J1TC…` and `8U4Z…` agree. Grilled first-floor windows sit under a tiled eave band, then two storeys of balconies with white railings under striped awnings. A deep parapet tops out at about 14.4 m, with a rooftop railing above.
+- **Identity:** Brilliant Electronics is listed at 14A, but has no sign, so the block is unnamed. Heights carry several per cent of uncertainty.
+
 ## Omitted and estimated
 
 - **Omitted:** stock, pallets, vehicles, menus, furniture, posters, banners, vending machines, plants and interiors.
@@ -104,4 +119,4 @@ The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the sour
 
 ## Review
 
-Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24` and `?review=l13-20`.
+Use `?review=thirteen-bbq`, `?review=buildersmart`, `?review=teck-hoe`, `?review=l13-15de`, `?review=l13-9s`, `?review=l13-3`, `?review=wunderfolks`, `?review=l13-28`, `?review=l13-24`, `?review=l13-20`, `?review=l13-18`, `?review=l13-16` and `?review=l13-12a`.
