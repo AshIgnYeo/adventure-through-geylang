@@ -116,7 +116,101 @@ export const l15Cream = {
   backFittings: [{ name: 'shop', u: [.5, 6.2], h: [.1, 2.9], colour: '#4a4038', glow: .06 }],
 };
 
-export const lorong15 = [sinChewTan, teckKeow, hongShengKoon, shipChandlers, l15Shed, l15Cream];
+// The west side (odd numbers): three-storey walk-ups of the 1960s-70s behind yards, read on April 2024
+// frames. Frames run south to north (u from each south party line). Along-street positions carry about
+// ±3 m and heights about ±0.5 m: the panoramas agree on these fronts at 1.7 m behind (Nos. 25-33) to 4 m in
+// front of (Nos. 5-11) the source front, which is kept, with the source party lines.
+const westNote = 'Read on April 2024 Lorong 15 panoramas; they agree on this stretch at a depth that differs from the source front by up to 4 m, so the model keeps the source front and party lines, with along-street positions uncertain by about 3 m and heights by about 0.5 m.';
+function walkUp(width, { stair = 'left', upper = 'balcony', colour = '#e3e1d9', storeys = 3 } = {}) {
+  const top = storeys * 3.0 + .2, floors = Array.from({ length: storeys - 1 }, (_, i) => 3.2 + i * 3.0);
+  const panel = stair === 'left' ? [.2, 1.5] : stair === 'right' ? [width - 1.5, width - .2] : null;
+  const bay = panel ? (stair === 'left' ? [1.8, width - .3] : [.3, width - 1.8]) : [.4, width - .4];
+  const blocks = [], windows = [];
+  if (panel) {
+    blocks.push({ name: 'breezeblock stair panel', u: panel, h: [3.3, top - .6], out: .03, depth: .05, colour: '#d9d6cc' });
+    for (let y = 3.5; y < top - .8; y += .3) blocks.push({ name: 'breezeblock opening row', u: [panel[0] + .1, panel[1] - .1], h: [y, y + .12], out: .06, depth: .01, colour: '#6a6458' });
+  }
+  for (const f of floors) {
+    blocks.push({ name: 'floor slab', u: [0, width], h: [f - .05, f + .2], out: .4, depth: .8, colour: '#d6d3ca' });
+    if (upper === 'lattice') {
+      blocks.push({ name: 'lattice screen', u: bay, h: [f + .25, f + 2.6], out: .7, depth: .04, colour: '#ecebe6' });
+      for (let x = bay[0] + .1; x < bay[1]; x += .25) blocks.push({ name: 'lattice bar', u: [x, x + .04], h: [f + .25, f + 2.6], out: .73, depth: .02, colour: '#bdbab2' });
+    } else if (upper === 'balcony') {
+      blocks.push({ name: 'balcony railing', u: bay, h: [f + .9, f + 1.0], out: .75, depth: .05, colour: '#ecebe6' });
+      for (let x = bay[0] + .1; x < bay[1]; x += .18) blocks.push({ name: 'railing bar', u: [x, x + .03], h: [f + .2, f + .95], out: .75, depth: .03, colour: '#ecebe6' });
+      windows.push({ u: [bay[0] + .3, bay[1] - .3], h: [f + .6, f + 2.3], panes: 4, out: -.3 });
+    } else windows.push({ u: [bay[0] + .3, bay[1] - .3], h: [f + .7, f + 2.1], panes: 3 });
+  }
+  return { height: top, ceiling: 3.0, fiveFootWay: .3, roof: { type: 'flat', colour: '#a9a69e' }, colours: { wall: colour, trim: '#d6d3ca', frame: '#3a3e40', glass: '#3e474b', pier: colour, back: '#3a3532', floor: '#9a978f' },
+    bands: [[top - .25, top, .3]], windows, blocks, piers: [[0, .3], [width - .3, width]],
+    backFittings: [{ name: 'ground-floor unit', u: [.5, width - .5], h: [.1, 2.8], colour: '#3a3532' }] };
+}
+const westUnit = (id, way, number, width, opts, extra = {}) => ({ id, buildingIds: [way], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 15 Geylang',
+  name: `No. ${number} Lorong 15 Geylang (April 2024 exterior, occupant not identified)`, address: `${number} Lorong 15 Geylang`, ...walkUp(width, opts), ...extra });
+const westPanos = [pano('4VkQxUB4x9mQmQdqDyRARQ', 285, 12, 70), pano('dwargxggy9TZvawFPhFm_A', 300, 12, 60), pano('p-KKH3__2aUcyvl6hLhBZQ', 265, 10, 100), pano('pGMXxZekZXq_40rZyzjlcg', 250, 10, 90)];
+const tent = (colour, depth = 6) => ({ name: 'yard tent', u: [.1, 6.0], h: [3.7, 3.85], out: 1.0 + depth / 2, depth, colour });
+
+export const westRow = [
+  westUnit('l15-33', '1223454579', '33', 6.1, { stair: null, upper: 'lattice' }, { evidence: 'Source way 1223454579 is tagged No. 33. A three-storey walk-up whose upper balconies are enclosed by white lattice screens, with a yellow-tarpaulin yard in front; Myths KTV & Disco Pub is listed at No. 31 and nothing was signed here, so no name is given. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223454579', ...westPanos.slice(0, 2)] }),
+  westUnit('l15-31', '1223454580', '31', 6.1, { stair: null, upper: 'lattice' }, { evidence: 'Source way 1223454580 is tagged No. 31, where Myths KTV & Disco Pub is listed, but no sign for it was seen in April 2024, so no name is given. A three-storey walk-up with lattice-screened upper balconies behind the yellow tarpaulin over a Four-Faced Buddha shrine yard, which is not reconstructed. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223454580', ...westPanos.slice(0, 2)] }),
+  westUnit('l15-29', '1223454581', '29', 6.1, { stair: 'right', upper: 'balcony' }, { evidence: 'Source way 1223454581 is tagged No. 29, where Fu Shan Tan is listed; the shrine yard\'s signs could not be tied to it, so no name is given. A three-storey walk-up with a breezeblock stair panel and railed balconies. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223454581', ...westPanos.slice(0, 2)] }),
+  westUnit('l15-27', '1223454582', '27', 6.1, { stair: 'left', upper: 'balcony', colour: '#dcdad2' }, { evidence: 'Source way 1223454582 is tagged No. 27. A three-storey walk-up with a breezeblock stair panel and railed balconies behind a blue-tented yard; no sign or listing identifies it, so no name is given. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223454582', ...westPanos.slice(0, 2)] }),
+  westUnit('l15-25', '1223454583', '25', 6.1, { stair: 'left', upper: 'balcony', colour: '#dcdad2' }, { evidence: 'Source way 1223454583 is tagged No. 25. A three-storey walk-up with a breezeblock stair panel and railed balconies behind a blue-tented yard; no sign or listing identifies it, so no name is given. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223454583', ...westPanos.slice(0, 2)] }),
+  westUnit('l15-17j', '1223539239', '17J', 7.41, { stair: 'left', upper: 'balcony' }, { evidence: 'Source way 1223539239 is tagged 17J, and the plate 17J hangs over its gated yard in April 2024, with gilded Buddhist ornaments over the door and a green tent; a vertical sign for a Buddhist association (电话 6741 1552) stands at its south end, but no listing could be matched, so no name is given. A three-storey walk-up with a breezeblock stair panel and railed balconies. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223539239', ...westPanos.slice(1, 3)] }),
+  westUnit('l15-17f', '1223539240', '17F', 7.4, { stair: 'right', upper: 'lattice' }, { evidence: 'Source way 1223539240 is tagged 17F. A three-storey walk-up with a breezeblock stair panel and lattice-screened upper balconies; no sign or listing identifies it, so no name is given. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223539240', ...westPanos.slice(2, 3)] }),
+  westUnit('l15-11', '1223539237', '11', 5.8, { stair: null, upper: 'windows', storeys: 3 }, { evidence: 'Source way 1223539237 is tagged No. 11, and the plate 11 hangs by its dark recessed entrance beside K Hotel 1515 in April 2024; no sign or listing identifies it, so no name is given. A narrow white three-storey walk-up with louvred windows. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223539237', ...westPanos.slice(3, 4), pano('sk190g6HmylnIEWoWujUmA', 265, 10, 100)] }),
+  westUnit('l15-9', '1223539236', '9', 5.81, { stair: null, upper: 'windows', storeys: 3 }, { evidence: 'Source way 1223539236 is tagged No. 9. A white three-storey walk-up with banded windows under hoods and a stepped parapet; a small GinGko Interior Solutions sign hangs at its door, but no listing at this number was found, so no name is given. ' + westNote, sources: ['https://www.openstreetmap.org/way/1223539236', ...westPanos.slice(3, 4), pano('sk190g6HmylnIEWoWujUmA', 265, 10, 100)] }),
+];
+
+// Nos. 17 and 17C: the AhlulBayt Educational & Cultural Centre and the Jaafari Muslim Association, signed together.
+export const aecc = {
+  id: 'aecc-jmas', buildingIds: ['1223539241', '1223539242'], kind: 'aecc-jmas', frontEdge: 0, reviewRoad: 'Lorong 15 Geylang', reviewBuildingId: '1223539241',
+  name: 'AhlulBayt Educational & Cultural Centre and Jaafari Muslim Association Singapore (April 2024 exterior)', address: '17 & 17C Lorong 15 Geylang',
+  ...walkUp(7.41, { stair: 'right', upper: 'balcony' }),
+  evidence: 'Google Maps lists the AhlulBayt Educational & Cultural Centre (AECC) and the Jaafari Muslim Association at 17 Lor 15 Geylang, Singapore 388608, and April 2024 Street View shows their board behind the fence of the walk-up north of K Hotel 1515, reading ... EDUCATIONAL & CULTURAL CENTRE (AECC), JAAFARI MUSLIM ASSOCIATION SINGAPORE (JMAS), 17 & 17C Lorong 15 Geylang. The two source ways tagged 17 and 17C are assigned together, as the board names both numbers, without asserting legal extent. Three-storey walk-ups with breezeblock stair panels and railed balconies behind a green awning and a fenced yard. ' + westNote + ' The interior is not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=AhlulBayt+Educational+Cultural+Centre+17+Lorong+15', 'https://www.openstreetmap.org/way/1223539241', 'https://www.openstreetmap.org/way/1223539242', pano('p-KKH3__2aUcyvl6hLhBZQ', 245, 0, 30)],
+};
+
+// Nos. 7 and 5 share one white three-storey building with pedimented windows and a stepped gable, its door
+// plated 5, 5A, 5B / 7, 7A, 7B; each way carries half of the elevation.
+const pedimented = (id, way, number) => ({
+  id, buildingIds: [way], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 15 Geylang',
+  name: `No. ${number} Lorong 15 Geylang (April 2024 exterior, occupant not identified)`, address: `${number} Lorong 15 Geylang`,
+  height: 9.9, ceiling: 3.4, fiveFootWay: .5, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: `Source way ${way} is tagged No. ${number}. Nos. 5 and 7 share one white three-storey building in April 2024, its door plated 5, 5A, 5B / 7, 7A, 7B: pedimented windows on two upper floors, a stepped gable at the top and a navy awning over a glazed entrance up a short flight of steps. No sign or listing identifies its occupants, so no name is given. ` + westNote,
+  sources: [`https://www.openstreetmap.org/way/${way}`, pano('pGMXxZekZXq_40rZyzjlcg', 250, 10, 90), pano('CmAFX4qNXE-oR382np4z9w', 265, 10, 100)],
+  colours: { wall: '#ecebe6', trim: '#f4f3ef', frame: '#3a4a5a', glass: '#4b5a68', pier: '#ecebe6', back: '#3a3532', floor: '#a9a59c' },
+  bands: [[9.7, 9.9, .3], [3.4, 3.7, .3]],
+  windows: [[1.0, 2.2], [3.6, 4.8]].flatMap(u => [{ u, h: [4.6, 6.0], panes: 2, surround: true }, { u, h: [7.2, 8.6], panes: 2, surround: true }]),
+  blocks: [[1.0, 2.2], [3.6, 4.8]].flatMap(([l, r]) => [6.0, 8.6].map(t => ({ name: 'window pediment', u: [l - .15, r + .15], h: [t + .2, t + .55], out: .1, depth: .15, colour: '#f4f3ef' })))
+    .concat(number === '7' ? [{ name: 'stepped gable', u: [1.5, 5.8], h: [9.9, 10.6], out: -.05, depth: .3, colour: '#ecebe6' }] : [{ name: 'stepped gable', u: [0, 4.3], h: [9.9, 10.6], out: -.05, depth: .3, colour: '#ecebe6' }]),
+  awning: number === '5' ? { from: .2, to: 5.6, wall: 3.3, front: 2.9, depth: 1.0, valance: .3 } : undefined,
+  piers: [[0, .3], [5.5, 5.8]],
+  backFittings: [{ name: 'glazed entrance', u: [.6, 5.2], h: [.4, 2.9], colour: '#4b5a68', glow: .05 }],
+});
+
+export const no1 = {
+  id: 'l15-1', buildingIds: ['1223539232'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 15 Geylang',
+  name: 'No. 1 Lorong 15 Geylang (April 2024 exterior, occupant not identified)', address: '1 Lorong 15 Geylang',
+  height: 7.0, ceiling: 4.0, fiveFootWay: .3, roof: { type: 'gable', ridge: 9.0, ridgeDepth: .45, colour: '#2b2d2f', gable: '#3e4246' },
+  evidence: 'Source way 1223539232 is tagged No. 1, south of the Lam Clan Association. April 2024 Street View shows a modern two-storey house in dark grey with a black tiled roof, a pergola over a glass-balustraded terrace, a timber-lined canopy and a black slatted gate between tan pillars across a paved forecourt; no sign or listing identifies it, so no name is given. ' + westNote,
+  sources: ['https://www.openstreetmap.org/way/1223539232', pano('JkzvyVlpsRIrT46kkKGr6w', 255, 10, 100)],
+  colours: { wall: '#3e4246', trim: '#2b2d2f', frame: '#1c1d1e', glass: '#4a5658', pier: '#b58a5a', back: '#2b2826', floor: '#c9c6bd' },
+  windows: [{ u: [.5, 1.8], h: [4.6, 5.8], panes: 2 }, { u: [2.4, 4.6], h: [4.6, 5.8], panes: 3 }],
+  blocks: [
+    { name: 'timber canopy', u: [0, 5.8], h: [4.0, 4.3], out: .9, depth: 1.8, colour: '#7a5a3e' },
+    { name: 'glass balustrade', u: [1.2, 5.6], h: [4.35, 5.35], out: .6, depth: .03, colour: '#9fb2b4', glow: .02 },
+    { name: 'pergola', u: [.2, 5.6], h: [6.9, 7.05], out: .5, depth: 1.4, colour: '#2b2d2f' },
+    { name: 'slatted gate', u: [.6, 5.2], h: [0, 2.3], out: 2.5, depth: .05, colour: '#1f1f20' },
+    { name: 'tan gate pillar', u: [0, .6], h: [0, 2.6], out: 2.5, depth: .5, colour: '#b58a5a' }, { name: 'tan gate pillar', u: [5.2, 5.8], h: [0, 2.6], out: 2.5, depth: .5, colour: '#b58a5a' },
+  ],
+  piers: [[0, .3], [5.5, 5.8]],
+  backFittings: [{ name: 'dark entrance', u: [.5, 5.3], h: [.1, 3.8], colour: '#2b2826' }],
+};
+
+export const lorong15 = [sinChewTan, teckKeow, hongShengKoon, shipChandlers, l15Shed, l15Cream, ...westRow, aecc, pedimented('l15-7', '1223539235', '7'), pedimented('l15-5', '1223539234', '5'), no1];
 export const lorong15Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong15Layout = (place, width) => simpleHouseLayout(width, place);
-export const lorong15Reviews = (place, frame) => facing(frame, place.id, 8, 22);
+// West-side walk-ups are reviewed from the middle of Lorong 15; Nos. 9 and 11 sit close to the east edge of the study.
+const westReview = { 'l15-11': 9, 'l15-9': 9, 'l15-7': 9, 'l15-5': 8, 'l15-1': 6.5 };
+export const lorong15Reviews = (place, frame) => facing(frame, place.id, westReview[place.id] ?? (place.buildingIds[0].startsWith('12234545') || place.buildingIds[0].startsWith('122353') ? 13 : 8), 22);

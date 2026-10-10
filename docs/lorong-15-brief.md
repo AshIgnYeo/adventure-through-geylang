@@ -1,4 +1,4 @@
-# Lorong 15 Geylang: Sin Chew Tan's Clan Association and the Teck Keow Association
+# Lorong 15 Geylang
 
 Research and implementation: **10 October 2026**. Open question 15, answered "source front, labelled". This brief covers `src/lorong-15-layout.mjs`.
 
@@ -32,3 +32,17 @@ Use `?review=sin-chew-tan` and `?review=teck-keow`.
 - **Check:** render-and-compare from `4VkQ…`, moved 4.4 m back, puts the hotel edge, windows, vents and the 鴻勝館 sign on their photographed positions.
 
 Use `?review=hong-sheng-koon`, `?review=ship-chandlers`, `?review=l15-shed` and `?review=l15-cream`.
+
+## The west side (odd numbers)
+
+These are April 2024 exteriors from the drive's panoramas (`4VkQ…`, `dwar…`, `p-KK…`, `pGMX…`, `CmAF…` and `Jkzv…`).
+
+- **Depth:** the panoramas agree on these fronts at depths that differ from the source front by up to 4 m: about 1.7 m behind at Nos. 25–33, and about 4 m in front at Nos. 5–11. The source front and party lines are kept. Along-street positions carry about ±3 m and heights about ±0.5 m.
+- **AhlulBayt Educational & Cultural Centre and Jaafari Muslim Association Singapore, Nos. 17 and 17C (named):** listed at 17 Lor 15. Their joint board behind the fence reads ... EDUCATIONAL & CULTURAL CENTRE (AECC), JAAFARI MUSLIM ASSOCIATION SINGAPORE (JMAS), 17 & 17C Lorong 15 Geylang. The two source ways are assigned together.
+- **Walk-ups, Nos. 25–33, 17F and 17J (unnamed):** three-storey 1960s–70s walk-ups behind yards, with breezeblock stair panels and railed or lattice-screened balconies. Myths KTV (No. 31) and Fu Shan Tan (No. 29) are listed, but their signs could not be tied to the frontages. The Buddhist association sign at 17J (telephone 6741 1552) could not be matched to a listing.
+- **Nos. 11 and 9 (unnamed):** narrow white three-storey walk-ups beside K Hotel 1515. A GinGko Interior Solutions sign hangs at No. 9, without a listing at that number.
+- **Nos. 7 and 5 (unnamed):** one white three-storey building with pedimented windows and a stepped gable, its door plated 5, 5A, 5B / 7, 7A, 7B.
+- **No. 1 (unnamed):** a modern dark-grey two-storey house with a black tiled roof, a pergola and a slatted gate, beside the Lam Clan Association.
+
+Use `?review=aecc-jmas`, `?review=l15-33`, `?review=l15-25`, `?review=l15-17j`, `?review=l15-11`, `?review=l15-7` and `?review=l15-1`.
+

@@ -24,7 +24,8 @@ test('K Hotel 1515 keeps the addressed No. 15 outline and drops the stale source
   assert.equal(source.number, '15'); assert.equal(source.street, 'Lorong 15 Geylang');
   assert.doesNotMatch(kHotel.name + kHotel.address, /Chang Ziang/);
   assert.deepEqual(landmarkFor(source.id).buildingIds, [source.id]);
-  for (const id of ['1223539237', '1223539241']) assert.equal(landmarkFor(id), undefined, `neighbour ${id}`);
+  assert.equal(landmarkFor('1223539237'), undefined, 'neighbour No. 11 is unnamed');
+  assert.equal(landmarkFor('1223539241').id, 'aecc-jmas', 'neighbour No. 17 is the separately signed AECC / JMAS');
   const way = xml.match(/<way id="1223539238"[^>]*>[\s\S]*?<\/way>/)[0];
   assert.deepEqual(source.coordinates, [...way.matchAll(/<nd ref="(\d+)"/g)].map(([, id]) => nodePoint(id)));
   assert.ok(Math.abs(frame.width - 11.55) < .02);

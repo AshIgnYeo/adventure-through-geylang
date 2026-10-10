@@ -11,12 +11,12 @@ This is now primarily an environment and rendering project. The walking controls
 - A metre-scale street layout derived from retained OpenStreetMap data.
 - A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
 - Daylight, blue-hour and night lighting modes.
-- Reference-led models of 81 named buildings and landmarks, and photograph-led unnamed exteriors on Lorong 13.
+- Reference-led models of 82 named buildings and landmarks, and photograph-led unnamed exteriors on Lorong 13.
 - A mapped pedestrian back lane between Lorong 9 and Lorong 11.
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
 
-The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Ming Li's Eating House, Lian Seng Weighing Scale Co., Tian Tian Minimart, TakeToys, Monster Ink, Shadow Tattoo (a dated exterior), the Nanyang Lian Clan Association building, Sin Chew Tan's Clan Association, the Teck Keow Association, Hong Sheng Koon, the Singapore Ship-Chandlers Association, Hotel 81 Spring, ibis budget Singapore Gold, Red Flag Store (Davco), the Public Free Clinic Society headquarters, YWAM Singapore, Cico Flooring, Gems Ville, Thirteen BBQ Bar, BUILDERSmart, Teck Hoe Airconditioning Parts, Wunderfolks, Instyle Hair Salon and Yap Sun Hardware (dated exteriors), Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
+The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Ming Li's Eating House, Lian Seng Weighing Scale Co., Tian Tian Minimart, TakeToys, Monster Ink, Shadow Tattoo (a dated exterior), the Nanyang Lian Clan Association building, Sin Chew Tan's Clan Association, the Teck Keow Association, Hong Sheng Koon, the Singapore Ship-Chandlers Association, the AhlulBayt Educational & Cultural Centre, Hotel 81 Spring, ibis budget Singapore Gold, Red Flag Store (Davco), the Public Free Clinic Society headquarters, YWAM Singapore, Cico Flooring, Gems Ville, Thirteen BBQ Bar, BUILDERSmart, Teck Hoe Airconditioning Parts, Wunderfolks, Instyle Hair Salon and Yap Sun Hardware (dated exteriors), Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
 
 ## Run locally
 
@@ -123,6 +123,10 @@ Review URLs can open directly opposite a model. For example:
 /?review=hong-sheng-koon
 /?review=ship-chandlers
 /?review=l15-cream
+/?review=aecc-jmas
+/?review=l15-33
+/?review=l15-7
+/?review=l15-1
 /?review=public-free-clinic-society
 /?review=ywam-singapore
 /?review=l9-12
@@ -167,7 +171,7 @@ The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on
 
 This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 
-Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings are not assigned real names. On Lorong 13, Lorong 11 and at other finished spots they are rebuilt from dated photographs as unnamed exteriors, with blank boards; elsewhere they remain generic.
+Named landmarks are matched deliberately to addresses, mapped features and visual references. The documentation distinguishes current sources from historical photographs, estimates from observations, and whole-building identities from upper-floor or partial-block premises. Unverified buildings are not assigned real names. Across the study area they are rebuilt from dated photographs as unnamed exteriors, with blank boards. A few footprints still await owner decisions and remain generic.
 
 Detailed provenance is available in:
 
@@ -229,7 +233,7 @@ Detailed provenance is available in:
 - [Lorong 9 east side brief](docs/lorong-9-brief.md)
 - [Geylang Road north side: Lian Seng and No. 231](docs/geylang-north-brief.md)
 - [Geylang Road south side, Nos. 218–250](docs/geylang-south-brief.md)
-- [Lorong 15 east side, around Hotel 81 Spring](docs/lorong-15-brief.md)
+- [Lorong 15 brief](docs/lorong-15-brief.md)
 
 ## Project structure
 

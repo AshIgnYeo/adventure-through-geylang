@@ -51,7 +51,7 @@ import { thirteenBbq, builderSmart, teckHoe, wunderfolks } from './lorong-13-lay
 import { yapSun } from './sims-south-layout.mjs';
 import { lianSeng } from './geylang-north-layout.mjs';
 import { monsterInk, shadowTattoo, nanyangLian, tianTian, takeToys } from './geylang-south-layout.mjs';
-import { sinChewTan, teckKeow, hongShengKoon, shipChandlers } from './lorong-15-layout.mjs';
+import { sinChewTan, teckKeow, hongShengKoon, shipChandlers, aecc } from './lorong-15-layout.mjs';
 import { ibisGold } from './ibis-gold-layout.mjs';
 import { redFlagDavco } from './sims-north-row-layout.mjs';
 import { ywam } from './lorong-9-layout.mjs';
@@ -74,6 +74,7 @@ export const landmarks = [
   { ...teckKeow },
   { ...hongShengKoon },
   { ...shipChandlers },
+  { ...aecc },
   { ...ibisGold },
   { ...redFlagDavco },
   { ...ywam },

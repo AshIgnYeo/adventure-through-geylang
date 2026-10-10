@@ -49,7 +49,17 @@ export function buildLorong15(world: World, id: string, poly: Point[]) {
   const place = lorong15.find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   const frame = lorong15Frame(poly, place), layout = lorong15Layout(place, frame.width) as any;
-  buildSimpleHouse(world, place.name, frame, poly, place, layout, draws[place.id] ?? {});
-  for (const r of lorong15Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+  buildSimpleHouse(world, `${place.name} ${id}`, frame, poly, place, layout, draws[place.id] ?? {});
+  if (place.id === 'aecc-jmas' && id === place.reviewBuildingId) {
+    // The joint board behind the fence of No. 17.
+    const c = document.createElement('canvas'); c.width = 1024; c.height = 260; const g = c.getContext('2d')!;
+    g.fillStyle = '#1c1c1d'; g.fillRect(0, 0, 1024, 260); g.fillStyle = '#e8e6df'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.font = '700 46px Arial, sans-serif'; g.fillText('AHLULBAYT EDUCATIONAL & CULTURAL CENTRE (AECC)', 512, 60, 980);
+    g.font = '600 38px Arial, sans-serif'; g.fillText('JAAFARI MUSLIM ASSOCIATION SINGAPORE (JMAS)', 512, 140, 980);
+    g.font = '500 32px Arial, sans-serif'; g.fillText('17 & 17C Lorong 15 Geylang', 512, 210, 980);
+    const m = world.mat('#1c1c1d'); const t = new (m.constructor as any)(); t.diffuseMap = world.texture(c); t.update();
+    const pa = frame.point(1.0, .1) as Point, pb = frame.point(6.4, .1) as Point; world.panel(pa, pb, 2.0, 2.9, t);
+  }
+  if (!place.reviewBuildingId || id === place.reviewBuildingId) for (const r of lorong15Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
   return true;
 }
