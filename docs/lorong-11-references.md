@@ -289,3 +289,7 @@ Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists
 ## AiSecurityReady CCTV shop, No. 2 Lorong 11 Geylang
 
 Implemented **10 October 2026** as a dated April 2024 exterior. The operator website and Google Maps give AiSecurityReady's CCTV shop at 2 Lor 11 Geylang, matching the source way tagged No. 2 beside S.M. Khek Leow. The ornate charcoal-grey conserved shophouse has arched shuttered openings, Peranakan tiles and carved pilasters. Its ground floor shows lit CCTV lettering under the board of the closed Wina Salon, and the operator's name is not displayed. The photographed frontage matches the 5.26 m source edge. See the [design brief](aisecurity-design-brief.md).
+
+## Mister Contracts / MC Multi Skills, northern No. 9 Lorong 13
+
+Implemented **10 October 2026** under the owner's decision on open question 12. The MISTER CONTRACTS PTE. LTD. / MC MULTI SKILLS signboard hangs on the northern of the two source ways tagged No. 9, beside No. 11. The signboard reads No. 5 and Google Maps gives No. 7; both conflicts are recorded in the model's evidence. The house shares the conserved row elevation. See the [design brief](mister-contracts-design-brief.md).

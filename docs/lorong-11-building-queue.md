@@ -411,6 +411,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** three rectified panoramas agree on the No. 4 party line. The photographed frontage matches the 5.26 m source edge, after removing a 0.64 m along-street pose offset shared by the panoramas. Renders of this model and of Khek Leow then overlay the photographs. See the [design brief](aisecurity-design-brief.md).
 - **Validation / completion:** all **121 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-five.
 
+### Q42. Mister Contracts / MC Multi Skills, northern No. 9 Lorong 13, completed
+
+- **Decision:** built under the owner's answer to open question 12. The signed occupant is modelled, and the address conflict (signboard No. 5, Maps No. 7, source No. 9) is recorded in the evidence.
+- **Footprint:** [way 1223773757](https://www.openstreetmap.org/way/1223773757), the northern No. 9 house. The southern No. 9 house stays generic.
+- **Validation / completion:** all **124 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-six. See the [design brief](mister-contracts-design-brief.md).
+
 ### 10 October 2026: leads checked and locked
 
 - **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.
