@@ -6,7 +6,18 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present. Add new questions here.
+15. **Lorong 15 east side, Nos. 26A–28A: the façades measure about 5 m in front of the source block, within about 3 m of the modelled Lorong 15 centreline.**
+    - **Case:** the Singapore Teck Keow Association (新加坡德僑社, listed by SFCCA at 26A Lorong 15) and the Sin Chew Tan's Clan Association (星洲陳氏公會, its board numbered 28A) are both clearly signed.
+    - **Problem:** two-panorama solutions place their frontages about 4.8 m in front of the 2016 source block, which would put them at the edge of the modelled carriageway. The neighbouring Hotel 81 Spring measured near the source front, and that disagreement suggests either a pose error on this drive or a misplaced block.
+    - **Decision needed:** whether to move the Lorong 15 road or the block to match the photographs, or to keep both buildings on the source front as labelled estimates.
+16. **Geylang Road south side, Nos. 236–248 (way 454438330): the façade depth disagrees by up to 6 m between methods.**
+    - **Evidence:** correlation of three far-side panoramas prefers a façade about 6 m in front of the 57 m source block. A two-panorama triangulation of the Lorong 10 corner puts the corner on the source line.
+    - **Unlocks:** Monster Ink (240), Double Hair & Beauty, Crown Paints (242), Aladdin's Kopi House (236) and the associations at 248A.
+    - **Decision needed:** whether to split the block on the source front as labelled estimates, or wait for a better-posed capture.
+17. **No. 291 Geylang Road (open question 5): the corner block lies outside the study bounds.**
+    - **Case:** the footprint is east of the study's walkable boundary (x 111.3 m) and at the junction with a Lorong 15 segment that is not derived.
+    - **Decision needed:** whether to widen the study bounds eastward, or leave the corner generic.
+
 
 ## Settled
 

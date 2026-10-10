@@ -618,6 +618,12 @@ The owner's answers to the open questions allow re-spaced and authored footprint
 - **River Ash Bakery, 3 Lorong 13, historical check:** Street View captures from February 2018, September 2020, September 2021 and March 2022 show the house plated 3 with a red awning, shutters and a timber door, and no bakery signage in any of them. The lock stands.
 - **Durian Culture, 77 Sims Avenue, re-checked:** June 2024 ground-level frames show the tiled fruit stall but no Durian Culture name. The lock stands.
 - **Pu Guang Tang Buddhist Society (5 Lorong 9) and Ji Yang Cai Clan Association (3 Lorong 9):** both are listed, but both sites (unnumbered ways 453797936 and 453797937) were behind construction hoarding in June 2024. Not modelled.
+- **Teck Keow Association (26A Lorong 15) and Sin Chew Tan's Clan Association (28A), 10 October 2026:**
+  - **Identity:** both are signed on the buildings north of Hotel 81 Spring, in the `l15-north` strip, with Ganh Xua at street level.
+  - **Measurement:** two-panorama solutions place the façades about 4.8 m in front of the source block, near the modelled Lorong 15 carriageway, which the neighbouring hotel measurement does not share.
+  - **Status:** locked as open question 15.
+- **Geylang Road south block (way 454438330), 10 October 2026:** the façade depth is ambiguous between correlation (about 6 m forward) and corner triangulation (on the source line). Locked as open question 16.
+- **No. 291 Geylang Road (open question 5), 10 October 2026:** outside the study's walkable bounds. Logged as open question 17.
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked
