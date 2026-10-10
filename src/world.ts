@@ -28,6 +28,7 @@ import { buildEngLeeHuat } from './eng-lee-huat';
 import { buildGoodwood } from './goodwood';
 import { buildTbss } from './tbss';
 import { buildZhengLi } from './zheng-li';
+import { buildGeylangRow } from './geylang-row';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -133,6 +134,7 @@ export class World {
       if(buildGoodwood(this,b.id,poly))continue;
       if(buildTbss(this,b.id,poly))continue;
       if(buildZhengLi(this,b.id,poly))continue;
+      if(buildGeylangRow(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;

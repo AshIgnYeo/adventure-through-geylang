@@ -441,6 +441,30 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** square-on rectification at the 0.6 m depth, with the projecting bay corrected for its 0.45 m projection. All **137 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 50. See the [design brief](zheng-li-design-brief.md).
 
+### Q47. Ting Yu Xuan 听雨轩, 255 Geylang Road, completed
+
+- **Address / footprint:** listed at 255 Geylang Rd as a foot massage parlour, with its board numbered 255. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 51. See the [design brief](geylang-row-design-brief.md).
+
+### Q48. Ke Lai Shun Restaurant 客来顺饭店, 259 Geylang Road, completed
+
+- **Address / footprint:** listed at 259 Geylang Rd, with its red board and blade numbered 259. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 52. See the [design brief](geylang-row-design-brief.md).
+
+### Q49. Mobile Time (Lor 13), 263 Geylang Road, completed
+
+- **Address / footprint:** listed at 263 Geylang Rd, with its board numbered 263. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 53. See the [design brief](geylang-row-design-brief.md).
+
+### Q50. Shi Hao Hotpot BBQ 食好火锅烧烤, 267 Geylang Road, completed
+
+- **Address / footprint:** listed at 267 Geylang Rd #01-01, with its board on both faces of the corner block. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 54. See the [design brief](geylang-row-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.

@@ -309,3 +309,19 @@ Implemented **10 October 2026** as a dated April 2024 exterior on the owner-appr
 ## Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11 Geylang
 
 Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 35 footprint (6.9 m), which replaces source way 1223407876 and ends 0.66 m past it at the measured end pier. Google Maps lists Zheng Li Hearty Kitchen at 35 Lor 11 Geylang, and its 正利心厨 blade sign hangs on the end pier over an open restaurant. See the [design brief](zheng-li-design-brief.md).
+
+## Ting Yu Xuan 听雨轩, 255 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 255 Geylang Rd as a foot massage parlour, with its board numbered 255. See the [design brief](geylang-row-design-brief.md).
+
+## Ke Lai Shun Restaurant 客来顺饭店, 259 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 259 Geylang Rd, with its red board and blade numbered 259. See the [design brief](geylang-row-design-brief.md).
+
+## Mobile Time (Lor 13), 263 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 263 Geylang Rd, with its board numbered 263. See the [design brief](geylang-row-design-brief.md).
+
+## Shi Hao Hotpot BBQ 食好火锅烧烤, 267 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 267 Geylang Rd #01-01, with its board on both faces of the corner block. See the [design brief](geylang-row-design-brief.md).
