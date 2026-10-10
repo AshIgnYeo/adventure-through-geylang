@@ -383,6 +383,27 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Lock resolved:** the signboard triangulated from two same-drive panoramas (10.7 m) and the bar spacing in a level frame (10.56 m) agree on the face distance. The 1.59 m bars are half-storey cells, and the parapet is at about 23.5 m. See the [design brief](muhammadiyah-design-brief.md).
 - **Validation / completion:** all **109 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-one.
 
+### Q38. FSL EW LED Lighting, 118 Sims Avenue, completed
+
+Added on 10 October 2026, when the user asked for sourcing and building to continue on a new branch.
+
+- **Address / footprint:** Google Maps lists FSL EW LED Lighting at 118 Sims Ave (open), matching [way 682928760](https://www.openstreetmap.org/way/682928760), tagged No. 118. June 2024 Street View shows the FSL blade lightbox, disc sign and signboard on the stained three-storey frontage between Yap Sun Hardware (No. 120) and the ABC Bistro corner (No. 116).
+- **Method:** three panoramas rectified onto the façade agree only with the wall about 3.25 m in front of the source front. At that depth the photographed frontage lies wholly inside the 6.77 m source edge, from 0.49 m inside the No. 120 line to the No. 116 line. The signboard was triangulated on the shop front, 2.3 m behind the piers. See the [design brief](fsl-design-brief.md).
+- **Validation / completion:** all **112 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-two.
+
+### 10 October 2026: leads checked and locked
+
+- **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.
+- **Eng Lee Huat Hardware 永利... ENG LEE HUAT HARDWARE PTE. LTD., 29 Lorong 11 (west side):**
+  - **Identity:** Google Maps lists it at 29 Lor 11 Geylang, 388721. April 2024 Street View (`H3-9KS_v_QrrAnpO7y28LQ`, `QQNp4tBAf9BWzHrMOUczcw`, `8kEpH_Q3jNSaUef89yiXtQ`) shows its signboard and door plate **29**.
+  - **Measurements:** three panoramas rectified onto the façade agree with it 0.6 m in front of the source front, to within 0.3 m over three features. Measured from No. 27's south front corner, the party lines fall at about 6.0, 9.8, 15.8 and 20.1 m, against the source's 6.4, 12.8 and 19.2 m. Eng Lee Huat's frontage is therefore about 3.8 m wide, against the source's 6.41 m.
+  - **Neighbours:** the next house carries plate **29A** on its door (LG Renov Services is listed at 29A) and the Canton Wong red stair sign. It spans about 9.8–15.8 m, straddling source Nos. 29 and 31. The Canton Wong gold board and five-pane window lie at about 16.0–20.0 m.
+  - **Status:** locked. The west row of Lorong 11 is mis-subdivided at Nos. 27–33 as well as at Nos. 15–23, so this awaits the same user-approved re-spacing. That re-spacing would also correct the Canton Wong model. A 27A stair door stands south of No. 27, where Hwa Kwang Temple 華光神壇 is listed; No. 25 was hoarded in April 2024.
+- **Hakka Association (Singapore), 22 Lorong 11:** listed at No. 22 (way 1223250203, between Hainan Goh and Ho San Kong Hoey). April 2024 shows a plain white two-storey house with a corrugated canopy and a red awning, and no association signage. Not modelled.
+- **Nai Ghee Hardware & Trading, 28 Lorong 11:** listed at No. 28. April 2024 shows only an English Abrasives notice upstairs and closed shutters. Not modelled.
+- **No. 116 Sims Avenue, the Lorong 15 corner:** June 2024 boards read ABC BISTRO RESTAURANT PTE LTD, whose listing is marked permanently closed. Tai Say (coffee shop), Da Bao Lorong 15 and Prata Hub are listed open at No. 116. This conflicts, following the ABC Bistro precedent. Not modelled.
+- **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
+
 ### 9 October 2026: leads checked and locked
 
 - **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**

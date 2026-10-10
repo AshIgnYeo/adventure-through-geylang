@@ -19,6 +19,7 @@ import { buildLannaThai } from './lanna-thai';
 import { buildJiangsu } from './jiangsu';
 import { buildLiuDaMa } from './liu-da-ma';
 import { buildMuhammadiyah } from './muhammadiyah';
+import { buildFsl } from './fsl';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -115,6 +116,7 @@ export class World {
       if(buildJiangsu(this,b.id,poly))continue;
       if(buildLiuDaMa(this,b.id,poly))continue;
       if(buildMuhammadiyah(this,b.id,poly))continue;
+      if(buildFsl(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;
