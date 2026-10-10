@@ -21,7 +21,7 @@ All fourteen questions below were answered on **10 October 2026**. The project o
 | 5 | **Yes.** Authored corner footprint for No. 291 Geylang Road | Labelled estimate |
 | 6 | **Yes.** Authored footprint for Gems Ville, 8 Lorong 13 | Labelled estimate |
 | 7 | **Yes.** Authored footprint for Lorong 11 Nos. 1–7 | Labelled estimate |
-| 8a | **Yes.** Re-space Sims Avenue Nos. 106–112 into four bays | Settle the Red Dot Running and Amrise units |
+| 8a | **Yes.** Re-space Sims Avenue Nos. 106–112 | Applied on closer ground-floor evidence, not as four bays: only the 106/108 line moves, and 108–110 form Red Dot Running's unit; Amrise is unchanged |
 | 8 | **Yes.** Re-identify the C4 model as the Guan Keat coffeeshop (Lok Fu stall, 2024) and correct its footprint | Update the model and records |
 | 9 | **Not yet** (the recommendation). Keep the Sims Avenue south row on the source front and keep recording the measured offset | No change |
 | 10 | **Yes.** Extend the derived road set to Lorong 15 | Regenerate `map.json` |

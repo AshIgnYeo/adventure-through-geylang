@@ -35,6 +35,30 @@ function strips(outline, frontStart, frontDir, cutDir, cuts) {
   return [...pieces, rest];
 }
 
+const signedArea = o => o.reduce((s, p, i) => { const q = o[(i + 1) % o.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0) / 2;
+const ccw = o => signedArea(o) < 0 ? [...o].reverse() : o;
+const same = (p, q) => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-6;
+/** Merge two outlines that share an edge (source ways sharing nodes), dropping the shared edge. */
+function merge(A, B) {
+  A = ccw(A); B = ccw(B);
+  for (let i = 0; i < A.length; i++) for (let j = 0; j < B.length; j++) {
+    const a0 = A[i], a1 = A[(i + 1) % A.length], b0 = B[j], b1 = B[(j + 1) % B.length];
+    if (same(a0, b1) && same(a1, b0)) {
+      const out = [];
+      for (let k = 0; k <= i; k++) out.push(A[k]);
+      for (let k = 2; k < B.length; k++) out.push(B[(j + k) % B.length]);
+      for (let k = i + 1; k < A.length; k++) out.push(A[k]);
+      const dedup = out.filter((p, k) => !same(p, out[(k + 1) % out.length]));
+      // Drop vertices left within 8 cm of collinear by the merge, so a straight front stays one edge.
+      return dedup.filter((p, k) => {
+        const a = dedup[(k + dedup.length - 1) % dedup.length], c = dedup[(k + 1) % dedup.length];
+        return Math.abs((p[0] - a[0]) * (c[1] - a[1]) - (p[1] - a[1]) * (c[0] - a[0])) > .08 * Math.hypot(c[0] - a[0], c[1] - a[1]);
+      });
+    }
+  }
+  throw new Error('outlines do not share an edge');
+}
+
 /**
  * A terrace re-spaced along an unchanged straight front line. `lines` are measured party-line
  * distances from the front start; the rear line keeps the source depth.
@@ -117,6 +141,24 @@ export const authoredFootprintGroups = [
         { id: 'gr-233', street: 'Geylang Road', number: '233', levels: 3, outline: p233 },
         { id: 'gr-231', street: 'Geylang Road', number: '231', levels: 2, outline: p231 },
         { id: 'gr-229', street: 'Geylang Road', number: '229', levels: 2, outline: p229 },
+      ];
+    },
+  },
+  {
+    id: 'sims-106-110', question: '8a', approved: '2026-10-10',
+    evidence: 'Re-spacing of Sims Avenue Nos. 106–110, measured on 10 October 2026 from June 2024 ground-floor frames rectified 1.5 m in front of the source front, where the 108 pier aligns across three panoramas. The ground-floor piers confirm the source party lines at 20.76 m (the pier lettered 108) and 27.17 m (Amrise, No. 112, unchanged), measured along the front from the Fok Wai Kee corner. The 106/108 pier stands at about 15.0 m against the source 12.45 m. Red Dot Running Company\'s shopfront runs from that pier to Amrise, across the 108 pier, so the former Nos. 108 and 110 form one unit. An earlier reading of four uniform 7.1 m upper-storey bays was not borne out at ground level and is superseded.',
+    replaces: ['682928753', '682928752', '682928751'],
+    build(map) {
+      const out = id => map.buildings.find(b => b.id === id).coordinates.slice(0, -1).map(c => project(c, map.origin));
+      const A = project(map.buildings.find(b => b.id === '682928754').coordinates[0], map.origin);
+      const B = project(map.buildings.find(b => b.id === '682928750').coordinates[1], map.origin);
+      const len = Math.hypot(B[0] - A[0], B[1] - A[1]), front = [(B[0] - A[0]) / len, (B[1] - A[1]) / len];
+      const no108 = out('682928752'), inward = [-front[1], front[0]];
+      const into = (inward[0] * (no108[4][0] - no108[0][0]) + inward[1] * (no108[4][1] - no108[0][1])) > 0 ? inward : neg(inward);
+      const [west, east] = strips(no108, A, front, into, [15.0]);
+      return [
+        { id: 'sa-106', street: 'Sims Avenue', number: '106', levels: 3, outline: merge(out('682928753'), west) },
+        { id: 'sa-108', street: 'Sims Avenue', number: '108', levels: 3, outline: merge(east, out('682928751')) },
       ];
     },
   },

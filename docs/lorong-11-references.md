@@ -333,3 +333,7 @@ Implemented **10 October 2026** on an owner-approved authored footprint (open qu
 ## Wat Dhammasatis วัดธรรมสาทิส, No. 233 Geylang Road
 
 Implemented **10 October 2026** on an owner-approved partial-block footprint (open question 11). Google Maps lists Wat Dhammasatis at 233B Geylang Rd, #03-233, and its WAT DHAMMASATIS BUDDHIST CENTRE board and a Buddha image are on the upper floors of the white building west of Frog Porridge. Source block 475158360 is split by measured widths into Nos. 233, 231 and 229. See the [design brief](wat-dhammasatis-design-brief.md).
+
+## Red Dot Running Company, 108 Sims Avenue
+
+Implemented **10 October 2026** on the owner-approved re-spaced Sims Avenue row (open question 8a). Ground-floor piers confirm the source party lines at the 108 pier and at Amrise. Only the 106/108 line moves, to about 15.0 m, and the former Nos. 108 and 110 form Red Dot Running's single 12.17 m unit, whose decalled shopfront runs across the 108 pier. See the [design brief](red-dot-design-brief.md).

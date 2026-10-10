@@ -477,6 +477,12 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Method:** widths measured across three panoramas and scaled to the source front, with strips cut square to it. All **149 tests**, the type check and the build passed.
 - **Validation / completion:** the named-place total is 56. See the [design brief](wat-dhammasatis-design-brief.md).
 
+### Q53. Red Dot Running Company, 108 Sims Avenue, completed
+
+- **Address / footprint:** listed at 108 Sims Ave, with its shopfront under the 108 pier. Under open question 8a the footprint joins the former 108 and 110 east of the measured 106/108 pier (`sa-108`).
+- **Correction:** the earlier uniform-bay reading is superseded by ground-floor piers matching the source at 20.76 m and 27.17 m. All **153 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 57. See the [design brief](red-dot-design-brief.md).
+
 ### Authored footprints, from 10 October 2026
 
 The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
@@ -488,6 +494,7 @@ The owner's answers to the open questions allow re-spaced and authored footprint
 - **No. 237 Geylang Road (open question 3), applied:** source way 454274485 is split at the step in its outline into the Lorong 9 corner building (`gr-237`) and a generic annex flush with Chen Hing (`gr-237-annex`). The temple-alley rear elevation now finds replaced source ways.
 - **Satellite imagery:** the scratchpad mosaic tool registers Google satellite tiles to the source frame, with the imagery about 4.5 m west and 2 m south of it. Earlier notes that roofs sit "one bay west" are explained by this offset.
 - **Geylang Road Nos. 229–233 (open question 11), applied:** block 475158360 is split by measured widths into `gr-233` (Wat Dhammasatis), `gr-231` and `gr-229`, using a new strip-clipping helper.
+- **Sims Avenue Nos. 106–110 (open question 8a), applied:** the ground-floor piers confirm the source lines at 20.76 m and 27.17 m, so only the 106/108 line moves (to about 15.0 m). Former Nos. 108 and 110 merge into Red Dot Running's unit `sa-108`, and No. 106 becomes `sa-106`. The earlier four-bay upper-storey reading is superseded.
 - **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
   - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).
   - **Check:** render-and-compare from two April 2024 panoramas puts both models on their photographed frontages.

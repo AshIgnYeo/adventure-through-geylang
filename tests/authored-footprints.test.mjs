@@ -97,3 +97,12 @@ test('the 229–233 block is split by measured widths into three strips that til
   const frog = poly(map.buildings.find(b => b.id === '453797927'));
   assert.ok(parts[0].filter(a => frog.some(b => Math.hypot(a[0] - b[0], a[1] - b[1]) < 1e-6)).length >= 4);
 });
+
+test('Sims Avenue Nos. 106–110 are re-spaced at the measured 106/108 pier, joining 108 and 110 into one unit', () => {
+  const a = poly(map.buildings.find(b => b.id === 'sa-106')), b = poly(map.buildings.find(b => b.id === 'sa-108'));
+  const before = ['682928753', '682928752', '682928751'].reduce((s, id) => s + area(poly(source.buildings.find(x => x.id === id))), 0);
+  assert.ok(Math.abs(area(a) + area(b) - before) < 1.5, 'the pair keeps the source plan area');
+  const front = o => Math.hypot(o[1][0] - o[0][0], o[1][1] - o[0][1]);
+  assert.ok(Math.abs(front(a) - 8.71) < .03 && Math.abs(front(b) - 12.17) < .03, `${front(a)} ${front(b)}`);
+  for (const id of ['682928754', '682928750']) assert.ok(map.buildings.some(x => x.id === id), 'Fok Wai Kee and Amrise keep their source ways');
+});
