@@ -554,6 +554,13 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Address / footprint:** listed at 229 Geylang Rd, 389289, with its board on the `gr-229` strip west of Wat Dhammasatis (open question 11). No. 231 next door (Vietnam Unisex Concept, no listing) is an unnamed exterior.
 - **Validation / completion:** tests, type check and build passed. The named-place total is 69. See the [Geylang Road north brief](geylang-north-brief.md).
 
+### Q62–Q64. Monster Ink (240), Shadow Tattoo (244) and the Nanyang Lian Clan Association building (248), Geylang Road south side, completed
+
+- **Unblocked by:** the owner's answer to open question 16. Block 454438330 is split on its source front into eight strips at measured party lines. Triangulation puts the façades 2.4 m forward, which is this drive's position error, so the earlier 6 m correlation reading was spurious.
+- **Named:** Monster Ink (listed and signed at 240); Shadow Tattoo (signed, now listed at Pavilion Square; a dated exterior, open question 12); the Nanyang Lian Clan Association (listed at 248, signed), with BKK Forex at street level.
+- **Unnamed:** Nos. 236, 238, 242, 246 and 250.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 72. See the [Geylang Road south brief](geylang-south-brief.md).
+
 ### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
 
 - **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
