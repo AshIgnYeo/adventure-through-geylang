@@ -6,16 +6,11 @@ Started: 10 October 2026.
 
 ## Open
 
-20. **Lorong 13 west row, Nos. 21–29: the façades stand about 2.6 m in front of the source front line, and the No. 25 | Nos. 21/23 party line is about 1.8 m off.**
-    - **Evidence:** three methods agree on the forward offset:
-      - three-panorama triangulation of Thirteen BBQ's party lines (2.2–2.9 m);
-      - the façade base in two level frames (2.7–2.8 m);
-      - the Nos. 21/23 block's side return, visible beyond Hainan Lim.
-    - **Why it is not a pose error:** a separate June 2024 Sims Avenue drive agrees. Hainan Lim, next door, measures on its own source front.
-    - **Party line:** No. 25 measures about 8.0 m wide (source 6.1 m) and Nos. 21/23 about 12.4 m (source 14.1 m). The BUILDERSmart and Thirteen BBQ ways fit to within 0.4 m.
-    - **Current state:** BUILDERSmart and Thirteen BBQ are built on the source front, measured at the true depth. No. 25 (a three-storey house, scaffolded in April 2024, photographed whole in March 2022) and the Nos. 21/23 block are not yet built.
-    - **Recommendation:** yes, author the five footprints 2.6 m forward, and re-space Nos. 21–25 at the measured party line. Unlike the Sims Avenue row (question 9), three methods agree and the neighbour's side return is visible.
-    - **Unlocks:** Nos. 21/23 and No. 25 as unnamed exteriors, and moves the two existing models onto their photographed front.
+20. **Lorong 13 west row, Nos. 21–25: re-space at the measured party line?**
+    - **Party line:** the line between No. 25 and the Nos. 21/23 block falls about 1.8 m south of the source line. No. 25 measures about 8.0 m wide (source 6.1 m), and Nos. 21/23 together about 12.4 m (source 14.1 m). The BUILDERSmart and Thirteen BBQ ways fit to within 0.4 m and are built.
+    - **Depth, recorded rather than asked:** the April 2024 frames place this row about 2.6 m in front of its source line. Triangulation, the façade base in level frames and a June 2024 Sims Avenue frame all agree on that. However, the façade-to-façade street width measured from the same April panorama matches the source to within about 1 m, so a panorama position error explains it equally well; earlier sessions found 2–3 m errors at Bar @ Lorong 13 and the mosque. The row stays on its source front, as Sims Avenue did under question 9, and widths and heights do not depend on which explanation is right.
+    - **Recommendation:** yes. Author three footprints along the source front and rear lines, with the No. 25 | 21/23 line moved 1.8 m south.
+    - **Unlocks:** No. 25, a three-storey house scaffolded in April 2024 and photographed whole in March 2022, and the four-storey Nos. 21/23 block, both as unnamed exteriors.
     - **Evidence:** [Lorong 13 brief](lorong-13-design-brief.md).
 
 ## Settled

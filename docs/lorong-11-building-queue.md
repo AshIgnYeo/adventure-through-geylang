@@ -520,7 +520,7 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 ### Q55. Thirteen BBQ Bar 十三烤吧, 27 Lorong 13 Geylang, completed
 
 - **Address / footprint:** listed at 27 Lor 13 Geylang, 388670 (open), with its point in unnumbered way [1223454595](https://www.openstreetmap.org/way/1223454595). April 2024 shows its board, blade and awning.
-- **Lock resolved:** three-panorama triangulation gives a 6.1 m frontage on the source way, settling the 9 October width lock. The row stands about 2.6 m in front of its source line; the model keeps the source front (open question 20).
+- **Lock resolved:** three-panorama triangulation gives a 6.1 m frontage on the source way, settling the 9 October width lock. The row photographs about 2.6 m in front of its source line, which a panorama position error explains as well; the model keeps the source front.
 - **Validation / completion:** all **178 tests**, the type check and the build passed. The named-place total is 63. See the [Lorong 13 brief](lorong-13-design-brief.md).
 
 ### Q56. BUILDERSmart 魯班行, 29 Lorong 13 Geylang (Sims Avenue corner), completed

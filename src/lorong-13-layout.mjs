@@ -8,10 +8,10 @@ import { row13, row13Layout } from './row13-layout.mjs';
 
 const pano = (id, heading, pitch = 10, fov = 80) => `https://www.google.com/maps/@?api=1&map_action=pano&pano=${id}&heading=${heading}&pitch=${pitch}&fov=${fov}`;
 const way = id => `https://www.openstreetmap.org/way/${id}`;
-// The west row north of Hainan Lim (Nos. 21-29) stands about 2.6 m in front of its source front line, by
-// three-panorama triangulation and the ground line in two level frames. It is modelled on the source front
-// (open question 20), so heights and widths were read on frames rectified at the measured depth.
-const westRowOffset = 'Its photographed façade stands about 2.6 m in front of the source front line: three-panorama triangulation of its party lines gives 2.2-2.9 m, the façade base in two level frames gives 2.7-2.8 m, and the four-storey Nos. 21/23 block shows a side return beyond Hainan Lim. The model keeps the source front (open question 20) and was measured on frames rectified at the photographed depth.';
+// The west row north of Hainan Lim (Nos. 21-29) photographs about 2.6 m in front of its source front line,
+// but the street width from the same panorama matches the source, so a panorama position error is as
+// likely; the models keep the source front and were measured on frames rectified at the photographed depth.
+const westRowOffset = 'The April 2024 frames place this row about 2.6 m in front of its source front line, by three-panorama triangulation and the façade base in level frames, but the façade-to-façade street width from the same panorama matches the source to within about 1 m, so a panorama position error explains it as well. The model keeps the source front, measured on frames rectified at the photographed depth, which gives the same widths and heights under either explanation (open question 20 asks only about the No. 25 party line).';
 
 export const thirteenBbq = {
   id: 'thirteen-bbq', buildingIds: ['1223454595'], kind: 'thirteen-bbq', frontEdge: 0,

@@ -8,22 +8,23 @@ Each place is a measured elevation on the shared simple-house module: u runs alo
 
 - **Panoramas:** the April 2024 drive covers Lorong 13 every 10 m. Older captures at the same spots go back to 2008 and are used where 2024 is obscured.
 - **Rectification:** frames are rectified onto the façade plane with a 1 m grid. Widths come from party lines triangulated in two or three panoramas; heights come from the most square-on frame.
-- **Depth:** the recorded panorama positions can be 1.5–3 m off on this street. Depth is therefore taken from triangulation and from the façade base in level frames, never from the recorded position alone. Gradient correlation between panoramas drifts to the edge of its search range here, as it did in open question 16, and is not used.
+- **Depth:** the recorded panorama positions can be 1.5–3 m off on this street. Depth is therefore taken from triangulation, two-panorama agreement and the façade base in level frames, never from the recorded position alone. Offsets under about 2 m are kept on the source front. Gradient correlation between panoramas drifts to the edge of its search range here, as it did in open question 16, and is not used.
 - **Check:** render-and-compare from each solved pose.
 
-## West row north of Hainan Lim: a forward offset
+## West row north of Hainan Lim: depth and party lines
 
-Nos. 21–29, the five source ways between Hainan Lim and Sims Avenue, share one straight source front line. Three measurements put the photographed façades about **2.6 m in front of** it:
+Nos. 21–29, the five source ways between Hainan Lim and Sims Avenue, share one straight source front line. The April 2024 frames place the photographed façades about **2.6 m in front of** it:
 
 - **Triangulation:** Thirteen BBQ's party lines, from three panoramas, give 2.2–2.9 m.
-- **Ground line:** the façade base in level frames from `TkVx…` and `I_hh…` gives 2.7–2.8 m. The same method agrees with the recorded positions at Hainan Lim, as its own brief found.
+- **Ground line:** the façade base in level frames from `TkVx…` and `I_hh…` gives 2.7–2.8 m.
 - **Side return:** the four-storey Nos. 21/23 block shows a lit side return beyond Hainan Lim's façade.
+- **Sims Avenue:** a June 2024 Sims Avenue frame, from a separate drive, fits Thirteen BBQ's corner better at the forward position.
 
-A June 2024 Sims Avenue panorama, from a separate drive, puts Thirteen BBQ's parapet at 11.5 m only with the façade at the forward position. The source line is therefore about 2.6 m behind the buildings, rather than the drive's positions being off.
+The same April panorama `I_hh…` also gives a façade-to-façade street width of about 14.8 m, against 13.8 m between the two source fronts. A second level pair at `8k_B…` gives about 2 m less than the source, so this check is noisy. Even so, a panorama position error of about 2.7 m, as earlier sessions found at Bar @ Lorong 13 and the mosque, explains the forward reading as well as a real offset does. Under that reading, Hainan Lim's set-back face and Muhammadiyah's 4 m drop-off account for the side return.
 
-The models keep the source front (open question 20). Heights and widths were read on frames rectified at the photographed depth. Render-and-compare frames are taken with the camera moved 2.6 m towards the façade.
+The models keep the source front. Measurements are taken on frames rectified at the photographed depth, which is equivalent to moving the camera onto the source front. Widths and heights therefore do not depend on which explanation is right. Render-and-compare frames are taken with the camera moved 2.6 m towards the façade.
 
-The same measurements show that the party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the source line. No. 25 measures about 8.0 m against the source's 6.1 m, and Nos. 21/23 together measure about 12.4 m against 14.1 m. Those three ways wait for open question 20.
+The party line between No. 25 and Nos. 21/23 falls about 1.8 m south of the source line. No. 25 measures about 8.0 m against the source's 6.1 m, and Nos. 21/23 together measure about 12.4 m against 14.1 m. Those three ways wait for open question 20.
 
 ## Thirteen BBQ Bar 十三烤吧, 27 Lorong 13
 
