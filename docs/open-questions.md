@@ -6,6 +6,24 @@ Started: 10 October 2026.
 
 ## Open
 
+None at present.
+
+## Settled
+
+### Second batch, answered 10 October 2026
+
+The project owner chose the recommended option for each.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 15 | **Source front, labelled.** Build the Teck Keow Association (26A) and Sin Chew Tan's Clan Association (28A) on the source front of the `l15-north` strip as labelled estimates | The measured 4.8 m forward offset is recorded in each model's evidence, as a probable pose error on that drive |
+| 16 | **Source front, labelled.** Split Geylang Road block 454438330 (Nos. 236–248) on the source front as labelled estimates | The correlation result (about 6 m forward) is recorded; the corner triangulation supports the source line |
+| 17 | **Not yet.** Finish every footprint inside the current study bounds before widening them | No. 291 stays generic for now; widening is a later decision |
+| 18 | **Yes.** Rebuild unnamed footprints from their 2024 photographs as unnamed exteriors | Real massing, colours, openings and awnings; boards left blank; no business names unless the existing evidence bar is met |
+| 19 | **Lorong 13 first.** Focus on finishing Lorong 13 before the rest of the study area | Both sides of Lorong 13, from Sims Avenue to Geylang Road |
+
+The original wording of questions 15–17 is kept here:
+
 15. **Lorong 15 east side, Nos. 26A–28A: the façades measure about 5 m in front of the source block, within about 3 m of the modelled Lorong 15 centreline.**
     - **Case:** the Singapore Teck Keow Association (新加坡德僑社, listed by SFCCA at 26A Lorong 15) and the Sin Chew Tan's Clan Association (星洲陳氏公會, its board numbered 28A) are both clearly signed.
     - **Problem:** two-panorama solutions place their frontages about 4.8 m in front of the 2016 source block, which would put them at the edge of the modelled carriageway. The neighbouring Hotel 81 Spring measured near the source front, and that disagreement suggests either a pose error on this drive or a misplaced block.
@@ -18,8 +36,7 @@ Started: 10 October 2026.
     - **Case:** the footprint is east of the study's walkable boundary (x 111.3 m) and at the junction with a Lorong 15 segment that is not derived.
     - **Decision needed:** whether to widen the study bounds eastward, or leave the corner generic.
 
-
-## Settled
+### First batch, answered 10 October 2026
 
 All fourteen questions below were answered on **10 October 2026**. The project owner accepted the recommendation given for each ("yes to all").
 
