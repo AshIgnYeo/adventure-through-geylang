@@ -6,6 +6,28 @@ import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
 import { buildFrogPorridge } from './frog-porridge';
+import { buildBuddhistArtCentre } from './buddhist-art-centre';
+import { buildEatFirst } from './eat-first';
+import { buildKHotel } from './k-hotel';
+import { buildSikWaiSin } from './sik-wai-sin';
+import { buildRrMotor } from './rr-motor';
+import { buildGoldenJade } from './golden-jade';
+import { buildKtv277 } from './ktv-277';
+import { buildEros } from './eros';
+import { buildPlusMobile } from './plus-mobile';
+import { buildLannaThai } from './lanna-thai';
+import { buildJiangsu } from './jiangsu';
+import { buildLiuDaMa } from './liu-da-ma';
+import { buildMuhammadiyah } from './muhammadiyah';
+import { buildLamClan } from './lam-clan';
+import { buildHainanLim } from './hainan-lim';
+import { buildSuiYuanJu } from './sui-yuan-ju';
+import { buildChongMin } from './chong-min';
+import { buildFooHuiSiawLim } from './foo-hui';
+import { buildSimsNorthPair } from './sims-north';
+import { buildFokWaiKee } from './fok-wai-kee';
+import { buildHongYeChen } from './hong-ye-chen';
+import { buildKGroup } from './k-group';
 import { thyeSengRoofTriangles } from './thye-seng-layout.mjs';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
@@ -38,6 +60,7 @@ export class World {
   }
   mat(hex:string,glow=0){const key=hex+glow;if(this.materials.has(key))return this.materials.get(key)!;const m=new pc.StandardMaterial();m.diffuse=color(hex);m.useMetalness=true;m.metalness=.04;m.gloss=glow?.45:.2;if(glow){m.emissive=color(hex);m.emissiveIntensity=glow;this.emissives.push(m);}m.update();this.materials.set(key,m);return m;}
   box(name:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:pc.Material,parent?:pc.Entity,angle=0){const e=new pc.Entity(name);e.addComponent('render',{type:'box',material:mat,castShadows:h>.5,receiveShadows:true,batchGroupId:parent?-1:this.batch});e.setLocalPosition(x,y,z);e.setLocalScale(w,h,d);e.setLocalEulerAngles(0,angle,0);(parent??this.app.root).addChild(e);return e;}
+  cylinder(name:string,x:number,y:number,z:number,diameter:number,h:number,mat:pc.Material){const e=new pc.Entity(name);e.addComponent('render',{type:'cylinder',material:mat,castShadows:false,receiveShadows:true,batchGroupId:this.batch});e.setLocalPosition(x,y,z);e.setLocalScale(diameter,h,diameter);this.app.root.addChild(e);return e;}
   strip(a:Point,b:Point,width:number,y:number,mat:pc.Material){const dx=b[0]-a[0],dz=b[1]-a[1];return this.box('street surface',(a[0]+b[0])/2,y,(a[1]+b[1])/2,width,.045,Math.hypot(dx,dz)+.06,mat,undefined,Math.atan2(dx,dz)*180/Math.PI);}
   mesh(name:string,positions:number[],uvs:number[],indices:number[],mat:pc.Material){const mesh=new pc.Mesh(this.app.graphicsDevice);mesh.setPositions(positions);mesh.setNormals(pc.calculateNormals(positions,indices));mesh.setUvs(0,uvs);mesh.setIndices(indices);mesh.update();const e=new pc.Entity(name);e.addComponent('render',{meshInstances:[new pc.MeshInstance(mesh,mat)],castShadows:true,batchGroupId:this.batch});this.app.root.addChild(e);return e;}
   panel(a:Point,b:Point,base:number,top:number,mat:pc.Material,uv=[0,0,1,1]){const p=[a[0],base,a[1],b[0],base,b[1],b[0],top,b[1],a[0],top,a[1]];return this.mesh('facade',p,[uv[0],uv[3],uv[2],uv[3],uv[2],uv[1],uv[0],uv[1]],[0,1,2,0,2,3],mat);}
@@ -79,6 +102,28 @@ export class World {
       const b=this.data.buildings[index];let poly=b.coordinates.map(p=>project(p,this.data.origin) as Point);if(poly.length>1&&Math.hypot(poly[0][0]-poly.at(-1)![0],poly[0][1]-poly.at(-1)![1])<.1)poly.pop();if(poly.length<3)continue;
       this.footprints.push(poly);
       if(buildFrogPorridge(this,b.id,poly))continue;
+      if(buildBuddhistArtCentre(this,b.id,poly))continue;
+      if(buildEatFirst(this,b.id,poly))continue;
+      if(buildKHotel(this,b.id,poly))continue;
+      if(buildSikWaiSin(this,b.id,poly))continue;
+      if(buildRrMotor(this,b.id,poly))continue;
+      if(buildGoldenJade(this,b.id,poly))continue;
+      if(buildKtv277(this,b.id,poly))continue;
+      if(buildEros(this,b.id,poly))continue;
+      if(buildPlusMobile(this,b.id,poly))continue;
+      if(buildLannaThai(this,b.id,poly))continue;
+      if(buildJiangsu(this,b.id,poly))continue;
+      if(buildLiuDaMa(this,b.id,poly))continue;
+      if(buildMuhammadiyah(this,b.id,poly))continue;
+      if(buildLamClan(this,b.id,poly))continue;
+      if(buildHainanLim(this,b.id,poly))continue;
+      if(buildSuiYuanJu(this,b.id,poly))continue;
+      if(buildChongMin(this,b.id,poly))continue;
+      if(buildFooHuiSiawLim(this,b.id,poly))continue;
+      if(buildSimsNorthPair(this,b.id,poly))continue;
+      if(buildFokWaiKee(this,b.id,poly))continue;
+      if(buildHongYeChen(this,b.id,poly))continue;
+      if(buildKGroup(this,b.id,poly))continue;
       // Split only the rendered corner. Source outline and collision stay intact.
       const mongkokRemainder=buildMongkokCorner(this,b.id,poly);if(mongkokRemainder)poly=mongkokRemainder;
       if(buildAlleyLowContext(this,b.id,poly))continue;

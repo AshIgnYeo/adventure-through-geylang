@@ -6,10 +6,56 @@ import { mongkok } from './mongkok-layout.mjs';
 import { frogPorridge } from './frog-porridge-layout.mjs';
 import { amrise } from './amrise-layout.mjs';
 import { thyeSeng } from './thye-seng-layout.mjs';
+import { buddhistArtCentre } from './buddhist-art-centre-layout.mjs';
+import { eatFirst } from './eat-first-layout.mjs';
+import { kHotel } from './k-hotel-layout.mjs';
+import { sikWaiSin } from './sik-wai-sin-layout.mjs';
+import { rrMotor } from './rr-motor-layout.mjs';
+import { goldenJade } from './golden-jade-layout.mjs';
+import { ktv277 } from './ktv-277-layout.mjs';
+import { lamClan } from './lam-clan-layout.mjs';
+import { hainanLim } from './hainan-lim-layout.mjs';
+import { suiYuanJu } from './sui-yuan-ju-layout.mjs';
+import { chongMin } from './chong-min-layout.mjs';
+import { fooHui, siawLim } from './foo-hui-layout.mjs';
+import { normalStainless, qianjing } from './sims-north-layout.mjs';
+import { fokWaiKee } from './fok-wai-kee-layout.mjs';
+import { hongYeChen } from './hong-ye-chen-layout.mjs';
+import { kGroup } from './k-group-layout.mjs';
+import { eros } from './eros-layout.mjs';
+import { plusMobile } from './plus-mobile-layout.mjs';
+import { lannaThai } from './lanna-thai-layout.mjs';
+import { jiangsu } from './jiangsu-layout.mjs';
+import { liuDaMa } from './liu-da-ma-layout.mjs';
+import { muhammadiyah } from './muhammadiyah-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
 export const landmarks = [
+  { ...muhammadiyah },
+  { ...liuDaMa },
+  { ...jiangsu },
+  { ...lannaThai },
+  { ...plusMobile },
+  { ...eros },
+  { ...kGroup },
+  { ...hongYeChen },
+  { ...fokWaiKee },
+  { ...normalStainless },
+  { ...qianjing },
+  { ...fooHui },
+  { ...siawLim },
+  { ...chongMin },
+  { ...suiYuanJu },
+  { ...hainanLim },
+  { ...lamClan },
+  { ...ktv277 },
+  { ...goldenJade },
+  { ...rrMotor },
+  { ...sikWaiSin },
+  { ...kHotel },
+  { ...eatFirst },
+  { ...buddhistArtCentre },
   { ...thyeSeng, reviewOffset: 0, reviewBuildingId: '682928762' },
   { ...amrise, reviewOffset: 0, reviewBuildingId: '682928750' },
   { ...frogPorridge, frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 0, reviewBuildingId: '453797927' },

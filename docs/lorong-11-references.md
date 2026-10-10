@@ -179,3 +179,97 @@ Added **4 October 2026**, after verifying GPT-6 Astra. The [design brief](amrise
 Implemented **6 October 2026**, following a fresh check of the [operator](https://thyeseng.com/shop/) and [Makita dealer directory](https://makita.com.sg/find-a-dealer/). The [June 2024 Street View exterior](https://www.google.com/maps/@?api=1&map_action=pano&pano=2Ajok7bnMLxnkcW7PuS2sQ&heading=135.73&pitch=15&fov=75) was inspected directly. Named OSM node 6396561545 lies in addressed three-level way 682928762. Only that 6.70 m frontage is assigned, preserving all source coordinates and its concave rear roof outline.
 
 Original geometry represents the cream/ochre three-storey elevation, paired upper windows, vents, condensers, red awning, bilingual fascia and opaque shop recess. Height and fittings are estimated. Adjacent Thye Seng signage does not establish another unit boundary; upper-storey occupation is not asserted. No reference photographs, product advertisements or private interiors are shipped. Full evidence, estimates, exclusions and validation are in the [design brief](thye-seng-design-brief.md). Reviews: `?review=thye-seng` and `?review=thye-seng-oblique`.
+
+## Buddhist Art Centre, 285 Geylang Road
+
+Implemented **6 October 2026**. The [operator store page](https://www.buddhistartcentre.com/store/) gives the name and full address. Three June 2024 Street View panoramas were inspected directly, including a [cross-road view](https://www.google.com/maps/@?api=1&map_action=pano&pano=_w5yHraTw78BWJJ4wn1RSQ&heading=27&pitch=6&fov=22) that shows the signed NO:285 frontage, its neighbours and the roof. Named OSM node 4689499461 lies inside unnumbered way 454254227. Only that 5.13 m frontage is assigned, preserving all source coordinates.
+
+Original geometry represents the two-storey elevation under a tiled gable roof: three casements under banded segmental arches between six fluted pilasters with leaf-and-star capitals, a shaded red scroll frieze, the teal bilingual signboard, both vertical signs in colour only, ochre five-foot way piers, a faded red awning and the two gilt chandeliers hung outside the shopfront glass. Heights, roof pitch, five-foot way depth and ornament are estimated. Vertical sign wording, stock, religious objects and private interiors are not reproduced, and no reference photographs are shipped. Full evidence, estimates, exclusions and validation are in the [design brief](buddhist-art-centre-design-brief.md). Reviews: `?review=buddhist-art-centre`, `?review=buddhist-art-centre-oblique`, `?review=buddhist-art-centre-five-foot-way` and `?review=buddhist-art-centre-upper`.
+
+## Eat First, 287 Geylang Road
+
+Implemented **7 October 2026**. [Eatbook](https://eatbook.sg/eat-first/) and [Burpple](https://www.burpple.com/eat-first) give the restaurant at No. 287, the original Sik Wai Sin premises. Retained Sik Wai Sin node 4689499460 lies in unnumbered way 454254228. Only that 5.13 m frontage is assigned, preserving all source coordinates; the Sik Wai Sin frontage at No. 289 stays generic.
+
+Three June 2024 Street View panoramas were inspected and measured: two straight-on views and a [cross-road view](https://www.google.com/maps/@?api=1&map_action=pano&pano=_w5yHraTw78BWJJ4wn1RSQ&heading=28&pitch=9&fov=34) used to triangulate the roof. Original geometry represents the white two-storey elevation and its plasterwork: three segmental-arched casements with green louvred leaves and red frames, Corinthian pilasters, relief cartouches and frieze. It also covers the red fascia and maroon board in original typography, a 2.0 m five-foot way with an opaque shopfront and grille gate, and an orange tiled roof with a ridge about 8 m back. Heights are photogrammetric estimates. No interior, diners or temporary notices are reproduced, and no reference photographs are shipped. Full evidence, method, estimates and exclusions are in the [design brief](eat-first-design-brief.md). Reviews: `?review=eat-first`, `?review=eat-first-oblique`, `?review=eat-first-five-foot-way` and `?review=eat-first-upper`.
+
+## K Hotel 1515, 15 Lorong 15 Geylang
+
+Implemented **7 October 2026**. The [Hotels Licensing Board notice](https://www.hlb.gov.sg/notices/2021-q1/) and current listings give the name and address. The retained OSM point inside addressed way 1223539238 still carries the stale name Chang Ziang Hotel, which is not used. April 2024 Street View and satellite tiles show an eight-level hotel: a three-storey podium with a covered driveway, four storeys of canted bay windows between round grey columns, and a turret and pediment on top. The north half of the frontage is set back 1.27 m. Only this footprint is assigned, plus a forecourt apron in front of it, preserving all source coordinates.
+
+Heights and the setback come from calibrated photogrammetry and remain estimates, most uncertain at the turret and pediment. Lorong 15 itself is not a rendered road in this study, so the forecourt ends at bare ground; extending the map is a separate decision. No lobby, rooms or vehicles are reproduced, and no reference photographs are shipped. Full evidence, method, estimates and exclusions are in the [design brief](k-hotel-design-brief.md). Reviews: `?review=k-hotel-1515`, `?review=k-hotel-1515-oblique`, `?review=k-hotel-1515-forecourt` and `?review=k-hotel-1515-top`.
+
+## Sik Wai Sin frontage, 289 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived records give Sik Wai Sin Eating House at No. 289, with a September 2024 address change; Google Maps now places the business at No. 287. The June 2024 frontage of unnumbered way 454254229 shows the 食為先 SIK WAI SIN fascia numbered 289, a small eating-house board and a closed shutter. It shares Eat First's measured elevation and roof through a common module. Current use after June 2024 is not asserted, and the east pier's partly hidden lettering is omitted. Full evidence and exclusions are in the [design brief](sik-wai-sin-design-brief.md). Reviews: `?review=sik-wai-sin` and `?review=sik-wai-sin-five-foot-way`.
+
+## RR Motor, 281–283 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. ACRA-derived records give R R Motor Pte Ltd at No. 281. One RR MOTOR 专卖店 signboard spans unnumbered ways 454254225 and 454254226 directly west of the Buddhist Art Centre, and a 281 plate marks the west door. The two units share the measured row elevation in a jalousie finish with brown trim. They have different estimated roofs: orange corrugated on No. 281 and weathered tiles on No. 283. The 2017 Eros point inside No. 281 is stale and not used. Full evidence, estimates and exclusions are in the [design brief](rr-motor-design-brief.md). Reviews: `?review=rr-motor` and `?review=rr-motor-five-foot-way`.
+
+## Golden Jade Restaurant, 271 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists the restaurant as open at No. 271, and the June 2024 signboard shows 271. Counting from the closed BN Food Palace at No. 269 and from No. 285 identifies unnumbered way 454254220; the stale 2017 point in the corner way is not used. The shared row elevation is used in the jalousie finish with the original marquee signboard. Full evidence and exclusions are in the [design brief](golden-jade-design-brief.md). Reviews: `?review=golden-jade` and `?review=golden-jade-five-foot-way`.
+
+## 277 KTV, 275–277 Geylang Road
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists 277 KTV as open at No. 277. One 芽笼 277 KTV signboard spans unnumbered ways 454254222 and 454254223, between the #273 frontage and No. 279. The pair shares the measured row elevation in a dusty pink fretwork finish. A proud black signboard, a lower board and a quilted wall closing the five-foot way are redrawn originally. Brand panels and cartoon characters are omitted. Full evidence and exclusions are in the [design brief](ktv-277-design-brief.md). Reviews: `?review=ktv-277` and `?review=ktv-277-five-foot-way`.
+
+## Lam Clan Association, 3 Lorong 15 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. The SFCCA directory lists the association at No 3 Lorong 15 Geylang, which matches the tag on retained way 1223539233. Street View shows LAM CLAN ASSOCIATION on this frontage in December 2017 and the repainted pale blue frontage with 藍氏総會 in April 2024. Heights come from a square-on frame scaled by the frontage width. The hidden roof is an estimate, and the paved forecourt runs towards the unrendered Lorong 15. Three small characters are omitted because one glyph is uncertain. Full evidence, method and exclusions are in the [design brief](lam-clan-design-brief.md). Reviews: `?review=lam-clan`, `?review=lam-clan-ground` and `?review=lam-clan-oblique`.
+
+## Hainan Lim Clan Association building, 19 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. SFCCA lists the association at 19 Lorong 13 Geylang #04-01. The signed building numbered 19 stands on unnumbered way 1223773760, directly north of the addressed No. 17. It is a four-storey mosaic-tiled block with the Hainan Lim Clan Association and Kheng Jai Sar Kang Association bands, RAVE AUTO S.C in the windows and a car park at street level. The association is shown as one signed tenant. Heights are photogrammetric, with the top band ±0.5 m. Full evidence, method and exclusions are in the [design brief](hainan-lim-design-brief.md). Reviews: `?review=hainan-lim` and `?review=hainan-lim-signs`.
+
+## Sui Yuan Ju Buddhist Society, 2–4 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists the society at 4 Lor 13 Geylang, and April 2024 Street View shows its signboard on No. 4, with a continuous awning and a tiled shrine canopy across No. 2. Addressed ways 1223454593 and 1223454592 carry a provisional two-unit visual assignment; No. 2's tenancy is not asserted. The ornate two-storey upper storeys, fretwork fascia, signboard, canopy and awnings were measured by two-panorama triangulation. Lions, urn, offerings and couplet wording are omitted. Full evidence, method and exclusions are in the [design brief](sui-yuan-ju-design-brief.md). Reviews: `?review=sui-yuan-ju`, `?review=sui-yuan-ju-upper` and `?review=sui-yuan-ju-porch`.
+
+## Singapore Chong Min Association and Yun Teck Sian Tng, 15C Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps gives Chong Min at 15C Lor 13 Geylang, and the Yun Teck temple point lies inside source way 1223773762. April 2024 Street View shows both boards and a 15-C door plate on that frontage. The order of frontages puts it on the way tagged 15B, so the source tag is one letter behind the plate; it is recorded, not changed. Full evidence and exclusions are in the [design brief](chong-min-design-brief.md). Reviews: `?review=chong-min` and `?review=chong-min-ground`.
+
+## Foo Hui Ging Xiu Centre and Siaw Lim Hood Sun Thong, 13–15 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior of one white two-bay building, with an identity per source way. Foo Hui is listed at 13 Lor 13 Geylang, and its lettering and 13/13A plate are on the south bay. The 少林佛山堂 Siaw Lim Hood Sun Thong board and door number 15 are on the north bay. Both Maps points fall in the matching ways. Siaw Lim's 6B listing text is recorded as a conflict. The measured bay pier sits about 0.6 m south of the preserved source party line. Full evidence and exclusions are in the [design brief](foo-hui-design-brief.md). Reviews: `?review=foo-hui`, `?review=siaw-lim` and `?review=foo-hui-siaw-lim-pair`.
+
+## Normal Stainless Steel and QianJing Crystal, 131–133 Sims Avenue
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists both businesses at their tagged numbers. QianJing's point is inside No. 133, and Normal Stainless's displaced point in No. 127 is rejected. A square-on frame measured frontages of 6.36 m and 4.66 m against the equal 5.51 m source split. Each building's volume follows its measured span and the source outlines are preserved. The frontages straddle the study's north boundary, so the review starts stand on Sims Avenue. Full evidence and exclusions are in the [design brief](sims-north-design-brief.md). Reviews: `?review=normal-stainless`, `?review=qianjing` and `?review=sims-131-133-pair`.
+
+## Fok Wai Kee Hardware, 104 Sims Avenue
+
+Implemented **7 October 2026** as a dated June 2024 exterior. Google Maps lists the shop at 104 Sims Ave, and its point lies in the addressed three-level way 682928754. The white Art Deco frontage has a stepped, scrolled parapet, hooded wide and narrow windows, a dark canopy and the 霍惠記銅鐵 signboard. Heights come from one calibrated frame and agree with the neighbouring Amrise parapet. Full evidence, method and exclusions are in the [design brief](fok-wai-kee-design-brief.md). Reviews: `?review=fok-wai-kee` and `?review=fok-wai-kee-shop`.
+
+## Hong Ye Chen Interior Design, 7 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists the firm at 7 Lor 13 Geylang, and its point lies in the addressed way 1223773755. Street View shows door number 7 and the 浤業成 signboard. The conserved two-storey frontage has a central French window, pilasters, floral tile panels and the row's timber fretwork eaves. Full evidence, method and exclusions are in the [design brief](hong-ye-chen-design-brief.md). Reviews: `?review=hong-ye-chen` and `?review=hong-ye-chen-ground`.
+
+## K Group, 5 Lorong 13 Geylang
+
+Implemented **7 October 2026** as a dated April 2024 exterior. Google Maps lists K Group Pte Ltd at 5 Lor 13 Geylang, and Street View shows its board on the house between door plates 3 and 7, matching addressed way 1223773754. It shares the row elevation with Hong Ye Chen through a common module. Full evidence and exclusions are in the [design brief](k-group-design-brief.md). Reviews: `?review=k-group` and `?review=lorong-13-row`.
+
+## Eros Adult Shop, 279 Geylang Road
+
+Implemented **9 October 2026** as a dated June 2024 exterior. Google Maps lists Eros Adult Shop as open at 279 Geylang Rd; its point is displaced behind the row. Unnumbered way 454254224 lies between the 277 KTV pair and RR Motor's door plated 281. The shared row elevation is used in the jalousie finish. The signboard was measured in a square-on May 2023 frame, and the blade sign and back wall were triangulated from two calibrated June 2024 panoramas and checked by rendering from each pose. Full evidence, method and exclusions are in the [design brief](eros-design-brief.md). Reviews: `?review=eros` and `?review=eros-five-foot-way`.
+
+## Plus Mobile, 22 Lorong 13 Geylang
+
+Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists Plus Mobile as open at 22 Lor 13 Geylang, and its point lies in the addressed way 1223454587. Street View shows door plate 22 under the Plus Mobile & Accessories signboard numbered No.22. The single-storey shophouse has a short tiled front slope, a dark low rear roof and a steel walkway canopy. Unit widths were triangulated from the row's party-wall copings and agree with the source; heights come from a square-on March 2022 frame and were checked by rendering from that pose. Full evidence, method and exclusions are in the [design brief](plus-mobile-design-brief.md). Reviews: `?review=plus-mobile` and `?review=plus-mobile-walkway`.
+
+## Lanna Thai Traditional Massage, 34 Lorong 11 Geylang
+
+Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists Lanna Thai Traditional Massage as open at 34 Lor 11 Geylang, Floor 1, and its board in the five-foot way ends in 34. The cream two-storey building carries 1995 and 南洋丁氏總會 on its parapet; no listing for that association was found, so the lettering is modelled as photographed without a claim about current use, and a second band with an uncertain glyph is omitted. Triangulated façade corners fall within about 0.4 m of the source front of way 1223250206, whose skewed rear is preserved. Heights come from a square-on frame and were checked by rendering from the solved pose. Full evidence, method and exclusions are in the [design brief](lanna-thai-design-brief.md). Reviews: `?review=lanna-thai` and `?review=lanna-thai-five-foot-way`.
+
+## JiangSu Jiu Jia 江苏酒家, 20 Lorong 11 Geylang
+
+Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists the restaurant as open at 20 Lor 11 Geylang, matching the source way tagged No. 20; its point is displaced into the lane and not used, and Kim Chai Hin, also listed at No. 20, is not assigned. The white two-storey shophouse beside Hainan Goh carries a blue 江苏酒家 board, a lit sign over the glazing and a neon blade sign on the shared party line. Triangulated party lines agree with the source frontage to within 0.25 m; heights come from a square-on frame and were checked by rendering from the solved pose. Full evidence, method and exclusions are in the [design brief](jiangsu-design-brief.md). Reviews: `?review=jiangsu` and `?review=jiangsu-five-foot-way`.
+
+## Liu Da Ma BBQ 刘大妈烧烤吧, 26 Lorong 11 Geylang
+
+Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists Liu Da Ma BBQ as open at 26 Lor 11 Geylang, Floor 1, matching the source way tagged No. 26; 天府渔香 on Floor 2 is not assigned. The salmon two-storey shophouse beside Ho San Kong Hoey carries a bulb-studded 刘大妈烧烤吧 blade sign and a red awning. Render-and-compare against the existing No. 24 model confirmed the source frontage; heights come from a square-on March 2022 frame whose plumb verticals show a shifted image centre rather than a tilt. Full evidence, method and exclusions are in the [design brief](liu-da-ma-design-brief.md). Reviews: `?review=liu-da-ma` and `?review=liu-da-ma-blade`.
+
+## Muhammadiyah Islamic College, 17 Lorong 13 Geylang
+
+Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists Kolej Islam Muhammadiyah at 17 Lor 13 Geylang, matching the source way tagged No. 17, and the signboard reads معهد المحمدية الإسلامي / MUHAMMADIYAH ISLAMIC COLLEGE with this address. The building is faced with a teal grid screen between white side columns, with an open drop-off below and a lettered top band to a 23.5 m parapet. Two-view triangulation of the signboard and the bar spacing in a level frame agree on the face distance, which shows the 1.59 m bars are half-storey cells. Full evidence, method and exclusions are in the [design brief](muhammadiyah-design-brief.md). Reviews: `?review=muhammadiyah-college` and `?review=muhammadiyah-college-gate`.
