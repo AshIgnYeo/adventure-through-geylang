@@ -74,6 +74,40 @@ export const shiHao = {
   backFittings: [{ name: 'menu posters', u: [.4, 2.6], h: [.3, 2.2], colour: '#8a3b2a' }, { name: 'restaurant glazing', u: [2.8, 7.6], h: [.1, 2.3], colour: '#3d4447', glow: .05 }],
 };
 
-export const geylangRow = [tingYuXuan, keLaiShun, mobileTime, shiHao];
+// No. 257: the shuttered 新福興 eating house, listed permanently closed, so the house is unnamed (open question 18).
+export const no257 = {
+  id: 'gr-257', buildingIds: ['gr-257'], kind: 'unnamed', unnamed: true,
+  name: 'No. 257 Geylang Road (June 2024 exterior, occupant not identified)', address: '257 Geylang Road',
+  height: 8.0, ceiling: 2.15, fiveFootWay: 2.0, frontEdge: 0, reviewRoad: 'Geylang Road',
+  evidence: 'The re-spaced No. 257 footprint (open question 2), 5.2 m wide as measured. June 2024 Street View shows a red board reading 新福興 with 傳統潮州粿汁 and #257 over a roller shutter; the business, Sin Hock Heng Eating House, is listed permanently closed, so no name is given and the board is left blank, following the ABC Bistro precedent. Two windows with closed grey panelled shutters sit under louvred vents and a tall plain parapet, as at Nos. 255 and 259, read on two far-side panoramas rectified 0.5 m behind the street front. The 客来顺 blade sign at the east party line belongs to No. 259.',
+  sources: ['https://www.openstreetmap.org/way/454254210', row('-O10SpmBP2FEdlHStFPVdA', 10), row('Euugks0_rEGqzhRP8bLR1Q', 340)],
+  colours: { wall: '#dbdad3', trim: '#e6e5df', frame: '#8f928f', glass: '#9a9d9a', pier: '#e2e1db', back: '#3a3532' },
+  bands: [[7.9, 8.0, .25], [6.8, 7.0, .3], [3.6, 3.85, .25]],
+  windows: [{ u: [.75, 2.33], h: [4.18, 5.68], panes: 4 }, { u: [2.87, 4.47], h: [4.18, 5.68], panes: 4 }],
+  vents: [{ u: [.75, 2.42], h: [5.97, 6.43] }, { u: [2.83, 4.5], h: [5.97, 6.43] }],
+  piers: [[0, .5], [4.92, 5.2]],
+  blocks: [{ name: 'blank red board', u: [.33, 4.92], h: [2.22, 3.13], out: .05, depth: .06, colour: '#c42b2b' }],
+  rooftop: [{ u: [1.2, 4.6], top: 8.6, setback: 2, depth: 3 }],
+  backFittings: [{ name: 'roller shutter', u: [1.5, 4.37], h: [.1, 1.93], colour: '#b9bbb6' }, { name: 'side door', u: [.58, 1.25], h: [.1, 2.0], colour: '#3a3532' }],
+};
+
+// No. 261: the signed Instyle Hair Salon, modelled as a dated exterior under open question 12.
+export const instyle = {
+  id: 'instyle', buildingIds: ['gr-261'], kind: 'instyle',
+  name: 'Instyle Hair Salon (June 2024 exterior)', address: '261 Geylang Road',
+  height: 6.6, ceiling: 2.1, fiveFootWay: 2.0, frontEdge: 0, reviewRoad: 'Geylang Road', roof: { type: 'hip', ridge: 7.6, colour: '#b0624a' },
+  evidence: 'June 2024 Street View shows an INSTYLE HAIR SALON board and Instyle Hair salon lettering on the glazed salon front of the dark grey two-storey house on the re-spaced No. 261 footprint (open question 2), 5.85 m wide as measured, between Ke Lai Shun (No. 259) and Mobile Time (No. 263). The only Instyle Hair listing found is a branch on Crawford Lane, so under the owner\'s answer to open question 12 the clearly signed salon is modelled as a dated exterior, without claiming a current address. Three windows with open brown shutters sit under louvred vents and a grey eaves band below a tiled roof, read on two far-side panoramas rectified 0.5 m behind the street front; the roof is estimated as hipped, with a rooftop room behind. The barber pole, posters, blade signs and interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Instyle+Hair+Salon+Singapore', 'https://www.openstreetmap.org/way/454254208', row('Euugks0_rEGqzhRP8bLR1Q', 15), row('qlix72cVwRmaU5XrvZip_g', 340)],
+  colours: { wall: '#4f575c', trim: '#5c6469', frame: '#5a3a2c', glass: '#d8d4cb', pier: '#4f575c', back: '#e7e4dc' },
+  bands: [[6.13, 6.6, .3, '#6e7377'], [3.63, 3.85, .25]],
+  windows: [[1.42, 2.5], [2.97, 4.05], [4.53, 5.58]].map(u => ({ u, h: [4.02, 5.18], panes: 2, shutters: true })).map((w, i) => i === 2 ? { ...w, u: [4.4, 5.3] } : w),
+  vents: [{ u: [1.42, 2.5], h: [5.38, 5.6] }, { u: [2.97, 4.05], h: [5.38, 5.6] }, { u: [4.4, 5.3], h: [5.38, 5.6] }],
+  piers: [[0, .4], [5.55, 5.85]],
+  board: { u: [1.25, 4.92], h: [2.52, 3.52], out: .06 },
+  rooftop: [{ u: [1.0, 4.6], top: 8.0, setback: 3.5, depth: 3 }],
+  backFittings: [{ name: 'lit salon front', u: [1.08, 4.67], h: [.1, 2.0], colour: '#e7e4dc', glow: .35 }, { name: 'salon door', u: [.45, 1.0], h: [.1, 2.0], colour: '#3b3f42' }],
+};
+
+export const geylangRow = [tingYuXuan, no257, keLaiShun, instyle, mobileTime, shiHao];
 export const geylangRowLayout = (place, width) => simpleHouseLayout(width, place);
 export const geylangRowReviews = (place, frame) => facing(frame, place.id, 9, 16, place.id === 'shi-hao' ? [{ id: 'shi-hao-corner', at: [frame.width + 6, 7], look: [frame.width - 1, 0], pitch: 14 }] : []);

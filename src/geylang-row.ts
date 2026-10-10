@@ -36,6 +36,13 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[]; awning?: string;
     }],
     blades: [vertical('#d42a2b', '#ffffff', '客来顺', '259', '#f2f2ee')],
   },
+  instyle: {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#5d6469'; c.fillRect(0, 0, w, h); c.strokeStyle = '#8c9296'; c.lineWidth = h * .04; c.strokeRect(h * .04, h * .04, w - h * .08, h - h * .08);
+      text(c, 'INSTYLE', w / 2, h * .42, h * .44, '#e9ebe8', '"Trajan Pro", "Times New Roman", serif', '500', w * .8);
+      text(c, 'HAIR SALON', w * .7, h * .78, h * .17, '#e9ebe8', '"Times New Roman", serif', '500');
+    }],
+  },
   'mobile-time': {
     boards: [(c, w, h) => {
       c.fillStyle = '#1e2021'; c.fillRect(0, 0, w, h);

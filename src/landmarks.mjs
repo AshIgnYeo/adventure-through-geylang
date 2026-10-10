@@ -37,7 +37,7 @@ import { engLeeHuat } from './eng-lee-huat-layout.mjs';
 import { goodwood } from './goodwood-layout.mjs';
 import { tbss } from './tbss-layout.mjs';
 import { zhengLi } from './zheng-li-layout.mjs';
-import { tingYuXuan, keLaiShun, mobileTime, shiHao } from './geylang-row-layout.mjs';
+import { tingYuXuan, keLaiShun, instyle, mobileTime, shiHao } from './geylang-row-layout.mjs';
 import { beefKwayTeow } from './beef-kway-teow-layout.mjs';
 import { watDhammasatis } from './wat-dhammasatis-layout.mjs';
 import { redDot } from './red-dot-layout.mjs';
@@ -67,6 +67,7 @@ export const landmarks = [
   { ...beefKwayTeow },
   { ...tingYuXuan },
   { ...keLaiShun },
+  { ...instyle },
   { ...mobileTime },
   { ...shiHao },
   { ...zhengLi },

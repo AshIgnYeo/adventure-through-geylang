@@ -1,6 +1,6 @@
 # Geylang Road Nos. 255–267: Ting Yu Xuan, Ke Lai Shun, Mobile Time and Shi Hao Hotpot BBQ
 
-Research and implementation: **10 October 2026**. Q47–Q50. The four places stand on the owner-approved re-spaced row between Leong Kee and Lorong 13 (open question 2). Nos. 257 and 261 stay generic.
+Research and implementation: **10 October 2026**. Q47–Q50. The four places stand on the owner-approved re-spaced row between Leong Kee and Lorong 13 (open question 2). Nos. 257 and 261 followed later the same day: No. 257 as an unnamed exterior (open question 18), and No. 261 as Instyle Hair Salon, a dated exterior (open question 12).
 
 ## The re-spaced row
 
@@ -25,9 +25,9 @@ Research and implementation: **10 October 2026**. Q47–Q50. The four places sta
 | No. | Place | Listing | Signage, June 2024 |
 | --- | --- | --- | --- |
 | 255 | Ting Yu Xuan 听雨轩, foot reflexology | Google Maps: Ting Yu Xuan Pte Ltd, 255 Geylang Rd, 389312 | cream 听雨轩 Ting Yu Xuan board numbered 255, 听雨轩 blade sign |
-| 257 | (generic) | Sin Hock Heng Eating House, **permanently closed** | shuttered, 新福興 board #257 |
+| 257 | unnamed exterior | Sin Hock Heng Eating House, **permanently closed** | shuttered, 新福興 board #257 (left blank) |
 | 259 | Ke Lai Shun Restaurant 客来顺饭店 | Google Maps: 259 Geylang Rd, 389315, open | red 客来顺 KE LAI SHUN RESTAURANT board, red blade numbered 259 |
-| 261 | (generic) | Instyle Hair is listed only at Crawford Lane | INSTYLE HAIR SALON board |
+| 261 | Instyle Hair Salon (dated exterior, open question 12) | Instyle Hair is listed only at Crawford Lane | INSTYLE HAIR SALON board, Instyle Hair salon on the glass |
 | 263 | Mobile Time (Lor 13) | Google Maps: 263 Geylang Rd, 389319 | black SAMSUNG / Mobile Time board numbered 263, purple SIMBA awning |
 | 267 | Shi Hao Hotpot BBQ 食好火锅烧烤 | Google Maps: 267 Geylang Rd #01-01, 389688 | grey 食好火锅烧烤 SHI HAO Hot Pot BBQ board on both faces; RISING SUN TATTOOS and CHOK DEE blade signs |
 
@@ -59,3 +59,18 @@ Each place supplies its measurements and sign drawings.
 - **Estimates:** roofs, rooftop sheds, five-foot-way depths, and Shi Hao's possible rear annex, which is not drawn.
 
 Use `?review=ting-yu-xuan`, `?review=ke-lai-shun`, `?review=mobile-time`, `?review=shi-hao` and `?review=shi-hao-corner`. All **141 tests**, the type check and the build passed, with day and night renders and no console errors.
+
+## Nos. 257 and 261, added 10 October 2026
+
+Both were read square-on on two far-side panoramas each, rectified 0.5 m behind the street front, as for the rest of the row.
+
+- **No. 257 (unnamed):** 5.2 m wide.
+  - **Upper storey:** two windows with closed grey panelled shutters at 4.18–5.68 m, under vents at 5.97–6.43 m, and a parapet to 8.0 m, matching Nos. 255 and 259.
+  - **Ground floor:** the red board is kept as a blank red panel, over a roller shutter.
+- **No. 261 (Instyle Hair Salon):** 5.85 m wide.
+  - **Upper storey:** three windows with open brown shutters at 4.02–5.18 m, under vents at 5.38–5.6 m, a grey eaves band to 6.6 m, and a tiled roof estimated as hipped, with a rooftop room behind.
+  - **Ground floor:** the INSTYLE HAIR SALON board (2.52–3.52 m) over a lit glazed salon front.
+  - **Check:** render-and-compare from `Euug…` puts both houses and their neighbours on their photographed positions.
+
+Use `?review=gr-257` and `?review=instyle`.
+
