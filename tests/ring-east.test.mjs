@@ -5,7 +5,7 @@ import { landmarkFor } from '../src/landmarks.mjs';
 import { assertFittings, assertReviews, outline } from './helpers.mjs';
 
 test('the east-ring exteriors fit their outlines and keep their review starts clear', () => {
-  for (const place of ringEast) {
+  for (const place of ringEast.filter(p => !p.massing)) {
     const poly = outline(place.buildingIds[0]), frame = ringEastFrame(poly, place);
     assertFittings(frame, poly, ringEastLayout(place, frame.width).boxes);
     assertReviews(frame, ringEastReviews(place, frame));
@@ -22,4 +22,12 @@ test('No. 291 keeps its source way; the row east of Lorong 12 fills the rest of 
   // The frame runs east to west, so the green bay (measured from the west end) sits at the far end of u.
   const green = row.blocks.find(b => b.name === 'green upper wall');
   assert.ok(green.u[0] > frame.width - 5 && green.u[1] <= frame.width);
+});
+
+test('No. 134 is massing only, with its awnings on its Lorong 17 face and corner', () => {
+  const place = ringEast.find(p => p.id === 'sims-134');
+  assert.equal(place.massing, true); assert.equal(place.unnamed, true);
+  assert.equal(landmarkFor('682928733'), undefined);
+  const poly = outline('682928733');
+  for (const [edge, from, to] of place.awnings) assert.ok(from >= 0 && to <= ringEastFrame(poly, { frontEdge: edge }).width);
 });

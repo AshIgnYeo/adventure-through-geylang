@@ -950,5 +950,5 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - The yard with shrine sheds and an old single-storey house.
   - Sims Avenue Nos. 126, 128 and 130 (the Lorong 17 west corner).
   - **Capture dates:** Lorong 15 has no June 2024 drive, so its faces are dated April 2024.
-  - **Skipped:** No. 134 (682928733), the Lorong 17 east corner. Its outline lies almost entirely outside the bounds, the two drives disagree on its position by 3–4 m, and its long face is on Lorong 17, which is not modelled. It stays generic.
+  - **No. 134 (682928733), the Lorong 17 east corner:** drawn as massing with its red awnings, unnamed. Its outline lies almost entirely outside the bounds, and the two drives disagree on its position by 3–4 m.
 
