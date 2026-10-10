@@ -641,6 +641,7 @@ The owner's answers to the open questions allow re-spaced and authored footprint
   - Hotel 81 Joy was re-measured.
   - The Agape Centre and Hok Tek Chi models overlay their April 2024 photographs to within about 0.4 m, Hok Tek Chi after its re-spacing, so they are kept.
   - The Lok Fu model was replaced by Guan Keat.
+  - Hainan Goh, Ho San Kong Hoey, SHG Engineering and Faith Mission Home were checked by render-and-compare from the April 2024 Lorong 11 panoramas, alongside the new east-side neighbours. They overlay their photographs closely enough to be kept. The same check lowered the new No. 22's canopy and parapet by about 0.4 m.
 - **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
   - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).
   - **Check:** render-and-compare from two April 2024 panoramas puts both models on their photographed frontages.

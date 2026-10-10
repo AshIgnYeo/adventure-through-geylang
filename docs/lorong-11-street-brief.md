@@ -40,7 +40,7 @@ Read on frames rectified on the source front, which triangulation at JiangSu (No
 | --- | --- | --- | --- |
 | 16 | Kum Huat Shoe Merchant | no matching sign in 2021, 2022 or 2024 | shares one white two-storey façade with No. 18, parapet at 7.5 m; a gridded window and a vented window; grilled openings below |
 | 18 | none | — | the other half of the same façade; a gridded and a framed window; a roller shutter, door and windows below |
-| 22 | Hakka Association (Singapore) | no association sign | parapet at 7.5 m; two windows under a scalloped terracotta canopy; a brown balcony rail, three condensers and a low red awning |
+| 22 | Hakka Association (Singapore) | no association sign | parapet at 7.1 m (lowered after render-and-compare against Hainan Goh); two windows under a scalloped terracotta canopy at about 6 m; a brown balcony rail, three condensers and a low red awning |
 | 28 | Nai Ghee Hardware & Trading | only a yellow abrasives notice (blank) | parapet at 7.6 m; three windows under a corrugated canopy; a blue-and-white striped awning over shutters |
 | 30–32 | the minimart; A L L Furniture | the owner declined a named model of the minimart | single storey to 4.9 m; green corrugated fascia with blank boards and lightboxes; a deep salmon awning |
 

@@ -148,14 +148,14 @@ export const no18 = east('18', {
 });
 
 export const no22 = east('22', {
-  id: 'l11-22', buildingIds: ['1223250203'], height: 7.5, ceiling: 3.0, fiveFootWay: 1.8,
-  evidence: 'Source way 1223250203 is tagged No. 22, between Hainan Goh (No. 20B) and Ho San Kong Hoey (No. 24). The Hakka Association (Singapore) is listed at 22 Lor 11, but April 2024 Street View shows no association sign, so no name is given. A white two-storey house with a parapet to about 7.5 m: two upper windows under a scalloped terracotta canopy, a brown-panelled balcony rail, three condensers on the beam, and a low red awning over the five-foot way. Read on the 8kEp panorama rectified on the source front.',
+  id: 'l11-22', buildingIds: ['1223250203'], height: 7.1, ceiling: 3.0, fiveFootWay: 1.8,
+  evidence: 'Source way 1223250203 is tagged No. 22, between Hainan Goh (No. 20B) and Ho San Kong Hoey (No. 24). The Hakka Association (Singapore) is listed at 22 Lor 11, but April 2024 Street View shows no association sign, so no name is given. A white two-storey house with a parapet to about 7.1 m (corrected by render-and-compare against Hainan Goh): two upper windows under a scalloped terracotta canopy, a brown-panelled balcony rail, three condensers on the beam, and a low red awning over the five-foot way. Read on the 8kEp panorama rectified on the source front.',
   sources: [way('1223250203'), pano('8kEpH_Q3jNSaUef89yiXtQ', 60, 10, 80)],
   colours: whiteHouse,
-  bands: [[7.2, 7.5, .3, '#e1dfd8']],
+  bands: [[6.85, 7.1, .3, '#e1dfd8']],
   windows: [{ u: [.3, 2.1], h: [4.02, 5.4], panes: 3 }, { u: [3.6, 5.5], h: [4.02, 5.4], panes: 3 }],
   blocks: [
-    { name: 'terracotta canopy', u: [0, 6.1], h: [6.35, 6.5], out: .55, depth: 1.1, colour: '#c27a5c' },
+    { name: 'terracotta canopy', u: [0, 6.1], h: [5.85, 6.0], out: .55, depth: 1.1, colour: '#c27a5c' },
     { name: 'balcony rail', u: [2.05, 5.5], h: [3.48, 4.06], out: .3, depth: .08, colour: '#8a5a3e' },
     ac([.4, 1.4], [2.9, 3.45]), ac([2.0, 3.25], [2.85, 3.5]), ac([4.6, 6.0], [2.9, 3.45]),
   ],
