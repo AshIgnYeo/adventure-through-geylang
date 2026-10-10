@@ -6,7 +6,12 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+25. **Masjid Haji Mohd Salleh, 245 Geylang Road: re-author the footprint front to the photographed façade?**
+    - **Evidence:** three June 2024 panoramas, triangulated, put the façade parallel to Geylang Road. The source front (way 454254204) is turned about 8° from it. The façade is about 20.3 m wide against the 22.46 m source front, and ends about 2.2 m short of the east corner, where a yard separates it from Shan Yuan Tang. Allowing for the panorama position error recorded at Chen Hing, the façade lies about 1.9 m behind the source front at the west and 1.0 m in front of it at the east.
+    - **What happens now:** the rebuilt model keeps the source front. The east 2.2 m is a plain return. The west tower is drawn 1.45 m east of its photographed position to stay inside the outline.
+    - **Recommendation:** yes. Author a footprint whose front follows the photographed façade, parallel to Geylang Road and 20.3 m wide, keeping the source rear and side lines. Leave the east strip as an unbuilt yard.
+    - **Unlocks:** a square front for the mosque, the west tower in its photographed place, and an open yard beside Shan Yuan Tang.
+    - **Evidence:** [references](lorong-11-references.md#masjid-haji-mohd-salleh-245-geylang-road).
 
 ## Settled
 

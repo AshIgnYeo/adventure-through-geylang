@@ -38,7 +38,8 @@ test('Masjid Haji Mohd Salleh keeps its named No. 245 source footprint and Geyla
   assert.ok(Math.hypot(review[0] - mid[0], review[1] - mid[1]) > 17);
   for (const candidate of map.buildings) assert.equal(pointInPolygon(review, candidate.coordinates.map(c => project(c, map.origin))), false);
   assert.equal(landmarkFor(building.id), place);
-  assert.match(place.evidence, /four-storey description and mapped three-level tag/);
+  assert.match(place.evidence, /June 2024 Street View shows four storeys/);
+  assert.match(place.evidence, /keeps the source front \(open question 25\)/);
   assert.match(place.evidence, /no interior is reconstructed/);
 });
 

@@ -55,6 +55,7 @@ import { sinChewTan, teckKeow, hongShengKoon, shipChandlers, aecc } from './loro
 import { ibisGold } from './ibis-gold-layout.mjs';
 import { redFlagDavco, yiXiu, shiCheng } from './sims-north-row-layout.mjs';
 import { ywam, kimCourt, theDiamond } from './lorong-9-layout.mjs';
+import { mosqueElevation } from './mosque-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok];
@@ -136,14 +137,17 @@ export const landmarks = [
   { ...frogPorridge, frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 0, reviewBuildingId: '453797927' },
   {
     id: 'haji-mohd-salleh-mosque', buildingIds: ['454254204'], kind: 'mosque',
-    name: 'Masjid Haji Mohd Salleh (Geylang)', address: '245 Geylang Road', height: 11.35,
+    name: 'Masjid Haji Mohd Salleh (Geylang) (June 2024 exterior)', address: '245 Geylang Road', height: mosqueElevation.height,
     frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 6,
-    evidence: 'MUIS confirms the mosque name, No. 245 address and present building, opened in 1999 after rebuilding. The retained source footprint independently carries the same name, address and mosque use. A licensed December 2020 front photograph and the LearnIslam exterior show the cream-and-green street elevation, central arch, four upper window bays, twin corner towers and central gable. Dimensions and fine ornament are estimated. The official four-storey description and mapped three-level tag are recorded without inventing an unseen floor division; no interior is reconstructed.',
+    evidence: 'MUIS confirms the mosque name, No. 245 address and present building, opened in 1999 after rebuilding. The retained source footprint independently carries the same name, address and mosque use. June 2024 Street View shows four storeys in an orange frame with cream recessed panels: four window bays, the second-storey arch lettered MASJID HAJI MOHD SALLEH under the Arabic name, a green louvred screen at the west, open stair fins at the east, and two calligraphy towers and a tiled gable set back above the parapet. Re-measured on 10 October 2026 by triangulating three June 2024 panoramas: the photographed front is about 20.3 m wide and runs parallel to Geylang Road, about 8 degrees off the 22.46 m source front, with its parapet about 15.8 m above the façade base; the towers stand about 2.5 m back and rise to domes near 21.5 m, and the gable peak, about 4.8 m back, reaches about 22 m. The model keeps the source front (open question 25), draws the east 2.2 m as a plain return, and moves the west tower 1.45 m east to stay inside the source outline. Fine ornament, roof depth and the lettering font are estimates; no interior is reconstructed.',
     sources: [
       'https://www.muis.gov.sg/community/mosque/mosque-directory/haji-mohd-salleh--g/',
       'https://learnislam.sg/mosque/haji-mohd-salleh-mosque-geylang/',
       'https://commons.wikimedia.org/wiki/File:Masjid_Haji_Mohd_Salleh.jpg',
       'https://www.openstreetmap.org/way/454254204',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=ZvONx9MbvuKGcqhHe87DTQ&heading=348&pitch=20&fov=100',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=SE7V8xC8dISjOl-1xdIR9A&heading=23&pitch=20&fov=100',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=yLxdM90ecueaqOeXgMp-2g&heading=312&pitch=20&fov=100',
     ],
   },
   {
