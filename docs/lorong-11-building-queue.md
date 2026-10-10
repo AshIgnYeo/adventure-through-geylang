@@ -420,6 +420,21 @@ Added on 10 October 2026, when the user asked for sourcing and building to conti
 - **Panorama position errors:** on Geylang Road (Nos. 237–245) and Lorong 13 (No. 1), the recorded panorama positions are 2–3 m off the source frame. Recorded camera positions alone should not be trusted for depth; calibrate against an existing model or the source frontage width.
 - **Sin Chew Tan's Clan Association 星洲陳氏公會:** its signboard was seen in June 2024 on a three-storey building on the Lorong 13 east side, above GANH XUA (Ganh Xua minimart, listed at 28 Lor 13 and temporarily closed). No listing for the association was found. Locked pending an address.
 - **Geylang Road south side (Nos. 204–258):** Shaxian Eatery 沙县小吃 (210), ChongQingXiaoMian (258, at the Lorong 12 corner), Chang Beer (218), the TakeToys adult store and others are listed and signed in June 2024. Most of their source ways are coarse blocks (for example 454438330) that span several frontages, so they need partial-block splits first.
+- **Geylang Lor 9 Beef Kway Teow 芽龍九巷牛肉河粉, 237 Geylang Road:**
+  - **Identity:** listed open as a hawker stall at No. 237. Its fascia and a 牛河大王 blade sign are on the pink four-storey block west of Chen Hing (green shutters, 藤樓 on the chamfered west corner).
+  - **Mismatch:** source way 454274485 steps back 4.5 m over its eastern 7.3 m, but the photographed block runs flush to Chen Hing. With the Chen Hing pose correction, its frontage is about 10.2 m and ends about 2.4 m east of the source step.
+  - **Status:** locked pending an authored footprint.
+- **Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11:**
+  - **Identity:** listed open at 35 Lor 11, 388728. Blade signs 正利心厨 ZHENG LI HEARTY KITCHEN are on the last house of the west row, before the open corner at Sims Avenue.
+  - **Mismatch:** three April 2024 panoramas rectified at the 0.6 m depth that fits Nos. 27–31 disagree by up to 3 m along the street here, so the 33|35 party line can't be checked against source No. 35.
+  - **Status:** locked with the west-row re-spacing.
+- **Ming Li's Eating House 明利美食阁, 114 Sims Avenue:**
+  - **Identity:** listed open 24 hours at No. 114. Way 682928749 is tagged No. 114, three levels. The white Art Deco corner block has its signboard on a chamfered corner face, a food-photo board over the Sims bay and a SingGas awning along Lorong 15.
+  - **Mismatch:** square-on rectifications put the photographed Sims face about 2.6 m west of the source party line with Amrise, and about 1 m wider than the source edge. This matches the ~3.25 m façade offset found at No. 118. Each of the three faces (Sims 6.64 m, chamfer 4.41 m, Lorong 15 18.28 m) would need its own offset.
+  - **Status:** locked pending an authored corner outline.
+- **Kim Court, Lorong 9:** listed at 11 Lor 9 Geylang (with Star Glass), but the KIM COURT lettering in June 2024 is on the yellow apartment block tagged No. 17, beside The Diamond. Both ways lie on the study's west boundary. Locked pending the address conflict.
+- **Key duplicating, 24 Lorong 13:** a key-cutting booth signed 配锁匙 / DUPLICATING matches the listing at No. 24, which Bookland Library Services shares. It is a generic trade sign rather than a name, so it is not modelled.
+- **No. 269 Geylang Road, the Lorong 13 corner:** Hong Wah Coffee Shop and Geylang Food Corner are listed open there, but the frontage shows a Khim Seng gas awning, a 麻辣空间 board and the closed BN Food Palace's 24-hour board. These conflict. Not modelled.
 - **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
 
 ### 9 October 2026: leads checked and locked
