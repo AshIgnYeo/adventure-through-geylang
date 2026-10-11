@@ -196,7 +196,7 @@ test('real landmark identities have unique, existing street-study footprints and
       ids.add(id);
       const building = map.buildings.find(b => b.id === id);
       if (['leong-kee', 'buddhist-art-centre', 'eat-first', 'sik-wai-sin', 'rr-motor', 'golden-jade', 'ktv-277', 'eros', 'rozel-furniture', 'jh-hotel', 'nanyang-fan-clan', 'vintage-and-vine'].includes(place.id)) assert.equal(building?.street, null);
-      else if (['yaju-hotel', 'summer-view'].includes(place.id)) assert.equal(building?.street, 'Lorong 12 Geylang');
+      else if (['yaju-hotel', 'summer-view', 'hotel-81-cherry', 'master-tailors', 'chinese-eating-house-owners'].includes(place.id)) assert.equal(building?.street, 'Lorong 12 Geylang');
       else if (['lex-hotel', 'engineering-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 8 Geylang');
       else if (['crystal-mansions'].includes(place.id)) assert.equal(building?.street, 'Lorong 6 Geylang');
       else if (['hainan-lim', 'sui-yuan-ju', 'chong-min', 'foo-hui', 'siaw-lim', 'hong-ye-chen', 'plus-mobile', 'k-group', 'muhammadiyah-college', 'bar-lorong-13', 'mister-contracts', 'gems-ville', 'thirteen-bbq', 'buildersmart', 'teck-hoe', 'wunderfolks'].includes(place.id)) assert.equal(building?.street, 'Lorong 13 Geylang');

@@ -11,8 +11,10 @@ test('the Lorong 12 exteriors fit their outlines and keep their review starts cl
     assertFittings(frame, poly, ringBLayout(place, frame.width).boxes);
     assertReviews(frame, ringBReviews(place, frame));
     assert.match(place.evidence, /June 2024/);
-    assert.ok(place.sources.some(s => s.includes(`openstreetmap.org/way/${place.buildingIds[0]}`)));
-    if (['yaju-hotel', 'summer-view', 'vintage-and-vine'].includes(place.id)) continue;
+    // Authored strips cite the source way they were cut from.
+    const ways = map.buildings.find(b => b.id === place.buildingIds[0]).replaces ?? place.buildingIds;
+    assert.ok(place.sources.some(s => ways.some(w => s.includes(`openstreetmap.org/way/${w}`))), place.id);
+    if (!place.unnamed) continue;
     // Unnamed exteriors carry no registered identity.
     assert.equal(place.unnamed, true);
     assert.equal(place.kind, 'unnamed');
@@ -39,19 +41,28 @@ test('No. 12 is framed along both collinear source edges of its front', () => {
   assert.ok(Math.abs(off) < .05);
 });
 
-test('the tower rises over the north end of its way and the hotel keeps the south end', () => {
-  const place = ringB.find(p => p.id === 'l12-tower-hotel'), frame = ringBFrame(outline('454438320'), place);
-  // The frame runs south from the back-lane corner.
-  assert.ok(frame.a[1] < frame.b[1]);
-  const tower = place.blocks.find(b => b.name === 'tower upper storeys'), hotel = place.blocks.find(b => b.name === 'blue hotel wall');
-  assert.ok(tower.u[1] <= hotel.u[0] && tower.h[1] > 2 * place.height - 5);
+test('the tower and Hotel 81 Cherry split way 454438320 at 10.5 m, and the pair splits at its party pier', () => {
+  const tower = ringB.find(p => p.id === 'l12-tower'), hotel = ringB.find(p => p.id === 'hotel-81-cherry');
+  const ft = ringBFrame(outline('l12-tower'), tower), fh = ringBFrame(outline('l12-hotel'), hotel);
+  // Both frames run south from the back-lane end, and the hotel starts where the tower ends.
+  assert.ok(ft.a[1] < ft.b[1]); assert.ok(Math.abs(ft.width - 10.5) < .01); assert.ok(Math.hypot(fh.a[0] - ft.b[0], fh.a[1] - ft.b[1]) < .01);
+  assert.ok(tower.height > 2 * hotel.height - 1);
+  const north = ringBFrame(outline('l12-pair-north'), { frontEdge: 0 }), south = ringBFrame(outline('l12-pair-south'), { frontEdge: 0 });
+  assert.ok(Math.abs(north.width - 4.46) < .01 && Math.abs(north.width + south.width - 9.05) < .02);
 });
 
-test('Ya Ju Hotel is named from a listing point inside No. 12; the shared ways stay unnamed', () => {
+test('Ya Ju Hotel is named from a listing point inside No. 12; Hotel 81 Cherry and the two associations after the split', () => {
   assert.equal(landmarkFor('121873031').id, 'yaju-hotel');
   assert.equal(pointInPolygon(project([103.8780663, 1.3114895], map.origin), outline('121873031')), true);
-  // Hotel 81 Cherry and the two associations are listed in ways they share with other buildings.
-  for (const id of ['454438320', '454438319']) assert.equal(landmarkFor(id), undefined);
+  assert.equal(landmarkFor('l12-hotel').id, 'hotel-81-cherry');
+  assert.equal(pointInPolygon(project([103.8784172, 1.311987], map.origin), outline('l12-hotel')), true);
+  assert.equal(landmarkFor('l12-tower'), undefined);
+  assert.equal(landmarkFor('l12-pair-north').id, 'master-tailors');
+  assert.equal(landmarkFor('l12-pair-south').id, 'chinese-eating-house-owners');
+  // Both association points lie in the pair's source way, south of the party pier.
+  const pair = [...outline('l12-pair-north'), ...outline('l12-pair-south')];
+  for (const p of [[103.8783887, 1.311878], [103.878393, 1.3118533]]) assert.ok(pointInPolygon(project(p, map.origin), outline('l12-pair-south')));
+  assert.ok(pair.length >= 8);
 });
 
 test('Summer View and Vintage & Vine are named from listing points inside their ways', () => {

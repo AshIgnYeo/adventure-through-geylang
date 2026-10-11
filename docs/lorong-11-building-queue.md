@@ -980,3 +980,10 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - **Bamboo Lounge 竹屋**, No. 128 Sims Avenue. Its neon board is drawn; its listing point lies in No. 126 next door, matching the row's 3 m shift.
   - **Singapore Engineering Merchants' Association 新加坡機器廠商公會**, on the balcony section of the Lorong 8 cream block (way 454438338). Its balcony lettering is drawn; its listing point lies 3 m out in Lorong 8.
   - **Crystal Mansions**, No. 3 Lorong 6. Its listing point lies 0.5 m outside the way. Triangulating the wall lettering from two panoramas moved the boundary wall to about 8 m in front of the source front, at the lane edge, with the gate at 13.6–14.5 m; the script Crystal Mansions and 3 LOR 6 are drawn north of the gate.
+- **Open question 31 applied, 11 October 2026 (`lorong-12-east-shared` in `src/authored-footprints.mjs`):**
+  - **Way 454438320** is split 10.5 m from its back-lane end into the unnamed white apartment tower and **Hotel 81 Cherry**. The hotel's listing point lies in its half; its teal HOTEL 81 board, the HOTEL 81 Cherry plate on the marble and the HOTEL 81 CHERRY blade are drawn.
+  - **Way 454438319** is split at the pair's party pier, 4.46 m from its north end on the proportional layout. Each upper floor is named after its board, on the Canton Wong precedent:
+    - north: the **Singapore Master Tailors' Association 新加坡軒轅洋服商會** (listed at 3C);
+    - south: the **Chinese Eating House Owner's Association 華人飯商公會** (listed at 10C, an even number that conflicts with the east side; recorded).
+  - Both association points lie in the pair's way, south of the pier. The ground-floor PEK SUN CHEN LEAN TUAN board and the Teoann Sianluck Heo Yeo Clan Society board stay blank.
+  - **Re-spacing not done:** the pair photographs 15.0 m wide, but the hotel and Summer View leave only 12.8 m between them at the source front, so the proportional layout on the source way is kept.

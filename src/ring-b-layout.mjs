@@ -18,7 +18,8 @@ const grid = (us, hs, extra = {}) => us.flatMap(u => hs.map(h => ({ u, h, ...ext
 // tower at u 10.5 m; the tower's windows agree 3.3-4.4 m behind it, behind a front yard. Both are kept on the source
 // front: the outline stands at the hotel's parapet and the tower rises from it as one block.
 const towerFloors = range(4.8, 27.55, 3.25);
-export const towerHotel = {
+// The photographed elevation across both buildings, as measured before the way was split (open question 31).
+const towerHotelElevation = {
   id: 'l12-tower-hotel', buildingIds: ['454438320'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 12 Geylang',
   name: 'White apartment tower and blue hotel, Lorong 12 Geylang east side (June 2024 exterior, occupants not named)', address: 'Lorong 12 Geylang, east side, first plot south of the back lane behind Geylang Road',
   height: 15.2, ceiling: 4.0, fiveFootWay: 1.2, roof: { type: 'flat', colour: '#9a9893' },
@@ -64,7 +65,7 @@ export const towerHotel = {
 // elevation is laid out proportionally on it (heights unscaled).
 const P = s => +((s - 20.2) * 9.05 / 15.0).toFixed(2);
 const pu = (a, b) => [P(a), P(b)];
-export const associationPair = {
+const pairElevation = {
   id: 'l12-pair', buildingIds: ['454438319'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 12 Geylang',
   name: 'Three-storey pair south of the blue hotel, Lorong 12 Geylang east side (June 2024 exterior, occupants not named)', address: 'Lorong 12 Geylang, east side, between the blue hotel and No. 5',
   height: 10.9, ceiling: 4.0, fiveFootWay: 1.8, roof: { type: 'gable', ridge: 12.2, colour: '#8d9296' },
@@ -93,6 +94,73 @@ export const associationPair = {
     { name: 'glazed shopfront', u: [.4, 4.2], h: [.1, 3.5], colour: '#3e474b', glow: .1 },
     { name: 'grilled shopfront', u: [4.7, 8.7], h: [.1, 3.6], colour: '#5a5d5a' },
   ],
+};
+
+// Keep the parts of an elevation between `from` and `to` along the front, re-based at `from` (open question 31).
+const r2 = v => +v.toFixed(2);
+const cutU = (items = [], from, to) => items.flatMap(it => {
+  const l = Math.max(it.u[0], from), r = Math.min(it.u[1], to);
+  return r - l > .02 ? [{ ...it, u: [r2(l - from), r2(r - from)] }] : [];
+});
+const cutPiers = (piers, from, to) => cutU(piers.map(u => ({ u })), from, to).map(p => p.u);
+// A window cut by the new party line keeps its sill (5 cm proud) inside the strip; slivers are dropped.
+const cutWindows = (windows = [], from, to) => cutU(windows, from, to).flatMap(w => {
+  const l = Math.max(w.u[0], .06), r = Math.min(w.u[1], r2(to - from - .06));
+  return r - l > .3 ? [{ ...w, u: [r2(l), r2(r)] }] : [];
+});
+const cutElevation = (spec, from, to) => ({
+  windows: cutWindows(spec.windows, from, to), blocks: cutU(spec.blocks, from, to), vents: cutU(spec.vents, from, to),
+  piers: cutPiers(spec.piers ?? [], from, to), backFittings: cutU(spec.backFittings, from, to),
+});
+const without = (list, ...names) => list.filter(b => !names.includes(b.name));
+
+// The tower on the north 10.5 m of way 454438320: its roof is the outline's height.
+const towerPart = cutElevation(towerHotelElevation, 0, 10.5);
+export const tower = {
+  ...towerHotelElevation, ...towerPart, id: 'l12-tower', buildingIds: ['l12-tower'], frontEdge: 0, unnamed: true, kind: 'unnamed',
+  name: 'White apartment tower, Lorong 12 Geylang east side (June 2024 exterior, not named)', address: 'Lorong 12 Geylang, east side, first plot south of the back lane',
+  height: 29.8,
+  evidence: 'June 2024 Street View shows a white nine-storey apartment tower of the 1970s-80s on the north 10.5 m of source way 454438320, with glazed bay windows, curved balcony slabs and small side windows behind a beige boundary wall and a front yard; its roof is about 29.8 m up, with a small roof structure to about 31.5 m. Nothing names it. Under the owner\'s answer to open question 31 the way is split at the tower\'s south edge, placed by a sightline from a back-lane panorama; the tower windows matched between two June 2024 panoramas stand 3.3-4.4 m behind the source front, and it is kept on the source front.',
+  sources: [`https://www.openstreetmap.org/way/454438320`, ...towerHotelElevation.sources.slice(1)],
+  blocks: without(towerPart.blocks, 'tower upper storeys', 'drain pipes'),
+};
+
+// Hotel 81 Cherry on the south 10.3 m of way 454438320.
+const hotelPart = cutElevation(towerHotelElevation, 10.5, 20.8);
+export const hotel81Cherry = {
+  ...towerHotelElevation, ...hotelPart, id: 'hotel-81-cherry', buildingIds: ['l12-hotel'], frontEdge: 0, kind: 'hotel-81-cherry', unnamed: undefined,
+  name: 'Hotel 81 Cherry (June 2024 exterior)', address: 'Lorong 12 Geylang, east side',
+  height: 15.2,
+  colours: { ...towerHotelElevation.colours, wall: '#a5aedb', pier: '#a5aedb' },
+  evidence: 'June 2024 Street View shows a lavender-blue four-storey hotel on the south 10.3 m of source way 454438320, with two windows per floor under white hoods, a raised parapet, a white band carrying a teal HOTEL 81 board over a blue entrance canopy, marble cladding lettered HOTEL 81 Cherry by the entrance, and a projecting HOTEL 81 CHERRY blade sign. Google Maps lists Hotel 81 - Cherry with its point inside this half of the way; under the owner\'s answer to open question 31 the way is split at the hotel\'s north edge and the hotel is named, its signs redrawn in original type. The hotel window pairs, matched between two June 2024 panoramas, stand 0.6-1.1 m in front of the source front; the hotel is kept on the source front, with heights read on that plane.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Hotel+81+Cherry+Lorong+12+Geylang', `https://www.openstreetmap.org/way/454438320`, ...towerHotelElevation.sources.slice(1)],
+  blocks: [
+    ...without(hotelPart.blocks, 'blank teal board', 'blank vertical sign', 'tower upper storeys'),
+    { name: 'drain pipes', u: [.1, .4], h: [4.8, 15.0], out: .08, depth: .1, colour: '#c9d0e6' },
+  ],
+  boards: [{ u: [3.9, 6.5], h: [4.1, 4.65], out: .62 }, { u: [1.7, 3.6], h: [1.25, 2.05], out: -1.12 }],
+  blades: [{ u: 8.85, out: [.15, 1.05], h: [7.3, 14.0] }],
+};
+
+// The three-storey pair on way 454438319, split at its party pier, 4.46 m from the north end. Each upper floor
+// is named after the association board on it, on the Canton Wong precedent; the ground floors are not named.
+const pairNorthPart = cutElevation(pairElevation, 0, 4.46), pairSouthPart = cutElevation(pairElevation, 4.46, 9.05);
+const pairNote = 'June 2024 Street View shows a cream three-storey pair under a corrugated metal roof between the blue Hotel 81 Cherry and Summer View. On a plane 2.1 m behind the source front, where three June 2024 panoramas agree, the pair is 15.0 m wide against the 9.05 m source way 454438319, so the elevation is laid out proportionally on the way with heights as measured, and under the owner\'s answer to open question 31 the way is split at the party pier, 4.46 m from its north end.';
+export const masterTailors = {
+  ...pairElevation, ...pairNorthPart, id: 'master-tailors', buildingIds: ['l12-pair-north'], frontEdge: 0, kind: 'master-tailors', unnamed: undefined,
+  name: 'Singapore Master Tailors\' Association 新加坡軒轅洋服商會 (upper floor; June 2024 exterior)', address: '3C Lorong 12 Geylang',
+  evidence: `${pairNote} The north house carries a white board lettered 新加坡軒轅洋服商會 SINGAPORE MASTER TAILORS\' ASSOCIATION over a tiled awning and a grilled balcony, with a beige PEK SUN CHEN LEAN TUAN 璧山青龍壇 board over the ground floor. Google Maps lists the Singapore Master Tailors\' Association at 3C Lor 12 Geylang, Singapore 398984; its point lies inside the way, 1.5 m south of the party pier, within the listing\'s precision. The association is named as the upper-floor occupant and its board is redrawn in original type; the ground-floor board stays blank.`,
+  sources: ['https://www.google.com/maps/search/?api=1&query=Singapore+Master+Tailors+Association+3C+Lorong+12+Geylang', ...pairElevation.sources],
+  blocks: without(pairNorthPart.blocks, 'blank white board'),
+  board: { u: pu(22.0, 26.7), h: [7.85, 8.8], out: .1 },
+};
+export const chineseEatingHouse = {
+  ...pairElevation, ...pairSouthPart, id: 'chinese-eating-house-owners', buildingIds: ['l12-pair-south'], frontEdge: 0, kind: 'chinese-eating-house-owners', unnamed: undefined,
+  name: 'Chinese Eating House Owner\'s Association 華人飯商公會 (upper floor; June 2024 exterior)', address: 'Lorong 12 Geylang, east side (listed as 10C Lorong 12)',
+  evidence: `${pairNote} The south house carries a dark board lettered 華人飯商公會 CHINESE EATING HOUSE OWNER\'S ASSOCIATION under a timber lattice screen, and above it a white board of the Teoann Sianluck Heo Yeo Clan Society 潮安仙樂揚氏同鄉會 and a red banner. Google Maps lists the Chinese Eating House Owner\'s Association with its point inside this house; the listed address, 10C Lor 12 Geylang, is an even number from the west side of the lorong, which conflicts and is recorded. The association is named as the upper-floor occupant on its board and point, and its board is redrawn in original type; the clan society board and the banner stay blank.`,
+  sources: ['https://www.google.com/maps/search/?api=1&query=Chinese+Eating+House+Owners+Association+Lorong+12+Geylang', ...pairElevation.sources],
+  blocks: without(pairSouthPart.blocks, 'blank dark board'),
+  board: { u: [r2(P(29.7) - 4.46), r2(P(34.3) - 4.46)], h: [4.8, 5.75], out: .1 },
 };
 
 // Summer View, No. 5: triangulated, its south end lies 0.8 m inside the source corner and its north roof corner
@@ -234,7 +302,7 @@ export const no12 = {
   ],
 };
 
-export const ringB = [towerHotel, associationPair, summerView, no9, gardenHouse, westBlock, no12];
+export const ringB = [tower, hotel81Cherry, masterTailors, chineseEatingHouse, summerView, no9, gardenHouse, westBlock, no12];
 
 /** The front edge, or a front made of collinear source edges (the vertices between dropped; the footprint is unchanged). */
 export function ringBFrame(poly, place) {

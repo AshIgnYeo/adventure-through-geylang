@@ -73,6 +73,22 @@ function terrace(map, { frontStart, frontEnd, rear, lines, houses }) {
   });
 }
 
+/** Rotate an outline so that its edge 0 lies on the front line through `a` along `dir` (to within 5 cm). */
+function frontFirst(outline, a, dir) {
+  const on = q => Math.abs(dir[0] * (q[1] - a[1]) - dir[1] * (q[0] - a[0])) < .05;
+  const i = outline.findIndex((q, k) => on(q) && on(outline[(k + 1) % outline.length]));
+  if (i < 0) throw new Error('no edge on the front line');
+  return [...outline.slice(i), ...outline.slice(0, i)];
+}
+/** Split one source way into strips along a front edge (from vertex `from` towards vertex `to`), each with its front as edge 0. */
+function splitAlongFront(map, id, from, to, cuts) {
+  const src = map.buildings.find(b => b.id === id).coordinates.slice(0, -1).map(c => project(c, map.origin));
+  const P0 = src[from], P1 = src[to], len = Math.hypot(P1[0] - P0[0], P1[1] - P0[1]), front = [(P1[0] - P0[0]) / len, (P1[1] - P0[1]) / len];
+  const c = src.reduce((s, p) => [s[0] + p[0] / src.length, s[1] + p[1] / src.length], [0, 0]);
+  const inward = [-front[1], front[0]], cut = (inward[0] * (c[0] - P0[0]) + inward[1] * (c[1] - P0[1])) > 0 ? inward : neg(inward);
+  return strips(src, P0, front, cut, cuts).map(o => frontFirst(o, P0, front));
+}
+
 export const authoredFootprintGroups = [
   {
     id: 'lorong-11-west-row', question: 1, approved: '2026-10-10',
@@ -382,6 +398,21 @@ export const authoredFootprintGroups = [
       const frontEastCorner = at(frontWestCorner, east, 20.3);
       const rearEastCorner = meet(frontEastCorner, back, rearEast, rearWest);
       return [{ id: 'gr-245', street: 'Geylang Road', number: '245', levels: 4, outline: [frontWestCorner, frontEastCorner, rearEastCorner, rearWest] }];
+    },
+  },
+  {
+    id: 'lorong-12-east-shared', question: 31, approved: '2026-10-11',
+    evidence: 'Two source ways on the east side of Lorong 12 each hold two buildings in June 2024 Street View. Way 454438320 holds a white nine-storey apartment tower on its north 10.5 m and the lavender-blue Hotel 81 Cherry on its south 10.3 m; the line between them was placed by a sightline from a back-lane panorama and by matching the hotel\'s window pairs and the tower\'s windows between two panoramas. Way 454438319 holds a three-storey pair that photographs 15.0 m wide against the 9.05 m way; its elevation is laid out proportionally on the way, so the party pier, 7.4 m from the hotel on the photographed plane, falls 4.46 m from the north end. Both cuts run square to the source front.',
+    replaces: ['454438320', '454438319'],
+    build(map) {
+      const [tower, hotel] = splitAlongFront(map, '454438320', 1, 0, [10.5]);
+      const [north, south] = splitAlongFront(map, '454438319', 0, 3, [4.46]);
+      return [
+        { id: 'l12-tower', street: 'Lorong 12 Geylang', number: null, levels: 9, outline: tower },
+        { id: 'l12-hotel', street: 'Lorong 12 Geylang', number: null, levels: 4, outline: hotel },
+        { id: 'l12-pair-north', street: 'Lorong 12 Geylang', number: null, levels: 3, outline: north },
+        { id: 'l12-pair-south', street: 'Lorong 12 Geylang', number: null, levels: 3, outline: south },
+      ];
     },
   },
 ];
