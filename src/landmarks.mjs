@@ -59,8 +59,8 @@ import { mosqueElevation } from './mosque-layout.mjs';
 import { rozel } from './ring-west-layout.mjs';
 import { ledgeBlock as jhHotel, no11 as nanyangFan } from './ring-c-layout.mjs';
 import { no12 as yajuHotel, summerView, westBlock as vintageAndVine } from './ring-b-layout.mjs';
-import { lexHotel } from './ring-south-layout.mjs';
-import { no2 as bengalKitchen } from './ring-a-layout.mjs';
+import { lexHotel, creamSouth as engineeringMerchants, crystalMansions } from './ring-south-layout.mjs';
+import { no2 as bengalKitchen, sims128 as bambooLounge } from './ring-a-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
@@ -73,6 +73,9 @@ export const landmarks = [
   { ...vintageAndVine },
   { ...lexHotel },
   { ...bengalKitchen },
+  { ...bambooLounge },
+  { ...engineeringMerchants },
+  { ...crystalMansions },
   { ...thirteenBbq },
   { ...builderSmart },
   { ...teckHoe },

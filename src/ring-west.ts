@@ -22,7 +22,21 @@ const lexBoard: Draw = (c, w, h) => {
   c.lineWidth = h * .025; c.strokeStyle = '#f4f6fa'; c.font = `900 ${Math.round(h * .5)}px "PingFang SC", "Heiti SC", sans-serif`; c.textAlign = 'center'; c.textBaseline = 'middle';
   c.strokeText('樂斯旅店', w * .36, h * .33, w * .6); text(c, '樂斯旅店', w * .36, h * .33, h * .5, '#ef9a2a', '900', '"PingFang SC", "Heiti SC", sans-serif', w * .6);
 };
-const draws: Record<string, { boards?: Draw[] }> = { 'rozel-furniture': { boards: [rozelBoard, rozelBoard] }, 'lex-hotel': { boards: [lexBoard] } };
+// Raised gold characters on the lowest balcony of the Lorong 8 block.
+const merchantsBoard: Draw = (c, w, h) => {
+  c.clearRect(0, 0, w, h); c.shadowColor = 'rgba(0,0,0,.35)'; c.shadowOffsetY = h * .05;
+  text(c, [...'新加坡機器廠商公會'].join(' '), w / 2, h * .52, h * .62, '#d9a93a', '700', '"Songti SC", "STSong", serif', w * .98);
+};
+// White script and numerals on the grey boundary wall.
+const crystalBoard: Draw = (c, w, h) => {
+  c.clearRect(0, 0, w, h);
+  text(c, 'Crystal Mansions', w / 2, h * .32, h * .4, '#f2f2ee', 'italic 600', '"Snell Roundhand", "Apple Chancery", cursive', w * .96);
+  text(c, '3 LOR 6', w * .32, h * .76, h * .24, '#f2f2ee', '600', 'Georgia, "Times New Roman", serif');
+};
+const draws: Record<string, { boards?: Draw[] }> = {
+  'rozel-furniture': { boards: [rozelBoard, rozelBoard] }, 'lex-hotel': { boards: [lexBoard] },
+  'engineering-merchants': { boards: [merchantsBoard] }, 'crystal-mansions': { boards: [crystalBoard] },
+};
 
 /** June 2024 exteriors at the west end of the widened study area, and on Lorongs 6 and 8 to its south. */
 export function buildRingWest(world: World, id: string, poly: Point[]) {

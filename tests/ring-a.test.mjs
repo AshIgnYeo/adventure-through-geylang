@@ -13,7 +13,7 @@ test('the ring A exteriors fit their outlines and keep their review starts clear
     assertReviews(frame, ringAReviews(place, frame));
     assert.match(place.evidence, /(April|June) 2024/);
     assert.ok(place.sources.some(s => s.includes(`way/${place.buildingIds[0]}`)));
-    if (place.id === 'bengal-kitchen') continue;
+    if (['bengal-kitchen', 'bamboo-lounge'].includes(place.id)) continue;
     // Unnamed exteriors carry no registered identity, and every sign is a blank block.
     assert.equal(place.kind, 'unnamed'); assert.equal(place.unnamed, true);
     assert.equal(landmarkFor(place.buildingIds[0]), undefined);
@@ -51,4 +51,10 @@ test('each exterior stays on its source way and faces its street', () => {
 test('Bengal Kitchen is named from a listing point inside No. 2 and its photographed board', () => {
   assert.equal(landmarkFor('454254234').id, 'bengal-kitchen');
   assert.equal(pointInPolygon(project([103.8784329, 1.3129267], map.origin), outline('454254234')), true);
+});
+
+test('Bamboo Lounge is named on No. 128, its sign, with its listing point in No. 126 next door', () => {
+  assert.equal(landmarkFor('682928765').id, 'bamboo-lounge');
+  assert.equal(pointInPolygon(project([103.8783786, 1.3140915], map.origin), outline('682928764')), true);
+  assert.equal(landmarkFor('682928764'), undefined);
 });

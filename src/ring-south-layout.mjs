@@ -92,7 +92,14 @@ const creamUnit = (id, part) => {
 };
 export const creamNorth = creamUnit('1223401727', '7a');
 export const creamMiddle = creamUnit('1223401726', '11a-north');
-export const creamSouth = creamUnit('454438338', '11a-south');
+// The balcony section carries the association's lettering 新加坡機器廠商公會 on its lowest balcony.
+export const creamSouth = (({ unnamed, ...unit }) => ({
+  ...unit, id: 'engineering-merchants', kind: 'engineering-merchants',
+  name: 'Singapore Engineering Merchants\' Association 新加坡機器廠商公會 (June 2024 exterior)', address: '11A Lorong 8 Geylang',
+  evidence: unit.evidence.replace(/Google Maps lists[^.]*\(open question 32\)\./, 'Google Maps lists the Singapore Engineering Merchants\' Association at 11A Lor 8 Geylang, Singapore 399082; its point lies in Lorong 8 about 3 m outside the front of this way, and its lettering is on this way\'s balcony section, so under the owner\'s answer to open question 32 the section is named and the balcony lettering is redrawn in original type. The 機商大廈 awning lettering is not drawn, and no claim is made about the rest of the block.'),
+  sources: ['https://www.google.com/maps/search/?api=1&query=Singapore+Engineering+Merchants+Association+11A+Lorong+8+Geylang', ...unit.sources],
+  board: { u: [.35, 5.15], h: [5.3, 6.0], out: 1.02 },
+}))(creamUnit('454438338', '11a-south'));
 
 // No. 17B Lorong 8: a pink two-storey house across two source ways. Triangulated from LSA1... and _VUx...: the red
 // fascia projects 0.65 m in front of the source front; heights read on that plane need no correction.
@@ -214,20 +221,23 @@ const cmRow = {
       ...cmSlabs.map(b => ({ name: 'green panel', u: [o + 7.9, o + 11.1], h: [b + .1, b + 1.0], out: .1, depth: .2, colour: '#b7c88a' })),
       { name: 'small grey gable', u: [o + 8.1, o + 10.9], h: [22.6, 23.8], out: .05, depth: .2, colour: '#6e6e6c' },
     ]),
-    { name: 'grey boundary wall', u: [0, W], h: [0, 2.2], out: 3.0, depth: .25, colour: '#77777a' },
+    { name: 'grey boundary wall', u: [0, 13.6], h: [0, 2.2], out: 8.0, depth: .25, colour: '#77777a' },
+    { name: 'grey boundary wall', u: [14.6, W], h: [0, 2.2], out: 8.0, depth: .25, colour: '#77777a' },
+    { name: 'black gate', u: [13.6, 14.6], h: [.05, 1.95], out: 8.0, depth: .04, colour: '#1f2121' },
   ],
 };
 export const crystalMansions = {
-  id: 'l6-crystal-mansions', buildingIds: ['454274483'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 6 Geylang', review: [6, 11], reviewPitch: 25,
-  name: 'Apartment block signed Crystal Mansions, 3 Lorong 6 Geylang (June 2024 exterior)', address: '3 Lorong 6 Geylang',
+  id: 'crystal-mansions', buildingIds: ['454274483'], kind: 'crystal-mansions', frontEdge: 3, reviewRoad: 'Lorong 6 Geylang', review: [7.5, 13], reviewPitch: 12,
+  name: 'Crystal Mansions (June 2024 exterior)', address: '3 Lorong 6 Geylang',
   height: 22.6, ceiling: 4.4, fiveFootWay: 4.0, shellInset: .2, roof: { type: 'flat', colour: '#9a9893' },
-  evidence: 'June 2024 Street View shows a white six-storey apartment block 56 m long behind a grey boundary wall on the east side of Lorong 6, lettered Crystal Mansions 3 LOR 6 on the wall: grey-framed bays of balconies with steel railings under arched gables, white bays with small windows and air-conditioning units, and bays of green panels under small grey gables, over a car park on columns. Google Maps lists Crystal Mansions at 3 Lor 6 Geylang, but its point lies 0.5 m outside source way 454274483, so no name is given and the wall lettering is not drawn (open question 32). The bay pattern repeats about every 14 m; it was read through heavy tree cover from five panoramas, and heights on the source plane carry about ±1.5 m. Only the north 13 m lies inside the study bounds.',
-  sources: [way('454274483'), pano('w1P_X09EBE9Amq98c9OUiA', 100, 20, 100), pano('ME8QKQ0HaOO9CBheWmGPvQ', 70, 20, 100), pano('dFdi9EVX06KFJGLCcTOasg', 60, 20, 100)],
+  evidence: 'June 2024 Street View shows a white six-storey apartment block 56 m long behind a grey boundary wall on the east side of Lorong 6, lettered Crystal Mansions 3 LOR 6 on the wall: grey-framed bays of balconies with steel railings under arched gables, white bays with small windows and air-conditioning units, and bays of green panels under small grey gables, over a car park on columns. Google Maps lists Crystal Mansions, an apartment building, at 3 Lor 6 Geylang, Singapore 399165; its point lies 0.5 m outside source way 454274483 (tagged No. 3), so under the owner\'s answer to open question 32 the lettering names the block. The white script Crystal Mansions and 3 LOR 6 beside the pedestrian gate are redrawn in original type; triangulated from two panoramas, they stand 10.3-13.0 m along the front, north of the gate at about 13.6-14.5 m, on a boundary wall about 8 m in front of the source front, at the lane edge. The bay pattern repeats about every 14 m; it was read through heavy tree cover from five panoramas, and heights on the source plane carry about ±1.5 m. Only the north 13 m lies inside the study bounds.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Crystal+Mansions+3+Lorong+6+Geylang', way('454274483'), pano('RTP-AGnynpEu6-9T9lAxuA', 48, -4, 35), pano('w1P_X09EBE9Amq98c9OUiA', 100, 20, 100), pano('ME8QKQ0HaOO9CBheWmGPvQ', 70, 20, 100), pano('dFdi9EVX06KFJGLCcTOasg', 60, 20, 100)],
   colours: { wall: '#f0f0ee', trim: '#e2e2de', frame: '#4a4a48', glass: '#3d4446', pier: '#f0f0ee', back: '#3d3c3a', floor: '#8e8b85' },
   bands: [[22.35, 22.6, .3]],
   windows: cut(cmRow.windows, 0, W), blocks: cut(cmRow.blocks, 0, W),
   piers: range(.2, 56.2, 7.0).map(u => [u, r2(u + .4)]),
   backFittings: [{ name: 'car park', u: [.5, 56.1], h: [.1, 3.8], colour: '#3f3d3a' }],
+  board: { u: [10.2, 13.2], h: [1.2, 2.0], out: 8.14 },
 };
 
 export const ringSouth = [lexHotel, creamNorth, creamMiddle, creamSouth, pinkNorth, pinkSouth, lorong8Apartments, lorong6West, crystalMansions];

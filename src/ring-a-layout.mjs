@@ -264,11 +264,11 @@ export const sims126 = {
 // Arched openings under No. 128's board, with haunches either side of each crown.
 const arches = [[.53, 2.14], [2.41, 3.95], [4.9, 6.4]];
 export const sims128 = {
-  id: 'sims-128', buildingIds: ['682928765'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue', review: { distance: 2.8, pitch: 34 },
-  name: 'No. 128 Sims Avenue (June 2024 exterior, occupant not identified)', address: '128 Sims Avenue',
+  id: 'bamboo-lounge', buildingIds: ['682928765'], kind: 'bamboo-lounge', frontEdge: 4, reviewRoad: 'Sims Avenue', review: { distance: 2.8, pitch: 34 },
+  name: 'Bamboo Lounge 竹屋 (June 2024 exterior)', address: '128 Sims Avenue',
   height: 10.9, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a9a69e' },
-  evidence: 'The cream three-storey house west of the Lorong 17 corner building. June 2024 Street View shows two windows on each upper floor in tan surrounds under louvred vents, a projecting ledge between the floors, a narrow canopy over a black neon board reading Bamboo LOUNGE with Chinese characters, and three arched openings behind potted bamboo. Google Maps lists Bamboo Lounge, a bar, at 128 Sims Ave, but its point lies inside the way of No. 126 next door, so no name is given and the board is blank (open question 33). It photographs about 6.15 m wide against the 6.62 m source edge. ' + simsNote + ' Plants and the interior are not reconstructed.',
-  sources: simsSources('682928765'),
+  evidence: 'The cream three-storey house west of the Lorong 17 corner building. June 2024 Street View shows two windows on each upper floor in tan surrounds under louvred vents, a projecting ledge between the floors, a narrow canopy over a black neon board reading Bamboo LOUNGE with Chinese characters, and three arched openings behind potted bamboo. Google Maps lists Bamboo Lounge, a bar, at 128 Sims Ave, Singapore 387451. Its point lies inside the way of No. 126 next door, about 3 m out, the same shift as this row\'s photographed party lines; the address and the sign agree on No. 128, so under the owner\'s answer to open question 33 the board names it and is redrawn in original type. It photographs about 6.15 m wide against the 6.62 m source edge. ' + simsNote + ' Plants and the interior are not reconstructed.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Bamboo+Lounge+128+Sims+Avenue', ...simsSources('682928765')],
   colours: cream,
   bands: rowBands,
   windows: [[.49, 2.77], [4.06, 6.41]].map(u => ({ u, h: [8.5, 9.92], panes: 2, surround: true }))
@@ -276,13 +276,13 @@ export const sims128 = {
   vents: [{ u: [.59, 2.68], h: [10.14, 10.5] }, { u: [4.15, 6.24], h: [10.14, 10.5] }, { u: [.46, 2.61], h: [6.61, 7.04] }, { u: [3.89, 6.04], h: [6.61, 7.04] }],
   blocks: [
     { name: 'window canopy', u: [.05, 6.5], h: [4.66, 4.86], out: .3, depth: .6, colour: '#e8e2d2' },
-    { name: 'blank neon board', u: [.19, 6.5], h: [3.38, 4.29], out: .08, depth: .06, colour: '#2a2c2e' },
     ...arches.flatMap(([l, r]) => [
       { name: 'arch haunch', u: [l, l + .4], h: [2.9, 3.38], out: -.1, depth: .2, colour: '#e6dfcd' },
       { name: 'arch haunch', u: [r - .4, r], h: [2.9, 3.38], out: -.1, depth: .2, colour: '#e6dfcd' },
       { name: 'arch crown', u: [l, r], h: [3.22, 3.38], out: -.1, depth: .2, colour: '#e6dfcd' },
     ]),
   ],
+  board: { u: [.19, 6.5], h: [3.38, 4.29], out: .11 },
   piers: [[0, .53], [2.14, 2.41], [3.95, 4.9], [6.4, 6.619]],
   backFittings: [{ name: 'lounge front', u: [.5, 6.1], h: [.1, 2.9], colour: '#2e2a28', glow: .06 }],
 };

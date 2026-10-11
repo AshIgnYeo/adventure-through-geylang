@@ -39,16 +39,18 @@ test('the cream block is one elevation cut at the party walls of its three ways'
   assert.ok(creamSouth.blocks.some(b => b.name === 'balcony front') && !creamNorth.blocks.some(b => b.name === 'balcony front'));
 });
 
-test('only Lex Hotel carries a name, from a listing point inside No. 1 and its photographed sign', () => {
+test('Lex Hotel is named from a listing point inside No. 1; two more from their signs under open question 32', () => {
   assert.equal(landmarkFor('454438339').id, lexHotel.id);
   assert.equal(pointInPolygon(project([103.8771744, 1.3118091], map.origin), outline('454438339')), true);
+  const named = ['lex-hotel', 'engineering-merchants', 'crystal-mansions'];
   for (const place of ringSouth) {
-    if (place === lexHotel) continue;
+    if (named.includes(place.id)) { assert.equal(landmarkFor(place.buildingIds[0]).id, place.id); assert.equal(place.unnamed, undefined); continue; }
     assert.equal(place.unnamed, true);
     assert.equal(place.kind, 'unnamed');
     assert.equal(landmarkFor(place.buildingIds[0]), undefined);
   }
-  // The engineering merchants' association and Crystal Mansions are listed at points outside their ways.
+  // The engineering merchants' association and Crystal Mansions are listed at points just outside their ways.
   assert.equal(pointInPolygon(project([103.8770762, 1.3114672], map.origin), outline('454438338')), false);
   assert.equal(pointInPolygon(project([103.8765482, 1.3115573], map.origin), outline('454274483')), false);
+  for (const place of ringSouth.filter(p => named.slice(1).includes(p.id))) assert.match(place.evidence, /open question 32/);
 });

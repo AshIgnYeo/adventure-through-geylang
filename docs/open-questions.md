@@ -6,6 +6,25 @@ Started: 10 October 2026.
 
 ## Open
 
+None at present.
+
+## Settled
+
+### Fifth batch, answered 11 October 2026
+
+The project owner chose the recommended option for each.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 28 | **Yes.** Re-cut Geylang Road Nos. 217–229 at the triangulated party lines | Re-cut from the Lorong 7 corner pier; Nos. 223–227 moved onto their photographed houses; Gong He Guan named at No. 217 |
+| 29 | **Yes.** Re-split the ChongQingXiaoMian strip at 11.0 m, and move the row east of Lorong 12 north | The grey house gets its own strip; the row's front moves 4.8 m north if it clears Geylang Road's carriageway, and otherwise stays on the source front with the offset recorded |
+| 30 | **Yes.** Split way 454438326 into its three hotel blocks | Split at 13.3 m and 38.5 m as a labelled estimate; D'Nova Hotel and JXIN HOTEL named; the middle block stays unnamed |
+| 31 | **Yes.** Split way 454438320 at the tower/hotel line, and name the associations in 454438319 | Hotel 81 Cherry named on the hotel half; the Singapore Master Tailors' Association and the Chinese Eating House Owners' Association named as upper-floor premises |
+| 32 | **Yes.** Name the engineering merchants' association and Crystal Mansions from their signs | Pin offsets recorded in the evidence |
+| 33 | **Yes.** Name Bamboo Lounge on No. 128 from its sign | Pin offset recorded in the evidence |
+
+The original wording of questions 28–33 is kept here:
+
 33. **Sims Avenue No. 128: name Bamboo Lounge from its sign when the listing point falls next door?**
     - **Evidence:** in June 2024 the black neon board reading Bamboo LOUNGE hangs over three arched openings on No. 128 (way 682928765). Google Maps lists Bamboo Lounge, a bar, at 128 Sims Ave, but its point lies inside No. 126 (way 682928764). That way is the pale-blue house next door, about 3 m out at this row's known registration error.
     - **Current rule:** a listing point must lie inside the way, so No. 128 is unnamed.
@@ -47,8 +66,6 @@ Started: 10 October 2026.
     - **What happens now:** `gr-221-west` is rebuilt as photographed, unnamed with blank boards. The modelled Nos. 223–227 are unchanged.
     - **Recommendation:** yes. Re-cut source way 453797929 at the triangulated lines anchored on the Lorong 7 corner, re-target the Nos. 223–227 models to their photographed houses, and name **Gong He Guan** (listed at 217 Geylang Rd, a dessert restaurant, and signed) on its own strip. BBQ Home at No. 219 is permanently closed and stays unnamed.
     - **Unlocks:** correct house order on this stretch and one named place.
-
-## Settled
 
 ### Fourth batch, answered 10 October 2026
 
