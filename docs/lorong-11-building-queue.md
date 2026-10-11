@@ -964,3 +964,9 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - **Named after a listing check:** **Ya Ju Hotel 雅居酒店**, No. 12. YAJU HOTEL is listed, its point lies inside way 121873031, and its sign was photographed.
   - **Left unnamed until their ways are split (open question 31):** Hotel 81 - Cherry, whose point is in 454438320 alongside the apartment tower. Also the Singapore Master Tailors' Association (3C) and the Chinese Eating House Owners' Association (10C), whose points are both in 454438319.
 
+- **Lorongs 6 and 8, south of Geylang Road (`src/ring-south-layout.mjs`, built by the west-ring builder):** the edge ways left as generic blocks after the ring rebuild, because neither lane is modelled. They are seen down the lanes from Geylang Road, and their review starts stand in the lanes.
+  - **Lorong 8, east side:** **Lex Hotel 樂斯旅店** at No. 1 (named: the listing point lies inside way 454438339 and its sign was photographed); the cream four-storey block over a car park across Nos. 7A and 11A, cut from one elevation at its three ways' party walls; and the pink house at No. 17B across its two ways.
+  - **Lorong 8, west side:** the eight-storey apartment block in way 454438335, where the Maps address point for 6 Lor 8 Geylang lies.
+  - **Lorong 6:** the eight-storey block on the west side (way 454438334), and Crystal Mansions on the east side (way 454274483), drawn from a repeating 14 m bay pattern read through trees.
+  - **Method:** building ends and edges were triangulated from two June 2024 panoramas of each lane. Each building is kept on its source front, with the photographed elevation laid along it where the widths differ.
+  - **Left unnamed (open question 32):** the Singapore Engineering Merchants' Association, whose lettering is on the cream block but whose point lies in the lane, and Crystal Mansions, whose point lies 0.5 m outside its way.

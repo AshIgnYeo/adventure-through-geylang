@@ -214,7 +214,7 @@ export const ringWestFrame = (poly, place) => frontageFrame(poly, place.frontEdg
 export const ringWestLayout = (place, width) => simpleHouseLayout(width, place);
 // Buildings straddling the west edge are reviewed from an oblique start inside the walkable bounds.
 export const ringWestReviews = (place, frame) => {
-  if (!place.review) return facing(frame, place.id, 10, 18);
+  if (!place.review) return facing(frame, place.id, place.reviewDistance ?? 10, place.reviewPitch ?? 18);
   const p = frame.point(...place.review), t = frame.point(frame.width / 2, 0);
-  return [{ id: place.id, p, pitch: 18, yaw: Math.atan2(p[0] - t[0], p[1] - t[1]) * 180 / Math.PI }];
+  return [{ id: place.id, p, pitch: place.reviewPitch ?? 18, yaw: Math.atan2(p[0] - t[0], p[1] - t[1]) * 180 / Math.PI }];
 };

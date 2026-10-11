@@ -1,6 +1,7 @@
 import * as pc from 'playcanvas';
 import type { World, Point } from './world';
 import { ringWest, ringWestFrame, ringWestLayout, ringWestReviews } from './ring-west-layout.mjs';
+import { ringSouth } from './ring-south-layout.mjs';
 import { buildSimpleHouse, type Draw } from './simple-house';
 
 const text = (c: CanvasRenderingContext2D, t: string, x: number, y: number, size: number, colour: string, weight: string, family: string, maxWidth?: number) => {
@@ -13,11 +14,20 @@ const rozelBoard: Draw = (c, w, h) => {
   text(c, 'furniture', w / 2, h * .55, h * .12, '#f2ece2', '400', 'Georgia, serif');
   text(c, '一站式家具广场', w / 2, h * .82, h * .15, '#f2ece2', '600', '"PingFang SC", "Heiti SC", sans-serif', w * .9);
 };
-const draws: Record<string, { boards?: Draw[] }> = { 'rozel-furniture': { boards: [rozelBoard, rozelBoard] } };
+// Lex Hotel: orange characters standing on the canopy over the blue fascia lettering.
+const lexBoard: Draw = (c, w, h) => {
+  c.clearRect(0, 0, w, h); const band = h * .35;
+  c.fillStyle = '#2f6fb8'; c.fillRect(0, h - band, w, band);
+  text(c, 'LEX HOTEL LORONG 8', w / 2, h - band / 2, band * .62, '#f4f6fa', '700', '"Helvetica Neue", Arial, sans-serif', w * .94);
+  c.lineWidth = h * .025; c.strokeStyle = '#f4f6fa'; c.font = `900 ${Math.round(h * .5)}px "PingFang SC", "Heiti SC", sans-serif`; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.strokeText('樂斯旅店', w * .36, h * .33, w * .6); text(c, '樂斯旅店', w * .36, h * .33, h * .5, '#ef9a2a', '900', '"PingFang SC", "Heiti SC", sans-serif', w * .6);
+};
+const draws: Record<string, { boards?: Draw[] }> = { 'rozel-furniture': { boards: [rozelBoard, rozelBoard] }, 'lex-hotel': { boards: [lexBoard] } };
 
-/** June 2024 exteriors at the west end of the widened study area. */
+/** June 2024 exteriors at the west end of the widened study area, and on Lorongs 6 and 8 to its south. */
 export function buildRingWest(world: World, id: string, poly: Point[]) {
-  const place = ringWest.find(p => p.buildingIds.includes(id)) as any;
+  // The Lorong 6 and 8 exteriors (ring-south-layout) share this builder.
+  const place = [...ringWest, ...ringSouth].find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   if (place.massing) {
     // Plain walls and a flat roof, with no shopfront dressing.

@@ -6,6 +6,13 @@ Started: 10 October 2026.
 
 ## Open
 
+32. **Lorongs 6 and 8: name two buildings whose listing points fall just outside their ways?**
+    - **Singapore Engineering Merchants' Association:** listed at 11A Lor 8 Geylang. Its point lies in Lorong 8, 3 m west of the source front of way 454438338. June 2024 Street View shows its lettering 新加坡機器廠商公會 on the lowest balcony and 機商大廈 on the awnings of the cream block across ways 1223401727, 1223401726 and 454438338.
+    - **Crystal Mansions:** listed at 3 Lor 6 Geylang. Its point lies 0.5 m outside way 454274483 (tagged No. 3). The name and number are lettered on the block's boundary wall.
+    - **Current rule:** a listing point must lie inside the way, so both blocks are modelled unnamed and their lettering is not drawn.
+    - **Recommendation:** yes. Name the association as the occupant of the cream block's balcony section (way 454438338), where its lettering is, and name Crystal Mansions on its way, with the point offsets recorded.
+    - **Unlocks:** two named places.
+
 31. **Lorong 12 east side: split the shared ways 454438320 and 454438319?**
     - **Way 454438320:** it carries a white nine-storey apartment tower on its north 10.5 m and a lavender-blue four-storey hotel signed HOTEL 81 CHERRY on its south 10.3 m. Hotel 81 - Cherry is listed, with its point in the south half.
     - **Way 454438319:** it carries a cream three-storey pair that photographs 15 m wide against the 9 m way. The pair shows boards of the Singapore Master Tailors' Association (listed at 3C Lor 12) and the Chinese Eating House Owners' Association (listed at 10C Lor 12), with both points in the way. The unit addresses suggest upper-floor premises.
