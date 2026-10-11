@@ -6,6 +6,12 @@ Started: 10 October 2026.
 
 ## Open
 
+33. **Sims Avenue No. 128: name Bamboo Lounge from its sign when the listing point falls next door?**
+    - **Evidence:** in June 2024 the black neon board reading Bamboo LOUNGE hangs over three arched openings on No. 128 (way 682928765). Google Maps lists Bamboo Lounge, a bar, at 128 Sims Ave, but its point lies inside No. 126 (way 682928764). That way is the pale-blue house next door, about 3 m out at this row's known registration error.
+    - **Current rule:** a listing point must lie inside the way, so No. 128 is unnamed.
+    - **Recommendation:** yes. The address and the sign agree on No. 128, and the point's offset matches the row's measured 3 m shift.
+    - **Unlocks:** one named bar.
+
 32. **Lorongs 6 and 8: name two buildings whose listing points fall just outside their ways?**
     - **Singapore Engineering Merchants' Association:** listed at 11A Lor 8 Geylang. Its point lies in Lorong 8, 3 m west of the source front of way 454438338. June 2024 Street View shows its lettering 新加坡機器廠商公會 on the lowest balcony and 機商大廈 on the awnings of the cream block across ways 1223401727, 1223401726 and 454438338.
     - **Crystal Mansions:** listed at 3 Lor 6 Geylang. Its point lies 0.5 m outside way 454274483 (tagged No. 3). The name and number are lettered on the block's boundary wall.

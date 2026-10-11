@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ringA, ringAFrame, ringALayout, ringAReviews, ringASides } from '../src/ring-a-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
-import { assertFittings, assertReviews, assertClearOfCarriageway, building, outline } from './helpers.mjs';
+import { assertFittings, assertReviews, assertClearOfCarriageway, building, outline, map } from './helpers.mjs';
+import { pointInPolygon, project } from '../src/geo.mjs';
 
 test('the ring A exteriors fit their outlines and keep their review starts clear', () => {
   for (const place of ringA) {
@@ -11,11 +12,12 @@ test('the ring A exteriors fit their outlines and keep their review starts clear
     for (const side of ringASides(place, poly)) assertFittings(side.frame, poly, side.boxes);
     assertReviews(frame, ringAReviews(place, frame));
     assert.match(place.evidence, /(April|June) 2024/);
+    assert.ok(place.sources.some(s => s.includes(`way/${place.buildingIds[0]}`)));
+    if (place.id === 'bengal-kitchen') continue;
     // Unnamed exteriors carry no registered identity, and every sign is a blank block.
     assert.equal(place.kind, 'unnamed'); assert.equal(place.unnamed, true);
     assert.equal(landmarkFor(place.buildingIds[0]), undefined);
     assert.equal(place.board, undefined); assert.equal(place.boards, undefined); assert.equal(place.blades, undefined);
-    assert.ok(place.sources.some(s => s.includes(`way/${place.buildingIds[0]}`)));
   }
 });
 
@@ -27,7 +29,7 @@ test('street-level projections stay clear of the modelled carriageways', () => {
       const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
       // No. 2's source front itself reaches into the estimated Lorong 15 carriageway at its south end, so its
       // board, valance and awning are held within 0.25 m of the front instead.
-      if (place.id === 'l15-2') { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+      if (place.id === 'bengal-kitchen') { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); assert.ok(place.board.out <= .25); continue; }
       assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
     }
   }
@@ -44,4 +46,9 @@ test('each exterior stays on its source way and faces its street', () => {
   // The corner block's front is its splayed corner; the Geylang Road and Lorong 15 faces are side faces.
   const corner = ringA.find(p => p.id === 'gr-301');
   assert.deepEqual(ringASides(corner, outline('454254264')).map(s => s.edge), [3, 5]);
+});
+
+test('Bengal Kitchen is named from a listing point inside No. 2 and its photographed board', () => {
+  assert.equal(landmarkFor('454254234').id, 'bengal-kitchen');
+  assert.equal(pointInPolygon(project([103.8784329, 1.3129267], map.origin), outline('454254234')), true);
 });

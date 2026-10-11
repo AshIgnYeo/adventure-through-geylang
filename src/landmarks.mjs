@@ -60,6 +60,7 @@ import { rozel } from './ring-west-layout.mjs';
 import { ledgeBlock as jhHotel, no11 as nanyangFan } from './ring-c-layout.mjs';
 import { no12 as yajuHotel, summerView, westBlock as vintageAndVine } from './ring-b-layout.mjs';
 import { lexHotel } from './ring-south-layout.mjs';
+import { no2 as bengalKitchen } from './ring-a-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
@@ -71,6 +72,7 @@ export const landmarks = [
   { ...summerView },
   { ...vintageAndVine },
   { ...lexHotel },
+  { ...bengalKitchen },
   { ...thirteenBbq },
   { ...builderSmart },
   { ...teckHoe },

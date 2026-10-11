@@ -89,11 +89,11 @@ const lorong15Note = 'Lorong 15 has no June 2024 drive; the April 2024 panoramas
 // verandah photographs about 7.9 m wide on a plane 0.7 m behind the source front; laid on the 9.48 m source edge.
 const k2 = 9.477 / 7.9, u2 = s => +((s + .6) * k2).toFixed(2);
 export const no2 = {
-  id: 'l15-2', buildingIds: ['454254234'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 15 Geylang', review: { distance: 3, pitch: 24 },
-  name: 'No. 2 Lorong 15, verandah house with a set-back top storey (April 2024 exterior, occupant not identified)', address: '2 Lorong 15 Geylang',
+  id: 'bengal-kitchen', buildingIds: ['454254234'], kind: 'bengal-kitchen', frontEdge: 3, reviewRoad: 'Lorong 15 Geylang', review: { distance: 3, pitch: 24 },
+  name: 'Bengal Kitchen (April 2024 exterior)', address: '2 Lorong 15 Geylang',
   height: 7.1, ceiling: 4.25, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#6b6560' },
-  evidence: 'Source way 454254234 is tagged No. 2. April 2024 Street View shows a white two-storey house with an open first-floor verandah behind a solid parapet under a corrugated lean-to roof, and a white top storey with a glazed band under a metal roof set about 3 m back on its south half. An eating house fills the ground floor behind a red-and-white striped valance, a green board (reading BENGAL KITCHEN, with the address 2 Lorong 15 Geylang) and a deep maroon gas-supplier awning, with a blade sign above. The occupant was not matched to a listing in this pass, so no name is given and the board, valance, awning and blade are blank. The verandah edge and board ends were triangulated from two April 2024 panoramas: the front stands about 0.7 m behind the source front and the house photographs about 7.9 m wide against the 9.48 m source edge, so positions are scaled onto the source edge; the awning is kept shallow because the source front lies 3.5 m from the lorong\'s centreline. ' + lorong15Note,
-  sources: [way('454254234'), pano('j0nZRLW-MxVya_i7dxzbqQ', 80, 12, 80), pano('JkzvyVlpsRIrT46kkKGr6w', 40, 12, 80), pano('CmAFX4qNXE-oR382np4z9w', 95, 12, 80)],
+  evidence: 'Source way 454254234 is tagged No. 2. April 2024 Street View shows a white two-storey house with an open first-floor verandah behind a solid parapet under a corrugated lean-to roof, and a white top storey with a glazed band under a metal roof set about 3 m back on its south half. An eating house fills the ground floor behind a red-and-white striped valance, a green board (reading BENGAL KITCHEN, with the address 2 Lorong 15 Geylang) and a deep maroon gas-supplier awning, with a blade sign above. Google Maps lists Bengal Kitchen, a coffee shop open in October 2026, at 2 Lor 15 Geylang, Singapore 388596, with its point inside this source way, so the board names the eating house and is redrawn in original type; the valance, the gas supplier\'s awning and the blade stay blank, and no claim is made about the upper floors. The verandah edge and board ends were triangulated from two April 2024 panoramas: the front stands about 0.7 m behind the source front and the house photographs about 7.9 m wide against the 9.48 m source edge, so positions are scaled onto the source edge; the awning is kept shallow because the source front lies 3.5 m from the lorong\'s centreline. ' + lorong15Note,
+  sources: ['https://www.google.com/maps/search/?api=1&query=Bengal+Kitchen+2+Lorong+15+Geylang', way('454254234'), pano('j0nZRLW-MxVya_i7dxzbqQ', 80, 12, 80), pano('JkzvyVlpsRIrT46kkKGr6w', 40, 12, 80), pano('CmAFX4qNXE-oR382np4z9w', 95, 12, 80)],
   colours: { wall: '#ecebe4', trim: '#dddbd3', frame: '#3a3f42', glass: '#3e474b', pier: '#ecebe4', back: '#3a3532', floor: '#a19b90' },
   windows: [{ u: [6.9, 7.9], h: [5.25, 6.35], panes: 2 }],
   vents: [{ u: [6.9, 7.9], h: [6.45, 6.75] }],
@@ -106,8 +106,8 @@ export const no2 = {
     { name: 'top-storey metal roof', u: [u2(2.85) - .25, 9.477], h: [8.45, 8.7], out: -5.3, depth: 5.6, colour: '#7d8487' },
     { name: 'blank maroon awning', u: [0, 9.477], h: [1.95, 3.6], out: .17, depth: .1, colour: '#7a1f2a' },
     ...stripes('blank striped valance', [0, 9.477], [3.65, 4.25], .2, .04, ['#c8443a', '#f2f0ea']),
-    { name: 'blank green board', u: [u2(2.37), 9.3], h: [3.55, 4.35], out: .23, depth: .02, colour: '#4caf3c' },
   ],
+  board: { u: [u2(2.37), 9.3], h: [3.55, 4.35], out: .24 },
   piers: [[0, .25], [9.23, 9.477]],
   backFittings: [{ name: 'eating house', u: [.3, 9.2], h: [.1, 3.2], colour: '#3a332e', glow: .12 }],
 };
@@ -267,7 +267,7 @@ export const sims128 = {
   id: 'sims-128', buildingIds: ['682928765'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue', review: { distance: 2.8, pitch: 34 },
   name: 'No. 128 Sims Avenue (June 2024 exterior, occupant not identified)', address: '128 Sims Avenue',
   height: 10.9, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a9a69e' },
-  evidence: 'The cream three-storey house west of the Lorong 17 corner building. June 2024 Street View shows two windows on each upper floor in tan surrounds under louvred vents, a projecting ledge between the floors, a narrow canopy over a black neon board reading Bamboo LOUNGE with Chinese characters, and three arched openings behind potted bamboo. The lounge was not matched to a listing in this pass, so no name is given and the board is blank. It photographs about 6.15 m wide against the 6.62 m source edge. ' + simsNote + ' Plants and the interior are not reconstructed.',
+  evidence: 'The cream three-storey house west of the Lorong 17 corner building. June 2024 Street View shows two windows on each upper floor in tan surrounds under louvred vents, a projecting ledge between the floors, a narrow canopy over a black neon board reading Bamboo LOUNGE with Chinese characters, and three arched openings behind potted bamboo. Google Maps lists Bamboo Lounge, a bar, at 128 Sims Ave, but its point lies inside the way of No. 126 next door, so no name is given and the board is blank (open question 33). It photographs about 6.15 m wide against the 6.62 m source edge. ' + simsNote + ' Plants and the interior are not reconstructed.',
   sources: simsSources('682928765'),
   colours: cream,
   bands: rowBands,
@@ -291,7 +291,7 @@ export const sims130 = {
   id: 'sims-130', buildingIds: ['682928766'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue', review: { distance: 1.1, pitch: 40 },
   name: 'No. 130 Sims Avenue, Lorong 17 west corner (June 2024 exterior, occupant not identified)', address: '130 Sims Avenue (Lorong 17 corner)',
   height: 10.9, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a9a69e' },
-  evidence: 'The cream three-storey corner house on the west side of the Lorong 17 mouth; its splayed corner (edge 5) carries a projecting bay with circular-motif grilles and a glazed top storey over a yellow board reading 福满香 FULL HOUSE F&B. Its Sims Avenue face (edge 4, the front) shows two windows on each upper floor in tan surrounds under louvred vents, red-and-white striped awnings over the top-floor windows, and a blue awning over an eating house. The eating house was not matched to a listing in this pass, so no name is given; the board is not modelled and the awnings are plain. The Sims Avenue face photographs about 7.15 m wide against the 6.5 m source edge; the splayed corner and the Lorong 17 face (Lorong 17 is not modelled) are left as plain walls. ' + simsNote,
+  evidence: 'The cream three-storey corner house on the west side of the Lorong 17 mouth; its splayed corner (edge 5) carries a projecting bay with circular-motif grilles and a glazed top storey over a yellow board reading 福满香 FULL HOUSE F&B. Its Sims Avenue face (edge 4, the front) shows two windows on each upper floor in tan surrounds under louvred vents, red-and-white striped awnings over the top-floor windows, and a blue awning over an eating house. Google Maps lists Full House F&B, a coffee shop, at 128 Sims Ave, with its point beyond the study edge outside every source way, so no name is given; the board is not modelled and the awnings are plain. The Sims Avenue face photographs about 7.15 m wide against the 6.5 m source edge; the splayed corner and the Lorong 17 face (Lorong 17 is not modelled) are left as plain walls. ' + simsNote,
   sources: [...simsSources('682928766'), pano('F6D3qY_SnKVyp-erTxBPDA', 250, 15, 80)],
   colours: cream,
   bands: rowBands,
