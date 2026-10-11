@@ -1,6 +1,6 @@
 // June 2024 exteriors on Lorong 12 south of Geylang Road, in the widened study area (open question 26): the
-// east side from the back lane to No. 9 and the west side from the garden house to No. 12. Unnamed: signage is
-// recorded in the evidence, but no listing was checked in this pass, so no name is given and boards are blank.
+// east side from the back lane to No. 9 and the west side from the garden house to No. 12. Named only where a listing
+// point lies inside the way and its sign was photographed; signage elsewhere is recorded and the boards are blank.
 // Positions come from features triangulated from two or more June 2024 panoramas of one drive, whose positions
 // agree with the source fronts of Summer View and the hotel to about 1 m; heights are read on those planes.
 import { frontageFrame } from './gable-roof-layout.mjs';
@@ -22,7 +22,7 @@ export const towerHotel = {
   id: 'l12-tower-hotel', buildingIds: ['454438320'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 12 Geylang',
   name: 'White apartment tower and blue hotel, Lorong 12 Geylang east side (June 2024 exterior, occupants not named)', address: 'Lorong 12 Geylang, east side, first plot south of the back lane behind Geylang Road',
   height: 15.2, ceiling: 4.0, fiveFootWay: 1.2, roof: { type: 'flat', colour: '#9a9893' },
-  evidence: 'Source way 454438320 holds two buildings in June 2024 Street View. On the north 10.5 m stands a white nine-storey apartment tower of the 1970s-80s with glazed bay windows, curved balcony slabs and small side windows, behind a beige boundary wall and a front yard; its roof is about 29.8 m up, with a small roof structure to about 31.5 m. On the south 10.3 m stands a lavender-blue four-storey hotel with two windows per floor under white hoods, a raised parapet, a white band carrying a HOTEL 81 board over a blue entrance canopy and marble cladding, and a vertical HOTEL 81 CHERRY sign. The listing was not checked in this pass, so no name is given and the boards are blank. The tower edge was placed by a sightline from a third panorama along the back lane, and the hotel window pairs and the tower windows were matched between two June 2024 panoramas: the hotel stands 0.6-1.1 m in front of the source front and the tower 3.3-4.4 m behind it. Both are kept on the source front. Heights were read on those planes.',
+  evidence: 'Source way 454438320 holds two buildings in June 2024 Street View. On the north 10.5 m stands a white nine-storey apartment tower of the 1970s-80s with glazed bay windows, curved balcony slabs and small side windows, behind a beige boundary wall and a front yard; its roof is about 29.8 m up, with a small roof structure to about 31.5 m. On the south 10.3 m stands a lavender-blue four-storey hotel with two windows per floor under white hoods, a raised parapet, a white band carrying a HOTEL 81 board over a blue entrance canopy and marble cladding, and a vertical HOTEL 81 CHERRY sign. Hotel 81 - Cherry is listed with its point in the south half of this way, but the way also holds the apartment tower, so no name is given and the boards are blank until it is split (open question 31). The tower edge was placed by a sightline from a third panorama along the back lane, and the hotel window pairs and the tower windows were matched between two June 2024 panoramas: the hotel stands 0.6-1.1 m in front of the source front and the tower 3.3-4.4 m behind it. Both are kept on the source front. Heights were read on those planes.',
   sources: [way('454438320'), pano('559fKnpX1RXdwqncH_ARjg', 95, 25, 100), pano('Sj3p3C81JURiJj2JD8dEKQ', 70, 25, 100), pano('CZ9orFWlq7AVVaWKYcs0wA', 95, 25, 100), pano('yErHLkVzU3QvkD32ZvT1jA', 120, 20, 100)],
   colours: { wall: '#e8e7e1', trim: '#f1f0ec', frame: '#3d4446', glass: '#4a5654', pier: '#e8e7e1', back: '#3a3633', floor: '#a39b90' },
   windows: [
@@ -68,7 +68,7 @@ export const associationPair = {
   id: 'l12-pair', buildingIds: ['454438319'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 12 Geylang',
   name: 'Three-storey pair south of the blue hotel, Lorong 12 Geylang east side (June 2024 exterior, occupants not named)', address: 'Lorong 12 Geylang, east side, between the blue hotel and No. 5',
   height: 10.9, ceiling: 4.0, fiveFootWay: 1.8, roof: { type: 'gable', ridge: 12.2, colour: '#8d9296' },
-  evidence: 'June 2024 Street View shows a cream three-storey pair under a corrugated metal roof between the blue hotel and Summer View, hung with association boards: on the north house SINGAPORE MASTER TAILORS\' ASSOCIATION over a brown awning and a dark grilled balcony, and a beige PEK SAN CHEN LEAN TUAN board over the shopfront; on the south house a red banner, a clan society board, a timber lattice screen and a dark CHINESE EATING HOUSE OWNERS\' ASSOCIATION board. No listing was checked in this pass, so no name is given and the boards are blank. On a plane 2.1 m behind the source front, where three June 2024 panoramas agree, the pair is 15.0 m wide against the 9.05 m source way (it runs on over the gap to No. 5), so the elevation is laid out proportionally on the source front with heights as measured.',
+  evidence: 'June 2024 Street View shows a cream three-storey pair under a corrugated metal roof between the blue hotel and Summer View, hung with association boards: on the north house SINGAPORE MASTER TAILORS\' ASSOCIATION over a brown awning and a dark grilled balcony, and a beige PEK SAN CHEN LEAN TUAN board over the shopfront; on the south house a red banner, a clan society board, a timber lattice screen and a dark CHINESE EATING HOUSE OWNERS\' ASSOCIATION board. The Singapore Master Tailors\' Association (3C) and the Chinese Eating House Owners\' Association (10C) are listed with points inside this way, but their unit addresses suggest upper-floor premises in a pair that photographs wider than the way, so no name is given and the boards are blank (open question 31). On a plane 2.1 m behind the source front, where three June 2024 panoramas agree, the pair is 15.0 m wide against the 9.05 m source way (it runs on over the gap to No. 5), so the elevation is laid out proportionally on the source front with heights as measured.',
   sources: [way('454438319'), pano('lT3dORajjUiKfkr3nsCKHQ', 76, 15, 90), pano('ZFIGMrMwtbWEgbO3OXyNug', 40, 15, 90), pano('Sj3p3C81JURiJj2JD8dEKQ', 110, 15, 90)],
   colours: { wall: '#e8e3d3', trim: '#dfd9c7', frame: '#3a3a36', glass: '#3c4447', pier: '#e8e3d3', back: '#3a3633', floor: '#a39b90' },
   bands: [[10.7, 10.9, .5, '#9a9ea0'], [7.6, 7.8, .15], [4.0, 4.3, .2]],
@@ -99,11 +99,11 @@ export const associationPair = {
 // 1.5 m from the north corner, both on the source front; the pediment apex stands about 1.5 m behind it.
 const svRows = [[4.3, 6.4], [7.6, 9.6], [10.8, 12.7], [13.8, 15.8], [17.0, 18.8], [20.1, 22.1], [23.4, 25.5]];
 export const summerView = {
-  id: 'l12-5', buildingIds: ['121873028'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 12 Geylang',
-  name: 'Apartment block at No. 5 Lorong 12 Geylang (June 2024 exterior, not named)', address: '5 Lorong 12 Geylang',
+  id: 'summer-view', buildingIds: ['121873028'], kind: 'summer-view', frontEdge: 2, reviewRoad: 'Lorong 12 Geylang',
+  name: 'Summer View (June 2024 exterior)', address: '5 Lorong 12 Geylang',
   height: 27.0, ceiling: 3.5, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#a59d92' },
-  evidence: 'Source way 121873028 is tagged No. 5. June 2024 Street View shows an eight-storey apartment block with SUMMER VIEW lettering over its open car porch and a 5 on the gate pier: a mauve two-storey podium with diamond ornaments, cream upper floors, six window columns (wide windows at the ends, recessed balconies with green metal railings in the middle), and a raised centre with a small pediment. The development name is lettering on the building rather than a checked listing, so no name is given and no lettering is drawn. Triangulation puts its south end 0.8 m inside the source corner and its north roof corner 1.5 m from the north corner, both on the source front. Heights were read on that plane from three panoramas, scaled to the roof corner triangulated at about 27 m.',
-  sources: [way('121873028'), pano('ZFIGMrMwtbWEgbO3OXyNug', 110, 25, 90), pano('V6UiR_l1fs3yFV2A96qQOw', 100, 25, 90), pano('lT3dORajjUiKfkr3nsCKHQ', 120, 40, 60)],
+  evidence: 'Source way 121873028 is tagged No. 5. June 2024 Street View shows an eight-storey apartment block with SUMMER VIEW lettering over its open car porch and a 5 on the gate pier: a mauve two-storey podium with diamond ornaments, cream upper floors, six window columns (wide windows at the ends, recessed balconies with green metal railings in the middle), and a raised centre with a small pediment. Google Maps lists SUMMERVIEW, an apartment complex at 5B Lor 12 Geylang, Singapore 398986, with its point inside this source way, so the lettering names the block; it is redrawn in original type. Triangulation puts its south end 0.8 m inside the source corner and its north roof corner 1.5 m from the north corner, both on the source front. Heights were read on that plane from three panoramas, scaled to the roof corner triangulated at about 27 m.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Summerview+5B+Lorong+12+Geylang', way('121873028'), pano('ZFIGMrMwtbWEgbO3OXyNug', 110, 25, 90), pano('V6UiR_l1fs3yFV2A96qQOw', 100, 25, 90), pano('lT3dORajjUiKfkr3nsCKHQ', 120, 40, 60)],
   colours: { wall: '#e9dfcf', trim: '#efe7d9', frame: '#e8e6e0', glass: '#4a6a8a', pier: '#c9b4b0', back: '#3a3735', floor: '#a49e95' },
   bands: [[26.7, 27.0, .4], [10.1, 10.4, .3, '#b29b9b']],
   windows: [
@@ -120,6 +120,8 @@ export const summerView = {
     { name: 'pediment', u: [12.0, 14.8], h: [28.5, 29.4], out: -.3, depth: .6, colour: '#e9dfcf' },
     { name: 'pediment', u: [12.7, 14.1], h: [29.4, 30.3], out: -.3, depth: .6, colour: '#e9dfcf' },
   ],
+  // Raised bronze letters on the podium over the porch, centred on the north balcony column.
+  board: { u: [10.2, 12.5], h: [3.62, 3.95], out: .04 },
   piers: [[1.6, 2.0], [8.5, 8.9], [17.6, 18.0], [24.6, 25.0]],
   backFittings: [{ name: 'car porch', u: [2.0, 24.6], h: [.1, 3.3], colour: '#4a4440' }],
 };
@@ -170,11 +172,11 @@ export const gardenHouse = {
 // the 12.18 m source way; it is kept on the source front.
 const finU = [3.5, 4.6, 5.65, 6.45, 7.5, 8.6];
 export const westBlock = {
-  id: 'l12-west-block', buildingIds: ['1223129485'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 12 Geylang',
-  name: 'Four-storey block north of No. 12 Lorong 12 Geylang (June 2024 exterior, occupant not named)', address: 'Lorong 12 Geylang, west side, north of No. 12',
+  id: 'vintage-and-vine', buildingIds: ['1223129485'], kind: 'vintage-and-vine', frontEdge: 1, reviewRoad: 'Lorong 12 Geylang',
+  name: 'Vintage & Vine (June 2024 exterior)', address: '10 Lorong 12 Geylang',
   height: 12.4, ceiling: 4.0, fiveFootWay: 2.5, roof: { type: 'flat', colour: '#9c6e58' },
-  evidence: 'June 2024 Street View shows a white four-storey block of the 1960s-70s with a framed upper façade: six grey vertical fins over pairs of small windows in the middle, larger windows to each side under pale yellow sunshades, and a thin roof slab. The ground floor is recessed behind columns, with a VINTAGE & VINE board over a glazed shopfront and cars parked in front. The board names a shop rather than the building and no listing was checked, so no name is given and the board is blank. Matching the windows and fins between two June 2024 panoramas puts the façade 2.1 m in front of the source front and 12.3 m wide against the 12.18 m way; it is kept on the source front. Heights are the mean of the two panoramas, which differ by up to 1 m at the roof.',
-  sources: [way('1223129485'), pano('V6UiR_l1fs3yFV2A96qQOw', 265, 15, 100), pano('ZFIGMrMwtbWEgbO3OXyNug', 245, 15, 100), pano('XnM3pDsxaW6ZR15IbMPLlg', 290, 15, 100)],
+  evidence: 'June 2024 Street View shows a white four-storey block of the 1960s-70s with a framed upper façade: six grey vertical fins over pairs of small windows in the middle, larger windows to each side under pale yellow sunshades, and a thin roof slab. The ground floor is recessed behind columns, with a VINTAGE & VINE board over a glazed shopfront and cars parked in front. Google Maps lists Vintage & Vine, a fine wine and spirits wholesaler open in October 2026, at 10 Lor 12 Geylang, Singapore 398991, with its point inside this source way, so the board names the ground-floor shop; it is redrawn in original type. No claim is made about the upper floors. Matching the windows and fins between two June 2024 panoramas puts the façade 2.1 m in front of the source front and 12.3 m wide against the 12.18 m way; it is kept on the source front. Heights are the mean of the two panoramas, which differ by up to 1 m at the roof.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Vintage+%26+Vine+10+Lorong+12+Geylang', way('1223129485'), pano('V6UiR_l1fs3yFV2A96qQOw', 265, 15, 100), pano('ZFIGMrMwtbWEgbO3OXyNug', 245, 15, 100), pano('XnM3pDsxaW6ZR15IbMPLlg', 290, 15, 100)],
   colours: { wall: '#ecebe6', trim: '#ecebe6', frame: '#2e3234', glass: '#3c4649', pier: '#ecebe6', back: '#3a3735', floor: '#a39b90' },
   bands: [[12.0, 12.4, .8]],
   windows: [
@@ -189,10 +191,11 @@ export const westBlock = {
     { name: 'canopy', u: [0, 12.17], h: [3.75, 4.0], out: .7, depth: 1.4, colour: '#ecebe6' },
   ],
   piers: [[.4, .7], [11.5, 11.8]],
+  // The shop board over the glazing at the back of the recessed ground floor.
+  board: { u: [2.4, 6.4], h: [2.98, 3.6], out: -2.4 },
   backFittings: [
     { name: 'side door', u: [.6, 1.9], h: [.1, 2.4], colour: '#2a2a2a' },
     { name: 'shop glazing', u: [2.4, 6.4], h: [.1, 2.95], colour: '#3e474b', glow: .1 },
-    { name: 'blank shop board', u: [2.4, 5.4], h: [3.0, 3.55], out: .05, colour: '#2b2b2b' },
     { name: 'dark glazing', u: [6.4, 9.4], h: [.1, 3.5], colour: '#2a2f31' },
   ],
 };

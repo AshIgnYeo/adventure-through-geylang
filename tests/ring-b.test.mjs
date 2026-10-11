@@ -12,7 +12,7 @@ test('the Lorong 12 exteriors fit their outlines and keep their review starts cl
     assertReviews(frame, ringBReviews(place, frame));
     assert.match(place.evidence, /June 2024/);
     assert.ok(place.sources.some(s => s.includes(`openstreetmap.org/way/${place.buildingIds[0]}`)));
-    if (place.id === 'yaju-hotel') continue;
+    if (['yaju-hotel', 'summer-view', 'vintage-and-vine'].includes(place.id)) continue;
     // Unnamed exteriors carry no registered identity.
     assert.equal(place.unnamed, true);
     assert.equal(place.kind, 'unnamed');
@@ -52,4 +52,11 @@ test('Ya Ju Hotel is named from a listing point inside No. 12; the shared ways s
   assert.equal(pointInPolygon(project([103.8780663, 1.3114895], map.origin), outline('121873031')), true);
   // Hotel 81 Cherry and the two associations are listed in ways they share with other buildings.
   for (const id of ['454438320', '454438319']) assert.equal(landmarkFor(id), undefined);
+});
+
+test('Summer View and Vintage & Vine are named from listing points inside their ways', () => {
+  assert.equal(landmarkFor('121873028').id, 'summer-view');
+  assert.equal(pointInPolygon(project([103.8784113, 1.3117243], map.origin), outline('121873028')), true);
+  assert.equal(landmarkFor('1223129485').id, 'vintage-and-vine');
+  assert.equal(pointInPolygon(project([103.8781622, 1.311657], map.origin), outline('1223129485')), true);
 });
