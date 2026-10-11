@@ -5,6 +5,7 @@ import { buildLeongKeeSide, leongKeeTable } from './leong-kee-exterior';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
 import { buildAmrise } from './amrise';
 import { buildThyeSeng } from './thye-seng';
+import { buildMosque } from './mosque';
 
 export type FacadeFrame = { a: Point; dx: number; dz: number; nx: number; nz: number; width: number };
 
@@ -14,6 +15,7 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
   if (!place) return false;
   if (place.kind === 'thye-seng') return buildThyeSeng(world, f);
   if (place.kind === 'amrise') return buildAmrise(world, f);
+  if (place.kind === 'mosque') return buildMosque(world, f);
   const { a, dx, dz, nx, nz, width: w } = f;
   const angle = Math.atan2(nx, nz) * 180 / Math.PI;
   const pt = (u: number, d = 0): Point => [a[0] + dx * u + nx * d, a[1] + dz * u + nz * d];
@@ -29,93 +31,6 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     box('window mullion', u, y, .15, .045, height, .025, '#dde5e1');
     box('window sill', u, y - height / 2, .19, width + .18, .075, .32, '#ced8d6');
   };
-
-  if (place.kind === 'mosque') {
-    // The street elevation follows the licensed December 2020 photograph and
-    // the LearnIslam exterior. Fine ornament and dimensions are estimates.
-    const cream = '#ddd6b8', light = '#eee8d2', green = '#315f58', dark = '#243d3a', gold = '#b69550';
-    panel(0, w, .15, place.height, .025, world.mat(cream));
-
-    // Opaque ground-floor grille and a central arched entrance. No prayer hall
-    // or other private interior is represented behind these surfaces.
-    panel(w * .035, w * .93, .18, 3.15, .07, world.mat('#52635b'));
-    for (let i = 0; i <= 28; i++) box('mosque ground grille upright', w * (.035 + .93 * i / 28), 1.66, .13, .035, 2.96, .05, '#a7ad9d');
-    for (const y of [.55, 1.15, 1.78, 2.42, 3.1]) box('mosque ground grille rail', w / 2, y, .14, w * .93, .035, .05, '#a7ad9d');
-    for (const u of [.025, .31, .69, .975]) box('mosque ground pier', w * u, 1.72, .23, .34, 3.15, .45, cream);
-
-    const archFan = (name: string, centre: number, span: number, base: number, rise: number, d: number, colour: string) => {
-      const p = pt(centre, d), positions = [p[0], base, p[1]], indices: number[] = [];
-      for (let i = 0; i <= 20; i++) {
-        const t = Math.PI * i / 20, q = pt(centre + Math.cos(t) * span / 2, d);
-        positions.push(q[0], base + Math.sin(t) * rise, q[1]);
-        if (i) indices.push(0, i, i + 1);
-      }
-      const mat = world.mat(colour); mat.cull = pc.CULLFACE_NONE; mat.update();
-      world.mesh(name, positions, Array(positions.length / 3 * 2).fill(0), indices, mat);
-    };
-    const disc = (name: string, centre: number, y: number, radius: number, d: number, colour: string) => {
-      const p = pt(centre, d), positions = [p[0], y, p[1]], indices: number[] = [];
-      for (let i = 0; i <= 24; i++) {
-        const t = Math.PI * 2 * i / 24, q = pt(centre + Math.cos(t) * radius, d);
-        positions.push(q[0], y + Math.sin(t) * radius, q[1]);
-        if (i) indices.push(0, i, i + 1);
-      }
-      const mat = world.mat(colour); mat.cull = pc.CULLFACE_NONE; mat.update();
-      world.mesh(name, positions, Array(positions.length / 3 * 2).fill(0), indices, mat);
-    };
-    archFan('mosque entrance arch surround', w / 2, w * .36, 2.25, 2.35, .21, light);
-    archFan('mosque entrance arch glazing', w / 2, w * .29, 2.28, 1.90, .27, dark);
-    panel(w * .355, w * .29, .2, 2.36, .27, world.mat(dark));
-    for (const u of [.39, .445, .50, .555, .61]) box('mosque entrance mullion', w * u, 1.55, .31, .045, 2.65, .055, '#75837a');
-    box('mosque entrance transom', w / 2, 2.31, .31, w * .29, .05, .06, '#75837a');
-    sign('MASJID HAJI MOHD SALLEH', w * .34, w * .32, 3.77, .42, cream, green, .29);
-    box('mosque gold inscription band', w / 2, 4.37, .12, w * .29, .12, .20, gold);
-
-    // Deep green vertical screens frame the four central window bays.
-    for (const [start, span] of [[.025, .115], [.86, .115]]) {
-      panel(w * start, w * span, 3.55, 10.48, .10, world.mat(green));
-      for (let i = 1; i < 7; i++) box('mosque vertical screen fin', w * (start + span * i / 7), 7.02, .18, .055, 6.9, .12, '#79a091');
-      for (const y of [5.72, 8.05]) box('mosque screen rail', w * (start + span / 2), y, .18, w * span, .055, .12, '#244e49');
-    }
-    const centres = [.27, .42, .58, .73];
-    for (const centre of centres) {
-      const span = w * .095;
-      // Middle row is rectangular; the upper row has the observed rounded head.
-      panel(w * centre - span / 2, span, 4.62, 7.02, .10, world.mat('#365d5a'));
-      panel(w * centre - span / 2, span, 7.48, 9.55, .10, world.mat('#365d5a'));
-      archFan('mosque arched upper window', w * centre, span, 9.55, .56, .10, '#365d5a');
-      for (const y of [4.58, 7.05, 7.44]) box('mosque window sill', w * centre, y, .16, span + .18, .10, .28, light);
-      for (const u of [centre - .055, centre + .055]) box('mosque window jamb', w * u, 7.28, .14, .12, 5.55, .24, light);
-      box('mosque middle mullion', w * centre, 5.82, .15, .045, 2.4, .06, '#83978d');
-      box('mosque upper mullion', w * centre, 8.72, .15, .045, 2.5, .06, '#83978d');
-      for (const y of [5.43, 6.22, 8.22, 8.92]) box('mosque window transom', w * centre, y, .15, span, .035, .06, '#83978d');
-    }
-    for (const u of [.165, .835]) box('mosque tall pilaster', w * u, 7.15, .08, .44, 7.35, .24, light);
-    for (const y of [3.42, 7.25, 10.58]) box('mosque horizontal course', w / 2, y, .15, w * .72, .14, .34, light);
-
-    // Twin square towers and the central triangular gable are the distinctive
-    // skyline. Medallions are original geometric abstractions.
-    const gableStart = w * .39, gableEnd = w * .61, gablePeak = w / 2;
-    const oa = pt(w * .375, .08), ob = pt(w * .625, .08), op = pt(gablePeak, .08);
-    world.mesh('mosque gable roof trim', [oa[0], 10.48, oa[1], ob[0], 10.48, ob[1], op[0], 13.25, op[1]], [0, 1, 1, 1, .5, 0], [0, 1, 2], world.mat('#a76e54'));
-    const ga = pt(gableStart, .13), gb = pt(gableEnd, .13), gp = pt(gablePeak, .13);
-    world.mesh('mosque central gable', [ga[0], 10.58, ga[1], gb[0], 10.58, gb[1], gp[0], 13.08, gp[1]], [0, 1, 1, 1, .5, 0], [0, 1, 2], world.mat(cream));
-    archFan('mosque gable recess', w / 2, w * .12, 10.72, .95, .17, green);
-    for (const centre of [.105, .895]) {
-      box('mosque corner tower', w * centre, 11.77, .09, w * .13, 2.38, .34, cream);
-      box('mosque tower cap', w * centre, 13.02, .14, w * .145, .18, .42, light);
-      archFan('mosque tower dome', w * centre, w * .09, 13.08, .38, .18, light);
-      disc('mosque tower medallion', w * centre, 11.77, w * .038, .30, light);
-      for (let i = 0; i < 8; i++) {
-        const a = i * Math.PI / 4, u = w * centre + Math.cos(a) * w * .025;
-        box('mosque medallion ray', u, 11.74 + Math.sin(a) * .40, .32, .055, .42, .045, green).rotateLocal(0, 0, -i * 45);
-      }
-      box('mosque tower finial', w * centre, 13.34, .10, .12, .52, .12, gold);
-    }
-    box('mosque gable finial', w / 2, 13.37, .10, .11, .56, .11, gold);
-    box('mosque parapet coping', w / 2, 10.61, .11, w, .17, .34, light);
-    return true;
-  }
 
   if (place.kind === 'leong-kee') {
     // June 2024 operating frontage. The three signed bays are visually
@@ -145,6 +60,10 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     if (unit !== 1) {
       c.font = '600 142px serif'; c.fillText('梁記（巴生）肉骨茶', fascia.width / 2, 117, fascia.width * .92);
       c.font = '600 62px sans-serif'; c.fillText('LEONG KEE (KLANG) BAK KUT TEH', fascia.width / 2, 250, fascia.width * .92);
+    } else {
+      // The middle board, as photographed in June 2024 (open question 27).
+      c.font = '600 142px serif'; c.fillText('梁记沙煲田鸡粥', fascia.width / 2, 117, fascia.width * .92);
+      c.font = '600 62px sans-serif'; c.fillText('LEONG KEE CLAYPOT FROG PORRIDGE', fascia.width / 2, 250, fascia.width * .92);
     }
     const fasciaMat = new pc.StandardMaterial(); fasciaMat.diffuseMap = world.texture(fascia); fasciaMat.update();
     panel(.04, w - .08, 2.72, 3.63, .25, fasciaMat);
@@ -333,34 +252,49 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     for (const y of [3.03, 3.72, 3.88]) box('leow string course', w / 2, y, .15, w, .09, .31, frame);
     // The observed fascia is read right-to-left. Preserve its visual order.
     sign('會 公 氏 廖 屬 客 馬 星', .18, w - .36, 3.14, .47, '#e1dacc', '#a67e83', .18);
-    for (const centre of [.20, .50, .80]) {
-      const span = w * .24;
-      panel(w * centre - span / 2, span, 4.76, 6.47, .09, world.mat('#526567'));
-      for (const u of [centre - .125, centre, centre + .125]) box('leow upper window upright', w * u, 5.615, .16, .045, 1.78, .075, cream);
-      for (let i = 0; i <= 8; i++) box('leow window horizontal bar', w * centre, 4.76 + 1.71 * i / 8, .17, span, .035, .045, frame);
-      box('leow window sill', w * centre, 4.73, .16, span + .14, .10, .25, frame);
-      // Shallow cream arched head, faceted conservatively in the façade plane.
-      const base = pt(w * centre, .10), positions = [base[0], 6.90, base[1]], indices: number[] = [];
-      for (let i = 0; i <= 12; i++) {
-        const t = Math.PI * i / 12, p = pt(w * centre + Math.cos(t) * span / 2, .10);
-        positions.push(p[0], 6.90 + Math.sin(t) * .18, p[1]);
-        if (i) indices.push(0, i, i + 1);
+    // Upper storey re-measured on 10 October 2026 by triangulating two April 2024 panoramas: glazing
+    // 4.75-5.75 m, louvred transoms to about 6.2 m, arch crowns near 6.6 m, eave edge about 7.55 m.
+    // The three windows are about 1.0 m wide at 1.39 m centres.
+    const span = 1.02, step = 1.385, centres = [-1, 0, 1].map(k => w / 2 + k * step);
+    for (const c of centres) {
+      panel(c - span / 2, span, 4.76, 5.76, .09, world.mat('#526567'));
+      for (const u of [c - span / 2, c, c + span / 2]) box('leow upper window upright', u, 5.26, .16, .045, 1.0, .075, cream);
+      for (let i = 0; i <= 5; i++) box('leow window horizontal bar', c, 4.76 + i / 5, .17, span, .035, .045, frame);
+      box('leow window sill', c, 4.73, .16, span + .14, .10, .25, frame);
+      panel(c - span / 2, span, 5.76, 6.22, .10, world.mat(cream));
+      for (const offset of [-.25, .25]) for (const y of [5.88, 5.98, 6.08]) box('leow transom vent', c + offset, y, .13, .36, .04, .025, '#757e65');
+      // Shallow cream arched head inside a green moulded arch, faceted in the façade plane.
+      for (const [rise, half, d, colour] of [[.48, span / 2 + .1, .085, '#8fa364'], [.38, span / 2, .10, cream]] as const) {
+        const base = pt(c, d), positions = [base[0], 6.22, base[1]], indices: number[] = [];
+        for (let i = 0; i <= 12; i++) {
+          const t = Math.PI * i / 12, p = pt(c + Math.cos(t) * half, d);
+          positions.push(p[0], 6.22 + Math.sin(t) * rise, p[1]);
+          if (i) indices.push(0, i, i + 1);
+        }
+        world.mesh('leow arched window head', positions, Array(positions.length / 3 * 2).fill(0), indices, world.mat(colour));
       }
-      panel(w * centre - span / 2, span, 6.47, 6.90, .10, world.mat(cream));
-      world.mesh('leow arched window head', positions, Array(positions.length / 3 * 2).fill(0), indices, world.mat(cream));
-      for (const offset of [-.27, .27]) for (const y of [6.60, 6.76]) box('leow transom vent', w * centre + offset, y, .13, .35, .045, .025, '#757e65');
     }
-    // Abstract blue/ivory tile fields preserve placement, not historic motifs.
-    for (const centre of [.20, .80]) {
-      panel(w * centre - w * .12, w * .24, 4.07, 4.58, .08, world.mat('#608e88'));
+    // Abstract blue/ivory tile fields under the outer windows preserve placement, not historic motifs.
+    for (const c of [centres[0], centres[2]]) {
+      panel(c - .45, .9, 4.07, 4.58, .08, world.mat('#608e88'));
       for (let row = 0; row < 2; row++) for (let col = 0; col < 5; col++) {
-        box('leow tile motif', w * (centre - .096 + col * .048), 4.19 + row * .23, .105, .10, .10, .025, '#e1d8b4').rotateLocal(0, 0, 45);
+        box('leow tile motif', c + (col - 2) * .17, 4.19 + row * .23, .105, .10, .10, .025, '#e1d8b4').rotateLocal(0, 0, 45);
       }
     }
-    for (const u of [.05, .35, .65, .95]) box('leow upper pilaster', w * u, 5.58, .12, w * .045, 3.08, .17, cream);
-    box('leow green frieze', w / 2, 7.28, .11, w, .21, .23, green);
-    for (let u = .12; u < w; u += .25) box('leow cornice dentil', u, 7.48, .21, .10, .18, .24, green);
-    box('leow eaves', w / 2, 7.71, .25, w, .15, .58, frame);
+    // Tiled pilasters between and beside the windows, with capitals under the arch springing.
+    const pilasters = [w / 2 - 2.075, w / 2 - step / 2, w / 2 + step / 2, w / 2 + 2.075];
+    for (const u of pilasters) {
+      box('leow upper pilaster', u, 5.0, .12, .3, 2.0, .17, cream);
+      box('leow pilaster capital', u, 6.085, .14, .38, .27, .21, cream);
+      for (let y = 4.8; y < 5.8; y += .125) box('leow pilaster tile', u, y, .215, .08, .08, .02, '#d4b3a6').rotateLocal(0, 0, 45);
+      // Round medallion in the green relief above each capital.
+      for (const turn of [0, 45]) box('leow frieze medallion', u, 6.6, .13, .2, .2, .05, '#c6d29f').rotateLocal(0, 0, turn);
+    }
+    box('leow frieze moulding', w / 2, 6.86, .13, w, .08, .26, '#8a9d5e');
+    for (let u = .12; u < w; u += .25) box('leow cornice dentil', u, 7.02, .17, .10, .16, .2, green);
+    box('leow cornice', w / 2, 7.24, .17, w, .2, .34, green);
+    box('leow eaves', w / 2, 7.46, .32, w, .1, .7, frame);
+    box('leow gutter', w / 2, 7.52, .66, w, .12, .1, green);
     return true;
   }
 
@@ -502,23 +436,25 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     const blue = '#a9c9df', trim = '#dae3e7';
     panel(0, w, 3.25, place.height, .015, world.mat(blue));
     box('lift and stair tower', w * .22, place.height / 2, -.2, w * .34, place.height, .32, blue);
+    // Re-measured 10 October 2026 from rectified April 2024 frames: seven window storeys at 3.53 m centres from 5.8 m.
     for (let floor = 0; floor < 7; floor++) {
-      const y = 4.75 + floor * 2.8;
+      const y = 5.8 + floor * 3.53;
       window(w * .13, y, w * .105, 1.7);
       window(w * .28, y, w * .105, 1.7);
       for (const u of [.55, .77]) window(w * u, y, w * .105, 1.35);
       for (const u of [.44, .92]) window(w * u, y + .42, .48, .48);
       box('projecting horizontal band', w * .69, y - 1.1, .3, w * .61, .38, .65, blue);
     }
-    for (const u of [.055, .205, .37]) box('vertical stair fin', w * u, 13.8, .32, .16, 21.4, .62, trim);
+    for (const u of [.055, .205, .37]) box('vertical stair fin', w * u, (place.height - .6) / 2 + .3, .32, .16, place.height - .6, .62, trim);
     box('hotel parapet', w / 2, place.height + .17, .1, w + .2, .36, .7, trim);
     box('entrance pier', w - .23, 1.6, .05, .46, 3.2, .8, blue);
     box('covered driveway ceiling', w * .69, 3.15, 1.7, w * .61, .22, 4, blue);
     panel(w * .4, w * .58, .15, 3.05, -.2, world.mat('#263c45'));
     box('courtyard paving', w / 2, .08, 3.3, w, .12, 6.5, '#929e9f');
     box('low entrance wall', w * .17, .72, 5.5, w * .34, 1.45, .28, blue);
-    sign('HOTEL 81', .12, w * .32, 1.43, .64, '#288799', '#ffffff', 5.67);
-    sign('JOY · 11', .12, w * .32, 1.1, .27, '#dbe6e9', '#34566e', 5.67);
+    sign('HOTEL 81', 2.1, w * .26, 2.0, .64, '#288799', '#ffffff', 5.67);
+    sign('JOY · 11', 2.1, w * .26, 1.67, .27, '#dbe6e9', '#34566e', 5.67);
+    box('sign pier', 2.1 + w * .13, 1.0, 5.4, w * .27, 2.0, .3, blue);
     for (const u of [.035, .965]) box('courtyard boundary wall', w * u, 1.05, 3.2, .16, 2.1, 6.3, blue);
     box('driveway yellow edge', w * .72, .151, 3.2, .08, .014, 6.2, '#bda150');
     return true;
@@ -549,23 +485,6 @@ export function buildLandmark(world: World, id: string, f: FacadeFrame, atlas: p
     return true;
   }
 
-  // Address-confirmed eating house. Its detailed exterior remains explicitly provisional.
-  panel(0, w, 3.2, place.height, .015, world.mat('#d4d1bd'));
-  for (const u of [.2, .5, .8]) window(w * u, 5.3, w * .2, 1.55);
-  panel(0, w, .15, 3.2, -.12, world.mat('#2b3431'));
-  box('eating-house fascia', w / 2, 3.04, 2.3, w, .74, .28, '#e0d6b6');
-  sign('六福啦啦煲', .15, w - .3, 2.94, .47, '#d7c59a', '#423d32', 2.45);
-  sign('LOK FU LALA POT', .25, w - .5, 2.7, .23, '#d7c59a', '#423d32', 2.45);
-  box('eating-house canopy', w / 2, 2.62, 1.25, w, .14, 2.5, '#798875');
-  for (const u of [.1, w - .1]) box('canopy support', u, 1.3, 2.3, .085, 2.6, .085, '#b5beb3');
-  box('fluorescent strip', w / 2, 2.46, .7, w * .7, .055, .09, '#e4e1c9', 1);
-  for (const u of [w * .28, w * .72]) {
-    box('table top', u, .76, 1.05, .8, .065, .75, '#c5c3b6');
-    box('table pedestal', u, .4, 1.05, .09, .7, .09, '#5e6560');
-    for (const offset of [-.55, .55]) {
-      box('plastic stool', u + offset, .45, 1.07, .34, .09, .34, '#9e3d32');
-      for (const leg of [-.12, .12]) box('stool legs', u + offset + leg, .22, 1.07, .055, .44, .25, '#8c3930');
-    }
-  }
-  return true;
+  // The provisional Lok Fu Lala Pot fallback was retired on 10 October 2026: No. 38 is now the measured Guan Keat model.
+  return false;
 }

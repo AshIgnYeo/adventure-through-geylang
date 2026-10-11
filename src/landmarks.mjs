@@ -2,7 +2,7 @@
 // Reference photographs are not guaranteed to depict the present-day tenancy.
 import { nearestOnSegment } from './geo.mjs';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
-import { mongkok } from './mongkok-layout.mjs';
+import { mongkok, nanyangDentist, shaxianEatery } from './mongkok-layout.mjs';
 import { frogPorridge } from './frog-porridge-layout.mjs';
 import { amrise } from './amrise-layout.mjs';
 import { thyeSeng } from './thye-seng-layout.mjs';
@@ -28,10 +28,108 @@ import { lannaThai } from './lanna-thai-layout.mjs';
 import { jiangsu } from './jiangsu-layout.mjs';
 import { liuDaMa } from './liu-da-ma-layout.mjs';
 import { muhammadiyah } from './muhammadiyah-layout.mjs';
+import { fsl } from './fsl-layout.mjs';
+import { barLorong13 } from './bar-lorong-13-layout.mjs';
+import { chenHing } from './chen-hing-layout.mjs';
+import { aiSecurity } from './aisecurity-layout.mjs';
+import { misterContracts } from './mister-contracts-layout.mjs';
+import { engLeeHuat } from './eng-lee-huat-layout.mjs';
+import { goodwood } from './goodwood-layout.mjs';
+import { tbss } from './tbss-layout.mjs';
+import { zhengLi } from './zheng-li-layout.mjs';
+import { tingYuXuan, keLaiShun, instyle, mobileTime, shiHao } from './geylang-row-layout.mjs';
+import { beefKwayTeow } from './beef-kway-teow-layout.mjs';
+import { watDhammasatis } from './wat-dhammasatis-layout.mjs';
+import { redDot } from './red-dot-layout.mjs';
+import { guanKeat } from './guan-keat-layout.mjs';
+import { mingLi } from './ming-li-layout.mjs';
+import { hotel81Spring } from './hotel-81-spring-layout.mjs';
+import { pfcs } from './pfcs-layout.mjs';
+import { cico } from './cico-layout.mjs';
+import { gemsVille } from './gems-ville-layout.mjs';
+import { thirteenBbq, builderSmart, teckHoe, wunderfolks } from './lorong-13-layout.mjs';
+import { yapSun, builderSmartSims } from './sims-south-layout.mjs';
+import { lianSeng } from './geylang-north-layout.mjs';
+import { monsterInk, shadowTattoo, nanyangLian, tianTian, takeToys, chongQing } from './geylang-south-layout.mjs';
+import { sinChewTan, teckKeow, hongShengKoon, shipChandlers, aecc } from './lorong-15-layout.mjs';
+import { ibisGold } from './ibis-gold-layout.mjs';
+import { redFlagDavco, yiXiu, shiCheng } from './sims-north-row-layout.mjs';
+import { ywam, kimCourt, theDiamond } from './lorong-9-layout.mjs';
+import { mosqueElevation } from './mosque-layout.mjs';
+import { rozel, gongHeGuan } from './ring-west-layout.mjs';
+import { ledgeBlock as jhHotel, no11 as nanyangFan, dNovaHotel, jxinHotel } from './ring-c-layout.mjs';
+import { no12 as yajuHotel, summerView, westBlock as vintageAndVine, hotel81Cherry, masterTailors, chineseEatingHouse } from './ring-b-layout.mjs';
+import { lexHotel, creamSouth as engineeringMerchants, crystalMansions } from './ring-south-layout.mjs';
+import { no2 as bengalKitchen, sims128 as bambooLounge } from './ring-a-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
-export const partialBlockLandmarks = [mongkok];
+export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
 export const landmarks = [
+  { ...rozel },
+  { ...gongHeGuan },
+  { ...jhHotel },
+  { ...nanyangFan },
+  { ...dNovaHotel },
+  { ...jxinHotel },
+  { ...yajuHotel },
+  { ...summerView },
+  { ...vintageAndVine },
+  { ...hotel81Cherry },
+  { ...masterTailors },
+  { ...chineseEatingHouse },
+  { ...lexHotel },
+  { ...bengalKitchen },
+  { ...bambooLounge },
+  { ...engineeringMerchants },
+  { ...crystalMansions },
+  { ...thirteenBbq },
+  { ...builderSmart },
+  { ...teckHoe },
+  { ...wunderfolks },
+  { ...yapSun },
+  { ...builderSmartSims },
+  { ...lianSeng },
+  { ...monsterInk },
+  { ...shadowTattoo },
+  { ...nanyangLian },
+  { ...tianTian },
+  { ...takeToys },
+  { ...chongQing },
+  { ...sinChewTan },
+  { ...teckKeow },
+  { ...hongShengKoon },
+  { ...shipChandlers },
+  { ...aecc },
+  { ...ibisGold },
+  { ...redFlagDavco },
+  { ...yiXiu },
+  { ...shiCheng },
+  { ...ywam },
+  { ...kimCourt },
+  { ...theDiamond },
+  { ...gemsVille },
+  { ...cico },
+  { ...pfcs },
+  { ...hotel81Spring },
+  { ...mingLi },
+  { ...guanKeat },
+  { ...redDot },
+  { ...watDhammasatis },
+  { ...beefKwayTeow },
+  { ...tingYuXuan },
+  { ...keLaiShun },
+  { ...instyle },
+  { ...mobileTime },
+  { ...shiHao },
+  { ...zhengLi },
+  { ...goodwood },
+  { ...tbss },
+  { ...engLeeHuat },
+  { ...misterContracts },
+  { ...aiSecurity },
+  { ...chenHing },
+  { ...barLorong13 },
+  { ...fsl },
   { ...muhammadiyah },
   { ...liuDaMa },
   { ...jiangsu },
@@ -60,22 +158,25 @@ export const landmarks = [
   { ...amrise, reviewOffset: 0, reviewBuildingId: '682928750' },
   { ...frogPorridge, frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 0, reviewBuildingId: '453797927' },
   {
-    id: 'haji-mohd-salleh-mosque', buildingIds: ['454254204'], kind: 'mosque',
-    name: 'Masjid Haji Mohd Salleh (Geylang)', address: '245 Geylang Road', height: 11.35,
-    frontEdge: 2, reviewRoad: 'Geylang Road', reviewOffset: 6,
-    evidence: 'MUIS confirms the mosque name, No. 245 address and present building, opened in 1999 after rebuilding. The retained source footprint independently carries the same name, address and mosque use. A licensed December 2020 front photograph and the LearnIslam exterior show the cream-and-green street elevation, central arch, four upper window bays, twin corner towers and central gable. Dimensions and fine ornament are estimated. The official four-storey description and mapped three-level tag are recorded without inventing an unseen floor division; no interior is reconstructed.',
+    id: 'haji-mohd-salleh-mosque', buildingIds: ['gr-245'], kind: 'mosque',
+    name: 'Masjid Haji Mohd Salleh (Geylang) (June 2024 exterior)', address: '245 Geylang Road', height: mosqueElevation.height,
+    frontEdge: 0, reviewRoad: 'Geylang Road', reviewOffset: 8,
+    evidence: 'MUIS confirms the mosque name, No. 245 address and present building, opened in 1999 after rebuilding. The retained source footprint independently carries the same name, address and mosque use. June 2024 Street View shows four storeys in an orange frame with cream recessed panels: four window bays, the second-storey arch lettered MASJID HAJI MOHD SALLEH under the Arabic name, a green louvred screen at the west, open stair fins at the east, and two calligraphy towers and a tiled gable set back above the parapet. Re-measured on 10 October 2026 by triangulating three June 2024 panoramas: the photographed front is about 20.3 m wide and runs parallel to Geylang Road, about 8 degrees off the 22.46 m source front, with its parapet about 15.8 m above the façade base; the towers stand about 2.5 m back and rise to domes near 21.5 m, and the gable peak, about 4.8 m back, reaches about 22 m. Since open question 25 the model stands on an authored footprint (gr-245) whose front follows the photographed façade, keeping the source west and rear lines and leaving the source strip of about 2 m beside Shan Yuan Tang as an open yard; the source way 454254204 is retained as provenance. Fine ornament, roof depth and the lettering font are estimates; no interior is reconstructed.',
     sources: [
       'https://www.muis.gov.sg/community/mosque/mosque-directory/haji-mohd-salleh--g/',
       'https://learnislam.sg/mosque/haji-mohd-salleh-mosque-geylang/',
       'https://commons.wikimedia.org/wiki/File:Masjid_Haji_Mohd_Salleh.jpg',
       'https://www.openstreetmap.org/way/454254204',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=ZvONx9MbvuKGcqhHe87DTQ&heading=348&pitch=20&fov=100',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=SE7V8xC8dISjOl-1xdIR9A&heading=23&pitch=20&fov=100',
+      'https://www.google.com/maps/@?api=1&map_action=pano&pano=yLxdM90ecueaqOeXgMp-2g&heading=312&pitch=20&fov=100',
     ],
   },
   {
     id: 'leong-kee', buildingIds: ['454254214', '454254213', '454254212'], kind: 'leong-kee',
     name: 'Leong Kee (Klang) Bak Kut Teh (June 2024 exterior)', address: '251 Geylang Road', height: leongKeeExterior.eaves,
     frontEdge: 2, reviewBuildingId: '454254213', reviewRoad: 'Geylang Road',
-    evidence: 'The operator website lists 251 Geylang Road. June 2024 Street View shows the corner coffeeshop and yellow fascias across three visible bays immediately east of Lorong 11, opposite Shan Yuan Tang; Leong Kee appears on the outer boards, while the middle board has different stall wording and is left neutral. The Google Maps place point lies inside middle source footprint 454254213. The three-bay visual assignment is provisional because source ways lack address tags; it does not establish that all three are numbered 251. Exterior reconstruction without asserting ownership, tenancy boundaries or private interior extent. Dimensions and fine ornament are estimated.',
+    evidence: 'The operator website lists 251 Geylang Road. June 2024 Street View shows the corner coffeeshop and yellow fascias across three visible bays immediately east of Lorong 11, opposite Shan Yuan Tang; Leong Kee appears on all three boards: the outer two read 梁记(巴生)肉骨茶 LEONG KEE (KLANG) BAK KUT TEH, and the middle one 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE, drawn as photographed since 10 October 2026 (open question 27). The Google Maps place point lies inside middle source footprint 454254213. The three-bay visual assignment is provisional because source ways lack address tags; it does not establish that all three are numbered 251. Exterior reconstruction without asserting ownership, tenancy boundaries or private interior extent. Dimensions and fine ornament are estimated.',
     sources: [
       'https://leongkee.com.sg/',
       'https://www.google.com/maps/@?api=1&map_action=pano&pano=x9pb4XARIUjp2Lxgfw5uyg&heading=355&pitch=4&fov=75',
@@ -96,8 +197,8 @@ export const landmarks = [
   },
   {
     id: 'hotel-81-joy', buildingIds: ['454274491'], kind: 'hotel',
-    name: 'Hotel 81 Joy', address: '11 Lorong 11 Geylang', height: 24.5,
-    evidence: 'Official operator address and exterior photographs. Height estimated from photographs.',
+    name: 'Hotel 81 Joy', address: '11 Lorong 11 Geylang', height: 31.0,
+    evidence: 'Official operator address and exterior photographs. Re-measured on 10 October 2026 (open question 13) from April 2024 Lorong 11 panoramas rectified on the tower front: seven window storeys at about 3.53 m centres from 5.8 m above an open car porch, and a roof edge at about 31 m (the earlier estimate was 24.5 m with 2.8 m storeys). Window columns, the stair fins and the forecourt sign position were checked by render-and-compare; the stepped balcony bands remain simplified.',
     sources: ['https://www.wwhotels.com/hotel-81/joy/'],
   },
   {
@@ -112,19 +213,13 @@ export const landmarks = [
     ],
   },
   {
-    id: 'hok-tek-chi', buildingIds: ['1223407885'], kind: 'association',
+    id: 'hok-tek-chi', buildingIds: ['l11w-17'], kind: 'association',
     name: 'Hok Tek Chi Loke Yah Teng Association', address: '17 Lorong 11 Geylang', height: 7.8,
-    evidence: 'URA exterior photograph and 2026 reporting confirm a pink conserved shophouse. Reconstructed façade, not a freestanding temple.',
+    evidence: 'URA exterior photograph and 2026 reporting confirm a pink conserved shophouse. Reconstructed façade, not a freestanding temple. Since 10 October 2026 it stands on the owner-approved re-spaced No. 17 footprint (5.2 m, measured), replacing source way 1223407885 (6.42 m).',
     sources: [
       'https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00334/',
       'https://www.zaobao.com.sg/news/singapore/story20260125-8151043',
     ],
-  },
-  {
-    id: 'lok-fu', buildingIds: ['1223250209'], kind: 'eating-house',
-    name: 'Lok Fu Lala Pot', address: '38 Lorong 11 Geylang', height: 7.2,
-    evidence: 'Address and outdoor seating confirmed by restaurant listing. Exterior, colours, sign design and furniture layout remain illustrative pending street photographs.',
-    sources: ['https://www.quandoo.sg/place/lok-fu-lala-pot-106960/about'],
   },
   {
     id: 'faith-mission-home', buildingIds: ['1223250210'], kind: 'faith-mission',
@@ -158,17 +253,17 @@ export const landmarks = [
   },
   {
     id: 'sm-khek-leow', buildingIds: ['1223250215'], kind: 'khek-leow',
-    name: 'S.M. Khek Leow Clan Association', address: '4 Lorong 11 Geylang', height: 7.8,
-    evidence: 'SFCCA address corroborated by the mapped association point inside No. 4 and its visible name in April 2024 Google Street View. Single-frontage reconstruction with estimated dimensions and simplified ornament. Current condition and legal extent unverified; neighbouring Agape footprints are excluded.',
+    name: 'S.M. Khek Leow Clan Association', address: '4 Lorong 11 Geylang', height: 7.6,
+    evidence: 'SFCCA address corroborated by the mapped association point inside No. 4 and its visible name in April 2024 Google Street View. Single-frontage reconstruction with simplified ornament; the upper-storey heights were triangulated from two April 2024 panoramas on 10 October 2026, and other dimensions are estimates. Current condition and legal extent unverified; neighbouring Agape footprints are excluded.',
     sources: [
       'https://sfcca.sg/en/our-members/',
       'https://www.google.com/maps/@?api=1&map_action=pano&pano=ifUFTPmGn1-kOv6waVHktw&heading=70&pitch=15&fov=75',
     ],
   },
   {
-    id: 'canton-wong', buildingIds: ['1223407878'], kind: 'canton-wong',
+    id: 'canton-wong', buildingIds: ['l11w-31'], kind: 'canton-wong',
     name: 'Canton Wong Clan Association (April 2024 exterior)', address: '31A Lorong 11 Geylang', height: 7.9,
-    evidence: 'SFCCA lists 31A; April 2024 Street View shows the association upper-storey sign and stair entrance beside visible No. 29, supporting the No. 31 source footprint. Association-specific detail is limited to the upper storey and stair entrance; the separate ground-floor shop is neutral. Dimensions estimated. The displaced Maps place point is rejected; current condition and legal extent remain unverified.',
+    evidence: 'SFCCA lists 31A; April 2024 Street View shows the association upper-storey sign and stair entrance beside visible No. 29, supporting the No. 31 source footprint. Association-specific detail is limited to the upper storey and stair entrance; the separate ground-floor shop is neutral. Dimensions estimated. The displaced Maps place point is rejected; current condition and legal extent remain unverified. Since 10 October 2026 it stands on the owner-approved re-spaced No. 31 footprint (3.7 m, measured), replacing source way 1223407878 (6.41 m); the measured row adds No. 29A to its south.',
     sources: [
       'https://sfcca.sg/en/our-members/',
       'https://www.szetoclan.sg/wp-content/uploads/2025/02/V14_SFCCA-%E4%BC%9A%E5%91%98%E6%89%8B%E5%86%8C-2024-2027.pdf',

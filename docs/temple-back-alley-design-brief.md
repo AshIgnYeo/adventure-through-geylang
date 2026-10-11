@@ -59,4 +59,4 @@ Automated checks cover exact path/footprint coordinates against the retained XML
 
 ## Future model gate
 
-Before any later building or geometry work, explicitly verify that the active model is **GPT-6 Astra**, as requested by the user. This requirement remains in effect after this item is complete.
+An instruction to verify that the active model is GPT-6 Astra before later building work applied when this item was built. The project owner retired it on 10 October 2026 (see [open questions](open-questions.md), question 14).

@@ -1,5 +1,6 @@
 import * as pc from 'playcanvas';
 import {World, type MapData, type Point} from './world';
+import { withAuthoredFootprints } from './authored-footprints.mjs';
 import './style.css';
 const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const canvas=el<HTMLCanvasElement>('scene');const enter=el<HTMLButtonElement>('enter');
@@ -13,7 +14,7 @@ async function start(){
   const options=new pc.AppOptions();options.graphicsDevice=device;options.batchManager=pc.BatchManager;options.componentSystems=[pc.RenderComponentSystem,pc.CameraComponentSystem,pc.LightComponentSystem];options.resourceHandlers=[pc.TextureHandler];
   const app=new pc.AppBase(canvas);app.init(options);app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);app.setCanvasResolution(pc.RESOLUTION_AUTO);
   const camera=new pc.Entity('First person');camera.addComponent('camera',{fov:65,nearClip:.08,farClip:600,clearColor:new pc.Color(.25,.35,.4),toneMapping:pc.TONEMAP_ACES});app.root.addChild(camera);
-  const response=await fetch('/map.json');if(!response.ok)throw new Error('Street data could not be loaded');const data=await response.json() as MapData;
+  const response=await fetch('/map.json');if(!response.ok)throw new Error('Street data could not be loaded');const data=withAuthoredFootprints(await response.json()) as MapData;
   const world=new World(app,data,camera);await world.build();let pos:Point=[0,0];
   function reset(){const review=new URLSearchParams(location.search).get('review');const spawn:{p:Point;yaw:number;pitch?:number}=(review&&world.reviewSpawns.get(review))||world.spawn();pos=[...spawn.p];yaw=spawn.yaw;pitch=spawn.pitch??(review?9:-2);camera.setPosition(pos[0],1.68,pos[1]);camera.setEulerAngles(pitch,yaw,0);}
   reset();app.start();

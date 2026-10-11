@@ -5,6 +5,11 @@ import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
+import { buildRingEast } from './ring-east';
+import { buildRingWest } from './ring-west';
+import { buildRingC } from './ring-c';
+import { buildRingA } from './ring-a';
+import { buildRingB } from './ring-b';
 import { buildFrogPorridge } from './frog-porridge';
 import { buildBuddhistArtCentre } from './buddhist-art-centre';
 import { buildEatFirst } from './eat-first';
@@ -19,6 +24,34 @@ import { buildLannaThai } from './lanna-thai';
 import { buildJiangsu } from './jiangsu';
 import { buildLiuDaMa } from './liu-da-ma';
 import { buildMuhammadiyah } from './muhammadiyah';
+import { buildFsl } from './fsl';
+import { buildBarLorong13 } from './bar-lorong-13';
+import { buildChenHing } from './chen-hing';
+import { buildAiSecurity } from './aisecurity';
+import { buildMisterContracts } from './mister-contracts';
+import { buildEngLeeHuat } from './eng-lee-huat';
+import { buildGoodwood } from './goodwood';
+import { buildTbss } from './tbss';
+import { buildZhengLi } from './zheng-li';
+import { buildGeylangRow } from './geylang-row';
+import { buildBeefKwayTeow } from './beef-kway-teow';
+import { buildWatDhammasatis } from './wat-dhammasatis';
+import { buildRedDot } from './red-dot';
+import { buildGuanKeat } from './guan-keat';
+import { buildMingLi } from './ming-li';
+import { buildHotel81Spring } from './hotel-81-spring';
+import { buildPfcs } from './pfcs';
+import { buildCico } from './cico';
+import { buildGemsVille } from './gems-ville';
+import { buildLorong13 } from './lorong-13';
+import { buildLorong11 } from './lorong-11';
+import { buildSimsSouth } from './sims-south';
+import { buildGeylangNorth } from './geylang-north';
+import { buildGeylangSouth } from './geylang-south';
+import { buildLorong15 } from './lorong-15';
+import { buildIbisGold } from './ibis-gold';
+import { buildSimsNorthRow } from './sims-north-row';
+import { buildLorong9 } from './lorong-9';
 import { buildLamClan } from './lam-clan';
 import { buildHainanLim } from './hainan-lim';
 import { buildSuiYuanJu } from './sui-yuan-ju';
@@ -38,12 +71,14 @@ type Segment={a:Point;b:Point;width:number;name:string;oneway:string;length:numb
 const palette=['#d4c7a4','#98a796','#c7ad7f','#bc9986','#c2c4b4','#a5b2b0'];
 const fictional=['夜来香 · NIGHT BLOOM','LORONG COFFEE','新月 · NEW MOON','AFTER HOURS','南风 · SOUTH WIND','LUCKY ELEVEN','SILVER SPOON','永安 · EVER PEACE'];
 const color=(hex:string)=>new pc.Color().fromString(hex);
+// Static geometry merges per tile: small merge sets keep batching cheap, and tiles are the unit later streaming will load.
+const TILE=64;
 export class World {
   app:pc.AppBase;data:MapData; segments:Segment[]=[]; footprints:Point[][]=[];
   bounds:number[]; lamps:pc.Entity[]=[]; emissives:pc.StandardMaterial[]=[];
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
-  private batch=-1;
+  private tiles=new Map<string,pc.Entity>();private merging=false;
   reviewSpawns = new Map<string, {p: Point; yaw: number; pitch?: number}>();
   constructor(app:pc.AppBase,data:MapData,camera:pc.Entity){
     this.app=app;this.data=data;this.camera=camera;
@@ -59,10 +94,21 @@ export class World {
     }
   }
   mat(hex:string,glow=0){const key=hex+glow;if(this.materials.has(key))return this.materials.get(key)!;const m=new pc.StandardMaterial();m.diffuse=color(hex);m.useMetalness=true;m.metalness=.04;m.gloss=glow?.45:.2;if(glow){m.emissive=color(hex);m.emissiveIntensity=glow;this.emissives.push(m);}m.update();this.materials.set(key,m);return m;}
-  box(name:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:pc.Material,parent?:pc.Entity,angle=0){const e=new pc.Entity(name);e.addComponent('render',{type:'box',material:mat,castShadows:h>.5,receiveShadows:true,batchGroupId:parent?-1:this.batch});e.setLocalPosition(x,y,z);e.setLocalScale(w,h,d);e.setLocalEulerAngles(0,angle,0);(parent??this.app.root).addChild(e);return e;}
-  cylinder(name:string,x:number,y:number,z:number,diameter:number,h:number,mat:pc.Material){const e=new pc.Entity(name);e.addComponent('render',{type:'cylinder',material:mat,castShadows:false,receiveShadows:true,batchGroupId:this.batch});e.setLocalPosition(x,y,z);e.setLocalScale(diameter,h,diameter);this.app.root.addChild(e);return e;}
+  // Merged parts draw only through their tile's batches, so they stay out of the layers.
+  private renderData(data:object,merge:boolean){return merge?{...data,layers:[]}:data;}
+  private place(e:pc.Entity,x:number,z:number,merge:boolean,parent?:pc.Entity){
+    if(!merge){(parent??this.app.root).addChild(e);return e;}
+    const key=`${Math.floor(x/TILE)},${Math.floor(z/TILE)}`;let tile=this.tiles.get(key);
+    if(!tile){tile=new pc.Entity(`Tile ${key}`);this.app.root.addChild(tile);this.tiles.set(key,tile);}
+    tile.addChild(e);return e;
+  }
+  // One merge pass per tile. Engine batch groups would rebatch the whole scene again on the first frame.
+  private mergeTiles(){const batcher=this.app.batcher!;for(const tile of this.tiles.values()){const parts=tile.children.flatMap(e=>(e as pc.Entity).render!.meshInstances);for(const list of batcher.prepare(parts,false,35,false))batcher.create(list,false)?.addToLayers(this.app.scene,[pc.LAYERID_WORLD]);}}
+  private loadTexture(name:string,url:string){const asset=new pc.Asset(name,'texture',{url});this.app.assets.add(asset);return new Promise<pc.Texture>((resolve,reject)=>{asset.ready(()=>resolve(asset.resource as pc.Texture));asset.on('error',reject);this.app.assets.load(asset);});}
+  box(name:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:pc.Material,parent?:pc.Entity,angle=0){const e=new pc.Entity(name);const merge=!parent&&this.merging;e.addComponent('render',this.renderData({type:'box',material:mat,castShadows:h>.5,receiveShadows:true},merge));e.setLocalPosition(x,y,z);e.setLocalScale(w,h,d);e.setLocalEulerAngles(0,angle,0);return this.place(e,x,z,merge,parent);}
+  cylinder(name:string,x:number,y:number,z:number,diameter:number,h:number,mat:pc.Material){const e=new pc.Entity(name);e.addComponent('render',this.renderData({type:'cylinder',material:mat,castShadows:false,receiveShadows:true},this.merging));e.setLocalPosition(x,y,z);e.setLocalScale(diameter,h,diameter);return this.place(e,x,z,this.merging);}
   strip(a:Point,b:Point,width:number,y:number,mat:pc.Material){const dx=b[0]-a[0],dz=b[1]-a[1];return this.box('street surface',(a[0]+b[0])/2,y,(a[1]+b[1])/2,width,.045,Math.hypot(dx,dz)+.06,mat,undefined,Math.atan2(dx,dz)*180/Math.PI);}
-  mesh(name:string,positions:number[],uvs:number[],indices:number[],mat:pc.Material){const mesh=new pc.Mesh(this.app.graphicsDevice);mesh.setPositions(positions);mesh.setNormals(pc.calculateNormals(positions,indices));mesh.setUvs(0,uvs);mesh.setIndices(indices);mesh.update();const e=new pc.Entity(name);e.addComponent('render',{meshInstances:[new pc.MeshInstance(mesh,mat)],castShadows:true,batchGroupId:this.batch});this.app.root.addChild(e);return e;}
+  mesh(name:string,positions:number[],uvs:number[],indices:number[],mat:pc.Material){const mesh=new pc.Mesh(this.app.graphicsDevice);mesh.setPositions(positions);mesh.setNormals(pc.calculateNormals(positions,indices));mesh.setUvs(0,uvs);mesh.setIndices(indices);mesh.update();const e=new pc.Entity(name);e.addComponent('render',this.renderData({meshInstances:[new pc.MeshInstance(mesh,mat)],castShadows:true},this.merging));return this.place(e,positions[0],positions[2],this.merging);}
   panel(a:Point,b:Point,base:number,top:number,mat:pc.Material,uv=[0,0,1,1]){const p=[a[0],base,a[1],b[0],base,b[1],b[0],top,b[1],a[0],top,a[1]];return this.mesh('facade',p,[uv[0],uv[3],uv[2],uv[3],uv[2],uv[1],uv[0],uv[1]],[0,1,2,0,2,3],mat);}
   texture(canvas:HTMLCanvasElement){const t=new pc.Texture(this.app.graphicsDevice,{width:canvas.width,height:canvas.height,mipmaps:true,minFilter:pc.FILTER_LINEAR_MIPMAP_LINEAR,magFilter:pc.FILTER_LINEAR,anisotropy:4});t.setSource(canvas);return t;}
   textMaterial(text:string,bg:string,fg:string,glow=.3,aspect=1024/192){
@@ -74,12 +120,9 @@ export class World {
     const t=this.texture(canvas),m=new pc.StandardMaterial();m.diffuseMap=t;m.emissiveMap=t;m.emissive=new pc.Color(1,1,1);m.emissiveIntensity=glow;m.cull=pc.CULLFACE_NONE;m.update();return m;
   }
   async build(){
-    const batch=this.app.batcher!;const group=batch.addGroup('Street architecture',false,35);this.batch=group.id;
-    const asset=new pc.Asset('Shophouse textures','texture',{url:'/shophouse-atlas.png'});this.app.assets.add(asset);
-    const atlas=await new Promise<pc.Texture>((resolve,reject)=>{asset.ready(()=>resolve(asset.resource as pc.Texture));asset.on('error',reject);this.app.assets.load(asset);});atlas.anisotropy=4;
+    this.merging=true;
+    const [atlas,heritageTexture]=await Promise.all([this.loadTexture('Shophouse textures','/shophouse-atlas.webp'),this.loadTexture('Lorong 11 reference-led heritage','/lorong-11-heritage-atlas.webp')]);atlas.anisotropy=4;heritageTexture.anisotropy=4;
     const facade=new pc.StandardMaterial();facade.diffuseMap=atlas;facade.diffuse=new pc.Color(.94,.94,.94);facade.cull=pc.CULLFACE_NONE;facade.gloss=.12;facade.update();
-    const heritageAsset=new pc.Asset('Lorong 11 reference-led heritage','texture',{url:'/lorong-11-heritage-atlas.png'});this.app.assets.add(heritageAsset);
-    const heritageTexture=await new Promise<pc.Texture>((resolve,reject)=>{heritageAsset.ready(()=>resolve(heritageAsset.resource as pc.Texture));heritageAsset.on('error',reject);this.app.assets.load(heritageAsset);});heritageTexture.anisotropy=4;
     const heritage=new pc.StandardMaterial();heritage.diffuseMap=heritageTexture;heritage.cull=pc.CULLFACE_NONE;heritage.gloss=.12;heritage.update();
     // Texture colour variation and aggregate are generated deterministically at load time.
     const canvas=document.createElement('canvas');canvas.width=canvas.height=512;const c=canvas.getContext('2d')!;const pixels=c.createImageData(512,512);let rng=731;for(let i=0;i<pixels.data.length;i+=4){rng=(Math.imul(rng,1664525)+1013904223)>>>0;const n=67+(rng%28);pixels.data.set([n,n+3,n+4,255],i);}c.putImageData(pixels,0,0);this.ground.diffuse=new pc.Color(.85,.85,.85);this.ground.diffuseMap=this.texture(canvas);this.ground.diffuseMapTiling.set(2,12);this.ground.update();
@@ -115,6 +158,39 @@ export class World {
       if(buildJiangsu(this,b.id,poly))continue;
       if(buildLiuDaMa(this,b.id,poly))continue;
       if(buildMuhammadiyah(this,b.id,poly))continue;
+      if(buildFsl(this,b.id,poly))continue;
+      if(buildBarLorong13(this,b.id,poly))continue;
+      if(buildChenHing(this,b.id,poly))continue;
+      if(buildAiSecurity(this,b.id,poly))continue;
+      if(buildMisterContracts(this,b.id,poly))continue;
+      if(buildEngLeeHuat(this,b.id,poly))continue;
+      if(buildGoodwood(this,b.id,poly))continue;
+      if(buildTbss(this,b.id,poly))continue;
+      if(buildZhengLi(this,b.id,poly))continue;
+      if(buildGeylangRow(this,b.id,poly))continue;
+      if(buildBeefKwayTeow(this,b.id,poly))continue;
+      if(buildWatDhammasatis(this,b.id,poly))continue;
+      if(buildRedDot(this,b.id,poly))continue;
+      if(buildGuanKeat(this,b.id,poly))continue;
+      if(buildMingLi(this,b.id,poly))continue;
+      if(buildHotel81Spring(this,b.id,poly))continue;
+      if(buildPfcs(this,b.id,poly))continue;
+      if(buildCico(this,b.id,poly))continue;
+      if(buildGemsVille(this,b.id,poly))continue;
+      if(buildLorong13(this,b.id,poly))continue;
+      if(buildLorong11(this,b.id,poly))continue;
+      if(buildSimsSouth(this,b.id,poly))continue;
+      if(buildGeylangNorth(this,b.id,poly))continue;
+      if(buildGeylangSouth(this,b.id,poly))continue;
+      if(buildLorong15(this,b.id,poly))continue;
+      if(buildIbisGold(this,b.id,poly))continue;
+      if(buildSimsNorthRow(this,b.id,poly))continue;
+      if(buildLorong9(this,b.id,poly))continue;
+      if(buildRingEast(this,b.id,poly))continue;
+      if(buildRingWest(this,b.id,poly))continue;
+      if(buildRingC(this,b.id,poly))continue;
+      if(buildRingA(this,b.id,poly))continue;
+      if(buildRingB(this,b.id,poly))continue;
       if(buildLamClan(this,b.id,poly))continue;
       if(buildHainanLim(this,b.id,poly))continue;
       if(buildSuiYuanJu(this,b.id,poly))continue;
@@ -186,14 +262,14 @@ export class World {
         this.panel([x+1.325,z-.034],[x-1.325,z-.034],2.7,3.2,m);
       }
     }
-    batch.generate();this.setLight('day');
+    this.merging=false;this.mergeTiles();this.setLight('day');
   }
   nearest(p:Point){let distance=Infinity,segment=this.segments[0],point:Point=[0,0];for(const s of this.segments){const n=nearestOnSegment(p,s.a,s.b);if(n.distance<distance){distance=n.distance;segment=s;point=n.point as Point;}}return{distance,segment,point};}
   canWalk(p:Point){if(p[0]<this.bounds[0]+3||p[0]>this.bounds[2]-3||p[1]<this.bounds[1]+3||p[1]>this.bounds[3]-3)return false;for(const poly of this.footprints){if(pointInPolygon(p,poly))return false;for(let i=0;i<poly.length;i++)if(nearestOnSegment(p,poly[i],poly[(i+1)%poly.length]).distance<.28)return false;}return true;}
   spawn(){const s=this.segments.find(s=>s.name==='Lorong 11 Geylang'&&s.length>30)!;const p:Point=[s.b[0]-s.dx*16+s.dz*2.1,s.b[1]-s.dz*16-s.dx*2.1];return{p,yaw:Math.atan2(-s.dx,-s.dz)*180/Math.PI+180};}
   lamp(x:number,z:number){this.box('lamp post',x,3.9,z,.1,7.8,.1,this.mat('#6c7976'));this.box('lamp arm',x+.75,7.75,z,1.6,.09,.09,this.mat('#6c7976'));this.box('lamp head',x+1.45,7.69,z,.6,.12,.32,this.mat('#ffdfaa',2));if(this.lamps.length<12){const e=new pc.Entity('street light');e.addComponent('light',{type:'omni',color:color('#ffd393'),intensity:.7,range:13,castShadows:false});e.setPosition(x+1.45,6.8,z);this.app.root.addChild(e);this.lamps.push(e);}}
   planter(x:number,z:number){
-    const pot=new pc.Entity('terracotta pot');pot.addComponent('render',{type:'cylinder',material:this.mat('#977665'),batchGroupId:this.batch});pot.setPosition(x,.22,z);pot.setLocalScale(.38,.44,.38);this.app.root.addChild(pot);
+    const pot=new pc.Entity('terracotta pot');pot.addComponent('render',this.renderData({type:'cylinder',material:this.mat('#977665')},this.merging));pot.setPosition(x,.22,z);pot.setLocalScale(.38,.44,.38);this.place(pot,x,z,this.merging);
     // Thin curved fronds instead of the original spherical foliage placeholders.
     for(let i=0;i<11;i++){
       const angle=i*2.399,length=.35+(i%4)*.075,base=.4,tip=.65+(i%3)*.14;

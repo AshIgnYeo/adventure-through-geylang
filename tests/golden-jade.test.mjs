@@ -50,3 +50,15 @@ test('Golden Jade review starts face the frontage and stay walkable', () => {
     }
   }
 });
+
+test('No. 273 next door is an unnamed jalousie exterior with its fittings in the frontage', async () => {
+  const { no273, no273Layout, no273Reviews } = await import('../src/golden-jade-layout.mjs');
+  const { outline, assertFittings, assertReviews } = await import('./helpers.mjs');
+  const { landmarkFor } = await import('../src/landmarks.mjs');
+  const poly = outline('454254221'), frame = goldenJadeFrame(poly);
+  assert.equal(landmarkFor('454254221'), undefined); assert.match(no273.evidence, /permanently closed/);
+  assert.ok(Math.abs(frame.width - 5.13) < .02);
+  assertFittings(frame, poly, no273Layout(frame.width).boxes, .12);
+  assertReviews(frame, no273Reviews(frame));
+});
+

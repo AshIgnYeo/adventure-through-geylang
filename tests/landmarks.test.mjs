@@ -3,10 +3,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { landmarks, landmarkFor, landmarkReviewPoint } from '../src/landmarks.mjs';
 import { pointInPolygon, project, nearestOnSegment } from '../src/geo.mjs';
+import { withAuthoredFootprints } from '../src/authored-footprints.mjs';
 
-const map = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
+const sourceMap = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
+// Landmarks are checked against the rendered map, with the owner-approved authored footprints applied.
+const map = withAuthoredFootprints(sourceMap);
 
-test('Masjid Haji Mohd Salleh keeps its named No. 245 source footprint and Geylang Road frontage', () => {
+test('Masjid Haji Mohd Salleh stands on its authored No. 245 footprint, replacing the named source way', () => {
   const source = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
   const way = source.match(/<way id="454254204"[\s\S]*?<\/way>/)?.[0];
   assert.ok(way);
@@ -14,20 +17,22 @@ test('Masjid Haji Mohd Salleh keeps its named No. 245 source footprint and Geyla
   assert.match(way, /<tag k="addr:housenumber" v="245"\/>/);
   assert.match(way, /<tag k="building" v="mosque"\/>/);
   const place = landmarks.find(p => p.id === 'haji-mohd-salleh-mosque');
-  assert.deepEqual(place.buildingIds, ['454254204']);
+  assert.deepEqual(place.buildingIds, ['gr-245']);
   assert.equal(place.address, '245 Geylang Road');
-  assert.equal(place.frontEdge, 2);
+  assert.equal(place.frontEdge, 0);
+  assert.ok(map.replacedBuildings.some(b => b.id === '454254204'));
   assert.equal(place.reviewRoad, 'Geylang Road');
-  assert.equal(place.reviewOffset, 6);
+  assert.equal(place.reviewOffset, 8);
   const building = map.buildings.find(b => b.id === place.buildingIds[0]);
   assert.equal(building.street, 'Geylang Road');
   assert.equal(building.number, '245');
   const poly = building.coordinates.slice(0, -1).map(p => project(p, map.origin));
-  assert.ok(Math.abs(Math.hypot(poly[3][0] - poly[2][0], poly[3][1] - poly[2][1]) - 22.46) < .02);
+  const frontWidth = Math.hypot(poly[1][0] - poly[0][0], poly[1][1] - poly[0][1]);
+  assert.ok(Math.abs(frontWidth - 20.3) < .01);
   let a = poly[place.frontEdge], v = poly[(place.frontEdge + 1) % poly.length];
   const centre = [poly.reduce((sum, p) => sum + p[0], 0) / poly.length, poly.reduce((sum, p) => sum + p[1], 0) / poly.length];
   const mid = a.map((value, i) => (value + v[i]) / 2);
-  let dx = (v[0] - a[0]) / 22.456078097617418, dz = (v[1] - a[1]) / 22.456078097617418;
+  let dx = (v[0] - a[0]) / frontWidth, dz = (v[1] - a[1]) / frontWidth;
   if (-dz * (mid[0] - centre[0]) + dx * (mid[1] - centre[1]) < 0) { [a, v] = [v, a]; dx = -dx; dz = -dz; }
   const segments = map.roads.flatMap(r => r.coordinates.slice(1).map((p, i) => ({name: r.name, a: project(r.coordinates[i], map.origin), b: project(p, map.origin)})));
   const road = landmarkReviewPoint(place, mid, segments);
@@ -35,7 +40,8 @@ test('Masjid Haji Mohd Salleh keeps its named No. 245 source footprint and Geyla
   assert.ok(Math.hypot(review[0] - mid[0], review[1] - mid[1]) > 17);
   for (const candidate of map.buildings) assert.equal(pointInPolygon(review, candidate.coordinates.map(c => project(c, map.origin))), false);
   assert.equal(landmarkFor(building.id), place);
-  assert.match(place.evidence, /four-storey description and mapped three-level tag/);
+  assert.match(place.evidence, /June 2024 Street View shows four storeys/);
+  assert.match(place.evidence, /authored footprint \(gr-245\)/);
   assert.match(place.evidence, /no interior is reconstructed/);
 });
 
@@ -51,7 +57,7 @@ test('Leong Kee keeps the provisional three-bay corner assignment together witho
   assert.equal(place.frontEdge, 2);
   assert.match(place.evidence, /June 2024/);
   assert.match(place.evidence, /without asserting ownership/);
-  assert.match(place.evidence, /middle board.*left neutral/);
+  assert.match(place.evidence, /middle one 梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE/);
   assert.match(place.evidence, /provisional/);
   for (let i = 1; i < place.buildingIds.length; i++) {
     const a = map.buildings.find(b => b.id === place.buildingIds[i - 1]).coordinates.slice(0, -1);
@@ -90,14 +96,16 @@ test('Hainan Goh uses the visibly numbered No. 20B frontage, excluding adjoining
   assert.match(place.evidence, /separate ground-floor shop is neutral/);
 });
 
-test('Canton Wong stays on No. 31 beside No. 29, excluding the displaced Maps pin', () => {
+test('Canton Wong stays on No. 31, now the re-spaced footprint beside No. 29A, excluding the displaced Maps pin', () => {
   const place = landmarks.find(p => p.id === 'canton-wong');
-  assert.deepEqual(place.buildingIds, ['1223407878']);
+  assert.deepEqual(place.buildingIds, ['l11w-31']);
   assert.equal(place.address, '31A Lorong 11 Geylang');
   const building = map.buildings.find(b => b.id === place.buildingIds[0]);
-  assert.equal(building.number, '31');
-  const south = map.buildings.find(b => b.id === '1223407879');
-  assert.equal(south.number, '29');
+  assert.equal(building.number, '31'); assert.equal(building.geometrySource, 'authored-estimate');
+  assert.ok(building.replaces.includes('1223407878'));
+  const south = map.buildings.find(b => b.id === 'l11w-29a');
+  assert.equal(south.number, '29A');
+  assert.ok(south.coordinates.slice(0, -1).filter(p => building.coordinates.some(q => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-9)).length === 2, 'No. 31 meets No. 29A');
   const shared = building.coordinates.slice(0, -1).filter(p => south.coordinates.some(q => p[0] === q[0] && p[1] === q[1]));
   assert.equal(shared.length, 2, 'source No. 31 shares a boundary with visually identified No. 29');
   // The listing pin is displaced north; it must not determine the assignment.
@@ -135,7 +143,7 @@ test('SHG historical frontage uses No. 36 and excludes the adjoining buildings',
   // Seng Hup Guan place point in Google Maps, inspected 29 September 2026.
   const mappedPlace = [103.8768642, 1.3136079];
   assert.equal(pointInPolygon(mappedPlace, building.coordinates), true);
-  for (const id of ['1223250206', '1223250209']) {
+  for (const id of ['1223250206', 'l11-38']) {
     assert.notEqual(landmarkFor(id), place);
     assert.equal(pointInPolygon(mappedPlace, map.buildings.find(b => b.id === id).coordinates), false);
   }
@@ -181,16 +189,21 @@ test('real landmark identities have unique, existing street-study footprints and
   for (const place of landmarks) {
     assert.ok(place.sources.length > 0);
     assert.ok(place.evidence.length > 30);
-    assert.ok(place.height > 3 && place.height < 35);
+    // The tallest landmark is the ten-storey Yi Xiu Factory Building, about 36 m.
+    assert.ok(place.height > 3 && place.height < 40);
     for (const id of place.buildingIds) {
       assert.equal(ids.has(id), false, `${id} assigned twice`);
       ids.add(id);
       const building = map.buildings.find(b => b.id === id);
-      if (['leong-kee', 'buddhist-art-centre', 'eat-first', 'sik-wai-sin', 'rr-motor', 'golden-jade', 'ktv-277', 'eros'].includes(place.id)) assert.equal(building?.street, null);
-      else if (['hainan-lim', 'sui-yuan-ju', 'chong-min', 'foo-hui', 'siaw-lim', 'hong-ye-chen', 'plus-mobile', 'k-group', 'muhammadiyah-college'].includes(place.id)) assert.equal(building?.street, 'Lorong 13 Geylang');
-      else if (['amrise-hotel', 'thye-seng', 'normal-stainless', 'qianjing', 'fok-wai-kee'].includes(place.id)) assert.equal(building?.street, 'Sims Avenue');
-      else if (['k-hotel-1515', 'lam-clan'].includes(place.id)) assert.equal(building?.street, 'Lorong 15 Geylang');
-      else if (['haji-mohd-salleh-mosque', 'lor-9-frog-porridge'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
+      if (['leong-kee', 'buddhist-art-centre', 'eat-first', 'sik-wai-sin', 'rr-motor', 'golden-jade', 'ktv-277', 'eros', 'rozel-furniture', 'jh-hotel', 'nanyang-fan-clan', 'vintage-and-vine', 'dnova-hotel', 'jxin-hotel'].includes(place.id)) assert.equal(building?.street, null);
+      else if (['yaju-hotel', 'summer-view', 'hotel-81-cherry', 'master-tailors', 'chinese-eating-house-owners'].includes(place.id)) assert.equal(building?.street, 'Lorong 12 Geylang');
+      else if (['lex-hotel', 'engineering-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 8 Geylang');
+      else if (['crystal-mansions'].includes(place.id)) assert.equal(building?.street, 'Lorong 6 Geylang');
+      else if (['hainan-lim', 'sui-yuan-ju', 'chong-min', 'foo-hui', 'siaw-lim', 'hong-ye-chen', 'plus-mobile', 'k-group', 'muhammadiyah-college', 'bar-lorong-13', 'mister-contracts', 'gems-ville', 'thirteen-bbq', 'buildersmart', 'teck-hoe', 'wunderfolks'].includes(place.id)) assert.equal(building?.street, 'Lorong 13 Geylang');
+      else if (['amrise-hotel', 'thye-seng', 'normal-stainless', 'qianjing', 'fok-wai-kee', 'fsl-led-lighting', 'red-dot-running', 'ming-li', 'yap-sun', 'buildersmart-sims', 'ibis-budget-gold', 'red-flag-davco', 'yi-xiu-factory-building', 'shi-cheng-temple', 'bamboo-lounge'].includes(place.id)) assert.equal(building?.street, 'Sims Avenue');
+      else if (['k-hotel-1515', 'lam-clan', 'hotel-81-spring', 'sin-chew-tan', 'teck-keow', 'hong-sheng-koon', 'ship-chandlers', 'aecc-jmas', 'bengal-kitchen'].includes(place.id)) assert.equal(building?.street, 'Lorong 15 Geylang');
+      else if (['public-free-clinic-society', 'ywam-singapore', 'kim-court', 'the-diamond'].includes(place.id)) assert.equal(building?.street, 'Lorong 9 Geylang');
+      else if (['gong-he-guan', 'haji-mohd-salleh-mosque', 'lor-9-frog-porridge', 'chen-hing', 'ting-yu-xuan', 'ke-lai-shun', 'instyle', 'mobile-time', 'shi-hao', 'lor-9-beef-kway-teow', 'wat-dhammasatis', 'lian-seng', 'monster-ink', 'shadow-tattoo', 'nanyang-lian', 'tian-tian', 'taketoys', 'chongqing-xiaomian'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
       else assert.equal(building?.street, 'Lorong 11 Geylang');
       assert.equal(landmarkFor(id), place);
     }
@@ -199,8 +212,10 @@ test('real landmark identities have unique, existing street-study footprints and
 });
 
 test('provisional appearance and historical address matches stay explicitly documented', () => {
-  assert.match(landmarks.find(p => p.id === 'lok-fu').evidence, /illustrative/);
+  assert.equal(landmarks.find(p => p.id === 'lok-fu'), undefined, 'C4 was re-identified as the Guan Keat coffeeshop');
+  assert.match(landmarks.find(p => p.id === 'guan-keat').evidence, /Lok Fu was a stall here/);
   assert.match(landmarks.find(p => p.id === 'agape-centre').evidence, /provisional/);
   assert.equal(map.buildings.find(b => b.id === landmarks.find(p => p.id === 'hotel-81-joy').buildingIds[0]).number, '11');
-  assert.equal(map.buildings.find(b => b.id === landmarkFor('1223407885').buildingIds[0]).number, '17');
+  assert.equal(map.buildings.find(b => b.id === landmarkFor('l11w-17').buildingIds[0]).number, '17');
+  assert.equal(landmarkFor('1223407885'), undefined, 'the replaced source way is not rendered');
 });

@@ -6,6 +6,8 @@ import { alleyRoutes, alleyReviews, alleyElevations, alleyElevationFrame, alleyB
 /** Source-aligned paving. Separate from main roads so no lane markings or frontages migrate. */
 export function buildAlleyGround(world: World) {
   for (const road of world.data.contextRoads) {
+    // Since Lorong 9 joined the derived road set (open question 24), its access way is drawn with the other roads.
+    if (world.data.roads.some(r => r.id === road.id)) continue;
     const points = road.coordinates.map(p => project(p, world.data.origin) as Point);
     for (let i = 1; i < points.length; i++) {
       world.strip(points[i - 1], points[i], roadWidth(road) + 3, .04, world.mat('#939387'));

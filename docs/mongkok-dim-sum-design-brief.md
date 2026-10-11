@@ -14,11 +14,32 @@ Research and source access: **2 October 2026**. Selected after the user rejected
 
 This is a dated reconstruction of the three visible exterior tiers, with cream plaster, two broad dark windows and two smaller openings on the chamfer, original red `旺角点心` lettering, lime-green lower columns, red canopy and two railed balcony bands on the Geylang Road return. Unseen rear surfaces remain plain. The restaurant's name is restricted to the evidenced corner elevation. Ground-floor openings have opaque backing; no kitchen, upper-floor use or private interior is invented.
 
-The full source outline, geographic projection, collisions and scene bounds remain unchanged. The model partitions the rendered block into a corner and a generic remainder. The original 7.244 m chamfer and Lorong 8 edge are retained. A point 8.8 m along the Geylang Road edge and a point 15.8 m along the rear edge define an **estimated internal rendering division**, not a legal or tenancy boundary. The two polygons exactly cover the original outline without overlapping interiors. Only the corner gets the estimated 10.1 m height; the remaining block retains its generic 6.7 m height and no Mongkok identity. Its generic bay spacing adjusts to the shorter render frontage.
+The full source outline, geographic projection, collisions and scene bounds remain unchanged. The model partitions the rendered block into a corner and a generic remainder. The original 7.244 m chamfer and Lorong 8 edge are retained. A point 8.8 m along the Geylang Road edge and a point 15.8 m along the rear edge defined an **estimated internal rendering division**, not a legal or tenancy boundary. (Superseded on 10 October 2026: see below.) The two polygons exactly cover the original outline without overlapping interiors. Only the corner gets the estimated 10.1 m height; the remaining block retains its generic 6.7 m height and no Mongkok identity. Its generic bay spacing adjusts to the shorter render frontage.
 
 Canopy projection is estimated at 1.3 m, with a 1.45 m concrete dining apron. Sparse pale tables and dark chairs suggest the externally visible dining edge; shapes, count and arrangement are illustrative. The photograph's stacked furniture, menus, products, people, vehicles and temporary clutter are omitted. No reference photograph or copied advertising asset is bundled. All geometry and lettering are original code/canvas output.
 
 Confidence is high for the corroborated street address, moderate for the corner assignment and broad historical exterior, and low for exact height, internal division and present appearance. The restaurant's present listing does not establish that its October 2016 façade is unchanged.
+
+## June 2024 update (10 October 2026)
+
+The model was rebuilt as a dated **June 2024** exterior, following the approved re-check of older estimated models (open question 13). June 2024 Street View from Geylang Road (`kbMaxdnGfSxxcW_ZWuryZw`) and from the Lorong 8 junction (`Ek8gN_rkboAVG9ytJd-CNA`) shows the corner repainted since the 2016 contributor panorama.
+
+- **Appearance:** taupe walls, red ground-floor walls and columns, dark red awnings, and a red **MONGKOK DIMSUM 24 HRS** board above the chamfer awning, under the red vertical 旺角点心 lettering. A dark red blade sign stands at the west end of the Geylang Road return. The Lorong 8 face has three windows on each upper storey and an awning along its northern 10 m.
+- **Height:** the parapet stands about 11.5–12.5 m above the road. The two panoramas disagree here by up to 1 m, because of position errors; triangulating the chamfer from them does not close consistently, so the source outline is kept. The height is raised from 10.1 m to 11.6 m, and the storey bands, windows, balconies and lettering are raised in proportion.
+- **Estimates:** the internal division, five-foot-way depth, furniture and fine fittings.
+- **Lettering:** the board and glyphs are redrawn in original type.
+
+### Nos. 212 and 210 (10 October 2026)
+
+- **Measurement:** a square-on June 2024 frame (`6WnI7_UoH2IqxCRJ-XI2BA`, with `BPsxlk0ALSJFfWvTXn51NA` agreeing) puts the Mongkok return at about **5.8 m**, not the earlier 8.8 m estimate, once the drive's shared 2.9 m along-street error is removed. The cream three-storey building to its west holds two frontages, about **7.05 m** and **6.7 m** wide, with a set-back penthouse. Beyond it is the Sian Chay Charity Centre (No. 208), which lies mostly outside the study bounds.
+- **Division:** the corner division now runs square to the Geylang Road edge from 5.8 m. Two further square divisions, at 12.85 m and 19.55 m, carve out the two units, which run back to the rear edge.
+- **Rendering only:** collision still uses the whole source way, and the area is conserved.
+- **Nanyang Dentist 南洋齿科, No. 212:**
+  - It is listed at 212 Geylang Rd. Its white board and door plate 212 are on the eastern unit.
+  - The listing point falls about 3 m inside the Mongkok corner. Maps points are approximate, and the board and address order (214, 212, 210, 208 westwards) place the clinic next door.
+- **Shaxian Eatery 沙县小吃, No. 210:** it is listed and open 24 hours, with its point inside the western unit. Its dark red SHAXIAN SNACKS board is redrawn with the logo reduced to a plain circle.
+- **Heights:** the parapet is about 10.5 m, and the penthouse about 12.4 m with an estimated 2.5 m setback. The two upper storeys hold windows at about 4.45–5.5 m and 7.4–8.6 m, under ledges at about 6.0 m and 9.0 m.
+- **Remainder:** the Sian Chay part of the block stays generic, outside the bounds (open question 17).
 
 ## Review and validation
 

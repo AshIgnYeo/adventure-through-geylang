@@ -1,7 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { mongkok, mongkokLayout, mongkokFrame } from '../src/mongkok-layout.mjs';
+import { mongkok, mongkokLayout, mongkokFrame, blockUnits } from '../src/mongkok-layout.mjs';
+import { partialBlockLandmarks } from '../src/landmarks.mjs';
+import { frontageFrame } from '../src/gable-roof-layout.mjs';
+import { simpleHouseLayout, facing } from '../src/simple-house-layout.mjs';
+import { assertFittings, assertReviews } from './helpers.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { project, pointInPolygon, nearestOnSegment, roadWidth } from '../src/geo.mjs';
 
@@ -13,10 +17,10 @@ const area = points => Math.abs(points.reduce((s, p, i) => {
 }, 0)) / 2;
 
 test('Mongkok occupies an estimated corner within the source block, never the whole way', () => {
-  const original = structuredClone(poly), { corner, remainder } = mongkokLayout(poly);
+  const original = structuredClone(poly), { corner, units, remainder } = mongkokLayout(poly);
   assert.deepEqual(poly, original);
   assert.equal(landmarkFor(source.id), undefined);
-  assert.ok(Math.abs(area(corner) + area(remainder) - area(poly)) < 1e-8);
+  assert.ok(Math.abs(area(corner) + units.reduce((s, u) => s + area(u), 0) + area(remainder) - area(poly)) < 1e-8);
   assert.ok(area(corner) < area(poly) * .55);
   for (const p of corner) assert.ok(poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < 1e-8));
   const namePoint = project([103.8768536, 1.3119953], map.origin);
@@ -42,4 +46,20 @@ test('Mongkok review cameras and canopy remain outside buildings and away from t
       }
     }
   }
+});
+
+test('Nos. 212 and 210 take their measured frontages west of the corner, inside the source block', () => {
+  const { units } = mongkokLayout(poly);
+  assert.deepEqual(partialBlockLandmarks.map(p => p.id), ['mongkok-dim-sum', 'nanyang-dentist', 'shaxian-eatery']);
+  assert.deepEqual(blockUnits.map(u => [u.from, u.to]), [[mongkok.streetReturn, 12.85], [12.85, 19.55]]);
+  units.forEach((unit, i) => {
+    const place = blockUnits[i], frame = frontageFrame(unit, 0);
+    assert.ok(Math.abs(frame.width - (place.to - place.from)) < 1e-6);
+    for (const p of unit) assert.ok(poly.some((a, k) => nearestOnSegment(p, a, poly[(k + 1) % poly.length]).distance < 1e-6) || pointInPolygon(p, poly));
+    assertFittings(frame, unit, simpleHouseLayout(frame.width, place).boxes);
+    assertReviews(frame, facing(frame, place.id, 10));
+    assert.match(place.evidence, /June 2024/);
+  });
+  // The Shaxian Eatery listing point lies in its unit.
+  assert.equal(pointInPolygon(project([103.8766779, 1.3119397], map.origin), units[1]), true);
 });

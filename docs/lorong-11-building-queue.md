@@ -6,6 +6,8 @@ Created: 29 September 2026 (Asia/Singapore). First clean automation run, based o
 
 Read the README, [reference notes](lorong-11-references.md), landmark registry, models and tests before each run. Inspect the full staged/unstaged diff, untracked files and recent commits. Resume pre-existing changes only when evidence clearly identifies one unfinished Lorong 11 queue item from an earlier run. Preserve and finish that item before selecting another. Stop without editing or committing conflicting paths if changes are unrelated, mix items, appear user-authored or have uncertain intent. Work in the main checkout; never push. This reconciliation rule supersedes the clean-checkout guard mentioned in historical run records below.
 
+Decisions that need the project owner, such as re-spaced or authored footprints, are logged in [open questions](open-questions.md); add new ones there and continue with other candidates.
+
 The four existing reference-led models below count as completed. Their documented limitations remain. New entries are ordered for research, with address-supported candidates distinguished from model-ready candidates. Before modelling, make a small fresh source check and record access dates, changed addresses, conflicting evidence and remaining blockers here. An address match alone does not establish a visible façade, a property boundary or current occupancy of the whole building.
 
 The original bounded queue of ten entries and manually added Shan Yuan Tang (Q7) are complete. On 30 September 2026 the user approved relative placement accuracy for Q7 and requested implementation after switching to Astra. Its authored site is explicitly estimated and separate from retained map data. The hourly schedule remains paused and is ready to be retargeted. For any later retargeted run, reconcile unfinished work first, then investigate the first pending entry in queue order. Promote an entry to **pending, model-ready** only after evidence supports its footprint assignment (or the user explicitly approves a labelled estimate) and enough exterior features for a conservative reconstruction. Do not model an unresolved entry simply to fill a run. If research remains insufficient, preserve the evidence and report the blocker for manual follow-up without a model commit. Research-blocked entries are unfinished, not completed models. When no supported pending or resumable item remains after review, make no modelling changes, pause the scheduled task and report readiness to retarget.
@@ -16,7 +18,7 @@ The user subsequently added the coffeeshop at 251 Geylang Road as Q8. It is now 
 
 The user subsequently selected Masjid Haji Mohd Salleh at 245 Geylang Road as Q9. It is completed within its documented source-footprint and exterior-reference limits, bringing the scene to thirteen named places. The hourly schedule remains paused.
 
-The user subsequently requested a back-alley streetscape behind either Shan Yuan Tang or Leong Kee. Q10 below records the supported temple-side option. It is completed with a sourced pedestrian connection to Lorong 11. GPT-6 Astra was verified before implementation. Explicitly verify GPT-6 Astra before all future building work, as requested by the user.
+The user subsequently requested a back-alley streetscape behind either Shan Yuan Tang or Leong Kee. Q10 below records the supported temple-side option. It is completed with a sourced pedestrian connection to Lorong 11. GPT-6 Astra was verified before implementation. The standing instruction to verify GPT-6 Astra before later building work was retired by the project owner on 10 October 2026 (open question 14).
 
 ## Mapping evidence
 
@@ -30,6 +32,8 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 - **Sources / access:** [official operator](https://www.wwhotels.com/hotel-81/joy/), accessed 29 September 2026; existing photograph inspection recorded 28 September 2026.
 - **Confidence / uncertainty:** High for name and street address; mapped number agrees. Existing height, fins, windows and entrance dimensions are estimates from photographs, not measured elevations.
 - **Status / blocker:** Completed (`hotel-81-joy` in registry and model code). No blocker to counting it as completed; current façade accuracy remains limited by reference dates.
+
+- **Re-measured, 10 October 2026 (open question 13):** April 2024 Lorong 11 panoramas rectified on the tower front give seven window storeys at about 3.53 m centres from 5.8 m above the car porch, and a roof edge at about 31 m. The height rises from 24.5 m to 31.0 m, the stair fins run full height, and the forecourt HOTEL 81 sign moves onto its photographed pier, about 2 m up. Render-and-compare now aligns the storeys and the roofline.
 
 ### C2. Agape Centre
 
@@ -55,6 +59,8 @@ All way IDs below were checked against the retained `public/osm-source.osm` extr
 ## Research queue
 
 Q1–Q6 are **completed**. Q2, Q4, Q5 and Q6 represent dated April 2024 exteriors. The original bounded queue is complete; manually added Q7 is recorded separately below. Source access date for Q1–Q6 is **29 September 2026**. Confidence refers separately to the address evidence and the model assignment. Named organisations are included only as candidates for their externally evidenced premises.
+
+- **Superseded, 10 October 2026:** re-identified as the Guan Keat coffeeshop (Lok Fu stall, 2024) and rebuilt on an authored chamfered footprint, `l11-38` (open question 8). See the [design brief](guan-keat-design-brief.md).
 
 ### Q1. Ho San Kong Hoey premises, completed
 
@@ -223,7 +229,7 @@ This extension was first recorded in a research-only pass requested by the user,
 - **Logged context gap:** Lorong 15 is not in the derived map's four-road set, and the study's east boundary runs along it. The hotel's frontage therefore faces bare ground beyond its forecourt. Q18 faces the same road from the other side and lies partly outside the study bounds. Adding Lorong 15 is a map-scope decision for the user.
 - **Validation / completion:** All **49 tests**, the type check and the production build passed. Headless renders covered four review starts by day and the front by night, and led to a steeper turret roof (within the measured range) and a raised pediment. The named-place total is twenty.
 
-### Q18. Hotel 81 Spring, 22 Lorong 15 Geylang, research-blocked
+### Q18. Hotel 81 Spring, 22 Lorong 15 Geylang, research-blocked (resolved 10 October 2026, see below)
 
 - **Address / footprint:** 22 Lorong 15 Geylang, Singapore 388619; [OSM node 4302906050](https://www.openstreetmap.org/node/4302906050) lies inside [way 454254281](https://www.openstreetmap.org/way/454254281), an approximately 15.39 m by 43.72 m source outline.
 - **Sources / exterior:** A current ACRA-derived [business profile](https://www.sgpbusiness.com/company/Hotel-81---Spring) reports the Hotel 81 Spring entity live at No. 22. [April 2024 Street View](https://www.google.com/maps/@1.313669,103.878108,3a,80y,90h,98t/data=!3m7!1e1!3m5!1sMgS1CqglRPN1fG9C_TToMA!2e0!7i16384!8i8192) was visually inspected and clearly shows the blue Hotel 81 elevation and address context.
@@ -383,6 +389,377 @@ Added on 9 October 2026, filling the gap between 277 KTV and RR Motor.
 - **Lock resolved:** the signboard triangulated from two same-drive panoramas (10.7 m) and the bar spacing in a level frame (10.56 m) agree on the face distance. The 1.59 m bars are half-storey cells, and the parapet is at about 23.5 m. See the [design brief](muhammadiyah-design-brief.md).
 - **Validation / completion:** all **109 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-one.
 
+### Q38. FSL EW LED Lighting, 118 Sims Avenue, completed
+
+Added on 10 October 2026, when the user asked for sourcing and building to continue on a new branch.
+
+- **Address / footprint:** Google Maps lists FSL EW LED Lighting at 118 Sims Ave (open), matching [way 682928760](https://www.openstreetmap.org/way/682928760), tagged No. 118. June 2024 Street View shows the FSL blade lightbox, disc sign and signboard on the stained three-storey frontage between Yap Sun Hardware (No. 120) and the ABC Bistro corner (No. 116).
+- **Method:** three panoramas rectified onto the façade agree only with the wall about 3.25 m in front of the source front. At that depth the photographed frontage lies wholly inside the 6.77 m source edge, from 0.49 m inside the No. 120 line to the No. 116 line. The signboard was triangulated on the shop front, 2.3 m behind the piers. See the [design brief](fsl-design-brief.md).
+- **Validation / completion:** all **112 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-two.
+
+### Q39. Bar @ Lorong 13, No. 1 Lorong 13 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Bar @ Lorong 13 at 1A Lor 13 Geylang, 388674 (open). [Way 1223773758](https://www.openstreetmap.org/way/1223773758), tagged No. 1, is the white three-storey Art Deco block plated 1, with the BAR@LORONG13 sign over its north wing and a stair tower lettered 協華大厦. Koh Hwee Cheng (No. 1) and the River Ash Bakery point are not assigned.
+- **Method:** two-panorama rectification did not converge. Measurements therefore come from one level, square-on frame scaled by the 12.36 m source frontage, which the photograph matches to within about 2%. A 2.0 m (depth) and 1.0 m (along-street) panorama position error was corrected for render-and-compare, which then aligns square-on and oblique frames. See the [design brief](bar-lorong-13-design-brief.md).
+- **Validation / completion:** all **115 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-three.
+
+### Q40. Chen Hing Trading 增興貿易, 241 Geylang Road, completed
+
+- **Address / footprint:** Google Maps lists CHEN HING TRADING PTE. LTD. at 241 Geylang Rd, 389296 (open). Its point lies inside unnumbered [way 475158359](https://www.openstreetmap.org/way/475158359), directly west of the mosque (No. 245). June 2024 Street View shows its lettering on the grey three-storey block between the mosque and Geylang Lor 9 Beef Kway Teow (No. 237).
+- **Method:** the panoramas' recorded positions were calibrated against the existing mosque model, giving 2.8 m in depth and 1.5 m along the street. After that correction, the photographed frontage matches the 10.08 m source edge, and renders overlay the photograph. The rear wing keeps the 6.7 m back-lane elevation height. The awning is shortened to stay clear of the carriageway. See the [design brief](chen-hing-design-brief.md).
+- **Validation / completion:** all **118 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-four.
+
+### Q41. AiSecurityReady CCTV shop, No. 2 Lorong 11 Geylang, completed
+
+- **Address / footprint:** the operator website and Google Maps give AiSecurityReady at 2 Lor 11 Geylang, 388694, matching [way 1223250214](https://www.openstreetmap.org/way/1223250214), tagged No. 2. April 2024 Street View shows SUPPLY / INSTALL / WHOLESALE / CCTV lettering under the closed Wina Salon's board. The operator name is not displayed, and the model's name records that.
+- **Method:** three rectified panoramas agree on the No. 4 party line. The photographed frontage matches the 5.26 m source edge, after removing a 0.64 m along-street pose offset shared by the panoramas. Renders of this model and of Khek Leow then overlay the photographs. See the [design brief](aisecurity-design-brief.md).
+- **Validation / completion:** all **121 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-five.
+
+### Q42. Mister Contracts / MC Multi Skills, northern No. 9 Lorong 13, completed
+
+- **Decision:** built under the owner's answer to open question 12. The signed occupant is modelled, and the address conflict (signboard No. 5, Maps No. 7, source No. 9) is recorded in the evidence.
+- **Footprint:** [way 1223773757](https://www.openstreetmap.org/way/1223773757), the northern No. 9 house. The southern No. 9 house stays generic.
+- **Validation / completion:** all **124 tests**, the type check and the build passed, with day and night renders. The named-place total is forty-six. See the [design brief](mister-contracts-design-brief.md).
+
+### Q43. Eng Lee Huat Hardware, 29 Lorong 11 Geylang, completed
+
+- **Address / footprint:** Google Maps lists Eng Lee Huat Hardware at 29 Lor 11 Geylang, 388721. April 2024 shows its signboard and door plate 29. The model stands on the re-spaced footprint `l11w-29` (4.0 m) under open question 1.
+- **Method:** square-on rectification at the solved 0.6 m depth, then render-and-compare. All **131 tests**, the type check and the build passed, with day and night renders.
+- **Validation / completion:** the named-place total is 47. See the [design brief](eng-lee-huat-design-brief.md).
+
+### Q44. Goodwood Garments Services & Trading, 19 Lorong 11 Geylang, completed
+
+- **Address / footprint:** listed at 19 Lor 11 Geylang, 388711, with its signed board. The model stands on the re-spaced footprint `l11w-19` (5.3 m) under open question 1, and resolves the 9 October lock.
+- **Method:** square-on rectification at the solved 0.6 m depth, with back-wall openings corrected for the 1.8 m five-foot way. It uses the shared `peranakan-layout.mjs` elevation with No. 21. All **134 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 48. See the [design brief](goodwood-design-brief.md).
+
+### Q45. Tibetan Buddhist Studies Society, 21 Lorong 11 Geylang, completed
+
+- **Address / footprint:** signed 藏密佛学研究会 / Tibetan Buddhist Studies Society (TBSS.ORG) at No. 21. The model stands on the re-spaced footprint `l11w-21` (5.2 m) under open question 1, and resolves the 9 October lock.
+- **Method:** shared Peranakan elevation with No. 19, with the board and ornaments read at full resolution. All **134 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 49. See the [design brief](tbss-design-brief.md).
+
+### Q46. Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11 Geylang, completed
+
+- **Address / footprint:** listed at 35 Lor 11 Geylang, with its blade sign. The model stands on the re-spaced footprint `l11w-35` (6.9 m) under open question 1. The row end moved to the measured end pier, 0.66 m past the source end.
+- **Method:** square-on rectification at the 0.6 m depth, with the projecting bay corrected for its 0.45 m projection. All **137 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 50. See the [design brief](zheng-li-design-brief.md).
+
+### Q47. Ting Yu Xuan 听雨轩, 255 Geylang Road, completed
+
+- **Address / footprint:** listed at 255 Geylang Rd as a foot massage parlour, with its board numbered 255. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 51. See the [design brief](geylang-row-design-brief.md).
+
+### Q48. Ke Lai Shun Restaurant 客来顺饭店, 259 Geylang Road, completed
+
+- **Address / footprint:** listed at 259 Geylang Rd, with its red board and blade numbered 259. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 52. See the [design brief](geylang-row-design-brief.md).
+
+### Q49. Mobile Time (Lor 13), 263 Geylang Road, completed
+
+- **Address / footprint:** listed at 263 Geylang Rd, with its board numbered 263. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 53. See the [design brief](geylang-row-design-brief.md).
+
+### Q50. Shi Hao Hotpot BBQ 食好火锅烧烤, 267 Geylang Road, completed
+
+- **Address / footprint:** listed at 267 Geylang Rd #01-01, with its board on both faces of the corner block. The model stands on its re-spaced footprint under open question 2.
+- **Method:** square-on far-side rectification on the street front, using the shared `simple-house` module. All **141 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 54. See the [design brief](geylang-row-design-brief.md).
+
+### Q51. Geylang Lor 9 Beef Kway Teow, 237 Geylang Road, completed
+
+- **Address / footprint:** listed at 237 Geylang Rd, with its boards and blade sign on the Lorong 9 corner building. Source way 454274485 is split into `gr-237` and `gr-237-annex` under open question 3.
+- **Method:** junction and Geylang Road views, a projection check of the source corners, and a satellite mosaic registered about 4.5 m west and 2 m south of the source frame. All **145 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 55. See the [design brief](beef-kway-teow-design-brief.md).
+
+### Q52. Wat Dhammasatis, No. 233 Geylang Road, completed
+
+- **Address / footprint:** listed at 233B Geylang Rd #03-233, with its board and a Buddha image upstairs. Block 475158360 is split into `gr-233`, `gr-231` and `gr-229` under open question 11.
+- **Method:** widths measured across three panoramas and scaled to the source front, with strips cut square to it. All **149 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 56. See the [design brief](wat-dhammasatis-design-brief.md).
+
+### Q53. Red Dot Running Company, 108 Sims Avenue, completed
+
+- **Address / footprint:** listed at 108 Sims Ave, with its shopfront under the 108 pier. Under open question 8a the footprint joins the former 108 and 110 east of the measured 106/108 pier (`sa-108`).
+- **Correction:** the earlier uniform-bay reading is superseded by ground-floor piers matching the source at 20.76 m and 27.17 m. All **153 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 57. See the [design brief](red-dot-design-brief.md).
+
+### Q54. Ming Li's Eating House 明利美食阁, 114 Sims Avenue, completed
+
+- **Address / footprint:** listed at 114 Sims Ave, matching the source way tagged No. 114. The source corner outline is kept: under open question 4 the satellite was checked and supports it, and the earlier 2.6 m offset is a pose error.
+- **Method:** square-on frames scaled to the source faces, with corner render-and-compare. All **159 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 58. See the [design brief](ming-li-design-brief.md).
+
+### Q18 resolved. Hotel 81 Spring, 22 Lorong 15 Geylang, completed
+
+- **Unblocked by:** the owner's answers to open questions 10 (Lorong 15 added to the road set) and 11 (partial-block splits). Block 454254281 is split into `l15-north`, `l15-22` and `l15-south` by parallax measurement of the hotel frontage.
+- **Identity:** a dated exterior. The listing and the April 2024 signage agree; current operation is uncertain. All **163 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 59. See the [design brief](hotel-81-spring-design-brief.md).
+
+### PFCS. Public Free Clinic Society headquarters, 10 Lorong 9 Geylang, completed
+
+- **Address / footprint:** listed at 10 Lor 9 Geylang, with its point in the No. 10 source way. The tower is set back 8 m behind a forecourt, so it stands on the authored footprint `l9-10` under open question 11.
+- **Method:** depth found by agreement of three rectified panoramas, then render-and-compare. All **166 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 60. See the [design brief](pfcs-design-brief.md).
+
+### Q7 resolved. Cico Flooring, Nos. 1–7 Lorong 11, completed
+
+- **Address / footprint:** Cico Flooring (7) and Cico Holdings (1) are listed, with the CICO FLOORING logo on the frontage. Nos. 1–7 are merged into `l11-1-7` behind a 5 m forecourt under open question 7.
+- **Method:** depth from the agreement of three rectified panoramas, then render-and-compare. All **170 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 61. See the [design brief](cico-design-brief.md).
+
+### Q6 resolved. Gems Ville, 8 Lorong 13, completed
+
+- **Address / footprint:** listed at 8 Lor 13. Listing records give 7 storeys, 24 units and a 731 m² lot. The authored footprint `l13-8` replaces the 6A way under open question 6.
+- **Method:** frontage from the parallax of four April 2024 panoramas, depth from the lot area. All **174 tests**, the type check and the build passed.
+- **Validation / completion:** the named-place total is 62. See the [design brief](gems-ville-design-brief.md).
+
+### Q55. Thirteen BBQ Bar 十三烤吧, 27 Lorong 13 Geylang, completed
+
+- **Address / footprint:** listed at 27 Lor 13 Geylang, 388670 (open), with its point in unnumbered way [1223454595](https://www.openstreetmap.org/way/1223454595). April 2024 shows its board, blade and awning.
+- **Lock resolved:** three-panorama triangulation gives a 6.1 m frontage on the source way, settling the 9 October width lock. The row photographs about 2.6 m in front of its source line, which a panorama position error explains as well; the model keeps the source front.
+- **Validation / completion:** all **178 tests**, the type check and the build passed. The named-place total is 63. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Q56. BUILDERSmart 魯班行, 29 Lorong 13 Geylang (Sims Avenue corner), completed
+
+- **Address / footprint:** listed at 29 Lor 13 Geylang, 388672 (open), with its point in unnumbered corner way [1223454594](https://www.openstreetmap.org/way/1223454594). June 2024 Sims Avenue frames show its boards, loft and awnings.
+- **Lock resolved:** the BUILDERSmart boards at No. 100 Sims Avenue are a second frontage; listing and signage agree at this corner.
+- **Validation / completion:** as Q55. The named-place total is 64. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Q57. Teck Hoe Airconditioning Parts, 11 Lorong 13 Geylang, completed (dated exterior)
+
+- **Lock resolved:** the 9 October lock (current use, plan) is settled. Under open question 12 the signed and plated house is a dated exterior, recording that Teck Hoe now lists 8 Lor 15 Geylang. Three panoramas resolve the main block, the lower south wing, the yard and the canopy on source way 1223773759.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 65. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Q58. Wunderfolks, 26 Lorong 13 Geylang, completed (dated exterior)
+
+- **Lock resolved:** the 9 October WUNDERFOLKS lock. Time Out (27 September 2023) published 26 Lor 13 Geylang, which matches the April 2024 board on the way tagged No. 26. Maps now lists Kaki Bukit only, so this is a dated exterior.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 66. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Q59. Instyle Hair Salon, 261 Geylang Road, completed (dated exterior)
+
+- **Decision:** under open question 12, the clearly signed salon on the re-spaced No. 261 footprint is modelled, recording that its only listing is on Crawford Lane. No. 257 next door, whose 新福興 listing is permanently closed, is an unnamed exterior, as is No. 273 (Zui Xiang, closed) beside Golden Jade.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 67. See the [Geylang row brief](geylang-row-design-brief.md).
+
+### Q60. Yap Sun Hardware, 120 Sims Avenue, completed (dated exterior)
+
+- **Lock resolved:** the 10 October Yap Sun lock. Under open question 12, the signed awning on No. 120 is modelled, recording the Chancerlodge Complex listing. No. 106, beside Red Dot, followed as an unnamed exterior.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 68. See the [Sims Avenue south brief](sims-south-brief.md). Nos. 116 (the conflicting ABC Bistro corner) and 124 followed later as unnamed exteriors.
+
+### Q61. Lian Seng Weighing Scale Co., 229 Geylang Road, completed
+
+- **Address / footprint:** listed at 229 Geylang Rd, 389289, with its board on the `gr-229` strip west of Wat Dhammasatis (open question 11). No. 231 next door (Vietnam Unisex Concept, no listing) is an unnamed exterior.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 69. See the [Geylang Road north brief](geylang-north-brief.md). The three in-bounds houses west of Lian Seng followed later as unnamed exteriors on a split of block 453797929.
+
+### Q62–Q64. Monster Ink (240), Shadow Tattoo (244) and the Nanyang Lian Clan Association building (248), Geylang Road south side, completed
+
+- **Unblocked by:** the owner's answer to open question 16. Block 454438330 is split on its source front into eight strips at measured party lines. Triangulation puts the façades 2.4 m forward, which is this drive's position error, so the earlier 6 m correlation reading was spurious.
+- **Named:** Monster Ink (listed and signed at 240); Shadow Tattoo (signed, now listed at Pavilion Square; a dated exterior, open question 12); the Nanyang Lian Clan Association (listed at 248, signed), with BKK Forex at street level.
+- **Unnamed:** Nos. 236, 238, 242, 246 and 250.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 72. See the [Geylang Road south brief](geylang-south-brief.md).
+
+### Q65–Q66. Sin Chew Tan's Clan Association (28A) and the Teck Keow Association (26A), Lorong 15, completed
+
+- **Unblocked by:** the owner's answer to open question 15. Both houses stand on the source front of the northern strip of block 454254281, split in the ratio of their photographed widths. They were measured at the photographed depth, about 4.8 m forward.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 74. See the [Lorong 15 brief](lorong-15-brief.md).
+
+### Q67–Q68. Hong Sheng Koon (20E) and the Singapore Ship-Chandlers Association (20), Lorong 15, completed
+
+- **Address / footprints:** both listed and signed. The southern strip of block 454254281 was split at measured party lines, photographed 4.4 m forward and treated like open question 15. The lean-to beside them and the cream building on way 454254268 are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 76. See the [Lorong 15 brief](lorong-15-brief.md).
+
+### Q69–Q70. Tian Tian Minimart and TakeToys, Geylang Road south side between Lorong 8 and Lorong 10, completed
+
+- **Address / footprints:** block 454438340 is split at measured party lines, read where triangulation puts the street piers 0.9 m forward (open question 11). Both are listed and signed. The corner, the blue building, the cream house and the white block are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 78. See the [Geylang Road south brief](geylang-south-brief.md).
+
+### Q71. ibis budget Singapore Gold, 121–127 Sims Avenue, completed
+
+- **Lock resolved:** the 7 October plan lock. The yellow conserved block is assigned provisionally across its four source ways, scaled from its measured 20.5 m frontage. The "one bay west" satellite reading is the imagery registration offset.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 79. See the [ibis budget Gold brief](ibis-gold-brief.md).
+
+### Q72. Red Flag Store (Davco), 111 Sims Avenue, completed
+
+- **Address / footprint:** listed at 111 Sims Ave, Floor 1, and signed with a Davco roundel and a Sika awning. It is the east unit of the tiled row on way 439168694, which is clipped 6.5 m behind its front (where three panoramas agree) and split at measured party lines (open question 11). Its two neighbours and the white pair on way 439168818 are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 80. See the [Sims Avenue north brief](sims-north-row-brief.md).
+
+### Q73. YWAM Singapore, 4 Lorong 9 Geylang, completed
+
+- **Address / footprint:** Youth With A Mission is listed at 8 Lor 9, but its plaque reads 4 LORONG 9 GEYLANG on the yellow building of way 453797939, which is tagged No. 4. The signed occupant is modelled under open question 12. No. 12 and the grey building across Nos. 8 and 6 are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 81. See the [Lorong 9 brief](lorong-9-brief.md).
+
+### Q74. AhlulBayt Educational & Cultural Centre and Jaafari Muslim Association, 17 & 17C Lorong 15, completed
+
+- **Lock resolved:** the 9 October Lorong 15 west-side lock. Their joint board names both numbers. The rest of the west side (Nos. 1–33) followed as unnamed walk-up exteriors.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 82. See the [Lorong 15 brief](lorong-15-brief.md).
+
+### Q75. Yi Xiu Factory Building, 65 Sims Avenue, completed
+
+- **Address / footprint:** listed at 65 Sims Ave and signed FACTORY BUILDING. The salmon ten-storey flatted factory fills way 439168856, with its roof at about 36 m from the roofline elevation. The fruit-stall buildings at No. 77 in front of it are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 83. See the [Sims Avenue north brief](sims-north-row-brief.md).
+
+### Q76. Shi Cheng Temple 真佛宗狮城雷藏寺, 117 Sims Avenue, completed
+
+- **Address / footprint:** listed at 117 Sims Ave, with its point 1 m beyond way 475915911, whose building shows the temple's architecture above the temporary tent. This settles the 10 October "pagoda-style building" note.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 84. See the [Sims Avenue north brief](sims-north-row-brief.md).
+
+### Q77–Q78. Kim Court (11) and The Diamond (17), Lorong 9 west side, completed
+
+- **Lock resolved:** the 10 October Kim Court lock. The KIM COURT / 11 pillar triangulates inside the way tagged 11, and The Diamond's lettering is on the way tagged 17; listings, plates and tags agree. No. 7A is unnamed, and the No. 3 and No. 5 construction sites are shown hoarded.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 86. See the [Lorong 9 brief](lorong-9-brief.md).
+
+### Q79. ChongQingXiaoMian 重庆小面, 258 Geylang Road (the Lorong 12 corner), completed
+
+- **Address / footprint:** listed at No. 258 with its point in the corner. Block 454438318 is split at the corner building's satellite roof edge (open question 11). This settles the 10 October lead.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 87. See the [Geylang Road south brief](geylang-south-brief.md).
+
+### Q80. BUILDERSmart 魯班行, Sims Avenue frontage at No. 100, completed
+
+- **Address / footprint:** the re-spaced No. 100 (open question 23), signed with BUILDERSmart's board, awning and blade. It is a second frontage of the business listed at 29 Lor 13 (open question 12). This settles the 10 October BUILDERSmart lock. Nos. 98 and 102 are unnamed.
+- **Validation / completion:** tests, type check and build passed. The named-place total is 88. See the [Sims Avenue south brief](sims-south-brief.md).
+
+### Lorong 13 unnamed exteriors, from 10 October 2026 (open question 18)
+
+- **No. 15D/E** (way 1223773761), **No. 9, southern house** (way 1223773756) and **No. 3** (way 1223773753) are modelled from April 2024 as unnamed exteriors. Hiap Lian (listed at 15D) and River Ash Bakery (listed at 3) have no visible signs, and the No. 9 banner is free-standing. Nos. **28**, **24** and **20** on the single-storey east row followed on the shared form measured at Plus Mobile, then Nos. **18**, **16** and **12A** on a new set-back option, Nos. **25** and **21/23** on their source ways after open question 20, the **No. 269 wing** and the **narrow building north of Shi Hao** on authored footprints (open questions 21 and 22), and **No. 96 Sims Avenue** at the east corner (shuttered in April 2024, hoarded for works by June 2024). The 10 October note on No. 96 is superseded. The **No. 269** Geylang Road corner is built unnamed on its source way, settling the 10 October conflict note; its continuation north is open question 21. They are not counted as named places. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+### Lorong 11 unnamed exteriors, from 10 October 2026 (open question 18)
+
+- **No. 15** (`l11w-15`) is modelled from April 2024 as an unnamed exterior on the shared Peranakan elevation, which now takes per-house bays. **Nos. 23, 25, 27, 29A and 33** follow on the simple-house elevation, completing the west row, and **Nos. 16, 18, 22, 28 and 30–32** complete the east side. See the [Lorong 11 street brief](lorong-11-street-brief.md).
+
+### Authored footprints, from 10 October 2026
+
+The owner's answers to the open questions allow re-spaced and authored footprints. `src/authored-footprints.mjs` holds each approved group. A group lists the source ways it replaces, the measured evidence, the question number and the approval date. `withAuthoredFootprints()` applies the groups when the scene loads, and `map.json` and the source coordinates are unchanged. Replaced ways are kept as `replacedBuildings`, and authored buildings carry `geometrySource: 'authored-estimate'`.
+
+- **Geylang Road Nos. 255–267 (open question 2), applied:** six houses replace the seven source bays (ways 454254205–211) between Leong Kee and Lorong 13: 255 (听雨轩), 257 (新福興), 259 (客来顺), 261 (Instyle), 263 (Mobile Time) and the 267 Shi Hao corner.
+  - **Measurement:** party lines were read from six June 2024 far-side panoramas on the street front, where they agree with the façade 0.5 m behind it. The table is in the group's evidence.
+  - **Leong Kee:** it keeps its three source bays. Its measured end, 14.1 m, is within 0.4 m of the source line, so No. 253 stays part of the corner building, consistent with 新福興's board reading #257.
+  - **Shi Hao corner:** its Lorong 13 face is 2.1 m east of the source edge, with an estimated 1.4 m chamfer.
+- **No. 237 Geylang Road (open question 3), applied:** source way 454274485 is split at the step in its outline into the Lorong 9 corner building (`gr-237`) and a generic annex flush with Chen Hing (`gr-237-annex`). The temple-alley rear elevation now finds replaced source ways.
+- **Satellite imagery:** the scratchpad mosaic tool registers Google satellite tiles to the source frame, with the imagery about 4.5 m west and 2 m south of it. Earlier notes that roofs sit "one bay west" are explained by this offset.
+- **Geylang Road Nos. 229–233 (open question 11), applied:** block 475158360 is split by measured widths into `gr-233` (Wat Dhammasatis), `gr-231` and `gr-229`, using a new strip-clipping helper.
+- **Sims Avenue Nos. 106–110 (open question 8a), applied:** the ground-floor piers confirm the source lines at 20.76 m and 27.17 m, so only the 106/108 line moves (to about 15.0 m). Former Nos. 108 and 110 merge into Red Dot Running's unit `sa-108`, and No. 106 becomes `sa-106`. The earlier four-bay upper-storey reading is superseded.
+- **Lorongs 9, 10 and 12 (open question 24), applied:** `scripts/prepare-map.mjs` now derives the eleven Lorong 9, 10 and 12 ways that touch the study bounds, bringing the road set to 52 ways, and `public/map.json` was regenerated. Building footprints are unchanged. The temple alley's Lorong 9 access way is now drawn as part of the road set rather than as context.
+- **Lorong 15 (open question 10), applied:** `scripts/prepare-map.mjs` now derives the seven Lorong 15 road ways that touch the study bounds, and `public/map.json` was regenerated. Building footprints are unchanged (154). Generic buildings along Lorong 15 now face it. Earlier notes that call Lorong 15 "outside the derived road set" are historical.
+- **Older estimated models (open question 13), checked:**
+  - Hotel 81 Joy was re-measured.
+  - The Agape Centre and Hok Tek Chi models overlay their April 2024 photographs to within about 0.4 m, Hok Tek Chi after its re-spacing, so they are kept.
+  - The Lok Fu model was replaced by Guan Keat.
+  - Hainan Goh, Ho San Kong Hoey, SHG Engineering and Faith Mission Home were checked by render-and-compare from the April 2024 Lorong 11 panoramas, alongside the new east-side neighbours. They overlay their photographs closely enough to be kept. The same check lowered the new No. 22's canopy and parapet by about 0.4 m.
+  - **Masjid Haji Mohd Salleh**, re-measured from three June 2024 panoramas and rebuilt:
+    - The 2020-based model showed a cream three-storey front with an 11.35 m wall. The building was repainted in 2021 and has four storeys to a parapet at about 15.8 m.
+    - The photographed front is about 20.3 m wide and runs parallel to Geylang Road, 8° off the source front. Under open question 25, it now stands on authored footprint `gr-245`, with an open yard of about 2 m at the east.
+    - The same geometry explains the 2.8 m "pose error" recorded at Chen Hing: the façade simply stands behind much of the source front.
+    - See the [references](lorong-11-references.md).
+  - **Mongkok Dim Sum (214 Geylang Road)** was rebuilt as a June 2024 exterior:
+    - The corner was repainted after the 2016 panorama. It is now taupe, with a red ground floor and a red 24 HRS board.
+    - The parapet is raised from 10.1 m to 11.6 m.
+    - The Lorong 8 face gains its windows and awning.
+    - See the [brief](mongkok-dim-sum-design-brief.md).
+  - **Nanyang Dentist (212) and Shaxian Eatery (210)**, modelled on 10 October 2026 under open question 11 (estimated partial-block splits):
+    - They are two further units of the Mongkok block, on measured frontages of 7.05 m and 6.7 m.
+    - Both are listed and signed in June 2024.
+    - The Mongkok return is corrected to 5.8 m.
+    - See the [Mongkok brief](mongkok-dim-sum-design-brief.md).
+  - **Leong Kee (251 Geylang Road)** was checked from June 2024 panoramas and kept:
+    - Its front plane agrees to within about 0.2 m along the frontage.
+    - The eave is about 6.8 m, against the model's 7.05 m.
+    - Recorded, not corrected: the ochre corner building ends about 8.9 m from the Lorong 11 corner, against the source party line at 9.70 m.
+  - S.M. Khek Leow (No. 4) was re-measured by two-panorama triangulation. Its upper storey was rebuilt: the windows are about 1.0 m tall rather than 1.7 m, the arch crowns sit near 6.6 m rather than 7.1 m, and the eave is at about 7.55 m. See the [references](lorong-11-references.md).
+- **Lorong 11 west row (open question 1), applied:** twelve houses, Nos. 15–35 including 29A, replace the eleven source ways along the same front and rear lines. The measured party lines are in the table below.
+  - **Retargeted models:** Hok Tek Chi moves to `l11w-17` (5.2 m) and Canton Wong to `l11w-31` (3.7 m).
+  - **Check:** render-and-compare from two April 2024 panoramas puts both models on their photographed frontages.
+  - **Unlocked:** Goodwood (19), the Tibetan Buddhist Studies Society (21), Eng Lee Huat (29) and Zheng Li (35).
+
+### 10 October 2026: leads checked and locked
+
+- **Sims Avenue south row, Nos. 116–124: source front about 3.25 m behind the real façades.** Rectified panoramas agree on this depth over both No. 118 and Thye Seng (No. 122). A render of the Thye Seng model draws it about 1.35 times smaller than photographed from the same pose, while the kerb aligns. Fok Wai Kee's measured 7.67 m camera distance fits the same offset. Recorded, not corrected: the modelled neighbours all keep the source front.
+- **Eng Lee Huat Hardware 永利... ENG LEE HUAT HARDWARE PTE. LTD., 29 Lorong 11 (west side):**
+  - **Identity:** Google Maps lists it at 29 Lor 11 Geylang, 388721. April 2024 Street View (`H3-9KS_v_QrrAnpO7y28LQ`, `QQNp4tBAf9BWzHrMOUczcw`, `8kEpH_Q3jNSaUef89yiXtQ`) shows its signboard and door plate **29**.
+  - **Measurements:** three panoramas rectified onto the façade agree with it 0.6 m in front of the source front, to within 0.3 m over three features. Measured from No. 27's south front corner, the party lines fall at about 6.0, 9.8, 15.8 and 20.1 m, against the source's 6.4, 12.8 and 19.2 m. Eng Lee Huat's frontage is therefore about 3.8 m wide, against the source's 6.41 m.
+  - **Neighbours:** the next house carries plate **29A** on its door (LG Renov Services is listed at 29A) and the Canton Wong red stair sign. It spans about 9.8–15.8 m, straddling source Nos. 29 and 31. The Canton Wong gold board and five-pane window lie at about 16.0–20.0 m.
+  - **Status:** locked. The west row of Lorong 11 is mis-subdivided at Nos. 27–33 as well as at Nos. 15–23, so this awaits the same user-approved re-spacing. That re-spacing would also correct the Canton Wong model. A 27A stair door stands south of No. 27, where Hwa Kwang Temple 華光神壇 is listed; No. 25 was hoarded in April 2024.
+- **Hakka Association (Singapore), 22 Lorong 11:** listed at No. 22 (way 1223250203, between Hainan Goh and Ho San Kong Hoey). April 2024 shows a plain white two-storey house with a corrugated canopy and a red awning, and no association signage. Not modelled.
+- **Nai Ghee Hardware & Trading, 28 Lorong 11:** listed at No. 28. April 2024 shows only an English Abrasives notice upstairs and closed shutters. Not modelled.
+- **No. 116 Sims Avenue, the Lorong 15 corner:** June 2024 boards read ABC BISTRO RESTAURANT PTE LTD, whose listing is marked permanently closed. Tai Say (coffee shop), Da Bao Lorong 15 and Prata Hub are listed open at No. 116. This conflicts, following the ABC Bistro precedent. Not modelled.
+- **Yap Sun Hardware, 120 Sims Avenue:** its name is on the blue awning in June 2024, but Google Maps lists Yap Sun Hardware Mfy at 105 Sims Ave, #04-09 Chancerlodge Complex. As with WUNDERFOLKS at 28 Lor 13, its use at No. 120 is unresolved. Not modelled.
+- **AiSecurityReady, 2 Lorong 11 (the grey conserved shophouse beside S.M. Khek Leow):** listed open at 2 Lor 11. April 2024 shows a CCTV supply-and-install shop under a WINA SALON board; Wina Salon is listed as permanently closed. The AiSecurityReady name itself was not seen. This is a candidate for a dated exterior, pending a frame that shows the name.
+- **Ming Li's Eating House 明利美食阁, 114 Sims Avenue (the Lorong 15 corner):** listed open 24 hours at 114 Sims Ave, with its signboard on the corner building in June 2024. A candidate, needing the corner and Lorong 15 elevations.
+- **Panorama position errors:** on Geylang Road (Nos. 237–245) and Lorong 13 (No. 1), the recorded panorama positions are 2–3 m off the source frame. Recorded camera positions alone should not be trusted for depth; calibrate against an existing model or the source frontage width.
+- **Sin Chew Tan's Clan Association 星洲陳氏公會 (corrected):** its signboard was seen in June 2024 on a three-storey building on **Lorong 15**, above Ganh Xua by Homely Vietnam (listed at 28 Lor 15). It is not on Lorong 13 as first noted. That listing's point lies in Hotel 81 Spring's merged block, way 454254281. No address for the association was found. Locked with the Lorong 15 scope and partial-block questions.
+- **Geylang Road south side (Nos. 204–258):** Shaxian Eatery 沙县小吃 (210), ChongQingXiaoMian (258, at the Lorong 12 corner), Chang Beer (218), the TakeToys adult store and others are listed and signed in June 2024. Most of their source ways are coarse blocks (for example 454438330) that span several frontages, so they need partial-block splits first.
+- **Geylang Lor 9 Beef Kway Teow 芽龍九巷牛肉河粉, 237 Geylang Road:**
+  - **Identity:** listed open as a hawker stall at No. 237. Its fascia and a 牛河大王 blade sign are on the pink four-storey block west of Chen Hing (green shutters, 藤樓 on the chamfered west corner).
+  - **Mismatch:** source way 454274485 steps back 4.5 m over its eastern 7.3 m, but the photographed block runs flush to Chen Hing. With the Chen Hing pose correction, its frontage is about 10.2 m and ends about 2.4 m east of the source step.
+  - **Status:** locked pending an authored footprint.
+- **Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11:**
+  - **Identity:** listed open at 35 Lor 11, 388728. Blade signs 正利心厨 ZHENG LI HEARTY KITCHEN are on the last house of the west row, before the open corner at Sims Avenue.
+  - **Mismatch:** three April 2024 panoramas rectified at the 0.6 m depth that fits Nos. 27–31 disagree by up to 3 m along the street here, so the 33|35 party line can't be checked against source No. 35.
+  - **Status:** locked with the west-row re-spacing.
+- **Ming Li's Eating House 明利美食阁, 114 Sims Avenue:**
+  - **Identity:** listed open 24 hours at No. 114. Way 682928749 is tagged No. 114, three levels. The white Art Deco corner block has its signboard on a chamfered corner face, a food-photo board over the Sims bay and a SingGas awning along Lorong 15.
+  - **Mismatch:** square-on rectifications put the photographed Sims face about 2.6 m west of the source party line with Amrise, and about 1 m wider than the source edge. This matches the ~3.25 m façade offset found at No. 118. Each of the three faces (Sims 6.64 m, chamfer 4.41 m, Lorong 15 18.28 m) would need its own offset.
+  - **Status:** locked pending an authored corner outline.
+- **Kim Court, Lorong 9:** listed at 11 Lor 9 Geylang (with Star Glass), but the KIM COURT lettering in June 2024 is on the yellow apartment block tagged No. 17, beside The Diamond. Both ways lie on the study's west boundary. Locked pending the address conflict.
+- **Key duplicating, 24 Lorong 13:** a key-cutting booth signed 配锁匙 / DUPLICATING matches the listing at No. 24, which Bookland Library Services shares. It is a generic trade sign rather than a name, so it is not modelled.
+- **No. 269 Geylang Road, the Lorong 13 corner:** Hong Wah Coffee Shop and Geylang Food Corner are listed open there, but the frontage shows a Khim Seng gas awning, a 麻辣空间 board and the closed BN Food Palace's 24-hour board. These conflict. Not modelled.
+- **Mister Contracts, the northern No. 9 house on Lorong 13 (way 1223773757):**
+  - **What the signboard says:** a full-resolution April 2024 frame reads its address line as **5 LORONG 13 GEYANG [sic], SINGAPORE 388643**, which is K Group's address. Google Maps gives No. 7.
+  - **Where it hangs:** on the house the source tags No. 9. Its southern neighbour (also tagged No. 9) has the MC Multi Skills banner and a vending machine.
+  - **Status:** with three different numbers for one signboard, the lock stands. See open question 12.
+- **Wat Dhammasatis วัดธรรมสาทิส, 233B Geylang Road #03-233:**
+  - **Identity:** listed open as a Buddhist temple. June 2024 shows its WAT DHAMMASATIS BUDDHIST CENTRE board and a Buddha image in the upper windows of the white four-storey building directly west of the Lorong 9 corner. A Durian & Fruits Experience Centre 榴莲鲜果体验馆 occupies the ground floor, where Fuyuan restaurant is also listed (No. 233).
+  - **Footprint:** source way 475158360 is a 15.8 m frontage block covering this building and two Peranakan shophouses to its west (Vietnam Unisex Concept, Lian Seng Weighing Scale).
+  - **Status:** locked pending a partial-block split (open question 11).
+- **Nos. 21/23 Lorong 13 (ways 1223454598 and 1223454597), the four-storey blue-and-white block:**
+  - **Signs:** a door placard reads 21/23 GEYLANG LORONG 13, and door plate 21 is visible. A Chinese hall signed 仁濟堂 occupies the south bay, with couplets and product posters. Yong Li Electrical Services is listed at 21B.
+  - **Gap:** no listing or published address for 仁濟堂 was found.
+  - **Status:** locked pending an identity source for the signed tenant.
+- **Other associations from the SFCCA directory:**
+  - **Ji Yang Cai Clan Association, 3 Lorong 9:** the site was under hoarding in June 2024, with "No 3" painted on it.
+  - **Teck Keow Association, 26A Lorong 15:** in the merged Lorong 15 block.
+  - **Hakka Chong's Association, 212A Geylang Road:** in the Mongkok block.
+  - **Status:** none can be modelled yet.
+- **No. 96 Sims Avenue:** a plain white two-storey block with shutters and no signage. Not modelled.
+- **The pagoda-style building north of Sims Avenue, behind the Brandsbridge tent (way 475915911):** it stands beyond the study's north boundary. Not modelled.
+- **Lorong 11 west row, measured party lines (for open question 1):**
+  - **Method:** April 2024 panoramas `s5xU…`, `H9_p…`, `73in…`, `64XR…`, `8kEp…`, `H3-9…`, `QQNp…` and `aHF7…` stand about 10 m apart along the lane. They were rectified at the 0.6 m façade depth solved for Nos. 27–33. Each party line is read from the most square-on panorama and checked against its neighbours.
+  - **Position datum:** s is measured from No. 15's south front corner (-38.26, 19.94) towards No. 35's north corner (-59.42, -47.25), along the source front.
+
+  | Party line | Measured s (m) | Source s (m) | Evidence |
+  | --- | --- | --- | --- |
+  | Row start (No. 15) | 0.3 | 0 | building edge beside Hotel 81 Joy's yard |
+  | 15 / 17 | 9.3 | 6.40 | downpipe; No. 15 is a two-bay house (earlier triangulation 8.86 m) |
+  | 17 / 19 | 14.5 | 12.81 | downpipe beside Hok Tek Chi's blue windows |
+  | 19 / 21 | 19.8 | 19.22 | pilaster beside the Goodwood house |
+  | 21 / 23 | 25.0 | 25.62 | end of the Tibetan Buddhist Studies Society façade; plate 23 hangs there |
+  | 23 / 25 | about 31.0 | 32.03 | end of the plain three-storey No. 23 |
+  | 25 / 27 | 37.1 | 38.43 | pilaster; plate 27 beside it; No. 25 hoarded below a corrugated canopy |
+  | 27 / 29 | 44.3 | 44.83 | three-panorama parallax, spread under 0.3 m |
+  | 29 / 29A | 48.3 | — | roofline vents; Eng Lee Huat is about 4.0 m wide |
+  | 29A / 31 | about 54.2 | 51.24 | start of the Canton Wong board |
+  | 31 / 33 | about 57.9 | 57.65 | ground-floor pier after the Canton Wong window, re-read square-on from `aHF7…` |
+  | 33 / 35 | 64.2 | 64.04 | ground-floor pier and upper-storey setback, read square-on from `aHF7…` |
+  | Row end (No. 35) | 71.1 | 70.44 | end pier, re-read square-on from `aHF7…`; Zheng Li's restaurant fills 64.2–71.1, extending 0.66 m past the source end onto open ground |
+
+  - **Uncertainty:** about ±0.3–0.5 m up to the 31 / 33 line, and more beyond it, where a 1 m disagreement between panoramas remains.
+- **Red Dot Running / Amrise row, 106–112 Sims Avenue, re-checked:**
+  - **Depth:** the 108 pier aligns across three June 2024 panoramas when the façade is about 1.5 m in front of the source front, not 3.25 m as east of Lorong 15.
+  - **Bays:** at that depth the upper storeys show four uniform bays of about 7.1 m, with party lines at about 7.0, 14.1, 21.2, 28.3 and 35.4 m from Fok Wai Kee's west corner. The source widths are 6.16, 8.31, 6.41 and 8.24 m, and the 108 pier stands on the third party line.
+  - **Status:** locked pending re-spacing (open question 8a).
+- **River Ash Bakery, 3 Lorong 13, historical check:** Street View captures from February 2018, September 2020, September 2021 and March 2022 show the house plated 3 with a red awning, shutters and a timber door, and no bakery signage in any of them. The lock stands.
+- **Durian Culture, 77 Sims Avenue, re-checked:** June 2024 ground-level frames show the tiled fruit stall but no Durian Culture name. The lock stands.
+- **Pu Guang Tang Buddhist Society (5 Lorong 9) and Ji Yang Cai Clan Association (3 Lorong 9):** both are listed, but both sites (unnumbered ways 453797936 and 453797937) were behind construction hoarding in June 2024. Not modelled.
+- **Teck Keow Association (26A Lorong 15) and Sin Chew Tan's Clan Association (28A), 10 October 2026:**
+  - **Identity:** both are signed on the buildings north of Hotel 81 Spring, in the `l15-north` strip, with Ganh Xua at street level.
+  - **Measurement:** two-panorama solutions place the façades about 4.8 m in front of the source block, near the modelled Lorong 15 carriageway, which the neighbouring hotel measurement does not share.
+  - **Status:** locked as open question 15.
+- **Geylang Road south block (way 454438330), 10 October 2026:** the façade depth is ambiguous between correlation (about 6 m forward) and corner triangulation (on the source line). Locked as open question 16.
+- **No. 291 Geylang Road (open question 5), 10 October 2026:** outside the study's walkable bounds. Logged as open question 17.
+- **BUILDERSmart lock, re-checked:** the BUILDERSmart boards hang on the house tagged No. 100 Sims Avenue, two doors west of Fok Wai Kee. Maps lists KBC Bargain Centre at No. 100 and BUILDERSmart at 29 Lor 13. The lock stands.
+
 ### 9 October 2026: leads checked and locked
 
 - **Nos. 253–267 Geylang Road (ways 454254205–211), between Leong Kee and Lorong 13:**
@@ -533,3 +910,101 @@ Direct inspection of [April 2024 Street View](https://www.google.com/maps/@?api=
 **Validation / completion:** `npm test` passed 11/11; `npm run build` passed with the existing bundle-size advisory; `git diff --check` passed. Daylight browser inspection covered the opaque shop/entrance, readable entrance name, upper windows, pink surrounds, upper lettering and roof shade, with no captured runtime warnings or errors. The lower awning partly obscures the upper name from the close pedestrian review position. Source footprints, metre scale and raster assets are unchanged. Q6 is complete and ready for its single focused commit; no second item was started.
 
 All four original landmarks and Q1–Q6 are complete within their documented fidelity limits. No supported pending or resumable item remains. Pause this scheduled task after the commit; the project is ready to be retargeted to another lorong. This is completion of the named-building queue, not a claim that every Lorong 11 façade or current tenant has been surveyed.
+
+### 11 October 2026: rebuilding the widened ring (open question 26)
+
+The widened bounds brought 57 unmodelled buildings into the map: the original five boundary blocks and 52 more. About 33 front a modelled road within 27 m and showed stock shop signs. The rest front lanes outside the road set and render as plain volumes. They are being rebuilt from June 2024 photographs, unnamed unless a listing and signage agree.
+
+- **No. 291 Geylang Road, the Lorong 15 corner (way 454254230), unnamed exterior:**
+  - Triangulating the party pilaster and the corner pier from two June 2024 panoramas puts the front on the source front, about 4.0 m wide against the 5.13 m source way.
+  - The authored corner footprint proposed under open question 5 was **not needed**. The earlier "3 m wider" reading came from satellite roofs, which register loosely here, and a deeper footprint along Lorong 15 could not be confirmed.
+  - The 291 Eating House listing is marked closed while the company stays live, so the boards and blade are blank.
+- **Row east of Lorong 12, south side (`gr-260-east`), unnamed exterior:**
+  - It holds three two-storey shophouses (green, yellow and white) and part of the grey house signed 268.
+  - The party lines were triangulated from two June 2024 panoramas. They lie 4.8 m in front of the source front and give bays of about 5.0, 4.6 and 5.2 m. The grey|green line falls at 16.7 m, against the earlier split's 16.8 m.
+  - The HAPPY PLACE TATTOO banner hangs over a closed frontage, so it is blank.
+  - **Corrected reading (open question 29):** a cross-drive triangulation shows the 4.8 m offset is real, not a pose error: the row's façades stand north of the source front. The grey shophouse with a red 串 board stands inside `gr-258`, at about 11.0–16.7 m.
+- **West end (`src/ring-west-layout.mjs`), unnamed exteriors:**
+  - `gr-221-west`: the Peranakan row east of the Lorong 7 corner. It holds Gong He Guan (No. 217, listed and signed), BBQ Home (No. 219, closed), a white house, and the house with the Lor 9 Fresh Frog Porridge board. The triangulated party lines show the earlier Nos. 223–227 split sits about 4.5 m east of its photographed houses. That is open question 28; until it is settled, the boards are blank.
+  - Way 453797928: the white Art Deco block dated 1939 on the west corner of Lorong 7.
+  - No. 198 (454254201): a grey four-storey office block with multiple tenants, plus a narrow cream house at its west end.
+  - Way 454254200: cream Art Deco shophouses with a curved west corner.
+  - **Method:** all four were triangulated from two June 2024 panoramas. Their depth offsets range from 0.9 m behind to 1.3 m in front of the source fronts, and heights were corrected for that. The two blocks that straddle the west edge use oblique review starts inside the walkable bounds.
+- **North-west corner (also in `src/ring-west-layout.mjs`):**
+  - **Rozel Furniture**, 51 Sims Avenue (439168683), **named**: listed open, with its Maps point inside the way and its maroon boards on the building in June 2024. Its columns were triangulated from two panoramas.
+  - The block behind it (1223603464) is drawn as massing only, since it is hidden from Sims Avenue.
+  - The neoclassical building at **56 Sims Avenue** (1223603461) is signed HI HOTEL in June 2024, but Google Maps now lists Amrise Hotel Geylang at its point. The operator conflicts, so it is unnamed.
+  - **21 Lorong 9** (1223407892) is an eight-storey apartment block with a louvred core and glass-railed balconies, roof at about 26.8 m.
+- **Lorong 10 group (`src/ring-c-layout.mjs`):** seven ways, rebuilt from the June 2024 Lorong 10 drive. Both sides read about 2.4–2.7 m east of their sources; the shift is nearly equal on both sides, so it is treated as the drive's position error.
+  - **Named after a listing check:**
+    - **JH Hotel 嘉華酒店:** listed, point inside way 1223401721, board photographed.
+    - **Nanyang Fan Clan General Association 南洋范氏總會:** listed at 11 Lor 10, point inside way 454438323, raised lettering photographed.
+  - **Left unnamed, signs conflict with listings:**
+    - The sign reading ibis budget SAPPHIRE is on a building whose point is listed as ibis budget Singapore Tulip.
+    - The sign reading ibis budget HOTEL AMETRINE is on a building whose point is listed as ibis budget Singapore Olive.
+  - **Left unnamed, three hotels on one way:** D'Nova Hotel and JXIN HOTEL are listed, but both share way 454438326 with the ibis block. Naming them needs that way split (open question 30).
+- **Lorong 15 east and Sims Avenue Nos. 126–130 (`src/ring-a-layout.mjs`), unnamed exteriors:**
+  - The four-storey commercial block on the Geylang Road / Lorong 15 east corner (No. 301), with its corner and two side faces.
+  - No. 2 Lorong 15.
+  - The two- and three-storey row north of No. 2, set 3.2–3.4 m in front of its source front.
+  - The yard with shrine sheds and an old single-storey house.
+  - Sims Avenue Nos. 126, 128 and 130 (the Lorong 17 west corner).
+  - **Capture dates:** Lorong 15 has no June 2024 drive, so its faces are dated April 2024.
+  - **No. 134 (682928733), the Lorong 17 east corner:** drawn as massing with its red awnings, unnamed. Its outline lies almost entirely outside the bounds, and the two drives disagree on its position by 3–4 m.
+- **Lorong 12 group (`src/ring-b-layout.mjs`), unnamed exteriors:**
+  - Way 454438320: a white nine-storey apartment tower at the north end and a lavender-blue four-storey hotel signed HOTEL 81 CHERRY at the south end, sharing one way.
+  - The cream three-storey pair with association boards. It photographs 15 m wide against the 9 m way.
+  - The Summer View apartment block at No. 5.
+  - The ten-storey condominium at No. 9. Its front stands 8–10 m in front of the source, so the way looks like an older trace.
+  - The garden house on the west side, set back.
+  - The four-storey block north of No. 12.
+  - The hotel at No. 12, signed YA JU HOTEL 雅居酒店.
+  - **Method:** windows, fins and corners were matched between June 2024 panoramas, and each building is kept on its source front.
+  - **Agent run:** it stalled after writing its files. The files were complete, so they were reviewed, tested and wired in.
+  - **Named after a listing check:** **Ya Ju Hotel 雅居酒店**, No. 12. YAJU HOTEL is listed, its point lies inside way 121873031, and its sign was photographed.
+  - **Left unnamed until their ways are split (open question 31):** Hotel 81 - Cherry, whose point is in 454438320 alongside the apartment tower. Also the Singapore Master Tailors' Association (3C) and the Chinese Eating House Owners' Association (10C), whose points are both in 454438319.
+
+- **Lorongs 6 and 8, south of Geylang Road (`src/ring-south-layout.mjs`, built by the west-ring builder):** the edge ways left as generic blocks after the ring rebuild, because neither lane is modelled. They are seen down the lanes from Geylang Road, and their review starts stand in the lanes.
+  - **Lorong 8, east side:** **Lex Hotel 樂斯旅店** at No. 1 (named: the listing point lies inside way 454438339 and its sign was photographed); the cream four-storey block over a car park across Nos. 7A and 11A, cut from one elevation at its three ways' party walls; and the pink house at No. 17B across its two ways.
+  - **Lorong 8, west side:** the eight-storey apartment block in way 454438335, where the Maps address point for 6 Lor 8 Geylang lies.
+  - **Lorong 6:** the eight-storey block on the west side (way 454438334), and Crystal Mansions on the east side (way 454274483), drawn from a repeating 14 m bay pattern read through trees.
+  - **Method:** building ends and edges were triangulated from two June 2024 panoramas of each lane. Each building is kept on its source front, with the photographed elevation laid along it where the widths differ.
+  - **Left unnamed (open question 32):** the Singapore Engineering Merchants' Association, whose lettering is on the cream block but whose point lies in the lane, and Crystal Mansions, whose point lies 0.5 m outside its way.
+- **The last generic blocks, at the east and west edges:** with these, every footprint in the map has a photographed exterior or photographed massing, and the generic fallback draws nothing.
+  - **Lorong 17 west side (`src/ring-east-layout.mjs`):** eleven three-storey walk-ups whose fronts face Lorong 17 beyond the east edge. Only their backs and roofs are visible from the modelled streets, so they are massing in the colours of their June 2024 fronts, about 14 m to the roof slabs, with satellite roof colours. Their association boards (S'pore Rattan Industry Association, Wee Ghee Athletic Association, 慕德同鄉會, Yang Clan General Association) are recorded but not named.
+  - **Lorong 7 (`src/ring-west-layout.mjs`):** the four-storey associations building south of No. 8, unnamed with blank boards because it has many occupants, and No. 8 itself, a nine-storey condominium beyond the west edge drawn as massing.
+  - **North of Sims Avenue, west of Rozel Furniture:** the long block beside the railway, hidden from Sims Avenue, drawn as massing at an estimated 16 m.
+- **Lorong 12 listing check, 11 October 2026:** two more Lorong 12 exteriors meet the naming bar. **Summer View** at No. 5 (SUMMERVIEW, an apartment complex listed at 5B Lor 12 Geylang, point inside way 121873028; the SUMMER VIEW letters over its porch are drawn), and **Vintage & Vine** in the four-storey block north of No. 12 (a fine wine and spirits wholesaler, open, listed at 10 Lor 12 Geylang, point inside way 1223129485; its board over the ground-floor shop is drawn, with no claim about the upper floors). The evidence for the two shared ways now records their listings under open question 31.
+- **Lorong 15 and Sims Avenue listing check, 11 October 2026:** **Bengal Kitchen** at No. 2 Lorong 15 is named: a coffee shop listed open at 2 Lor 15 Geylang, its point inside way 454254234, and its green board photographed in April 2024. Bamboo Lounge (listed at 128 Sims Ave) has its point in No. 126's way although its board hangs on No. 128, so it waits on open question 33. Full House F&B's point lies outside every way. Teck Hoe Airconditioning Parts is now listed at 8 Lor 15 Geylang, which is the block lettered TECK HOE in the Lorong 15 east row. That way also holds a pair of two-storey houses, and the listing point lies in the lane, so it is not named.
+- **Open questions 32 and 33 applied, 11 October 2026:** three places are named from their photographed signs, with each listing point's offset recorded in the evidence.
+  - **Bamboo Lounge 竹屋**, No. 128 Sims Avenue. Its neon board is drawn; its listing point lies in No. 126 next door, matching the row's 3 m shift.
+  - **Singapore Engineering Merchants' Association 新加坡機器廠商公會**, on the balcony section of the Lorong 8 cream block (way 454438338). Its balcony lettering is drawn; its listing point lies 3 m out in Lorong 8.
+  - **Crystal Mansions**, No. 3 Lorong 6. Its listing point lies 0.5 m outside the way. Triangulating the wall lettering from two panoramas moved the boundary wall to about 8 m in front of the source front, at the lane edge, with the gate at 13.6–14.5 m; the script Crystal Mansions and 3 LOR 6 are drawn north of the gate.
+- **Open question 31 applied, 11 October 2026 (`lorong-12-east-shared` in `src/authored-footprints.mjs`):**
+  - **Way 454438320** is split 10.5 m from its back-lane end into the unnamed white apartment tower and **Hotel 81 Cherry**. The hotel's listing point lies in its half; its teal HOTEL 81 board, the HOTEL 81 Cherry plate on the marble and the HOTEL 81 CHERRY blade are drawn.
+  - **Way 454438319** is split at the pair's party pier, 4.46 m from its north end on the proportional layout. Each upper floor is named after its board, on the Canton Wong precedent:
+    - north: the **Singapore Master Tailors' Association 新加坡軒轅洋服商會** (listed at 3C);
+    - south: the **Chinese Eating House Owner's Association 華人飯商公會** (listed at 10C, an even number that conflicts with the east side; recorded).
+  - Both association points lie in the pair's way, south of the pier. The ground-floor PEK SUN CHEN LEAN TUAN board and the Teoann Sianluck Heo Yeo Clan Society board stay blank.
+  - **Re-spacing not done:** the pair photographs 15.0 m wide, but the hotel and Summer View leave only 12.8 m between them at the source front, so the proportional layout on the source way is kept.
+- **Open question 30 applied, 11 October 2026 (`lorong-10-hotels`):** way 454438326 is split at 12.80 m and 37.87 m from its north corner, the measured block lines scaled to the source front. Each block now has its own outline and roof height:
+  - **D'Nova Hotel** (taupe, 20.4 m): its gold clover board on the green fascia is drawn.
+  - The **middle block** (25.3 m, wings 26.3 m): unnamed, because its ibis budget SAPPHIRE sign conflicts with the listed ibis budget Singapore Tulip.
+  - **JXIN Hotel 嘉鑫酒店** (white, 29.1 m): its blue board is drawn.
+  - Both named hotels have listing points inside their strips.
+- **Open question 28 applied, 11 October 2026 (`geylang-217-227`, replacing the question 11 split `geylang-223-227`):**
+  - **Triangulation:** party lines from four June 2024 panoramas (i-vt, U23w, NR4z, 2Y21) put the row about 1–1.5 m behind the source front, at 6.2, 10.4, 15.2 and 20.2 m from the Lorong 7 corner.
+  - **Hidden lines:** a street tree hides the next two lines in 2024. Panoramas from 2009, 2011, 2016 and 2019 show the whole row and give the ratio of the two houses east of 20.2 m. Lian Seng's west party line triangulates at 29.35 m, so those cuts fall at 24.9 and 29.35 m.
+  - **Named:** **Gong He Guan** at No. 217. It is a dessert restaurant listed open, with its point inside the strip; its red board is drawn.
+  - **Unnamed:** BBQ Home at No. 219 (permanently closed) and the white No. 221.
+  - **Re-targeted:** the frog-board house, the karaoke-mural house and the Red Leaf house now stand on their photographed strips. The duplicate frog-board house in the old `gr-221-west` is gone.
+  - **Left for open question 34:** the remainder `gr-229-west` carries the west part of Lian Seng's photographed house with its board blank. The same triangulation shows Lian Seng and Vietnam Unisex modelled one house east of their photographs.
+- **Open question 29 applied, 11 October 2026 (`geylang-258` re-split):**
+  - **Re-split:** block 454438318 is now cut at 11.0 and 16.8 m from the Lorong 12 corner. ChongQingXiaoMian keeps the corner strip on the source front; its Lorong 12 elevation is unchanged.
+  - **Grey house:** gets its own strip (`gr-258-grey`), modelled unnamed from two June 2024 panoramas: three louvred windows, a dark west pier with a lightbox, and a cream board ending in 串.
+  - **Moved front:** the grey house and the rest of the row (`gr-260-east`) have their fronts moved 4.8 m towards Geylang Road, where two drives and the satellite roofs place them. That leaves about 2.2 m to the modelled carriageway.
+- **Open question 34 applied, 11 October 2026:**
+  - **Lian Seng Weighing Scale Co.** moves onto `gr-229-west`, the house photographed with its board at 29.35–34.7 m from the Lorong 7 corner. Its elevation is scaled to the 4.87 m strip.
+  - **The Vietnam Unisex house** moves onto `gr-229` and stays unnamed.
+  - **The freed `gr-231` strip:** checked by triangulation, it holds the west part of the white No. 233 building rather than a separate durian house. The WAT DHAMMASATIS board is at 41.35–43.6 m, on a storey set back about 4 m, and the durian vertical board at about 42.3 m. The strip is modelled unnamed with those boards blank, and the named Wat Dhammasatis model keeps its strip and board.
+  - **Result:** the house order from Lorong 7 to Lorong 9 now matches the June 2024 photographs.

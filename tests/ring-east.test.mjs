@@ -1,0 +1,47 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { ringEast, ringEastFrame, ringEastLayout, ringEastReviews } from '../src/ring-east-layout.mjs';
+import { landmarkFor } from '../src/landmarks.mjs';
+import { assertFittings, assertReviews, outline } from './helpers.mjs';
+
+test('the east-ring exteriors fit their outlines and keep their review starts clear', () => {
+  for (const place of ringEast.filter(p => !p.massing)) {
+    const poly = outline(place.buildingIds[0]), frame = ringEastFrame(poly, place);
+    assertFittings(frame, poly, ringEastLayout(place, frame.width).boxes);
+    assertReviews(frame, ringEastReviews(place, frame));
+    assert.match(place.evidence, /June 2024/);
+    // Unnamed exteriors carry no registered identity.
+    assert.equal(place.unnamed, true);
+    assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+  }
+});
+
+test('No. 291 keeps its source way; the row east of Lorong 12 fills the rest of the split block', () => {
+  assert.deepEqual(ringEast.find(p => p.id === 'gr-291').buildingIds, ['454254230']);
+  const row = ringEast.find(p => p.id === 'gr-260-east'), frame = ringEastFrame(outline('gr-260-east'), row);
+  // The frame runs east to west, so the green bay (measured from the west end) sits at the far end of u.
+  const green = row.blocks.find(b => b.name === 'green upper wall');
+  assert.ok(green.u[0] > frame.width - 5 && green.u[1] <= frame.width);
+});
+
+test('No. 134 is massing only, with its awnings on its Lorong 17 face and corner', () => {
+  const place = ringEast.find(p => p.id === 'sims-134');
+  assert.equal(place.massing, true); assert.equal(place.unnamed, true);
+  assert.equal(landmarkFor('682928733'), undefined);
+  const poly = outline('682928733');
+  for (const [edge, from, to] of place.awnings) assert.ok(from >= 0 && to <= ringEastFrame(poly, { frontEdge: edge }).width);
+});
+
+test('the Lorong 17 west side is massing only, one entry per way, coloured and unnamed', () => {
+  const row = ringEast.filter(p => p.id.startsWith('l17-'));
+  assert.equal(row.length, 11);
+  const ids = ringEast.flatMap(p => p.buildingIds);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const place of row) {
+    assert.equal(place.massing, true); assert.equal(place.unnamed, true);
+    assert.match(place.colour, /^#[0-9a-f]{6}$/);
+    assert.ok(place.height > 10 && place.height < 16);
+    assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+    assert.ok(outline(place.buildingIds[0]).length >= 4);
+  }
+});

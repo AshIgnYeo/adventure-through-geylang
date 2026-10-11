@@ -10,11 +10,23 @@ The model follows the directly inspected [December 2020 CC BY-SA 4.0 photograph 
 
 The reconstruction uses original code-native geometry and an original text panel. Circular tower ornament is abstracted, Arabic/Jawi text too small to transcribe reliably is represented by a neutral gold band, and the roof finials are simplified. Openings are opaque and no prayer hall, classrooms, worshippers, activities, temporary decorations or adjoining uses are reconstructed. The 2020 photograph is used as visual evidence under its licence but is not bundled or copied into the project. The LearnIslam image date is not stated. Current October 2026 appearance, exact internal storey division and unseen elevations remain unverified. Review: `?review=haji-mohd-salleh-mosque`.
 
+**Re-measured and rebuilt, 10 October 2026 (open question 13).** The cream elevation above is out of date. March 2021 Street View shows the building under scaffolding, and May 2023 and June 2024 panoramas show it repainted: an orange frame with cream recessed panels, a green louvred screen at the west and open teal stair fins at the east. The model now follows the June 2024 elevation. Three June 2024 Geylang Road panoramas (`ZvONx9MbvuKGcqhHe87DTQ`, `SE7V8xC8dISjOl-1xdIR9A`, `yLxdM90ecueaqOeXgMp-2g`) were triangulated, and the façade was rectified on the triangulated plane, where all three agree to about 0.1 m.
+
+- **Storeys:** four, as MUIS states. The ground floor rises to about 2.8 m. The cream panels span about 3.65–6.63 m, 7.4–10.48 m and 11.05–14.1 m. The parapet is about 15.8 m above the façade base, against the earlier 11.35 m estimate.
+- **Bays:** four window bays sit at about 3.4 m centres, about 3.0 m across the middle pair. The windows are about 1.48 m wide, and the fourth-storey windows have fanlights. The second storey has a 4.54 m semicircular glazed arch, lettered MASJID HAJI MOHD SALLEH around its head, with the Arabic name on the band above. A green-and-yellow signboard hangs over the stair entrance.
+- **Roof features:** the two calligraphy towers stand about 2.5 m behind the front, with caps near 20 m and domes to about 21.5 m. A tiled gable stands about 4.8 m behind the front, its peak near 22 m. Both towers stand flush with the façade ends; the west one is drawn 0.2 m in from the party wall, which leans slightly.
+- **Footprint:** the photographed front is about 20.3 m wide and runs parallel to Geylang Road. The 22.46 m source front is turned about 8° from it. Allowing for the 2.8 m panorama position error recorded at Chen Hing, the façade crosses the source front: about 1.9 m behind it at the west and 1.0 m in front at the east. Under open question 25 (approved), the model stands on authored footprint `gr-245`. Its front follows the photographed façade for 20.3 m east from the Chen Hing party wall, meeting that wall about 1.2 m behind the source corner. A new east wall runs square back to the source rear edge, leaving a yard of about 2 m beside Shan Yuan Tang. The source west and rear lines are kept. The temple-alley rear elevation now uses the authored rear edge at 15.8 m and four floors. The review start moves to 8 m across Geylang Road to take in the taller front.
+- **Camera height:** the façade base reads about 0.45 m below a 2.5 m camera height in these frames, so heights are taken from the façade base.
+- **Lettering:** redrawn in original canvas typography. This covers the arched English name, the Arabic name and the tower medallions, which read محمد and الله.
+- **Estimates:** the roof depth, fine ornament and fonts.
+
 ## Leong Kee (Klang) Bak Kut Teh, 251 Geylang Road
 
 Research and direct visual inspection: **30 September 2026**. The [operator website](https://leongkee.com.sg/) lists **251 Geylang Road, Singapore 389309**. The [27 April 2021 Eatbook report](https://eatbook.sg/leong-kee-klang-bak-kut-teh/) gives the same address, and its directly inspected storefront photograph corroborates the yellow/red Leong Kee lettering. That close-up does not establish the whole street elevation or current appearance. The Google Maps listing gives point **103.877248, 1.3124409**, which falls inside source way **454254213**, immediately east of Lorong 11. “Opposite Shan Yuan Tang” means across Lorong 11, on the same northern side of Geylang Road.
 
 [June 2024 Google Street View](https://www.google.com/maps/@?api=1&map_action=pano&pano=x9pb4XARIUjp2Lxgfw5uyg&heading=355&pitch=8&fov=65), panorama `x9pb4XARIUjp2Lxgfw5uyg`, shows the corner elevation, two mustard-coloured upper bays and a cream adjoining bay, with yellow fascia boards. Leong Kee names appear on the outer boards; the middle board advertises a different claypot/frog-porridge stall. The preliminary implementation repeated Leong Kee across all three and incorrectly gave the cream bay plain square windows. Closer inspection corrected the middle board to a **blank yellow fascia**, and the cream bay to **three arched windows**. No relationship between the stalls is asserted. Street View's No. 249 label describes its camera context, not the target address.
+
+**Middle board, 10 October 2026 (open question 27).** A rectified June 2024 frame reads the middle board as **梁记沙煲田鸡粥 LEONG KEE CLAYPOT FROG PORRIDGE**. It carries the Leong Kee name, so the project owner approved drawing it as photographed, and the blank fascia is replaced. The same check found the front plane within about 0.2 m of the source and the eave at about 6.8 m, against the modelled 7.05 m. It also found the ochre corner building ending about 8.9 m from the Lorong 11 corner, against the source party line at 9.70 m. That last finding is recorded only.
 
 [April 2024 side Street View](https://www.google.com/maps/@?api=1&map_action=pano&pano=Cyb90czsWHg-VlCqIznp5Q&heading=90&pitch=8&fov=80), panorama `Cyb90czsWHg-VlCqIznp5Q`, camera **1.3124687, 103.8771426**, supplies the Lorong 11 side: cream wall, dark shutters and arched heads, gold-coloured trim, inset tile strips, pale relief bands and a broad brown canopy. The initial unsupported long side nameboard was removed. The side view's No. 7 UI label is also camera context.
 
@@ -42,7 +54,7 @@ This is a separate authored site, approximately **10.4 × 25.5 m**, because the 
 
 | Place | Evidence | Reconstruction limits |
 | --- | --- | --- |
-| Hotel 81 Joy, No. 11 | [Operator](https://www.wwhotels.com/hotel-81/joy/), inspected façade and entrance photographs; OSM way 454274491 | Pale-blue tower, stair fins, window rows and recessed entrance modelled individually. Height and details estimated. |
+| Hotel 81 Joy, No. 11 | [Operator](https://www.wwhotels.com/hotel-81/joy/), inspected façade and entrance photographs; OSM way 454274491; re-measured from April 2024 panoramas on 10 October 2026 | Pale-blue tower, stair fins, seven window storeys at 3.53 m centres and recessed entrance; roof edge about 31 m. Stepped balcony bands simplified. |
 | Agape Centre, No. 8 | [Official address](https://agapesingapore.com/contact/?lang=en), [three-unit history](https://agapesingapore.com/agape-full-history/?lang=en), [URA historic No. 8](https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00316/), [URA historic No. 6](https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00495/) | Inspected photographs show mint/cream, floral tiles and shuttered windows. OSM and URA current/historic numbering conflict, so the assignment across three adjacent footprints is provisional. Do not treat it as a surveyed property boundary. |
 | Hok Tek Chi Loke Yah Teng Association, No. 17 | [URA photograph](https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/gylg-00334/), [2026 reporting](https://www.zaobao.com.sg/news/singapore/story20260125-8151043), OSM way 1223407885 | Pink two-storey shophouse, cream glass-pane windows and Chinese name. The texture reconstructs occluded areas and differs in some ground-floor details. No invented freestanding temple or religious interior. |
 | Lok Fu Lala Pot, No. 38 | [Restaurant listing](https://www.quandoo.sg/place/lok-fu-lala-pot-106960/about), OSM way 1223250209 | Address and outdoor seating supported. Detailed exterior, canopy, colours, sign typography and table positions are illustrative. Needs current exterior photographs before a fidelity claim. |
@@ -52,7 +64,7 @@ This is a separate authored site, approximately **10.4 × 25.5 m**, because the 
 | S.M. Khek Leow Clan Association, No. 4 | [SFCCA directory](https://sfcca.sg/en/our-members/), April 2024 Street View and association point within OSM way 1223250215; inspected 29 September 2026 | Code-native green/cream frontage with three upper windows and observed fascia name. Dimensions and ornament simplified; no current-condition claim. |
 | Canton Wong Clan Association, No. 31A | SFCCA directory/member handbook and April 2024 Street View signs beside No. 29; source way 1223407878; inspected 29 September 2026 | Code-native upper elevation and signed stair entrance. Separate ground-floor shop is neutral; dimensions estimated. Maps listing pin is displaced and is not assignment evidence. |
 | Hainan Goh Clan Association, No. 20C (second storey) | SFCCA directory and March 2026 event address; April 2024 Street View shows the association name and No. 20B ground-floor sign, source way 1223250202; inspected 29 September 2026 | Code-native lavender upper elevation and signed right entrance; separate shop neutral, dimensions estimated. Displaced listing pin excluded. |
-| Masjid Haji Mohd Salleh, No. 245 Geylang Road | MUIS directory, LearnIslam exterior, licensed December 2020 photograph and named source way 454254204; inspected 1 October 2026 | Code-native cream-and-green frontage with central arch, four window bays, twin towers and gable. Internal floor division, heights and fine ornament remain estimates; no interior reconstructed. |
+| Masjid Haji Mohd Salleh, No. 245 Geylang Road | MUIS directory, named source way 454254204, and three June 2024 panoramas triangulated on 10 October 2026 | Four-storey orange-and-cream frontage: lettered second-storey arch, four window bays, side screens, set-back towers and gable. Parapet about 15.8 m. The footprint skew is open question 25. Ornament and roof depth are estimates; no interior is reconstructed. |
 
 The unreviewed surrounding buildings are still approximations. A registered address alone was not treated as proof of a visible shopfront. No real organisation is assigned NPC harassment, criminal conduct or affiliation with the game.
 
@@ -90,7 +102,7 @@ Research and visual inspection: **29 September 2026**. The [SFCCA member directo
 
 The original code-native model follows the broad observed arrangement: green upper wall, cream lower frontage, three framed upper windows with horizontal bars, shallow cream arched heads and transom vents, two blue/ivory decorative fields below the outer windows, a central plain panel, pilasters, cornice and eaves. Below the observed name are cream folding doors and a narrower dark left opening, represented as opaque surfaces. The eight large fascia characters are drawn in their observed visual order using original canvas typography. Small doorway lettering, notices, fine stucco carving, vertical tile motifs, loose objects, people, vehicles and private interiors are omitted.
 
-Source geometry fixes the frontage at approximately **5.26 metres**. The **7.8-metre** height, window and door proportions, arch rise, depths, colours, bar/dentil counts and sign font are estimates. Blue fields use original ivory diamond motifs as an abstract substitute for the intricate reference tiles, not a faithful historic motif reproduction. Capitals and carved relief are reduced to plain geometric forms. Side/rear walls and flat roof closure remain generic massing. No reference photographs or new raster assets are shipped, and no map coordinates or metre projection are changed.
+Source geometry fixes the frontage at approximately **5.26 metres**. The upper storey was re-measured on **10 October 2026** (open question 13) by triangulating features seen in two April 2024 panoramas (`ifUFTPmGn1-kOv6waVHktw`, `DuD94mwPz0YzH7qI81rjmA`): glazing about 4.75–5.75 m, louvred transoms to about 6.2 m, arch crowns near 6.6 m, the fascia board about 3.1–3.65 m and the eave edge about 7.55 m, projecting about 0.65 m beyond the source front. The three windows are about 1.0 m wide at 1.39 m centres. The earlier estimate drew the windows 1.7 m tall with arch heads reaching 7.1 m, so the windows, transoms, arch heads, tile fields, pilasters, relief band and cornice were rebuilt to these heights and the height lowered from 7.8 m to 7.6 m. The façade lies about 0.3 m behind the source front, within the tolerance kept elsewhere. Door proportions, depths, colours, bar/dentil counts and the sign font remain estimates. Blue fields use original ivory diamond motifs as an abstract substitute for the intricate reference tiles, not a faithful historic motif reproduction. Capitals and carved relief are reduced to plain geometric forms. Side/rear walls and flat roof closure remain generic massing. No reference photographs or new raster assets are shipped, and no map coordinates or metre projection are changed.
 
 Review: `?review=sm-khek-leow`. Resumed validation on 29 September 2026: nine automated tests and the production build passed, retaining the existing bundle-size advisory. Daylight browser checks covered lower doors, readable fascia, tile fields, three upper windows, shallow arched heads, vents and cornice, with no captured runtime warnings or errors. The April 2024 Street View reference was re-inspected. Physical phone performance and present-day condition remain unverified.
 
@@ -138,7 +150,7 @@ Review: `?review=faith-mission-home`. Six automated tests and the production bui
 
 ## Texture production
 
-Built-in image generation, single two-panel atlas, saved to `public/lorong-11-heritage-atlas.png`. Inputs were two browser-visible URA façade images, No. 17 and historic No. 8. These sources are references for a new game texture; source photographs are not shipped unchanged in the project.
+Built-in image generation, single two-panel atlas, saved to `assets/lorong-11-heritage-atlas.png` (lossless master). The game loads `public/lorong-11-heritage-atlas.webp`, encoded from the master with `cwebp -q 85 -m 6 -sharp_yuv`. Inputs were two browser-visible URA façade images, No. 17 and historic No. 8. These sources are references for a new game texture; source photographs are not shipped unchanged in the project.
 
 Direct references:
 
@@ -273,3 +285,100 @@ Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists
 ## Muhammadiyah Islamic College, 17 Lorong 13 Geylang
 
 Implemented **9 October 2026** as a dated April 2024 exterior. Google Maps lists Kolej Islam Muhammadiyah at 17 Lor 13 Geylang, matching the source way tagged No. 17, and the signboard reads معهد المحمدية الإسلامي / MUHAMMADIYAH ISLAMIC COLLEGE with this address. The building is faced with a teal grid screen between white side columns, with an open drop-off below and a lettered top band to a 23.5 m parapet. Two-view triangulation of the signboard and the bar spacing in a level frame agree on the face distance, which shows the 1.59 m bars are half-storey cells. Full evidence, method and exclusions are in the [design brief](muhammadiyah-design-brief.md). Reviews: `?review=muhammadiyah-college` and `?review=muhammadiyah-college-gate`.
+
+## FSL EW LED Lighting, 118 Sims Avenue
+
+Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists FSL EW LED Lighting at 118 Sims Ave, matching the source way tagged No. 118; Hua Bian Assn and the Singapore Paper Merchants Association share the address and are not assigned. The stained three-storey frontage between Yap Sun Hardware and the ABC Bistro corner carries a red FSL LED LIGHTING blade lightbox, an orange FSL disc and a red FSL EW LED LIGHTING signboard. Three rectified panoramas place the real façades of this row about 3.25 m in front of the source front, which the model records but does not correct. The photographed frontage lies wholly inside the source footprint. See the [design brief](fsl-design-brief.md).
+
+## Bar @ Lorong 13, No. 1 Lorong 13 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior. Google Maps lists Bar @ Lorong 13 at 1A Lor 13 Geylang; the white three-storey Art Deco block plated 1, the source way tagged No. 1, carries its yellow BAR@LORONG13 sign over the north wing, a stair tower lettered 協華大厦 and a restaurant signed 忆滋味 in the south bay. Koh Hwee Cheng, also listed at No. 1, and the displaced River Ash Bakery point are not assigned. Measured from one square-on frame scaled by the 12.36 m source frontage; a 2 m panorama position error was corrected for render-and-compare. See the [design brief](bar-lorong-13-design-brief.md).
+
+## Chen Hing Trading 增興貿易, 241 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior. Google Maps lists Chen Hing Trading at 241 Geylang Rd, with its point inside the unnumbered source way directly west of Masjid Haji Mohd Salleh. The grey-tiled three-storey block carries raised gold lettering reading 增興貿易私人有限公司 / CHEN HING TRADING PTE. LTD. over a red awning and an open stall. The panoramas here carry a position error of about 2.8 m in depth and 1.5 m along the street, calibrated against the existing mosque model; with it removed, the photographed frontage matches the source edge. See the [design brief](chen-hing-design-brief.md).
+
+## AiSecurityReady CCTV shop, No. 2 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior. The operator website and Google Maps give AiSecurityReady's CCTV shop at 2 Lor 11 Geylang, matching the source way tagged No. 2 beside S.M. Khek Leow. The ornate charcoal-grey conserved shophouse has arched shuttered openings, Peranakan tiles and carved pilasters. Its ground floor shows lit CCTV lettering under the board of the closed Wina Salon, and the operator's name is not displayed. The photographed frontage matches the 5.26 m source edge. See the [design brief](aisecurity-design-brief.md).
+
+## Mister Contracts / MC Multi Skills, northern No. 9 Lorong 13
+
+Implemented **10 October 2026** under the owner's decision on open question 12. The MISTER CONTRACTS PTE. LTD. / MC MULTI SKILLS signboard hangs on the northern of the two source ways tagged No. 9, beside No. 11. The signboard reads No. 5 and Google Maps gives No. 7; both conflicts are recorded in the model's evidence. The house shares the conserved row elevation. See the [design brief](mister-contracts-design-brief.md).
+
+## Eng Lee Huat Hardware, 29 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 29 footprint (4.0 m), which replaces source way 1223407879. Google Maps lists Eng Lee Huat Hardware at 29 Lor 11 Geylang. The white two-storey house carries its black signboard and door plate 29, with a large grilled window over a triangular pediment. See the [design brief](eng-lee-huat-design-brief.md).
+
+## Goodwood Garments Services & Trading, 19 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 19 footprint (5.3 m), which replaces source way 1223407886. Google Maps lists Goodwood Garments at 19 Lor 11 Geylang, and its 良木林 Goodwood board hangs in the five-foot way of the pale grey-green conserved shophouse north of Hok Tek Chi. See the [design brief](goodwood-design-brief.md).
+
+## Tibetan Buddhist Studies Society 藏密佛学研究会, 21 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 21 footprint (5.2 m), which replaces source way 1223407883. The white conserved shophouse carries the red 藏密佛学研究会 / Tibetan Buddhist Studies Society board under a gilded Dharma wheel and deer. No listing was found; the identity rests on the signage at a sourced address. See the [design brief](tbss-design-brief.md).
+
+## Zheng Li Hearty Kitchen 正利心厨, 35 Lorong 11 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior on the owner-approved re-spaced No. 35 footprint (6.9 m), which replaces source way 1223407876 and ends 0.66 m past it at the measured end pier. Google Maps lists Zheng Li Hearty Kitchen at 35 Lor 11 Geylang, and its 正利心厨 blade sign hangs on the end pier over an open restaurant. See the [design brief](zheng-li-design-brief.md).
+
+## Ting Yu Xuan 听雨轩, 255 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 255 Geylang Rd as a foot massage parlour, with its board numbered 255. See the [design brief](geylang-row-design-brief.md).
+
+## Ke Lai Shun Restaurant 客来顺饭店, 259 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 259 Geylang Rd, with its red board and blade numbered 259. See the [design brief](geylang-row-design-brief.md).
+
+## Mobile Time (Lor 13), 263 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 263 Geylang Rd, with its board numbered 263. See the [design brief](geylang-row-design-brief.md).
+
+## Shi Hao Hotpot BBQ 食好火锅烧烤, 267 Geylang Road
+
+Implemented **10 October 2026** as a dated June 2024 exterior on the owner-approved re-spaced Geylang Road row (open question 2): listed at 267 Geylang Rd #01-01, with its board on both faces of the corner block. See the [design brief](geylang-row-design-brief.md).
+
+## Geylang Lor 9 Beef Kway Teow 芽龍九巷牛肉河粉, 237 Geylang Road
+
+Implemented **10 October 2026** on an owner-approved authored footprint (open question 3). Source way 454274485 is split at the step in its outline into the pink three-storey Lorong 9 corner building, signed 芽龍九巷牛肉河粉 GEYLANG LOR 9 BEEF KWAY TEOW, and a generic annex flush with Chen Hing. The split is supported by the photographed proportions and a satellite mosaic registered to the source frame. See the [design brief](beef-kway-teow-design-brief.md).
+
+## Wat Dhammasatis วัดธรรมสาทิส, No. 233 Geylang Road
+
+Implemented **10 October 2026** on an owner-approved partial-block footprint (open question 11). Google Maps lists Wat Dhammasatis at 233B Geylang Rd, #03-233, and its WAT DHAMMASATIS BUDDHIST CENTRE board and a Buddha image are on the upper floors of the white building west of Frog Porridge. Source block 475158360 is split by measured widths into Nos. 233, 231 and 229. See the [design brief](wat-dhammasatis-design-brief.md).
+
+## Red Dot Running Company, 108 Sims Avenue
+
+Implemented **10 October 2026** on the owner-approved re-spaced Sims Avenue row (open question 8a). Ground-floor piers confirm the source party lines at the 108 pier and at Amrise. Only the 106/108 line moves, to about 15.0 m, and the former Nos. 108 and 110 form Red Dot Running's single 12.17 m unit, whose decalled shopfront runs across the 108 pier. See the [design brief](red-dot-design-brief.md).
+
+## Guan Keat coffeeshop, No. 38 Lorong 11 (formerly Lok Fu Lala Pot, C4)
+
+Re-identified and rebuilt on **10 October 2026** under open question 8. Lok Fu Lala Pot was a stall inside this coffeeshop in April 2024. The awning reads GUAN KEAT PTE LTD; Guan Keat is an LPG distributor whose branded awnings appear on coffeeshops. The mint-green three-storey corner block is modelled on an authored chamfered footprint that keeps the 23.17 m source side. See the [design brief](guan-keat-design-brief.md).
+
+## Ming Li's Eating House 明利美食阁, 114 Sims Avenue
+
+Implemented **10 October 2026** on the source corner outline (way 682928749, No. 114). Open question 4 allowed an authored outline, but the registered satellite roof agrees with the source within about 1.5 m. The white three-storey corner block carries its 明利美食阁 board on the chamfer, a food-photograph board on Sims Avenue and a SingGas awning on Lorong 15. See the [design brief](ming-li-design-brief.md).
+
+## Hotel 81 Spring, 22 Lorong 15 Geylang
+
+Implemented **10 October 2026** as a dated April 2024 exterior, on a partial-block split of the merged source block 454254281 (open questions 10 and 11). Google Maps lists Hotel 81 Spring at 22 Lor 15 Geylang, though the operator site no longer does. Three panoramas measure its 16.2 m pale-blue frontage, with the HOTEL 81 sign and SPRING plate. See the [design brief](hotel-81-spring-design-brief.md).
+
+## Public Free Clinic Society 大眾醫院 headquarters, 10 Lorong 9 Geylang
+
+Implemented **10 October 2026** under open question 11. Three Lorong 9 panoramas agree only on a plane 8 m behind the source front, where the green curtain-wall tower spans the full 13.1 m frontage. The tower stands on a set-back authored footprint behind an open forecourt, which resolves the 9 October half-width blocker. See the [design brief](pfcs-design-brief.md).
+
+## Cico Flooring 志高地板, Nos. 1–7 Lorong 11 Geylang
+
+Implemented **10 October 2026** under open question 7. The single-storey timber-clad building with two hipped roofs, signed CICO FLOORING 志高地板 (listed at Nos. 1 and 7), stands on a merged footprint of the four source ways, behind a 5 m forecourt where three panoramas agree the façade stands. See the [design brief](cico-design-brief.md).
+
+## Gems Ville, 8 Lorong 13 Geylang
+
+Implemented **10 October 2026** under open question 6, as an April 2024 exterior of the nearly finished seven-storey condominium, signed GEMS VILLE. It stands on an authored 27.4 × 26 m footprint, from the measured frontage and the 731 m² lot, replacing the older 6A source way. See the [design brief](gems-ville-design-brief.md).
+
+## Thirteen BBQ Bar 十三烤吧 and BUILDERSmart 魯班行, 27–29 Lorong 13 Geylang
+
+Implemented **10 October 2026**, the first places of the Lorong 13 street module. Both listings place their points in the two unnumbered ways at the Sims Avenue end of the west row. Triangulated party lines fit the source ways to within 0.4 m. The row photographs about 2.6 m in front of its source line, which a panorama position error explains as well; both models keep the source front. The No. 25 party line is open question 20. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
+## Teck Hoe Airconditioning Parts (11) and Wunderfolks (26), Lorong 13 Geylang
+
+Both are dated exteriors of signed houses whose businesses now list other addresses. Teck Hoe's lettering and plate 11 are on the No. 11 house, under open question 12. Wunderfolks's board is on No. 26, which matches its 2023 Time Out address. See the [Lorong 13 brief](lorong-13-design-brief.md).
+
