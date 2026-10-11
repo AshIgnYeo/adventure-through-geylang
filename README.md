@@ -119,6 +119,7 @@ Review URLs can open directly opposite a model. For example:
 /?review=wat-dhammasatis
 /?review=lian-seng
 /?review=gr-231
+/?review=gr-233-west
 /?review=gr-227
 /?review=gr-237-annex
 /?review=tian-tian

@@ -12,10 +12,17 @@ const frieze = width => [
   { name: 'ornamented frieze', u: [0, width], h: [5.67, 6.25], out: .04, depth: .06, colour: '#d9d6c2' },
 ];
 const roundels = us => us.map(u => ({ name: 'round vent', u: [u - .12, u + .12], h: [5.33, 5.58], out: .06, depth: .03, colour: '#5d6b62' }));
+// Scale an elevation's positions along the front by k (open question 34 moves two houses onto strips of other widths).
+const scaleU = (spec, k) => {
+  const m = ([l, r]) => [+(l * k).toFixed(3), +(r * k).toFixed(3)];
+  const list = xs => xs?.map(x => ({ ...x, u: m(x.u) }));
+  return { ...spec, windows: list(spec.windows), blocks: list(spec.blocks), backFittings: list(spec.backFittings), piers: spec.piers?.map(m), board: spec.board && { ...spec.board, u: m(spec.board.u) } };
+};
+const q34 = 'Under the owner\'s answer to open question 34 it was moved one strip west: party lines triangulated from June 2024 panoramas of the same drive, which puts the Lorong 7 and Lorong 9 corners on their source corners, place Lian Seng\'s house at 29.35-34.7 m from the Lorong 7 corner and the Vietnam Unisex house at 34.7-40.7 m, one house west of the strips first given to them. The strips are kept; the elevation is scaled to the strip.';
 // Width-scaled positions: both houses were read on panorama 2Y21 rectified on the source front, whose
 // widths match the re-split strips (5.25 m and 4.17 m measured against 5.33 m and 4.30 m).
 
-export const lianSeng = {
+const lianSengElevation = {
   id: 'lian-seng', buildingIds: ['gr-229'], kind: 'lian-seng', frontEdge: 0, reviewRoad: 'Geylang Road',
   name: 'Lian Seng Weighing Scale Co. (June 2024 exterior)', address: '229 Geylang Road',
   height: 6.87, ceiling: 2.67, fiveFootWay: 2.0, shellInset: .1, roof: { type: 'gable', ridge: 8.6, ridgeDepth: .4, colour: '#8e5a46' },
@@ -29,8 +36,13 @@ export const lianSeng = {
   board: { u: [.12, 4.95], h: [2.0, 2.65], out: .06 },
   backFittings: [{ name: 'dark shop front', u: [.5, 4.8], h: [.1, 2.0], colour: '#2f2c2a' }, { name: 'grille', u: [3.0, 3.8], h: [.6, 1.8], colour: '#8c8f8c', out: .02 }],
 };
+export const lianSeng = {
+  ...scaleU(lianSengElevation, 4.87 / 5.33), buildingIds: ['gr-229-west'],
+  evidence: lianSengElevation.evidence.replace('on the No. 229 strip of the split block (open question 11), directly west of the Vietnam Unisex Concept house', 'directly west of the Vietnam Unisex Concept house') + ' ' + q34 + ' It now stands on the east 4.87 m of block 453797929 (strip gr-229-west, cut under open question 28).',
+  sources: [...lianSengElevation.sources.slice(0, 1), 'https://www.openstreetmap.org/way/453797929', ...lianSengElevation.sources.slice(1)],
+};
 
-export const no231 = {
+const vuElevation = {
   id: 'gr-231', buildingIds: ['gr-231'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road',
   name: 'No. 231 Geylang Road (June 2024 exterior, occupant not identified)', address: '231 Geylang Road',
   height: 6.8, ceiling: 2.67, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 8.5, ridgeDepth: .4, colour: '#8e5a46' },
@@ -42,6 +54,34 @@ export const no231 = {
   blocks: [...frieze(4.3), ...pilasterTiles([[1.37, 2.01], [3.17, 3.69]], '#e3b9bb'), ...roundels([1.69, 3.43]), { name: 'blank board', u: [.2, 4.0], h: [2.3, 2.67], out: .06, depth: .05, colour: '#1e1e1f' }],
   piers: [[0, .2], [3.95, 4.3]],
   backFittings: [{ name: 'lantern-hung salon front', u: [.3, 3.9], h: [.1, 2.2], colour: '#4a2a2a', glow: .1 }],
+};
+export const no231 = {
+  ...scaleU(vuElevation, 5.32 / 4.3), id: 'gr-231', buildingIds: ['gr-229'], shellInset: .35,
+  // The strip's west wall runs back off square, so the west pier stands in from it.
+  piers: [[.15, .4], [4.9, 5.32]],
+  name: 'Vietnam Unisex Concept house, Geylang Road (June 2024 exterior, occupant not identified)', address: 'Geylang Road, between Lian Seng and Wat Dhammasatis',
+  evidence: vuElevation.evidence.replace('The No. 231 strip of the split block (open question 11), between Lian Seng (No. 229) and Wat Dhammasatis (No. 233).', 'The cream Peranakan shophouse between Lian Seng and the white Wat Dhammasatis building.') + ' ' + q34 + ' It now stands on the strip first given to No. 229, whose source number tag no longer matches it.',
+};
+
+// The freed No. 231 strip (open question 34): the west part of the white building whose upper storeys carry the
+// WAT DHAMMASATIS board, triangulated at 41.35-43.6 m on a storey set back about 4 m, with the Durian & Fruits
+// Experience Centre's vertical board at 42.3 m. The first 1.15 m is the end bay of the Vietnam Unisex house.
+export const no233West = {
+  id: 'gr-233-west', buildingIds: ['gr-231'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road',
+  name: 'West part of the white Wat Dhammasatis building, Geylang Road (June 2024 exterior)', address: 'Geylang Road, west part of No. 233',
+  height: 8.63, ceiling: 2.5, fiveFootWay: 2.0, shellInset: .1, roof: { type: 'flat', colour: '#a9a69e' },
+  evidence: 'June 2024 Street View shows the white three-storey building of No. 233 starting directly east of the Vietnam Unisex house, about 40.7 m from the Lorong 7 corner: the WAT DHAMMASATIS BUDDHIST CENTRE board, triangulated from two panoramas at 41.35-43.6 m on an upper storey set back about 4 m, an arched top window, dark first-floor glazing and the Durian & Fruits Experience Centre\'s black and gold vertical board at about 42.3 m over a fruit stall. Under the owner\'s answer to open question 34 this strip, first given to No. 231, carries the building\'s west part. The named Wat Dhammasatis model keeps the No. 233 strip and its board, which is drawn about 2.6 m east of its photographed position; the boards here are blank. The first 1.15 m of the strip is the end bay of the Vietnam Unisex house.',
+  sources: ['https://www.openstreetmap.org/way/475158360', pano('XvnqlmacQsIGn3oTpJoW9A', 351, 10, 80), pano('PYhl-4q1O0w9tBXLG3R9_w', 350, 10, 80), pano('2Y21iC-Tp9xBEWdsRjwK4w', 30, 10, 80)],
+  colours: { wall: '#eeeeea', trim: '#f4f4f1', frame: '#3b3f42', glass: '#3f4a52', pier: '#eeeeea', back: '#2a2725', floor: '#a49d93' },
+  bands: [[8.53, 8.63, .2], [5.32, 5.43, .3], [3.7, 3.83, .3]],
+  windows: [{ u: [1.5, 4.15], h: [3.83, 5.1], panes: 3 }, { u: [2.0, 3.2], h: [6.95, 7.6], arched: true, panes: 1, out: -2.0 }],
+  blocks: [
+    { name: 'cream end bay of the Vietnam Unisex house', u: [0, 1.15], h: [2.5, 6.87], out: .03, depth: .06, colour: '#e9e3cf' },
+    { name: 'set-back upper storey', u: [1.3, 4.3], h: [5.43, 8.63], out: -2.1, depth: .1, colour: '#eeeeea' },
+    { name: 'blank black vertical board', u: [2.7, 2.9], h: [3.9, 6.1], out: .45, depth: .6, colour: '#1c1a17' },
+  ],
+  piers: [[1.05, 1.3], [4.1, 4.3]],
+  backFittings: [{ name: 'fruit stall', u: [1.4, 4.1], h: [.1, 1.0], colour: '#5f6b34', out: .8, depth: .9 }, { name: 'shop interior', u: [1.4, 4.1], h: [.1, 2.4], colour: '#3b3532', glow: .08 }],
 };
 
 // The annex east of the Lorong 9 corner building, under its own grey skylit roof: from the street the
@@ -106,21 +146,9 @@ export const no223 = peranakanWest('gr-223', {
   backFittings: [{ name: 'roller shutter', u: [.4, 4.4], h: [.1, 2.0], colour: '#b9bbb6' }],
 });
 
-// The east 4.87 m of block 453797929: the west part of the house photographed with Lian Seng's board, whose
-// named model stands one strip east until open question 34 is settled. Its elevation is Lian Seng's, cut.
-const cutTo = (xs, to) => xs?.flatMap(x => x.u[0] < to - .05 ? [{ ...x, u: [x.u[0], Math.min(x.u[1], +(to - .05).toFixed(2))] }] : []);
-export const lianSengWest = {
-  ...lianSeng, id: 'gr-229-west', buildingIds: ['gr-229-west'], kind: 'unnamed', unnamed: true, board: undefined,
-  name: 'West part of the house photographed with the Lian Seng board, Geylang Road (June 2024 exterior)', address: 'Geylang Road, between No. 227 and the Lian Seng model',
-  evidence: 'The east 4.87 m of block 453797929, cut off by the owner-approved re-cut (open question 28). June 2024 panoramas triangulate the west party line of the cream Peranakan house carrying the Lian Seng Weighing Scale Co. board at 29.35 m from the Lorong 7 corner, and its east party line about 5.35 m further on, inside the No. 229 strip of the next block; the named Lian Seng model stands on that strip, one house east of its photographed position, until open question 34 re-spaces Nos. 229-233. This strip carries the photographed elevation of the house\'s west part with its board blank.',
-  sources: ['https://www.openstreetmap.org/way/453797929', ...lianSeng.sources.slice(2)],
-  windows: cutTo(lianSeng.windows, 4.87), blocks: [...cutTo(lianSeng.blocks, 4.87), { name: 'blank black board', u: [.12, 4.82], h: [2.0, 2.65], out: .06, depth: .05, colour: '#1e1e1f' }],
-  piers: [[.1, .4]], backFittings: cutTo(lianSeng.backFittings, 4.87),
-};
-
-export const geylangNorth = [lianSeng, no231, annex237, no227, no225, no223, lianSengWest];
+export const geylangNorth = [lianSeng, no231, no233West, annex237, no227, no225, no223];
 export const geylangNorthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const geylangNorthLayout = (place, width) => simpleHouseLayout(width, place);
 // The road is near the study's south edge here, so the houses west of Lian Seng are reviewed from closer in.
-const closeReview = { 'gr-227': 7.5, 'gr-225': 7.5, 'gr-223': 5.5, 'gr-229-west': 7.5 };
+const closeReview = { 'gr-227': 7.5, 'gr-225': 7.5, 'gr-223': 5.5 };
 export const geylangNorthReviews = (place, frame) => facing(frame, place.id, closeReview[place.id] ?? 11, 14);

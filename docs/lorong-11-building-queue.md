@@ -1003,3 +1003,8 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - **Re-split:** block 454438318 is now cut at 11.0 and 16.8 m from the Lorong 12 corner. ChongQingXiaoMian keeps the corner strip on the source front; its Lorong 12 elevation is unchanged.
   - **Grey house:** gets its own strip (`gr-258-grey`), modelled unnamed from two June 2024 panoramas: three louvred windows, a dark west pier with a lightbox, and a cream board ending in 串.
   - **Moved front:** the grey house and the rest of the row (`gr-260-east`) have their fronts moved 4.8 m towards Geylang Road, where two drives and the satellite roofs place them. That leaves about 2.2 m to the modelled carriageway.
+- **Open question 34 applied, 11 October 2026:**
+  - **Lian Seng Weighing Scale Co.** moves onto `gr-229-west`, the house photographed with its board at 29.35–34.7 m from the Lorong 7 corner. Its elevation is scaled to the 4.87 m strip.
+  - **The Vietnam Unisex house** moves onto `gr-229` and stays unnamed.
+  - **The freed `gr-231` strip:** checked by triangulation, it holds the west part of the white No. 233 building rather than a separate durian house. The WAT DHAMMASATIS board is at 41.35–43.6 m, on a storey set back about 4 m, and the durian vertical board at about 42.3 m. The strip is modelled unnamed with those boards blank, and the named Wat Dhammasatis model keeps its strip and board.
+  - **Result:** the house order from Lorong 7 to Lorong 9 now matches the June 2024 photographs.

@@ -9,7 +9,7 @@ const poly = outline('gr-233'), frame = watDhammasatisFrame(poly);
 test('Wat Dhammasatis takes the No. 233 strip of the split block; Nos. 229 and 231 are separate', () => {
   assert.equal(building('gr-233').number, '233'); assert.ok(building('gr-233').replaces.includes('475158360'));
   assert.equal(landmarkFor('gr-233').id, watDhammasatis.id);
-  assert.equal(landmarkFor('gr-229').id, 'lian-seng'); assert.equal(landmarkFor('gr-231'), undefined);
+  assert.equal(landmarkFor('gr-229-west').id, 'lian-seng'); assert.equal(landmarkFor('gr-229'), undefined); assert.equal(landmarkFor('gr-231'), undefined);
   assert.equal(nearestRoad(frame.point(frame.width / 2)).name, 'Geylang Road');
   assert.match(watDhammasatis.evidence, /partial-block footprint/);
 });

@@ -4,9 +4,11 @@ import { geylangNorth, geylangNorthFrame, geylangNorthLayout, geylangNorthReview
 import { landmarkFor } from '../src/landmarks.mjs';
 import { building, outline, nearestRoad, assertFittings, assertReviews } from './helpers.mjs';
 
-test('Lian Seng takes the No. 229 strip and No. 231 stays unnamed', () => {
-  assert.equal(building('gr-229').number, '229'); assert.equal(landmarkFor('gr-229').id, lianSeng.id);
-  assert.equal(landmarkFor('gr-231'), undefined); assert.match(no231.evidence, /no name is given/);
+test('Lian Seng stands on its photographed house west of the No. 229 strip; the houses east of it stay unnamed', () => {
+  // Open question 34: Lian Seng on the remainder of block 453797929, Vietnam Unisex on the No. 229 strip.
+  assert.equal(landmarkFor('gr-229-west').id, lianSeng.id); assert.match(lianSeng.evidence, /open question 34/);
+  assert.equal(landmarkFor('gr-229'), undefined); assert.equal(landmarkFor('gr-231'), undefined);
+  assert.deepEqual(no231.buildingIds, ['gr-229']); assert.match(no231.evidence, /no name is given/);
   for (const place of geylangNorth) {
     const frame = geylangNorthFrame(outline(place.buildingIds[0]), place);
     assert.equal(nearestRoad(frame.point(frame.width / 2, 3)).name, 'Geylang Road', place.id);
