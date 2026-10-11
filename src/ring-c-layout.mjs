@@ -185,7 +185,8 @@ const ibisRows = [7.06, 10.56, 14.0, 17.6, 20.93, 24.43];
 const jixinRows = [[26.0, 27.3], [22.8, 24.1], [19.5, 20.8], [16.1, 17.6], [12.8, 14.4], [9.5, 11.1], [6.1, 7.7]];
 const shell = (u, h, colour, name) => ({ name, u, h, out: -.03 - 4.9, depth: 9.8, colour });
 const face = (u, h, colour, name) => ({ name, u, h, out: .005, depth: .02, colour });
-export const hotelRow = {
+// The photographed elevation across all three blocks, as measured before the way was split (open question 30).
+const hotelRow = {
   id: 'l10-hotel-row', buildingIds: ['454438326'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 10 Geylang', shellInset: .15,
   name: 'Three hotel blocks, Lorong 10 east side (June 2024 exterior, occupants not identified)', address: 'Lorong 10 Geylang, east side',
   height: 20.4, ceiling: 4.0, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#8f8d88' },
@@ -251,6 +252,35 @@ export const hotelRow = {
   review: { distance: 9, pitch: 30 },
 };
 
+// The three blocks on their own strips (open question 30): each keeps the shared measured run, clipped to its part.
+const without = (list, ...names) => list.filter(b => !names.includes(b.name));
+const hotelNote = 'Read on a shared plane from four June 2024 panoramas, the three blocks on source way 454438326 run 0.4-13.3, 13.3-38.5 and 38.5-51.8 m from its north corner, 51.4 m in all against the 51.10 m source front; under the owner\'s answer to open question 30 the way is split at those lines scaled to the source front, and each block is laid out on its strip. ' + drive;
+export const dNovaHotel = {
+  ...hotelRow, id: 'dnova-hotel', buildingIds: ['l10-dnova'], kind: 'dnova-hotel', unnamed: undefined, frontEdge: 0, photo: [.43, 13.3],
+  name: 'D\'Nova Hotel (June 2024 exterior)', address: 'Lorong 10 Geylang, east side',
+  height: 20.4, colours: { ...hotelRow.colours, wall: '#a8998a', pier: '#a8998a' },
+  evidence: 'June 2024 Street View shows a taupe six-storey block with paired small windows between yellow recessed slots and a green fascia carrying a white board with a clover and D\'Nova Hotel in gold, beside a taupe stair tower with a tall arched glazed strip and a round window; the roof is 20.4 m (21.9 m at the stair tower). Google Maps lists D\'Nova Hotel@Kallang, a two-star hotel taking bookings in October 2026, with its point inside this block\'s strip, so the sign names it and is redrawn in original type. ' + hotelNote,
+  sources: ['https://www.google.com/maps/search/?api=1&query=D%27Nova+Hotel+Kallang+Lorong+10+Geylang', ...hotelRow.sources, pano(P.GkBe, 35, 3, 30)],
+  boards: [{ u: [1.8, 7.0], h: [3.48, 4.12], out: .19 }],
+  review: { distance: 9, pitch: 26 },
+};
+export const ibisBlock = {
+  ...hotelRow, id: 'l10-ibis-block', buildingIds: ['l10-ibis'], frontEdge: 0, photo: [13.3, 38.5],
+  name: 'Seven-storey hotel block, Lorong 10 east side (June 2024 exterior, occupant not identified)', address: 'Lorong 10 Geylang, east side',
+  height: 25.3,
+  evidence: 'June 2024 Street View shows a seven-storey block of pale yellow, cream and grey bands with framed windows, a louvred strip, a car porch, a stair tower over the roof and a blue sign reading ibis budget SAPPHIRE over the plate 3; the roof is about 26.3 m over the wings and 25.3 m over the middle bay, with a 28.8 m stair tower. Google Maps lists ibis budget Singapore Tulip at this point, which conflicts with the sign, so no name is given; ' + blank + ' ' + hotelNote,
+  blocks: without(hotelRow.blocks, 'middle bay'),
+};
+export const jxinHotel = {
+  ...hotelRow, id: 'jxin-hotel', buildingIds: ['l10-jxin'], kind: 'jxin-hotel', unnamed: undefined, frontEdge: 0, photo: [38.5, 51.8],
+  name: 'JXIN Hotel 嘉鑫酒店 (June 2024 exterior)', address: 'Lorong 10 Geylang, east side',
+  height: 29.1, colours: { ...hotelRow.colours, wall: '#eeeae0', pier: '#eeeae0' },
+  evidence: 'June 2024 Street View shows a white eight-storey block with yellow ledges, a stepped curtain wall and a stepped pediment over a blue board reading 嘉鑫酒店 JXIN HOTEL; the roof is about 29.1 m, with the pediment to 32.3 m. Google Maps lists JXIN HOTEL, taking bookings in October 2026, with its point inside this block\'s strip, so the sign names it and is redrawn in original type. ' + hotelNote,
+  sources: ['https://www.google.com/maps/search/?api=1&query=JXIN+HOTEL+Lorong+10+Geylang', ...hotelRow.sources, pano(P.RxYL, 40, 10, 30)],
+  blocks: without(hotelRow.blocks, 'white block upper floors', 'blank hotel board'),
+  boards: [{ u: [40.3, 47.7], h: [5.1, 6.1], out: .15 }],
+};
+
 // The two-storey association hall south of the hotels, behind a railing. Its upper corners triangulate from two
 // panoramas to a plane 3.3 m behind the source front, about 0.6 m behind it once the drive shift is removed;
 // s runs south from the source's north corner.
@@ -282,7 +312,7 @@ export const no11 = {
   review: { at: [-3, 6], pitch: 15 },
 };
 
-export const ringC = [westRow, blueHouse, creamHouse, ledgeBlock, yellowBlock, hotelRow, no11];
+export const ringC = [westRow, blueHouse, creamHouse, ledgeBlock, yellowBlock, dNovaHotel, ibisBlock, jxinHotel, no11];
 export const ringCFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringCLayout = (place, width) => simpleHouseLayout(width, placeOnFront(place, width));
 /** One review start per place, facing the frontage centre; places beyond the study margin are viewed from up the lane. */

@@ -987,3 +987,8 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
     - south: the **Chinese Eating House Owner's Association 華人飯商公會** (listed at 10C, an even number that conflicts with the east side; recorded).
   - Both association points lie in the pair's way, south of the pier. The ground-floor PEK SUN CHEN LEAN TUAN board and the Teoann Sianluck Heo Yeo Clan Society board stay blank.
   - **Re-spacing not done:** the pair photographs 15.0 m wide, but the hotel and Summer View leave only 12.8 m between them at the source front, so the proportional layout on the source way is kept.
+- **Open question 30 applied, 11 October 2026 (`lorong-10-hotels`):** way 454438326 is split at 12.80 m and 37.87 m from its north corner, the measured block lines scaled to the source front. Each block now has its own outline and roof height:
+  - **D'Nova Hotel** (taupe, 20.4 m): its gold clover board on the green fascia is drawn.
+  - The **middle block** (25.3 m, wings 26.3 m): unnamed, because its ibis budget SAPPHIRE sign conflicts with the listed ibis budget Singapore Tulip.
+  - **JXIN Hotel 嘉鑫酒店** (white, 29.1 m): its blue board is drawn.
+  - Both named hotels have listing points inside their strips.

@@ -415,6 +415,19 @@ export const authoredFootprintGroups = [
       ];
     },
   },
+  {
+    id: 'lorong-10-hotels', question: 30, approved: '2026-10-11',
+    evidence: 'Source way 454438326 runs 51 m along the east side of Lorong 10 under three separate hotel blocks. Read on a shared plane from four June 2024 panoramas, the blocks run 0.4-13.3, 13.3-38.5 and 38.5-51.8 m from the source\'s north corner, 51.4 m in all against the 51.10 m source front; scaled to the source front, the cuts fall 12.80 m and 37.87 m from the north corner. They run square to the front, as a labelled estimate.',
+    replaces: ['454438326'],
+    build(map) {
+      const [north, middle, south] = splitAlongFront(map, '454438326', 3, 2, [12.80, 37.87]);
+      return [
+        { id: 'l10-dnova', street: null, number: null, levels: 6, outline: north },
+        { id: 'l10-ibis', street: null, number: null, levels: 7, outline: middle },
+        { id: 'l10-jxin', street: null, number: null, levels: 8, outline: south },
+      ];
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

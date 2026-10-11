@@ -57,7 +57,7 @@ import { redFlagDavco, yiXiu, shiCheng } from './sims-north-row-layout.mjs';
 import { ywam, kimCourt, theDiamond } from './lorong-9-layout.mjs';
 import { mosqueElevation } from './mosque-layout.mjs';
 import { rozel } from './ring-west-layout.mjs';
-import { ledgeBlock as jhHotel, no11 as nanyangFan } from './ring-c-layout.mjs';
+import { ledgeBlock as jhHotel, no11 as nanyangFan, dNovaHotel, jxinHotel } from './ring-c-layout.mjs';
 import { no12 as yajuHotel, summerView, westBlock as vintageAndVine, hotel81Cherry, masterTailors, chineseEatingHouse } from './ring-b-layout.mjs';
 import { lexHotel, creamSouth as engineeringMerchants, crystalMansions } from './ring-south-layout.mjs';
 import { no2 as bengalKitchen, sims128 as bambooLounge } from './ring-a-layout.mjs';
@@ -68,6 +68,8 @@ export const landmarks = [
   { ...rozel },
   { ...jhHotel },
   { ...nanyangFan },
+  { ...dNovaHotel },
+  { ...jxinHotel },
   { ...yajuHotel },
   { ...summerView },
   { ...vintageAndVine },
