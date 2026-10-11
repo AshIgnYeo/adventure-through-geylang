@@ -150,7 +150,7 @@ Review: `?review=faith-mission-home`. Six automated tests and the production bui
 
 ## Texture production
 
-Built-in image generation, single two-panel atlas, saved to `public/lorong-11-heritage-atlas.png`. Inputs were two browser-visible URA façade images, No. 17 and historic No. 8. These sources are references for a new game texture; source photographs are not shipped unchanged in the project.
+Built-in image generation, single two-panel atlas, saved to `assets/lorong-11-heritage-atlas.png` (lossless master). The game loads `public/lorong-11-heritage-atlas.webp`, encoded from the master with `cwebp -q 85 -m 6 -sharp_yuv`. Inputs were two browser-visible URA façade images, No. 17 and historic No. 8. These sources are references for a new game texture; source photographs are not shipped unchanged in the project.
 
 Direct references:
 

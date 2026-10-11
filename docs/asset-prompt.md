@@ -1,6 +1,6 @@
 # Shophouse atlas
 
-Tool: built-in image generation. Output: `public/shophouse-atlas.png`.
+Tool: built-in image generation. Output: `assets/shophouse-atlas.png` (lossless master). The game loads `public/shophouse-atlas.webp`, encoded from the master with `cwebp -q 85 -m 6 -sharp_yuv`.
 
 Prompt:
 
