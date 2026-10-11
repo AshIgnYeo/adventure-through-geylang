@@ -951,4 +951,14 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - Sims Avenue Nos. 126, 128 and 130 (the Lorong 17 west corner).
   - **Capture dates:** Lorong 15 has no June 2024 drive, so its faces are dated April 2024.
   - **No. 134 (682928733), the Lorong 17 east corner:** drawn as massing with its red awnings, unnamed. Its outline lies almost entirely outside the bounds, and the two drives disagree on its position by 3–4 m.
+- **Lorong 12 group (`src/ring-b-layout.mjs`), unnamed exteriors:**
+  - Way 454438320: a white nine-storey apartment tower at the north end and a lavender-blue four-storey hotel signed HOTEL 81 CHERRY at the south end, sharing one way.
+  - The cream three-storey pair with association boards. It photographs 15 m wide against the 9 m way.
+  - The Summer View apartment block at No. 5.
+  - The ten-storey condominium at No. 9. Its front stands 8–10 m in front of the source, so the way looks like an older trace.
+  - The garden house on the west side, set back.
+  - The four-storey block north of No. 12.
+  - The hotel at No. 12, signed YA JU HOTEL 雅居酒店.
+  - **Method:** windows, fins and corners were matched between June 2024 panoramas, and each building is kept on its source front.
+  - **Agent run:** it stalled after writing its files. The files were complete, so they were reviewed, tested and wired in.
 
