@@ -24,7 +24,7 @@ Use `?review=lian-seng` and `?review=gr-231`.
 
 ## Three houses west of Lian Seng (unnamed)
 
-- **Footprints:** the large source block 453797929 runs past the study's west edge. Its three in-bounds frontages are split off under open question 11 as `gr-227`, `gr-225` and `gr-223`. These are keys, not confirmed numbers. The rest of the block, mostly outside the study, stays one generic remainder.
+- **Footprints:** the large source block 453797929 runs past the study's west edge. Under open question 28 (11 October 2026) it is re-cut at party lines triangulated from June 2024 panoramas and anchored on the Lorong 7 corner: `gr-217` (Gong He Guan, named), `gr-219`, `gr-221`, `gr-223`, `gr-225`, `gr-227` and the remainder `gr-229-west`, at 6.2, 10.4, 15.2, 20.2, 24.9 and 29.35 m from the corner. The models for Nos. 223–227 below are mirrored and scaled onto their new strips.
 - **Measurement:** on the `NR4z…` panorama, rectified 1.4 m forward where triangulation puts the street piers, the houses measure about **4.6, 5.2 and 4.8 m**. The same frame puts Lian Seng's west wall about 4 m west of its source strip edge, which matches this drive's known along-street position error, so the widths are laid out from the strip edge.
 - **The houses:** all three are cream Peranakan shophouses with the frieze, round vents and cornice of Nos. 229–231.
   - **`gr-227`:** a yellow clan-association board, which could not be read in full, and a RED LEAF Karaoke Pub board. Redleaf Karaoke is listed only at 73 Maude Road, temporarily closed. Both boards are blank.

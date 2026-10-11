@@ -992,3 +992,10 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - The **middle block** (25.3 m, wings 26.3 m): unnamed, because its ibis budget SAPPHIRE sign conflicts with the listed ibis budget Singapore Tulip.
   - **JXIN Hotel 嘉鑫酒店** (white, 29.1 m): its blue board is drawn.
   - Both named hotels have listing points inside their strips.
+- **Open question 28 applied, 11 October 2026 (`geylang-217-227`, replacing the question 11 split `geylang-223-227`):**
+  - **Triangulation:** party lines from four June 2024 panoramas (i-vt, U23w, NR4z, 2Y21) put the row about 1–1.5 m behind the source front, at 6.2, 10.4, 15.2 and 20.2 m from the Lorong 7 corner.
+  - **Hidden lines:** a street tree hides the next two lines in 2024. Panoramas from 2009, 2011, 2016 and 2019 show the whole row and give the ratio of the two houses east of 20.2 m. Lian Seng's west party line triangulates at 29.35 m, so those cuts fall at 24.9 and 29.35 m.
+  - **Named:** **Gong He Guan** at No. 217. It is a dessert restaurant listed open, with its point inside the strip; its red board is drawn.
+  - **Unnamed:** BBQ Home at No. 219 (permanently closed) and the white No. 221.
+  - **Re-targeted:** the frog-board house, the karaoke-mural house and the Red Leaf house now stand on their photographed strips. The duplicate frog-board house in the old `gr-221-west` is gone.
+  - **Left for open question 34:** the remainder `gr-229-west` carries the west part of Lian Seng's photographed house with its board blank. The same triangulation shows Lian Seng and Vietnam Unisex modelled one house east of their photographs.

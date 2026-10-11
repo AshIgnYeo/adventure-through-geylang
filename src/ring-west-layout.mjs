@@ -12,7 +12,7 @@ const way = id => `https://www.openstreetmap.org/way/${id}`;
 // corner, and the party lines fall 4.6, 9.0 and 13.5 m east of it. The east 4.5 m of the strip is where both
 // panoramas place the house with the Lor 9 Frog Porridge board, modelled as No. 223 one strip further east
 // (open question 28).
-export const no221West = {
+const row217 = {
   id: 'gr-221-west', buildingIds: ['gr-221-west'], kind: 'unnamed', unnamed: true, frontEdge: 6, reviewRoad: 'Geylang Road',
   name: 'Peranakan row at the Lorong 7 corner, Geylang Road Nos. 217-221 (June 2024 exterior, occupants not identified)', address: '217-221 Geylang Road',
   height: 7.7, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'hip', ridge: 9.3, colour: '#b4643f' },
@@ -43,6 +43,42 @@ export const no221West = {
     { name: 'arched openings', u: [10.6, 14.9], h: [.1, 2.9], colour: '#3d3a36' },
     { name: 'roller shutter', u: [15.3, 19.3], h: [.1, 2.3], colour: '#c0c2be' },
   ],
+};
+
+// Nos. 217, 219 and 221 on their own strips of the re-cut block (open question 28): the row's elevation, read with
+// u east from the Lorong 7 corner, cut at the triangulated party lines 6.2 and 10.4 m and re-based on each strip.
+const r2 = v => +v.toFixed(2);
+const cutU = (items = [], from, to) => items.flatMap(it => {
+  const l = Math.max(it.u[0], from), r = Math.min(it.u[1], to);
+  return r - l > .05 ? [{ ...it, u: [r2(l - from), r2(r - from)] }] : [];
+});
+const cutRow = (from, to) => ({
+  windows: cutU(row217.windows, from, to), blocks: cutU(row217.blocks, from, to),
+  piers: cutU((row217.piers ?? []).map(u => ({ u })), from, to).map(p => p.u), backFittings: cutU(row217.backFittings, from, to),
+});
+const rowNote = 'Under the owner\'s answer to open question 28 the block is re-cut at party lines triangulated from June 2024 panoramas (i-vt and 2Y21, checked against NR4z): 6.2, 10.4 and 15.2 m from the Lorong 7 corner, on a plane about 1-1.5 m behind the source front. Heights were read on that plane.';
+const rowSources = id => ['https://www.openstreetmap.org/way/453797929', ...row217.sources.slice(1)];
+export const gongHeGuan = {
+  ...row217, ...cutRow(0, 6.2), id: 'gong-he-guan', buildingIds: ['gr-217'], kind: 'gong-he-guan', unnamed: undefined, frontEdge: 0,
+  name: 'Gong He Guan (June 2024 exterior)', address: '217 Geylang Road',
+  evidence: 'Google Maps lists Gong He Guan, a dessert restaurant open in October 2026, at 217 Geylang Rd, Singapore 389277, with its point inside this strip. June 2024 Street View shows the chamfered two-storey Peranakan corner house at Lorong 7 with three arched louvred windows over a red GONG HE GUAN board, a smaller board on the chamfer and a vertical red board numbered 217, so the main board names it and is redrawn in original type; the other boards stay blank. ' + rowNote,
+  sources: ['https://www.google.com/maps/search/?api=1&query=Gong+He+Guan+217+Geylang+Road', ...rowSources()],
+  blocks: cutRow(0, 6.2).blocks.filter(b => b.name !== 'blank red board'),
+  // In front of the 3.3-3.6 m band, as photographed.
+  board: { u: [2.4, 5.9], h: [3.05, 3.65], out: .28 },
+};
+export const no219 = {
+  ...row217, ...cutRow(6.2, 10.4), id: 'gr-219', buildingIds: ['gr-219'], frontEdge: 0, shellInset: .1,
+  name: 'No. 219 Geylang Road (June 2024 exterior, occupant not identified)', address: '219 Geylang Road',
+  evidence: 'June 2024 Street View shows a two-storey Peranakan shophouse with three arched louvred windows in brown frames over a black BBQ HOME board. BBQ Home is listed at 219 Geylang Rd but permanently closed, so no name is given and the board is blank. ' + rowNote,
+  sources: rowSources(),
+  piers: [[0, .12], [4.05, 4.2]],
+};
+export const no221 = {
+  ...row217, ...cutRow(10.4, 15.2), id: 'gr-221', buildingIds: ['gr-221'], frontEdge: 0, shellInset: .1,
+  name: 'No. 221 Geylang Road (June 2024 exterior, occupant not identified)', address: '221 Geylang Road',
+  evidence: 'June 2024 Street View shows a white two-storey Peranakan shophouse with three louvred windows over arched five-foot-way openings and a Thai restaurant sign; no listing was matched, so no name is given. ' + rowNote,
+  sources: rowSources(),
 };
 
 // The 1939 Art Deco block on the west corner of Lorong 7 (north side). Triangulated from YzaF... and XDg9...:
@@ -242,7 +278,7 @@ export const railwayBlock = {
   sources: [way('541941376'), pano('UAXPg6N3nfoHWJGHpB3X6g', 330, 25, 100), pano('OMIY_8UUd3QpFV1-r8yqSA', 0, 25, 100)],
 };
 
-export const ringWest = [no221West, corner1939, no198, no200, rozel, behindRozel, no56Sims, no21L9, lorong7Associations, no8L7, railwayBlock];
+export const ringWest = [gongHeGuan, no219, no221, corner1939, no198, no200, rozel, behindRozel, no56Sims, no21L9, lorong7Associations, no8L7, railwayBlock];
 export const ringWestFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringWestLayout = (place, width) => simpleHouseLayout(width, place);
 // Buildings straddling the west edge are reviewed from an oblique start inside the walkable bounds.

@@ -33,7 +33,15 @@ const crystalBoard: Draw = (c, w, h) => {
   text(c, 'Crystal Mansions', w / 2, h * .32, h * .4, '#f2f2ee', 'italic 600', '"Snell Roundhand", "Apple Chancery", cursive', w * .96);
   text(c, '3 LOR 6', w * .32, h * .76, h * .24, '#f2f2ee', '600', 'Georgia, "Times New Roman", serif');
 };
+// Red board with white serif capitals over the Chinese line and the founding year.
+const gongHeGuanBoard: Draw = (c, w, h) => {
+  c.fillStyle = '#a8242a'; c.fillRect(0, 0, w, h); c.strokeStyle = '#e9d9b8'; c.lineWidth = h * .03; c.strokeRect(h * .05, h * .05, w - h * .1, h - h * .1);
+  text(c, 'GONG HE GUAN', w / 2, h * .36, h * .4, '#f6efe2', '700', 'Georgia, "Times New Roman", serif', w * .8);
+  text(c, '—— 香港龟苓膏专门店 ——', w / 2, h * .66, h * .16, '#f6efe2', '600', '"Songti SC", "STSong", serif', w * .6);
+  text(c, 'Since 2001', w / 2, h * .84, h * .11, '#f6efe2', 'italic 400', 'Georgia, serif');
+};
 const draws: Record<string, { boards?: Draw[] }> = {
+  'gong-he-guan': { boards: [gongHeGuanBoard] },
   'rozel-furniture': { boards: [rozelBoard, rozelBoard] }, 'lex-hotel': { boards: [lexBoard] },
   'engineering-merchants': { boards: [merchantsBoard] }, 'crystal-mansions': { boards: [crystalBoard] },
 };

@@ -206,20 +206,19 @@ export const authoredFootprintGroups = [
     },
   },
   {
-    id: 'geylang-223-227', question: 11, approved: '2026-10-10',
-    evidence: 'Partial-block split of the large source block 453797929 west of Lian Seng (No. 229), whose Geylang Road frontage runs past the study\'s west edge. On the NR4z panorama rectified 1.4 m in front of the source front, where triangulation puts the street piers, the three houses inside the study measure about 4.6, 5.2 and 4.8 m from Lian Seng\'s west wall; that wall itself appears about 4 m west of the source strip edge, which matches this drive\'s known along-street position error, so the widths are laid out from the strip edge. Cut lines run square to the front; the rest of the block, mostly beyond the study edge, stays one generic remainder.',
+    id: 'geylang-217-227', question: 28, approved: '2026-10-11',
+    evidence: 'Re-cut of the large source block 453797929 between the Lorong 7 corner and Lian Seng (open question 28; first split under open question 11). Party lines triangulated from June 2024 panoramas (i-vt and 2Y21, the widest pair, checked against NR4z) fall 6.2, 10.4, 15.2 and 20.2 m along the source front from the Lorong 7 corner, on a plane about 1-1.5 m behind it; the same drive puts the Lorong 7 and Lorong 9 corners on their source corners, so these positions are not shifted. A street tree hides the next two lines in 2024; panoramas from 2009-2019 show the row whole, with the two houses east of 20.2 m in the ratio 4.9 : 4.65 up to the house of Lian Seng, whose west party line triangulates at 29.35 m, so the cuts fall at 24.9 and 29.35 m. The east 4.87 m of the block is the west part of the house photographed with Lian Seng\'s board (open question 34). Cut lines run square to the front.',
     replaces: ['453797929'],
     build(map) {
-      const src = map.buildings.find(b => b.id === '453797929').coordinates.slice(0, -1).map(c => project(c, map.origin));
-      const P0 = src[11], P1 = src[0], len = Math.hypot(P1[0] - P0[0], P1[1] - P0[1]);
-      const front = [(P1[0] - P0[0]) / len, (P1[1] - P0[1]) / len];
-      const inward = [-front[1], front[0]], cut = (inward[0] * (src[5][0] - P0[0]) + inward[1] * (src[5][1] - P0[1])) > 0 ? inward : neg(inward);
-      const [h227, h225, h223, rest] = strips(src, P0, front, cut, [4.6, 9.8, 14.6]);
+      const [h217, h219, h221, h223, h225, h227, rest] = splitAlongFront(map, '453797929', 0, 11, [6.2, 10.4, 15.2, 20.2, 24.9, 29.35]);
       return [
-        { id: 'gr-227', street: 'Geylang Road', number: null, levels: 2, outline: h227 },
-        { id: 'gr-225', street: 'Geylang Road', number: null, levels: 2, outline: h225 },
+        { id: 'gr-217', street: 'Geylang Road', number: '217', levels: 2, outline: h217 },
+        { id: 'gr-219', street: 'Geylang Road', number: '219', levels: 2, outline: h219 },
+        { id: 'gr-221', street: 'Geylang Road', number: '221', levels: 2, outline: h221 },
         { id: 'gr-223', street: 'Geylang Road', number: null, levels: 2, outline: h223 },
-        { id: 'gr-221-west', street: 'Geylang Road', number: null, levels: null, outline: rest },
+        { id: 'gr-225', street: 'Geylang Road', number: null, levels: 2, outline: h225 },
+        { id: 'gr-227', street: 'Geylang Road', number: null, levels: 2, outline: h227 },
+        { id: 'gr-229-west', street: 'Geylang Road', number: null, levels: 2, outline: rest },
       ];
     },
   },

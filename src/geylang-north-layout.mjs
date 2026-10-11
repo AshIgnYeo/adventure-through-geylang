@@ -62,12 +62,21 @@ export const annex237 = {
   backFittings: [{ name: 'coffeeshop interior', u: [.6, 7.1], h: [.1, 3.1], colour: '#4a403a', glow: .05 }],
 };
 
-// Nos. 223-227 (keys only), west of Lian Seng on the split of block 453797929 (open question 11); frames
-// run east to west from each house's east party line (u = 0 at the Lian Seng side for gr-227).
-const westNote = 'It stands on the owner-approved split of block 453797929 (open question 11), whose widths were read on the NR4z panorama rectified at the triangulated depth; this drive\'s along-street position error puts every frontage here about 4 m west of the source lines, so the widths are laid out from the source strip edge. Heights carry about ±0.4 m.';
+// Nos. 223-227 (keys only), west of Lian Seng on the re-cut of block 453797929 (open question 28). Each
+// elevation was first measured east to west from the house's east party line on NR4z; the re-cut strips' frames
+// run west to east, so the elevations are mirrored and scaled to the triangulated widths (retarget below).
+const westNote = 'Under the owner\'s answer to open question 28 it stands on its own strip of block 453797929, re-cut at party lines triangulated from June 2024 panoramas and anchored on the Lorong 7 corner (the lines hidden by a street tree in 2024 were read on 2009-2019 panoramas); the elevation, first read on the NR4z panorama, is scaled to the triangulated width. Heights carry about ±0.4 m.';
 const westPanos = [pano('NR4z2s7rbrbx9IaXh2FIFg', 345, 8, 90), pano('2Y21iC-Tp9xBEWdsRjwK4w', 320, 12, 100)];
-const peranakanWest = (id, extra) => ({ id, buildingIds: [id], kind: 'unnamed', unnamed: true, frontEdge: { 'gr-227': 5, 'gr-225': 4, 'gr-223': 2 }[id], reviewRoad: 'Geylang Road',
-  height: 6.87, ceiling: 2.67, fiveFootWay: 2.0, shellInset: .1, roof: { type: 'gable', ridge: 8.6, ridgeDepth: .4, colour: '#8e5a46' }, sources: westPanos, ...extra });
+// Mirror an east-to-west elevation of width w0 onto a west-to-east frame of width w1.
+const retarget = (spec, w0, w1) => {
+  const k = w1 / w0, m = ([l, r]) => [+(k * (w0 - r)).toFixed(3), +(k * (w0 - l)).toFixed(3)];
+  const list = xs => xs?.map(x => ({ ...x, u: m(x.u) }));
+  return { ...spec, windows: list(spec.windows), blocks: list(spec.blocks), backFittings: list(spec.backFittings), piers: spec.piers?.map(m) };
+};
+const widths = { 'gr-227': [4.6, 4.45], 'gr-225': [5.2, 4.7], 'gr-223': [4.8, 5.0] };
+const peranakanWest = (id, extra) => retarget({ id, buildingIds: [id], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road',
+  height: 6.87, ceiling: 2.67, fiveFootWay: 2.0, shellInset: .1, roof: { type: 'gable', ridge: 8.6, ridgeDepth: .4, colour: '#8e5a46' },
+  sources: ['https://www.openstreetmap.org/way/453797929', ...westPanos], ...extra }, ...widths[id]);
 
 export const no227 = peranakanWest('gr-227', {
   name: 'Red Leaf Karaoke house, Geylang Road (June 2024 exterior, occupant not identified)', address: 'Geylang Road, west of No. 229',
@@ -97,9 +106,21 @@ export const no223 = peranakanWest('gr-223', {
   backFittings: [{ name: 'roller shutter', u: [.4, 4.4], h: [.1, 2.0], colour: '#b9bbb6' }],
 });
 
-export const geylangNorth = [lianSeng, no231, annex237, no227, no225, no223];
+// The east 4.87 m of block 453797929: the west part of the house photographed with Lian Seng's board, whose
+// named model stands one strip east until open question 34 is settled. Its elevation is Lian Seng's, cut.
+const cutTo = (xs, to) => xs?.flatMap(x => x.u[0] < to - .05 ? [{ ...x, u: [x.u[0], Math.min(x.u[1], +(to - .05).toFixed(2))] }] : []);
+export const lianSengWest = {
+  ...lianSeng, id: 'gr-229-west', buildingIds: ['gr-229-west'], kind: 'unnamed', unnamed: true, board: undefined,
+  name: 'West part of the house photographed with the Lian Seng board, Geylang Road (June 2024 exterior)', address: 'Geylang Road, between No. 227 and the Lian Seng model',
+  evidence: 'The east 4.87 m of block 453797929, cut off by the owner-approved re-cut (open question 28). June 2024 panoramas triangulate the west party line of the cream Peranakan house carrying the Lian Seng Weighing Scale Co. board at 29.35 m from the Lorong 7 corner, and its east party line about 5.35 m further on, inside the No. 229 strip of the next block; the named Lian Seng model stands on that strip, one house east of its photographed position, until open question 34 re-spaces Nos. 229-233. This strip carries the photographed elevation of the house\'s west part with its board blank.',
+  sources: ['https://www.openstreetmap.org/way/453797929', ...lianSeng.sources.slice(2)],
+  windows: cutTo(lianSeng.windows, 4.87), blocks: [...cutTo(lianSeng.blocks, 4.87), { name: 'blank black board', u: [.12, 4.82], h: [2.0, 2.65], out: .06, depth: .05, colour: '#1e1e1f' }],
+  piers: [[.1, .4]], backFittings: cutTo(lianSeng.backFittings, 4.87),
+};
+
+export const geylangNorth = [lianSeng, no231, annex237, no227, no225, no223, lianSengWest];
 export const geylangNorthFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const geylangNorthLayout = (place, width) => simpleHouseLayout(width, place);
 // The road is near the study's south edge here, so the houses west of Lian Seng are reviewed from closer in.
-const closeReview = { 'gr-227': 7.5, 'gr-225': 7.5, 'gr-223': 5.5 };
+const closeReview = { 'gr-227': 7.5, 'gr-225': 7.5, 'gr-223': 5.5, 'gr-229-west': 7.5 };
 export const geylangNorthReviews = (place, frame) => facing(frame, place.id, closeReview[place.id] ?? 11, 14);

@@ -6,7 +6,20 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+34. **Geylang Road Nos. 229–231: move the Lian Seng and Vietnam Unisex models one house west, onto their photographed houses?**
+    - **Evidence:** the question 28 triangulation also fixes the houses east of No. 227, from the same June 2024 drive. That drive puts both the Lorong 7 and Lorong 9 corners on their source corners, so its positions are not shifted. The photographed houses fall as follows, measured from the Lorong 7 corner:
+
+      | House | Photographed | Strip it is modelled on now |
+      | --- | --- | --- |
+      | Lian Seng (No. 229) | 29.35–34.7 m | `gr-229`, 34.2–39.6 m |
+      | Vietnam Unisex Concept (No. 231) | 34.7–40.0 m | `gr-231`, 39.6–43.9 m |
+      | Two-storey house with the Durian & Fruits Experience Centre's vertical board | 40.0–44 m | none |
+      | Wat Dhammasatis building (No. 233) | 44–50 m | `gr-233`, 43.9–50.0 m (correct) |
+
+      The earlier split explained the gap as a 4 m drive error, but the two corners rule that out.
+    - **What happens now:** the strip `gr-229-west` (29.35–34.2 m), cut off by question 28, carries Lian Seng's photographed house with its board blank. The named Lian Seng model still stands one house east, where Vietnam Unisex is.
+    - **Recommendation:** yes. Move the Lian Seng identity and board onto `gr-229-west`, move the Vietnam Unisex elevation onto `gr-229`, and model the two-storey durian house on `gr-231`, unnamed unless a listing point and sign agree. The existing strip lines are within 0.5 m of the photographed lines, so no new geometry is needed.
+    - **Unlocks:** the correct house order from Lorong 7 to Lorong 9.
 
 ## Settled
 

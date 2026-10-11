@@ -56,7 +56,7 @@ import { ibisGold } from './ibis-gold-layout.mjs';
 import { redFlagDavco, yiXiu, shiCheng } from './sims-north-row-layout.mjs';
 import { ywam, kimCourt, theDiamond } from './lorong-9-layout.mjs';
 import { mosqueElevation } from './mosque-layout.mjs';
-import { rozel } from './ring-west-layout.mjs';
+import { rozel, gongHeGuan } from './ring-west-layout.mjs';
 import { ledgeBlock as jhHotel, no11 as nanyangFan, dNovaHotel, jxinHotel } from './ring-c-layout.mjs';
 import { no12 as yajuHotel, summerView, westBlock as vintageAndVine, hotel81Cherry, masterTailors, chineseEatingHouse } from './ring-b-layout.mjs';
 import { lexHotel, creamSouth as engineeringMerchants, crystalMansions } from './ring-south-layout.mjs';
@@ -66,6 +66,7 @@ export { authoredLandmarks } from './authored-sites.mjs';
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
 export const landmarks = [
   { ...rozel },
+  { ...gongHeGuan },
   { ...jhHotel },
   { ...nanyangFan },
   { ...dNovaHotel },
