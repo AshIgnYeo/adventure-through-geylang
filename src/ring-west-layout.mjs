@@ -209,7 +209,40 @@ export const no21L9 = {
   backFittings: [{ name: 'ground floor', u: [.4, 10.6], h: [.1, 3.6], colour: '#4a4842' }],
 };
 
-export const ringWest = [no221West, corner1939, no198, no200, rozel, behindRozel, no56Sims, no21L9];
+// Lorong 7, whose June 2024 drive runs just beyond the study's west edge. The four-storey associations building
+// south of No. 8 faces it across a fenced yard. Triangulated from o4UY... and sRYN...: the front agrees with the
+// source plane and runs 23.35 m against the 25.73 m source edge, so it is laid out along the edge at x1.102.
+const l7Bays = [[0, 7.45], [7.85, 16.95], [17.35, 25.73]];
+export const lorong7Associations = {
+  id: 'l7-associations', buildingIds: ['453797932'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 7 Geylang', review: [27.5, 3.5],
+  name: 'Four-storey associations building, Lorong 7 Geylang east side (June 2024 exterior, occupants not named)', address: 'Lorong 7 Geylang, east side, south of No. 8',
+  height: 15.8, ceiling: 3.9, fiveFootWay: 1.5, shellInset: .2, roof: { type: 'flat', colour: '#9a9893' },
+  evidence: 'June 2024 Street View shows a weathered cream four-storey building of three bays between mustard piers on the east side of Lorong 7, behind a fenced yard: strip windows on every floor and a projecting sign band at each floor carrying association boards, among them SINGAPORE VEHICLE TRADERS ASSOCIATION 新加坡汽車商公會, SINGAPORE PROVISION SHOP FRIENDLY ASSOCIATION, a Buddhist society, a clan association and the Covenant Church of Christ. With many occupants and no listing checked against the way, no name is given and the boards are blank. Its ends were read from two panoramas that agree on the source plane; the 23.35 m front is laid out along the 25.73 m source edge, and heights were read on that plane.',
+  sources: [way('453797932'), pano('o4UYgJmiewQrZYVAJFhsWg', 75, 15, 100), pano('sRYN0yz81UqwK3HCqK_tRg', 60, 15, 100)],
+  colours: { wall: '#dcd8cc', trim: '#e9e6dc', frame: '#9aa0a2', glass: '#4b5357', pier: '#c9a24a', back: '#3a3836', floor: '#a19c93' },
+  bands: [[14.0, 15.8, .3], [10.4, 12.1, 1.0], [7.45, 8.7, .6], [3.9, 5.3, 1.2]],
+  windows: l7Bays.flatMap(([l, r]) => [[5.7, 7.3], [8.85, 10.1], [12.3, 13.75]].map(h => ({ u: [+(l + .7).toFixed(2), +(r - .7).toFixed(2)], h, panes: Math.round((r - l - 1.4) / 1.2) }))),
+  blocks: [[0, .45], [7.45, 7.85], [16.95, 17.35], [25.28, 25.73]].map(u => ({ name: 'mustard pier', u, h: [3.9, 15.8], out: .1, depth: .2, colour: '#c9a24a' })),
+  piers: [[.05, .45], [7.45, 7.85], [16.95, 17.35], [25.28, 25.68]],
+  backFittings: l7Bays.map(([l, r]) => ({ name: 'ground-floor glazing', u: [+(l + .6).toFixed(2), +(r - .6).toFixed(2)], h: [.6, 3.4], colour: '#4b5357', glow: .05 })),
+};
+
+// No. 8 Lorong 7 and the long block beside the railway north of Rozel lie almost wholly beyond the west edge and
+// are seen only from far down Lorong 7 or over other roofs: massing only.
+export const no8L7 = {
+  id: 'l7-8', buildingIds: ['541941371'], kind: 'unnamed', unnamed: true, massing: true, height: 29.0, colour: '#c9cbcc',
+  name: 'Condominium, 8 Lorong 7 Geylang (June 2024 exterior, massing only)', address: '8 Lorong 7 Geylang',
+  evidence: 'June 2024 Street View along Lorong 7 shows a modern condominium of about nine storeys in way 541941371 (tagged No. 8): white walls in a chequer of dark grey frames with glass-railed balconies, over a black-tiled podium wall. Its front faces Lorong 7 beyond the study\'s west edge, so it is drawn as massing at a height of about 29 m read on the source plane (±2 m: the drive passes close and the balconies stand proud of the plane). No name was seen.',
+  sources: [way('541941371'), pano('8EVXJ936PMRUn8jAXyr8Kg', 75, 15, 100), pano('Y5m9h8hpRxVjywv4E6Ro5w', 60, 25, 100)],
+};
+export const railwayBlock = {
+  id: 'sims-west-railway-block', buildingIds: ['541941376'], kind: 'unnamed', unnamed: true, massing: true, height: 16.0, colour: '#dcdcd8',
+  name: 'Long block beside the railway, north of Sims Avenue (massing only)', address: 'Sims Avenue, north side, west of Rozel Furniture',
+  evidence: 'A long source way between the railway viaduct and the Sims Avenue frontage west of Rozel Furniture. In June 2024 Street View from Sims Avenue it is hidden behind the single-storey Xclusive showroom and a yellow-ended four-storey block, with only a white upper storey of about the same height in view; satellite imagery shows a grey roof with rooftop plant. Almost all of it lies beyond the study\'s west edge, so it is drawn as massing at an estimated 16 m (±3 m). Its form and use are not established.',
+  sources: [way('541941376'), pano('UAXPg6N3nfoHWJGHpB3X6g', 330, 25, 100), pano('OMIY_8UUd3QpFV1-r8yqSA', 0, 25, 100)],
+};
+
+export const ringWest = [no221West, corner1939, no198, no200, rozel, behindRozel, no56Sims, no21L9, lorong7Associations, no8L7, railwayBlock];
 export const ringWestFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringWestLayout = (place, width) => simpleHouseLayout(width, place);
 // Buildings straddling the west edge are reviewed from an oblique start inside the walkable bounds.

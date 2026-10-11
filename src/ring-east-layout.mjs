@@ -85,7 +85,23 @@ export const sims134 = {
   sources: [way('682928733'), pano('Zwx6nRNu4CPL9jyWL624Fw', 120, 15, 100)],
 };
 
-export const ringEast = [no291, no260East, sims134];
+// The west side of Lorong 17, south of Sims Avenue: eleven walk-ups whose fronts face Lorong 17 beyond the study's
+// east edge. Only their backs and roofs are visible from the modelled streets, so they are massing, coloured after
+// their June 2024 fronts and roofed after the satellite tiles. Heights were read on the source plane from two
+// panoramas: about 14 m to the roof slabs of the three-storey walk-ups (±1 m for the drive's depth uncertainty).
+const lorong17 = [
+  ['454254280', 13.0, '#e6dcc8', '#b5654a'], ['454254279', 14.0, '#e7e2cf'], ['454254278', 14.0, '#ebcdb8'], ['454254277', 14.0, '#e9e4d6'],
+  ['454254276', 14.0, '#ebd0bd'], ['454254275', 14.0, '#ebe8e0'], ['454254271', 14.0, '#eceae4'], ['454254270', 14.0, '#ebe9e3'],
+  ['454254274', 14.0, '#ecccb6', '#b8673f'], ['454254273', 14.0, '#e3dbb6', '#b8673f'], ['454254272', 14.0, '#ebe9e3', '#b8673f'],
+];
+export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
+  id: `l17-${id}`, buildingIds: [id], kind: 'unnamed', unnamed: true, massing: true, height, colour, ...(roof ? { roof } : {}),
+  name: 'Walk-up on the west side of Lorong 17, south of Sims Avenue (June 2024 exterior, massing only)', address: 'Lorong 17 Geylang, west side',
+  evidence: 'June 2024 Street View along Lorong 17 shows a row of three-storey walk-ups of the 1950s-60s on its west side, in cream, white, peach and pale yellow, with deep balconies, louvred vents and five-foot ways hung with association boards (among them the S\'pore Rattan Industry Association, the Wee Ghee Athletic Association 威義體育會, 慕德同鄉會 and the Yang Clan General Association 楊氏總會). Their fronts face Lorong 17 beyond the study\'s east edge and only their backs and roofs are visible from the modelled streets, so each way is drawn as massing in the colour of its front, with satellite roof colours. Heights were read on the source plane from two panoramas, about 14 m to the roof slabs. No occupants are named.',
+  sources: [way(id), pano('8zShCoV5q2fYvPBEC901Vw', 255, 18, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 255, 18, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 255, 18, 100)],
+}));
+
+export const ringEast = [no291, no260East, sims134, ...lorong17West];
 export const ringEastFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringEastLayout = (place, width) => simpleHouseLayout(width, place);
 export const ringEastReviews = (place, frame) => facing(frame, place.id, 10, 18);

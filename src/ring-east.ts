@@ -12,7 +12,7 @@ export function buildRingEast(world: World, id: string, poly: Point[]) {
     // Plain walls and a flat roof, with only the photographed awnings.
     const wall = world.mat(place.colour); wall.cull = pc.CULLFACE_NONE; wall.update();
     for (let i = 0; i < poly.length; i++) world.panel(poly[i], poly[(i + 1) % poly.length], 0, place.height, wall);
-    const roof = world.mat('#9a9893'); roof.cull = pc.CULLFACE_NONE; roof.update();
+    const roof = world.mat(place.roof ?? '#9a9893'); roof.cull = pc.CULLFACE_NONE; roof.update();
     const indices: number[] = []; for (let k = 1; k < poly.length - 1; k++) indices.push(0, k, k + 1);
     world.mesh(`${place.name} roof`, poly.flatMap(p => [p[0], place.height, p[1]]), poly.flatMap(() => [0, 0]), indices, roof);
     const A = place.awning;

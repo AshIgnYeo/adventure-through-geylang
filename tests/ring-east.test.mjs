@@ -31,3 +31,17 @@ test('No. 134 is massing only, with its awnings on its Lorong 17 face and corner
   const poly = outline('682928733');
   for (const [edge, from, to] of place.awnings) assert.ok(from >= 0 && to <= ringEastFrame(poly, { frontEdge: edge }).width);
 });
+
+test('the Lorong 17 west side is massing only, one entry per way, coloured and unnamed', () => {
+  const row = ringEast.filter(p => p.id.startsWith('l17-'));
+  assert.equal(row.length, 11);
+  const ids = ringEast.flatMap(p => p.buildingIds);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const place of row) {
+    assert.equal(place.massing, true); assert.equal(place.unnamed, true);
+    assert.match(place.colour, /^#[0-9a-f]{6}$/);
+    assert.ok(place.height > 10 && place.height < 16);
+    assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+    assert.ok(outline(place.buildingIds[0]).length >= 4);
+  }
+});
