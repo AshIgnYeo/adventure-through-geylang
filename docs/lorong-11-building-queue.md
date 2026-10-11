@@ -961,4 +961,6 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - The hotel at No. 12, signed YA JU HOTEL 雅居酒店.
   - **Method:** windows, fins and corners were matched between June 2024 panoramas, and each building is kept on its source front.
   - **Agent run:** it stalled after writing its files. The files were complete, so they were reviewed, tested and wired in.
+  - **Named after a listing check:** **Ya Ju Hotel 雅居酒店**, No. 12. YAJU HOTEL is listed, its point lies inside way 121873031, and its sign was photographed.
+  - **Left unnamed until their ways are split (open question 31):** Hotel 81 - Cherry, whose point is in 454438320 alongside the apartment tower. Also the Singapore Master Tailors' Association (3C) and the Chinese Eating House Owners' Association (10C), whose points are both in 454438319.
 

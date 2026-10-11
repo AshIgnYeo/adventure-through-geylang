@@ -6,6 +6,12 @@ Started: 10 October 2026.
 
 ## Open
 
+31. **Lorong 12 east side: split the shared ways 454438320 and 454438319?**
+    - **Way 454438320:** it carries a white nine-storey apartment tower on its north 10.5 m and a lavender-blue four-storey hotel signed HOTEL 81 CHERRY on its south 10.3 m. Hotel 81 - Cherry is listed, with its point in the south half.
+    - **Way 454438319:** it carries a cream three-storey pair that photographs 15 m wide against the 9 m way. The pair shows boards of the Singapore Master Tailors' Association (listed at 3C Lor 12) and the Chinese Eating House Owners' Association (listed at 10C Lor 12), with both points in the way. The unit addresses suggest upper-floor premises.
+    - **Recommendation:** yes for 454438320. Split it at the measured tower/hotel line and name Hotel 81 Cherry on the hotel half. For 454438319, name the pair only as upper-floor association premises, on the Canton Wong precedent, once a re-spacing settles its 15 m width.
+    - **Unlocks:** one named hotel, and possibly two associations.
+
 30. **Lorong 10 east side: split way 454438326 into its three hotel blocks?**
     - **Evidence:** one 51 m source way carries three separate buildings, photographed in June 2024 and measured along a shared plane:
       - a taupe six-storey block signed D'Nova Hotel, at 0.4–13.3 m from the north corner;

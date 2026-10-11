@@ -202,12 +202,12 @@ export const westBlock = {
 const yjColumns = [[1.0, 2.3], [3.2, 4.5], [7.4, 8.8], [10.3, 11.7], [13.0, 14.4], [15.9, 17.3], [19.6, 20.9], [21.6, 22.9], [25.0, 26.7], [27.8, 29.4], [30.7, 32.2], [33.4, 34.9], [36.6, 38.1], [39.1, 40.7]];
 const yjRows = [[4.6, 6.1], [8.0, 9.4], [10.9, 12.3], [13.7, 15.2], [16.6, 18.0], [19.5, 20.9], [22.2, 23.8]];
 export const no12 = {
-  id: 'l12-12', buildingIds: ['121873031'], kind: 'unnamed', unnamed: true, frontSpan: [1, 3], reviewRoad: 'Lorong 12 Geylang',
+  id: 'yaju-hotel', buildingIds: ['121873031'], kind: 'yaju-hotel', frontSpan: [1, 3], reviewRoad: 'Lorong 12 Geylang',
   review: { at: [38, 14], pitch: 28 },
-  name: 'Hotel block at No. 12 Lorong 12 Geylang (June 2024 exterior, occupant not named)', address: '12 Lorong 12 Geylang',
+  name: 'Ya Ju Hotel 雅居酒店 (June 2024 exterior)', address: '12 Lorong 12 Geylang',
   height: 25.6, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9893' },
-  evidence: 'Source way 121873031 is tagged No. 12. June 2024 Street View shows an eight-storey white hotel block with grey-painted recessed bays, a grid of windows with air-conditioning units, a grey band over the first upper floor, a grey cornice and a raised central bay with a grey panel over an arched entrance surround; the ground floor carries a YA JU HOTEL 雅居酒店 sign by the entrance, a drive-through car porch at the north end and a red wall beyond it. The listing was not checked in this pass, so no name is given and the sign is blank. Triangulating the south-east roof corner from two panoramas puts the façade 1.4 m behind the source front; the elevation was read on that plane, where the two panoramas nearest its north half agree on a 25.5 m cornice and a raised centre to about 29.4 m (a third reads up to 3 m higher, and the corner triangulation about 27.5 m, so heights carry about ±2 m). It is kept on the source front. Most of the way lies south of the study edge.',
-  sources: [way('121873031'), pano('XnM3pDsxaW6ZR15IbMPLlg', 228, 22, 100), pano('16beRBFmUrrhPm8nBsaNiw', 300, 22, 100), pano('d5vQyzeouL-IdSaMiWVR5Q', 250, 20, 100), pano('nk8TBnq7sZd3IJKPqfYYcQ', 265, 15, 100)],
+  evidence: 'Source way 121873031 is tagged No. 12. June 2024 Street View shows an eight-storey white hotel block with grey-painted recessed bays, a grid of windows with air-conditioning units, a grey band over the first upper floor, a grey cornice and a raised central bay with a grey panel over an arched entrance surround; the ground floor carries a YA JU HOTEL 雅居酒店 sign by the entrance, a drive-through car porch at the north end and a red wall beyond it. Google Maps lists YAJU HOTEL, a hotel taking bookings in October 2026, with its point inside this source way, so the sign names it; its lettering is redrawn in original type. Triangulating the south-east roof corner from two panoramas puts the façade 1.4 m behind the source front; the elevation was read on that plane, where the two panoramas nearest its north half agree on a 25.5 m cornice and a raised centre to about 29.4 m (a third reads up to 3 m higher, and the corner triangulation about 27.5 m, so heights carry about ±2 m). It is kept on the source front. Most of the way lies south of the study edge.',
+  sources: ['https://www.google.com/maps/search/?api=1&query=Ya+Ju+Hotel+12+Lorong+12+Geylang', way('121873031'), pano('XnM3pDsxaW6ZR15IbMPLlg', 228, 22, 100), pano('16beRBFmUrrhPm8nBsaNiw', 300, 22, 100), pano('d5vQyzeouL-IdSaMiWVR5Q', 250, 20, 100), pano('nk8TBnq7sZd3IJKPqfYYcQ', 265, 15, 100)],
   colours: { wall: '#eeeeea', trim: '#e4e4df', frame: '#3a3e40', glass: '#3e474b', pier: '#eeeeea', back: '#3a3735', floor: '#a49e95' },
   bands: [[25.0, 25.6, .5, '#8e9296'], [7.2, 7.9, .3, '#8e9296']],
   windows: grid(yjColumns, yjRows, { panes: 1, out: .02 }),
@@ -217,10 +217,11 @@ export const no12 = {
     { name: 'grey central panel', u: [19.8, 22.6], h: [25.4, 28.9], out: .02, depth: .04, colour: '#8f9499' },
     { name: 'grey arch surround', u: [19.3, 23.3], h: [5.6, 9.6], out: .1, depth: .2, colour: '#8f9499' },
     { name: 'arch infill', u: [20.0, 22.6], h: [5.6, 8.9], out: .21, depth: .02, colour: '#eeeeea' },
-    { name: 'blank hotel sign', u: [19.3, 23.8], h: [4.4, 5.3], out: .15, depth: .04, colour: '#f2f2ee' },
+    { name: 'hotel sign backing', u: [19.3, 23.8], h: [4.4, 5.3], out: .15, depth: .04, colour: '#f2f2ee' },
     { name: 'car porch canopy', u: [32.9, 39.3], h: [3.6, 4.0], out: 1.5, depth: 3.0, colour: '#d9d9d4' },
     ...[[33.0, 33.4], [38.8, 39.2]].map(u => ({ name: 'porch column', u, h: [0, 3.6], out: 2.8, depth: .4, colour: '#eeeeea' })),
   ],
+  board: { u: [19.35, 23.75], h: [4.45, 5.25], out: .18 },
   piers: [[0, .4], [19.0, 19.4], [23.6, 24.0], [43.1, 43.5]],
   backFittings: [
     { name: 'glazed lobby', u: [19.5, 23.5], h: [.1, 3.2], colour: '#3e474b', glow: .1 },
