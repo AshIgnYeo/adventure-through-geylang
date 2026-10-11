@@ -40,14 +40,14 @@ export const no291 = {
 
 // East of Lorong 12 on the south side: the rest of block 454438318 after the ChongQingXiaoMian split.
 // Triangulating the four party lines from two June 2024 panoramas puts them 4.8 m in front of the source
-// front, confirmed from a second drive (open question 29), and gives bays of about 5.0, 4.6 and 5.2 m from the split, which the
+// front, confirmed from a second drive; under open question 29 the front is moved there. It gives bays of about 5.0, 4.6 and 5.2 m from the split, which the
 // grey|green line meets at 16.7 m against the split's 16.8 m; the fourth bay runs past the block's end.
 const W260 = 17.2;
 export const no260East = {
   id: 'gr-260-east', buildingIds: ['gr-260-east'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road',
   name: 'Shophouses east of Lorong 12, Geylang Road south side (June 2024 exterior, occupants not identified)', address: 'Geylang Road, south side, east of Lorong 12',
   height: 7.9, ceiling: 3.7, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 9.6, colour: '#6a6460' },
-  evidence: 'Three two-storey shophouses and part of a fourth, east of the Lorong 12 corner strip. Cross-drive triangulation shows the photographed façades stand about 4.8 m north of the source front, and a grey house with a red board stands inside the corner strip; both are open question 29. June 2024 Street View shows a green house with two large casement windows over a dark green blind, a yellow house with three louvred windows over a yellow tarpaulin and a HAPPY PLACE TATTOO banner, a white house with three windows over a teal blind, and the grey house signed 268 beyond. The banner is a temporary sign over a closed frontage, so it is blank and no name is given. Heights were read on the triangulated plane, where the two panoramas agree; the façades are kept on the source front of the owner-approved split (open question 11).',
+  evidence: 'Three two-storey shophouses and part of a fourth, east of the Lorong 12 corner strip. Cross-drive triangulation shows the photographed façades stand about 4.8 m north of the source front; under the owner\'s answer to open question 29 the strip\'s front is moved there, and the grey house with the red board west of the green house has its own strip. June 2024 Street View shows a green house with two large casement windows over a dark green blind, a yellow house with three louvred windows over a yellow tarpaulin and a HAPPY PLACE TATTOO banner, a white house with three windows over a teal blind, and the grey house signed 268 beyond. The banner is a temporary sign over a closed frontage, so it is blank and no name is given. Heights were read on the triangulated plane, where the two panoramas agree.',
   sources: [way('454438318'), pano('Y1SvdAjAS2SvYC5qQMSPuw', 200, 12, 100), pano('-tVuCuhwTBBFqueftEw2DQ', 200, 12, 110)],
   colours: { wall: '#e9e8e2', trim: '#e1dfd8', frame: '#2e3436', glass: '#3c4649', pier: '#e9e8e2', back: '#3a3633', floor: '#a39b90' },
   ...fromWest({
@@ -71,6 +71,30 @@ export const no260East = {
     piers: [[0, .3], [4.85, 5.1], [9.6, 9.85], [14.7, 14.95]],
   }, W260),
   bands: [[7.7, 7.9, .4], [3.6, 3.9, .25]],
+};
+
+// The grey house between the ChongQingXiaoMian corner and the green house (open question 29): its own strip at
+// 11.0-16.8 m from the Lorong 12 corner, with its front 4.8 m north of the source front. Read on that plane from
+// two June 2024 panoramas (-tVu..., Y1Sv...), measured from its west end and mirrored onto the frame.
+export const greyHouse = {
+  id: 'gr-258-grey', buildingIds: ['gr-258-grey'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road',
+  name: 'Grey shophouse east of the Lorong 12 corner, Geylang Road south side (June 2024 exterior, occupant not identified)', address: 'Geylang Road, south side, east of Lorong 12',
+  height: 7.9, ceiling: 3.5, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 8.7, colour: '#6a6460' },
+  evidence: 'June 2024 Street View shows a grey two-storey shophouse between the ChongQingXiaoMian corner building and the green house: three tall louvred windows under small louvred hoods upstairs, a dark grey west pier carrying a vertical lightbox and food-photo boards, and a cream lit board with red characters ending in a large 串 over a glazed shopfront. No listing was matched to it, so no name is given and the boards are blank. Under the owner\'s answer to open question 29 it has its own strip, 11.0-16.8 m along the Geylang Road front from the Lorong 12 corner, with its front 4.8 m north of the source front where two panoramas and a second drive place it. Heights were read on that plane.',
+  sources: [way('454438318'), pano('-tVuCuhwTBBFqueftEw2DQ', 200, 12, 100), pano('Y1SvdAjAS2SvYC5qQMSPuw', 200, 12, 100)],
+  colours: { wall: '#8f969c', trim: '#7d848a', frame: '#5f666c', glass: '#4a5054', pier: '#7a8187', back: '#3a3735', floor: '#a39b90' },
+  ...fromWest({
+    windows: [[1.5, 2.6], [2.9, 4.0], [4.2, 5.3]].map(u => ({ u, h: [4.25, 6.7], panes: 2 })),
+    vents: [[1.5, 2.6], [2.9, 4.0], [4.2, 5.3]].map(u => ({ u, h: [6.65, 6.95] })),
+    blocks: [
+      { name: 'dark grey west pier', u: [0, .7], h: [3.5, 7.9], out: .06, depth: .12, colour: '#6f767c' },
+      { name: 'blank lit board', u: [.7, 5.25], h: [3.5, 4.15], out: .12, depth: .06, colour: '#ece6d8' },
+      { name: 'blank lightbox', u: [0, .8], h: [5.6, 7.4], out: .45, depth: .15, colour: '#ddd8cc' },
+      { name: 'food photo boards', u: [.05, .65], h: [.8, 2.6], out: .1, depth: .04, colour: '#5a3a2a' },
+    ],
+    piers: [[0, .7], [5.55, 5.8]],
+    backFittings: [{ name: 'glazed shopfront', u: [.9, 3.4], h: [.1, 3.3], colour: '#3a3a36', glow: .1 }, { name: 'side door', u: [3.6, 5.3], h: [.1, 2.6], colour: '#2e2c2a' }],
+  }, 5.8),
 };
 
 // No. 134 Sims Avenue, the Lorong 17 east corner. Its outline lies almost entirely beyond the study bounds and
@@ -101,7 +125,7 @@ export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
   sources: [way(id), pano('8zShCoV5q2fYvPBEC901Vw', 255, 18, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 255, 18, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 255, 18, 100)],
 }));
 
-export const ringEast = [no291, no260East, sims134, ...lorong17West];
+export const ringEast = [no291, no260East, greyHouse, sims134, ...lorong17West];
 export const ringEastFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringEastLayout = (place, width) => simpleHouseLayout(width, place);
 export const ringEastReviews = (place, frame) => facing(frame, place.id, 10, 18);

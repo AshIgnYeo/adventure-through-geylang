@@ -223,18 +223,22 @@ export const authoredFootprintGroups = [
     },
   },
   {
-    id: 'geylang-258', question: 11, approved: '2026-10-10',
-    evidence: 'Partial-block split of source block 454438318 east of Lorong 12, which runs past the study\'s east edge. The registered satellite roof of the two-storey ChongQingXiaoMian corner building ends about 16.8 m along the Geylang Road front from the Lorong 12 corner, where a row of pitched roofs begins; the cut runs square to the front there, and the rest of the block, mostly beyond the study edge, stays one generic remainder.',
+    id: 'geylang-258', question: 29, approved: '2026-10-11',
+    evidence: 'Partial-block split of source block 454438318 east of Lorong 12, which runs past the study\'s east edge (first split under open question 11 at 16.8 m, re-split under open question 29). Party lines triangulated from two June 2024 panoramas, confirmed from a second drive, put the grey house with the red 串 board at 11.0-16.8 m along the Geylang Road front from the Lorong 12 corner, and the façades from there east about 4.8 m north of the source front, towards the road; the registered satellite roofs agree. The ChongQingXiaoMian corner building (0-11.0 m), whose Geylang Road face stands near the source front, keeps it. The grey house and the rest of the block have their fronts moved 4.8 m north, which leaves them about 2.2 m clear of the modelled carriageway; their rear lines are kept. Cut lines run square to the front.',
     replaces: ['454438318'],
     build(map) {
       const src = map.buildings.find(b => b.id === '454438318').coordinates.slice(0, -1).map(c => project(c, map.origin));
       const P0 = src[0], P1 = src[1], len = Math.hypot(P1[0] - P0[0], P1[1] - P0[1]);
       const front = [(P1[0] - P0[0]) / len, (P1[1] - P0[1]) / len];
       const inward = [-front[1], front[0]], cut = (inward[0] * (src[2][0] - P0[0]) + inward[1] * (src[2][1] - P0[1])) > 0 ? inward : neg(inward);
-      const [corner, rest] = strips(src, P0, front, cut, [16.8]);
+      const [corner, grey, rest] = strips(src, P0, front, cut, [11.0, 16.8]);
+      // Vertices on the source front move 4.8 m towards Geylang Road.
+      const onFront = q => Math.abs(front[0] * (q[1] - P0[1]) - front[1] * (q[0] - P0[0])) < .05;
+      const forward = o => o.map(q => onFront(q) ? at(q, neg(cut), 4.8) : q);
       return [
         { id: 'gr-258', street: 'Geylang Road', number: '258', levels: 2, outline: corner },
-        { id: 'gr-260-east', street: 'Geylang Road', number: null, levels: null, outline: rest },
+        { id: 'gr-258-grey', street: 'Geylang Road', number: null, levels: 2, outline: forward(grey) },
+        { id: 'gr-260-east', street: 'Geylang Road', number: null, levels: null, outline: forward(rest) },
       ];
     },
   },

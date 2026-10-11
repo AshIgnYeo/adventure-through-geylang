@@ -999,3 +999,7 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - **Unnamed:** BBQ Home at No. 219 (permanently closed) and the white No. 221.
   - **Re-targeted:** the frog-board house, the karaoke-mural house and the Red Leaf house now stand on their photographed strips. The duplicate frog-board house in the old `gr-221-west` is gone.
   - **Left for open question 34:** the remainder `gr-229-west` carries the west part of Lian Seng's photographed house with its board blank. The same triangulation shows Lian Seng and Vietnam Unisex modelled one house east of their photographs.
+- **Open question 29 applied, 11 October 2026 (`geylang-258` re-split):**
+  - **Re-split:** block 454438318 is now cut at 11.0 and 16.8 m from the Lorong 12 corner. ChongQingXiaoMian keeps the corner strip on the source front; its Lorong 12 elevation is unchanged.
+  - **Grey house:** gets its own strip (`gr-258-grey`), modelled unnamed from two June 2024 panoramas: three louvred windows, a dark west pier with a lightbox, and a cream board ending in 串.
+  - **Moved front:** the grey house and the rest of the row (`gr-260-east`) have their fronts moved 4.8 m towards Geylang Road, where two drives and the satellite roofs place them. That leaves about 2.2 m to the modelled carriageway.
