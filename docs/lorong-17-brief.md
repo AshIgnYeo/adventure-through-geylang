@@ -29,7 +29,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 13 | West | 454254280 | Nos. 37–41, three bays with the Singapore Rattan Industry Association | Done; unnamed; split and naming question 37 |
 | 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face and splay | Done; unnamed |
 | 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Done; unnamed; footprint question 39 |
-| 16–17 | East | 454254307, 454254308 | South of No. 134 | To do |
+| 16 | East | 454254307 | Nos. 42–44, a white block with a stair tower | Done; unnamed |
+| 17 | East | 454254308 | Nos. 38–40 | To do |
 | 18 | East | 454254240 | The long building | To do |
 | 19 | East | 454254238 | | To do |
 | 20–23 | East | 454254249 … 454254251 | Four narrow units | To do |
@@ -395,3 +396,25 @@ This was drawn as massing in the widened ring, because the drives disagreed on i
 **Naming:** none. Google Maps lists 134 Sims Ave only as an address. The stalls' boards and the coffeeshop's soup-king board are not listed, so they are blank.
 
 Use `?review=sims-134`.
+
+### 16. Way 454254307: Nos. 42–44
+
+A gap of about 12 m in the source map separates No. 134's wing from this block: a service lane with bins.
+
+The block is white, three storeys, in two bays either side of a narrow stair tower lit by tall slit windows.
+
+- **No. 44, the north bay:** taller. Two windows on each upper floor under louvred vents, a balcony slab, and a large sloping roof hood at about **12.6 m**.
+- **No. 42, the south bay:** the same pattern lower down, with its hood at about **11 m**. Below is an open front with grilles, a door and a letterbox.
+- **Stair tower:** a small stepped parapet at about 12 m.
+- **Ground floor:** framed by deep piers, with a glazed office front and a bamboo blind.
+
+**Measurement:**
+- `9Tds…`, `ghWQ…` and `qR4q…` (June 2024), paired three ways, fix the north front corner **1.4 m behind** the source corner, to within 1 m.
+- Rectified on a plane 1.4 m behind the source edge, `ghWQ…`, `8zSh…` and `9Tds…` agree to about 0.3 m. The block runs **10.7 m** from 0.6 m south of the source corner.
+- The east side here stands close to its source line, unlike No. 134.
+
+**Layout:** laid on the 11.46 m source edge. The taller north bay above the south bay's roof is a raised volume.
+
+**Naming:** none. Google Maps gives address points for 42 and 44 Lorong 17 inside this way but lists no business, and no sign was photographed.
+
+Use `?review=l17-42-44`.
