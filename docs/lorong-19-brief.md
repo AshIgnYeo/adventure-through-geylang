@@ -18,7 +18,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | --- | --- | --- | --- | --- |
 | 1 | West | 454254263 | No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood | Done; named; footprint with the Geylang Road row |
 | 2 | West | 454254248 | No. 1, The Primero | Done; named (the building, and B&S's board) |
-| 3 | West | 476113985 | No. 3 | |
+| 3 | West | 476113985 | No. 3, a dark brown modern house | Done; unnamed |
 | 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | |
 | 5 | West | 476113983 | No. 23 | |
 | 6 | West | 476113984 | No. 25, Chee Hoe Hong | |
@@ -122,3 +122,29 @@ A side lane about 5 m wide separates No. 323's rear building from this weathered
   - the temple is not listed.
 
 Use `?review=the-primero`.
+
+### 3. Way 476113985: No. 3
+
+A second side lane separates The Primero from a dark brown modern house of four storeys.
+
+- **Ground floor:** open between dark columns. On its back wall: a wooden door, a window over a bank of letterboxes, and a wooden slatted gate.
+- **Upper floors:** three, with four windows each, set in raised cream frames.
+- **Trim:** a white strip with a tall louvred slot at the south edge, and a low gable over the parapet.
+- **South wall** (on the side lane): panelled in white, beige and brown, with windows. Added as a side face.
+- **North wall:** white, showing above the single-storey Nanyang Chee Clan Association. Added as a side face.
+
+**Measurement:**
+- Bearings to the two front corners disagreed in depth by 1.7 m. So the depth was read instead where three panoramas (`0tJ_…`, `ZqOX…`, `C6Wg…`) agree on the cream frames: between 1.5 m and 2.5 m behind the source edge the frames' shift between panoramas changes sign. They agree at about **2.3 m behind**.
+- On that plane the front is about **9.2 m** wide, from 0.9 m south of the source corner, against the 9.45 m source edge.
+- So it stands about **1.2 m** in front of the Nanyang Chee Clan Association, not the 3.5 m the source map gives.
+- Heights:
+  - ground floor: to 2.9 m;
+  - frames: 4.7–6.8, 8.0–10.0 and 11.0–12.5 m;
+  - parapet: 13.7 m;
+  - gable: to about 14.8 m.
+
+**Layout:** laid proportionally on the source edge (×1.03).
+
+**Naming:** none. Google Maps gives an address point for 3 Lorong 19 Geylang inside this way, but lists no business there, and no sign was photographed.
+
+Use `?review=l19-3`.

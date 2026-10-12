@@ -125,6 +125,56 @@ export const primero = {
   }],
 };
 
-export const lorong19 = [eminent, primero];
+// ---------------------------------------------------------------------------------------------
+// 3. Way 476113985, No. 3: a dark brown modern house of four storeys across the side lane from The Primero, its upper
+// floors in three cream window frames over a pilotis. Its front (edge 1, u north from the side lane) is read where
+// three June 2024 panoramas agree on the frames, 2.3 m behind the source edge: 9.2 m wide from 0.9 m south of the source
+// corner, laid proportionally on the 9.45 m source edge.
+const W985 = 9.445, at985 = lay(-.9, W985 / 9.2);
+const frameWindows985 = (h, spans) => spans.map(s => ({ u: at985(s), h, panes: 2, out: .12 }));
+const brown985 = '#645a55', cream985 = '#d9d3c0';
+export const no3 = {
+  id: 'l19-3', buildingIds: ['476113985'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 32 },
+  name: 'No. 3 Lorong 19 (June 2024 exterior, occupants not identified)', address: '3 Lorong 19 Geylang',
+  height: 13.7, ceiling: 2.9, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8a8580' },
+  evidence: 'June 2024 Street View shows a dark brown modern house of four storeys north of the side lane beside The Primero: an open ground floor between dark columns, with a wooden door, a window over a bank of letterboxes and a wooden slatted gate on its back wall; three upper floors of four windows each, set in raised cream frames; a white strip with a tall louvred slot at the south edge; and a low gable over the parapet. Its south wall on the side lane is panelled in white, beige and brown, and its white north wall shows above the single-storey Nanyang Chee Clan Association next door. Google Maps gives an address point for 3 Lorong 19 Geylang inside this way but lists no business there, and no sign was photographed, so no name is given. Three June 2024 panoramas agree on the window frames on a plane 2.3 m behind the source front, where the front is about 9.2 m wide from 0.9 m south of the source corner, against the 9.45 m source edge; so it stands about 1.2 m in front of the Nanyang Chee Clan Association, not the 3.5 m the source map gives. Heights were read on that plane: ground floor to 2.9 m, frames at 4.7-6.8, 8.0-10.0 and 11.0-12.5 m, parapet at 13.7 m and the gable to about 14.8 m.',
+  sources: [way('476113985'), search('3 Lorong 19 Geylang'), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 262, 30, 100), pano('0tJ_yZzLMxOeYk3kLcr2Bw', 280, 15, 90), pano('C6WgL2wlMEl3mpMGCqZnIw', 215, 15, 90)],
+  colours: { wall: brown985, trim: cream985, frame: '#3a3634', glass: '#4c5658', pier: '#4e4744', back: '#4a4442', floor: '#b39a86' },
+  windows: [
+    ...frameWindows985([5.0, 6.45], [[2.95, 3.95], [4.15, 5.1], [5.25, 6.2], [6.4, 7.35]]),
+    ...frameWindows985([8.3, 9.7], [[2.95, 3.95], [4.15, 5.1], [5.25, 6.2], [6.4, 7.35]]),
+    ...frameWindows985([11.2, 12.2], [[2.9, 3.75], [3.95, 4.8], [4.95, 5.8], [6.0, 6.8]]),
+  ],
+  blocks: [
+    { name: 'cream window frame', u: at985([2.67, 7.67]), h: [4.67, 6.83], out: .06, depth: .12, colour: cream985 },
+    { name: 'cream window frame', u: at985([2.67, 7.67]), h: [8.0, 10.0], out: .06, depth: .12, colour: cream985 },
+    { name: 'cream window frame', u: at985([2.67, 7.0]), h: [11.0, 12.5], out: .06, depth: .12, colour: cream985 },
+    { name: 'white strip', u: at985([-.8, .7]), h: [3.8, 13.2], out: .08, depth: .16, colour: '#e6e4de' },
+    { name: 'louvred slot', u: at985([-.15, .1]), h: [4.3, 12.8], out: .17, depth: .02, colour: '#5d6062' },
+    { name: 'gable parapet', u: at985([1.0, 7.4]), h: [13.7, 14.3], out: .05, depth: .3, colour: '#cfcac0' },
+    { name: 'gable apex', u: at985([3.2, 5.2]), h: [14.3, 14.8], out: .05, depth: .3, colour: '#cfcac0' },
+  ],
+  piers: [[-1.0, -.4], [1.7, 2.1]].map(s => at985(s).map(v => Math.max(0, v))),
+  backFittings: [
+    { name: 'wooden door', u: at985([2.05, 2.9]), h: [.1, 2.3], colour: '#6a4a33' },
+    { name: 'window', u: at985([3.4, 4.3]), h: [1.3, 2.2], colour: '#3c4446' },
+    { name: 'letterboxes', u: at985([3.4, 4.3]), h: [.45, 1.15], colour: '#d8d6d0' },
+    { name: 'wooden slatted gate', u: at985([5.75, 7.6]), h: [.15, 2.0], colour: '#a45a32' },
+  ],
+  sides: [{
+    edge: 2, // the south wall on the side lane, u west from the lane corner: panelled, with windows on each upper floor
+    windows: [[1.5, 2.3], [4.5, 5.3], [8.0, 8.8]].flatMap(u => [[5.0, 6.4], [8.3, 9.7], [11.2, 12.4]].map(h => ({ u, h, panes: 1 }))),
+    blocks: [
+      { name: 'white panel', u: [0, 3.2], h: [3.0, 13.6], out: .02, depth: .02, colour: '#e8e6e1' },
+      { name: 'beige panel', u: [3.2, 7.0], h: [3.0, 13.6], out: .02, depth: .02, colour: '#c9b9a0' },
+      { name: 'brown panel', u: [7.0, 9.5], h: [7.0, 13.6], out: .02, depth: .02, colour: '#6a5a50' },
+    ],
+  }, {
+    edge: 4, // the north wall above the Nanyang Chee Clan Association's roof: white
+    blocks: [{ name: 'white north wall', u: [.3, 15.4], h: [4.6, 13.6], out: .02, depth: .02, colour: '#e6e6e2' }],
+  }],
+};
+
+export const lorong19 = [eminent, primero, no3];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
