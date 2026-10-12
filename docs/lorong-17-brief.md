@@ -32,7 +32,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 16 | East | 454254307 | Nos. 42–44, a white block with a stair tower | Done; unnamed |
 | 17 | East | 454254308 | Nos. 38–40, a cream block with a stair tower | Done; unnamed |
 | 18 | East | 454254240 | No. 20, Bright Star Hotel | Done; named |
-| 19 | East | 454254238 | | To do |
+| 19 | East | 454254238 | A temple by No. 14 (和友社, 華德善室) | Done (a slice); unnamed; footprint question 40 |
 | 20–23 | East | 454254249 … 454254251 | Four narrow units | To do |
 | 24 | East | 454254253 | The Geylang Road corner house | To do |
 
@@ -464,3 +464,26 @@ A service lane separates Nos. 38–40 from this six-storey block. It is set back
 - The listing, the door plate and the banner agree. The building is named under the Crystal Mansions precedent (open question 32), and the banner is redrawn in original type.
 
 Use `?review=bright-star-hotel`.
+
+### 19. Way 454254238: the temple by No. 14
+
+A single-storey temple behind a tiled forecourt, between Bright Star Hotel and a white two-storey row.
+
+- **Roof:** red tiles, hipped, with a dark ridge edge.
+- **Front:**
+  - a beige fascia under the eaves, over a beige canopy;
+  - granite entrance columns carrying couplets, and stone lions;
+  - an open altar front, with green railings to the north and a grille gate to the south.
+- **Boards:** gold on brown, reading **和友社** and **華德善室** (right to left).
+
+**Measurement:** `GX6R…` with `M_9s…`, and `GX6R…` with `qKWw…` (June 2024), triangulate the eaves about **10 m** long and 1–1.5 m in front of the source front.
+- The eaves run from about 4 m north of the way to 1.2 m south of it.
+- Heights, read on the triangulated plane: eaves at about **3.7 m**, ridge at about **5 m**.
+
+**Layout:** the 4.84 m way holds only the middle of the temple. That slice is modelled at its photographed scale, without squeezing the whole front onto it. The rest is [open question 40](open-questions.md).
+
+**Naming:** none.
+- Neither 和友社 nor 華德善室 is listed.
+- Google's address point for 14 Lorong 17 lies just in front of this way and carries no business.
+
+Use `?review=l17-14-temple`.

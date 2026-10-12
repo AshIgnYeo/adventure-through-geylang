@@ -46,6 +46,15 @@ Logged during the Lorong 17 walk (open question 35), for the owner to answer whe
     - **Recommendation:** yes. Author the outline moved 5.5 m east and 2.5 m south, keeping its shape, and draw the awnings at their photographed depth. Check it against No. 136 next door, which is not modelled.
     - **Unlocks:** the lane's true width at the Sims Avenue end, full awnings, and render-and-compare from the photographs.
 
+40. **Lorong 17, the temple by No. 14 (way 454254238): author its footprint over the whole photographed temple?**
+    - **Evidence:** three June 2024 panoramas (`GX6R…` with `M_9s…`, and `GX6R…` with `qKWw…`) triangulate the single-storey temple's eaves.
+      - They are about **10 m** long and 1–1.5 m in front of the source front.
+      - They run from about 4 m north of the way, into the 5 m gap the map leaves before Bright Star Hotel, to about 1.2 m south of it.
+      - The source way is 4.84 m wide and 13.2 m deep.
+    - **What happens now:** the 4.84 m slice of the temple that falls on the way is modelled at its photographed scale. The rest of its front, the north entrance with the 和友社 board and green railings, is empty ground.
+    - **Recommendation:** yes. Author the outline from the triangulated eave ends, about 9 m wide on the way's front line (the eaves overhang by about 1 m), keeping its depth, and lay the full elevation on it.
+    - **Unlocks:** the whole temple front and the gap closed. It stays unnamed: neither 和友社 nor 華德善室 is listed.
+
 ## Settled
 
 ### Seventh batch, answered 12 October 2026

@@ -1032,3 +1032,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 - **Stop 16, way 454254307, Nos. 42–44:** a white three-storey block of two bays with a stair tower, unnamed. Its front stands 1.4 m behind the source edge.
 - **Stop 17, way 454254308, Nos. 38–40:** a cream three-storey block of two bays with a stair tower, unnamed. CSL Engineering is listed at No. 40 without a sign. Its north party line falls 1.3 m south of the source line, and the block stands 1.6–2.5 m behind the source front.
 - **Stop 18, way 454254240, No. 20:** named **Bright Star Hotel**, a six-storey block set back behind a lawn. It is listed at 20 Lorong 17 with its point 0.28 m in front of the source front, and its banner and door plate are photographed.
+- **Stop 19, way 454254238:** the middle slice of a single-storey temple with the 和友社 and 華德善室 boards, unnamed. The photographed temple is about 10 m wide against the 4.84 m way: open question 40.
