@@ -41,6 +41,14 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
     text(c, '楊氏總會', w * .55, h * .33, h * .42, '#f6f1e4', '700', '"Kaiti SC", "STKaiti", serif', w * .7);
     text(c, 'YANG CLAN GENERAL ASSOCIATION', w * .55, h * .76, h * .24, '#f6f1e4', '700', sans, w * .8);
   }] },
+  'gyaltsap-tashi-ling': { boards: [(c, w, h) => {
+    c.fillStyle = '#3d2a1c'; c.fillRect(0, 0, w, h); c.strokeStyle = '#c9a24a'; c.lineWidth = h * .05; c.strokeRect(h * .04, h * .04, w - h * .08, h - h * .08);
+    // The orange disc with its blue vajra mark, then gold lotuses either side of the lettering.
+    c.fillStyle = '#e07a34'; c.beginPath(); c.arc(h * .62, h * .5, h * .36, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#2c4f9a'; c.fillRect(h * .55, h * .24, h * .14, h * .52);
+    for (const x of [w * .14, w * .93]) for (let k = 0; k < 6; k++) { c.fillStyle = '#d6b25a'; c.beginPath(); c.ellipse(x + Math.cos(k * 1.05) * h * .12, h * .5 + Math.sin(k * 1.05) * h * .12, h * .1, h * .05, k * 1.05, 0, Math.PI * 2); c.fill(); }
+    text(c, 'Gyaltsap Tashi Ling Buddhist Society', w * .54, h * .5, h * .5, '#d9b45a', '700', 'Georgia, "Times New Roman", serif', w * .72);
+  }] },
   // Dark slate lettering on white: the parapet reads right to left, the ground-floor board left to right.
   'true-jesus-mission': {
     boards: [(c, w, h) => {

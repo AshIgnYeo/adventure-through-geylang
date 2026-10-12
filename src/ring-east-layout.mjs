@@ -115,7 +115,7 @@ export const sims134 = {
 // panoramas: about 14 m to the roof slabs of the three-storey walk-ups (±1 m for the drive's depth uncertainty).
 // Ways rebuilt with their fronts in src/lorong-17-layout.mjs (open question 35) are no longer listed here.
 const lorong17 = [
-  ['454254280', 13.0, '#e6dcc8', '#b5654a'], ['454254279', 14.0, '#e7e2cf'],
+  ['454254280', 13.0, '#e6dcc8', '#b5654a'],
 ];
 export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
   id: `l17-${id}`, buildingIds: [id], kind: 'unnamed', unnamed: true, massing: true, height, colour, ...(roof ? { roof } : {}),

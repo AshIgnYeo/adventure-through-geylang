@@ -25,7 +25,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 9 | West | 454254276 | No. 29, the first peach walk-up | Done; unnamed |
 | 10 | West | 454254277 | No. 31, a pipe shop | Done; unnamed |
 | 11 | West | 454254278 | No. 33, a temple front | Done; unnamed |
-| 12–14 | West | 454254279, 454254280 | The last walk-ups to Sims Avenue | Massing, to rebuild |
+| 12 | West | 454254279 | No. 35, Gyaltsap Tashi Ling Buddhist Society | Done; named |
+| 13–14 | West | 454254280 | The block before Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -279,3 +280,27 @@ A pale peach finned walk-up like No. 31: two brown-framed windows under red-brow
 **Naming:** none. Google Maps lists **Maha Mantra Buddhist Centre**, a Buddhist temple on floor 1, at 33 Lorong 17, with its point on the photographed house. But the board's visible characters, 覺寺, don't give that name, and part of the board is hidden by a lantern. So the board is blank.
 
 Use `?review=l17-33`.
+
+### 12. Way 454254279: No. 35, Gyaltsap Tashi Ling Buddhist Society
+
+An off-white three-storey finned walk-up, taller than its peach neighbours, with a pink-stained fin to the north.
+
+- **Upper floors:** two windows on each; white louvred vents over the first-floor windows; corrugated metal awnings over the top windows.
+- **Roof and balcony:** a balcony slab, and a roof slab at about **11.4 m**.
+- **Ground floor:** two gold lotus emblems on the fascia, over a long brown board with:
+  - an orange disc emblem and gold lotuses;
+  - lettering reading **Gyaltsap Tashi Ling Buddhist Society**;
+  - a Chinese line (…察吉…林佛…會) partly hidden by hanging plants.
+
+  Below the board: a tiled wall plated **35** and a pair of wooden doors.
+- **Measurement:** `8zSh…` and `ghWQ…` (June 2024) triangulate its window edges and north fin **2.2–2.6 m forward**. Its fins are about **6.7 m** apart, from 1.5 m south of the source corner. Heights, read on that plane:
+  - first-floor ledge: 3.83–4.16 m;
+  - first-floor windows: 5.11–6.25 m;
+  - top windows: 7.96–9.25 m.
+- **Layout:** laid on the 5.81 m source edge.
+- **Naming:** Google Maps lists **Gyaltsab Tashi Ling Centre**, a Buddhist temple, at **17 Lor 35 Geylang**, which looks like a transposition of 35 Lorong 17.
+  - Its point lies on the photographed house, about 1 m in front of the source way to the south.
+  - The board and the listing agree on the name, so the house is named after its board. Open question 12 allows a clearly signed occupant when published addresses disagree.
+  - The English lettering and the emblem are redrawn in original type. The partly hidden Chinese line is not drawn.
+
+Use `?review=gyaltsap-tashi-ling`.

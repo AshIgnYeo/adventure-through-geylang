@@ -1025,3 +1025,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 - **Stop 9, way 454254276, No. 29:** the first pale peach walk-up with side fins, unnamed. Kaki Co @ 17 Geylang is listed there as an apartment building, without a sign. No. 27's yellow board places the 番禺慕德同鄉會 at 27-A, upstairs.
 - **Stop 10, way 454254277, No. 31:** a finned peach walk-up with brown-framed windows over a pipe shop, unnamed. Visual Gallery Singapore is listed there, but no sign for it was photographed.
 - **Stop 11, way 454254278, No. 33:** a finned peach walk-up over a temple front, unnamed. Maha Mantra Buddhist Centre is listed there, but its board shows only 覺寺.
+- **Stop 12, way 454254279, No. 35:** named **Gyaltsap Tashi Ling Buddhist Society** after its board. It is listed as Gyaltsab Tashi Ling Centre at the transposed address 17 Lor 35 Geylang, with its point on the photographed house.

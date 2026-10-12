@@ -380,7 +380,43 @@ export const no33 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33];
+// ---------------------------------------------------------------------------------------------
+// 12. Way 454254279, No. 35 (door plate 35): a taller off-white finned walk-up with corrugated metal awnings over its
+// top windows, over the Gyaltsap Tashi Ling Buddhist Society's board. Two June 2024 panoramas triangulate its window
+// edges and north fin 2.2-2.6 m forward; its fins are about 6.7 m apart from 1.5 m south of the source corner.
+// Heights are read on that plane. Laid on the 5.81 m source edge, u north.
+const W279 = 5.811, at279 = lay(-1.5, W279 / 6.7), win279 = [[-.31, 1.63], [2.72, 4.57]].map(at279);
+export const gyaltsap = {
+  id: 'gyaltsap-tashi-ling', buildingIds: ['454254279'], kind: 'gyaltsap-tashi-ling', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'Gyaltsap Tashi Ling Buddhist Society (June 2024 exterior)', address: '35 Lorong 17 Geylang (door plate 35; listed as 17 Lor 35 Geylang)',
+  height: 11.4, ceiling: 3.83, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
+  evidence: 'June 2024 Street View shows an off-white three-storey finned walk-up, taller than its peach neighbours, with a pink-stained fin to the north: two windows on each upper floor, white louvred vents over the first-floor windows, a balcony slab, corrugated metal awnings over the top windows and a roof slab at about 11.4 m. The ground floor carries two gold lotus emblems on its fascia over a long brown board with an orange disc emblem, gold lotuses and lettering reading Gyaltsap Tashi Ling Buddhist Society over a Chinese line (…察吉…林佛…會) partly hidden by hanging plants, above a tiled wall plated 35 and a pair of wooden doors. Google Maps lists Gyaltsab Tashi Ling Centre, a Buddhist temple, at 17 Lor 35 Geylang, an apparent transposition of 35 Lorong 17, with its point on the photographed house, about 1 m in front of the source way to the south. Board and listing agree on the name, so the house is named after its board (open question 12 allows a clearly signed occupant when published addresses disagree); the English lettering and emblem are redrawn in original type, and the partly hidden Chinese line is not drawn. Two June 2024 panoramas triangulate its window edges and north fin 2.2-2.6 m in front of the source edge; its fins are about 6.7 m apart from 1.5 m south of the source corner, and it is laid on the 5.81 m source edge. The east-ring massing had given it 14 m.',
+  sources: [way('454254279'), search('Gyaltsab Tashi Ling Centre'), pano('8zShCoV5q2fYvPBEC901Vw', 247, 18, 100), pano('ghWQo6rbUlRhzXunm7Gf2g', 205, 18, 100), pano('INboFn5xnG6TxoVcRIkLXA', 215, 18, 100)],
+  colours: { wall: '#ece8dc', trim: '#e2ddd0', frame: '#3a3a36', glass: '#3f474a', pier: '#ece8dc', back: '#d9d3c4', floor: '#a19b90' },
+  bands: [[3.83, 4.16, .3]],
+  windows: win279.flatMap(u => [{ u, h: [5.11, 6.25], panes: 3 }, { u, h: [7.96, 9.25], panes: 2 }]),
+  vents: win279.map(u => ({ u, h: [6.28, 6.68] })),
+  blocks: [
+    { name: 'roof slab', u: [0, W279], h: [11.0, 11.4], out: .4, depth: .8, colour: '#e2ddd0' },
+    { name: 'balcony slab', u: [0, W279], h: [7.16, 7.6], out: .4, depth: .8, colour: '#e2ddd0' },
+    { name: 'side fin', u: [0, .3], h: [4.16, 11.0], out: .45, depth: .9, colour: '#ece8dc' },
+    { name: 'pink-stained side fin', u: [W279 - .4, W279], h: [4.16, 11.0], out: .45, depth: .9, colour: '#c99d8f' },
+    ...win279.map(u => ({ name: 'corrugated metal awning', u: [u[0] - .15, u[1] + .15], h: [9.7, 10.2], out: .55, depth: 1.1, colour: '#9aa09f' })),
+    ...[[-.2, .7], [2.3, 3.2]].map(s => ({ name: 'air conditioner', u: at279(s), h: [7.6, 8.15], out: .25, depth: .45, colour: '#e8e8e4' })),
+    { name: 'air conditioner', u: at279([1.6, 2.5]), h: [4.2, 4.8], out: .3, depth: .5, colour: '#e8e8e4' },
+    ...[[.3, .8], [1.9, 2.4]].map(s => ({ name: 'gold lotus emblem', u: at279(s), h: [3.58, 3.8], out: .04, depth: .03, colour: '#d6b25a' })),
+  ],
+  // The society's long brown board, on the back wall of the five-foot way.
+  boards: [{ u: at279([-.3, 4.6]), h: [3.07, 3.55], out: -1.9 }],
+  piers: [[0, .3], [W279 - .4, W279]],
+  backFittings: [
+    { name: 'tiled wall', u: at279([-.3, 4.6]), h: [.1, 3.0], colour: '#e9dccb' },
+    { name: 'wooden double doors', u: at279([1.0, 3.6]), h: [.1, 2.74], out: .02, colour: '#8a5030' },
+    { name: 'frosted door panels', u: at279([1.25, 3.35]), h: [.6, 2.4], out: .03, colour: '#c9c4b8' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);

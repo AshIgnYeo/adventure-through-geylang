@@ -73,3 +73,14 @@ test('the Yang Clan General Association is named on No. 19, its listing point fa
   assert.equal(pointInPolygon(point, outline('454254273')), false);
   assert.equal(pointInPolygon(point, outline('454254272')), true);
 });
+
+test('the Gyaltsap Tashi Ling Buddhist Society is named on No. 35 from its board, with its transposed listing recorded', () => {
+  const place = lorong17.find(p => p.id === 'gyaltsap-tashi-ling');
+  assert.equal(landmarkFor('454254279').id, place.id);
+  assert.match(place.address, /17 Lor 35/);
+  // The listing point lies about 1 m in front of the source way to the south, on the photographed house.
+  const point = project([103.8786073, 1.3137575], map.origin), frame = lorong17Frame(outline('454254279'), place);
+  const along = (point[0] - frame.a[0]) * frame.dx + (point[1] - frame.a[1]) * frame.dz;
+  const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
+  assert.ok(along > -2 && along < 0 && out > 0 && out < 2.5);
+});
