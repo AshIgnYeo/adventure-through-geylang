@@ -6,9 +6,34 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+43. **Lorong 19: take in the block faces between Lorong 17 and Lorong 19, on Geylang Road (Nos. 313–321) and Sims Avenue (Nos. 136–144)?**
+    - **Why it comes up:** under question 35 these houses waited for a later pass. The new links from Lorong 17's junctions to Lorong 19's now run past them, so leaving them out leaves empty lots along both walks.
+    - **What happens now:**
+      - **Geylang Road:** the five houses between the two corners are taken into the map and modelled with the walk.
+      - **Sims Avenue:** the five houses wait. No. 134's outline, moved 5.5 m east under question 39, overlaps No. 136's source outline by about 5.5 m, so the row has to be measured before it can join the map.
+    - **Recommendation:** yes. Take in both block faces, so the block between Lorong 17 and Lorong 19 is closed on all four sides. Measure the Sims Avenue row from the June 2024 drive, and author its footprints if it stands off its source outlines, as question 38 did for the Lorong 17 west row.
+    - **Unlocks:** continuous frontages along both links. If the answer is no, the five Geylang Road houses come out of the map again.
 
 ## Settled
+
+### Ninth batch, 12 October 2026
+
+The project owner asked for the next lorong to be mapped and completed on a new branch. Lorong 19 is the next lane along the north side of Geylang Road after Lorong 17, so question 42 is recorded as answered by that instruction, on question 35's terms.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 42 | **Yes.** Model Lorong 19 between Geylang Road and Sims Avenue, one building at a time in street order | The lane, its buildings, its two junctions and the links back to Lorong 17 join the map; the walk is recorded in the [Lorong 19 brief](lorong-19-brief.md) |
+
+Question 42 in full:
+
+42. **Lorong 19, Geylang Road to Sims Avenue: build it as Lorong 17 was built?**
+    - **Order:** start at the Geylang Road end, go north up the west side to Sims Avenue, then come back south down the east side. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Sims Avenue. The part of Lorong 19 north of Sims Avenue, and the Lorong Bachok row east of the lane, wait for a later pass. Lorong Bachok's mouth is kept as road surface.
+    - **Corners:** take in the corner buildings at both ends of both sides. The far sides of Geylang Road and Sims Avenue wait. The block faces back to Lorong 17 are question 43.
+    - **Map:** add the lane's own buildings and road ways by id, as for Lorong 17. The lane and the Geylang Road and Sims Avenue links from Lorong 17's junctions become walkable corridors.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-19` branch, each written up in the Lorong 19 brief.
 
 ### Eighth batch, answered 12 October 2026
 
