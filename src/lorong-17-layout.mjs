@@ -131,7 +131,41 @@ export const trueJesus = {
   }],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus];
+// ---------------------------------------------------------------------------------------------
+// 5. Way 454254273, No. 19: a weathered cream three-storey house between dark-stained party pilasters, with the
+// Yang Clan General Association's board on its balcony. Its front (edge 0) runs north from No. 17. Four June 2024
+// panoramas triangulate the pilasters 2.0-2.3 m in front of the source edge; on a plane 2.2 m forward the front
+// runs from 0.95 m south of the source corner, 5.55 m to the middle of the north pilaster, laid on 5.69 m.
+const W273 = 5.69, at273 = lay(-.95, W273 / 5.55), pairs273 = [[-.76, .7], [1.36, 3.5]];
+export const yangClan = {
+  id: 'yang-clan', buildingIds: ['454254273'], kind: 'yang-clan', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'Yang Clan General Association (June 2024 exterior)', address: '19A Lorong 17 Geylang (the upper floors of No. 19)',
+  height: 10.0, ceiling: 3.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8a82' },
+  evidence: 'June 2024 Street View shows a weathered cream three-storey house north of No. 17, between dark-stained party pilasters: two windows under louvred vents on each upper floor, air-conditioners on the ledges, a red board with a round emblem reading 楊氏總會 YANG CLAN GENERAL ASSOCIATION under the second-floor balcony, a white lightbox hanging from an open top-floor window, and a dark roof frame; below, a five-foot way with a grilled gate, a small window and an open altar front. Google Maps lists Yang Clan General Assn at 19A Lorong 17 Geylang, Singapore 388549, the upper floors of the house after No. 17; its point lies about 1 m south of this way, in No. 17\'s, as the row\'s 2 m registration error would place it. Address and board agree, so the upper floors are named after the board, which is redrawn in original type (the Bamboo Lounge precedent, open question 33), with no claim about the ground floor. Four June 2024 panoramas triangulate the two party pilasters 2.0-2.3 m in front of the source edge; read on a plane 2.2 m forward, the front measures 5.55 m to the middle of the wide north pilaster and is laid on the 5.69 m source edge.',
+  sources: [way('454254273'), search('Yang Clan General Association 19A Lorong 17 Geylang'), pano('qKWw6QiwVVcNE7eOEzxMSA', 250, 22, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 230, 20, 100), pano('GX6RAPRapiD3eAKqXG_3uA', 290, 20, 90), pano('FeWy4yNg9qEGZG5jKgP5XA', 200, 18, 100)],
+  colours: { wall: '#e3dccb', trim: '#d8d0bd', frame: '#3a3a36', glass: '#454b4c', pier: '#e3dccb', back: '#e6e1d4', floor: '#9d978c' },
+  bands: [[3.3, 3.7, .35]],
+  windows: pairs273.flatMap(s => [{ u: at273(s), h: [4.34, 5.4], panes: 2 }, { u: at273(s), h: [7.3, 8.34], panes: 2 }]),
+  vents: pairs273.flatMap(s => [{ u: at273(s), h: [5.6, 5.9] }, { u: at273(s), h: [8.36, 8.8] }]),
+  blocks: [
+    { name: 'dark roof frame', u: [0, W273], h: [9.76, 10.04], out: .2, depth: .4, colour: '#6b6157' },
+    { name: 'balcony ledge', u: [0, W273], h: [6.8, 7.0], out: .3, depth: .6, colour: '#d8d0bd' },
+    { name: 'stained party pilaster', u: [0, .15], h: [3.0, 10.0], out: .04, depth: .08, colour: '#4a3f38' },
+    { name: 'stained party pilaster', u: at273([4.05, 4.6]), h: [0, 10.0], out: .05, depth: .1, colour: '#4a3f38' },
+    ...[[-.7, .2], [2.4, 3.6]].map(s => ({ name: 'air conditioner', u: at273(s), h: [3.8, 4.5], out: .3, depth: .5, colour: '#e8e8e4' })),
+    { name: 'air conditioner', u: at273([.3, 1.1]), h: [6.98, 7.4], out: .25, depth: .45, colour: '#e8e8e4' },
+    { name: 'blank lightbox', u: at273([1.3, 2.3]), h: [7.3, 8.6], out: .3, depth: .15, colour: '#f1f1f1' },
+  ],
+  boards: [{ u: at273([-.7, 3.4]), h: [6.0, 6.6], out: .06 }],
+  piers: [[0, .3], at273([3.9, 4.6])],
+  backFittings: [
+    { name: 'grilled gate', u: [.35, .6], h: [.1, 2.2], colour: '#8c8f8c' },
+    { name: 'small window', u: at273([.6, 1.16]), h: [1.6, 2.1], colour: '#3a3a3a' },
+    { name: 'open altar front', u: at273([2.1, 3.7]), h: [.1, 2.6], colour: '#6b2a22', glow: .1 },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);

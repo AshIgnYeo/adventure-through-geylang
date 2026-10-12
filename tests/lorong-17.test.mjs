@@ -66,3 +66,10 @@ test('the True Jesus Mission is named on No. 17, with its listing point inside w
   assert.equal(landmarkFor('454254272').id, 'true-jesus-mission');
   assert.equal(pointInPolygon(project([103.8786787, 1.3133103], map.origin), outline('454254272')), true);
 });
+
+test('the Yang Clan General Association is named on No. 19, its listing point falling next door in No. 17', () => {
+  assert.equal(landmarkFor('454254273').id, 'yang-clan');
+  const point = project([103.8786358, 1.3133222], map.origin);
+  assert.equal(pointInPolygon(point, outline('454254273')), false);
+  assert.equal(pointInPolygon(point, outline('454254272')), true);
+});

@@ -34,6 +34,13 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
     text(c, 'Hair Salon', w * .84, h * .52, h * .5, '#e8e2d0', 'italic 500', 'Georgia, "Times New Roman", serif', w * .26);
   }] },
   'feng-shang@2': { boards: [fengShangBoard] },
+  'yang-clan': { boards: [(c, w, h) => {
+    c.fillStyle = '#b3261e'; c.fillRect(0, 0, w, h); c.strokeStyle = '#e9d9a0'; c.lineWidth = h * .04; c.strokeRect(h * .04, h * .04, w - h * .08, h - h * .08);
+    c.fillStyle = '#f3efe3'; c.beginPath(); c.arc(h * .55, h * .5, h * .34, 0, Math.PI * 2); c.fill();
+    c.strokeStyle = '#2b3a6b'; c.lineWidth = h * .05; c.beginPath(); c.arc(h * .55, h * .5, h * .24, 0, Math.PI * 2); c.stroke();
+    text(c, '楊氏總會', w * .55, h * .33, h * .42, '#f6f1e4', '700', '"Kaiti SC", "STKaiti", serif', w * .7);
+    text(c, 'YANG CLAN GENERAL ASSOCIATION', w * .55, h * .76, h * .24, '#f6f1e4', '700', sans, w * .8);
+  }] },
   // Dark slate lettering on white: the parapet reads right to left, the ground-floor board left to right.
   'true-jesus-mission': {
     boards: [(c, w, h) => {

@@ -117,7 +117,7 @@ export const sims134 = {
 const lorong17 = [
   ['454254280', 13.0, '#e6dcc8', '#b5654a'], ['454254279', 14.0, '#e7e2cf'], ['454254278', 14.0, '#ebcdb8'], ['454254277', 14.0, '#e9e4d6'],
   ['454254276', 14.0, '#ebd0bd'], ['454254275', 14.0, '#ebe8e0'], ['454254271', 14.0, '#eceae4'], ['454254270', 14.0, '#ebe9e3'],
-  ['454254274', 14.0, '#ecccb6', '#b8673f'], ['454254273', 14.0, '#e3dbb6', '#b8673f'],
+  ['454254274', 14.0, '#ecccb6', '#b8673f'],
 ];
 export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
   id: `l17-${id}`, buildingIds: [id], kind: 'unnamed', unnamed: true, massing: true, height, colour, ...(roof ? { roof } : {}),

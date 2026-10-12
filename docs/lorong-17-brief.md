@@ -18,7 +18,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 2 | West | 454254236 | Feng Shang Hair Salon and the north bay | Done; named; footprint question 36 |
 | 3 | West | 454254237 | Nos. 9–15, a row of four shophouses | Done; unnamed |
 | 4 | West | 454254272 | No. 17, General Board of True Jesus Mission | Done; named |
-| 5–14 | West | 454254273 … 454254280 | The rest of the west row, from the Yang Clan General Association | Massing, to rebuild |
+| 5 | West | 454254273 | No. 19, the Yang Clan General Association | Done; upper floors named |
+| 6–14 | West | 454254274 … 454254280 | The rest of the west row | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -120,3 +121,35 @@ The source map leaves a 5.6 m gap between ways 237 and 272. It is a side passage
 - **Naming:** Google Maps lists **General Board of True Jesus Mission (TJM)**, a Christian church, at 17 Lorong 17 Geylang, Singapore 388547, with its point inside the way. So its boards, parapet and blade are redrawn in original type.
 
 Use `?review=true-jesus-mission`.
+
+### 5. Way 454254273: No. 19, the Yang Clan General Association
+
+A weathered cream three-storey house between dark-stained party pilasters:
+
+- **Upper floors:** two windows under louvred vents on each floor, with air-conditioners on the ledges.
+- **Balcony:** a red board with a round emblem reading 楊氏總會 YANG CLAN GENERAL ASSOCIATION, under the second-floor balcony.
+- **Top floor:** a white lightbox hangs from an open window, under a dark roof frame.
+- **Ground floor:** a five-foot way with a grilled gate, a small window and an open altar front.
+
+**Measurement:** four June 2024 panoramas triangulate the two party pilasters **2.0–2.3 m in front of** the source edge.
+
+- The south pilaster sits about 0.8 m south of the source party line.
+- On a plane 2.2 m forward, the front measures **5.55 m** to the middle of the wide north pilaster.
+- Heights:
+  - first-floor ledge: 3.3–3.7 m;
+  - first-floor windows: 4.34–5.4 m;
+  - board: 6.0–6.6 m;
+  - top-floor windows: 7.3–8.34 m;
+  - roof frame to **10.0 m**, against the massing's 14 m.
+
+**Layout:** laid on the 5.69 m source edge.
+
+**Naming:** Google Maps lists **Yang Clan General Assn** at **19A Lorong 17** Geylang, Singapore 388549: the upper floors of the house after No. 17.
+
+- Its point lies about 1 m south of this way, inside No. 17's way, where the row's 2 m registration error would put it.
+- The address and the board agree, so the upper floors are named after the board, which is redrawn in original type. This follows the Bamboo Lounge precedent (open question 33).
+- No claim is made about the ground floor.
+
+**Row offset:** No. 17 and No. 19 both stand about 2 m in front of their source edges. If the rest of the row does too, it goes to the owner as one question at the end of the west side.
+
+Use `?review=yang-clan`.
