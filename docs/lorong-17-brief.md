@@ -23,7 +23,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 7 | West | 454254270, 454254271 | Nos. 23 and 25, one white building of two bays (Wee Ghee Athletic Association) | Done; unnamed |
 | 8 | West | 454254275 | No. 27, with the 慕德同鄉會 board | Done; unnamed |
 | 9 | West | 454254276 | No. 29, the first peach walk-up | Done; unnamed |
-| 10–14 | West | 454254277 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
+| 10 | West | 454254277 | No. 31, a pipe shop | Done; unnamed |
+| 11–14 | West | 454254278 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -242,3 +243,18 @@ The first of the pale peach three-storey walk-ups with projecting side fins:
 **Naming:** none. Google Maps lists **Kaki Co @ 17 Geylang**, an apartment building, at 29 Lorong 17. Its point lies about 2.6 m south of the way, where the photographed house stands, but no sign for it was photographed.
 
 Use `?review=l17-29`.
+
+### 10. Way 454254277: No. 31
+
+A pale peach walk-up like No. 29, with side fins, a balcony slab and a deep roof slab at about 10.6 m.
+
+- **Upper floors:** two wide, brown-framed three-pane windows on each floor, under red-brown louvred hoods.
+- **Ground floor:** a glazed shop stacked with pipes and fittings, with a tiled column and **letterbox 31** at its south end.
+- **Measurement:** `INbo…` and `8zSh…` (June 2024) triangulate its window edges on a plane about **1.95 m forward**.
+  - With its fins, it reads about **6.4 m** wide, from 2.4 m south of the source corner.
+  - Windows: 4.6–5.9 m and 7.6–8.75 m.
+  - Hoods: 6.0–6.4 m and 9.1–9.5 m.
+- **Layout:** laid on the 5.81 m source edge.
+- **Naming:** none. Google Maps lists **Visual Gallery Singapore** (artistic handicrafts) at 31 Lorong 17, but no sign for it was photographed, and the shop holds plumbing stock.
+
+Use `?review=l17-31`.

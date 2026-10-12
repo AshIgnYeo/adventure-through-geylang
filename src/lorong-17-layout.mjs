@@ -318,7 +318,37 @@ export const no29 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29];
+// ---------------------------------------------------------------------------------------------
+// 10. Way 454254277, No. 31 (letterbox 31): a peach walk-up like No. 29, with brown-framed three-pane windows
+// under red-brown louvred hoods. Two June 2024 panoramas triangulate its window edges 1.95 m forward; with its
+// fins it reads 6.4 m wide from 2.4 m south of the source corner. Laid on the 5.81 m source edge, u north.
+const W277 = 5.811, at277 = lay(-2.4, W277 / 6.4), win277 = [[-1.59, .32], [1.37, 3.2]].map(at277);
+const brownHood = (u, h) => ({ name: 'red-brown louvred hood', u: [u[0] + .1, u[1] - .1], h, out: .12, depth: .24, colour: '#9a4a3a' });
+export const no31 = {
+  id: 'l17-31', buildingIds: ['454254277'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 31 Lorong 17 (June 2024 exterior, occupant not identified)', address: '31 Lorong 17 Geylang (letterbox 31)',
+  height: 10.6, ceiling: 3.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
+  evidence: 'June 2024 Street View shows a pale peach three-storey walk-up like No. 29, with side fins, a balcony slab and a deep roof slab, but with two wide brown-framed three-pane windows on each upper floor under red-brown louvred hoods. The ground floor is a glazed shop stacked with pipes and fittings, with a tiled column and letterbox 31 at its south end. Google Maps lists Visual Gallery Singapore (artistic handicrafts) at 31 Lorong 17 Geylang, Singapore 388555, but no sign for it was photographed and the shop holds plumbing stock, so no name is given. Two June 2024 panoramas triangulate its window edges on a plane about 1.95 m in front of the source edge; with its fins it reads about 6.4 m wide from 2.4 m south of the source corner, and it is laid on the 5.81 m source edge. The east-ring massing had given it 14 m.',
+  sources: [way('454254277'), search('Visual Gallery Singapore 31 Lorong 17 Geylang'), pano('INboFn5xnG6TxoVcRIkLXA', 255, 18, 100), pano('8zShCoV5q2fYvPBEC901Vw', 215, 18, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 230, 18, 100)],
+  colours: { ...peach, frame: '#6e3f2c' },
+  bands: [[3.0, 3.5, .3]],
+  windows: win277.flatMap(u => [{ u, h: [4.6, 5.9], panes: 3 }, { u, h: [7.6, 8.75], panes: 3 }]),
+  blocks: [
+    { name: 'deep roof slab', u: [0, W277], h: [10.1, 10.6], out: .5, depth: 1.0, colour: '#e2cbb8' },
+    { name: 'balcony slab', u: [0, W277], h: [6.75, 7.1], out: .4, depth: .8, colour: '#e2cbb8' },
+    ...[[0, .3], [W277 - .3, W277]].map(u => ({ name: 'side fin', u, h: [3.5, 10.1], out: .45, depth: .9, colour: '#ecd6c4' })),
+    ...win277.flatMap(u => [brownHood(u, [6.0, 6.4]), brownHood(u, [9.1, 9.5])]),
+    { name: 'air conditioner', u: at277([2.4, 3.3]), h: [3.6, 4.3], out: .3, depth: .5, colour: '#e8e8e4' },
+  ],
+  piers: [[0, .3], at277([-1.75, -1.35]), [W277 - .3, W277]],
+  backFittings: [
+    { name: 'glazed pipe shop', u: at277([-1.0, 3.6]), h: [.1, 2.9], colour: '#4a5458', glow: .1 },
+    { name: 'shelves of pipes', u: at277([-1.0, .2]), h: [.1, 2.4], out: .05, depth: .1, colour: '#cfd2d0' },
+    { name: 'letterbox', u: at277([-1.3, -1.15]), h: [1.2, 1.45], out: .05, depth: .1, colour: '#c9a64a' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);
