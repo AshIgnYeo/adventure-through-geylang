@@ -16,7 +16,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | --- | --- | --- | --- | --- |
 | 1 | West | 454254264 | No. 301 Geylang Road, the corner block: its Lorong 17 faces | Done; named Sheng Siong Supermarket and Anytime Fitness Geylang Central |
 | 2 | West | 454254236 | Feng Shang Hair Salon and the north bay | Done; named; footprint question 36 |
-| 3 | West | 454254237 | North of No. 2 | To do |
+| 3 | West | 454254237 | Nos. 9–15, a row of four shophouses | Done; unnamed |
 | 4–14 | West | 454254272 … 454254280 | The eleven walk-ups | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
@@ -77,4 +77,26 @@ A white two-storey building of two bays on the north side of the back lane behin
   - Google's address point for **7 Lorong 17** Geylang also falls in this way, and no door number is visible.
   - Open question 12 allows a clearly signed occupant when published addresses disagree, so the salon's boards and fascia are redrawn in original type and the conflict is recorded. No claim is made about the north bay or the upper floor.
 
+- **House numbers, from stop 3:** the door plates **13** and the letterbox **11** on way 237 number its bays 9, 11, 13 and 15 from the south. That makes way 236's bays Nos. 5 (the salon, as listed) and 7 (the north bay, where Google's address point for No. 7 falls). So the two listings agree after all.
+
 Use `?review=feng-shang`.
+
+### 3. Way 454254237: Nos. 9–15
+
+A row of four white two-storey shophouses under one pitched roof with a front gutter. Each bay has two windows under louvred vents and a five-foot way. From the south:
+
+- **No. 9:** a shrine hall. Its white signboard carries two dragon reliefs, a round emblem and red lettering reading **友誼聯誼會**, over a 齊天大聖 altar and stone lions.
+- **No. 11** (letterbox 11): a small altar, a window, a grilled door and a roller shutter.
+- **No. 13** (door plates 13): the **Char Yang (Dabu) Lee Chee Association**, with a blue board reading 茶陽(大埔)勵志社 CHAR YANG (DABU) LEE CHEE ASSOCIATION.
+- **No. 15:** the blue band carried on, two air-conditioners on brackets and a 福家 gate.
+
+- **Measurement:** two pairs of June 2024 panoramas (`qC7t…` with `GX6R…`, and `M_9s…` with `GX6R…`) triangulate the four party lines.
+  - The front stands on the source edge at its south end and about **1.2 m behind** it at its north end.
+  - It is **26.6 m** long against the 26.16 m source edge, with bays of about 6.35, 6.6, 6.6 and 7.0 m.
+  - Read on that line: five-foot way 2.8 m, ledge 4.5 m, windows 4.6–5.92 m, vents to 6.25 m, eaves at 7.0 m.
+- **Layout:** laid proportionally on the source edge. Its south end meets the photographed north end of way 236, about 0.5 m apart, which supports open question 36.
+- **Naming:** none.
+  - Google Maps lists the Char Yang (Dabu) Lee Chee Association at 13 Lorong 17 Geylang but marks it **permanently closed**, so its board is blank, as at the 291 Eating House.
+  - 友誼聯誼會 is not listed.
+
+Use `?review=l17-9-15`.
