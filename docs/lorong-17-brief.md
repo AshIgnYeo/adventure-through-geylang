@@ -34,9 +34,9 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 18 | East | 454254240 | No. 20, Bright Star Hotel | Done; named |
 | 19 | East | 454254238 | A temple by No. 14 (和友社, 華德善室) | Done (a slice); unnamed; footprint question 40 |
 | 20 | East | 454254249 | No. 6, Singapore Chinaware Merchants Association | Done; named; row question 41 |
-| 21 | East | 454254250 | The row's fourth house (No. 4 by sequence) | Done; unnamed |
-| 22 | East | 454254252 | The row's fifth house (No. 2 by sequence) | Done; unnamed |
-| 23 | East | 454254251 | The row's south end house | To do |
+| 21 | East | 454254250 | No. 4 | Done; unnamed |
+| 22 | East | 454254252 | No. 2, its stair and upper floors (2A, 2B) | Done; unnamed |
+| 23 | East | 454254251 | No. 2, its ground-floor shop (02) | Done; unnamed |
 | 24 | East | 454254253 | The Geylang Road corner house | To do |
 
 Stops 7 (Nos. 23 and 25) and 13 (Nos. 37–41) each took in a whole photographed building, so the stops after them are numbered one and two lower than first planned. A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
@@ -517,22 +517,27 @@ A side lane about 5 m wide separates the temple from a white two-storey row of s
 
 Use `?review=chinaware-merchants`.
 
-### 21. Way 454254250: the row's fourth house
+### 21. Way 454254250: No. 4
 
-No. 4 by the row's sequence; no plate was seen.
+No plate was seen. The number follows from No. 6 to the north and No. 2 to the south (see stop 23).
 
 - **Front:** it continues the Chinaware Merchants Association's red board (drawn whole on No. 6) and the red fretwork panels round an open doorway.
 - **Ground floor:** a grey door with a red letterbox, a sink and a brass incense urn, under the maroon awning.
 - **Position:** the ground-floor features were placed by bearing from `qC7t…`, where the front line meets each sightline.
-- **Naming:** none. No listing or sign identifies it. Google's address points along the row (Nos. 2, 4 and 6) fall in the wrong order, so they are not used for numbering.
+- **Naming:** none. No listing or sign identifies it. Google's address points along the row (Nos. 2, 4 and 6) fall in the wrong order, so the numbers come from the plates instead.
 
 Use `?review=l17-4`.
 
-### 22. Way 454254252: the row's fifth house
+### 22–23. Ways 454254252 and 454254251: No. 2
 
-No. 2 by the row's sequence; no plate was seen.
+The plates settle the row's numbering.
 
-- **Ground floor:** a glazed door and a barred window at the end of the maroon awning, where the awning stops.
-- **Naming:** none. The Singapore Chinaware Merchants Association's listing point lies inside this way, but its board and letterbox are two houses north, on No. 6.
+- **Fifth house:** its grey stair door at the north end is plated **2A** and **2B**. It has a wide barred window with blinds under a row of small louvred lights, and chairs on its five-foot way.
+- **Sixth, southernmost house:** a glass shop door lettered **02**, under a red festive banner reading 横财就手, with red couplets, lanterns and potted plants, below a fascia of faded, mould-streaked lettering.
+- **Numbering:** these two houses are No. 2, its upper floors and its shop. The fourth house is No. 4, and the third No. 6 (letterbox 6-B).
+- **The awning:** the maroon awning stops at the fifth house's north party line. A view from the south shows this. In the square-on rectified view it seemed to run further south, but only because it projects about 1.5 m in front of the façade plane.
+- **Naming:** none.
+  - No listing for a business at 2 Lorong 17 was found. The faded fascia and the festive banner are blank.
+  - The Singapore Chinaware Merchants Association's listing point lies inside way 252, but its board and letterbox are on No. 6.
 
-Use `?review=l17-2`.
+Use `?review=l17-2` and `?review=l17-2-shop`.

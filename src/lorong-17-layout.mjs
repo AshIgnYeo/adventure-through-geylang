@@ -766,7 +766,7 @@ export const chinaware = rowHouse({
 
 export const no4 = rowHouse({
   id: 'l17-4', way: '454254250', W: 4.742, s0: 19.0, s1: 22.8, kind: 'unnamed', unnamed: true,
-  name: 'Fourth house of the white row, Lorong 17 east side (June 2024 exterior, occupant not identified)', address: '4 Lorong 17 Geylang (by the row\'s sequence; no plate seen)',
+  name: 'No. 4 Lorong 17 (June 2024 exterior, occupant not identified)', address: '4 Lorong 17 Geylang (between No. 6, letterbox 6-B, and No. 2, plates 2A, 2B and 02; no plate seen)',
   windows: [[19.3, 20.5], [20.9, 22.2]],
   evidence: rowEvidence + ' The fourth house from the north continues the red board of the Chinaware Merchants Association next door (drawn whole on No. 6) and the red fretwork panels round an open doorway, then has a grey door with a red letterbox, a sink and a brass incense urn under the maroon awning. No listing or sign identifies it, so no name is given.',
   blocks: () => [{ name: 'maroon awning, held flat', u: [0, 4.742], h: [2.5, 3.4], out: .04, depth: .08, colour: '#6e2b33' }],
@@ -781,17 +781,31 @@ export const no4 = rowHouse({
 
 export const no2 = rowHouse({
   id: 'l17-2', way: '454254252', W: 4.709, s0: 22.8, s1: 26.4, kind: 'unnamed', unnamed: true,
-  name: 'Fifth house of the white row, Lorong 17 east side (June 2024 exterior, occupant not identified)', address: '2 Lorong 17 Geylang (by the row\'s sequence; no plate seen)',
+  name: 'No. 2 Lorong 17, upper floors (June 2024 exterior, occupants not identified)', address: '2 Lorong 17 Geylang (stair door plated 2A, 2B)',
   windows: [[23.1, 24.3], [24.4, 25.6]],
-  evidence: rowEvidence + ' The fifth house from the north has a glazed door and a barred window at the end of the maroon awning, where the awning stops. Google Maps places the Singapore Chinaware Merchants Association\'s listing point inside this way, but its board and letterbox are two houses north, on No. 6. No listing or sign identifies this house, so no name is given.',
-  blocks: at => [{ name: 'maroon awning, held flat', u: [0, at([22.8, 25.6])[1]], h: [2.5, 3.4], out: .04, depth: .08, colour: '#6e2b33' }],
+  evidence: rowEvidence + ' The fifth house from the north has a grey stair door plated 2A and 2B at its north end, a wide barred window with blinds under a row of small louvred lights, and chairs on its five-foot way; the maroon awning stops at its north party line (it appears to run further south only where it is projected onto the façade plane). Together with the sixth house, whose glass shop door is lettered 02, it is No. 2. Google Maps places the Singapore Chinaware Merchants Association\'s listing point inside this way, but its board and letterbox are two houses north, on No. 6; no listing or sign identifies this house, so no name is given.',
+  blocks: () => [],
   backFittings: at => [
-    { name: 'glazed door', u: at([24.0, 24.9]), h: [.1, 2.4], colour: '#4a5458', glow: .06 },
-    { name: 'barred window', u: at([25.3, 26.1]), h: [1.0, 2.2], colour: '#3c4549' },
+    { name: 'grey stair door', u: at([22.9, 23.6]), h: [.1, 2.3], colour: '#9a9c99' },
+    { name: 'door plate', u: at([23.62, 23.75]), h: [1.6, 2.0], out: .03, depth: .04, colour: '#1c1c1c' },
+    { name: 'barred window with blinds', u: at([23.9, 26.1]), h: [.9, 2.3], colour: '#c9cfd0' },
+    { name: 'louvred lights', u: at([23.9, 26.1]), h: [2.55, 2.85], colour: '#7d8487' },
   ],
 });
+export const no2Shop = rowHouse({
+  id: 'l17-2-shop', way: '454254251', W: 4.698, s0: 26.4, s1: 29.9, kind: 'unnamed', unnamed: true,
+  name: 'No. 2 Lorong 17, the ground-floor shop at the south end of the row (June 2024 exterior, occupant not identified)', address: '2 Lorong 17 Geylang (glass door lettered 02)',
+  windows: [[26.6, 27.7], [28.0, 29.0]],
+  evidence: rowEvidence + ' The sixth and southernmost house has a fascia with faded, mould-streaked lettering and a glass shop door lettered 02 under a red festive banner reading 横财就手, with red couplets and lanterns and potted plants. It is part of No. 2 with the stair door plated 2A and 2B next door. No listing for a business at 2 Lorong 17 was found, so no name is given; the faded fascia and the festive banner are blank.',
+  blocks: at => [
+    { name: 'blank faded fascia', u: at([26.5, 29.8]), h: [3.0, 3.45], out: .02, depth: .03, colour: '#d9d6cc' },
+    { name: 'blank red festive banner', u: at([26.7, 29.2]), h: [2.45, 2.75], out: .04, depth: .03, colour: '#c2241c' },
+    ...[[26.65, 26.85], [29.0, 29.2]].map(sw => ({ name: 'blank red couplet', u: at(sw), h: [.8, 2.4], out: .04, depth: .02, colour: '#c2241c' })),
+  ],
+  backFittings: at => [{ name: 'glass shop door', u: at([27.1, 29.0]), h: [.1, 2.4], colour: '#4a5458', glow: .08 }],
+});
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2];
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2, no2Shop];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own
