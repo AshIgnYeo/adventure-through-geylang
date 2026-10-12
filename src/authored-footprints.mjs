@@ -89,6 +89,34 @@ function splitAlongFront(map, id, from, to, cuts) {
   return strips(src, P0, front, cut, cuts).map(o => frontFirst(o, P0, front));
 }
 
+/**
+ * Re-space a row along its own front line. Points are read as (t, d): t along `dir` from `origin`, d towards the
+ * street. One monotonic, piecewise-linear map of t takes the source party lines (`breaks`, [source, measured] pairs)
+ * to the measured ones and is applied to every vertex of every house, so neighbours keep their shared walls and
+ * interlocking rear parts stay apart; vertices on the source front (|d| < 0.5 m) move to the measured front `d`.
+ * Each outline keeps its source vertex order, so its edge numbers are unchanged.
+ */
+function warpRow(map, origin, dir, breaks, houses) {
+  const n = [-dir[1], dir[0]];
+  const T = t => {
+    if (t <= breaks[0][0]) return breaks[0][1] + t - breaks[0][0];
+    for (let i = 1; i < breaks.length; i++) {
+      const [a0, b0] = breaks[i - 1], [a1, b1] = breaks[i];
+      if (t <= a1) return a1 === a0 ? b1 : b0 + (t - a0) * (b1 - b0) / (a1 - a0);
+    }
+    const [a, b] = breaks.at(-1); return b + t - a;
+  };
+  return houses.map(h => {
+    const src = map.buildings.find(b => b.id === h.source).coordinates.slice(0, -1).map(c => project(c, map.origin));
+    const outline = src.map(p => {
+      const q = sub(p, origin), t = q[0] * dir[0] + q[1] * dir[1], d = q[0] * n[0] + q[1] * n[1];
+      return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * (Math.abs(d) < .5 ? h.front : d), n[1] * (Math.abs(d) < .5 ? h.front : d)]);
+    });
+    return { id: h.id, street: h.street, number: h.number, levels: h.levels, outline };
+  });
+}
+const unit = (p, q) => { const l = Math.hypot(q[0] - p[0], q[1] - p[1]); return [(q[0] - p[0]) / l, (q[1] - p[1]) / l]; };
+
 export const authoredFootprintGroups = [
   {
     id: 'lorong-11-west-row', question: 1, approved: '2026-10-10',
@@ -429,6 +457,20 @@ export const authoredFootprintGroups = [
         { id: 'l10-ibis', street: null, number: null, levels: 7, outline: middle },
         { id: 'l10-jxin', street: null, number: null, levels: 8, outline: south },
       ];
+    },
+  },
+  {
+    id: 'lorong-17-west-row', question: 38, approved: '2026-10-12',
+    evidence: 'The west side of Lorong 17 from No. 5 to No. 35 on its photographed line (open questions 36 and 38). Each house was triangulated from June 2024 panoramas during the Lorong 17 walk (docs/lorong-17-brief.md): the fronts stand 1.4-2.6 m in front of their source edges, the photographed houses run continuously where the map leaves gaps after Nos. 7, 21 and 25, and from No. 21 north they drift up to 2.6 m south of their source ways. Measured along the walk-ups\' source front line from No. 17\'s south corner, the party lines are taken midway between neighbouring measured ends: -1.56 (No. 17 south end, on the side passage), 4.54, 10.45, 16.04, 22.09, 28.43, 34.23, 39.86, 46.03, 52.58 and 59.43 m (No. 35 north end), with the fronts 1.5 m forward at No. 17 and 2.3 m forward elsewhere, the mean of the readings (2.1-2.5 m). Nos. 5-7 (Feng Shang Hair Salon and its north bay) are measured on their own source edge: 1.5 m forward, from 1.56 m south of the source corner to the north party line triangulated 11.35 m north of it. Rear lines and rear steps are kept: one monotonic re-spacing along each front line moves every vertex, so neighbours keep their shared walls. The side passage between Nos. 15 and 17 and way 454254237 (Nos. 9-15, on its own measured line) are unchanged.',
+    replaces: ['454254236', '454254272', '454254273', '454254274', '454254270', '454254271', '454254275', '454254276', '454254277', '454254278', '454254279'],
+    build(map) {
+      const street = 'Lorong 17 Geylang';
+      const O = sourcePoint(map, '454254272', 1), row = unit(O, sourcePoint(map, '454254279', 0));
+      const breaks = [[0, -1.56], [5.70, 4.54], [11.39, 10.45], [17.09, 16.04], [20.18, 16.04], [24.55, 22.09], [28.57, 28.43], [31.01, 28.43], [36.82, 34.23], [42.62, 39.86], [48.43, 46.03], [54.23, 52.58], [60.04, 59.43]];
+      const walkUps = [['454254272', '17', 1.5], ['454254273', '19'], ['454254274', '21'], ['454254270', '23'], ['454254271', '25'], ['454254275', '27'], ['454254276', '29'], ['454254277', '31'], ['454254278', '33'], ['454254279', '35']]
+        .map(([source, number, front = 2.3]) => ({ source, id: `l17w-${number}`, street, number, levels: 3, front }));
+      const A = sourcePoint(map, '454254236', 2), nos5to7 = { source: '454254236', id: 'l17w-5', street, number: '5-7', levels: 2, front: 1.5 };
+      return [...warpRow(map, A, unit(A, sourcePoint(map, '454254236', 1)), [[0, -1.56], [9.04, 11.35]], [nos5to7]), ...warpRow(map, O, row, breaks, walkUps)];
     },
   },
 ];

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
 import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides, lorong17Upper } from '../src/lorong-17-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
-import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map } from './helpers.mjs';
+import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
 const lane = sourceMap.corridors.find(c => c.name === 'Lorong 17 Geylang');
 const lanePath = lane.path.map(p => project(p, sourceMap.origin)), laneSegments = lanePath.slice(1).map((b, i) => [lanePath[i], b]);
@@ -39,7 +39,9 @@ test('the Lorong 17 exteriors fit their outlines, face the lane and keep their r
     for (const side of lorong17Sides(place, poly)) assertFittings(side.frame, poly, side.boxes);
     assertReviews(frame, lorong17Reviews(place, frame));
     assert.match(place.evidence, /(April|June) 2024/);
-    assert.ok(place.sources.some(s => s.includes(`way/${place.buildingIds[0]}`)));
+    // Sources cite the source way, or for an authored footprint one of the ways it replaces.
+    const ways = [place.buildingIds[0], ...(building(place.buildingIds[0]).replaces ?? [])];
+    assert.ok(place.sources.some(s => ways.some(w => s.includes(`way/${w}`))), place.id);
     // Every front looks across the lane: its outward normal points at the nearest point of the lane's centreline.
     const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
     assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
@@ -62,38 +64,33 @@ test('the Lorong 17 exteriors fit their outlines, face the lane and keep their r
   }
 });
 
-test('Feng Shang is named on way 236, with its listing point inside the photographed front', () => {
-  const place = lorong17.find(p => p.id === 'feng-shang'), poly = outline('454254236'), frame = lorong17Frame(poly, place);
-  const point = project([103.878786, 1.3129283], map.origin);
-  // 1.3 m in front of the source front, inside the front photographed 1.5 m forward.
-  assert.equal(pointInPolygon(point, poly), false);
-  const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
-  assert.ok(out > 1 && out < 1.5);
-  // The front runs north from the back lane.
-  assert.ok(frame.dz < -.95);
+test('Feng Shang is named on Nos. 5-7, its authored footprint, with its listing point now inside it', () => {
+  const place = lorong17.find(p => p.id === 'feng-shang'), poly = outline('l17w-5'), frame = lorong17Frame(poly, place);
+  assert.equal(pointInPolygon(project([103.878786, 1.3129283], map.origin), poly), true);
+  // The front runs north from the back lane, 12.9 m to the north party line.
+  assert.ok(frame.dz < -.95); assert.ok(Math.abs(frame.width - 12.91) < .01);
 });
 
-test('the True Jesus Mission is named on No. 17, with its listing point inside way 272', () => {
-  assert.equal(landmarkFor('454254272').id, 'true-jesus-mission');
-  assert.equal(pointInPolygon(project([103.8786787, 1.3133103], map.origin), outline('454254272')), true);
+test('the True Jesus Mission is named on No. 17, with its listing point inside its footprint', () => {
+  assert.equal(landmarkFor('l17w-17').id, 'true-jesus-mission');
+  assert.equal(pointInPolygon(project([103.8786787, 1.3133103], map.origin), outline('l17w-17')), true);
 });
 
-test('the Yang Clan General Association is named on No. 19, its listing point falling next door in No. 17', () => {
-  assert.equal(landmarkFor('454254273').id, 'yang-clan');
+test('the Yang Clan General Association is named on No. 19, its listing point inside its re-spaced footprint', () => {
+  assert.equal(landmarkFor('l17w-19').id, 'yang-clan');
+  // On the source ways the point fell next door, in No. 17's; on the photographed line it falls in No. 19.
   const point = project([103.8786358, 1.3133222], map.origin);
-  assert.equal(pointInPolygon(point, outline('454254273')), false);
-  assert.equal(pointInPolygon(point, outline('454254272')), true);
+  assert.equal(pointInPolygon(point, outline('l17w-19')), true);
+  assert.equal(pointInPolygon(point, sourceMap.buildings.find(b => b.id === '454254272').coordinates.map(c => project(c, map.origin))), true);
 });
 
 test('the Gyaltsap Tashi Ling Buddhist Society is named on No. 35 from its board, with its transposed listing recorded', () => {
   const place = lorong17.find(p => p.id === 'gyaltsap-tashi-ling');
-  assert.equal(landmarkFor('454254279').id, place.id);
+  assert.equal(landmarkFor('l17w-35').id, place.id);
   assert.match(place.address, /17 Lor 35/);
-  // The listing point lies about 1 m in front of the source way to the south, on the photographed house.
-  const point = project([103.8786073, 1.3137575], map.origin), frame = lorong17Frame(outline('454254279'), place);
-  const along = (point[0] - frame.a[0]) * frame.dx + (point[1] - frame.a[1]) * frame.dz;
-  const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
-  assert.ok(along > -2 && along < 0 && out > 0 && out < 2.5);
+  // The listing point lies on No. 35's south party line, within 0.5 m of its footprint.
+  const point = project([103.8786073, 1.3137575], map.origin), poly = outline('l17w-35');
+  assert.ok(Math.min(...poly.map((a, i) => nearestOnSegment(point, a, poly[(i + 1) % poly.length]).distance)) < .5);
 });
 
 test('Bright Star Hotel is named on No. 20, its listing point 0.28 m in front of the source front', () => {

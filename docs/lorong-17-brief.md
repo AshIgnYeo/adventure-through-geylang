@@ -585,3 +585,27 @@ From `PcP8…` the corner falls within about 0.75 m of its source position.
 **Naming:** none. Google Maps now lists **Eminent Frog Porridge & Seafood** at 323 Geylang Road, near Lorong 19, and the RENT/SALE banner marks this corner as vacant. So this is the restaurant's former site, and every board is blank.
 
 Use `?review=gr-l17-east-corner`.
+
+## The owner's answers applied, 12 October 2026
+
+All six questions from the walk were answered with the recommended option. They are recorded in [open questions](open-questions.md), eighth batch.
+
+### Questions 36 and 38: the west row on its photographed line
+
+Group `lorong-17-west-row` in `src/authored-footprints.mjs`. It replaces eleven source ways with authored footprints: `l17w-5` for Nos. 5–7, and `l17w-17` to `l17w-35`.
+
+- **Method:** one monotonic re-spacing along the row's own front line moves every vertex of every house. The source party lines go to the measured ones, and vertices on the source front move forward. So neighbours keep their shared walls, the rear lines and rear steps are kept, and each outline keeps its vertex order and edge numbers.
+- **Party lines:** measured from No. 17's south corner along the walk-ups' source front, each taken midway between neighbouring measured ends:
+  - −1.56 m (No. 17's south end, on the side passage);
+  - 4.54, 10.45, 16.04, 22.09, 28.43, 34.23, 39.86, 46.03 and 52.58 m;
+  - 59.43 m (No. 35's north end).
+- **Fronts:** 1.5 m forward at No. 17, and 2.3 m forward from No. 19 to No. 35, the mean of the readings (2.1–2.5 m).
+- **Nos. 5–7:** Feng Shang and its north bay, on their own edge. The front is 1.5 m forward and runs 12.9 m, to the north party line 11.35 m north of the source corner. The question gave 12.5 m, an arithmetic slip.
+- **Unchanged:** the side passage between Nos. 15 and 17, and way 454254237 (Nos. 9–15).
+- **Results:**
+  - The map's gaps after Nos. 7 (now 0.6 m), 21 and 25 are closed.
+  - Each elevation is laid on its true width, without the ×0.72–1.5 stretching.
+  - The listing points of Feng Shang, the True Jesus Mission and the Yang Clan General Association now fall inside their houses. Gyaltsap Tashi Ling's point lies on its south party line, 0.3 m from its footprint.
+  - No. 31 and No. 33's readings overlapped by 1.2 m, so their party line is taken midway.
+  - Nos. 23–25 are slightly skewed, so their shells stand 0.12 m inside their side walls.
+- **Re-check:** stop 9's fin triangulation was solved again with its readings on the correct plane. The fins stand about 2.2 m forward, and its positions are unchanged.

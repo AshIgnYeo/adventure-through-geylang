@@ -15,13 +15,14 @@ const lay = (s0, k) => ([a, b]) => [+((a - s0) * k).toFixed(2), +((b - s0) * k).
 // ---------------------------------------------------------------------------------------------
 // 2. Way 454254236, north of the corner block: a white two-storey building of two bays. Its front (edge 1) runs
 // north from the back lane. Two June 2024 panoramas agree on the front 1.5 m in front of the source edge, from
-// 1.56 m south of the source corner to 11.35 m north of it: 12.5 m, laid on the 9.04 m source edge.
-const W236 = 9.041, at236 = lay(-1.56, W236 / 12.52);
+// 1.56 m south of the source corner to the north party line 11.35 m north of it: 12.9 m. It stands on its authored
+// footprint (l17w-5, open questions 36 and 38), with s from the source corner.
+const W236 = 12.911, at236 = lay(-1.56, W236 / 12.91);
 export const fengShang = {
-  id: 'feng-shang', buildingIds: ['454254236'], kind: 'feng-shang', frontEdge: 1, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 16 },
+  id: 'feng-shang', buildingIds: ['l17w-5'], kind: 'feng-shang', frontEdge: 1, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 16 },
   name: 'Feng Shang Hair Salon (June 2024 exterior)', address: '5 Lorong 17 Geylang (as listed; Google\'s address point for No. 7 also falls in this way)',
   height: 8.0, ceiling: 3.25, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 10.2, ridgeDepth: .4, colour: '#8e8b85' },
-  evidence: 'June 2024 Street View shows a white two-storey building of two bays north of the back lane behind No. 301 Geylang Road, under a thin cantilevered roof slab: four windows under louvred vents upstairs, and a five-foot way below. The south bay is a hair salon, with a black board reading 峰尚造型 HAIR SALON on the front and another on the back-lane gable, a fascia reading 峰尚造型 Feng Shang Hair Salon over a glazed front, a blue side door and two barber poles. The north bay has a narrow dark door with door-god posters under a black board reading 聖靈花炶聯誼会, and a glass office lettered Dr Handy behind a folding gate; neither is listed, so both stay blank. Google Maps lists Feng Shang Hair Salon, a hair salon operating in October 2026, at 5 Lorong 17 Geylang (floor 1), with its point 1.3 m in front of the source front, inside the photographed front, which stands 1.5 m forward; so the boards and fascia name the salon and are redrawn in original type, with no claim about the north bay or the upper floor. Google\'s address point for 7 Lorong 17 Geylang also falls in this way and no door number is visible, so the conflict is recorded (open question 12 allows a clearly signed occupant). Two June 2024 panoramas triangulate the four windows and the north party line on a plane 1.4-1.7 m in front of the source edge: the building photographs about 12.5 m wide against the 9.04 m source edge and reaches the south wall of way 454254237, so its elevation is laid proportionally on the source edge (open question 36). Heights were read on that plane, above the five-foot-way floor.',
+  evidence: 'June 2024 Street View shows a white two-storey building of two bays north of the back lane behind No. 301 Geylang Road, under a thin cantilevered roof slab: four windows under louvred vents upstairs, and a five-foot way below. The south bay is a hair salon, with a black board reading 峰尚造型 HAIR SALON on the front and another on the back-lane gable, a fascia reading 峰尚造型 Feng Shang Hair Salon over a glazed front, a blue side door and two barber poles. The north bay has a narrow dark door with door-god posters under a black board reading 聖靈花炶聯誼会, and a glass office lettered Dr Handy behind a folding gate; neither is listed, so both stay blank. Google Maps lists Feng Shang Hair Salon, a hair salon operating in October 2026, at 5 Lorong 17 Geylang (floor 1), with its point 1.3 m in front of the source front, inside the photographed front, which stands 1.5 m forward; so the boards and fascia name the salon and are redrawn in original type, with no claim about the north bay or the upper floor. Google\'s address point for 7 Lorong 17 Geylang also falls in this way and no door number is visible, so the conflict is recorded (open question 12 allows a clearly signed occupant). Two June 2024 panoramas triangulate the four windows and the north party line on a plane 1.4-1.7 m in front of the source edge: the building photographs about 12.9 m wide against the 9.04 m source edge and reaches within about 0.5 m of way 454254237. Under the owner\'s answers to open questions 36 and 38 it stands on an authored footprint on that front, and its elevation is laid at its photographed widths; the salon\'s listing point now lies inside it. Heights were read on that plane, above the five-foot-way floor.',
   sources: [way('454254236'), search('Feng Shang Hair Salon 5 Lorong 17 Geylang'), pano('h2GMbpqMlF5I3mVPjbwO9w', 262, 10, 100), pano('qC7tdabb-uutEWXfday1Jw', 220, 10, 100), pano('4m2rqWXQ6KXQMoq91snllg', 330, 15, 100)],
   colours: { wall: '#ecebe5', trim: '#e2e0d9', frame: '#2b2f31', glass: '#3d4549', pier: '#ecebe5', back: '#d9d7d0', floor: '#a19b90' },
   bands: [[4.64, 4.8, .15]],
@@ -30,7 +31,7 @@ export const fengShang = {
   blocks: [{ name: 'cantilevered roof slab', u: [0, W236], h: [7.8, 8.6], out: .3, depth: .7, colour: '#e4e2dc' }],
   // The salon's board on the front, and its fascia over the shopfront on the back wall.
   boards: [{ u: at236([-.6, 3.0]), h: [3.25, 4.29], out: .08 }, { u: at236([.67, 4.67]), h: [2.78, 3.13], out: -1.92 }],
-  piers: [at236([-1.56, -.78]), at236([4.9, 5.33]), at236([10.3, 10.96])],
+  piers: [at236([-1.56, -.78]), at236([4.9, 5.33]), at236([10.6, 11.35])],
   backFittings: [
     { name: 'salon glazing', u: at236([.67, 3.9]), h: [.1, 2.75], colour: '#3a4448', glow: .14 },
     { name: 'LED barber pole', u: at236([.3, .5]), h: [1.2, 2.8], out: .05, depth: .1, colour: '#3050c0', glow: .3 },
@@ -43,10 +44,10 @@ export const fengShang = {
   ],
   sides: [{
     edge: 2, // the back-lane gable, u east to the front corner
-    windows: [{ u: [9.6, 10.5], h: [5.0, 6.0], panes: 1 }, { u: [12.3, 13.3], h: [5.0, 6.2], panes: 2 }],
-    vents: [{ u: [9.6, 10.5], h: [6.1, 6.5] }, { u: [12.3, 13.3], h: [6.3, 6.7] }],
-    blocks: [{ name: 'air conditioner', u: [7.4, 8.2], h: [3.3, 3.9], out: .25, depth: .5, colour: '#e6e6e2' }],
-    boards: [{ u: [11.9, 14.6], h: [3.4, 4.45], out: .08 }],
+    windows: [{ u: [11.1, 12.0], h: [5.0, 6.0], panes: 1 }, { u: [13.8, 14.8], h: [5.0, 6.2], panes: 2 }],
+    vents: [{ u: [11.1, 12.0], h: [6.1, 6.5] }, { u: [13.8, 14.8], h: [6.3, 6.7] }],
+    blocks: [{ name: 'air conditioner', u: [8.9, 9.7], h: [3.3, 3.9], out: .25, depth: .5, colour: '#e6e6e2' }],
+    boards: [{ u: [13.4, 16.1], h: [3.4, 4.45], out: .08 }],
   }],
 };
 
@@ -98,13 +99,14 @@ export const row237 = {
 // 4. Way 454254272, No. 17, across a side passage from No. 15: the General Board of True Jesus Mission, a white
 // three-storey building. Its front (edge 0) runs north from the passage. Two pairs of June 2024 panoramas put its
 // ends 5.9 m apart, about 1.6 m south of the source corners and 1-2 m in front of the source edge; read on a plane
-// 1.5 m forward, s from its south corner, and laid on the 5.70 m source edge.
-const W272 = 5.698, at272 = lay(-1.56, W272 / 5.89);
+// 1.5 m forward, s from its south corner, and laid on its authored front (l17w-17, open question 38), which runs to
+// the party line shared with No. 19.
+const W272 = 6.097, at272 = lay(-1.56, W272 / 5.89);
 export const trueJesus = {
-  id: 'true-jesus-mission', buildingIds: ['454254272'], kind: 'true-jesus-mission', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 22 },
+  id: 'true-jesus-mission', buildingIds: ['l17w-17'], kind: 'true-jesus-mission', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 22 },
   name: 'General Board of True Jesus Mission (June 2024 exterior)', address: '17 Lorong 17 Geylang',
   height: 10.9, ceiling: 3.6, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a7a6a0' },
-  evidence: 'June 2024 Street View shows a white three-storey building across a bollarded side passage from No. 15, door plate 17: a ground floor behind a five-foot way with a board reading 眞耶穌教會總會 GENERAL BOARD OF TRUE JESUS MISSION over a grilled wooden door and a stair; a first floor with two windows under louvred vents, air-conditioners below them and a vertical blade sign at the south corner reading 眞耶穌教會總會 General Board of True Jesus Mission; and a second floor whose balcony parapet repeats the lettering (會總會教穌耶真, read right to left) under two windows and vents, inside a projecting roof frame. Google Maps lists General Board of True Jesus Mission (TJM), a Christian church, at 17 Lorong 17 Geylang, Singapore 388547, with its point inside this way, so the boards, parapet and blade are redrawn in original type. Two pairs of June 2024 panoramas triangulate its two ends 5.9 m apart, about 1.6 m south of the source corners and 1-2 m in front of the source edge; heights were read on a plane 1.5 m forward and the elevation is laid on the 5.70 m source edge, which is kept.',
+  evidence: 'June 2024 Street View shows a white three-storey building across a bollarded side passage from No. 15, door plate 17: a ground floor behind a five-foot way with a board reading 眞耶穌教會總會 GENERAL BOARD OF TRUE JESUS MISSION over a grilled wooden door and a stair; a first floor with two windows under louvred vents, air-conditioners below them and a vertical blade sign at the south corner reading 眞耶穌教會總會 General Board of True Jesus Mission; and a second floor whose balcony parapet repeats the lettering (會總會教穌耶真, read right to left) under two windows and vents, inside a projecting roof frame. Google Maps lists General Board of True Jesus Mission (TJM), a Christian church, at 17 Lorong 17 Geylang, Singapore 388547, with its point inside this way, so the boards, parapet and blade are redrawn in original type. Two pairs of June 2024 panoramas triangulate its two ends 5.9 m apart, about 1.6 m south of the source corners and 1-2 m in front of the source edge; heights were read on a plane 1.5 m forward. Under the owner\'s answer to open question 38 it stands on an authored footprint on that front, and the elevation is laid on it.',
   sources: [way('454254272'), search('General Board of True Jesus Mission 17 Lorong 17 Geylang'), pano('qKWw6QiwVVcNE7eOEzxMSA', 250, 22, 105), pano('GX6RAPRapiD3eAKqXG_3uA', 280, 22, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 215, 15, 100)],
   colours: { wall: '#f1f1ee', trim: '#e7e7e3', frame: '#2c3134', glass: '#3b4448', pier: '#f1f1ee', back: '#e2e1dc', floor: '#a19b90' },
   bands: [[3.73, 4.0, .3]],
@@ -127,7 +129,7 @@ export const trueJesus = {
   ],
   sides: [{
     edge: 1, // the side passage, u east to the front corner
-    windows: [[6.6, 7.2], [8.2, 8.8]].flatMap(u => [{ u, h: [4.7, 5.6], panes: 1 }, { u, h: [8.2, 9.0], panes: 1 }]).concat([{ u: [8.2, 8.8], h: [1.2, 2.2], panes: 1 }]),
+    windows: [[8.1, 8.7], [9.7, 10.3]].flatMap(u => [{ u, h: [4.7, 5.6], panes: 1 }, { u, h: [8.2, 9.0], panes: 1 }]).concat([{ u: [9.7, 10.3], h: [1.2, 2.2], panes: 1 }]),
   }],
 };
 
@@ -136,12 +138,12 @@ export const trueJesus = {
 // Yang Clan General Association's board on its balcony. Its front (edge 0) runs north from No. 17. Four June 2024
 // panoramas triangulate the pilasters 2.0-2.3 m in front of the source edge; on a plane 2.2 m forward the front
 // runs from 0.95 m south of the source corner, 5.55 m to the middle of the north pilaster, laid on 5.69 m.
-const W273 = 5.69, at273 = lay(-.95, W273 / 5.55), pairs273 = [[-.76, .7], [1.36, 3.5]];
+const W273 = 5.909, at273 = lay(-.95, W273 / 5.55), pairs273 = [[-.76, .7], [1.36, 3.5]];
 export const yangClan = {
-  id: 'yang-clan', buildingIds: ['454254273'], kind: 'yang-clan', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'yang-clan', buildingIds: ['l17w-19'], kind: 'yang-clan', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'Yang Clan General Association (June 2024 exterior)', address: '19A Lorong 17 Geylang (the upper floors of No. 19)',
   height: 10.0, ceiling: 3.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8a82' },
-  evidence: 'June 2024 Street View shows a weathered cream three-storey house north of No. 17, between dark-stained party pilasters: two windows under louvred vents on each upper floor, air-conditioners on the ledges, a red board with a round emblem reading 楊氏總會 YANG CLAN GENERAL ASSOCIATION under the second-floor balcony, a white lightbox hanging from an open top-floor window, and a dark roof frame; below, a five-foot way with a grilled gate, a small window and an open altar front. Google Maps lists Yang Clan General Assn at 19A Lorong 17 Geylang, Singapore 388549, the upper floors of the house after No. 17; its point lies about 1 m south of this way, in No. 17\'s, as the row\'s 2 m registration error would place it. Address and board agree, so the upper floors are named after the board, which is redrawn in original type (the Bamboo Lounge precedent, open question 33), with no claim about the ground floor. Its black ground-floor board, reading 昆仲联… KUNTIONG A…, belongs to the Kun Tiong Association, listed at 19 Lorong 17 #01-19 but marked permanently closed, so it is blank. Four June 2024 panoramas triangulate the two party pilasters 2.0-2.3 m in front of the source edge; read on a plane 2.2 m forward, the front measures 5.55 m to the middle of the wide north pilaster and is laid on the 5.69 m source edge.',
+  evidence: 'June 2024 Street View shows a weathered cream three-storey house north of No. 17, between dark-stained party pilasters: two windows under louvred vents on each upper floor, air-conditioners on the ledges, a red board with a round emblem reading 楊氏總會 YANG CLAN GENERAL ASSOCIATION under the second-floor balcony, a white lightbox hanging from an open top-floor window, and a dark roof frame; below, a five-foot way with a grilled gate, a small window and an open altar front. Google Maps lists Yang Clan General Assn at 19A Lorong 17 Geylang, Singapore 388549, the upper floors of the house after No. 17. On the source ways its point fell about 1 m south of this way, in No. 17\'s; on the photographed line (open question 38) it falls inside this house. Address and board agree, so the upper floors are named after the board, which is redrawn in original type (the Bamboo Lounge precedent, open question 33), with no claim about the ground floor. Its black ground-floor board, reading 昆仲联… KUNTIONG A…, belongs to the Kun Tiong Association, listed at 19 Lorong 17 #01-19 but marked permanently closed, so it is blank. Four June 2024 panoramas triangulate the two party pilasters 2.0-2.3 m in front of the source edge; read on a plane 2.2 m forward, the front measures 5.55 m to the middle of the wide north pilaster. Under the owner\'s answer to open question 38 it stands on an authored footprint 2.3 m forward, and the elevation is laid on it.',
   sources: [way('454254273'), search('Yang Clan General Association 19A Lorong 17 Geylang'), pano('qKWw6QiwVVcNE7eOEzxMSA', 250, 22, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 230, 20, 100), pano('GX6RAPRapiD3eAKqXG_3uA', 290, 20, 90), pano('FeWy4yNg9qEGZG5jKgP5XA', 200, 18, 100)],
   colours: { wall: '#e3dccb', trim: '#d8d0bd', frame: '#3a3a36', glass: '#454b4c', pier: '#e3dccb', back: '#e6e1d4', floor: '#9d978c' },
   bands: [[3.3, 3.7, .35]],
@@ -170,13 +172,13 @@ export const yangClan = {
 // ---------------------------------------------------------------------------------------------
 // 6. Way 454254274, No. 21: a three-storey house with a peach first floor in a brownish-pink frame and a cream
 // balcony storey above. Its front (edge 0) runs north from No. 19. On the row's plane 2.2 m forward, three June 2024
-// panoramas agree on the front from 0.8 m south of the source corner, 5.4 m long; laid on the 5.70 m source edge.
-const W274 = 5.701, at274 = lay(-.8, W274 / 5.4), pairs274 = [[-.45, 1.3], [2.05, 3.9]];
+// panoramas agree on the front from 0.8 m south of the source corner, 5.4 m long; laid on its authored front (l17w-21, open question 38).
+const W274 = 5.59, at274 = lay(-.8, W274 / 5.4), pairs274 = [[-.45, 1.3], [2.05, 3.9]];
 export const no21 = {
-  id: 'l17-21', buildingIds: ['454254274'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-21', buildingIds: ['l17w-21'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 21 Lorong 17 (June 2024 exterior, occupant not identified)', address: '21 Lorong 17 Geylang',
   height: 10.5, ceiling: 3.1, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8a82' },
-  evidence: 'June 2024 Street View shows a three-storey house north of No. 19: a first floor panelled in peach inside a brownish-pink frame, with two windows under a lattice band; a cream balcony storey above with two windows under louvred vents and air-conditioners on the balcony; and a roof slab at about 10.5 m. The ground floor is a glazed temple front under a dark maroon scalloped awning hung with paper charms, with lotus lamps and a red banner inside. Google Maps lists Bai Yun Kong Shang Fo Tang (百雲宮善佛堂), a Buddhist temple on floor 1, at 21 Lorong 17 Geylang, Singapore 388550, but no sign bearing its name could be read from the street, so no name is given. On the row\'s plane 2.2 m in front of the source edge, three June 2024 panoramas agree on the front from 0.8 m south of the source corner, 5.4 m long; it is laid on the 5.70 m source edge.',
+  evidence: 'June 2024 Street View shows a three-storey house north of No. 19: a first floor panelled in peach inside a brownish-pink frame, with two windows under a lattice band; a cream balcony storey above with two windows under louvred vents and air-conditioners on the balcony; and a roof slab at about 10.5 m. The ground floor is a glazed temple front under a dark maroon scalloped awning hung with paper charms, with lotus lamps and a red banner inside. Google Maps lists Bai Yun Kong Shang Fo Tang (百雲宮善佛堂), a Buddhist temple on floor 1, at 21 Lorong 17 Geylang, Singapore 388550, but no sign bearing its name could be read from the street, so no name is given. On the row\'s plane 2.2 m in front of the source edge, three June 2024 panoramas agree on the front from 0.8 m south of the source corner, 5.4 m long. Under the owner\'s answer to open question 38 it stands on an authored footprint on that front, and the elevation is laid on it.',
   sources: [way('454254274'), search('Bai Yun Kong Shang Fo Tang 21 Lorong 17 Geylang'), pano('zA0hxiYKqVOIl4BIukFCWw', 252, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 210, 18, 100), pano('qKWw6QiwVVcNE7eOEzxMSA', 235, 18, 100)],
   colours: { wall: '#e8e1d0', trim: '#ddd5c2', frame: '#3a3a36', glass: '#454b4c', pier: '#e8e1d0', back: '#d9d2c2', floor: '#9d978c' },
   windows: pairs274.flatMap(s => [{ u: at274(s), h: [4.5, 5.6], panes: 2, out: .03 }, { u: at274(s), h: [7.95, 8.6], panes: 2 }]),
@@ -202,16 +204,17 @@ export const no21 = {
 // 7. Ways 454254270 and 454254271, Nos. 23 and 25 (letterbox 23, door plate 25): one white three-storey building
 // of two bays with corrugated metal hoods over every window. On the row's plane 2.2 m forward, three June 2024
 // panoramas agree on it from 1.0 m south to 11.1 m north of No. 21's source corner, filling the 3 m gap the map
-// leaves after No. 21. Each 6 m bay is laid on its own source way (4.38 m and 4.01 m), u north from the south end.
-const W270 = 4.376, at270 = lay(-1.0, W270 / 6.0), W271 = 4.014, at271 = lay(5.0, W271 / 6.1);
+// leaves after No. 21. Each 6 m bay is laid on its authored footprint (l17w-23, l17w-25), u north from the south end.
+const W270 = 6.052, at270 = lay(-1.0, W270 / 6.0), W271 = 6.33, at271 = lay(5.0, W271 / 6.1);
 const hood = (u, top) => ({ name: 'metal window hood', u: [u[0] - .1, u[1] + .1], h: [top + .1, top + .35], out: .35, depth: .7, colour: '#8f938f' });
-const whiteBay = { height: 10.3, ceiling: 3.2, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' }, bands: [[3.3, 3.6, .3]],
+// Closing the map's gap leaves the side walls slightly skewed, so the shell stands 0.12 m inside them.
+const whiteBay = { height: 10.3, ceiling: 3.2, fiveFootWay: 2.0, shellInset: .12, roof: { type: 'flat', colour: '#9c9a94' }, bands: [[3.3, 3.6, .3]],
   colours: { wall: '#ebeae4', trim: '#e0ded7', frame: '#2c3032', glass: '#3b4448', pier: '#ebeae4', back: '#e3ded2', floor: '#a19b90' } };
-const evidence2325 = 'June 2024 Street View shows one white three-storey building of two bays north of No. 21, with four windows on each upper floor under corrugated metal hoods and a flat roof at about 10.3 m. The south bay, No. 23 (letterbox 23, with a hall-rental notice), has a roller shutter, a wooden door and a louvred panel under the maroon awning carried on from No. 21. The north bay, No. 25 (door plate 25), is the Wee Ghee Athletic Association: a yellow board reading WEE GHEE ATHLETIC ASSOCIATION between its first-floor windows, 威義 on their glass, red lettering reading 威義體育會 under them, and a cream folding grille gate under a red-and-white striped awning hung with Buddhist prayer flags. No listing for the association was found at Lorong 17 (only a Yiwei Athletic Association elsewhere), so no name is given and its boards are blank. On the row\'s plane 2.2 m in front of the source edge, three June 2024 panoramas agree on the building from 1.0 m south to 11.1 m north of No. 21\'s source corner: it fills the 3 m gap the map leaves after No. 21, and its two bays of about 6 m are laid on their own source ways, 4.38 m and 4.01 m wide.';
+const evidence2325 = 'June 2024 Street View shows one white three-storey building of two bays north of No. 21, with four windows on each upper floor under corrugated metal hoods and a flat roof at about 10.3 m. The south bay, No. 23 (letterbox 23, with a hall-rental notice), has a roller shutter, a wooden door and a louvred panel under the maroon awning carried on from No. 21. The north bay, No. 25 (door plate 25), is the Wee Ghee Athletic Association: a yellow board reading WEE GHEE ATHLETIC ASSOCIATION between its first-floor windows, 威義 on their glass, red lettering reading 威義體育會 under them, and a cream folding grille gate under a red-and-white striped awning hung with Buddhist prayer flags. No listing for the association was found at Lorong 17 (only a Yiwei Athletic Association elsewhere), so no name is given and its boards are blank. On the row\'s plane 2.2 m in front of the source edge, three June 2024 panoramas agree on the building from 1.0 m south to 11.1 m north of No. 21\'s source corner: it fills the 3 m gap the map leaves after No. 21. Under the owner\'s answer to open question 38 its two bays of about 6 m stand on authored footprints on that front, which close the gap.';
 const sources2325 = id => [way(id), pano('FeWy4yNg9qEGZG5jKgP5XA', 256, 22, 110), pano('zA0hxiYKqVOIl4BIukFCWw', 225, 20, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 225, 20, 100)];
 const win23 = [[0, 1.35], [2.86, 4.2]].map(at270), win25 = [[5.65, 6.95], [8.57, 9.8]].map(at271);
 export const no23 = {
-  id: 'l17-23', buildingIds: ['454254270'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-23', buildingIds: ['l17w-23'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 23 Lorong 17 (June 2024 exterior, occupant not identified)', address: '23 Lorong 17 Geylang (the south bay)',
   ...whiteBay, evidence: evidence2325, sources: sources2325('454254270'),
   windows: win23.flatMap(u => [{ u, h: [4.43, 5.72], panes: 2 }, { u, h: [7.72, 8.86], panes: 2 }]),
@@ -222,7 +225,7 @@ export const no23 = {
     { name: 'air conditioner', u: at270([3.3, 4.1]), h: [3.95, 4.4], out: .3, depth: .5, colour: '#e8e8e4' },
     { name: 'maroon scalloped awning', u: [0, W270], h: [3.0, 3.4], out: .5, depth: 1.0, colour: '#6a2d36' },
   ],
-  piers: [[0, .3], [W270 - .25, W270]],
+  piers: [[.06, .3], [W270 - .25, W270 - .06]],
   backFittings: [
     { name: 'dark door', u: at270([.14, .86]), h: [.1, 2.2], colour: '#5a2a26' },
     { name: 'louvred panel', u: at270([.9, 1.9]), h: [1.8, 2.3], colour: '#cfc9b8' },
@@ -231,7 +234,7 @@ export const no23 = {
   ],
 };
 export const no25 = {
-  id: 'l17-25', buildingIds: ['454254271'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-25', buildingIds: ['l17w-25'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 25 Lorong 17, Wee Ghee Athletic Association (June 2024 exterior, not listed)', address: '25 Lorong 17 Geylang (the north bay)',
   ...whiteBay, evidence: evidence2325, sources: sources2325('454254271'),
   windows: win25.flatMap(u => [{ u, h: [4.43, 5.72], panes: 2 }, { u, h: [7.72, 8.86], panes: 2 }]),
@@ -243,7 +246,7 @@ export const no25 = {
     { name: 'air conditioner', u: at271([10.0, 10.86]), h: [3.95, 4.55], out: .3, depth: .5, colour: '#e8e8e4' },
     { name: 'striped awning', u: at271([5.14, 11.1]), h: [2.86, 3.2], out: .5, depth: 1.0, colour: '#d2655c' },
   ],
-  piers: [[0, .25], [W271 - .25, W271]],
+  piers: [[.06, .25], [W271 - .25, W271 - .06]],
   backFittings: [
     { name: 'folding grille gate', u: at271([5.57, 8.71]), h: [.1, 2.7], colour: '#cfc6a8' },
     { name: 'dark door', u: at271([8.86, 9.71]), h: [.1, 2.4], colour: '#2c2a2a' },
@@ -254,21 +257,21 @@ export const no25 = {
 // 8. Way 454254275, No. 27 (door plate 27): a white three-storey house with a recessed top-floor balcony under an overhanging
 // roof slab and a dark-stained fin to the north, with a black board reading 慕德同鄉會. On the row's plane 2.2 m
 // forward, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner: it fills
-// the 2.5 m gap the map leaves after way 271. Laid on the 5.81 m source edge, u north from the south end.
-const W275 = 5.813, at275 = lay(-2.33, W275 / 5.63), win275 = [[-1.67, -.44], [1.29, 2.56]].map(at275);
+// the 2.5 m gap the map leaves after way 271. Laid on its authored front (l17w-27), u north from the south end.
+const W275 = 5.8, at275 = lay(-2.33, W275 / 5.63), win275 = [[-1.67, -.44], [1.29, 2.56]].map(at275);
 export const no27 = {
-  id: 'l17-27', buildingIds: ['454254275'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-27', buildingIds: ['l17w-27'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 27 Lorong 17, with the 慕德同鄉會 board (June 2024 exterior, not listed)', address: '27 Lorong 17 Geylang (door plate 27; stair to 27-A)',
   // The walls stop at the balcony slab; the top floor, set back about 1.2 m, and the roof slab are blocks.
   height: 7.0, ceiling: 2.8, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows a white three-storey house north of No. 25: a top floor recessed behind a balcony under an overhanging roof slab with plants growing on it, two windows under a vent band on the first floor with a black board reading 慕德同鄉會 in gold between them and a phone-number board below, and a dark-stained fin on its north side. The ground floor is open under a blue striped awning, with an arched window, a wooden door plated 27 and a stair doorway under a yellow board reading 番禺慕德同鄉會 27-A 二樓, placing the association on the floor above at 27-A. Neither the association (only the Poon Yue Association 番禹會館 at New Bridge Road is listed) nor a No. 27 Lorong 17 is listed on Google Maps, so no name is given and the boards are blank. On the row\'s plane 2.2 m in front of the source edge, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner, so it fills the 2.5 m gap the map leaves after way 454254271; it is laid on the 5.81 m source edge.',
+  evidence: 'June 2024 Street View shows a white three-storey house north of No. 25: a top floor recessed behind a balcony under an overhanging roof slab with plants growing on it, two windows under a vent band on the first floor with a black board reading 慕德同鄉會 in gold between them and a phone-number board below, and a dark-stained fin on its north side. The ground floor is open under a blue striped awning, with an arched window, a wooden door plated 27 and a stair doorway under a yellow board reading 番禺慕德同鄉會 27-A 二樓, placing the association on the floor above at 27-A. Neither the association (only the Poon Yue Association 番禹會館 at New Bridge Road is listed) nor a No. 27 Lorong 17 is listed on Google Maps, so no name is given and the boards are blank. On the row\'s plane 2.2 m in front of the source edge, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner, so it fills the 2.5 m gap the map leaves after way 454254271. Under the owner\'s answer to open question 38 it stands on an authored footprint on that front, and the elevation is laid on it.',
   sources: [way('454254275'), pano('gBz2E1aqjym_0qAkSZxE2A', 235, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 215, 18, 100)],
   colours: { wall: '#ecebe5', trim: '#e0ded7', frame: '#2c3032', glass: '#3b4448', pier: '#ecebe5', back: '#e6e4de', floor: '#a19b90' },
   bands: [[3.2, 3.44, .25]],
   windows: win275.flatMap(u => [{ u, h: [4.33, 5.38], panes: 2 }, { u, h: [7.18, 8.4], panes: 2, out: -1.1 }]),
   vents: win275.map(u => ({ u, h: [5.49, 5.93] })),
   blocks: [
-    { name: 'set-back top storey', u: [.08, W275 - .02], h: [7.0, 9.78], out: -6.6, depth: 10.8, colour: '#e6e4de' },
+    { name: 'set-back top storey', u: [.3, W275 - .3], h: [7.0, 9.78], out: -6.6, depth: 10.8, colour: '#e6e4de' },
     { name: 'overhanging roof slab', u: [0, W275], h: [9.78, 10.1], out: -5.95, depth: 12.5, colour: '#d9d6cc' },
     { name: 'top-floor vent band', u: [.25, W275 - .45], h: [8.4, 8.8], out: -1.17, depth: .04, colour: '#c9c7c0' },
     { name: 'balcony slab', u: [0, W275], h: [6.55, 7.0], out: .1, depth: .2, colour: '#e0ded7' },
@@ -290,14 +293,14 @@ export const no27 = {
 // ---------------------------------------------------------------------------------------------
 // 9. Way 454254276, No. 29: the first of the pale peach walk-ups with projecting side fins, a balcony slab and a
 // deep roof slab. Two June 2024 panoramas put its fins on the row's plane, 2.3 m forward, 5.3 m apart from 2.64 m
-// south of the source corner, meeting No. 27's north end. Laid on the 5.80 m source edge, u north.
-const W276 = 5.8, at276 = lay(-2.64, W276 / 5.31), win276 = [[-2.3, -1.4], [1.0, 2.3]].map(at276);
+// south of the source corner, meeting No. 27's north end. Laid on its authored front (l17w-29), u north.
+const W276 = 5.629, at276 = lay(-2.64, W276 / 5.31), win276 = [[-2.3, -1.4], [1.0, 2.3]].map(at276);
 const peach = { wall: '#ecd6c4', trim: '#e2cbb8', frame: '#3a3a36', glass: '#3f474a', pier: '#ecd6c4', back: '#e6ded3', floor: '#a19b90' };
 export const no29 = {
-  id: 'l17-29', buildingIds: ['454254276'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-29', buildingIds: ['l17w-29'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 29 Lorong 17 (June 2024 exterior, occupant not identified)', address: '29 Lorong 17 Geylang',
   height: 10.9, ceiling: 3.4, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows the first of the pale peach three-storey walk-ups north of No. 27: two windows on each upper floor, a vent band over the first-floor windows, a balcony slab, a deep roof slab, and side fins projecting at each party wall. The ground floor has a dark fascia over a wooden door and an open front, with a chest freezer by the north pier. Google Maps lists Kaki Co @ 17 Geylang, an apartment building, at 29 Lorong 17 Geylang, Singapore 388553, with its point about 2.6 m south of this way where the photographed house stands, but no sign for it was photographed, so no name is given. Two June 2024 panoramas triangulate its fins on a plane 2.3 m in front of the source edge, 5.3 m apart from 2.64 m south of the source corner, so it meets No. 27\'s photographed north end; it is laid on the 5.80 m source edge. The east-ring massing had given it 14 m.',
+  evidence: 'June 2024 Street View shows the first of the pale peach three-storey walk-ups north of No. 27: two windows on each upper floor, a vent band over the first-floor windows, a balcony slab, a deep roof slab, and side fins projecting at each party wall. The ground floor has a dark fascia over a wooden door and an open front, with a chest freezer by the north pier. Google Maps lists Kaki Co @ 17 Geylang, an apartment building, at 29 Lorong 17 Geylang, Singapore 388553, with its point about 2.6 m south of this way where the photographed house stands, but no sign for it was photographed, so no name is given. Two June 2024 panoramas triangulate its fins on a plane 2.3 m in front of the source edge, 5.3 m apart from 2.64 m south of the source corner, so it meets No. 27\'s photographed north end (re-checked when open question 38 was applied, with the readings solved on that plane). Under the owner\'s answer to open question 38 it stands on an authored footprint on that front. The east-ring massing had given it 14 m.',
   sources: [way('454254276'), search('Kaki Co @ 17 Geylang 29 Lorong 17'), pano('gBz2E1aqjym_0qAkSZxE2A', 245, 18, 100), pano('INboFn5xnG6TxoVcRIkLXA', 230, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 205, 18, 100)],
   colours: peach,
   bands: [[3.4, 3.75, .3]],
@@ -321,14 +324,14 @@ export const no29 = {
 // ---------------------------------------------------------------------------------------------
 // 10. Way 454254277, No. 31 (letterbox 31): a peach walk-up like No. 29, with brown-framed three-pane windows
 // under red-brown louvred hoods. Two June 2024 panoramas triangulate its window edges 1.95 m forward; with its
-// fins it reads 6.4 m wide from 2.4 m south of the source corner. Laid on the 5.81 m source edge, u north.
-const W277 = 5.811, at277 = lay(-2.4, W277 / 6.4), win277 = [[-1.59, .32], [1.37, 3.2]].map(at277);
+// fins it reads 6.4 m wide from 2.4 m south of the source corner. Laid on its authored front (l17w-31), u north.
+const W277 = 6.17, at277 = lay(-2.4, W277 / 6.4), win277 = [[-1.59, .32], [1.37, 3.2]].map(at277);
 const brownHood = (u, h) => ({ name: 'red-brown louvred hood', u: [u[0] + .1, u[1] - .1], h, out: .12, depth: .24, colour: '#9a4a3a' });
 export const no31 = {
-  id: 'l17-31', buildingIds: ['454254277'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-31', buildingIds: ['l17w-31'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 31 Lorong 17 (June 2024 exterior, occupant not identified)', address: '31 Lorong 17 Geylang (letterbox 31)',
   height: 10.6, ceiling: 3.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows a pale peach three-storey walk-up like No. 29, with side fins, a balcony slab and a deep roof slab, but with two wide brown-framed three-pane windows on each upper floor under red-brown louvred hoods. The ground floor is a glazed shop stacked with pipes and fittings, with a tiled column and letterbox 31 at its south end. Google Maps lists Visual Gallery Singapore (artistic handicrafts) at 31 Lorong 17 Geylang, Singapore 388555, but no sign for it was photographed and the shop holds plumbing stock, so no name is given. Two June 2024 panoramas triangulate its window edges on a plane about 1.95 m in front of the source edge; with its fins it reads about 6.4 m wide from 2.4 m south of the source corner, and it is laid on the 5.81 m source edge. The east-ring massing had given it 14 m.',
+  evidence: 'June 2024 Street View shows a pale peach three-storey walk-up like No. 29, with side fins, a balcony slab and a deep roof slab, but with two wide brown-framed three-pane windows on each upper floor under red-brown louvred hoods. The ground floor is a glazed shop stacked with pipes and fittings, with a tiled column and letterbox 31 at its south end. Google Maps lists Visual Gallery Singapore (artistic handicrafts) at 31 Lorong 17 Geylang, Singapore 388555, but no sign for it was photographed and the shop holds plumbing stock, so no name is given. Two June 2024 panoramas triangulate its window edges on a plane about 1.95 m in front of the source edge; with its fins it reads about 6.4 m wide from 2.4 m south of the source corner. Under the owner\'s answer to open question 38 it stands on an authored footprint on that front. The east-ring massing had given it 14 m.',
   sources: [way('454254277'), search('Visual Gallery Singapore 31 Lorong 17 Geylang'), pano('INboFn5xnG6TxoVcRIkLXA', 255, 18, 100), pano('8zShCoV5q2fYvPBEC901Vw', 215, 18, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 230, 18, 100)],
   colours: { ...peach, frame: '#6e3f2c' },
   bands: [[3.0, 3.5, .3]],
@@ -351,13 +354,13 @@ export const no31 = {
 // ---------------------------------------------------------------------------------------------
 // 11. Way 454254278, No. 33: a finned peach walk-up like No. 31, over a temple front with a black board reading
 // 覺寺. Read on a plane 2.0 m forward from two June 2024 panoramas: about 7.0 m between fin centres, from 3.0 m
-// south of the source corner. Laid on the 5.80 m source edge, u north.
-const W278 = 5.8, at278 = lay(-3.0, W278 / 7.0), win278 = [[-1.0, .75], [2.1, 3.6]].map(at278);
+// south of the source corner. Laid on its authored front (l17w-33), u north.
+const W278 = 6.549, at278 = lay(-3.0, W278 / 7.0), win278 = [[-1.0, .75], [2.1, 3.6]].map(at278);
 export const no33 = {
-  id: 'l17-33', buildingIds: ['454254278'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'l17-33', buildingIds: ['l17w-33'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'No. 33 Lorong 17 (June 2024 exterior, occupant not identified)', address: '33 Lorong 17 Geylang',
   height: 11.0, ceiling: 3.25, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows a pale peach finned walk-up like No. 31: two brown-framed windows under red-brown louvred hoods on each upper floor, a balcony slab and a deep roof slab at about 11 m. The ground floor is a temple front: a black board with gold characters reading 覺寺 under red silk rosettes, a glass door between vertical couplets, painted lanterns and potted plants. Google Maps lists Maha Mantra Buddhist Centre, a Buddhist temple on floor 1, at 33 Lorong 17 Geylang, with its point on the photographed house, but the board\'s visible characters do not give that name, so it is not named and the board is blank. Read on a plane 2.0 m in front of the source edge from two June 2024 panoramas, its fins are about 7.0 m apart from 3.0 m south of the source corner; it is laid on the 5.80 m source edge. The east-ring massing had given it 14 m.',
+  evidence: 'June 2024 Street View shows a pale peach finned walk-up like No. 31: two brown-framed windows under red-brown louvred hoods on each upper floor, a balcony slab and a deep roof slab at about 11 m. The ground floor is a temple front: a black board with gold characters reading 覺寺 under red silk rosettes, a glass door between vertical couplets, painted lanterns and potted plants. Google Maps lists Maha Mantra Buddhist Centre, a Buddhist temple on floor 1, at 33 Lorong 17 Geylang, with its point on the photographed house, but the board\'s visible characters do not give that name, so it is not named and the board is blank. Read on a plane 2.0 m in front of the source edge from two June 2024 panoramas, its fins are about 7.0 m apart from 3.0 m south of the source corner. Under the owner\'s answer to open question 38 it stands on an authored footprint on that front, its party line with No. 31 taken midway where the two readings overlap by 1.2 m. The east-ring massing had given it 14 m.',
   sources: [way('454254278'), search('Maha Mantra Buddhist Centre 33 Lorong 17 Geylang'), pano('8zShCoV5q2fYvPBEC901Vw', 232, 18, 100), pano('INboFn5xnG6TxoVcRIkLXA', 220, 18, 100), pano('ghWQo6rbUlRhzXunm7Gf2g', 210, 18, 100)],
   colours: { ...peach, frame: '#6e3f2c' },
   bands: [[3.25, 3.6, .3]],
@@ -384,13 +387,13 @@ export const no33 = {
 // 12. Way 454254279, No. 35 (door plate 35): a taller off-white finned walk-up with corrugated metal awnings over its
 // top windows, over the Gyaltsap Tashi Ling Buddhist Society's board. Two June 2024 panoramas triangulate its window
 // edges and north fin 2.2-2.6 m forward; its fins are about 6.7 m apart from 1.5 m south of the source corner.
-// Heights are read on that plane. Laid on the 5.81 m source edge, u north.
-const W279 = 5.811, at279 = lay(-1.5, W279 / 6.7), win279 = [[-.31, 1.63], [2.72, 4.57]].map(at279);
+// Heights are read on that plane. Laid on its authored front (l17w-35), u north.
+const W279 = 6.849, at279 = lay(-1.5, W279 / 6.7), win279 = [[-.31, 1.63], [2.72, 4.57]].map(at279);
 export const gyaltsap = {
-  id: 'gyaltsap-tashi-ling', buildingIds: ['454254279'], kind: 'gyaltsap-tashi-ling', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  id: 'gyaltsap-tashi-ling', buildingIds: ['l17w-35'], kind: 'gyaltsap-tashi-ling', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'Gyaltsap Tashi Ling Buddhist Society (June 2024 exterior)', address: '35 Lorong 17 Geylang (door plate 35; listed as 17 Lor 35 Geylang)',
   height: 11.4, ceiling: 3.83, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows an off-white three-storey finned walk-up, taller than its peach neighbours, with a pink-stained fin to the north: two windows on each upper floor, white louvred vents over the first-floor windows, a balcony slab, corrugated metal awnings over the top windows and a roof slab at about 11.4 m. The ground floor carries two gold lotus emblems on its fascia over a long brown board with an orange disc emblem, gold lotuses and lettering reading Gyaltsap Tashi Ling Buddhist Society over a Chinese line (…察吉…林佛…會) partly hidden by hanging plants, above a tiled wall plated 35 and a pair of wooden doors. Google Maps lists Gyaltsab Tashi Ling Centre, a Buddhist temple, at 17 Lor 35 Geylang, an apparent transposition of 35 Lorong 17, with its point on the photographed house, about 1 m in front of the source way to the south. Board and listing agree on the name, so the house is named after its board (open question 12 allows a clearly signed occupant when published addresses disagree); the English lettering and emblem are redrawn in original type, and the partly hidden Chinese line is not drawn. Two June 2024 panoramas triangulate its window edges and north fin 2.2-2.6 m in front of the source edge; its fins are about 6.7 m apart from 1.5 m south of the source corner, and it is laid on the 5.81 m source edge. The east-ring massing had given it 14 m.',
+  evidence: 'June 2024 Street View shows an off-white three-storey finned walk-up, taller than its peach neighbours, with a pink-stained fin to the north: two windows on each upper floor, white louvred vents over the first-floor windows, a balcony slab, corrugated metal awnings over the top windows and a roof slab at about 11.4 m. The ground floor carries two gold lotus emblems on its fascia over a long brown board with an orange disc emblem, gold lotuses and lettering reading Gyaltsap Tashi Ling Buddhist Society over a Chinese line (…察吉…林佛…會) partly hidden by hanging plants, above a tiled wall plated 35 and a pair of wooden doors. Google Maps lists Gyaltsab Tashi Ling Centre, a Buddhist temple, at 17 Lor 35 Geylang, an apparent transposition of 35 Lorong 17, with its point on the photographed house\'s south party line, 0.3 m from its re-spaced footprint. Board and listing agree on the name, so the house is named after its board (open question 12 allows a clearly signed occupant when published addresses disagree); the English lettering and emblem are redrawn in original type, and the partly hidden Chinese line is not drawn. Two June 2024 panoramas triangulate its window edges and north fin 2.2-2.6 m in front of the source edge; its fins are about 6.7 m apart from 1.5 m south of the source corner. Under the owner\'s answer to open question 38 it stands on an authored footprint on that front. The east-ring massing had given it 14 m.',
   sources: [way('454254279'), search('Gyaltsab Tashi Ling Centre'), pano('8zShCoV5q2fYvPBEC901Vw', 247, 18, 100), pano('ghWQo6rbUlRhzXunm7Gf2g', 205, 18, 100), pano('INboFn5xnG6TxoVcRIkLXA', 215, 18, 100)],
   colours: { wall: '#ece8dc', trim: '#e2ddd0', frame: '#3a3a36', glass: '#3f474a', pier: '#ece8dc', back: '#d9d3c4', floor: '#a19b90' },
   bands: [[3.83, 4.16, .3]],
