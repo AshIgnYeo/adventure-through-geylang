@@ -138,6 +138,23 @@ const draws: Draws = {
       text(c, 'SIMS POINT', w * .5, h * .55, h * .42, '#6a5a3a', '700', 'Georgia, "Times New Roman", serif', w * .84);
     }],
   },
+  // On Geylang Road: Romance Adult Shop's lit board, Nanyang Hardware's board (without the paint brand) and Straits
+  // Laundry's board.
+  'straits-laundry-331@10': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#231c2a'; c.fillRect(0, 0, w, h);
+      text(c, 'ROMANCE ADULT SHOP', w * .5, h * .32, h * .3, '#f0e8f0', '700', 'Georgia, "Times New Roman", serif', w * .9);
+      text(c, '情趣商店', w * .5, h * .72, h * .38, '#f0e8f0', '700', kai, w * .6);
+      for (let i = 0; i < 12; i++) { c.fillStyle = '#e8508a'; c.beginPath(); c.arc(w * (.04 + i * .084), h * (i % 2 ? .1 : .9), h * .03, 0, Math.PI * 2); c.fill(); }
+    }, (c, w, h) => {
+      c.fillStyle = '#f2e8c8'; c.fillRect(0, 0, w, h); c.strokeStyle = '#c8302a'; c.lineWidth = h * .06; c.strokeRect(0, 0, w, h);
+      text(c, '南洋', w * .12, h * .52, h * .62, '#c8302a', '800', kai);
+      text(c, 'NANYANG HARDWARE PTE LTD', w * .6, h * .52, h * .4, '#1d3f8f', '800', sans, w * .74);
+    }, (c, w, h) => {
+      c.fillStyle = '#d8402e'; c.fillRect(0, 0, w, h);
+      text(c, 'STRAITS LAUNDRY', w * .5, h * .55, h * .58, '#3a7ad8', '800', sans, w * .94);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

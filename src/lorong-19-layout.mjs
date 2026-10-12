@@ -656,6 +656,66 @@ export const simsPoint = {
   sides: steps246.filter(([e]) => e !== 9).map(part246).map(p => p.edge === 7 ? { ...p, boards: [{ u: [1.3, 4.0], h: [.7, 1.35], out: 9.92 }] } : p),
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla, no6, simsPoint];
+// ---------------------------------------------------------------------------------------------
+// 15. Way 454254168, Nos. 325-333 Geylang Road, the Lorong 19 east corner: a white three-storey block with green
+// windows between louvred vent bands under projecting sunshades, over a five-foot way. Its lane face (edge 11, u south
+// from the north end) photographs about 7 m behind the source edge, behind a strip of nose-in parking: on that plane
+// three lane panoramas agree on its bays, from 0.3 m to the corner 23.7 m along. Its Geylang Road front (edge 10, a
+// side face) photographs 1.5 m forward, from the corner 7.2 m east of the source corner to a glass building 34.5 m
+// along. Both are laid proportionally on their source edges until the footprint is settled (open question 44); the
+// source lane edge stands 2.4 m from the lane's centreline, so the lane face is held flat.
+const at168 = s => lay(.3, 22.255 / 23.4)(s).map(v => Math.min(22.255, Math.max(0, v)));
+const gr168 = s => lay(7.2, 28.022 / 27.3)(s).map(v => Math.min(28.022, Math.max(0, v)));
+const white168 = '#f3f3f0', green168 = '#5f8a6c';
+const floors168 = [[5.5, 6.8], [9.3, 10.7]], vents168 = [[4.8, 5.4], [6.95, 7.4], [8.3, 8.8], [10.95, 11.45]], shades168 = [[7.65, 7.95], [12.0, 12.3]];
+const face168 = (spans, at) => ({
+  windows: spans.flatMap(s => floors168.map(h => ({ u: at(s), h, panes: 4 }))),
+  vents: spans.flatMap(s => vents168.map(h => ({ u: at(s), h }))),
+  shades: spans.flatMap(s => shades168.map(h => ({ name: 'projecting sunshade', u: at([s[0] - .4, s[1] + .4]), h, out: .5, depth: 1.0, colour: '#6a6c6a' }))),
+});
+const lane168 = face168([[3.0, 5.6], [9.0, 11.6], [15.0, 17.6], [21.0, 23.3]], at168);
+const front168 = face168([[8.9, 10.9], [12.6, 14.6], [15.0, 16.8], [18.0, 20.0], [20.3, 22.3], [23.3, 25.3], [25.5, 27.3], [28.8, 30.6], [31.2, 33.0]], gr168);
+export const straitsLaundry = {
+  id: 'straits-laundry-331', buildingIds: ['454254168'], kind: 'straits-laundry-331', frontEdge: 11, reviewRoad: 'Lorong 19 Geylang', review: { distance: 5, pitch: 26 },
+  name: 'Straits Laundry, Nanyang Hardware and Romance Adult Shop, Nos. 325-333 Geylang Road (June 2024 exterior)', address: '325-333 Geylang Road (the Lorong 19 east corner)',
+  height: 12.3, ceiling: 3.5, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9893' },
+  heldFlat: true, // the source lane edge stands 2.4 m from the lane's centreline, inside the estimated carriageway
+  evidence: 'June 2024 Street View shows a freshly painted white three-storey block on the east corner of Lorong 19 and Geylang Road, with green steel windows between louvred vent bands under projecting grey sunshades, over a five-foot way on square columns. Along Lorong 19, behind a strip of nose-in parking, it has four window bays over meter boxes, a door, a parking sign and vacant glazed units. On Geylang Road, from the corner: two vacant glazed units (the former OCBC Geylang, listed at 325/327 and permanently closed); a shop under a lit board reading ROMANCE ADULT SHOP 情趣商店; a paint shop under orange NIPPON PAINT boards and a board reading 南洋 NANYANG HARDWARE PTE LTD; and a launderette under a board reading STRAITS LAUNDRY. Google Maps lists Romance Adult Shop (331 Geylang Rd), Nanyang Hardware Pte Ltd (331 Geylang Rd) and Straits Laundry\'s Geylang Road (333 Geylang Rd, open 24 hours), all with their points inside this way, so the block is named after them, as No. 301 was, and their boards are redrawn in original type, without the paint brand; the closed bank\'s units stay plain. The lane face photographs about 7 m behind its source edge: on that plane three June 2024 lane panoramas agree on its bays, and the Geylang Road panoramas put the corner 7.2 m east of the source corner and the front 1.5 m forward, about 27.3 m long to the glass building next door. So the building stands about 7 m east of its source outline, whose size fits; until its footprint is settled (open question 44) both faces are laid proportionally on their source edges. Heights were read on the Geylang Road plane: five-foot way to 3.5 m, windows at 5.5-6.8 and 9.3-10.7 m, sunshades at 7.65-7.95 and 12.0-12.3 m.',
+  sources: [way('454254168'), search('Straits Laundry Geylang Road 333'), search('Nanyang Hardware Pte Ltd 331 Geylang Road'), search('Romance Adult Shop 331 Geylang Road'), pano('PDfryrUeGs2xTHzFqYRBlQ', 80, 15, 100), pano('ukZWTPS52TsHumpZjk8qWg', 120, 15, 90), pano('_V35ZcH4MPpWV-ImZnEVsA', 40, 15, 90), pano('YYHFimb1eboxjLahzKL00A', 345, 10, 100), pano('rxHH3aE6uvw225UPp98KpA', 345, 10, 100)],
+  colours: { wall: white168, trim: '#e6e6e2', frame: green168, glass: '#6f9a80', pier: white168, back: '#e2e2de', floor: '#a8a296' },
+  bands: [[3.5, 3.75, .15]],
+  windows: lane168.windows, vents: lane168.vents,
+  blocks: [
+    ...lane168.shades.map(b => ({ ...b, h: b.h, out: .5 })),
+    { name: 'parking sign', u: at168([7.4, 7.9]), h: [2.2, 2.9], out: .1, depth: .04, colour: '#2a50a0' },
+  ],
+  piers: [[1.4, 1.8], [7.3, 7.7], [12.8, 13.2], [18.5, 18.9]].map(at168),
+  backFittings: [
+    { name: 'vent window and door', u: at168([2.2, 5.0]), h: [.1, 2.4], colour: '#cfcfca' },
+    { name: 'meter boxes', u: at168([9.0, 12.0]), h: [1.4, 2.4], colour: '#9a9c98' },
+    { name: 'vacant glazed units', u: at168([13.5, 23.2]), h: [.1, 3.0], colour: '#9fcfc0' },
+  ],
+  sides: [{
+    edge: 10, // the Geylang Road front, u east from the source corner; photographed from the corner at s = 7.2
+    heldFlat: false, // its source edge stands 9.9 m from Geylang Road's centreline, clear of the carriageway
+    windows: front168.windows, vents: front168.vents,
+    blocks: [
+      ...front168.shades,
+      // The source corner stands in Lorong 19's estimated carriageway, so the ledge and the corner column start 0.8 m in.
+      { name: 'ledge over the five-foot way', u: [.8, 28.02], h: [3.5, 3.75], out: .08, depth: .16, colour: '#e6e6e2' },
+      { name: 'square column', u: [.8, 1.3], h: [0, 3.5], out: .15, depth: .3, colour: white168 },
+      ...[[11.5, 12.3], [16.5, 17.0], [22.2, 22.6], [27.9, 28.3], [33.4, 34.0]].map(s => ({ name: 'square column', u: gr168(s), h: [0, 3.5], out: .15, depth: .3, colour: white168 })),
+      { name: 'vacant glazed units', u: gr168([8.2, 16.5]), h: [.1, 3.0], out: -1.6, depth: .04, colour: '#9fcfc0' },
+      { name: 'adult shop front', u: gr168([17.6, 22.0]), h: [.1, 2.8], out: -1.6, depth: .04, colour: '#3a2a3a', glow: .15 },
+      { name: 'orange paint-shop boards', u: gr168([22.7, 27.8]), h: [2.4, 3.4], out: .12, depth: .04, colour: '#e8682a' },
+      { name: 'paint shop', u: gr168([22.7, 27.8]), h: [.1, 2.4], out: -1.6, depth: .04, colour: '#c8693a', glow: .08 },
+      { name: 'launderette', u: gr168([28.4, 33.3]), h: [.1, 2.8], out: -1.6, depth: .04, colour: '#7a8a96', glow: .1 },
+    ],
+    // Romance Adult Shop's lit board, Nanyang Hardware's board and Straits Laundry's board.
+    boards: [{ u: gr168([18.6, 21.6]), h: [3.75, 4.35], out: .12 }, { u: gr168([22.8, 27.8]), h: [3.45, 3.85], out: .16 }, { u: gr168([28.4, 33.3]), h: [2.85, 3.4], out: .12 }],
+  }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla, no6, simsPoint, straitsLaundry];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;

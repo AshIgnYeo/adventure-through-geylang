@@ -54,8 +54,9 @@ test('the Lorong 19 exteriors fit their outlines, face the lane and keep their r
     const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
     assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
     // Street-level pieces stay clear of the modelled carriageways. A face whose source edge stands at or inside a
-    // carriageway's edge is flagged heldFlat (the whole place, or one side face), and its pieces stay within 0.25 m.
-    const faces = [{ frame, blocks: place.blocks ?? [], heldFlat: place.heldFlat }, ...lorong19Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [], heldFlat: place.heldFlat || place.sides[i].heldFlat }))];
+    // carriageway's edge is flagged heldFlat (the place, which its side faces follow unless they say otherwise, or one
+    // side face), and its pieces stay within 0.25 m.
+    const faces = [{ frame, blocks: place.blocks ?? [], heldFlat: place.heldFlat }, ...lorong19Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [], heldFlat: place.sides[i].heldFlat ?? place.heldFlat }))];
     for (const { frame: f, blocks, heldFlat } of faces) {
       const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
       if (heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }

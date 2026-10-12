@@ -30,7 +30,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 12 | East | 454254247 | No. 10, Bougainvilla Apartments | Done; named; footprint question 44 |
 | 13 | East | 1223524381 | Nos. 6–8, a granite-clad block | Done; unnamed; footprint question 44 |
 | 14 | East | 454254246 | No. 4, Sims Point | Done; named; footprint question 44 |
-| 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner | |
+| 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner: Straits Laundry, Nanyang Hardware and Romance Adult Shop | Done; named after three tenants; footprint question 44 |
 | 16–20 | Geylang Road | 454254262 to 454254254 | Nos. 321 to 313, west from the corner | |
 
 The names in the table are those Google Maps gives for each address. Whether a building is named in the model is decided at its stop.
@@ -480,3 +480,44 @@ A cream apartment block of eight storeys over a ground-floor car park.
 - Poly Realty is listed at #01-01, but no sign for it was photographed.
 
 Use `?review=sims-point`.
+
+### 15. Way 454254168: Nos. 325–333 Geylang Road, the Lorong 19 east corner
+
+A freshly painted white three-storey block on the east corner of Lorong 19 and Geylang Road.
+
+- **Elevation:** green steel windows between louvred vent bands, under projecting grey sunshades, over a five-foot way on square columns.
+- **Along Lorong 19,** behind a strip of nose-in parking: four window bays over meter boxes, a door, a parking sign and vacant glazed units.
+- **On Geylang Road,** from the corner:
+  - two vacant glazed units: the former OCBC Geylang, listed at 325/327 and permanently closed;
+  - a shop under a lit board reading **ROMANCE ADULT SHOP 情趣商店**;
+  - a paint shop under orange NIPPON PAINT boards, and a board reading **南洋 NANYANG HARDWARE PTE LTD**;
+  - a launderette under a board reading **STRAITS LAUNDRY**.
+
+**Measurement:** the block stands about **7 m east of** its source outline.
+- **The lane drive:** it passes only 1–2 m from the source lane edge, which lies 2.4 m from the lane's centreline. But the façade stands well back.
+- **Lane face:** on a plane 7 m behind the source edge, `ukZW…`, `PDfr…` and `_V35…` agree on its four window bays, about 6 m apart. On the source edge, and 3.7 m behind it, they disagree.
+- **The parking sign:** it triangulates 3.7 m behind the edge. It stands on a pole at the parking strip, not on the façade.
+- **Geylang Road front:** the drive (`sH6C…`, `YYHF…`, `rxHH…`, `KMWZ…`, `SGbX…`) puts it 1.5 m forward. It runs from the corner, **7.2 m east of** the source corner, to a glass building 34.5 m along: about **27.3 m**, against the 28.02 m source edge.
+- **Size:** the lane face is about 23.4 m against 22.26 m, so the outline's size fits and only its position is off. This is like No. 134 Sims Avenue on Lorong 17 (open question 39).
+- **Heights** (on the Geylang Road plane):
+  - five-foot way: to 3.5 m;
+  - windows: 5.5–6.8 and 9.3–10.7 m;
+  - vents: above and below each window row;
+  - sunshades: 7.65–7.95 and 12.0–12.3 m.
+
+**Layout:**
+- **Placement:** both faces are laid proportionally on their source edges: the lane face as the front, the Geylang Road front as a side face.
+- **Held flat:** the lane face stands in the lane's estimated carriageway, so it is flagged `heldFlat`. Its pieces are held within 0.25 m of the wall.
+- **Geylang Road front:** it stands clear of its carriageway, so it overrides the flag (`heldFlat: false` on the side). Its corner column and ledge start 0.8 m in, out of the lane's carriageway.
+- **Known fault:** June 2024 camera poses on the lane stand inside the model. Moving the outline is [open question 44](open-questions.md).
+
+**Naming:** Google Maps lists three tenants with their points inside this way, all photographed with their signs:
+- **Romance Adult Shop** (331 Geylang Rd);
+- **Nanyang Hardware Pte Ltd** (331 Geylang Rd);
+- **Straits Laundry's Geylang Road** (333 Geylang Rd, open 24 hours).
+
+So the block is named after them, as No. 301 was on Lorong 17. Their boards are redrawn in original type, without the paint brand. The closed bank's units stay plain.
+
+Use `?review=straits-laundry-331`.
+
+**East side complete.** Every building from No. 148 Sims Avenue to No. 325 Geylang Road now has its Lorong 19 front.
