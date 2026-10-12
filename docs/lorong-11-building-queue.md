@@ -1008,3 +1008,10 @@ The widened bounds brought 57 unmodelled buildings into the map: the original fi
   - **The Vietnam Unisex house** moves onto `gr-229` and stays unnamed.
   - **The freed `gr-231` strip:** checked by triangulation, it holds the west part of the white No. 233 building rather than a separate durian house. The WAT DHAMMASATIS board is at 41.35–43.6 m, on a storey set back about 4 m, and the durian vertical board at about 42.3 m. The strip is modelled unnamed with those boards blank, and the named Wat Dhammasatis model keeps its strip and board.
   - **Result:** the house order from Lorong 7 to Lorong 9 now matches the June 2024 photographs.
+
+### 12 October 2026: Lorong 17 (open question 35)
+
+Lorong 17 between Geylang Road and Sims Avenue is being built one building at a time, north up the west side and south down the east side. The full notes are in the [Lorong 17 brief](lorong-17-brief.md); questions for the owner go to [open questions](open-questions.md).
+
+- **Map:** the lane's eleven new source ways, its seven road ways and the Geylang Road and Sims Avenue links to its junctions are taken by id. The lane and its junctions are walkable corridors beside the unchanged study rectangle.
+- **Stop 1, No. 301 Geylang Road:** the corner block's Lorong 17 splay and face are modelled. The block is now named **Sheng Siong Supermarket and Anytime Fitness Geylang Central**: both are listed open at 301 Geylang Road with their point inside the way, and both signs are photographed. The earlier note that No. 301's occupants were not matched is superseded.
