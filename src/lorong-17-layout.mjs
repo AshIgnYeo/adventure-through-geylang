@@ -250,7 +250,44 @@ export const no25 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25];
+// ---------------------------------------------------------------------------------------------
+// 8. Way 454254275, No. 27 (door plate 27): a white three-storey house with a recessed top-floor balcony under an overhanging
+// roof slab and a dark-stained fin to the north, with a black board reading 慕德同鄉會. On the row's plane 2.2 m
+// forward, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner: it fills
+// the 2.5 m gap the map leaves after way 271. Laid on the 5.81 m source edge, u north from the south end.
+const W275 = 5.813, at275 = lay(-2.33, W275 / 5.63), win275 = [[-1.67, -.44], [1.29, 2.56]].map(at275);
+export const no27 = {
+  id: 'l17-27', buildingIds: ['454254275'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 27 Lorong 17, with the 慕德同鄉會 board (June 2024 exterior, not listed)', address: '27 Lorong 17 Geylang (door plate 27; stair to 27-A)',
+  // The walls stop at the balcony slab; the top floor, set back about 1.2 m, and the roof slab are blocks.
+  height: 7.0, ceiling: 2.8, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
+  evidence: 'June 2024 Street View shows a white three-storey house north of No. 25: a top floor recessed behind a balcony under an overhanging roof slab with plants growing on it, two windows under a vent band on the first floor with a black board reading 慕德同鄉會 in gold between them and a phone-number board below, and a dark-stained fin on its north side. The ground floor is open under a blue striped awning, with an arched window, a wooden door plated 27 and a stair doorway under a small yellow board reading 27-A. Neither 慕德同鄉會 nor a No. 27 Lorong 17 is listed on Google Maps, so no name is given and the boards are blank. On the row\'s plane 2.2 m in front of the source edge, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner, so it fills the 2.5 m gap the map leaves after way 454254271; it is laid on the 5.81 m source edge.',
+  sources: [way('454254275'), pano('gBz2E1aqjym_0qAkSZxE2A', 235, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 215, 18, 100)],
+  colours: { wall: '#ecebe5', trim: '#e0ded7', frame: '#2c3032', glass: '#3b4448', pier: '#ecebe5', back: '#e6e4de', floor: '#a19b90' },
+  bands: [[3.2, 3.44, .25]],
+  windows: win275.flatMap(u => [{ u, h: [4.33, 5.38], panes: 2 }, { u, h: [7.18, 8.4], panes: 2, out: -1.1 }]),
+  vents: win275.map(u => ({ u, h: [5.49, 5.93] })),
+  blocks: [
+    { name: 'set-back top storey', u: [.08, W275 - .02], h: [7.0, 9.78], out: -6.6, depth: 10.8, colour: '#e6e4de' },
+    { name: 'overhanging roof slab', u: [0, W275], h: [9.78, 10.1], out: -5.95, depth: 12.5, colour: '#d9d6cc' },
+    { name: 'top-floor vent band', u: [.25, W275 - .45], h: [8.4, 8.8], out: -1.17, depth: .04, colour: '#c9c7c0' },
+    { name: 'balcony slab', u: [0, W275], h: [6.55, 7.0], out: .1, depth: .2, colour: '#e0ded7' },
+    { name: 'balcony railing', u: [.25, W275 - .45], h: [7.0, 7.9], out: .15, depth: .04, colour: '#bdbab2' },
+    { name: 'dark-stained fin', u: [W275 - .4, W275], h: [0, 10.1], out: .1, depth: .2, colour: '#3f3a36' },
+    { name: 'blank black board', u: at275([-.71, 1.56]), h: [5.33, 6.0], out: .08, depth: .04, colour: '#1c1a19' },
+    { name: 'blank phone board', u: at275([1.44, 2.27]), h: [3.9, 4.3], out: .05, depth: .03, colour: '#f1f1ee' },
+    { name: 'blue striped awning', u: [0, at275([3.1, 3.3])[0]], h: [2.78, 3.2], out: .5, depth: 1.0, colour: '#3d63a8' },
+  ],
+  piers: [[0, .25], [W275 - .4, W275]],
+  backFittings: [
+    { name: 'arched window', u: at275([.11, .78]), h: [1.45, 2.3], colour: '#d9d6cc' },
+    { name: 'wooden door', u: at275([.84, 1.51]), h: [.1, 2.4], colour: '#8a5a3a' },
+    { name: 'dark doorway', u: at275([1.78, 2.44]), h: [.1, 2.5], colour: '#2a2a2a' },
+    { name: 'blank yellow board', u: at275([1.73, 2.44]), h: [2.5, 2.8], out: .03, colour: '#e0b83a' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);

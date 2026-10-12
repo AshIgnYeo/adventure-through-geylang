@@ -21,7 +21,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 5 | West | 454254273 | No. 19, the Yang Clan General Association | Done; upper floors named |
 | 6 | West | 454254274 | No. 21, a temple on the ground floor | Done; unnamed |
 | 7 | West | 454254270, 454254271 | Nos. 23 and 25, one white building of two bays (Wee Ghee Athletic Association) | Done; unnamed |
-| 8–14 | West | 454254275 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
+| 8 | West | 454254275 | No. 27, with the 慕德同鄉會 board | Done; unnamed |
+| 9–14 | West | 454254276 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -194,3 +195,28 @@ One white three-storey building of two bays. Every window on the upper floors is
 - **Naming:** none. No listing for the Wee Ghee Athletic Association was found at Lorong 17; the only match is a Yiwei Athletic Association elsewhere. Its boards are blank. Google's address point for No. 25 falls in way 270, the south bay, but the door plates are clear.
 
 Use `?review=l17-23` and `?review=l17-25`.
+
+### 8. Way 454254275: No. 27
+
+A white three-storey house:
+
+- **Top floor:** recessed about 1.2 m behind a balcony, under an overhanging roof slab with plants growing on it.
+- **First floor:** two windows under a vent band, with a black board reading **慕德同鄉會** in gold between them and a FOR SALE board below.
+- **North side:** a dark-stained fin.
+- **Ground floor:** open under a blue striped awning, with an arched window, a wooden door plated **27**, and a stair doorway under a yellow board reading 27-A.
+
+**Measurement:** on the row's plane 2.2 m forward, `gBz2…` and `FeWy…` (June 2024) agree on its ends **5.6 m** apart, from 2.33 m south of the source corner. So it fills the 2.5 m gap the map leaves after way 271.
+- Heights:
+  - first-floor ledge: 3.2–3.44 m;
+  - first-floor windows: 4.33–5.38 m;
+  - board: 5.33–6.0 m;
+  - balcony slab: 6.55–7.0 m;
+  - roof slab: to **10.1 m**.
+
+**Layout:** laid on the 5.81 m source edge. The walls stop at the balcony slab, and the set-back top floor and the roof slab are drawn as blocks.
+
+**Naming:** none. Neither 慕德同鄉會 nor a No. 27 Lorong 17 is listed on Google Maps, so the board is blank.
+
+**Map gaps so far:** the photographed fronts of Nos. 5–27 run continuously. The source map leaves gaps after Nos. 7 (1.3 m), 21 (3 m) and 25 (2.5 m), and the photographed buildings fill them. These go to the owner with the row offset at the end of the west side.
+
+Use `?review=l17-27`.
