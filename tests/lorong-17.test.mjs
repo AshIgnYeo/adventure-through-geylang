@@ -107,3 +107,15 @@ test('the Singapore Chinaware Merchants Association is named on No. 6, its listi
   assert.equal(pointInPolygon(point, outline('454254249')), false);
   assert.equal(pointInPolygon(point, outline('454254252')), true);
 });
+
+test('Nos. 37-41 are split at their fins and No. 39 is named the Singapore Rattan Industry Association', () => {
+  const widths = ['l17w-37', 'l17w-39', 'l17w-41'].map(id => lorong17Frame(outline(id), { frontEdge: 0 }).width);
+  [4.4, 5.2, 5.02].forEach((w, i) => assert.ok(Math.abs(widths[i] - w) < .02, `${widths[i]}`));
+  assert.equal(landmarkFor('l17w-39').id, 'rattan-association');
+  assert.equal(landmarkFor('l17w-37'), undefined); assert.equal(landmarkFor('l17w-41'), undefined);
+  // The listing point lies next door, in No. 37, about 1.6 m from the party line.
+  assert.equal(pointInPolygon(project([103.8785861, 1.3138844], map.origin), outline('l17w-37')), true);
+  // The elevation's pieces are shared out between the bays without loss: one north-wall side, the board on No. 39.
+  assert.equal(lorong17.find(p => p.id === 'l17-41').sides[0].edge, 3);
+  assert.equal(lorong17.find(p => p.id === 'rattan-association').boards.length, 1);
+});

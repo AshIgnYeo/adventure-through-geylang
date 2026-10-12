@@ -426,7 +426,7 @@ export const gyaltsap = {
 // long from 2.7 m south of the source corner, with bays of about 5.4, 6.1 and 5.9 m. Laid on the 14.62 m source edge.
 const W280 = 14.624, at280 = lay(-2.7, W280 / 17.4);
 const win280 = { a: [[-2.45, -1.0], [.67, 1.9]], b: [[3.33, 4.67], [6.44, 7.78]], c: [[9.4, 10.1], [11.8, 13.0]] };
-export const no37to41 = {
+const whole37to41 = {
   id: 'l17-37-41', buildingIds: ['454254280'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 17 Geylang', review: { distance: 5, pitch: 30 },
   name: 'Nos. 37-41 Lorong 17, three bays with the Singapore Rattan Industry Association (June 2024 exterior, not yet named)', address: '37-41 Lorong 17 Geylang (the association at No. 39)',
   height: 10.4, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
@@ -445,7 +445,6 @@ export const no37to41 = {
     { name: 'balcony slab', u: [0, W280], h: [6.95, 7.25], out: .4, depth: .8, colour: '#ddd5b6' },
     // Fins and awning are kept shallow: the front stands 4.2 m from the lane's centreline.
     ...[[-2.7, -2.4], [1.9, 2.9], [8.2, 9.2], [14.4, 14.7]].map(s => ({ name: 'side fin', u: at280(s), h: [3.55, 10.0], out: .3, depth: .6, colour: '#e8e0c2' })),
-    { name: 'blank rattan association board', u: at280([3.9, 7.1]), h: [5.7, 6.4], out: .06, depth: .04, colour: '#f2f0ea' },
     ...[[-1.0, -.2], [5.3, 6.1], [10.6, 11.4]].map(s => ({ name: 'air conditioner', u: at280(s), h: [7.8, 8.3], out: .25, depth: .45, colour: '#e8e8e4' })),
     ...[[-.3, .5], [.6, 1.4]].map(s => ({ name: 'air conditioner', u: at280(s), h: [3.6, 4.2], out: .3, depth: .5, colour: '#e8e8e4' })),
     { name: 'blank yellow trading board', u: at280([3.2, 14.3]), h: [2.5, 3.4], out: .1, depth: .06, colour: '#e9cf4a' },
@@ -467,6 +466,36 @@ export const no37to41 = {
       { name: 'concrete window hood', u: [u[0] + .1, u[1] + .1], h: [6.85, 7.0], out: .3, depth: .6, colour: '#e6e4de' },
     ]),
   }],
+};
+
+/** Keep the part of a measured elevation between u0 and u1 of its frontage, re-based at u0: a way split later. */
+function sliceSpec(spec, u0, u1) {
+  const keep = ([a, b]) => { const l = Math.max(a, u0), r = Math.min(b, u1); return r - l > .02 ? [+(l - u0).toFixed(3), +(r - u0).toFixed(3)] : null; };
+  const cut = xs => xs?.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
+  return { ...spec, windows: cut(spec.windows), vents: cut(spec.vents), blocks: cut(spec.blocks), backFittings: cut(spec.backFittings), piers: spec.piers?.map(keep).filter(Boolean) };
+}
+// Under the owner's answer to open question 37 the way is split at the fins, 4.4 m and 9.6 m from its south corner,
+// into l17w-37, l17w-39 and l17w-41, and the middle bay's upper floors are named after their board.
+const bay37 = { at: 0, to: 4.4 }, bay39 = { at: 4.4, to: 9.6 }, bay41 = { at: 9.6, to: W280 };
+// Each bay's front is edge 0 of its split outline.
+const { sides: sides280, unnamed: _u, ...named280 } = { ...whole37to41, frontEdge: 0 }, elevation280 = { ...named280, unnamed: true };
+export const no37 = {
+  ...sliceSpec(elevation280, bay37.at, bay37.to), id: 'l17-37', buildingIds: ['l17w-37'],
+  name: 'No. 37 Lorong 17, the south bay of three (June 2024 exterior, occupant not identified)', address: '37 Lorong 17 Geylang',
+  evidence: whole37to41.evidence + ' Under the owner\'s answer to open question 37 the way is split at the two fins into its three bays; this is the south bay, No. 37, with its open five-foot way and a wooden door, unnamed.',
+};
+export const rattanAssociation = {
+  ...sliceSpec(named280, bay39.at, bay39.to), id: 'rattan-association', buildingIds: ['l17w-39'], kind: 'rattan-association',
+  name: 'Singapore Rattan Industry Association (June 2024 exterior)', address: '39 Lorong 17 Geylang (listed as 39 Sims Cl, Singapore 388562)',
+  evidence: whole37to41.evidence + ' Under the owner\'s answer to open question 37 the way is split at the two fins into its three bays, and this middle bay, No. 39, is named after the white board between its first-floor windows reading 新加坡籐業公會 S\'PORE RATTAN INDUSTRY ASSN., which is redrawn in original type. The listing\'s postal code places it on this stretch of Lorong 17 at No. 39, and its point lies about 1.6 m south of this bay\'s party line, in No. 37 next door (the Bamboo Lounge precedent, open question 33). No claim is made about the ground floor, where the Ah Qi Trading & Construction board stays blank.',
+  boards: [{ u: [+(5.55 - bay39.at).toFixed(2), +(8.24 - bay39.at).toFixed(2)], h: [5.7, 6.4], out: .07 }],
+};
+export const no41 = {
+  ...sliceSpec(elevation280, bay41.at, bay41.to), id: 'l17-41', buildingIds: ['l17w-41'],
+  name: 'No. 41 Lorong 17, the north bay of three (June 2024 exterior, occupant not identified)', address: '41 Lorong 17 Geylang',
+  evidence: whole37to41.evidence + ' Under the owner\'s answer to open question 37 the way is split at the two fins into its three bays; this is the north bay, No. 41, with the north end of the builder\'s store below, unnamed.',
+  // The north wall on the back lane, now edge 3 of the north bay, u west from the front corner as before.
+  sides: sides280.map(side => ({ ...side, edge: 3 })),
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -850,7 +879,7 @@ export const corner253 = {
   }],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2, no2Shop, corner253];
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37, rattanAssociation, no41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2, no2Shop, corner253];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own

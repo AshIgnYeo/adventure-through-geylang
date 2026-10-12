@@ -15,14 +15,15 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 **Complete.** All 24 stops are modelled. Every building on Lorong 17 between Geylang Road and Sims Avenue now has its photographed front, including the corner buildings at both ends.
 
 - **Coverage:** the eleven walk-ups that were massing in the widened ring now have their fronts, and No. 134 is rebuilt.
-- **Named places:** seven are added, bringing the study to 114:
+- **Named places:** eight are added, bringing the study to 115:
   - Sheng Siong Supermarket and Anytime Fitness Geylang Central at No. 301;
   - Feng Shang Hair Salon;
   - the General Board of True Jesus Mission;
   - the Yang Clan General Association;
   - the Gyaltsap Tashi Ling Buddhist Society;
   - Bright Star Hotel;
-  - the Singapore Chinaware Merchants Association.
+  - the Singapore Chinaware Merchants Association;
+  - the Singapore Rattan Industry Association (after open question 37).
 - **Open questions:** six for the owner, 36–41, all footprint or row-position questions. In each case the model keeps the source footprints until they are answered:
   - Feng Shang's footprint;
   - splitting Nos. 37–41 and naming the rattan association;
@@ -609,3 +610,16 @@ Group `lorong-17-west-row` in `src/authored-footprints.mjs`. It replaces eleven 
   - No. 31 and No. 33's readings overlapped by 1.2 m, so their party line is taken midway.
   - Nos. 23–25 are slightly skewed, so their shells stand 0.12 m inside their side walls.
 - **Re-check:** stop 9's fin triangulation was solved again with its readings on the correct plane. The fins stand about 2.2 m forward, and its positions are unchanged.
+
+### Question 37: Nos. 37–41 split, and No. 39 named
+
+Group `lorong-17-37-41` in `src/authored-footprints.mjs`.
+
+- **The split:** way 454254280 is cut square to its front at the fin centres, **4.4 m** and **9.6 m** from its south corner. This gives `l17w-37` (4.4 m), `l17w-39` (5.2 m) and `l17w-41` (5.0 m). The fins photographed about 5.4 m and 11.5 m from the building's south end, scaled onto the 14.62 m source front.
+- **The elevation:** the building's photographed elevation is shared out between the three bays by slicing (`sliceSpec`), so no piece is lost. The north wall's windows move to No. 41's edge 3.
+- **Named:** **Singapore Rattan Industry Association** on No. 39's upper floors, after the white board between its first-floor windows, redrawn in original type.
+  - The listing's postal code places it at No. 39.
+  - Its point lies in No. 37 next door, about 1.6 m from the party line (the Bamboo Lounge precedent).
+  - The Ah Qi Trading & Construction board below stays blank.
+
+Use `?review=rattan-association`, `?review=l17-37` and `?review=l17-41`.

@@ -67,6 +67,11 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
     [...'新加坡瓷商公會'].forEach((ch, i) => text(c, ch, w * (.1 + i * .135), h * .34, h * .4, '#f6f2ea', '700', '"Kaiti SC", "STKaiti", serif'));
     text(c, 'SINGAPORE CHINAWARE MERCHANTS ASSOCIATION', w * .5, h * .8, h * .2, '#f6f2ea', '700', sans, w * .94);
   }] },
+  'rattan-association': { boards: [(c, w, h) => {
+    c.fillStyle = '#f4f2ec'; c.fillRect(0, 0, w, h); c.strokeStyle = '#b8b3a8'; c.lineWidth = h * .03; c.strokeRect(h * .02, h * .02, w - h * .04, h - h * .04);
+    text(c, '新加坡籐業公會', w * .5, h * .38, h * .44, '#c0262d', '700', '"Kaiti SC", "STKaiti", serif', w * .9);
+    text(c, "S'PORE RATTAN INDUSTRY ASSN.", w * .5, h * .8, h * .2, '#24427a', '700', sans, w * .9);
+  }] },
   // Dark slate lettering on white: the parapet reads right to left, the ground-floor board left to right.
   'true-jesus-mission': {
     boards: [(c, w, h) => {

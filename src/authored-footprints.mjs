@@ -460,6 +460,20 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'lorong-17-37-41', question: 37, approved: '2026-10-12',
+    evidence: 'Source way 454254280 holds one pale yellow three-storey building of three bays between projecting fins, Nos. 37, 39 and 41 Lorong 17. Two pairs of June 2024 panoramas triangulate the building 17.4 m long, 0.2-1.0 m behind the source edge, with fins about 5.4 m and 11.5 m from its south end; laid proportionally on the 14.62 m source front, the fin centres fall about 4.4 m and 9.6 m from the south corner. The way is cut there, square to its front; the source front and rear are kept.',
+    replaces: ['454254280'],
+    build(map) {
+      const [s37, s39, s41] = splitAlongFront(map, '454254280', 2, 1, [4.4, 9.6]);
+      const street = 'Lorong 17 Geylang';
+      return [
+        { id: 'l17w-37', street, number: '37', levels: 3, outline: s37 },
+        { id: 'l17w-39', street, number: '39', levels: 3, outline: s39 },
+        { id: 'l17w-41', street, number: '41', levels: 3, outline: s41 },
+      ];
+    },
+  },
+  {
     id: 'lorong-17-west-row', question: 38, approved: '2026-10-12',
     evidence: 'The west side of Lorong 17 from No. 5 to No. 35 on its photographed line (open questions 36 and 38). Each house was triangulated from June 2024 panoramas during the Lorong 17 walk (docs/lorong-17-brief.md): the fronts stand 1.4-2.6 m in front of their source edges, the photographed houses run continuously where the map leaves gaps after Nos. 7, 21 and 25, and from No. 21 north they drift up to 2.6 m south of their source ways. Measured along the walk-ups\' source front line from No. 17\'s south corner, the party lines are taken midway between neighbouring measured ends: -1.56 (No. 17 south end, on the side passage), 4.54, 10.45, 16.04, 22.09, 28.43, 34.23, 39.86, 46.03, 52.58 and 59.43 m (No. 35 north end), with the fronts 1.5 m forward at No. 17 and 2.3 m forward elsewhere, the mean of the readings (2.1-2.5 m). Nos. 5-7 (Feng Shang Hair Salon and its north bay) are measured on their own source edge: 1.5 m forward, from 1.56 m south of the source corner to the north party line triangulated 11.35 m north of it. Rear lines and rear steps are kept: one monotonic re-spacing along each front line moves every vertex, so neighbours keep their shared walls. The side passage between Nos. 15 and 17 and way 454254237 (Nos. 9-15, on its own measured line) are unchanged.',
     replaces: ['454254236', '454254272', '454254273', '454254274', '454254270', '454254271', '454254275', '454254276', '454254277', '454254278', '454254279'],
