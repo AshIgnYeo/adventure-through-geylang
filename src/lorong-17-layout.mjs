@@ -2,15 +2,7 @@
 // west side, then south down the east side. Each elevation is read on the plane where two panoramas agree, then
 // laid proportionally on its source edge, which is kept. Named only where a listing and a photographed sign agree.
 // See docs/lorong-17-brief.md.
-import { frontageFrame } from './gable-roof-layout.mjs';
-import { simpleHouseLayout, facing } from './simple-house-layout.mjs';
-
-const pano = (id, heading, pitch = 12, fov = 90) => `https://www.google.com/maps/@?api=1&map_action=pano&pano=${id}&heading=${heading}&pitch=${pitch}&fov=${fov}`;
-const way = id => `https://www.openstreetmap.org/way/${id}`;
-const search = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q).replaceAll('%20', '+')}`;
-
-/** A photographed span [a, b] in metres, laid proportionally on a source edge: u = (s - s0) * k. */
-const lay = (s0, k) => ([a, b]) => [+((a - s0) * k).toFixed(2), +((b - s0) * k).toFixed(2)];
+import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 
 // ---------------------------------------------------------------------------------------------
 // 2. Way 454254236, north of the corner block: a white two-storey building of two bays. Its front (edge 1) runs
@@ -468,12 +460,6 @@ const whole37to41 = {
   }],
 };
 
-/** Keep the part of a measured elevation between u0 and u1 of its frontage, re-based at u0: a way split later. */
-function sliceSpec(spec, u0, u1) {
-  const keep = ([a, b]) => { const l = Math.max(a, u0), r = Math.min(b, u1); return r - l > .02 ? [+(l - u0).toFixed(3), +(r - u0).toFixed(3)] : null; };
-  const cut = xs => xs?.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
-  return { ...spec, windows: cut(spec.windows), vents: cut(spec.vents), blocks: cut(spec.blocks), backFittings: cut(spec.backFittings), piers: spec.piers?.map(keep).filter(Boolean) };
-}
 // Under the owner's answer to open question 37 the way is split at the fins, 4.4 m and 9.6 m from its south corner,
 // into l17w-37, l17w-39 and l17w-41, and the middle bay's upper floors are named after their board.
 const bay37 = { at: 0, to: 4.4 }, bay39 = { at: 4.4, to: 9.6 }, bay41 = { at: 9.6, to: W280 };
@@ -920,21 +906,5 @@ export const corner253 = {
 };
 
 export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37, rattanAssociation, no41, sims134, no42to44, no38to40, brightStar, temple238, no10, no8, chinaware, no4, no2, no2Shop, corner253];
-export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
-export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
-// Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own
-// fittings on the front edge (the outline's first edge, which lies on the front).
-export const lorong17Upper = (place, frame) => (place.upper ?? []).map(up => ({
-  ...up, points: up.outline.map(([u, out]) => frame.point(u, out)),
-  boxes: simpleHouseLayout(frame.width, { height: 0, ceiling: 0, fiveFootWay: 0, colours: place.colours, windows: up.windows, vents: up.vents, blocks: up.blocks }).boxes
-    .filter(b => !['upper wall', 'five-foot way floor', 'five-foot way ceiling', 'five-foot way return', 'back wall'].includes(b.name)),
-}));
-export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);
-
-// Side faces: windows, vents, bands, blocks and drawn signs on another source edge, with no five-foot way.
-const shell = new Set(['upper wall', 'five-foot way floor', 'five-foot way ceiling', 'five-foot way return', 'back wall']);
-export const lorong17Sides = (place, poly) => (place.sides ?? []).map(side => {
-  const frame = frontageFrame(poly, side.edge);
-  const { boxes, boards, blades } = simpleHouseLayout(frame.width, { height: 0, ceiling: 0, fiveFootWay: 0, colours: place.colours, windows: side.windows, vents: side.vents, blocks: side.blocks, bands: side.bands, boards: side.boards, blades: side.blades });
-  return { edge: side.edge, frame, boxes: boxes.filter(b => !shell.has(b.name)), boards, blades };
-});
+// The shared lane-house helpers under this lane's names.
+export const lorong17Frame = laneFrame, lorong17Layout = laneLayout, lorong17Upper = laneUpper, lorong17Reviews = laneReviews, lorong17Sides = laneSides;
