@@ -86,6 +86,22 @@ const draws: Draws = {
       [...'雷藏寺'].forEach((ch, i) => { text(c, ch, w * .52, h * (.18 + i * .32), w * .82, '#4a4a4a', '700', kai); text(c, ch, w * .5, h * (.17 + i * .32), w * .8, '#f6f6f2', '700', kai); });
     }],
   },
+  // Starlon's black salon board, and Tektron Pacific's white boards with a green panel.
+  'starlon-tektron': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#231c19'; c.fillRect(0, 0, w, h);
+      text(c, 'Starlon & Spa', w * .4, h * .12, h * .14, '#e8d9b0', 'italic 600', 'Georgia, "Times New Roman", serif', w * .5);
+      for (let i = 0; i < 9; i++) { c.fillStyle = '#d9cfb8'; c.fillRect(w * .05, h * (.25 + i * .07), w * (.16 + (i % 3) * .03), h * .025); c.fillRect(w * .5, h * (.25 + i * .07), w * (.14 + (i % 2) * .04), h * .025); }
+      for (const [x, colour] of [[.3, '#b46a5a'], [.43, '#c9a27a'], [.68, '#c08a7a'], [.82, '#8a6a8a']] as const) { c.fillStyle = colour; c.fillRect(w * x, h * .2, w * .09, h * .3); }
+      text(c, '33 Lorong 19 Geylang #01-05', w * .3, h * .92, h * .07, '#e8e2d0', '600', sans, w * .45);
+    }, ...Array(2).fill((c: CanvasRenderingContext2D, w: number, h: number) => {
+      c.fillStyle = '#f4f4f0'; c.fillRect(0, 0, w, h); c.strokeStyle = '#b8b8b0'; c.lineWidth = h * .03; c.strokeRect(0, 0, w, h);
+      c.fillStyle = '#3f9a4a'; c.fillRect(w * .18, h * .1, w * .26, h * .42);
+      text(c, 'tektron', w * .31, h * .32, h * .3, '#f4f4f0', '700', sans, w * .24);
+      text(c, 'pacific', w * .6, h * .32, h * .32, '#2a5a3a', '700', sans, w * .3);
+      text(c, 'The sticker & signage workshop', w * .5, h * .74, h * .22, '#1d1d1d', '500', sans, w * .9);
+    })],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

@@ -291,6 +291,57 @@ export const leiZangSi = {
   rooftop: [{ u: at239([.5, 4.5]), top: 20.6, setback: 1.0, depth: 3.0, colour: '#ecece8' }],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi];
+// ---------------------------------------------------------------------------------------------
+// 8. Way 454254309, No. 33 (Treasures @ G19): a white three-storey streamline block of five bays and two stair towers,
+// with curved hoods, pink speed stripes and a row of shops in its five-foot way. Its front (edge 2, u north from the
+// side lane) is read 1.5 m behind the source edge, where the lane panoramas agree: about 24.4 m long from 0.5 m north
+// of the source corner, laid proportionally on the 25.17 m source edge. The source face's north end stands 2.7 m from
+// the lane's centreline, inside the estimated carriageway, so its street-level pieces are held within 0.25 m.
+const W309 = 25.165, at309 = lay(.5, W309 / 24.4);
+const bays309 = [[.6, 4.6], [7.6, 11.8], [12.5, 16.5], [18.7, 20.6], [20.9, 24.6]];
+const wins309 = [[.6, 2.0], [2.6, 4.0], [8.0, 9.25], [9.9, 11.25], [13.0, 14.25], [14.9, 16.1], [19.25, 20.25], [21.4, 22.5], [23.0, 24.0]];
+const towers309 = [[5.4, 6.4], [17.25, 18.0]];
+const pink309 = '#d9a3a0';
+export const starlonTektron = {
+  id: 'starlon-tektron', buildingIds: ['454254309'], kind: 'starlon-tektron', frontEdge: 2, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 24 },
+  name: 'Starlon and Tektron Pacific, No. 33 Lorong 19 (June 2024 exterior)', address: '33 Lorong 19 Geylang (Treasures @ G19)',
+  height: 12.0, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9893' },
+  heldFlat: true, // the source face's north end stands 2.7 m from the lane's centreline, inside the estimated carriageway
+  evidence: 'June 2024 Street View shows a white three-storey streamline block across a side lane from Lei Zang Si, in five bays either side of two stair towers lit by tall strips of windows: paired windows on each upper floor under curved concrete hoods, triple pink speed stripes above and below them, and a stepped parapet with small fins over the towers; its south wall on the side lane is mauve. Its five-foot way holds a row of shops: a hair salon with barber poles under a black board reading Starlon & Spa, 33 Lorong 19 Geylang #01-05; an empty unit; Tektron Pacific under two boards reading tektron pacific, the sticker & signage workshop; a florist under a board reading MISS BECCA FLORAL; a green board reading QUAN AN VIETNAM; and two boards reading 康记冰糖葫芦 over stalls with tiled canopies. Google Maps lists Starlon (hair salon, 33 Lor 19 Geylang #01-05, Treasures @ G19) and Tektron Pacific (print shop, #01-06) here, both operating, with their points inside this way, so the block is named after them, as No. 301 Geylang Road was, and their boards are redrawn in original type, with no claim about the other units. The florist is listed as Orae Fleur, Quan An Viet Nam is marked permanently closed and the candied-fruit stall is not listed, so their boards are blank. Two June 2024 lane panoramas agree strongly on the front 1.5 m behind the source edge, where it is about 24.4 m long against the 25.17 m source edge. Heights were read on that plane, above the five-foot-way floor: five-foot way 3.3 m, windows 5.1-6.3 and 8.7-9.8 m, hoods 7.2-7.9 and 10.8-11.6 m, parapet about 12 m.',
+  sources: [way('454254309'), search('Starlon 33 Lorong 19 Geylang'), search('Tektron Pacific 33 Lorong 19 Geylang'), pano('BwN_1fcMAZiFLmKGW-VM4A', 262, 20, 100), pano('XLi_3Ajhl22orFwbiySNYQ', 262, 20, 100), pano('IzKmZuCt4YSUbvuGY87eag', 250, 20, 100)],
+  colours: { wall: '#f1f0ec', trim: '#e6e4de', frame: '#55595b', glass: '#5d6a6e', pier: '#f1f0ec', back: '#d6d4cf', floor: '#a8a296' },
+  windows: [
+    ...wins309.flatMap(s => [{ u: at309(s), h: [5.1, 6.3], panes: 3 }, { u: at309(s), h: [8.7, 9.8], panes: 3 }]),
+    ...towers309.map(s => ({ u: at309(s), h: [4.7, 10.7], panes: 2 })),
+  ],
+  blocks: [
+    ...bays309.flatMap(s => [[7.2, 7.9], [10.8, 11.6]].map(h => ({ name: 'curved concrete hood', u: at309(s), h, out: .5, depth: 1.0, colour: '#ecebe6' }))),
+    ...bays309.flatMap(s => [[4.35, 4.7], [6.7, 7.05], [10.05, 10.4]].map(h => ({ name: 'pink speed stripes', u: at309(s), h, out: .02, depth: .03, colour: pink309 }))),
+    ...towers309.map(([l, r]) => ({ name: 'stepped tower parapet', u: at309([l - .4, r + .4]), h: [12.0, 12.6], out: .05, depth: .3, colour: '#ecebe6' })),
+    { name: 'blank florist board', u: at309([13.4, 15.0]), h: [2.3, 2.75], out: .05, depth: .03, colour: '#e8e6e0' },
+    { name: 'blank green board', u: at309([15.1, 16.4]), h: [2.3, 2.7], out: .05, depth: .03, colour: '#2f6a3a' },
+    ...[[18.9, 20.0], [22.2, 23.7]].map(s => ({ name: 'blank black board', u: at309(s), h: [2.4, 2.8], out: .05, depth: .03, colour: '#1d1d1d' })),
+    ...[[1.0, 1.25], [3.6, 3.85]].map(s => ({ name: 'barber pole', u: at309(s), h: [1.9, 2.6], out: .15, depth: .18, colour: '#d8d4d0' })),
+  ],
+  // Starlon's board, and Tektron Pacific's two boards.
+  boards: [{ u: at309([1.39, 3.46]), h: [2.18, 2.86], out: .05 }, ...[[8.4, 10.0], [10.75, 12.05]].map(s => ({ u: at309(s), h: [2.31, 2.76], out: .05 }))],
+  piers: [[.5, .8], [4.5, 5.0], [7.1, 7.6], [12.0, 12.4], [16.5, 17.0], [20.4, 20.9], [24.4, 24.9]].map(s => at309(s).map(v => Math.min(W309, v))),
+  backFittings: [
+    { name: 'salon front', u: at309([.9, 4.4]), h: [.1, 2.1], colour: '#4a3c36', glow: .08 },
+    { name: 'empty glazed unit', u: at309([5.1, 7.0]), h: [.1, 2.8], colour: '#7c8688' },
+    { name: 'print shop', u: at309([7.7, 11.9]), h: [.1, 2.2], colour: '#6a7270', glow: .08 },
+    { name: 'florist', u: at309([12.5, 15.0]), h: [.1, 2.2], colour: '#7a6a5e', glow: .06 },
+    { name: 'shop', u: at309([15.1, 16.4]), h: [.1, 2.2], colour: '#5a5e58' },
+    { name: 'glazed unit', u: at309([17.1, 20.3]), h: [.1, 2.6], colour: '#6c7678' },
+    { name: 'stalls under tiled canopies', u: at309([21.0, 24.3]), h: [.1, 2.4], colour: '#7a4a3a', glow: .05 },
+  ],
+  sides: [{
+    edge: 3, // the mauve south wall on the side lane, u east to the lane corner
+    blocks: [{ name: 'mauve wall', u: [.2, 26.8], h: [.1, 12.0], out: .02, depth: .02, colour: '#a87e8a' }],
+    windows: [[21.0, 22.0], [23.5, 24.5]].flatMap(u => [[5.1, 6.3], [8.7, 9.8]].map(h => ({ u, h, panes: 2, out: .03 }))),
+  }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;

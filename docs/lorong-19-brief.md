@@ -23,7 +23,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 5 | West | 476113983 | No. 23 | Done; unnamed |
 | 6 | West | 476113984 | No. 25, Chee Hoe Hong | Done; named |
 | 7 | West | 454254239 | No. 29, Lei Zang Si | Done; named |
-| 8 | West | 454254309 | No. 33, Treasures @ G19 | |
+| 8 | West | 454254309 | No. 33, Treasures @ G19: Starlon and Tektron Pacific | Done; named after two tenants |
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | |
 | 10 | East | 454254339 | No. 148 Sims Avenue, the east corner | |
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | |
@@ -230,3 +230,45 @@ A white five-storey temple set back behind a garden, hung with strings of Tibeta
 - Hock Hin Plastic Fabricator, listed at No. 31 with its point in this way, is marked permanently closed.
 
 Use `?review=lei-zang-si`.
+
+### 8. Way 454254309: No. 33, Starlon and Tektron Pacific
+
+Across a side lane from Lei Zang Si: a white three-storey streamline block (Treasures @ G19).
+
+- **Form:** five bays either side of two stair towers lit by tall strips of windows.
+- **Bays:** paired windows on each upper floor under curved concrete hoods, with triple pink speed stripes above and below them.
+- **Parapet:** stepped, with small fins over the towers.
+- **South wall** (on the side lane): mauve. Added as a side face.
+- **Shops in the five-foot way, from the south:**
+  - a hair salon with barber poles, under a black board reading **Starlon & Spa, 33 Lorong 19 Geylang #01-05**;
+  - an empty unit;
+  - **Tektron Pacific**, under two boards reading *tektron pacific, the sticker & signage workshop*;
+  - a florist under a board reading MISS BECCA FLORAL;
+  - a green board reading QUAN AN VIETNAM;
+  - two boards reading 康记冰糖葫芦, over stalls with tiled canopies.
+
+**Measurement:**
+- `BwN…` with `XLi…` (June 2024) agree strongly on the front **1.5 m behind** the source edge (depth score 0.34).
+- On that plane it is about **24.4 m** long, against the 25.17 m source edge.
+- **Heights:**
+  - five-foot way: 3.3 m;
+  - windows: 5.1–6.3 and 8.7–9.8 m;
+  - hoods: 7.2–7.9 and 10.8–11.6 m;
+  - parapet: about 12 m.
+
+**Layout:**
+- Laid proportionally on the source edge (×1.03).
+- The source face's north end stands 2.7 m from the lane's centreline, inside the estimated carriageway. So the place is flagged `heldFlat`.
+
+**Naming:** Google Maps lists two operating tenants with their points inside this way:
+- **Starlon** (hair salon, 33 Lor 19 Geylang #01-05, Treasures @ G19);
+- **Tektron Pacific** (print shop, #01-06).
+
+Both boards are photographed and legible. So the block is named after them, as No. 301 Geylang Road was on Lorong 17, and their boards are redrawn in original type, with no claim about the other units.
+
+**Blank boards:**
+- the florist is listed as Orae Fleur, not Miss Becca Floral;
+- Quan An Viet Nam is marked permanently closed;
+- the candied-fruit stall is not listed.
+
+Use `?review=starlon-tektron`.
