@@ -35,7 +35,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 19 | East | 454254238 | A temple by No. 14 (和友社, 華德善室) | Done (a slice); unnamed; footprint question 40 |
 | 20 | East | 454254249 | No. 6, Singapore Chinaware Merchants Association | Done; named; row question 41 |
 | 21 | East | 454254250 | The row's fourth house (No. 4 by sequence) | Done; unnamed |
-| 22–23 | East | 454254252, 454254251 | The row's two southern houses | To do |
+| 22 | East | 454254252 | The row's fifth house (No. 2 by sequence) | Done; unnamed |
+| 23 | East | 454254251 | The row's south end house | To do |
 | 24 | East | 454254253 | The Geylang Road corner house | To do |
 
 Stops 7 (Nos. 23 and 25) and 13 (Nos. 37–41) each took in a whole photographed building, so the stops after them are numbered one and two lower than first planned. A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
@@ -526,3 +527,12 @@ No. 4 by the row's sequence; no plate was seen.
 - **Naming:** none. No listing or sign identifies it. Google's address points along the row (Nos. 2, 4 and 6) fall in the wrong order, so they are not used for numbering.
 
 Use `?review=l17-4`.
+
+### 22. Way 454254252: the row's fifth house
+
+No. 2 by the row's sequence; no plate was seen.
+
+- **Ground floor:** a glazed door and a barred window at the end of the maroon awning, where the awning stops.
+- **Naming:** none. The Singapore Chinaware Merchants Association's listing point lies inside this way, but its board and letterbox are two houses north, on No. 6.
+
+Use `?review=l17-2`.

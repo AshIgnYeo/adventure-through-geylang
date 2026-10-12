@@ -779,7 +779,19 @@ export const no4 = rowHouse({
   ],
 });
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4];
+export const no2 = rowHouse({
+  id: 'l17-2', way: '454254252', W: 4.709, s0: 22.8, s1: 26.4, kind: 'unnamed', unnamed: true,
+  name: 'Fifth house of the white row, Lorong 17 east side (June 2024 exterior, occupant not identified)', address: '2 Lorong 17 Geylang (by the row\'s sequence; no plate seen)',
+  windows: [[23.1, 24.3], [24.4, 25.6]],
+  evidence: rowEvidence + ' The fifth house from the north has a glazed door and a barred window at the end of the maroon awning, where the awning stops. Google Maps places the Singapore Chinaware Merchants Association\'s listing point inside this way, but its board and letterbox are two houses north, on No. 6. No listing or sign identifies this house, so no name is given.',
+  blocks: at => [{ name: 'maroon awning, held flat', u: [0, at([22.8, 25.6])[1]], h: [2.5, 3.4], out: .04, depth: .08, colour: '#6e2b33' }],
+  backFittings: at => [
+    { name: 'glazed door', u: at([24.0, 24.9]), h: [.1, 2.4], colour: '#4a5458', glow: .06 },
+    { name: 'barred window', u: at([25.3, 26.1]), h: [1.0, 2.2], colour: '#3c4549' },
+  ],
+});
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own

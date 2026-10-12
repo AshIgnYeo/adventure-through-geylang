@@ -1035,3 +1035,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 - **Stop 19, way 454254238:** the middle slice of a single-storey temple with the 和友社 and 華德善室 boards, unnamed. The photographed temple is about 10 m wide against the 4.84 m way: open question 40.
 - **Stop 20, way 454254249, No. 6:** named **Singapore Chinaware Merchants Association**: listed at 6 Lorong 17, with its board and a 6-B letterbox photographed on the house; the listing point lies two houses south. It is the third house of a six-house white row whose two northern houses have no source ways (open question 41).
 - **Stop 21, way 454254250:** the white row's fourth house, unnamed. The row's fronts stand at the edge of the lane's modelled carriageway, so they are flagged `heldFlat`.
+- **Stop 22, way 454254252:** the white row's fifth house, unnamed.
