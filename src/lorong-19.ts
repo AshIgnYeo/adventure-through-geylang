@@ -123,6 +123,14 @@ const draws: Draws = {
       text(c, '1929', w * .5, h * .8, h * .18, '#3a3a3a', '700', 'Georgia, "Times New Roman", serif');
     }],
   },
+  // The lobby's raised lettering: a serif capital name over a smaller script line.
+  'bougainvilla': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#e3d6b4'; c.fillRect(0, 0, w, h);
+      text(c, 'BOUGAINVILLA', w * .5, h * .4, h * .46, '#6a5a44', 'italic 700', 'Georgia, "Times New Roman", serif', w * .92);
+      text(c, 'Apartments', w * .62, h * .8, h * .24, '#6a5a44', 'italic 500', 'Georgia, "Times New Roman", serif', w * .5);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

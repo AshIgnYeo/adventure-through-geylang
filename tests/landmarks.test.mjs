@@ -197,7 +197,7 @@ test('real landmark identities have unique, existing street-study footprints and
       const building = map.buildings.find(b => b.id === id);
       if (['leong-kee', 'buddhist-art-centre', 'eat-first', 'sik-wai-sin', 'rr-motor', 'golden-jade', 'ktv-277', 'eros', 'rozel-furniture', 'jh-hotel', 'nanyang-fan-clan', 'vintage-and-vine', 'dnova-hotel', 'jxin-hotel', 'bright-star-hotel', 'eminent-frog-porridge', 'the-primero', 'lei-zang-si', 'starlon-tektron', 'he-ping'].includes(place.id)) assert.equal(building?.street, null);
       else if (['feng-shang', 'true-jesus-mission', 'yang-clan', 'gyaltsap-tashi-ling', 'rattan-association', 'chinaware-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 17 Geylang');
-      else if (['nanyang-chee', 'chee-hoe-hong', 'kang-ha-pheng'].includes(place.id)) assert.equal(building?.street, 'Lorong 19 Geylang');
+      else if (['nanyang-chee', 'chee-hoe-hong', 'kang-ha-pheng', 'bougainvilla'].includes(place.id)) assert.equal(building?.street, 'Lorong 19 Geylang');
       else if (['yaju-hotel', 'summer-view', 'hotel-81-cherry', 'master-tailors', 'chinese-eating-house-owners'].includes(place.id)) assert.equal(building?.street, 'Lorong 12 Geylang');
       else if (['lex-hotel', 'engineering-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 8 Geylang');
       else if (['crystal-mansions'].includes(place.id)) assert.equal(building?.street, 'Lorong 6 Geylang');

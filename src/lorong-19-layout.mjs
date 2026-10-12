@@ -514,6 +514,52 @@ export const kangHaPheng = {
   }],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng];
+// ---------------------------------------------------------------------------------------------
+// 12. Way 454254247, No. 10: Bougainvilla Apartments, a white nine-storey block with a beige central bay under a
+// gable, set back behind a lawn and a railing. Its front (edge 0, u north from the south end) photographs 4.5 m in
+// front of the source edge (the No. 10 plate and the north-west corner triangulate there, and the floors repeat every
+// 3.1 m only on that plane), from 1.3 m south of the source corner to 23.1 m north of it: about 24.4 m against the
+// 22.18 m source edge. Laid proportionally on the source edge until its footprint is settled (open question 44).
+const W247 = 22.179, at247 = lay(-1.34, W247 / 24.44);
+const floors247 = [4.6, 7.7, 10.8, 13.9, 17.0, 20.1, 23.2, 26.3].slice(0, 7), white247 = '#f1f1ed', beige247 = '#e3d6b4';
+export const bougainvilla = {
+  id: 'bougainvilla', buildingIds: ['454254247'], kind: 'bougainvilla', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 11, pitch: 34 },
+  name: 'Bougainvilla Apartments (June 2024 exterior)', address: '10 Lorong 19 Geylang',
+  height: 28.3, ceiling: 4.4, fiveFootWay: 2.2, roof: { type: 'flat', colour: '#a8a6a0' },
+  evidence: 'June 2024 Street View shows a white apartment block of a ground-floor car porch and seven floors above, set back behind a lawn and a white railing with beige posts, north of an open car park at Lorong Bachok: angled corner bays of windows at both ends, single windows in beige surrounds, and a beige central bay of paired windows with balconies rising to an open gable; under the porch a lobby with raised lettering reading BOUGAINVILLA Apartments, a plate reading 10 and a blue sign reading BOUGAINVILLA APT. Google Maps lists Bougainvilla Apartments, an apartment complex, at 10 Lor 19 Geylang, Singapore 388492; its point lies in the block\'s rear way (454254245), outside the study, but the address, the plate and the lettering agree on this building, so it is named and the lettering is redrawn in original type (as at Crystal Mansions, open question 32). Bearings from June 2024 lane panoramas put the No. 10 plate and the north-west corner 4.5 m in front of the source edge, where the floors repeat every 3.1 m; on that plane the front runs from 1.3 m south of the source corner to 23.1 m north of it, about 24.4 m against the 22.18 m source edge. Until its footprint is settled (open question 44) the elevation is laid proportionally on the source edge, about 4.5 m behind its photographed line.',
+  sources: [way('454254247'), search('Bougainvilla Apartments 10 Lorong 19 Geylang'), pano('NzRDDjZPo91yWpvV8BIq5A', 95, 20, 90), pano('C6WgL2wlMEl3mpMGCqZnIw', 105, 25, 100), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 110, 25, 100)],
+  colours: { wall: white247, trim: beige247, frame: '#4a5654', glass: '#5d7a74', pier: white247, back: '#cfcdc6', floor: '#9e9a92' },
+  bands: [[4.4, 4.75, .3, beige247]],
+  windows: [
+    ...floors247.flatMap(f => [[-.9, 1.5], [19.6, 22.0]].map(s => ({ u: at247(s), h: [f + 1.7, f + 3.2], panes: 4 }))),
+    ...floors247.flatMap(f => [[2.6, 4.0], [16.2, 17.6]].map(s => ({ u: at247(s), h: [f + 1.7, f + 3.0], panes: 2, surround: true }))),
+    ...floors247.flatMap(f => [[7.0, 9.3], [11.2, 13.5]].map(s => ({ u: at247(s), h: [f + 1.6, f + 3.1], panes: 3, out: .5 }))),
+  ],
+  blocks: [
+    { name: 'beige central bay', u: at247([6.2, 14.4]), h: [4.75, 28.3], out: .22, depth: .44, colour: beige247 },
+    ...floors247.filter((_, i) => i % 2).map(f => ({ name: 'balcony railing', u: at247([6.6, 14.0]), h: [f + 1.0, f + 1.9], out: .9, depth: .05, colour: '#e8e8e4' })),
+    ...floors247.filter((_, i) => i % 2).map(f => ({ name: 'balcony slab', u: at247([6.6, 14.0]), h: [f + .9, f + 1.05], out: .7, depth: .5, colour: beige247 })),
+    { name: 'gable frame', u: at247([6.6, 14.0]), h: [28.3, 29.0], out: .22, depth: .44, colour: beige247 },
+    { name: 'gable apex', u: at247([8.4, 12.2]), h: [29.0, 30.4], out: .22, depth: .44, colour: beige247 },
+    { name: 'gable crest', u: at247([9.7, 10.9]), h: [30.4, 31.0], out: .22, depth: .44, colour: beige247 },
+    { name: 'parapet', u: [0, W247], h: [27.9, 28.3], out: .1, depth: .2, colour: beige247 },
+    // The white railing with beige posts along the pavement, at its photographed position about 2.8 m in front of the
+    // photographed front.
+    ...[[.2, .8], [1.3, 1.45]].map(h => ({ name: 'white railing', u: [0, W247], h, out: 7.3, depth: .05, colour: '#f2f2ee' })),
+    ...Array.from({ length: 8 }, (_, i) => .3 + i * 3.0).map(c => ({ name: 'beige railing post', u: [+c.toFixed(2), +(c + .45).toFixed(2)], h: [0, 1.7], out: 7.3, depth: .45, colour: beige247 })),
+  ],
+  // The lobby's raised lettering.
+  boards: [{ u: at247([7.2, 10.2]), h: [3.5, 4.2], out: .05 }],
+  piers: [[-1.34, -.7], [5.6, 6.2], [14.6, 15.2], [22.5, 23.1]].map(s => at247(s).map(v => Math.min(W247, Math.max(0, v)))),
+  backFittings: [
+    { name: 'lobby', u: at247([7.0, 10.3]), h: [.1, 3.3], colour: '#56605e', glow: .1 },
+    { name: 'house plate', u: at247([10.55, 10.95]), h: [3.75, 4.15], out: .05, colour: '#2a2a2a' },
+    { name: 'blue sign', u: at247([1.0, 2.2]), h: [3.0, 3.4], out: .05, colour: '#2a50a0' },
+    { name: 'vent panel', u: at247([-1.0, 2.6]), h: [3.5, 4.2], colour: '#dcdcd6' },
+    { name: 'car porch', u: at247([10.6, 22.8]), h: [.1, 4.2], colour: '#4c5050' },
+  ],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;

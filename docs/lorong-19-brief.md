@@ -27,7 +27,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | Done; unnamed |
 | 10 | East | 454254339 | No. 148 Sims Avenue, the east corner: He Ping Claypot Rice Restaurant | Done; named |
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | Done; named |
-| 12 | East | 454254247 | Bougainvilla Apartments | |
+| 12 | East | 454254247 | No. 10, Bougainvilla Apartments | Done; named; footprint question 44 |
 | 13 | East | 1223524381 | No. 6 | |
 | 14 | East | 454254246 | Sims Point | |
 | 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner | |
@@ -375,3 +375,39 @@ A back lane separates He Ping from an ornate cream two-storey Peranakan corner h
 **Naming:** Google Maps lists **Kang Ha Pheng Sim Kok**, an association, at 1 Lorong Bachok, with its point inside this way. So the entrance board and the pediment's lettering are redrawn in original type.
 
 Use `?review=kang-ha-pheng`.
+
+### 12. Way 454254247: No. 10, Bougainvilla Apartments
+
+South of No. 6, past an open car park at Lorong Bachok, a white apartment block stands behind a lawn and a white railing with beige posts. It has a ground-floor car porch and seven floors above.
+
+- **Upper floors:**
+  - angled corner bays of windows at both ends;
+  - single windows in beige surrounds;
+  - a beige central bay of paired windows with balconies, rising to an open gable.
+- **Under the porch:**
+  - a lobby with raised lettering reading **BOUGAINVILLA Apartments**;
+  - a plate reading **10**;
+  - a blue sign reading BOUGAINVILLA APT.
+
+**Measurement:**
+- The lane panoramas stand about 18 m from the source edge, and street trees hide the lower floors, so the depth scores failed. Bearings were used instead:
+  - the No. 10 plate (`NzRD…` with `C6Wg…`) lies **4.5 m in front of** the source edge;
+  - so does the north-west corner (`ZqOX…` with `C6Wg…`, 4.45 m).
+- Only on that plane do the floors repeat at a believable 3.1 m. On the source plane they read 4.3 m.
+- On that plane the front runs from 1.3 m south of the source corner to 23.1 m north of it: about **24.4 m**, against the 22.18 m source edge.
+- **Heights:**
+  - porch: to 4.4 m;
+  - floors: every 3.1 m from 4.6 m;
+  - parapet: 28.3 m;
+  - gable: to about 31 m.
+
+**Layout:**
+- Laid proportionally on the source edge (×0.91), about 4.5 m behind its photographed line.
+- The railing is drawn at its photographed position along the pavement.
+- Authoring the footprint is [open question 44](open-questions.md).
+
+**Naming:** Google Maps lists **Bougainvilla Apartments**, an apartment complex, at 10 Lor 19 Geylang, Singapore 388492.
+- Its point lies in the block's rear way (454254245), outside the study.
+- The address, the plate and the lettering agree on this building, so it is named, as at Crystal Mansions (open question 32). The lobby lettering is redrawn in original type.
+
+Use `?review=bougainvilla`.
