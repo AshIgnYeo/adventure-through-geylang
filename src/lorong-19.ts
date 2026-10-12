@@ -47,6 +47,18 @@ const draws: Draws = {
       text(c, 'EMINENT FROG PORRIDGE & SEAFOOD (LOR 19)', w * .5, h * .78, h * .2, '#e9c25a', '700', sans, w * .9);
     }, frogLightbox, frogLightbox],
   },
+  // B&S's board without the paint brand's mark, and The Primero's raised lettering on the grey beam.
+  'the-primero': {
+    boards: [(c, w, h) => {
+      const g = c.createLinearGradient(0, 0, w, 0); g.addColorStop(0, '#e8682a'); g.addColorStop(.55, '#f08a2c'); g.addColorStop(1, '#f6c43c'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+      c.fillStyle = '#5a5e66'; c.beginPath(); c.moveTo(w * .3, h); c.lineTo(w * .36, h * .3); c.lineTo(w, h * .1); c.lineTo(w, h * .22); c.lineTo(w * .4, h * .42); c.lineTo(w * .35, h); c.fill();
+      text(c, 'B&S (2017) PTE LTD', w * .66, h * .62, h * .42, '#1d1d1d', '800', sans, w * .55);
+      text(c, '#01-01', w * .93, h * .2, h * .16, '#1d1d1d', '700', sans);
+    }, (c, w, h) => {
+      c.fillStyle = '#b8b1a6'; c.fillRect(0, 0, w, h);
+      text(c, 'THE PRIMERO', w * .5, h * .55, h * .62, '#6d6a66', '700', 'Georgia, "Times New Roman", serif', w * .94);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

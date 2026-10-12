@@ -17,7 +17,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
 | 1 | West | 454254263 | No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood | Done; named; footprint with the Geylang Road row |
-| 2 | West | 454254248 | No. 1, The Primero | |
+| 2 | West | 454254248 | No. 1, The Primero | Done; named (the building, and B&S's board) |
 | 3 | West | 476113985 | No. 3 | |
 | 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | |
 | 5 | West | 476113983 | No. 23 | |
@@ -80,3 +80,45 @@ A cream two-storey corner shophouse at Geylang Road and Lorong 19. It has salmon
 - This is the restaurant that left the Lorong 17 east corner (Lorong 17 stop 24).
 
 Use `?review=eminent-frog-porridge`.
+
+### 2. Way 454254248: No. 1, The Primero
+
+A side lane about 5 m wide separates No. 323's rear building from this weathered grey four-storey block of five bays.
+
+- **Upper floors:** ribbon windows between full-height piers, deep concrete hoods over the first-floor windows, ribbed balcony panels, a thick fascia under the top floor, and a raised central tower under a pyramidal roof.
+- **Five-foot way, from the south:**
+  - a paint shop under an orange awning and a long orange board reading **NIPPON PAINT B&S (2017) PTE LTD #01-01**;
+  - a shop under a yellow board reading 显密度母林佛学会 XIAN MI DU MU LIN BUDDHIST ASSOCIATION;
+  - the lobby, under raised lettering reading **THE PRIMERO**;
+  - a glazed shop;
+  - a red temple front under a banner reading 南北斗母宫, with gold couplets and an incense urn.
+- **North wall:** three bays of windows on each upper floor along the side lane, added as a side face.
+
+**Measurement:**
+- The lane panoramas pass only about 3 m from the source face, so plane depth scores were ambiguous. Bearings were used instead.
+  - **South-east corner:** `ukZW…` with `gWQb…`, **2.2 m behind** the source edge and 0.8 m south of the source corner.
+  - **North-east corner:** `NZfk…` with `ZqOX…`, **2.6 m behind**, 27.7 m along.
+- The face is about **28.6 m** long, against the 26.81 m source edge.
+- On a plane 2.4 m behind, four panoramas agree on the elevation. The heights:
+  - five-foot way: 3.1 m;
+  - beam: 3.1–4.6 m;
+  - windows: 4.7–6.2, 8.0–9.45 and 11.3–13.0 m;
+  - hoods: about 6.6–7.0 m;
+  - fascia under the top floor: 9.9–10.9 m;
+  - parapet: 13.9 m;
+  - tower: to about 17.6 m.
+
+**Layout:**
+- Laid proportionally on the 26.81 m source edge (×0.94), with the tower as a raised volume.
+- The source face's south end stands 2.7 m from the lane's centreline, inside the estimated carriageway, so the place is flagged `heldFlat`. The awning and boards are held within 0.25 m of the wall.
+- On its photographed line, the face would stand about 6 m from the centreline. The offset joins the west row's question at the end of the west side.
+
+**Naming:**
+- Google Maps lists **The Primero**, an apartment building, at 1 Lorong 19 Geylang, Singapore 388487. It also lists **B&S hardware lorong 19**, a paint store, at 1 Lor 19 Geylang #01-01.
+- So the building is named after its raised lettering, and the B&S board is redrawn in original type without the paint brand's mark. No claim is made about the other premises.
+- **Listing points:** The Primero's lies about 20 m west, in way 454254249 on Lorong 17. B&S's lies south of Geylang Road. But the addresses and the signs agree on this building (as at Crystal Mansions, open question 32).
+- **Blank boards:**
+  - the Xian Mi Du Mu Lin Buddhist Association is now listed at Lorong 21A;
+  - the temple is not listed.
+
+Use `?review=the-primero`.

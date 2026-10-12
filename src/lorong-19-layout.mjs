@@ -70,6 +70,61 @@ export const eminent = {
   }],
 };
 
-export const lorong19 = [eminent];
+// ---------------------------------------------------------------------------------------------
+// 2. Way 454254248, No. 1, The Primero: a weathered grey four-storey block of five bays with a raised central tower,
+// shops in its five-foot way. Its lane face (edge 0, u north from the south corner) triangulates 2.2-2.6 m behind
+// the source edge, from 0.8 m south of the source corner to 27.8 m north of it: read on a plane 2.4 m behind and laid
+// proportionally on the 26.81 m source edge (x0.94). The source face stands 3.8 m from the lane's centreline, so its
+// street-level pieces stay within half a metre of the wall.
+const W248 = 26.808, at248 = lay(-.8, W248 / 28.6);
+const bays248 = [[-.4, 1.0], [2.75, 4.5], [5.6, 7.0], [8.0, 9.6], [10.8, 13.0], [13.4, 15.2], [16.3, 17.8], [18.9, 20.2], [22.1, 23.9], [24.9, 26.4]];
+const ribbons248 = [[-.3, 4.7], [5.6, 9.9], [10.8, 15.2], [16.1, 19.9], [22.1, 26.5]];
+const cols248 = [[-.8, -.3], [4.7, 5.5], [10.0, 10.7], [15.3, 16.1], [20.5, 21.2], [26.5, 27.8]];
+const grey248 = '#bdb7ae';
+export const primero = {
+  id: 'the-primero', buildingIds: ['454254248'], kind: 'the-primero', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 30 },
+  name: 'The Primero (June 2024 exterior)', address: '1 Lorong 19 Geylang',
+  height: 13.9, ceiling: 3.1, fiveFootWay: 2.2, roof: { type: 'flat', colour: '#8f8a84' },
+  heldFlat: true, // the source face's south end stands 2.7 m from the lane's centreline, inside the estimated carriageway
+  evidence: 'June 2024 Street View shows a weathered grey four-storey block of five bays north of the side lane behind No. 323 Geylang Road, with ribbon windows on each upper floor between full-height piers, deep concrete hoods over the first-floor windows, ribbed balcony panels, a thick fascia under the top floor and a raised central tower under a pyramidal roof. In its five-foot way, from the south: a paint shop under an orange awning and a long orange board reading NIPPON PAINT B&S (2017) PTE LTD #01-01; a shop under a yellow board reading 显密度母林佛学会 XIAN MI DU MU LIN BUDDHIST ASSOCIATION; the lobby under raised lettering reading THE PRIMERO; a glazed shop; and a red temple front under a banner reading 南北斗母宫, with gold couplets and an incense urn. Google Maps lists The Primero, an apartment building, at 1 Lorong 19 Geylang, Singapore 388487, and B&S hardware lorong 19, a paint store, at 1 Lor 19 Geylang #01-01; so the building is named after its lettering and the shop board is redrawn in original type, without the paint brand, with no claim about the other premises. The Primero\'s listing point lies about 20 m west, in way 454254249 on Lorong 17, and B&S\'s south of Geylang Road, but the addresses and the signs agree on this building. The Buddhist association is now listed at Lorong 21A and the temple is not listed, so their boards are blank. Bearings from four June 2024 panoramas put its south-east corner 2.2 m and its north-east corner 2.6 m behind the source edge, 28.6 m apart against the 26.81 m source edge; the elevation was read on a plane 2.4 m behind, where the panoramas agree, and is laid proportionally on the source edge.',
+  sources: [way('454254248'), search('The Primero 1 Lorong 19 Geylang'), search('B&S hardware lorong 19'), pano('ukZWTPS52TsHumpZjk8qWg', 315, 15, 80), pano('gWQbjpYBNuduJ0hBOUrHGw', 262, 25, 110), pano('NZfk6nTA1mTETJHQXIob7Q', 262, 25, 110), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 205, 15, 80)],
+  colours: { wall: grey248, trim: '#aaa49b', frame: '#3a4446', glass: '#7fa3a0', pier: '#c4beb4', back: '#4a4846', floor: '#a19b90' },
+  bands: [[3.1, 4.6, .2]],
+  windows: [
+    ...bays248.flatMap(s => [{ u: at248(s), h: [4.7, 6.2], panes: 3 }, { u: at248(s), h: [8.0, 9.45], panes: 3 }]),
+    ...ribbons248.map(s => ({ u: at248(s), h: [11.3, 13.0], panes: 4 })),
+  ],
+  blocks: [
+    ...ribbons248.map(s => ({ name: 'deep concrete hood', u: at248(s), h: [6.55, 6.95], out: .45, depth: .9, colour: '#b3ada4' })),
+    ...ribbons248.map(s => ({ name: 'ribbed balcony panel', u: at248(s), h: [7.1, 7.9], out: .08, depth: .16, colour: '#c9c4bb' })),
+    { name: 'thick fascia under the top floor', u: [0, W248], h: [9.9, 10.9], out: .3, depth: .6, colour: '#a59f96' },
+    { name: 'top fascia', u: [0, W248], h: [13.0, 13.9], out: .15, depth: .3, colour: '#a59f96' },
+    ...cols248.map(s => { const [l, r] = at248(s); return { name: 'pier', u: [Math.max(0, l), Math.min(W248, r)], h: [4.6, 13.0], out: .1, depth: .2, colour: '#c4beb4' }; }),
+    { name: 'orange awning', u: at248([-.8, 4.6]).map(v => Math.max(0, v)), h: [2.45, 3.0], out: .12, depth: .24, colour: '#e0652a' },
+    { name: 'blank yellow association board', u: at248([5.4, 9.0]), h: [2.9, 3.4], out: .05, depth: .04, colour: '#e9c23a' },
+    { name: 'blank white fascia panel', u: at248([13.25, 17.75]), h: [4.15, 4.55], out: .22, depth: .02, colour: '#e8e6e0' },
+    { name: 'blank red temple banner', u: at248([22.3, 26.5]), h: [2.4, 2.9], out: .05, depth: .03, colour: '#c8241c' },
+  ],
+  // B&S's board over its shop, and THE PRIMERO's raised lettering on the beam over the lobby.
+  boards: [{ u: at248([-.6, 4.6]).map(v => Math.max(0, v)), h: [3.75, 4.55], out: .22 }, { u: at248([11.4, 14.4]), h: [3.4, 3.9], out: .22 }],
+  piers: [[-.8, -.2], [5.0, 5.5], [10.0, 10.6], [15.4, 16.0], [20.6, 21.1], [27.2, 27.8]].map(s => { const [l, r] = at248(s); return [Math.max(0, l), Math.min(W248, r)]; }),
+  backFittings: [
+    { name: 'paint shop with stacked goods', u: at248([-.2, 4.6]), h: [.1, 2.4], colour: '#c8693a', glow: .08 },
+    { name: 'grilled shopfront', u: at248([5.6, 9.6]), h: [.1, 2.6], colour: '#6a6a66' },
+    { name: 'lobby grille', u: at248([10.8, 15.2]), h: [.1, 2.7], colour: '#4a4c4c' },
+    { name: 'glazed shopfront', u: at248([16.2, 20.4]), h: [.1, 2.7], colour: '#6c7a7c', glow: .05 },
+    { name: 'red temple front', u: at248([22.0, 27.0]), h: [.1, 2.4], colour: '#9a2018', glow: .1 },
+    ...[[22.5, 22.8], [26.2, 26.5]].map(s => ({ name: 'gold couplet', u: at248(s), h: [.4, 2.3], out: .05, colour: '#c9a23a' })),
+  ],
+  // The raised central tower under a pyramidal roof, set back from the front.
+  upper: [{ name: 'central tower', outline: [[11.5, -1.5], [15.8, -1.5], [15.8, -5.0], [11.5, -5.0]], from: 13.9, to: 16.0, ridge: 17.6, colour: grey248, roof: '#6e5a4e' }],
+  sides: [{
+    edge: 9, // the north wall on the side lane, u west from the lane corner: three bays of windows on each upper floor
+    windows: [[1.0, 2.6], [3.6, 5.2], [6.2, 7.8]].flatMap(u => [[4.7, 6.2], [8.0, 9.45], [11.3, 13.0]].map(h => ({ u, h, panes: 2 }))),
+    blocks: [[1.0, 2.6], [3.6, 5.2], [6.2, 7.8]].map(u => ({ name: 'concrete hood', u: [u[0] - .1, u[1] + .1], h: [6.55, 6.85], out: .3, depth: .6, colour: '#b3ada4' })),
+  }],
+};
+
+export const lorong19 = [eminent, primero];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
