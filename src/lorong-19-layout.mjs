@@ -175,6 +175,75 @@ export const no3 = {
   }],
 };
 
-export const lorong19 = [eminent, primero, no3];
+// ---------------------------------------------------------------------------------------------
+// 4-6. Ways 454254241, 476113983 and 476113984, Nos. 21, 23 and 25: a row of three single-storey houses under red
+// roofs. Their fronts were read on one plane, along way 476113983's front (s north from its south corner), 1.25 m
+// behind the source line where the lane panoramas agree; each elevation is laid proportionally on its own source edge
+// (u north from its south corner). No. 21 photographs from s = -8.1 to 0, No. 23 from 0 to 9.9 and No. 25 from 10.1
+// to 17.6, so the row drifts about 1 m north of its source ways by No. 25.
+const rowNote = ' The three single-storey houses from No. 21 to No. 25 were read together on one plane 1.25 m behind their source fronts, where the June 2024 lane panoramas (C6Wg..., NzRD..., DRAX...) agree; each elevation is laid proportionally on its own source edge.';
+const at241 = lay(-8.1, 7.6 / 8.1), at983 = lay(0, 9.126 / 9.9), at984 = lay(10.1, 7.49 / 7.5);
+export const nanyangChee = {
+  id: 'nanyang-chee', buildingIds: ['454254241'], kind: 'nanyang-chee', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
+  name: 'Nanyang Chee Clan Association (June 2024 exterior)', address: '21 Lorong 19 Geylang',
+  height: 3.75, ceiling: 2.85, fiveFootWay: .25, roof: { type: 'hip', ridge: 5.6, colour: '#b4553d' },
+  evidence: 'June 2024 Street View shows a single-storey house north of No. 3 under a red corrugated roof whose deep fascia overhangs the front: a white board along the front reading NANYANG CHEE CLAN ASSOCIATION 南洋徐氏總會 in red, over blue glazed doors, a white panel with a red 徐 and XU 21, and a wide glazed front, with two steps and potted plants. Google Maps lists Nanyang Chee Clan Assn at 21 Lor 19 Geylang, Singapore 388496, with its point inside this way, so the board and the panel are redrawn in original type.' + rowNote + ' It photographs about 8.1 m wide against the 7.6 m source edge.',
+  sources: [way('454254241'), search('Nanyang Chee Clan Association 21 Lorong 19 Geylang'), pano('C6WgL2wlMEl3mpMGCqZnIw', 262, 5, 90), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 240, 5, 90)],
+  colours: { wall: '#e9e5da', trim: '#d6d0c0', frame: '#3c4446', glass: '#5d7f8a', pier: '#e9e5da', back: '#d9d3c2', floor: '#b8a99a' },
+  blocks: [
+    { name: 'red corrugated fascia', u: [0, 7.59], h: [2.85, 3.75], out: .35, depth: .7, colour: '#b8503a' },
+    { name: 'front steps', u: at241([-7.6, -.4]), h: [0, .3], out: .35, depth: .7, colour: '#b9b2a6' },
+    { name: 'potted plants', u: at241([-8.0, -7.5]), h: [0, .8], out: .35, depth: .5, colour: '#4e6a3e' },
+  ],
+  // The red-lettered board along the front, and the white 徐 XU 21 panel between the doors.
+  boards: [{ u: [0, at241([-.2, 0])[0]], h: [2.3, 2.75], out: .05 }, { u: at241([-4.8, -3.7]), h: [.15, 2.1], out: .05 }],
+  piers: [[0, .3], [7.29, 7.59]],
+  backFittings: [
+    { name: 'boarded panel', u: at241([-7.9, -7.2]), h: [.1, 2.2], colour: '#c8a878' },
+    { name: 'blue glazed doors', u: at241([-7.2, -5.3]), h: [.1, 2.2], colour: '#4f8a9a', glow: .05 },
+    { name: 'boarded panel', u: at241([-5.3, -4.8]), h: [.1, 2.2], colour: '#c8a878' },
+    { name: 'glazed front', u: at241([-3.5, -.3]), h: [.1, 2.2], colour: '#6a7a7c', glow: .05 },
+  ],
+};
+export const no23 = {
+  id: 'l19-23', buildingIds: ['476113983'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
+  name: 'No. 23 Lorong 19 (June 2024 exterior, occupants not identified)', address: '23 Lorong 19 Geylang (plate 23)',
+  height: 3.25, ceiling: 2.65, fiveFootWay: .25, roof: { type: 'hip', ridge: 5.9, colour: '#b8583e' },
+  evidence: 'June 2024 Street View shows a cream single-storey house under a red tiled hipped roof, plated 23: a grilled door under a dark canopy at its south end with a red letterbox, two wide barred windows behind potted plants and trees, and a cream beam under the eaves. Google Maps lists Commercial Industrial Supplies & Services Pte Ltd and the Singapore PickleBall Association at 23 Lor 19 Geylang, the first with its point inside this way, but no sign for either was photographed, so no name is given.' + rowNote + ' It photographs about 9.9 m wide against the 9.13 m source edge.',
+  sources: [way('476113983'), search('23 Lorong 19 Geylang'), pano('NzRDDjZPo91yWpvV8BIq5A', 262, 5, 90), pano('C6WgL2wlMEl3mpMGCqZnIw', 240, 5, 90)],
+  colours: { wall: '#e2d6b4', trim: '#d8ccaa', frame: '#3c4446', glass: '#3d4549', pier: '#e2d6b4', back: '#e2d6b4', floor: '#a8a296' },
+  bands: [[2.65, 3.05, .2]],
+  blocks: [
+    { name: 'dark canopy', u: at983([.1, 3.6]), h: [2.7, 3.0], out: .4, depth: .8, colour: '#4a4440' },
+    { name: 'potted plants and trees', u: at983([4.5, 8.6]), h: [0, 1.1], out: .4, depth: .6, colour: '#4e6a3e' },
+  ],
+  piers: [[0, .25], [8.9, 9.126]],
+  backFittings: [
+    { name: 'grilled door', u: at983([.6, 2.6]), h: [.1, 2.25], colour: '#5a5c58' },
+    { name: 'red letterbox', u: at983([1.2, 1.45]), h: [1.0, 1.4], out: .04, depth: .08, colour: '#b5221d' },
+    { name: 'barred window', u: at983([4.0, 6.8]), h: [.4, 1.95], colour: '#cfcbbf' },
+    { name: 'barred window', u: at983([6.9, 9.2]), h: [.4, 2.0], colour: '#c3bfb3' },
+    { name: 'house plate', u: at983([5.2, 5.5]), h: [2.3, 2.5], out: .03, colour: '#2a2a2a' },
+  ],
+};
+export const cheeHoeHong = {
+  id: 'chee-hoe-hong', buildingIds: ['476113984'], kind: 'chee-hoe-hong', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
+  name: 'Chee Hoe Hong (Pte) Ltd (June 2024 exterior)', address: '25 Lorong 19 Geylang',
+  height: 3.75, ceiling: 3.05, fiveFootWay: .25, roof: { type: 'hip', ridge: 6.1, colour: '#b8583e' },
+  evidence: 'June 2024 Street View shows a single-storey house under a red tiled hipped roof with a deep orange fascia: a wide mesh-grilled window over a low wall of grey tiles, and a grilled doorway up two steps under a blue board reading 志和行(私人)有限公司 CHEE HOE HONG (PTE) LTD. Google Maps lists Chee Hoe Hong Pte Ltd at 25 Lor 19 Geylang, Singapore 388498, with its point inside this way, so the board is redrawn in original type. Zhejiang Shenghua Steel is also listed at No. 25, with its point 1.7 m outside the way, but no sign for it was photographed.' + rowNote + ' It photographs about 7.5 m wide, on the 7.49 m source edge but about 1 m north of it.',
+  sources: [way('476113984'), search('Chee Hoe Hong Pte Ltd 25 Lorong 19 Geylang'), pano('DRAXJ_U9_f5azRj8xhBdEA', 262, 5, 90), pano('NzRDDjZPo91yWpvV8BIq5A', 235, 5, 90)],
+  colours: { wall: '#ddd9cc', trim: '#d9824a', frame: '#3a3c3c', glass: '#6c7472', pier: '#ddd9cc', back: '#ddd9cc', floor: '#a8a296' },
+  blocks: [
+    { name: 'orange fascia', u: [0, 7.49], h: [3.05, 3.75], out: .3, depth: .6, colour: '#d9824a' },
+    { name: 'tiled low wall', u: at984([10.2, 14.3]), h: [.05, 1.05], out: .02, depth: .02, colour: '#cfd2d0' },
+    { name: 'front steps', u: at984([14.6, 17.4]), h: [0, .3], out: .3, depth: .6, colour: '#b9b2a6' },
+  ],
+  windows: [{ u: at984([10.2, 14.3]), h: [1.05, 2.65], panes: 6, out: .02 }],
+  boards: [{ u: at984([14.5, 17.6]), h: [2.5, 2.85], out: .05 }],
+  piers: [[0, .2], [7.29, 7.49]],
+  backFittings: [{ name: 'grilled doorway', u: at984([14.6, 17.4]), h: [.3, 2.4], colour: '#3e3e3c' }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;

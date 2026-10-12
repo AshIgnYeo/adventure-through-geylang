@@ -59,6 +59,26 @@ const draws: Draws = {
       text(c, 'THE PRIMERO', w * .5, h * .55, h * .62, '#6d6a66', '700', 'Georgia, "Times New Roman", serif', w * .94);
     }],
   },
+  // The clan board in red on white, and the white panel with the clan's surname in red.
+  'nanyang-chee': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#f2f2ee'; c.fillRect(0, 0, w, h); c.fillStyle = '#9fb6c8'; c.fillRect(0, h * .9, w, h * .1);
+      text(c, 'NANYANG CHEE CLAN ASSOCIATION', w * .33, h * .5, h * .62, '#c4161c', '700', sans, w * .6);
+      text(c, '南洋徐氏總會', w * .82, h * .5, h * .66, '#c4161c', '700', kai, w * .32);
+    }, (c, w, h) => {
+      c.fillStyle = '#f4f3ef'; c.fillRect(0, 0, w, h); c.strokeStyle = '#c4161c'; c.lineWidth = w * .03; c.strokeRect(w * .06, w * .06, w - w * .12, h - w * .12);
+      text(c, '徐', w * .5, h * .2, w * .62, '#c4161c', '700', kai);
+      text(c, 'XU', w * .5, h * .4, w * .26, '#c4161c', '700', sans);
+      text(c, '21', w * .5, h * .52, w * .2, '#1d1d1d', '700', sans);
+    }],
+  },
+  'chee-hoe-hong': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#1e4f9a'; c.fillRect(0, 0, w, h); c.strokeStyle = '#e8eef6'; c.lineWidth = h * .04; c.strokeRect(h * .05, h * .05, w - h * .1, h - h * .1);
+      text(c, '志和行(私人)有限公司', w * .5, h * .34, h * .36, '#f4f4f0', '700', kai, w * .9);
+      text(c, 'CHEE HOE HONG (PTE) LTD', w * .5, h * .74, h * .26, '#f4f4f0', '700', sans, w * .9);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

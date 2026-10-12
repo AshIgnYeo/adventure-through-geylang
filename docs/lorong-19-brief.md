@@ -19,9 +19,9 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 1 | West | 454254263 | No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood | Done; named; footprint with the Geylang Road row |
 | 2 | West | 454254248 | No. 1, The Primero | Done; named (the building, and B&S's board) |
 | 3 | West | 476113985 | No. 3, a dark brown modern house | Done; unnamed |
-| 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | |
-| 5 | West | 476113983 | No. 23 | |
-| 6 | West | 476113984 | No. 25, Chee Hoe Hong | |
+| 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | Done; named |
+| 5 | West | 476113983 | No. 23 | Done; unnamed |
+| 6 | West | 476113984 | No. 25, Chee Hoe Hong | Done; named |
 | 7 | West | 454254239 | No. 29, Lei Zang Si | |
 | 8 | West | 454254309 | No. 33, Treasures @ G19 | |
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | |
@@ -148,3 +148,57 @@ A second side lane separates The Primero from a dark brown modern house of four 
 **Naming:** none. Google Maps gives an address point for 3 Lorong 19 Geylang inside this way, but lists no business there, and no sign was photographed.
 
 Use `?review=l19-3`.
+
+### 4–6. Ways 454254241, 476113983 and 476113984: Nos. 21, 23 and 25
+
+Three single-storey houses under red roofs, between No. 3 and the Lei Zang Si temple.
+
+**Measurement:** the three fronts were read together on one plane along way 476113983's front, measured from its south corner.
+- **Depth:** `C6Wg…` with `NzRD…`, and `NzRD…` with `DRAX…` (June 2024), both agree on the plane **1.25 m behind** the source line.
+- **Positions on that plane:**
+  - No. 21: from −8.1 m to 0;
+  - No. 23: from 0 to 9.9 m;
+  - No. 25: from 10.1 m to 17.6 m.
+- So the row drifts about 1 m north of its source ways by No. 25.
+- **Layout:** each elevation is laid proportionally on its own source edge.
+- **Roofs:** the ridges are set at 5.6–6.1 m. Read on the front plane they had looked about 4.7 m, because the ridges stand several metres back.
+
+### 4. Way 454254241: No. 21, the Nanyang Chee Clan Association
+
+- **Roof:** red corrugated, its deep fascia overhanging the front.
+- **Board:** white, along the front, reading **NANYANG CHEE CLAN ASSOCIATION 南洋徐氏總會** in red.
+- **Below the board:**
+  - blue glazed doors;
+  - a white panel with a red **徐** and XU 21;
+  - a wide glazed front, with two steps and potted plants.
+- **Measurement:** it photographs about 8.1 m wide, against the 7.6 m source edge.
+- **Naming:** Google Maps lists **Nanyang Chee Clan Assn** at 21 Lor 19 Geylang, Singapore 388496, with its point inside this way. So the board and the panel are redrawn in original type.
+
+Use `?review=nanyang-chee`.
+
+### 5. Way 476113983: No. 23
+
+- **Roof:** red tiled and hipped, over a cream house plated **23**.
+- **Front:**
+  - a grilled door under a dark canopy at its south end, with a red letterbox;
+  - two wide barred windows behind potted plants and trees;
+  - a cream beam under the eaves.
+- **Measurement:** it photographs about 9.9 m wide, against the 9.13 m source edge.
+- **Naming:** none.
+  - Google Maps lists Commercial Industrial Supplies & Services Pte Ltd at 23 Lor 19 Geylang, with its point inside this way.
+  - It also lists the Singapore PickleBall Association at the same address.
+  - No sign for either was photographed.
+
+Use `?review=l19-23`.
+
+### 6. Way 476113984: No. 25, Chee Hoe Hong
+
+- **Roof:** red tiled and hipped, with a deep orange fascia.
+- **Front:**
+  - a wide mesh-grilled window over a low wall of grey tiles;
+  - a grilled doorway up two steps, under a blue board reading **志和行(私人)有限公司 CHEE HOE HONG (PTE) LTD**.
+- **Measurement:** it photographs about 7.5 m wide, on its 7.49 m source edge but about 1 m north of it.
+- **Naming:** Google Maps lists **Chee Hoe Hong Pte Ltd** at 25 Lor 19 Geylang, Singapore 388498, with its point inside this way. So the board is redrawn in original type.
+  - Zhejiang Shenghua Steel is also listed at No. 25. Its point lies 1.7 m outside the way, and no sign for it was photographed.
+
+Use `?review=chee-hoe-hong`.
