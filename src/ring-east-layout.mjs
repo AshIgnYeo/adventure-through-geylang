@@ -113,10 +113,9 @@ export const sims134 = {
 // east edge. Only their backs and roofs are visible from the modelled streets, so they are massing, coloured after
 // their June 2024 fronts and roofed after the satellite tiles. Heights were read on the source plane from two
 // panoramas: about 14 m to the roof slabs of the three-storey walk-ups (±1 m for the drive's depth uncertainty).
-// Ways rebuilt with their fronts in src/lorong-17-layout.mjs (open question 35) are no longer listed here.
-const lorong17 = [
-  ['454254280', 13.0, '#e6dcc8', '#b5654a'],
-];
+// Ways rebuilt with their fronts in src/lorong-17-layout.mjs (open question 35) are no longer listed here;
+// by stop 13 all eleven were.
+const lorong17 = [];
 export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
   id: `l17-${id}`, buildingIds: [id], kind: 'unnamed', unnamed: true, massing: true, height, colour, ...(roof ? { roof } : {}),
   name: 'Walk-up on the west side of Lorong 17, south of Sims Avenue (June 2024 exterior, massing only)', address: 'Lorong 17 Geylang, west side',

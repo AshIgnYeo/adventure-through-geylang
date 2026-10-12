@@ -26,16 +26,16 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 10 | West | 454254277 | No. 31, a pipe shop | Done; unnamed |
 | 11 | West | 454254278 | No. 33, a temple front | Done; unnamed |
 | 12 | West | 454254279 | No. 35, Gyaltsap Tashi Ling Buddhist Society | Done; named |
-| 13–14 | West | 454254280 | The block before Sims Avenue | Massing, to rebuild |
-| 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
-| 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
-| 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
-| 19 | East | 454254240 | The long building | To do |
-| 20 | East | 454254238 | | To do |
-| 21–24 | East | 454254249 … 454254251 | Four narrow units | To do |
-| 25 | East | 454254253 | The Geylang Road corner house | To do |
+| 13 | West | 454254280 | Nos. 37–41, three bays with the Singapore Rattan Industry Association | Done; unnamed; split and naming question 37 |
+| 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
+| 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
+| 16–17 | East | 454254307, 454254308 | South of No. 134 | To do |
+| 18 | East | 454254240 | The long building | To do |
+| 19 | East | 454254238 | | To do |
+| 20–23 | East | 454254249 … 454254251 | Four narrow units | To do |
+| 24 | East | 454254253 | The Geylang Road corner house | To do |
 
-A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
+Stops 7 (Nos. 23 and 25) and 13 (Nos. 37–41) each took in a whole photographed building, so the stops after them are numbered one and two lower than first planned. A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
 
 ## West side
 
@@ -304,3 +304,29 @@ An off-white three-storey finned walk-up, taller than its peach neighbours, with
   - The English lettering and the emblem are redrawn in original type. The partly hidden Chinese line is not drawn.
 
 Use `?review=gyaltsap-tashi-ling`.
+
+### 13. Way 454254280: Nos. 37–41
+
+One pale yellow three-storey building of three bays between projecting fins, with its roof slab at about **10.4 m**:
+
+- **South bay (No. 37):** two windows on each upper floor, a vent band, and an open five-foot way.
+- **Middle bay (No. 39):** a white board reading 新加坡籐業公會 S'PORE RATTAN INDUSTRY ASSN. between its first-floor windows.
+- **North bay (No. 41):** a louvred vent band and a grilled top-floor window.
+- **Ground floor of the middle and north bays:** a long yellow board reading Ah Qi Trading & Construction Pte Ltd, Islandwide Roofing & Decking Specialists, over a green awning and a builder's store.
+
+**Measurement:** two pairs of June 2024 panoramas (`ghWQ…` with `9Tds…`, and `8zSh…` with `qR4q…`) triangulate the ends and the two fins **0.2–1.0 m behind** the source edge.
+- The building is **17.4 m** long, from 2.7 m south of the source corner, with bays of about 5.4, 6.1 and 5.9 m.
+- It fills most of the 4 m gap after No. 35's way.
+
+**Layout:**
+- Laid on the 14.62 m source edge. This way's front is about 3 m nearer the lane than the walk-ups' source fronts, so it already stands close to the photographed line.
+- The fins and the awning are kept shallow, because the front is 4.2 m from the lane's centreline.
+- The east-ring massing for the west side is now empty: every one of its eleven ways has its front.
+
+**Naming:** none for now.
+- Google Maps lists **Singapore Rattan Industry Assoc.** with its point inside this way, at "39 Sims Cl, Singapore 388562". The postal code belongs to this stretch of Lorong 17, so the association is at No. 39, the middle bay.
+- Naming one bay of a three-bay way needs the way split: [open question 37](open-questions.md).
+- Ah Qi Trading & Construction is listed only at Woodlands and Lim Chu Kang, so its board stays blank.
+- Google's address point for No. 41 also falls in this way.
+
+Use `?review=l17-37-41`.

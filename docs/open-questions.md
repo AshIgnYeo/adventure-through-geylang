@@ -14,6 +14,17 @@ Logged during the Lorong 17 walk (open question 35), for the owner to answer whe
     - **Recommendation:** yes. Author the footprint from the triangulated corners, with the front 1.5 m forward and the north wall on way 454254237's south wall, and lay the elevation at its photographed widths.
     - **Unlocks:** true window and bay widths, the closed gap, and the listing point inside the way.
 
+37. **Lorong 17, way 454254280 (Nos. 37–41): split it into its three photographed bays, and name the middle bay's upper floors the Singapore Rattan Industry Association?**
+    - **Evidence:** June 2024 Street View shows one three-storey building of three finned bays.
+      - **Middle bay:** a white board reading 新加坡籐業公會 S'PORE RATTAN INDUSTRY ASSN. between its first-floor windows.
+      - **Measurement:** two pairs of panoramas triangulate the ends and fins 0.2–1.0 m behind the source edge. The building is 17.4 m long, from 2.7 m south of the way's corner, with bays of about **5.4, 6.1 and 5.9 m**. The fins fall at about 5.1 m and 11.6 m along the 14.62 m source edge, laid proportionally.
+    - **Listing:** Google Maps lists Singapore Rattan Industry Assoc. with its point inside this way.
+      - The listed address is **39 Sims Cl, Singapore 388562**, but the postal code belongs to this stretch of Lorong 17, between No. 31 (388555) and No. 35. So the association is at **No. 39**, the middle bay.
+      - Open question 12 allows a clearly signed occupant when published addresses disagree.
+    - **What happens now:** the building is modelled as one unnamed place on the whole way, with every board blank.
+    - **Recommendation:** yes. Split the way at the two fins, as under questions 30 and 31, and name the middle bay's upper floors after the board, with no claim about its ground floor.
+    - **Unlocks:** one named association. The Ah Qi Trading & Construction board on the ground floor stays blank either way: the company is listed only at Woodlands and Lim Chu Kang.
+
 ## Settled
 
 ### Seventh batch, answered 12 October 2026
