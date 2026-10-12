@@ -388,6 +388,53 @@ export const sims146 = {
   }],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146];
+// ---------------------------------------------------------------------------------------------
+// 10. Way 454254339, No. 148 Sims Avenue, the Lorong 19 east corner: He Ping Claypot Rice Restaurant, a cream
+// two-storey corner coffeeshop with ornate capitals under deep eaves. Its lane face (edge 3, u south from Sims Avenue)
+// is read 0.5 m in front of the source edge, where the lane panoramas agree: about 22.2 m from the corner to its south
+// end, triangulated 21.7 m along, against the 19.64 m source edge; laid proportionally. Its Sims Avenue front is only
+// about 5.9 m: its party line with No. 150 triangulates 3.6 m inside the source outline, so the outline's east 3.5 m
+// on Sims Avenue is drawn as No. 150's plain pale green west bay.
+const W339 = 19.635, lay339 = lay(-.5, W339 / 22.2), at339 = s => lay339(s).map(v => Math.min(W339, Math.max(0, v)));
+const cream339 = '#ece6d6', rows339 = [[5.8, 7.45]];
+export const hePing = {
+  id: 'he-ping', buildingIds: ['454254339'], kind: 'he-ping', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 16 },
+  name: 'He Ping Claypot Rice Restaurant (June 2024 exterior)', address: '148 Sims Avenue (the Lorong 19 east corner)',
+  height: 8.8, ceiling: 4.4, fiveFootWay: 2.5, roof: { type: 'hip', ridge: 10.8, colour: '#5d534d' },
+  evidence: 'June 2024 Street View shows a cream two-storey corner coffeeshop on the east corner of Lorong 19 and Sims Avenue: upper-floor windows between pilasters with ornate red and green relief capitals under a moulded frieze and deep eaves, a brown cornice at first-floor level, a salmon-tiled bay at its south end, and at the corner a dark wooden board with 和平 in white calligraphy; at street level an open coffeeshop under grey awnings of the gas supplier TSH Gas, lettered Esso LPG. Google Maps lists He Ping Claypot Rice Restaurant, a Chinese restaurant, at 148 Sims Ave, Singapore 387470, with its point inside this way, so the corner board is redrawn in original type; the awnings name a gas supplier and stay blank. Two pairs of June 2024 lane panoramas agree on the lane face 0.5 m in front of the source edge; its south end on the back lane triangulates 21.7 m from the source corner, so the face is about 22.2 m long against the 19.64 m source edge. On Sims Avenue, bearings from two Sims Avenue panoramas put its party line with No. 150 3.6 m inside the source outline and 1.2 m behind its front, so its Sims front is only about 5.9 m wide; the outline\'s east 3.5 m on Sims Avenue is drawn plain, in No. 150\'s pale green. Heights were read on the lane plane, above the five-foot-way floor: cornice at 4.45-4.9 m, windows at 5.8-7.45 m, eaves at about 8.8 m.',
+  sources: [way('454254339'), search('He Ping Claypot Rice Restaurant 148 Sims Avenue'), pano('7HvC0j9FXvZ4XoPIVwAqtA', 80, 10, 90), pano('FrRZ2jysnfLAH20E2BH4lw', 80, 15, 100), pano('2Ytwaot-jcjncvQsoDh-YA', 75, 10, 90), pano('8peXBtTZFyR4k8lv2HZbrQ', 175, 15, 100), pano('X9akYazsOs1oFvuI5CYKCw', 225, 10, 90)],
+  colours: { wall: cream339, trim: '#e2dbc8', frame: '#4a4c4a', glass: '#4a5458', pier: cream339, back: '#5c544c', floor: '#a8a296' },
+  bands: [[4.45, 4.9, .3, '#8a6450'], [8.1, 8.8, .15, '#e2dbc8']],
+  windows: [[2.5, 3.5], [5.1, 6.0], [6.6, 7.7], [9.5, 10.4], [11.4, 12.4], [14.4, 15.4], [16.3, 17.3], [19.5, 20.4]].flatMap(s => rows339.map(h => ({ u: at339(s), h, panes: 2 }))),
+  blocks: [
+    ...[[.3, .9], [3.6, 4.3], [7.8, 8.5], [12.8, 13.4], [17.9, 18.7]].flatMap(s => [
+      { name: 'pilaster', u: at339(s).map(v => Math.max(0, v)), h: [4.9, 8.1], out: .08, depth: .16, colour: '#e2dbc8' },
+      { name: 'relief capital', u: at339(s).map(v => Math.max(0, v)), h: [8.0, 8.75], out: .14, depth: .2, colour: '#a85a4e' },
+    ]),
+    { name: 'salmon-tiled bay', u: at339([18.7, 21.7]), h: [4.9, 8.1], out: .02, depth: .03, colour: '#c27a5e' },
+    { name: 'deep eaves', u: [0, W339], h: [8.8, 9.05], out: .5, depth: 1.0, colour: '#5a4a42' },
+    { name: 'grey awning', u: at339([-.3, 21.6]).map(v => Math.max(0, v)), h: [2.6, 4.0], out: .7, depth: 1.4, colour: '#5f5f5d' },
+  ],
+  // The corner's wooden board with 和平.
+  boards: [{ u: at339([1.4, 3.0]), h: [4.55, 5.9], out: .35 }],
+  piers: [[-.5, .3], [8.0, 8.5], [13.0, 13.4], [18.0, 18.7], [21.2, 21.7]].map(s => at339(s).map(v => Math.max(0, v))),
+  backFittings: [{ name: 'open coffeeshop', u: at339([.4, 21.2]), h: [.1, 4.0], colour: '#5e5248', glow: .1 }],
+  sides: [{
+    edge: 0, // the Sims Avenue front, u west from the source outline's east end; No. 148 from 3.6 m to the corner
+    heldFlat: true, // its source edge stands 6.6 m from Sims Avenue's centreline, at the estimated carriageway's edge
+    windows: [[5.2, 6.0], [6.3, 7.0]].flatMap(u => rows339.map(h => ({ u, h, panes: 2 }))),
+    blocks: [
+      { name: 'No. 150\'s west bay, pale green', u: [.05, 3.55], h: [.1, 8.8], out: .02, depth: .03, colour: '#c9d6b4' },
+      { name: 'No. 150\'s shutter', u: [.3, 3.3], h: [.1, 3.0], out: .04, depth: .02, colour: '#bdbdb8' },
+      { name: 'cornice', u: [3.6, 9.03], h: [4.45, 4.9], out: .12, depth: .24, colour: '#8a6450' },
+      { name: 'relief capital', u: [3.6, 4.2], h: [8.0, 8.75], out: .1, depth: .2, colour: '#b8584a' },
+      { name: 'deep eaves', u: [3.6, 9.03], h: [8.8, 9.05], out: .5, depth: 1.0, colour: '#5a4a42' },
+      { name: 'grey awning, held flat', u: [3.6, 9.03], h: [2.6, 4.0], out: .12, depth: .24, colour: '#5f5f5d' },
+      { name: 'open coffeeshop', u: [3.9, 8.8], h: [.1, 3.9], out: .01, depth: .02, colour: '#5e5248' },
+    ],
+  }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;

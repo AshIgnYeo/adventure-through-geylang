@@ -25,7 +25,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 7 | West | 454254239 | No. 29, Lei Zang Si | Done; named |
 | 8 | West | 454254309 | No. 33, Treasures @ G19: Starlon and Tektron Pacific | Done; named after two tenants |
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | Done; unnamed |
-| 10 | East | 454254339 | No. 148 Sims Avenue, the east corner | |
+| 10 | East | 454254339 | No. 148 Sims Avenue, the east corner: He Ping Claypot Rice Restaurant | Done; named |
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | |
 | 12 | East | 454254247 | Bougainvilla Apartments | |
 | 13 | East | 1223524381 | No. 6 | |
@@ -307,3 +307,34 @@ A back lane separates No. 33 from a cream three-storey corner coffeeshop.
 Use `?review=sims-146`.
 
 **West side complete.** Every building from No. 323 Geylang Road to No. 146 Sims Avenue now has its Lorong 19 front. Their photographed fronts stand off their source edges by between 3.5 m forward (No. 323) and 2.6 m back (The Primero). This goes to the owner with the east side.
+
+## East side
+
+### 10. Way 454254339: No. 148 Sims Avenue, He Ping Claypot Rice Restaurant
+
+A cream two-storey corner coffeeshop on the east corner of Lorong 19 and Sims Avenue.
+
+- **Upper floor:** windows between pilasters with ornate red and green relief capitals, under a moulded frieze and deep eaves. A brown cornice runs at first-floor level, and a salmon-tiled bay stands at the south end.
+- **Corner:** a dark wooden board with **和平** in white calligraphy.
+- **Street level:** an open coffeeshop under grey awnings of the gas supplier TSH Gas, lettered Esso LPG.
+
+**Measurement:**
+- **Lane face:**
+  - `7HvC…` with `FrRZ…`, and `FrRZ…` with `2Ytw…`, agree on it **0.5 m in front of** the source edge.
+  - Its south end on the back lane triangulates 21.7 m from the source corner (`2Ytw…` with `IzKm…`). So the face is about **22.2 m** long, against the 19.64 m source edge.
+- **Sims Avenue front:** bearings from `8peX…` and `X9ak…` put its party line with No. 150 **3.6 m inside** the source outline and 1.2 m behind its front. So the Sims front is only about **5.9 m** wide, against the 9.04 m source edge.
+- **Heights:**
+  - cornice: 4.45–4.9 m;
+  - windows: 5.8–7.45 m;
+  - eaves: about 8.8 m.
+
+**Layout:**
+- The lane face is laid proportionally on its source edge (×0.88).
+- The Sims front is a side face, laid from the corner at its photographed scale.
+- The source outline's east 3.5 m on Sims Avenue is drawn plain, in No. 150's pale green, since No. 150 itself is outside the study.
+- The Sims front stands at the edge of Sims Avenue's estimated carriageway, so its awning is held flat.
+- The source outline is too wide and too short. Authoring it goes to the owner with the east side.
+
+**Naming:** Google Maps lists **He Ping Claypot Rice Restaurant**, a Chinese restaurant, at 148 Sims Ave, Singapore 387470, with its point inside this way. So the 和平 board is redrawn in original type. The awnings name a gas supplier and stay blank.
+
+Use `?review=he-ping`.

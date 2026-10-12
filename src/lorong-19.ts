@@ -102,6 +102,14 @@ const draws: Draws = {
       text(c, 'The sticker & signage workshop', w * .5, h * .74, h * .22, '#1d1d1d', '500', sans, w * .9);
     })],
   },
+  // The corner's dark wooden board with 和平 in white brush lettering.
+  'he-ping': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#3a2a20'; c.beginPath(); c.ellipse(w / 2, h / 2, w * .48, h * .48, 0, 0, Math.PI * 2); c.fill();
+      c.strokeStyle = '#a88a5a'; c.lineWidth = w * .02; c.stroke();
+      text(c, '和', w * .5, h * .33, h * .32, '#f4efe2', '700', kai); text(c, '平', w * .5, h * .64, h * .32, '#f4efe2', '700', kai);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */
