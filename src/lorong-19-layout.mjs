@@ -560,6 +560,48 @@ export const bougainvilla = {
   ],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla];
+// ---------------------------------------------------------------------------------------------
+// 13. Way 1223524381, Nos. 6-8: a granite-clad block of four storeys over a five-foot way on round white columns,
+// its upper floors in a recessed frame of vertical fins. Its front (edge 3, u south from the north end) photographs
+// far in front of the source edge: the LOFT door on the five-foot way's back wall triangulates 6.5 m forward, and the
+// granite face 7.5 m forward, where it runs from 2.4 m north of the source corner to 13.0 m south of it, about 15.4 m
+// against the 11.19 m source edge. Laid proportionally (x0.73) on the source edge until its footprint is settled (open
+// question 44).
+const W381 = 11.188, at381 = s => lay(-2.4, W381 / 15.4)(s).map(v => Math.min(W381, Math.max(0, v)));
+const fins381 = [[1.0, 1.25], [2.8, 3.05], [4.75, 5.0], [6.6, 6.85], [8.5, 8.75]];
+const granite381 = '#9c9182';
+export const no6 = {
+  id: 'l19-6-8', buildingIds: ['1223524381'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 9, pitch: 30 },
+  name: 'Nos. 6-8 Lorong 19 (June 2024 exterior, occupants not identified)', address: '6-8 Lorong 19 Geylang (plates 6 and NO 8)',
+  height: 15.3, ceiling: 3.45, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8a857e' },
+  evidence: 'June 2024 Street View shows a granite-clad block of four storeys between Bougainvilla Apartments and Sims Point, over a five-foot way on round white columns: a deep granite band over the five-foot way, then a recessed frame of vertical granite fins holding two rows of six windows, with single windows in the side bays and a parapet at about 15.3 m. In the five-foot way, from the north: a green door lettered LOFT, roller shutters with a plate reading NO 8, a glazed front under a board reading 三福園地 San Fu Yuan Di Learning Center (No. 6), an orange pier and a column plated 6, with a red B&W (Bed & Workspace) blade sign above. Google Maps lists several firms at 6, 6A and 8 Lor 19 Geylang (among them Voice Add, Jill Leong Advertising & Design and the Real Estate Academy) but none of their signs was photographed; San Fu Yuan Di Learning Center is listed at Lorong 29, B&W is not listed, and the businesses listed at Nos. 6 and 8 with signs are closed. So no name is given and the boards are blank. Bearings from two June 2024 lane panoramas put the LOFT door on the back wall of the five-foot way 6.5 m in front of the source edge, and on a plane 7.5 m forward the granite face runs about 15.4 m against the 11.19 m source edge. Until its footprint is settled (open question 44) the elevation is laid proportionally on the source edge, about 7.5 m behind its photographed line.',
+  sources: [way('1223524381'), search('6 Lorong 19 Geylang'), pano('0tJ_yZzLMxOeYk3kLcr2Bw', 82, 20, 100), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 105, 15, 80), pano('NZfk6nTA1mTETJHQXIob7Q', 60, 15, 80)],
+  colours: { wall: granite381, trim: '#a89e90', frame: '#3a3a38', glass: '#4a5654', pier: '#ecebe6', back: '#b8b2a6', floor: '#b88a6e' },
+  bands: [[3.45, 5.9, .3, granite381], [5.6, 5.9, .55, '#a89e90']],
+  windows: [
+    ...[[1.4, 2.6], [3.2, 4.6], [5.15, 6.45], [7.0, 8.35], [8.9, 10.2], [-.15, .85]].flatMap(s => [[6.1, 7.6], [10.7, 12.4]].map(h => ({ u: at381(s), h, panes: 2, out: .03 }))),
+    ...[[-2.2, -1.1], [11.2, 12.2]].flatMap(s => [[6.3, 7.6], [10.8, 12.4]].map(h => ({ u: at381(s), h, panes: 2 }))),
+  ],
+  blocks: [
+    { name: 'recessed frame', u: at381([-.8, 11.0]), h: [5.9, 13.9], out: .005, depth: .01, colour: '#8f8476' },
+    ...fins381.map(s => ({ name: 'granite fin', u: at381(s), h: [5.9, 13.9], out: .25, depth: .5, colour: granite381 })),
+    ...[[-.9, -.8], [10.9, 11.0]].map(s => ({ name: 'frame edge', u: at381([s[0] - .2, s[1] + .1]), h: [5.9, 13.9], out: .25, depth: .5, colour: granite381 })),
+    { name: 'frame head', u: at381([-.9, 11.0]), h: [13.6, 13.9], out: .25, depth: .5, colour: granite381 },
+    { name: 'parapet', u: [0, W381], h: [14.9, 15.3], out: .05, depth: .1, colour: '#a89e90' },
+    ...[[-2.2, -1.3], [-.4, .4], [10.3, 10.8], [12.0, 12.6]].map(s => ({ name: 'round white column', u: at381(s), h: [0, 3.45], out: .1, depth: .5, colour: '#ecebe6' })),
+    { name: 'blank B&W blade sign', u: at381([11.6, 12.4]), h: [3.6, 4.6], out: .7, depth: .06, colour: '#c8302a' },
+  ],
+  piers: [[-2.2, -1.3], [-.4, .4], [10.3, 10.8], [12.0, 12.6]].map(at381),
+  backFittings: [
+    { name: 'green LOFT door', u: at381([.4, 1.2]), h: [.1, 2.5], colour: '#4a6a3a' },
+    { name: 'roller shutters', u: at381([2.0, 5.3]), h: [.1, 2.7], colour: '#b8b8b2' },
+    { name: 'NO 8 plate', u: at381([5.5, 5.8]), h: [2.0, 2.4], out: .03, colour: '#e8e2d6' },
+    { name: 'glazed learning-centre front', u: at381([6.2, 9.8]), h: [.1, 2.7], colour: '#9aa6a2', glow: .08 },
+    { name: 'blank learning-centre board', u: at381([6.0, 10.0]), h: [2.75, 3.35], out: .04, colour: '#efece4' },
+    { name: 'orange pier', u: at381([11.0, 11.5]), h: [.1, 3.3], out: .05, colour: '#e0702a' },
+  ],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla, no6];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;

@@ -28,7 +28,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 10 | East | 454254339 | No. 148 Sims Avenue, the east corner: He Ping Claypot Rice Restaurant | Done; named |
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | Done; named |
 | 12 | East | 454254247 | No. 10, Bougainvilla Apartments | Done; named; footprint question 44 |
-| 13 | East | 1223524381 | No. 6 | |
+| 13 | East | 1223524381 | Nos. 6–8, a granite-clad block | Done; unnamed; footprint question 44 |
 | 14 | East | 454254246 | Sims Point | |
 | 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner | |
 | 16–20 | Geylang Road | 454254262 to 454254254 | Nos. 321 to 313, west from the corner | |
@@ -411,3 +411,39 @@ South of No. 6, past an open car park at Lorong Bachok, a white apartment block 
 - The address, the plate and the lettering agree on this building, so it is named, as at Crystal Mansions (open question 32). The lobby lettering is redrawn in original type.
 
 Use `?review=bougainvilla`.
+
+### 13. Way 1223524381: Nos. 6–8
+
+A granite-clad block of four storeys between Bougainvilla Apartments and Sims Point, over a five-foot way on round white columns.
+
+- **Upper floors:**
+  - a deep granite band over the five-foot way;
+  - a recessed frame of vertical granite fins, holding two rows of six windows;
+  - single windows in the side bays;
+  - a parapet at about 15.3 m.
+- **Five-foot way, from the north:**
+  - a green door lettered LOFT;
+  - roller shutters with a plate reading **NO 8**;
+  - a glazed front under a board reading 三福園地 San Fu Yuan Di Learning Center, No. 6;
+  - an orange pier and a column plated **6**, with a red B&W (Bed & Workspace) blade sign above.
+
+**Measurement:** the front stands far in front of the source edge.
+- Bearings from `0tJ_…` and `ZqOX…` put the LOFT door, on the back wall of the five-foot way, **6.5 m forward**.
+- On a plane 7.5 m forward, the granite face runs from 2.4 m north of the source corner to 13.0 m south of it: about **15.4 m**, against the 11.19 m source edge.
+- Heights, read on that plane from `0tJ_…`, which stands square to it:
+  - five-foot way: to 3.45 m;
+  - granite band: to 5.9 m;
+  - windows: 6.1–7.6 and 10.7–12.4 m;
+  - frame: to 13.9 m;
+  - parapet: 15.3 m.
+
+**Layout:**
+- Laid proportionally on the source edge (×0.73), about 7.5 m behind its photographed line.
+- Authoring the footprint is [open question 44](open-questions.md).
+
+**Naming:** none.
+- Google Maps lists several firms at 6, 6A and 8 Lor 19 Geylang: Voice Add, Jill Leong Advertising & Design, the Real Estate Academy. None of their signs was photographed.
+- San Fu Yuan Di Learning Center is listed at Lorong 29, and B&W is not listed.
+- The businesses listed at Nos. 6 and 8 with signs (a massage parlour, JJ Recycling, Carefree Clearwater) are closed.
+
+Use `?review=l19-6-8`.
