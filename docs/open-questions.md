@@ -6,7 +6,24 @@ Started: 10 October 2026.
 
 ## Open
 
-Logged during the Lorong 17 walk (open question 35), for the owner to answer when the walk is done.
+None at present.
+
+## Settled
+
+### Eighth batch, answered 12 October 2026
+
+The project owner chose the recommended option for each ("yes to all"), after the Lorong 17 walk.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 36 | **Yes.** Author Feng Shang's footprint on the photographed front | Part of the Lorong 17 west row group (`lorong-17-west-row`); the photographed front is 12.9 m, not the 12.5 m first written |
+| 37 | **Yes.** Split way 454254280 into its three bays and name No. 39 | Cut at the fins, 4.4 m and 9.6 m along the source edge (the 5.1 m and 11.6 m in the question were photographed distances before scaling onto the 14.62 m edge); the middle bay's upper floors are named the Singapore Rattan Industry Association |
+| 38 | **Yes.** Re-author the Lorong 17 west row, Nos. 5–35, on its photographed line | One footprint group: fronts on the triangulated line, party lines at the measured fins and pilasters, rear lines kept, the side passage and way 237 kept |
+| 39 | **Yes.** Move No. 134 Sims Avenue's outline 5.5 m east and 2.5 m south | Shape kept; the awnings drawn at their photographed depth |
+| 40 | **Yes.** Author the temple's footprint over the whole photographed temple | About 8.6 m on the way's front line, keeping its depth and clear of Bright Star Hotel |
+| 41 | **Yes.** Add footprints for the white row's two northern houses | Nos. 8 and 10 by the row's sequence, on way 249's front and rear lines |
+
+The original wording of questions 36–41 is kept here:
 
 36. **Lorong 17, way 454254236 (Feng Shang Hair Salon): author its footprint on the photographed front?**
     - **Evidence:** two June 2024 panoramas (`h2GM…`, `qC7t…`) triangulate the four upper windows and the north party line. All five agree on a front **1.4–1.7 m in front of** the source edge. On that plane the building photographs **12.5 m** wide against the 9.04 m source edge: from 1.56 m south of the source corner to 11.35 m north of it, where it meets the south wall of way 454254237. The source map leaves a 1.3 m gap between the two ways.
@@ -64,8 +81,6 @@ Logged during the Lorong 17 walk (open question 35), for the owner to answer whe
     - **What happens now:** the four southern houses are modelled, one per way, each laid proportionally on its way. The two northern houses are missing, leaving an open gap where they stand.
     - **Recommendation:** yes. Author two footprints north of way 249, on its front and rear lines, at the photographed widths, and model them on the row's shared elevation, unnamed unless a listing and sign agree.
     - **Unlocks:** the whole row, and the gap closed.
-
-## Settled
 
 ### Seventh batch, answered 12 October 2026
 
