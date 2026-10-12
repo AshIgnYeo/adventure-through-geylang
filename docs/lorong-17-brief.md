@@ -31,7 +31,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Done; unnamed; footprint question 39 |
 | 16 | East | 454254307 | Nos. 42–44, a white block with a stair tower | Done; unnamed |
 | 17 | East | 454254308 | Nos. 38–40, a cream block with a stair tower | Done; unnamed |
-| 18 | East | 454254240 | The long building | To do |
+| 18 | East | 454254240 | No. 20, Bright Star Hotel | Done; named |
 | 19 | East | 454254238 | | To do |
 | 20–23 | East | 454254249 … 454254251 | Four narrow units | To do |
 | 24 | East | 454254253 | The Geylang Road corner house | To do |
@@ -438,3 +438,29 @@ A weathered, mould-streaked cream three-storey block of two bays either side of 
 **Naming:** none. Google Maps lists **CSL Engineering**, an engineering consultant on floor 1, at 40 Lorong 17 Geylang, but no sign for it was photographed.
 
 Use `?review=l17-38-40`.
+
+### 18. Way 454254240: No. 20, Bright Star Hotel
+
+A service lane separates Nos. 38–40 from this six-storey block. It is set back about 10 m from the lane behind a lawn, palms and shrubs.
+
+- **Ground floor:** open and clad in red granite, with a lobby, a drinks machine and parked motorcycles.
+- **First floor:** white-framed windows in red granite, under a white cornice at about **9.5 m**.
+- **Upper floors:** four cream floors of paired windows between white pilasters, with peach spandrel panels and hooded windows on the top floor.
+- **Top:** a parapet at about **21.8 m**, and a curved pediment with an oval medallion at about 23 m.
+- **Signs:** a door plate reads **20**. A red banner on the granite reads BRIGHT STAR HOTEL SPECIAL PROMOTION 特别促销, with room rates and a telephone number.
+
+**Measurement:** `INbo…`, `gBz2…`, `FeWy…`, `zA0h…` and `qKWw…` (June 2024) agree on the façade on the source plane.
+- The façade is about **45.3 m** long, from 2.3 m north of the source corner.
+- Storey heights, read on that plane:
+  - ground floor: 0–3.4 m;
+  - first-floor windows: 5.0–7.4 m;
+  - cornice: 9.3–9.8 m;
+  - upper windows: 10.3–12.4, 13.4–15.5, 16.4–18.6 and 19.4–21.0 m.
+
+**Layout:** laid on the 42.12 m source edge. The north end, on the service lane, carries its window columns as a side face.
+
+**Naming:** Google Maps lists **Bright Star Hotel**, a 3-star hotel, at 20 Lorong 17 Geylang.
+- Its point lies **0.28 m in front of** the source front, inside the photographed front.
+- The listing, the door plate and the banner agree. The building is named under the Crystal Mansions precedent (open question 32), and the banner is redrawn in original type.
+
+Use `?review=bright-star-hotel`.

@@ -50,6 +50,18 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
     for (const x of [w * .14, w * .93]) for (let k = 0; k < 6; k++) { c.fillStyle = '#d6b25a'; c.beginPath(); c.ellipse(x + Math.cos(k * 1.05) * h * .12, h * .5 + Math.sin(k * 1.05) * h * .12, h * .1, h * .05, k * 1.05, 0, Math.PI * 2); c.fill(); }
     text(c, 'Gyaltsap Tashi Ling Buddhist Society', w * .54, h * .5, h * .5, '#d9b45a', '700', 'Georgia, "Times New Roman", serif', w * .72);
   }] },
+  'bright-star-hotel': { boards: [(c, w, h) => {
+    c.fillStyle = '#d2463c'; c.fillRect(0, 0, w, h);
+    text(c, 'BRIGHT STAR HOTEL', w * .5, h * .1, h * .1, '#f6efe0', '700', sans, w * .6);
+    text(c, 'SPECIAL PROMOTION', w * .5, h * .25, h * .16, '#f3e6b8', '900', sans, w * .9);
+    text(c, '特别促销', w * .5, h * .45, h * .18, '#f6efe0', '700', hei, w * .5);
+    for (const [x, t, unit] of [[.27, '$80', 'nett/night'], [.67, '$20', 'nett/hour']] as const) {
+      c.fillStyle = '#f2d35a'; c.beginPath(); c.arc(w * x - w * .04, h * .72, h * .14, 0, Math.PI * 2); c.fill();
+      text(c, t, w * x - w * .04, h * .72, h * .2, '#1c1c1c', '900', sans);
+      text(c, unit, w * x + w * .12, h * .74, h * .09, '#f6efe0', '700', sans);
+    }
+    text(c, 'Tel: 6742 7666', w * .5, h * .93, h * .07, '#f6efe0', '600', sans);
+  }] },
   // Dark slate lettering on white: the parapet reads right to left, the ground-floor board left to right.
   'true-jesus-mission': {
     boards: [(c, w, h) => {

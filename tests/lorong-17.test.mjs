@@ -94,3 +94,11 @@ test('the Gyaltsap Tashi Ling Buddhist Society is named on No. 35 from its board
   const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
   assert.ok(along > -2 && along < 0 && out > 0 && out < 2.5);
 });
+
+test('Bright Star Hotel is named on No. 20, its listing point 0.28 m in front of the source front', () => {
+  const place = lorong17.find(p => p.id === 'bright-star-hotel'), frame = lorong17Frame(outline('454254240'), place);
+  assert.equal(landmarkFor('454254240').id, place.id);
+  const point = project([103.8788156, 1.3134517], map.origin);
+  const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
+  assert.ok(out > 0 && out < .5);
+});

@@ -644,7 +644,56 @@ export const no38to40 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40];
+// ---------------------------------------------------------------------------------------------
+// 18. Way 454254240, No. 20: Bright Star Hotel, a six-storey block set back about 10 m from the lane behind a lawn,
+// with a granite-clad ground and first floor under a white cornice, four cream upper floors with peach spandrels and
+// a curved pediment. Five June 2024 panoramas agree on it on the source plane; it photographs about 45.3 m long from
+// 2.3 m north of the source corner, laid on the 42.12 m source edge, u south.
+const W240 = 42.119, at240 = lay(-2.3, W240 / 45.3);
+const cols240 = [[-2.0, 2.2], [3.9, 8.0], [9.1, 12.8], [13.9, 17.0], [18.4, 21.4], [23.96, 27.04], [28.0, 31.0], [31.8, 34.9], [35.1, 37.4], [38.15, 40.3], [40.9, 42.6]].map(at240);
+const first240 = [[9.5, 12.2], [14.5, 16.6], [18.7, 21.2], [24.0, 26.3], [28.2, 30.5], [32.1, 34.0], [35.4, 37.1], [38.3, 39.6], [40.9, 42.1]].map(at240);
+const floors240 = [[10.3, 12.4], [13.4, 15.5], [16.4, 18.6], [19.4, 21.0]];
+export const brightStar = {
+  id: 'bright-star-hotel', buildingIds: ['454254240'], kind: 'bright-star-hotel', frontEdge: 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 9, pitch: 30 },
+  name: 'Bright Star Hotel (June 2024 exterior)', address: '20 Lorong 17 Geylang (door plate 20)',
+  height: 21.8, ceiling: 3.4, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#a5a39c' },
+  evidence: 'June 2024 Street View shows a six-storey block set back about 10 m from the lane behind a lawn, palms and shrubs: an open ground floor clad in red granite with a lobby, a drinks machine and parked motorcycles, a first floor of white-framed windows in red granite under a white cornice at about 9.5 m, then four cream upper floors of paired windows between white pilasters with peach spandrel panels, hooded windows on the top floor, a parapet at about 21.8 m and a curved pediment with an oval medallion at about 23 m. A door plate reads 20, and a red banner on the granite reads BRIGHT STAR HOTEL SPECIAL PROMOTION 特别促销 with room rates and a telephone number. Google Maps lists Bright Star Hotel, a 3-star hotel, at 20 Lorong 17 Geylang, with its point 0.28 m in front of the source front, inside the photographed front (the Crystal Mansions precedent, open question 32). Listing, door plate and banner agree, so the building is named and the banner is redrawn in original type. Five June 2024 panoramas agree on the façade on the source plane; it photographs about 45.3 m long from 2.3 m north of the source corner and is laid on the 42.12 m source edge.',
+  sources: [way('454254240'), search('Bright Star Hotel 20 Lorong 17 Geylang'), pano('INboFn5xnG6TxoVcRIkLXA', 95, 4, 24), pano('gBz2E1aqjym_0qAkSZxE2A', 90, 20, 110), pano('FeWy4yNg9qEGZG5jKgP5XA', 90, 15, 110), pano('zA0hxiYKqVOIl4BIukFCWw', 115, 20, 100), pano('qKWw6QiwVVcNE7eOEzxMSA', 100, 20, 100)],
+  colours: { wall: '#ece9e1', trim: '#f4f3ef', frame: '#3b4a52', glass: '#7d97a3', pier: '#7e4a44', back: '#5a3a36', floor: '#9d978c' },
+  bands: [[9.3, 9.8, .5]],
+  windows: [
+    ...first240.map(u => ({ u, h: [5.0, 7.4], panes: 2, surround: true, out: .06 })),
+    ...floors240.flatMap(h => cols240.map(u => ({ u, h, panes: 3 }))),
+  ],
+  blocks: [
+    { name: 'red granite cladding', u: [0, W240], h: [3.4, 9.3], out: .02, depth: .04, colour: '#8a5048' },
+    { name: 'canopy soffit', u: [0, W240], h: [3.25, 3.45], out: .4, depth: .8, colour: '#e8e6e0' },
+    ...floors240.slice(0, 3).flatMap(h => cols240.map(u => ({ name: 'peach spandrel', u, h: [h[1] + .05, h[1] + .85], out: .02, depth: .03, colour: '#e3a589' }))),
+    ...cols240.map(u => ({ name: 'top-floor window hood', u: [u[0] - .1, u[1] + .1], h: [21.0, 21.3], out: .35, depth: .7, colour: '#f4f3ef' })),
+    ...cols240.slice(1).map(u => ({ name: 'white pilaster', u: [u[0] - .7, u[0] - .1], h: [9.8, 21.8], out: .15, depth: .3, colour: '#f4f3ef' })),
+    { name: 'curved pediment', u: at240([32.5, 38.5]), h: [21.8, 23.2], out: .05, depth: .3, colour: '#f4f3ef' },
+    { name: 'oval medallion', u: at240([34.4, 36.6]), h: [21.9, 22.9], out: .22, depth: .04, colour: '#e6e2d8' },
+    { name: 'lawn', u: [0, W240], h: [0, .1], out: 1.25, depth: 2.5, colour: '#5b7a45' },
+  ],
+  // The red promotional banner on the granite at the north end.
+  boards: [{ u: at240([1.0, 4.2]), h: [3.7, 5.3], out: .05 }],
+  piers: [[0, .5], ...[[8.4, 9.0], [17.5, 18.1], [27.3, 27.9], [35.0, 35.6]].map(at240), [W240 - .5, W240]],
+  backFittings: [
+    { name: 'hotel lobby', u: at240([0, 6.5]), h: [.1, 3.2], colour: '#3e3632', glow: .18 },
+    { name: 'drinks machine', u: at240([24.5, 25.4]), h: [.1, 1.9], out: .4, depth: .8, colour: '#e8e6e0', glow: .2 },
+    { name: 'undercroft', u: at240([7.0, 42.0]), h: [.1, 3.2], colour: '#4a4440' },
+  ],
+  sides: [{
+    edge: 3, // the north end on the service lane, u east from the front corner
+    windows: [[1.5, 4.5], [6.0, 9.0], [10.5, 13.5]].flatMap(u => [{ u, h: [5.0, 7.4], panes: 2, out: .06 }, ...floors240.map(h => ({ u, h, panes: 2 }))]),
+    blocks: [
+      { name: 'red granite cladding', u: [0, 15.82], h: [0, 9.3], out: .02, depth: .04, colour: '#8a5048' },
+      { name: 'cornice', u: [0, 15.82], h: [9.3, 9.8], out: .25, depth: .5, colour: '#f4f3ef' },
+    ],
+  }],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own
