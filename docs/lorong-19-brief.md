@@ -24,7 +24,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 6 | West | 476113984 | No. 25, Chee Hoe Hong | Done; named |
 | 7 | West | 454254239 | No. 29, Lei Zang Si | Done; named |
 | 8 | West | 454254309 | No. 33, Treasures @ G19: Starlon and Tektron Pacific | Done; named after two tenants |
-| 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | |
+| 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | Done; unnamed |
 | 10 | East | 454254339 | No. 148 Sims Avenue, the east corner | |
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | |
 | 12 | East | 454254247 | Bougainvilla Apartments | |
@@ -272,3 +272,38 @@ Both boards are photographed and legible. So the block is named after them, as N
 - the candied-fruit stall is not listed.
 
 Use `?review=starlon-tektron`.
+
+### 9. Way 454254310: No. 146 Sims Avenue, the Lorong 19 west corner
+
+A back lane separates No. 33 from a cream three-storey corner coffeeshop.
+
+- **Upper floors:** windows in pairs under curved concrete hoods, with bathroom louvres at the south end and a stepped parapet.
+- **Corner:** splayed.
+- **Street level:** an open coffeeshop under a maroon awning of the gas supplier Union Energy Group. Its boards:
+  - on the lane: a cream board reading 中国炒菜 杂菜饭;
+  - on the splay: a yellow board reading 中国炒菜·杂菜饭;
+  - on Sims Avenue: a yellow board reading **津程餐室 JING CHEN EATING HOUSE**, and stall boards (板面, LẨU GÀ CÔ BA).
+- **Back lane:** a metal spiral stair and a tall exhaust duct. Both are added as side faces.
+
+**Measurement:**
+- The depth scores were weak, so the depth was read from the 中国炒菜 杂菜饭 board's position in three lane panoramas (`2Ytw…`, `FrRZ…`, `7HvC…`). They agree on a plane about **1.5 m in front of** the source edge.
+- On that plane the lane face runs about **20.9 m**, from 2.0 m south of the source corner to the splay, against the 21.02 m source edge. The south end was read from `IzKm…` and `2Ytw…`.
+- **Heights:**
+  - five-foot way: 3.9 m;
+  - windows: 5.1–6.4 and 8.6–9.9 m;
+  - hoods: 7.1–7.8 and 10.75–11.6 m;
+  - parapet: about 12 m.
+- The splay and the Sims Avenue front were read from `EVsA…` on the Sims Avenue drive.
+
+**Layout:**
+- The lane face is laid on its source edge (×1.01).
+- The splay (edge 1) and the Sims Avenue front (edge 0) are side faces. Their source edges stand 6.0 m and 4.3 m from Sims Avenue's centreline, inside the estimated carriageway, so their street-level pieces are held within 0.25 m (`heldFlat` on each side).
+
+**Naming:** none.
+- **Closed:** Google Maps lists Jing Chen Eating House at 146 Sims Ave but marks it permanently closed. Rong Cheng Fu Qing Restaurant, also at No. 146, is closed too.
+- **Current tenants:** Monster Eating House, and Thai and Vietnamese stalls. Their signs were not photographed.
+- The other boards name no business. Every board is blank.
+
+Use `?review=sims-146`.
+
+**West side complete.** Every building from No. 323 Geylang Road to No. 146 Sims Avenue now has its Lorong 19 front. Their photographed fronts stand off their source edges by between 3.5 m forward (No. 323) and 2.6 m back (The Primero). This goes to the owner with the east side.

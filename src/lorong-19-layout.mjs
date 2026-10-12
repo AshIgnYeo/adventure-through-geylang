@@ -342,6 +342,52 @@ export const starlonTektron = {
   }],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron];
+// ---------------------------------------------------------------------------------------------
+// 9. Way 454254310, No. 146 Sims Avenue, the Lorong 19 west corner: a cream three-storey corner coffeeshop with curved
+// hoods over its windows. Its lane face (edge 2, u north from the back lane to the splay) is read 1.5 m in front of the
+// source edge, where three lane panoramas agree on its boards: about 20.9 m from 2.0 m south of the source corner to
+// the splay, laid on the 21.02 m source edge. The splay (edge 1) and the Sims Avenue front (edge 0) are side faces,
+// held flat because their source edges stand inside Sims Avenue's estimated carriageway.
+const W310 = 21.021, at310 = lay(-2.0, W310 / 20.9);
+const cream310 = '#e9dcb8', hood310 = '#d6bd8e', rows310 = [[5.1, 6.4], [8.6, 9.9]], hoodRows310 = [[7.1, 7.8], [10.75, 11.6]];
+const hoods310 = (spans, at = s => s) => spans.flatMap(s => hoodRows310.map(h => ({ name: 'curved concrete hood', u: at(s), h, out: .32, depth: .64, colour: hood310 })));
+export const sims146 = {
+  id: 'sims-146', buildingIds: ['454254310'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 22 },
+  name: 'No. 146 Sims Avenue, Lorong 19 west corner (June 2024 exterior, occupants not identified)', address: '146 Sims Avenue (Lorong 19 corner)',
+  height: 12.0, ceiling: 3.9, fiveFootWay: 2.5, roof: { type: 'flat', colour: '#96928a' },
+  evidence: 'June 2024 Street View shows a cream three-storey corner coffeeshop at Lorong 19 and Sims Avenue: windows in pairs on its upper floors under curved concrete hoods, bathroom louvres at its south end, a stepped parapet and a splayed corner; at street level an open coffeeshop under a maroon awning of the gas supplier Union Energy Group, with a cream board reading 中国炒菜 杂菜饭 on the lane, a yellow board reading 中国炒菜·杂菜饭 on the splay, and on Sims Avenue a yellow board reading 津程餐室 JING CHEN EATING HOUSE and stall boards (板面, LẨU GÀ CÔ BA). On its back lane are a metal spiral stair and a tall exhaust duct. Google Maps lists Jing Chen Eating House at 146 Sims Ave but marks it permanently closed, and Rong Cheng Fu Qing Restaurant, also at No. 146, is closed too; the tenants listed now (Monster Eating House and Thai and Vietnamese stalls) were not photographed, and the other boards name no business, so no name is given and every board is blank. Three June 2024 lane panoramas agree on its boards 1.5 m in front of the source lane edge, where the lane face runs about 20.9 m from 2.0 m south of the source corner to the splay, against the 21.02 m source edge. Heights were read on that plane, above the five-foot-way floor: windows 5.1-6.4 and 8.6-9.9 m, hoods 7.1-7.8 and 10.75-11.6 m, parapet about 12 m.',
+  sources: [way('454254310'), search('146 Sims Avenue Singapore 387468'), search('Jing Chen Eating House 146 Sims Avenue'), pano('2Ytwaot-jcjncvQsoDh-YA', 262, 20, 100), pano('FrRZ2jysnfLAH20E2BH4lw', 250, 20, 100), pano('7HvC0j9FXvZ4XoPIVwAqtA', 230, 20, 100), pano('EVsAnNKhG4-6cISXUHWaKQ', 175, 15, 90)],
+  colours: { wall: cream310, trim: '#ddd0aa', frame: '#5a5c58', glass: '#4a5458', pier: cream310, back: '#5e5248', floor: '#a8a296' },
+  windows: [[.75, 1.9], [3.5, 4.9], [5.8, 7.1], [8.9, 10.25], [10.9, 12.25], [13.5, 14.75], [16.4, 17.6]].flatMap(s => rows310.map(h => ({ u: at310(s), h, panes: 2 }))),
+  vents: [[7.0, 7.4], [10.4, 10.8]].map(h => ({ u: at310([-1.75, -.6]), h })),
+  blocks: [
+    ...hoods310([[.4, 2.5], [3.0, 7.9], [8.25, 12.75], [13.1, 18.4]], at310),
+    { name: 'stepped parapet', u: at310([8.0, 14.0]), h: [12.0, 12.3], out: .05, depth: .3, colour: cream310 },
+    { name: 'maroon awning', u: at310([-1.0, 18.9]), h: [2.6, 3.7], out: .7, depth: 1.4, colour: '#7a2a33' },
+    { name: 'blank cream board', u: at310([-.75, 4.0]), h: [3.9, 4.7], out: .05, depth: .04, colour: '#efe3b5' },
+  ],
+  piers: [[2.0, 2.4], [7.6, 8.0], [12.8, 13.1], [18.5, 18.9]].map(at310),
+  backFittings: [{ name: 'open coffeeshop', u: at310([-1.8, 18.6]), h: [.1, 3.5], colour: '#6a5a4a', glow: .1 }],
+  sides: [{
+    edge: 1, // the splay, u from the lane face to the Sims Avenue front
+    heldFlat: true, // its source edge stands 6.0 m from Sims Avenue's centreline, inside the estimated carriageway
+    windows: rows310.map(h => ({ u: [2.2, 3.5], h, panes: 2 })),
+    blocks: [...hoods310([[1.5, 4.3]]), { name: 'blank yellow board', u: [.4, 5.3], h: [3.9, 4.9], out: .06, depth: .04, colour: '#f0cc2e' }, { name: 'maroon awning, held flat', u: [0, 5.7], h: [2.7, 3.7], out: .12, depth: .24, colour: '#7a2a33' }, { name: 'corner pier', u: [2.4, 3.2], h: [0, 3.9], out: .1, depth: .2, colour: cream310 }],
+  }, {
+    edge: 0, // the Sims Avenue front, u west from the splay
+    heldFlat: true, // its source edge stands 4.3 m from Sims Avenue's centreline, inside the estimated carriageway
+    windows: [[.6, 1.9], [2.5, 3.7]].flatMap(u => rows310.map(h => ({ u, h, panes: 2 }))),
+    blocks: [...hoods310([[.4, 4.0]]), { name: 'blank yellow eating-house board', u: [.2, 3.6], h: [3.9, 4.7], out: .06, depth: .04, colour: '#f0cc2e' }, { name: 'maroon awning, held flat', u: [0, 4.7], h: [2.6, 3.6], out: .12, depth: .24, colour: '#7a2a33' }, { name: 'open coffeeshop', u: [.2, 4.5], h: [.1, 3.5], out: .01, depth: .02, colour: '#6a5a4a' }],
+  }, {
+    edge: 3, // the south wall on the back lane: louvres and a small balcony
+    vents: [[7.0, 7.4], [10.4, 10.8]].map(h => ({ u: [.6, 1.6], h })),
+    blocks: [{ name: 'small balcony', u: [1.8, 3.2], h: [6.3, 6.5], out: .45, depth: .9, colour: cream310 }, { name: 'balcony railing', u: [1.8, 3.2], h: [6.5, 7.4], out: .88, depth: .04, colour: '#8a8c88' }],
+  }, {
+    edge: 5, // the back wall further west: a metal spiral stair and a tall exhaust duct
+    blocks: [{ name: 'metal spiral stair', u: [1.0, 3.0], h: [0, 9.0], out: 1.0, depth: 1.9, colour: '#6a6c6a' }, { name: 'exhaust duct', u: [3.4, 4.4], h: [6.0, 13.5], out: .4, depth: .8, colour: '#b8bcbe' }],
+  }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
