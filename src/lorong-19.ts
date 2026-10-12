@@ -79,6 +79,13 @@ const draws: Draws = {
       text(c, 'CHEE HOE HONG (PTE) LTD', w * .5, h * .74, h * .26, '#f4f4f0', '700', sans, w * .9);
     }],
   },
+  // The large characters on the central windows: white, edged in grey, read top to bottom.
+  'lei-zang-si': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#5b6a6c'; c.fillRect(0, 0, w, h);
+      [...'雷藏寺'].forEach((ch, i) => { text(c, ch, w * .52, h * (.18 + i * .32), w * .82, '#4a4a4a', '700', kai); text(c, ch, w * .5, h * (.17 + i * .32), w * .8, '#f6f6f2', '700', kai); });
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

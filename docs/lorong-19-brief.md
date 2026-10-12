@@ -22,7 +22,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | Done; named |
 | 5 | West | 476113983 | No. 23 | Done; unnamed |
 | 6 | West | 476113984 | No. 25, Chee Hoe Hong | Done; named |
-| 7 | West | 454254239 | No. 29, Lei Zang Si | |
+| 7 | West | 454254239 | No. 29, Lei Zang Si | Done; named |
 | 8 | West | 454254309 | No. 33, Treasures @ G19 | |
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | |
 | 10 | East | 454254339 | No. 148 Sims Avenue, the east corner | |
@@ -202,3 +202,31 @@ Use `?review=l19-23`.
   - Zhejiang Shenghua Steel is also listed at No. 25. Its point lies 1.7 m outside the way, and no sign for it was photographed.
 
 Use `?review=chee-hoe-hong`.
+
+### 7. Way 454254239: No. 29, Lei Zang Si
+
+A white five-storey temple set back behind a garden, hung with strings of Tibetan prayer flags.
+
+- **Windows:** blue-framed, under striped red, yellow and green lintels, in four rows either side.
+- **Central bay:** blue balconies with yellow lattice balustrades, over which tall windows carry the large characters **雷藏寺**, between gold emblems and columns of black script.
+- **Eaves:** blue.
+- **Ground floor**, under maroon awnings: a yellow lattice gate, a glazed front and a red door with gold.
+- **Garden:** shrubs, and an incense burner chimney.
+
+**Measurement:**
+- `DRAX…` with `jTV3…`, and `jTV3…` with `MXq6…` (June 2024), agree on the front about **1.5 m behind** the source edge.
+- On that plane it is about **14.4 m** wide, from 1.8 m south of the source corner, against the 13.87 m source edge.
+- **Heights** (the top floor allowed for the eaves' overhang):
+  - window rows: about 5.0–6.7, 8.3–9.9, 11.6–13.1 and 15.2–16.8 m;
+  - eaves: about 18.5 m;
+  - a stair house on the roof: to about 20.6 m.
+
+**Layout:**
+- Laid proportionally on the source edge (×0.96).
+- The prayer flags are not modelled.
+
+**Naming:** Google Maps lists **Lei Zang Si (Singapore) 雷藏寺 (新加坡)** at 29 Lor 19 Geylang, Singapore 388500, with its point inside this way. So the characters are redrawn in original type.
+- The emblems and the black script are drawn as plain shapes.
+- Hock Hin Plastic Fabricator, listed at No. 31 with its point in this way, is marked permanently closed.
+
+Use `?review=lei-zang-si`.

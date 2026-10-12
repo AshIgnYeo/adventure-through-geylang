@@ -244,6 +244,53 @@ export const cheeHoeHong = {
   backFittings: [{ name: 'grilled doorway', u: at984([14.6, 17.4]), h: [.3, 2.4], colour: '#3e3e3c' }],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong];
+// ---------------------------------------------------------------------------------------------
+// 7. Way 454254239, No. 29: Lei Zang Si, a white five-storey temple behind a garden, with blue-framed windows under
+// striped Tibetan lintels and a central bay of blue balconies. Its front (edge 1, u north from the south corner) is
+// read 1.5 m behind the source edge, where the lane panoramas agree: about 14.4 m wide from 1.8 m south of the source
+// corner, laid proportionally on the 13.87 m source edge.
+const W239 = 13.873, at239 = lay(-1.8, W239 / 14.4);
+const blue239 = '#2a62a8', rows239 = [[5.0, 6.7], [8.3, 9.9], [11.6, 13.1], [15.2, 16.8]];
+const cols239 = [[-1.7, -.95], [-.1, 1.25], [9.1, 11.0], [11.7, 12.4]];
+const lintel239 = (u, top) => [['#c8302a', 0, .14], ['#e8c23a', .14, .24], ['#3f8a4a', .24, .34]].map(([colour, b, t]) => ({ name: 'striped lintel', u: [u[0] - .08, u[1] + .08], h: [top + .06 + b, top + .06 + t], out: .1, depth: .2, colour }));
+export const leiZangSi = {
+  id: 'lei-zang-si', buildingIds: ['454254239'], kind: 'lei-zang-si', frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 12, pitch: 32 },
+  name: 'Lei Zang Si (Singapore) 雷藏寺 (June 2024 exterior)', address: '29 Lorong 19 Geylang',
+  height: 18.5, ceiling: 4.0, fiveFootWay: .3, roof: { type: 'flat', colour: '#9a9a96' },
+  evidence: 'June 2024 Street View shows a white five-storey temple set back behind a garden north of No. 25, hung with strings of Tibetan prayer flags: blue-framed windows under striped red, yellow and green lintels in four rows either side; a central bay of blue balconies with yellow lattice balustrades, over which tall windows carry the large characters 雷藏寺 between gold emblems and columns of black script; blue eaves; and, under maroon awnings, a yellow lattice gate, a glazed front and a red door with gold, with an incense burner chimney in the garden. Google Maps lists Lei Zang Si (Singapore) 雷藏寺 (新加坡) at 29 Lor 19 Geylang, Singapore 388500, with its point inside this way, so the characters are redrawn in original type. Two pairs of June 2024 lane panoramas agree on the front about 1.5 m behind the source edge, where it is about 14.4 m wide from 1.8 m south of the source corner, against the 13.87 m source edge. Heights were read on that plane, with the top floor allowed for the eaves\' overhang: window rows at about 5.0-6.7, 8.3-9.9, 11.6-13.1 and 15.2-16.8 m, eaves at about 18.5 m.',
+  sources: [way('454254239'), search('Lei Zang Si Singapore 29 Lorong 19 Geylang'), pano('jTV3E2m6tWXbN5g4963Hdg', 262, 25, 100), pano('MXq6J5f3NkewJxPMUah9pQ', 235, 15, 100), pano('DRAXJ_U9_f5azRj8xhBdEA', 280, 20, 100)],
+  colours: { wall: '#f2f2ee', trim: blue239, frame: blue239, glass: '#4c5a5e', pier: '#f2f2ee', back: '#e8e6e0', floor: '#a8a296' },
+  windows: [
+    ...cols239.flatMap(s => rows239.map(h => ({ u: at239(s), h, panes: 2, surround: true }))),
+    ...[[5.9, 7.1], [8.6, 10.2]].map(h => ({ u: at239([2.9, 7.6]), h, panes: 4 })),
+    ...[[11.6, 14.0], [14.3, 17.0]].map(h => ({ u: at239([3.6, 6.6]), h, panes: 2, out: .06 })),
+  ],
+  blocks: [
+    ...cols239.flatMap(s => rows239.flatMap(([, t]) => lintel239(at239(s), t))),
+    { name: 'blue frame round the upper central windows', u: at239([3.3, 6.9]), h: [11.4, 17.8], out: .02, depth: .04, colour: blue239 },
+    ...lintel239(at239([3.3, 6.9]), 17.8),
+    ...[[4.2, 4.55], [7.25, 7.6], [10.95, 11.35]].map(h => ({ name: 'blue balcony slab', u: at239([2.6, 7.9]), h, out: .7, depth: 1.4, colour: blue239 })),
+    ...[[2.6, 2.9], [7.6, 7.9]].map(s => ({ name: 'blue balcony column', u: at239(s), h: [4.55, 10.95], out: 1.25, depth: .2, colour: blue239 })),
+    ...[[4.55, 5.4], [7.6, 8.45]].map(h => ({ name: 'yellow lattice balustrade', u: at239([2.9, 7.6]), h, out: 1.3, depth: .06, colour: '#e3bf4e' })),
+    ...[[2.0, 2.6], [7.6, 8.2]].map(s => ({ name: 'gold emblem', u: at239(s), h: [14.8, 15.5], out: .05, depth: .05, colour: '#d9b54a' })),
+    ...[[2.1, 2.35], [7.7, 7.95]].map(s => ({ name: 'column of black script', u: at239(s), h: [11.8, 14.0], out: .03, depth: .02, colour: '#1d1d1d' })),
+    { name: 'blue eaves', u: [0, W239], h: [18.2, 18.8], out: .4, depth: .8, colour: blue239 },
+    { name: 'maroon awning', u: [0, at239([9.9, 0])[0]], h: [3.1, 3.9], out: .75, depth: 1.5, colour: '#8e2a36' },
+    { name: 'garden shrubs', u: at239([-1.5, 12.2]), h: [0, .85], out: 2.6, depth: 2.6, colour: '#4a6a3c' },
+    { name: 'incense burner chimney', u: at239([11.6, 12.2]), h: [0, 3.4], out: 3.6, depth: .6, colour: '#3a3532' },
+  ],
+  // The characters 雷藏寺 on the upper central windows.
+  boards: [{ u: at239([4.4, 5.8]), h: [11.8, 16.6], out: .1 }],
+  piers: [[0, .3], [W239 - .3, W239]],
+  backFittings: [
+    { name: 'yellow lattice gate', u: at239([0, 3.3]), h: [.1, 2.9], colour: '#d9b54a' },
+    { name: 'glazed front', u: at239([3.3, 7.6]), h: [.1, 2.9], colour: '#5a6a6a', glow: .08 },
+    { name: 'red door with gold', u: at239([7.8, 9.7]), h: [.1, 2.9], colour: '#b8241c' },
+    { name: 'glass door', u: at239([10.8, 11.6]), h: [.1, 2.5], colour: '#6a7a7c' },
+  ],
+  rooftop: [{ u: at239([.5, 4.5]), top: 20.6, setback: 1.0, depth: 3.0, colour: '#ecece8' }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
