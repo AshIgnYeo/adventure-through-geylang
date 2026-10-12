@@ -102,9 +102,11 @@ test('Bright Star Hotel is named on No. 20, its listing point 0.28 m in front of
 });
 
 test('the Singapore Chinaware Merchants Association is named on No. 6, its listing point two houses south', () => {
-  assert.equal(landmarkFor('454254249').id, 'chinaware-merchants');
+  // Way 454254249 is carried through the open question 41 group as l17e-6, unchanged.
+  assert.equal(landmarkFor('l17e-6').id, 'chinaware-merchants');
+  assert.deepEqual(outline('l17e-6').map(p => p.map(v => +v.toFixed(6))), sourceMap.buildings.find(b => b.id === '454254249').coordinates.slice(0, -1).map(c => project(c, map.origin).map(v => +v.toFixed(6))));
   const point = project([103.8788852, 1.3129874], map.origin);
-  assert.equal(pointInPolygon(point, outline('454254249')), false);
+  assert.equal(pointInPolygon(point, outline('l17e-6')), false);
   assert.equal(pointInPolygon(point, outline('454254252')), true);
 });
 
@@ -118,4 +120,13 @@ test('Nos. 37-41 are split at their fins and No. 39 is named the Singapore Ratta
   // The elevation's pieces are shared out between the bays without loss: one north-wall side, the board on No. 39.
   assert.equal(lorong17.find(p => p.id === 'l17-41').sides[0].edge, 3);
   assert.equal(lorong17.find(p => p.id === 'rattan-association').boards.length, 1);
+});
+
+test('the two northern houses of the white row stand north of No. 6 on its lines, at their photographed widths', () => {
+  const w = id => lorong17Frame(outline(id), { frontEdge: 0 }).width;
+  assert.ok(Math.abs(w('l17e-10') - 4.8) < .01); assert.ok(Math.abs(w('l17e-8') - 4.25) < .01);
+  // No. 8 shares No. 6's north wall, and No. 10 No. 8's.
+  const shared = (a, b) => outline(a).filter(p => outline(b).some(q => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-6)).length;
+  assert.equal(shared('l17e-8', 'l17e-6'), 2); assert.equal(shared('l17e-10', 'l17e-8'), 2);
+  for (const id of ['l17e-10', 'l17e-8']) assert.equal(landmarkFor(id), undefined);
 });

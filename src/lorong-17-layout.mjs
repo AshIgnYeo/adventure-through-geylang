@@ -770,11 +770,11 @@ export const temple238 = {
 // B 10.9-15.2, C 15.2-19.0, D 19.0-22.8, E 22.8-26.4, F 26.4-29.9 m. The four source ways (z 0.8-18.5) overlap houses
 // C-F, one each; A and B stand in the gap the map leaves north of way 249 (open question 41). Each house is laid
 // proportionally on its own way, u south. Heights read on that line.
-const rowHouse = ({ id, way: w, W, s0, s1, windows, blocks = [], backFittings = [], ...rest }) => {
+const rowHouse = ({ id, way: w, building = w, frontEdge = w === '454254249' ? 0 : 2, W, s0, s1, windows, blocks = () => [], backFittings = () => [], ...rest }) => {
   const at = lay(s0, W / (s1 - s0));
   return {
     // The fronts stand 3.2-3.5 m from the lane's centreline, at the carriageway's edge, so street-level pieces are held flat.
-    id, buildingIds: [w], heldFlat: true, frontEdge: w === '454254249' ? 0 : 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 20 },
+    id, buildingIds: [building], heldFlat: true, frontEdge, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 20 },
     height: 6.8, ceiling: 3.5, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 8.2, ridgeDepth: .4, colour: '#7d746c' },
     colours: { wall: '#eeede8', trim: '#e4e2dc', frame: '#2c3032', glass: '#3c4549', pier: '#eeede8', back: '#e2e0da', floor: '#a19b90' },
     bands: [[6.32, 6.76, .3], [3.75, 3.95, .2]],
@@ -786,9 +786,9 @@ const rowHouse = ({ id, way: w, W, s0, s1, windows, blocks = [], backFittings = 
     ...rest,
   };
 };
-const rowEvidence = 'June 2024 Street View shows a white two-storey row of six shophouses south of the temple, under pitched roofs behind a cornice at about 6.8 m: two windows on each upper floor, a ledge at about 3.9 m, and a five-foot way, with a long maroon awning across the middle houses. Two June 2024 panoramas agree on the six houses on a line through the source fronts, from north to south about 5.4, 4.3, 3.8, 3.8, 3.6 and 3.5 m wide. The map\'s four source ways overlap the four southern houses, one each, and the two northern houses stand in the gap it leaves after the temple (open question 41). Each house is laid proportionally on its own way.';
+const rowEvidence = 'June 2024 Street View shows a white two-storey row of six shophouses south of the temple, under pitched roofs behind a cornice at about 6.8 m: two windows on each upper floor, a ledge at about 3.9 m, and a five-foot way, with a long maroon awning across the middle houses. Two June 2024 panoramas agree on the six houses on a line through the source fronts, from north to south about 5.4, 4.3, 3.8, 3.8, 3.6 and 3.5 m wide. The map\'s four source ways overlap the four southern houses, one each, and each is laid proportionally on its own way; the two northern houses stand in the gap the map leaves after the temple.';
 export const chinaware = rowHouse({
-  id: 'chinaware-merchants', way: '454254249', W: 3.765, s0: 15.2, s1: 19.0, kind: 'chinaware-merchants',
+  id: 'chinaware-merchants', way: '454254249', building: 'l17e-6', W: 3.765, s0: 15.2, s1: 19.0, kind: 'chinaware-merchants',
   name: 'Singapore Chinaware Merchants Association (June 2024 exterior)', address: '6 Lorong 17 Geylang (letterbox 6-B)',
   windows: [[15.5, 16.9], [17.4, 18.7]],
   evidence: rowEvidence + ' The third house from the north carries the left part of a long red board reading 新加坡瓷商公會 SINGAPORE CHINAWARE MERCHANTS ASSOCIATION over its five-foot way, which runs on over the fourth house; its stair door carries a letterbox lettered 6-B, beside red-framed glazed doors with fretwork panels. Google Maps lists the Singapore Chinaware Merchants Association at 6 Lorong 17 Geylang, Singapore 388537, with its point about 8 m south, inside way 454254252: the address, the letterbox and the board agree on this house, so it is named after the board (the Bamboo Lounge precedent, open question 33) and the whole board is redrawn on this house in original type. No claim is made about the ground floor.',
@@ -803,6 +803,39 @@ export const chinaware = rowHouse({
   ],
 });
 
+// The row's two northern houses, added under the owner's answer to open question 41 on way 249's lines, north of it.
+// Read on the row's line from M_9s...: No. 10 at s 6.2-11.0 and No. 8 at 11.0-15.25.
+const addedNote = ' Under the owner\'s answer to open question 41 it stands on a footprint added north of way 454254249, on its front and rear lines, at its photographed width.';
+export const no10 = rowHouse({
+  id: 'l17-10', way: '454254249', building: 'l17e-10', frontEdge: 0, W: 4.8, s0: 6.2, s1: 11.0, kind: 'unnamed', unnamed: true,
+  name: 'No. 10 Lorong 17, the row\'s north end house (June 2024 exterior, occupant not identified)', address: '10 Lorong 17 Geylang (by the row\'s sequence from No. 6; no plate seen)',
+  height: 7.4, roof: { type: 'gable', ridge: 8.6, ridgeDepth: .4, colour: '#7d746c' },
+  windows: [[7.3, 8.3], [8.9, 9.9]],
+  evidence: rowEvidence + ' The northernmost house, on the side lane, stands a little taller under its own pitched roof: two windows under louvred vents upstairs, and an arcaded five-foot way between deep pilasters over a barred window, a brown door under a louvred transom, a window and a door, with potted plants and a red chair. No listing or sign identifies it, so no name is given.' + addedNote,
+  blocks: at => [
+    ...[[7.3, 8.3], [8.9, 9.9]].map(sw => ({ name: 'louvred vent', u: at(sw), h: [6.1, 6.4], out: .02, depth: .03, colour: '#c9c7c0' })),
+    ...[[6.2, 7.0], [10.0, 11.0]].map(sw => ({ name: 'deep pilaster', u: at(sw), h: [0, 7.0], out: .1, depth: .2, colour: '#eeede8' })),
+  ],
+  backFittings: at => [
+    { name: 'barred window', u: at([7.0, 7.56]), h: [1.8, 2.5], colour: '#3c4549' },
+    { name: 'brown door', u: at([7.84, 8.44]), h: [.1, 2.4], colour: '#7a4a2c' },
+    { name: 'louvred transom', u: at([7.8, 8.5]), h: [2.6, 2.85], colour: '#c9c7c0' },
+    { name: 'window', u: at([8.7, 9.3]), h: [1.6, 2.5], colour: '#3c4549' },
+    { name: 'wooden door', u: at([9.65, 9.98]), h: [.1, 2.3], colour: '#8a5a3a' },
+  ],
+});
+export const no8 = rowHouse({
+  id: 'l17-8', way: '454254249', building: 'l17e-8', frontEdge: 0, W: 4.25, s0: 11.0, s1: 15.25, kind: 'unnamed', unnamed: true,
+  name: 'No. 8 Lorong 17 (June 2024 exterior, occupant not identified)', address: '8 Lorong 17 Geylang (by the row\'s sequence from No. 6; no plate seen)',
+  windows: [[11.3, 12.2], [12.8, 13.8]],
+  evidence: rowEvidence + ' The second house from the north has two windows upstairs and, behind its five-foot way, a window, two dark doors and an air-conditioner over them. No listing or sign identifies it, so no name is given.' + addedNote,
+  backFittings: at => [
+    { name: 'window', u: at([11.3, 11.84]), h: [1.9, 2.5], colour: '#3c4549' },
+    { name: 'dark door', u: at([12.2, 12.9]), h: [.1, 2.4], colour: '#3a332e' },
+    { name: 'dark door', u: at([13.0, 13.5]), h: [.1, 2.4], colour: '#3a332e' },
+    { name: 'air conditioner', u: at([12.3, 13.1]), h: [2.5, 2.9], out: .1, depth: .2, colour: '#e8e8e4' },
+  ],
+});
 export const no4 = rowHouse({
   id: 'l17-4', way: '454254250', W: 4.742, s0: 19.0, s1: 22.8, kind: 'unnamed', unnamed: true,
   name: 'No. 4 Lorong 17 (June 2024 exterior, occupant not identified)', address: '4 Lorong 17 Geylang (between No. 6, letterbox 6-B, and No. 2, plates 2A, 2B and 02; no plate seen)',
@@ -886,7 +919,7 @@ export const corner253 = {
   }],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37, rattanAssociation, no41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2, no2Shop, corner253];
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37, rattanAssociation, no41, sims134, no42to44, no38to40, brightStar, temple238, no10, no8, chinaware, no4, no2, no2Shop, corner253];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own

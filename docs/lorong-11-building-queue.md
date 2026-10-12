@@ -1042,3 +1042,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 - **Open question 37 applied, 12 October 2026 (`lorong-17-37-41`):** way 454254280 is split at its fins into Nos. 37, 39 and 41, and No. 39's upper floors are named **Singapore Rattan Industry Association** after its board.
 - **Open question 39 applied, 12 October 2026 (`sims-134`):** No. 134 Sims Avenue's outline is moved 5.5 m east and 2.5 m south onto its photographed position, and its Lorong 17 awnings are drawn at full depth.
 - **Open question 40 applied, 12 October 2026 (`lorong-17-temple`):** the temple by No. 14 stands on an authored footprint over the whole photographed temple, about 8.6 m along the front.
+- **Open question 41 applied, 12 October 2026 (`lorong-17-white-row-north`):** the white row's two northern houses, Nos. 10 and 8, are added north of No. 6 at their photographed widths. With questions 36–41 applied, the Lorong 17 walk has no open questions.

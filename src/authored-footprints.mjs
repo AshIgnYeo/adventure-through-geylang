@@ -460,6 +460,23 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'lorong-17-white-row-north', question: 41, approved: '2026-10-12',
+    evidence: 'The white two-storey row of six shophouses on the east side of Lorong 17, south of the temple. The map has ways for its four southern houses only; June 2024 panoramas (M_9s..., qC7t...) put the two northern houses, about 4.8 m and 4.25 m wide, in the gap between the temple and way 454254249 (No. 6). They are added north of that way on its front and rear lines, at their photographed widths, ending on its north wall; the photographed row starts about 1.15 m further south, the same shift as the southern houses on their stretched ways. Way 454254249 is carried through unchanged so the three houses are built together.',
+    replaces: ['454254249'],
+    build(map) {
+      const o = map.buildings.find(b => b.id === '454254249').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      // Vertex 1 is the north front corner, vertex 2 the north rear corner; the front (edge 0) runs north from vertex 0.
+      const north = unit(o[0], o[1]), depth = sub(o[2], o[1]);
+      const house = (from, width) => { const f0 = at(o[1], north, from), f1 = at(o[1], north, from + width); return [f0, f1, add(f1, depth), add(f0, depth)]; };
+      const street = 'Lorong 17 Geylang';
+      return [
+        { id: 'l17e-10', street, number: '10', levels: 2, outline: house(4.25, 4.8) },
+        { id: 'l17e-8', street, number: '8', levels: 2, outline: house(0, 4.25) },
+        { id: 'l17e-6', street, number: '6', levels: 2, outline: o },
+      ];
+    },
+  },
+  {
     id: 'lorong-17-temple', question: 40, approved: '2026-10-12',
     evidence: 'The single-storey temple by No. 14 Lorong 17. Three June 2024 panoramas (GX6R... with M_9s..., and GX6R... with qKWw...) triangulate its eaves about 10.3 m long, 1-1.5 m in front of the source front, from about 4 m north of way 454254238 to 1.5 m south of it; with eaves overhanging about 0.7 m, its walls run about 8.6 m along the front. The 4.84 m way is extended 2.9 m north, which leaves about 0.4 m to Bright Star Hotel at the rear, and 0.86 m south, square to its front, keeping its 13.2 m depth and vertex order.',
     replaces: ['454254238'],

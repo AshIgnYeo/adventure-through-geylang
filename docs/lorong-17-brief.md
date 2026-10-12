@@ -24,7 +24,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
   - Bright Star Hotel;
   - the Singapore Chinaware Merchants Association;
   - the Singapore Rattan Industry Association (after open question 37).
-- **Open questions:** six for the owner, 36–41, all footprint or row-position questions. In each case the model keeps the source footprints until they are answered:
+- **Open questions:** six for the owner, 36–41, all footprint or row-position questions, all answered "yes" on 12 October 2026 and applied (below):
   - Feng Shang's footprint;
   - splitting Nos. 37–41 and naming the rattan association;
   - the west row's offset and map gaps;
@@ -651,3 +651,23 @@ The front is laid at its photographed scale, read along the triangulated eaves l
 - the grille gate to the south.
 
 Use `?review=l17-14-temple`.
+
+### Question 41: the white row's two northern houses
+
+Group `lorong-17-white-row-north` in `src/authored-footprints.mjs`. Two footprints are added north of way 454254249, on its front and rear lines:
+- `l17e-10`, No. 10, **4.8 m** wide;
+- `l17e-8`, No. 8, **4.25 m** wide.
+
+Way 454254249 is carried through unchanged as `l17e-6`, so the three houses are built together.
+
+- **Widths:** read square-on from `M_9s…` on the row's line. They correct the coarser 5.4 m and 4.3 m in the question.
+- **Position:** the photographed row starts about 1.15 m further south. That is the same shift the four southern houses show on their stretched source ways. The side lane to the temple is about 3.7 m wide in the model.
+- **No. 10:** the end house on the side lane stands a little taller, under its own pitched roof.
+  - Upstairs: two windows under louvred vents.
+  - Below: an arcaded five-foot way between deep pilasters, over a barred window, a brown door under a louvred transom, a window and a door.
+- **No. 8:** two windows upstairs; a window, two dark doors and an air-conditioner below.
+- **Naming:** neither is named. No plates were seen, and the numbers follow the row's sequence from No. 6.
+
+Use `?review=l17-10` and `?review=l17-8`.
+
+**All six questions applied.** The Lorong 17 walk has no open questions left.
