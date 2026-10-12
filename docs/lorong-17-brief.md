@@ -15,7 +15,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
 | 1 | West | 454254264 | No. 301 Geylang Road, the corner block: its Lorong 17 faces | Done; named Sheng Siong Supermarket and Anytime Fitness Geylang Central |
-| 2 | West | 454254236 | North of the corner block | To do |
+| 2 | West | 454254236 | Feng Shang Hair Salon and the north bay | Done; named; footprint question 36 |
 | 3 | West | 454254237 | North of No. 2 | To do |
 | 4–14 | West | 454254272 … 454254280 | The eleven walk-ups | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
@@ -51,3 +51,30 @@ The four-storey corner block runs from Lorong 15 to Lorong 17. Its Geylang Road,
 - **Change of identity:** the place id changes from `gr-301` to `sheng-siong-301`.
 
 Use `?review=sheng-siong-301`.
+
+### 2. Way 454254236: Feng Shang Hair Salon
+
+A white two-storey building of two bays on the north side of the back lane behind No. 301. It has a thin cantilevered roof slab, four windows under louvred vents, and a five-foot way. The back-lane end is a cream gable.
+
+- **South bay:** a hair salon, with:
+  - a black board reading 峰尚造型 HAIR SALON on the front, and another on the gable;
+  - a fascia reading 峰尚造型 Feng Shang Hair Salon over the glazed front;
+  - a blue side door and two barber poles.
+- **North bay:**
+  - a narrow dark door with door-god posters under a black board reading **聖靈花炶聯誼会**;
+  - a glass office lettered **Dr Handy** behind a folding gate.
+
+  Neither is listed on Google Maps, so both boards stay blank.
+- **Measurement:** `h2GM…` and `qC7t…` (June 2024) triangulate the four upper windows and the north party line. All five agree on a front **1.4–1.7 m in front of** the source edge. On that plane the building is **12.5 m** wide against the 9.04 m source edge: 1.56 m south of the source corner to 11.35 m north of it, meeting way 454254237. Heights were read on the same plane.
+  - Five-foot way: 3.25 m.
+  - First-floor ledge: 4.64–4.8 m.
+  - Windows: 4.91–6.13 m.
+  - Vents: 6.36–6.73 m.
+  - Roof slab: 7.8–8.6 m.
+- **Layout:** the elevation is laid proportionally on the source edge (×0.72), so the windows draw narrower than photographed. Authoring the footprint on the photographed front is [open question 36](open-questions.md).
+- **Naming:** Google Maps lists **Feng Shang Hair Salon** (hair salon, operating in October 2026) at 5 Lorong 17 Geylang, floor 1.
+  - Its point lies 1.3 m in front of the source front, inside the photographed front.
+  - Google's address point for **7 Lorong 17** Geylang also falls in this way, and no door number is visible.
+  - Open question 12 allows a clearly signed occupant when published addresses disagree, so the salon's boards and fascia are redrawn in original type and the conflict is recorded. No claim is made about the north bay or the upper floor.
+
+Use `?review=feng-shang`.

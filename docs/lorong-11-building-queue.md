@@ -1015,3 +1015,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 
 - **Map:** the lane's eleven new source ways, its seven road ways and the Geylang Road and Sims Avenue links to its junctions are taken by id. The lane and its junctions are walkable corridors beside the unchanged study rectangle.
 - **Stop 1, No. 301 Geylang Road:** the corner block's Lorong 17 splay and face are modelled. The block is now named **Sheng Siong Supermarket and Anytime Fitness Geylang Central**: both are listed open at 301 Geylang Road with their point inside the way, and both signs are photographed. The earlier note that No. 301's occupants were not matched is superseded.
+- **Stop 2, way 454254236:** a white two-storey building of two bays, named **Feng Shang Hair Salon** after its listing (5 Lorong 17) and boards, with the address conflict recorded. Its front photographs 12.5 m wide, 1.5 m in front of the 9.04 m source edge: open question 36.

@@ -6,7 +6,13 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+Logged during the Lorong 17 walk (open question 35), for the owner to answer when the walk is done.
+
+36. **Lorong 17, way 454254236 (Feng Shang Hair Salon): author its footprint on the photographed front?**
+    - **Evidence:** two June 2024 panoramas (`h2GM…`, `qC7t…`) triangulate the four upper windows and the north party line. All five agree on a front **1.4–1.7 m in front of** the source edge. On that plane the building photographs **12.5 m** wide against the 9.04 m source edge: from 1.56 m south of the source corner to 11.35 m north of it, where it meets the south wall of way 454254237. The source map leaves a 1.3 m gap between the two ways.
+    - **What happens now:** the elevation is squeezed proportionally onto the source edge (×0.72), so the 1.45 m windows draw about 1.05 m wide, and the gap stays open. The salon's listing point lies 1.3 m in front of the source front, inside the photographed front; it is named under open question 12.
+    - **Recommendation:** yes. Author the footprint from the triangulated corners, with the front 1.5 m forward and the north wall on way 454254237's south wall, and lay the elevation at its photographed widths.
+    - **Unlocks:** true window and bay widths, the closed gap, and the listing point inside the way.
 
 ## Settled
 

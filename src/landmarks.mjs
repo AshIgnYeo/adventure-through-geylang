@@ -61,6 +61,7 @@ import { ledgeBlock as jhHotel, no11 as nanyangFan, dNovaHotel, jxinHotel } from
 import { no12 as yajuHotel, summerView, westBlock as vintageAndVine, hotel81Cherry, masterTailors, chineseEatingHouse } from './ring-b-layout.mjs';
 import { lexHotel, creamSouth as engineeringMerchants, crystalMansions } from './ring-south-layout.mjs';
 import { no2 as bengalKitchen, sims128 as bambooLounge, corner301 as shengSiong301 } from './ring-a-layout.mjs';
+import { fengShang } from './lorong-17-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
@@ -81,6 +82,7 @@ export const landmarks = [
   { ...bengalKitchen },
   { ...bambooLounge },
   { ...shengSiong301 },
+  { ...fengShang },
   { ...engineeringMerchants },
   { ...crystalMansions },
   { ...thirteenBbq },

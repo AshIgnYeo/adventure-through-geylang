@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { project, studyArea } from '../src/geo.mjs';
-import { sourceMap } from './helpers.mjs';
+import { project, studyArea, pointInPolygon } from '../src/geo.mjs';
+import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides } from '../src/lorong-17-layout.mjs';
+import { landmarkFor } from '../src/landmarks.mjs';
+import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map } from './helpers.mjs';
 
 const lane = sourceMap.corridors.find(c => c.name === 'Lorong 17 Geylang');
 
@@ -27,4 +29,35 @@ test('the lane is walkable from the Geylang Road centreline to the Sims Avenue c
   // Lorong 19, about 45 m east of the lane, stays outside.
   assert.equal(inStudy([205, -40], 0), false);
   assert.equal(inStudy([215, 10], 0), false);
+});
+
+test('the Lorong 17 exteriors fit their outlines, face the lane and keep their review starts clear', () => {
+  for (const place of lorong17) {
+    const poly = outline(place.buildingIds[0]), frame = lorong17Frame(poly, place);
+    assertFittings(frame, poly, lorong17Layout(place, frame.width).boxes);
+    for (const side of lorong17Sides(place, poly)) assertFittings(side.frame, poly, side.boxes);
+    assertReviews(frame, lorong17Reviews(place, frame));
+    assert.match(place.evidence, /(April|June) 2024/);
+    assert.ok(place.sources.some(s => s.includes(`way/${place.buildingIds[0]}`)));
+    // West-side fronts look east onto the lane, east-side fronts west.
+    const west = frame.point(frame.width / 2, 0)[0] < 170;
+    assert.ok(west ? frame.nx > .9 : frame.nx < -.9, place.id);
+    const out = (place.blocks ?? []).filter(b => b.out > 0 && b.h[0] < 5);
+    assertClearOfCarriageway(out.flatMap(b => [frame.point(b.u[0], b.out + b.depth / 2), frame.point(b.u[1], b.out + b.depth / 2)]));
+    if (place.unnamed) {
+      assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+      assert.equal(place.boards, undefined); assert.equal(place.blades, undefined);
+    } else assert.equal(landmarkFor(place.buildingIds[0]).id, place.id);
+  }
+});
+
+test('Feng Shang is named on way 236, with its listing point inside the photographed front', () => {
+  const place = lorong17.find(p => p.id === 'feng-shang'), poly = outline('454254236'), frame = lorong17Frame(poly, place);
+  const point = project([103.878786, 1.3129283], map.origin);
+  // 1.3 m in front of the source front, inside the front photographed 1.5 m forward.
+  assert.equal(pointInPolygon(point, poly), false);
+  const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
+  assert.ok(out > 1 && out < 1.5);
+  // The front runs north from the back lane.
+  assert.ok(frame.dz < -.95);
 });
