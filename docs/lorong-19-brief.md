@@ -12,20 +12,43 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph. Other buildings are labelled by address, with their signboards drawn and their lettering blank.
 - **Code:** each place is a measured elevation on one edge of its footprint, built with the lane-house helpers shared with Lorong 17 (`src/lane-house-layout.mjs`, `src/lane-house.ts`).
 
+## Status, 13 October 2026
+
+**Complete.** All 20 stops are modelled. Every building on Lorong 19 between Geylang Road and Sims Avenue, with the corners at both ends and the Geylang Road row back to Lorong 17, now has its photographed front.
+
+- **Coverage:** 20 source ways, all photographed exteriors; none is left as a generic block.
+- **Named places:** eleven are added, bringing the study to 126:
+  - Eminent Frog Porridge & Seafood at No. 323 Geylang Road;
+  - The Primero, No. 1 (with B&S's paint-shop board);
+  - the Nanyang Chee Clan Association, No. 21;
+  - Chee Hoe Hong, No. 25;
+  - Lei Zang Si, No. 29;
+  - Starlon and Tektron Pacific, No. 33;
+  - He Ping Claypot Rice Restaurant, No. 148 Sims Avenue;
+  - Kang Ha Pheng Sim Kok, 1 Lorong Bachok;
+  - Bougainvilla Apartments, No. 10;
+  - Sims Point, No. 4;
+  - Straits Laundry, Nanyang Hardware and Romance Adult Shop, Nos. 325–333 Geylang Road.
+- **Open questions:** four for the owner, 43–46 in [open questions](open-questions.md):
+  - **43:** taking in the block faces back to Lorong 17;
+  - **44:** the east side's footprints;
+  - **45:** re-cutting the Geylang Road row, and naming Scarlett Supermarket and Mary Hair Salon;
+  - **46:** the west side's footprints.
+
 ## The walk
 
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
-| 1 | West | 454254263 | No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood | Done; named; footprint with the Geylang Road row |
-| 2 | West | 454254248 | No. 1, The Primero | Done; named (the building, and B&S's board) |
-| 3 | West | 476113985 | No. 3, a dark brown modern house | Done; unnamed |
+| 1 | West | 454254263 | No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood | Done; named; west row question 46 |
+| 2 | West | 454254248 | No. 1, The Primero | Done; named (the building, and B&S's board); question 46 |
+| 3 | West | 476113985 | No. 3, a dark brown modern house | Done; unnamed; question 46 |
 | 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | Done; named |
 | 5 | West | 476113983 | No. 23 | Done; unnamed |
 | 6 | West | 476113984 | No. 25, Chee Hoe Hong | Done; named |
 | 7 | West | 454254239 | No. 29, Lei Zang Si | Done; named |
 | 8 | West | 454254309 | No. 33, Treasures @ G19: Starlon and Tektron Pacific | Done; named after two tenants |
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | Done; unnamed |
-| 10 | East | 454254339 | No. 148 Sims Avenue, the east corner: He Ping Claypot Rice Restaurant | Done; named |
+| 10 | East | 454254339 | No. 148 Sims Avenue, the east corner: He Ping Claypot Rice Restaurant | Done; named; question 44 |
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | Done; named |
 | 12 | East | 454254247 | No. 10, Bougainvilla Apartments | Done; named; footprint question 44 |
 | 13 | East | 1223524381 | Nos. 6–8, a granite-clad block | Done; unnamed; footprint question 44 |
@@ -72,7 +95,7 @@ A cream two-storey corner shophouse at Geylang Road and Lorong 19. It has salmon
 - The two-storey block is a raised volume with a hipped roof over the first 22 m (`upper` in the layout; the shared builder gained hipped upper roofs for it). The extension is the low shell.
 - The Geylang Road front is a side face, laid from the corner (u = s − 3.5), so the westmost 2 m of the photographed front, a plain pilaster, falls off the source edge.
 - The source front stands 0.1 m inside Geylang Road's estimated carriageway, so its street-level pieces are held within 0.25 m of the wall (`heldFlat` on the side).
-- Authoring the footprint on its photographed position waits for the Geylang Road row (stops 16–20), whose party lines are also off their source lines, so the row goes to the owner as one question.
+- Authoring the footprint on its photographed position is part of [open question 46](open-questions.md), with its party wall settled with the Geylang Road row ([open question 45](open-questions.md)).
 
 **Naming:** Google Maps lists **Eminent Frog Porridge & Seafood**, a porridge restaurant open until 4 am, at 323 Geylang Road, Singapore 389359. Its point lies inside this way.
 - The listing and the photographed boards agree, so the shop board, both frog boards, the vertical lightbox and Eminent's own stall board are redrawn in original type.
@@ -111,7 +134,7 @@ A side lane about 5 m wide separates No. 323's rear building from this weathered
 **Layout:**
 - Laid proportionally on the 26.81 m source edge (×0.94), with the tower as a raised volume.
 - The source face's south end stands 2.7 m from the lane's centreline, inside the estimated carriageway, so the place is flagged `heldFlat`. The awning and boards are held within 0.25 m of the wall.
-- On its photographed line, the face would stand about 6 m from the centreline. The offset joins the west row's question at the end of the west side.
+- On its photographed line, the face would stand about 6 m from the centreline. The offset is part of [open question 46](open-questions.md).
 
 **Naming:**
 - Google Maps lists **The Primero**, an apartment building, at 1 Lorong 19 Geylang, Singapore 388487. It also lists **B&S hardware lorong 19**, a paint store, at 1 Lor 19 Geylang #01-01.
@@ -306,7 +329,7 @@ A back lane separates No. 33 from a cream three-storey corner coffeeshop.
 
 Use `?review=sims-146`.
 
-**West side complete.** Every building from No. 323 Geylang Road to No. 146 Sims Avenue now has its Lorong 19 front. Their photographed fronts stand off their source edges by between 3.5 m forward (No. 323) and 2.6 m back (The Primero). This goes to the owner with the east side.
+**West side complete.** Every building from No. 323 Geylang Road to No. 146 Sims Avenue now has its Lorong 19 front. Their photographed fronts stand off their source edges by between 3.5 m forward (No. 323) and 2.6 m back (The Primero): [open question 46](open-questions.md).
 
 ## East side
 
@@ -333,7 +356,7 @@ A cream two-storey corner coffeeshop on the east corner of Lorong 19 and Sims Av
 - The Sims front is a side face, laid from the corner at its photographed scale.
 - The source outline's east 3.5 m on Sims Avenue is drawn plain, in No. 150's pale green, since No. 150 itself is outside the study.
 - The Sims front stands at the edge of Sims Avenue's estimated carriageway, so its awning is held flat.
-- The source outline is too wide and too short. Authoring it goes to the owner with the east side.
+- The source outline is too wide and too short. Authoring it is part of [open question 44](open-questions.md).
 
 **Naming:** Google Maps lists **He Ping Claypot Rice Restaurant**, a Chinese restaurant, at 148 Sims Ave, Singapore 387470, with its point inside this way. So the 和平 board is redrawn in original type. The awnings name a gas supplier and stay blank.
 

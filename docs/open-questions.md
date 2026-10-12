@@ -14,6 +14,64 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Take in both block faces, so the block between Lorong 17 and Lorong 19 is closed on all four sides. Measure the Sims Avenue row from the June 2024 drive, and author its footprints if it stands off its source outlines, as question 38 did for the Lorong 17 west row.
     - **Unlocks:** continuous frontages along both links. If the answer is no, the five Geylang Road houses come out of the map again.
 
+44. **Lorong 19 east side: move five outlines onto their photographed positions?**
+    - **Evidence:** each building was measured from June 2024 panoramas during the walk (see the [Lorong 19 brief](lorong-19-brief.md), stops 10 and 12–15).
+
+      | Building | Way | Photographed against the source outline |
+      | --- | --- | --- |
+      | No. 148 Sims Avenue, He Ping | 454254339 | Lane face on the source line but 22.2 m long against 19.6 m; Sims Avenue front 5.9 m against 9.0 m, its party line with No. 150 3.6 m inside the outline |
+      | No. 10, Bougainvilla Apartments | 454254247 | Front 4.5 m forward (towards the lane), 24.4 m long against 22.2 m |
+      | Nos. 6–8 | 1223524381 | Front 7.5 m forward, its five-foot way's back wall 6.5 m forward; 15.4 m long against 11.2 m |
+      | No. 4, Sims Point | 454254246 | Façade 3.2 m in front of the outline's stepped lane face, 19.5 m long against 23.5 m |
+      | Nos. 325–333 Geylang Road | 454254168 | The whole block about 7 m east (away from the lane) and 0.6 m south, behind a strip of nose-in parking; its size fits |
+
+    - **What happens now:** each elevation is laid on its source edges, proportionally or at its own scale, so fronts stand up to 7.5 m from their photographed lines.
+      - The source lane edges of the Geylang Road corner block and Nos. 6–8 stand in or near the lane's estimated carriageway, so their street-level pieces are held flat.
+      - June 2024 camera poses on the lane stand inside the corner block's model.
+    - **Recommendation:** yes. Author one footprint group for the east side, as open question 38 did for the Lorong 17 west row:
+      - fronts on the photographed lines, keeping rear lines where they meet neighbours;
+      - the corner block moved as a whole, keeping its shape (as No. 134 Sims Avenue was under open question 39);
+      - He Ping cut at its party line with No. 150, the cut-off strip drawn as No. 150's west bay until Sims Avenue's row is taken in (open question 43).
+    - **Unlocks:**
+      - true widths and positions for the whole east side;
+      - the lane's true width at the Geylang Road end;
+      - full awnings;
+      - render-and-compare from the photographs.
+
+45. **Geylang Road Nos. 313–321 (ways 454254254 to 454254262): re-cut the row into its six photographed houses, and name Scarlett Supermarket and Mary Hair Salon?**
+    - **Evidence:**
+      - **The row:** the June 2024 Geylang Road drive agrees on the row on its source front. From the Lorong 17 corner house's party wall to No. 323's it runs 29 m, in six houses of about 4.5, 5.0, 5.15, 4.2, 5.8 and 4.25 m. The map has five ways of 5.3 m (26.5 m), and No. 323's party wall stands 1.4 m east of the source line.
+      - **Scarlett:** blue boards reading 思家客 SCARLETT run over the fourth and fifth houses. Google Maps lists **Scarlett Supermarket @ Geylang**, operating, at 317 Geylang Road, with its point in way 454254260.
+      - **The salon:** the third house has a green board reading 马丽发廊 MARY HAIR SALON. Google Maps lists **Mary Hair Salon** with its point on that house, but at 538 Geylang Road. Mery Salon, at 313, is marked closed.
+    - **What happens now:** the row's elevation is laid proportionally (×0.91) across the five ways and shared out by slicing, so houses straddle ways. Every board is blank.
+    - **Recommendation:** yes.
+      - Author six footprints on the source front and rear lines, cut at the photographed party walls, ending at No. 323's photographed party wall.
+      - Name **Scarlett Supermarket @ Geylang** on its two houses, after its boards and listing.
+      - Name **Mary Hair Salon** on the third house under open question 12, which allows a clearly signed occupant when published addresses disagree, recording the 538 Geylang Road address.
+    - **Unlocks:** true house widths, and two named places. No. 323's footprint would then be authored on its photographed party wall, with question 46.
+
+46. **Lorong 19 west side, No. 323 Geylang Road to No. 146 Sims Avenue: re-author the row on its photographed line?**
+    - **Evidence:** each house was triangulated from June 2024 lane panoramas (stops 1–9 of the Lorong 19 brief).
+
+      | Building | Way | Photographed against the source edge |
+      | --- | --- | --- |
+      | No. 323 Geylang Road, Eminent | 454254263 | Lane face 3.5 m forward (towards the lane); two-storey block 22 m and extension to 27 m against 28.7 m; Geylang Road front about 7 m wide against 5.3 m |
+      | No. 1, The Primero | 454254248 | 2.2–2.6 m behind; 28.6 m against 26.8 m |
+      | No. 3 | 476113985 | 2.3 m behind; 9.2 m against 9.45 m |
+      | Nos. 21–25 | 454254241, 476113983, 476113984 | 1.25 m behind; drifting up to 1 m north by No. 25 |
+      | No. 29, Lei Zang Si | 454254239 | 1.5 m behind; 14.4 m against 13.9 m |
+      | No. 33, Starlon and Tektron Pacific | 454254309 | 1.5 m behind; 24.4 m against 25.2 m |
+      | No. 146 Sims Avenue | 454254310 | Lane face 1.5 m forward; 20.9 m against 21.0 m |
+
+    - **What happens now:** each elevation is laid on its source edge, so fronts stand up to 3.5 m from their photographed lines.
+      - The Primero's and No. 33's source faces reach into the lane's estimated carriageway, so their street-level pieces are held flat.
+      - On the photographed line they would stand about 6 m from the centreline.
+    - **Recommendation:** yes. Author one footprint group for the west side, as for the Lorong 17 west row (open question 38):
+      - fronts on the triangulated lines;
+      - party lines at the measured ends;
+      - rear lines kept.
+    - **Unlocks:** true positions and widths on the west side, full awnings at The Primero and No. 33, and the lane's true width.
+
 ## Settled
 
 ### Ninth batch, 12 October 2026
