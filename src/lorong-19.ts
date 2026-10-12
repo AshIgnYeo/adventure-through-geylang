@@ -110,6 +110,19 @@ const draws: Draws = {
       text(c, '和', w * .5, h * .33, h * .32, '#f4efe2', '700', kai); text(c, '平', w * .5, h * .64, h * .32, '#f4efe2', '700', kai);
     }],
   },
+  // The Lorong Bachok entrance board, and the pediment's lettering in red over the date.
+  'kang-ha-pheng@0': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#2a1c16'; c.fillRect(0, 0, w, h); c.strokeStyle = '#b8924a'; c.lineWidth = h * .05; c.strokeRect(h * .05, h * .05, w - h * .1, h - h * .1);
+      text(c, '江夏平心阁', w * .5, h * .4, h * .44, '#e9c25a', '700', kai, w * .86);
+      text(c, 'KANG HA PHENG SIM KOK', w * .5, h * .8, h * .2, '#e9c25a', '700', sans, w * .86);
+    }, (c, w, h) => {
+      c.fillStyle = '#efe3c0'; c.fillRect(0, 0, w, h);
+      text(c, '江  夏', w * .5, h * .22, h * .24, '#b8241c', '700', kai, w * .5);
+      text(c, '平 心 閣', w * .5, h * .5, h * .2, '#b8241c', '700', kai, w * .6);
+      text(c, '1929', w * .5, h * .8, h * .18, '#3a3a3a', '700', 'Georgia, "Times New Roman", serif');
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

@@ -26,7 +26,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 8 | West | 454254309 | No. 33, Treasures @ G19: Starlon and Tektron Pacific | Done; named after two tenants |
 | 9 | West | 454254310 | No. 146 Sims Avenue, the west corner | Done; unnamed |
 | 10 | East | 454254339 | No. 148 Sims Avenue, the east corner: He Ping Claypot Rice Restaurant | Done; named |
-| 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | |
+| 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | Done; named |
 | 12 | East | 454254247 | Bougainvilla Apartments | |
 | 13 | East | 1223524381 | No. 6 | |
 | 14 | East | 454254246 | Sims Point | |
@@ -338,3 +338,40 @@ A cream two-storey corner coffeeshop on the east corner of Lorong 19 and Sims Av
 **Naming:** Google Maps lists **He Ping Claypot Rice Restaurant**, a Chinese restaurant, at 148 Sims Ave, Singapore 387470, with its point inside this way. So the 和平 board is redrawn in original type. The awnings name a gas supplier and stay blank.
 
 Use `?review=he-ping`.
+
+### 11. Way 454254314: 1 Lorong Bachok, Kang Ha Pheng Sim Kok
+
+A back lane separates He Ping from an ornate cream two-storey Peranakan corner house of **1929**, on the corner of Lorong Bachok.
+
+- **On Lorong 19,** behind a green railing:
+  - a verandah of square columns with tall coloured relief panels of plants, figures and a soldier;
+  - a frieze of animals in relief over it: tigers, a leopard, a hound, birds;
+  - above a brown cornice, pairs of shuttered windows with arched fanlights, between pilasters carrying coloured relief and tile panels;
+  - an ornate cornice and deep eaves, under a tiled hipped roof.
+- **Back-lane end:** a lower white annex wall carrying a wire fence.
+- **On Lorong Bachok:**
+  - the entrance, a grille gate under a dark board reading **江夏平心阁 KANG HA PHENG SIM KOK**, between soldier piers;
+  - a curved pediment above, reading **江夏 平心閣 1929**.
+
+**Measurement:**
+- **Depth:** the lane panoramas' depth score peaked 3–4 m in front of the source edge. That turned out to be the street trees in front of the railing.
+  - Bearings to the corner pier from `BwN…` and `MXq6…` put the front within 0.7 m of the source line.
+  - On the source plane, `IzKm…`, `XLi…` and `BwN…` agree on the elevation.
+- **Extent:** the house runs from the annex wall, 2.8 m along the source edge, to the corner pier, 24.9 m along. The source edge is 26.5 m long.
+- **Columns:** at about 5.85, 10.05, 14.25 and 18.9 m, with the corner pier at 23.35–24.9 m.
+- **Heights:**
+  - verandah: to 4.0 m;
+  - animal frieze: 4.05–4.75 m;
+  - cornice: 4.8–5.25 m;
+  - upper windows: 5.95–7.45 m, with fanlights to 8.0 m;
+  - ornate cornice: 8.6–9.1 m;
+  - eaves: about 9.5 m.
+
+**Layout:**
+- **Placement:** the elevation is laid at its own scale, with its corner on the source corner (u = s + 1.6). So the outline's 4.4 m surplus falls at the back-lane end, where it is drawn as the annex wall.
+- **Volumes:** the main house is a raised volume under a hipped roof. The shell below it is the annex's height.
+- **Lorong Bachok face:** a side face carrying the entrance, its board and the pediment.
+
+**Naming:** Google Maps lists **Kang Ha Pheng Sim Kok**, an association, at 1 Lorong Bachok, with its point inside this way. So the entrance board and the pediment's lettering are redrawn in original type.
+
+Use `?review=kang-ha-pheng`.

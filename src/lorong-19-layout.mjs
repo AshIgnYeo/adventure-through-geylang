@@ -435,6 +435,85 @@ export const hePing = {
   }],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing];
+// ---------------------------------------------------------------------------------------------
+// 11. Way 454254314, 1 Lorong Bachok: Kang Ha Pheng Sim Kok 江夏平心閣, an ornate two-storey Peranakan corner house of
+// 1929 with a verandah on Lorong 19 and its entrance and pediment on Lorong Bachok. Its lane face (edge 1, u south
+// from the back lane) photographs on the source plane, from a low annex wall 2.8 m along to the corner pier 24.9 m
+// along, where the source edge runs on to 26.5 m; the elevation is laid at its own scale with its corner on the
+// source corner (u = s + 1.6), so the outline's 4.4 m surplus falls at the back-lane end. The depth score's peak
+// 3-4 m forward came from the street trees; bearings to the corner pier put the front within 0.7 m of the source line.
+const W314 = 26.495, at314 = ([a, b]) => [a, b].map(v => Math.min(W314, +(v + 1.6).toFixed(2)));
+const cols314 = [[5.85, 6.45], [10.05, 10.65], [14.25, 14.85], [18.9, 19.5]], bays314 = [8.25, 12.45, 16.9, 21.4];
+const cream314 = '#efe9dc', brown314 = '#7a4a3a';
+const relief314 = (u, h, colour, face = .3) => ({ name: 'coloured relief panel', u, h, out: face + .02, depth: .04, colour });
+export const kangHaPheng = {
+  id: 'kang-ha-pheng', buildingIds: ['454254314'], kind: 'kang-ha-pheng', frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 20 },
+  name: 'Kang Ha Pheng Sim Kok 江夏平心閣 (June 2024 exterior)', address: '1 Lorong Bachok (the Lorong 19 corner)',
+  height: 6.0, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8a84' },
+  evidence: 'June 2024 Street View shows an ornate cream two-storey Peranakan corner house at Lorong 19 and Lorong Bachok, dated 1929 on its pediment. On Lorong 19, behind a green railing, a verandah of square columns with tall coloured relief panels of plants, figures and a soldier, under a frieze of animals in relief (tigers, a leopard, a hound, birds); above a brown cornice, pairs of shuttered windows with arched fanlights between pilasters carrying coloured relief and tile panels, an ornate cornice and deep eaves under a tiled hipped roof. At the back-lane end a lower white annex wall carries a wire fence. On Lorong Bachok the entrance, a grille gate under a dark board reading 江夏平心阁 KANG HA PHENG SIM KOK, stands between the soldier piers, under a curved pediment reading 江夏 平心閣 1929. Google Maps lists Kang Ha Pheng Sim Kok, an association, at 1 Lorong Bachok, with its point inside this way, so the board and the pediment are redrawn in original type. The lane panoramas agree on the front on the source plane (their depth score peaks 3-4 m forward on the street trees, but bearings from two panoramas to the corner pier put it within 0.7 m of the source line): the house runs from the annex wall 2.8 m along the source edge to the corner pier 24.9 m along, against the 26.5 m source edge, so the elevation is laid at its own scale with its corner on the source corner. Heights were read on the source plane: verandah to 4.0 m, animal frieze 4.05-4.75 m, cornice 4.8-5.25 m, upper windows 5.95-7.45 m with fanlights to 8.0 m, ornate cornice 8.6-9.1 m, eaves about 9.5 m.',
+  sources: [way('454254314'), search('Kang Ha Pheng Sim Kok 1 Lorong Bachok'), pano('MXq6J5f3NkewJxPMUah9pQ', 40, 12, 70), pano('BwN_1fcMAZiFLmKGW-VM4A', 45, 10, 80), pano('XLi_3Ajhl22orFwbiySNYQ', 80, 10, 80), pano('IzKmZuCt4YSUbvuGY87eag', 105, 10, 80)],
+  colours: { wall: cream314, trim: '#e4dccb', frame: '#5a3a2a', glass: '#4c4a44', pier: cream314, back: '#ece6d8', floor: '#c9c2b2' },
+  bands: [[3.9, 4.05, .25, brown314], [4.05, 4.75, .2, '#ebe4d4'], [4.8, 5.25, .35, brown314]],
+  // The main two-storey house over the verandah, under a hipped roof; the shell below is the annex wall's height.
+  upper: [{ name: 'main house', outline: [[7.45, 0], [W314 - .05, 0], [W314 - .05, -5.7], [7.45, -5.7]], from: 6.0, to: 9.5, ridge: 11.6, colour: cream314, roof: '#9a5a44' }],
+  windows: bays314.flatMap(c => [[c - 1.15, c - .4], [c + .4, c + 1.15]]).map(s => ({ u: at314(s), h: [5.95, 7.45], panes: 2, shutters: true, arched: true })),
+  blocks: [
+    // The verandah columns: brown plinths, relief panels and capitals; the corner pier.
+    ...[...cols314, [23.35, 24.9]].flatMap(s => [
+      { name: 'verandah column', u: at314(s), h: [0, 3.9], out: .15, depth: .3, colour: cream314 },
+      { name: 'brown plinth', u: at314(s), h: [1.05, 1.5], out: .18, depth: .36, colour: brown314 },
+      relief314(at314([s[0] + .1, s[1] - .1]), [1.9, 3.5], '#9fb69a'),
+    ]),
+    { name: 'raised verandah floor', u: [at314([5.85, 0])[0], W314], h: [0, .55], out: -.9, depth: 1.8, colour: '#c9c2b2' },
+    // Animals in relief along the frieze, two to a bay; coloured panels and pilasters on the upper floor.
+    ...bays314.flatMap(c => [[c - 1.5, c - .4], [c + .4, c + 1.5]].map(s => ({ name: 'animal relief', u: at314(s), h: [4.15, 4.65], out: .32, depth: .06, colour: '#c9c3b6' }))),
+    ...[...cols314, [23.35, 24.9], ...bays314.map(c => [c - .2, c + .2])].flatMap(s => [
+      { name: 'upper pilaster', u: at314(s), h: [5.25, 8.6], out: .08, depth: .16, colour: '#e4dccb' },
+      relief314(at314([s[0] + .05, s[1] - .05]), [5.6, 7.8], '#c98a7a', .16),
+    ]),
+    ...bays314.flatMap(c => [[c - 1.15, c - .4], [c + .4, c + 1.15]]).map(s => ({ name: 'tile panel under the window', u: at314(s), h: [5.35, 5.85], out: .04, depth: .03, colour: '#8fb59a' })),
+    { name: 'ornate frieze', u: [at314([5.85, 0])[0], W314], h: [8.1, 8.6], out: .05, depth: .1, colour: '#d9c9b0' },
+    { name: 'ornate cornice', u: [at314([5.85, 0])[0], W314], h: [8.6, 9.1], out: .2, depth: .4, colour: '#e4dccb' },
+    { name: 'deep eaves', u: [at314([5.85, 0])[0], W314], h: [9.3, 9.55], out: .55, depth: 1.1, colour: '#6a4a3e' },
+    // The annex wall and the back-lane end, with the wire fence above the annex.
+    { name: 'white annex wall', u: [0, at314([5.85, 0])[0]], h: [0, 4.0], out: -.05, depth: .1, colour: '#e6e2d8' },
+    { name: 'wire fence', u: at314([2.8, 5.85]), h: [6.0, 8.2], out: -.3, depth: .04, colour: '#8a8c88' },
+    // The green railing in front of the verandah: two rails and posts every 2 m.
+    ...[[.15, .22], [1.02, 1.1]].map(h => ({ name: 'green railing rail', u: [at314([5.85, 0])[0], at314([23.2, 0])[0]], h, out: 1.2, depth: .05, colour: '#2f5a3a' })),
+    ...Array.from({ length: 10 }, (_, i) => 7.45 + i * 1.97).map(c => ({ name: 'green railing post', u: [+c.toFixed(2), +(c + .06).toFixed(2)], h: [.1, 1.1], out: 1.2, depth: .05, colour: '#2f5a3a' })),
+  ],
+  piers: [...cols314, [23.35, 24.9]].map(at314),
+  backFittings: [
+    { name: 'no-parking sign', u: at314([8.1, 8.4]), h: [2.5, 2.8], out: .03, colour: '#e8e8e8' },
+    { name: 'pierced vent', u: at314([12.0, 12.9]), h: [3.0, 3.4], colour: '#b8ae9a' },
+    { name: 'door', u: at314([15.3, 15.9]), h: [.55, 3.3], colour: '#6a4a36' },
+    ...[16.95, 21.75].flatMap(c => [
+      { name: 'window', u: at314([c - .4, c + .4]), h: [1.95, 3.4], colour: '#6a4a36' },
+      { name: 'tile panel', u: at314([c - .4, c + .4]), h: [1.35, 1.85], colour: '#8fb59a' },
+    ]),
+    { name: 'no-parking sign', u: at314([20.0, 20.3]), h: [2.5, 2.8], out: .03, colour: '#e8e8e8' },
+  ],
+  sides: [{
+    edge: 0, // the Lorong Bachok face, u east from the Lorong 19 corner: the entrance, its board and the 1929 pediment
+    windows: [[1.9, 2.6], [3.0, 3.7]].map(u => ({ u, h: [5.95, 7.45], panes: 2, shutters: true, arched: true })),
+    blocks: [
+      ...[[0, 1.55], [3.75, 4.6]].flatMap(u => [
+        { name: 'soldier pier', u, h: [0, 3.9], out: .15, depth: .3, colour: cream314 },
+        { name: 'brown plinth', u, h: [1.05, 1.5], out: .18, depth: .36, colour: brown314 },
+        relief314([u[0] + .15, u[1] - .15], [1.9, 3.5], '#7f9a76'),
+      ]),
+      { name: 'grille gate', u: [1.7, 3.6], h: [.3, 3.1], out: .02, depth: .03, colour: '#6a6a66' },
+      { name: 'frieze', u: [0, 5.83], h: [4.05, 4.75], out: .1, depth: .2, colour: '#ebe4d4' },
+      { name: 'cornice', u: [0, 5.83], h: [4.8, 5.25], out: .17, depth: .35, colour: brown314 },
+      { name: 'ornate cornice', u: [0, 5.83], h: [8.6, 9.1], out: .2, depth: .4, colour: '#e4dccb' },
+      { name: 'curved pediment', u: [.7, 5.1], h: [9.5, 12.4], out: .05, depth: .3, colour: '#efe3c0' },
+      { name: 'pediment crest', u: [2.4, 3.4], h: [12.4, 12.9], out: .05, depth: .3, colour: '#efe3c0' },
+    ],
+    // The entrance board, and the pediment's lettering.
+    boards: [{ u: [1.7, 3.6], h: [3.2, 3.85], out: .06 }, { u: [1.3, 4.5], h: [9.8, 12.0], out: .22 }],
+  }],
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
