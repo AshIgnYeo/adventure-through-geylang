@@ -131,6 +131,13 @@ const draws: Draws = {
       text(c, 'Apartments', w * .62, h * .8, h * .24, '#6a5a44', 'italic 500', 'Georgia, "Times New Roman", serif', w * .5);
     }],
   },
+  // The raised lettering on the boundary wall's panel.
+  'sims-point@7': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#d8c08a'; c.fillRect(0, 0, w, h); c.strokeStyle = '#b8a06a'; c.lineWidth = h * .05; c.strokeRect(h * .1, h * .1, w - h * .2, h - h * .2);
+      text(c, 'SIMS POINT', w * .5, h * .55, h * .42, '#6a5a3a', '700', 'Georgia, "Times New Roman", serif', w * .84);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

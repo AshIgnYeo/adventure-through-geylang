@@ -29,7 +29,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 11 | East | 454254314 | Kang Ha Pheng Sim Kok, 1 Lorong Bachok | Done; named |
 | 12 | East | 454254247 | No. 10, Bougainvilla Apartments | Done; named; footprint question 44 |
 | 13 | East | 1223524381 | Nos. 6–8, a granite-clad block | Done; unnamed; footprint question 44 |
-| 14 | East | 454254246 | Sims Point | |
+| 14 | East | 454254246 | No. 4, Sims Point | Done; named; footprint question 44 |
 | 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner | |
 | 16–20 | Geylang Road | 454254262 to 454254254 | Nos. 321 to 313, west from the corner | |
 
@@ -447,3 +447,36 @@ A granite-clad block of four storeys between Bougainvilla Apartments and Sims Po
 - The businesses listed at Nos. 6 and 8 with signs (a massage parlour, JJ Recycling, Carefree Clearwater) are closed.
 
 Use `?review=l19-6-8`.
+
+### 14. Way 454254246: No. 4, Sims Point
+
+A cream apartment block of eight storeys over a ground-floor car park.
+
+- **Front:**
+  - three stacks of curved bay windows, with beige spandrels and rounded crowns;
+  - narrow columns of small windows between them;
+  - a stair tower lit by a slot of windows, rising above the parapet.
+- **Boundary wall:** past a driveway gate, a balustraded beige wall along the pavement, with a panel lettered **SIMS POINT**.
+
+**Measurement:**
+- Four June 2024 lane panoramas (`0tJ_…`, `NZfk…`, `gWQb…`, `ukZW…`) agree on the façade **3.2 m in front of** the source outline's northern lane edge (edge 9).
+- On that plane it runs about **19.5 m** along the lane.
+- The wall's panel triangulates 8.5 m in front of edge 9 (`NZfk…` with `gWQb…`).
+- **Heights:**
+  - windows: from 5.0 m, every 3.1–3.4 m;
+  - parapet: about 25.7 m;
+  - bay crowns: to 28 m;
+  - stair tower: to 28.5 m.
+
+**Layout:**
+- The source lane face is stepped: edges 11, 9, 7, 5 and 3, within 1.6 m of one line, about 23.5 m in all.
+- So the elevation is read as one, laid at its own scale, and sliced across the stepped edges: edge 9 is the front, the others side faces. Windows cut at a step are inset by their sills.
+- The boundary wall is kept straight along its photographed line, with each edge's step taken out.
+- The façade stands up to 3.2 m behind its photographed line. This is part of [open question 44](open-questions.md).
+
+**Naming:** Google Maps lists **Sims Point**, an apartment complex, at 4 Lor 19 Geylang, Singapore 388489, and the source map names this way Sims Point.
+- The listing point lies in Nos. 6–8's way next door.
+- But the address, the map and the lettering agree on this building, so it is named (as at Crystal Mansions, open question 32). The panel is redrawn in original type.
+- Poly Realty is listed at #01-01, but no sign for it was photographed.
+
+Use `?review=sims-point`.

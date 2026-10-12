@@ -2,7 +2,7 @@
 // north up the west side, then south down the east side, then the Geylang Road houses back to Lorong 17. Each
 // elevation is read on the plane where the panoramas agree, and laid on its source edge, which is kept. Named only
 // where a listing and a photographed sign agree. See docs/lorong-19-brief.md.
-import { pano, way, search, lay, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
+import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 
 // ---------------------------------------------------------------------------------------------
 // 1. Way 454254263, No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood. A cream two-storey corner
@@ -602,6 +602,60 @@ export const no6 = {
   ],
 };
 
-export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla, no6];
+// ---------------------------------------------------------------------------------------------
+// 14. Way 454254246, No. 4: Sims Point, a cream eight-storey apartment block over a car park, with three stacks of
+// curved bay windows and a stair tower, behind a balustraded wall lettered SIMS POINT. Its lane face is stepped in
+// the source outline (edges 11, 9, 7, 5 and 3, within 1.6 m of one line). The elevation is read as one, on a plane
+// 3.2 m in front of edge 9 where four lane panoramas agree, with s along edge 9 from its north end; it runs from
+// s = 1.1 to 20.6 against the outline's -2.2 to 21.3, so it is laid at its own scale and sliced across the edges.
+// The boundary wall along the pavement (out 8.5 from edge 9, where its lettered panel triangulates) is kept straight.
+// [edge, s at its south... north end, width, its plane's offset from edge 9's]
+const steps246 = [[11, -2.233, 2.2385, -1.25], [9, 0, 8.6208, 0], [7, 8.628, 5.3687, -1.25], [5, 13.989, 3.4072, .37], [3, 17.404, 3.864, -1.25]];
+const cream246 = '#efe7d2', beige246 = '#dcc796', sills246 = [5.0, 8.1, 11.5, 14.6, 17.7, 20.9, 24.0];
+const bays246 = [[3.8, 6.8], [12.7, 15.9], [18.1, 20.2]];
+const whole246 = {
+  windows: [
+    ...bays246.flatMap(s => sills246.map(b => ({ u: [s[0] + .1, s[1] - .1], h: [b, b + 1.5], panes: 4, out: .63 }))),
+    ...[[2.2, 3.3], [16.5, 17.2]].flatMap(s => sills246.map(b => ({ u: s, h: [b + .3, b + 1.1], panes: 1 }))),
+    ...[[7.4, 8.4], [10.95, 11.95]].flatMap(s => sills246.map(b => ({ u: s, h: [b + .2, b + 1.2], panes: 1 }))),
+    ...sills246.map(b => ({ u: [9.7, 10.2], h: [b - .4, b + 1.8], panes: 1 })),
+  ],
+  blocks: [
+    { name: 'cream facade', u: [1.1, 20.6], h: [.13, 25.7], out: .02, depth: .04, colour: cream246 },
+    ...bays246.flatMap(s => [
+      { name: 'curved bay', u: s, h: [4.0, 26.6], out: .3, depth: .6, colour: cream246 },
+      ...sills246.map(b => ({ name: 'beige spandrel', u: s, h: [b - 1.15, b], out: .62, depth: .04, colour: beige246 })),
+      { name: 'rounded bay crown', u: [s[0] + .3, s[1] - .3], h: [26.6, 28.0], out: .3, depth: .6, colour: beige246 },
+    ]),
+    { name: 'stair tower', u: [8.6, 10.6], h: [.13, 28.5], out: .15, depth: .3, colour: '#f2eee2' },
+    { name: 'parapet', u: [1.1, 20.6], h: [25.4, 25.7], out: .1, depth: .2, colour: beige246 },
+    // The boundary wall along the pavement: balustrades either side of the gate, the lettered panel beside it.
+    { name: 'boundary wall', u: [-2.2, 21.2], h: [0, .55], out: 8.5, depth: .3, colour: '#d8c08a' },
+    ...[[-2.2, 6.4], [12.8, 21.2]].map(s => ({ name: 'balustrade', u: s, h: [.55, 1.25], out: 8.5, depth: .22, colour: '#e3cd98' })),
+    { name: 'gate', u: [6.6, 9.6], h: [.1, 1.4], out: 8.5, depth: .05, colour: '#9a9c98' },
+    { name: 'lettered wall panel', u: [9.8, 12.8], h: [.55, 1.5], out: 8.5, depth: .3, colour: '#d8c08a' },
+  ],
+};
+const part246 = ([edge, s0, width, plane]) => {
+  const p = sliceSpec(whole246, Math.max(s0, -2.2), s0 + width - .002);
+  const shift = Math.max(s0, -2.2) - s0, at = u => u.map(v => +(v + shift).toFixed(3));
+  // Windows cut at a step are inset by their sill's overhang, and slivers dropped.
+  const inset = ([l, r]) => [Math.max(l, .06), Math.min(r, width - .06)];
+  return { edge, windows: p.windows.map(w => ({ ...w, u: inset(at(w.u)) })).filter(w => w.u[1] - w.u[0] > .3), blocks: p.blocks.map(b => ({ ...b, u: at(b.u), out: b.out >= 8 ? +(b.out - plane).toFixed(2) : b.out })) };
+};
+const front246 = part246(steps246[1]);
+export const simsPoint = {
+  id: 'sims-point', buildingIds: ['454254246'], kind: 'sims-point', frontEdge: 9, reviewRoad: 'Lorong 19 Geylang', review: { distance: 12, pitch: 38 },
+  name: 'Sims Point (June 2024 exterior)', address: '4 Lorong 19 Geylang',
+  height: 25.7, ceiling: 3.9, fiveFootWay: .3, roof: { type: 'flat', colour: '#a8a6a0' },
+  evidence: 'June 2024 Street View shows a cream apartment block of eight storeys over a ground-floor car park, south of Nos. 6-8: three stacks of curved bay windows with beige spandrels and rounded crowns, narrow columns of small windows between them, and a stair tower lit by a slot of windows rising above the parapet; in front, past a driveway gate, a balustraded beige wall along the pavement with a panel lettered SIMS POINT. Google Maps lists Sims Point, an apartment complex, at 4 Lor 19 Geylang, Singapore 388489, and the source map names this way Sims Point; the listing point lies in Nos. 6-8\'s way next door, but the address, the map and the lettering agree on this building, so it is named and the panel is redrawn in original type (as at Crystal Mansions, open question 32). Four June 2024 lane panoramas agree on the facade 3.2 m in front of the source outline\'s northern lane edge, where it runs about 19.5 m along the lane; the source lane face is stepped within 1.6 m of one line and runs about 23.5 m, so the elevation is laid at its own scale and sliced across the stepped edges. Heights were read on that plane: windows from 5.0 m, every 3.1-3.4 m, parapet at about 25.7 m, bay crowns to 28 m and the stair tower to 28.5 m.',
+  sources: [way('454254246'), search('Sims Point 4 Lorong 19 Geylang'), pano('NZfk6nTA1mTETJHQXIob7Q', 82, 30, 100), pano('gWQbjpYBNuduJ0hBOUrHGw', 70, 30, 100), pano('0tJ_yZzLMxOeYk3kLcr2Bw', 110, 30, 100), pano('ukZWTPS52TsHumpZjk8qWg', 45, 30, 100)],
+  colours: { wall: cream246, trim: beige246, frame: '#3a3a36', glass: '#4a5658', pier: cream246, back: '#7a7670', floor: '#8a8680' },
+  windows: front246.windows, blocks: front246.blocks,
+  // The lettered panel on the boundary wall falls on edge 7 (s 9.8-12.8), 1.25 m behind edge 9's plane.
+  sides: steps246.filter(([e]) => e !== 9).map(part246).map(p => p.edge === 7 ? { ...p, boards: [{ u: [1.3, 4.0], h: [.7, 1.35], out: 9.92 }] } : p),
+};
+
+export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla, no6, simsPoint];
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
