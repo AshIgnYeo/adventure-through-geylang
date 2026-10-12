@@ -10,6 +10,27 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 - **Imagery:** the June 2024 Lorong 17 drive (`h2GM…` at the Geylang Road end to `Zwx6…` at Sims Avenue, about 10 m apart, heading north), with the Geylang Road and Sims Avenue drives at the corners.
 - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph. Other buildings are labelled by address, with their signboards drawn and their lettering blank.
 
+## Status, 12 October 2026
+
+**Complete.** All 24 stops are modelled. Every building on Lorong 17 between Geylang Road and Sims Avenue now has its photographed front, including the corner buildings at both ends.
+
+- **Coverage:** the eleven walk-ups that were massing in the widened ring now have their fronts, and No. 134 is rebuilt.
+- **Named places:** seven are added, bringing the study to 114:
+  - Sheng Siong Supermarket and Anytime Fitness Geylang Central at No. 301;
+  - Feng Shang Hair Salon;
+  - the General Board of True Jesus Mission;
+  - the Yang Clan General Association;
+  - the Gyaltsap Tashi Ling Buddhist Society;
+  - Bright Star Hotel;
+  - the Singapore Chinaware Merchants Association.
+- **Open questions:** six for the owner, 36–41, all footprint or row-position questions. In each case the model keeps the source footprints until they are answered:
+  - Feng Shang's footprint;
+  - splitting Nos. 37–41 and naming the rattan association;
+  - the west row's offset and map gaps;
+  - No. 134's position;
+  - the temple's full footprint;
+  - the white row's two missing houses.
+
 ## The walk
 
 | Stop | Side | Source way | Building | Status |
@@ -26,7 +47,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 10 | West | 454254277 | No. 31, a pipe shop | Done; unnamed |
 | 11 | West | 454254278 | No. 33, a temple front | Done; unnamed |
 | 12 | West | 454254279 | No. 35, Gyaltsap Tashi Ling Buddhist Society | Done; named |
-| 13 | West | 454254280 | Nos. 37–41, three bays with the Singapore Rattan Industry Association | Done; unnamed; split and naming question 37 |
+| 13 | West | 454254280 | Nos. 37–41, three bays with the Singapore Rattan Industry Association | Done; unnamed; split and naming question 37; west row question 38 |
 | 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face and splay | Done; unnamed |
 | 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Done; unnamed; footprint question 39 |
 | 16 | East | 454254307 | Nos. 42–44, a white block with a stair tower | Done; unnamed |

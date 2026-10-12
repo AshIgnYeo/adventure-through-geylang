@@ -1037,3 +1037,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 - **Stop 21, way 454254250:** the white row's fourth house, unnamed. The row's fronts stand at the edge of the lane's modelled carriageway, so they are flagged `heldFlat`.
 - **Stops 22 and 23, ways 454254252 and 454254251, No. 2:** the row's two southern houses, unnamed. The stair door is plated 2A and 2B, and the shop door 02, which also fixes the fourth house as No. 4.
 - **Stop 24, way 454254253:** the two-storey Geylang Road corner house east of Lorong 17, unnamed. Its boards are those of Eminent Frog Porridge, which has moved to 323 Geylang Road, and it carries a RENT/SALE banner.
+- **Walk complete, 12 October 2026:** all 24 stops on Lorong 17 are modelled and seven places are named, bringing the named-place total to 114. Open questions 36–41 are logged for the owner.
