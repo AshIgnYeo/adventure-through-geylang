@@ -198,7 +198,59 @@ export const no21 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21];
+// ---------------------------------------------------------------------------------------------
+// 7. Ways 454254270 and 454254271, Nos. 23 and 25 (letterbox 23, door plate 25): one white three-storey building
+// of two bays with corrugated metal hoods over every window. On the row's plane 2.2 m forward, three June 2024
+// panoramas agree on it from 1.0 m south to 11.1 m north of No. 21's source corner, filling the 3 m gap the map
+// leaves after No. 21. Each 6 m bay is laid on its own source way (4.38 m and 4.01 m), u north from the south end.
+const W270 = 4.376, at270 = lay(-1.0, W270 / 6.0), W271 = 4.014, at271 = lay(5.0, W271 / 6.1);
+const hood = (u, top) => ({ name: 'metal window hood', u: [u[0] - .1, u[1] + .1], h: [top + .1, top + .35], out: .35, depth: .7, colour: '#8f938f' });
+const whiteBay = { height: 10.3, ceiling: 3.2, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' }, bands: [[3.3, 3.6, .3]],
+  colours: { wall: '#ebeae4', trim: '#e0ded7', frame: '#2c3032', glass: '#3b4448', pier: '#ebeae4', back: '#e3ded2', floor: '#a19b90' } };
+const evidence2325 = 'June 2024 Street View shows one white three-storey building of two bays north of No. 21, with four windows on each upper floor under corrugated metal hoods and a flat roof at about 10.3 m. The south bay, No. 23 (letterbox 23, with a hall-rental notice), has a roller shutter, a wooden door and a louvred panel under the maroon awning carried on from No. 21. The north bay, No. 25 (door plate 25), is the Wee Ghee Athletic Association: a yellow board reading WEE GHEE ATHLETIC ASSOCIATION between its first-floor windows, 威義 on their glass, red lettering reading 威義體育會 under them, and a cream folding grille gate under a red-and-white striped awning hung with Buddhist prayer flags. No listing for the association was found at Lorong 17 (only a Yiwei Athletic Association elsewhere), so no name is given and its boards are blank. On the row\'s plane 2.2 m in front of the source edge, three June 2024 panoramas agree on the building from 1.0 m south to 11.1 m north of No. 21\'s source corner: it fills the 3 m gap the map leaves after No. 21, and its two bays of about 6 m are laid on their own source ways, 4.38 m and 4.01 m wide.';
+const sources2325 = id => [way(id), pano('FeWy4yNg9qEGZG5jKgP5XA', 256, 22, 110), pano('zA0hxiYKqVOIl4BIukFCWw', 225, 20, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 225, 20, 100)];
+const win23 = [[0, 1.35], [2.86, 4.2]].map(at270), win25 = [[5.65, 6.95], [8.57, 9.8]].map(at271);
+export const no23 = {
+  id: 'l17-23', buildingIds: ['454254270'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 23 Lorong 17 (June 2024 exterior, occupant not identified)', address: '23 Lorong 17 Geylang (the south bay)',
+  ...whiteBay, evidence: evidence2325, sources: sources2325('454254270'),
+  windows: win23.flatMap(u => [{ u, h: [4.43, 5.72], panes: 2 }, { u, h: [7.72, 8.86], panes: 2 }]),
+  blocks: [
+    { name: 'roof slab', u: [0, W270], h: [10.0, 10.3], out: .2, depth: .4, colour: '#e0ded7' },
+    ...win23.flatMap(u => [hood(u, 5.72), hood(u, 8.86)]),
+    { name: 'air conditioner', u: at270([-.14, .86]), h: [7.0, 7.65], out: .3, depth: .5, colour: '#e8e8e4' },
+    { name: 'air conditioner', u: at270([3.3, 4.1]), h: [3.95, 4.4], out: .3, depth: .5, colour: '#e8e8e4' },
+    { name: 'maroon scalloped awning', u: [0, W270], h: [3.0, 3.4], out: .5, depth: 1.0, colour: '#6a2d36' },
+  ],
+  piers: [[0, .3], [W270 - .25, W270]],
+  backFittings: [
+    { name: 'dark door', u: at270([.14, .86]), h: [.1, 2.2], colour: '#5a2a26' },
+    { name: 'louvred panel', u: at270([.9, 1.9]), h: [1.8, 2.3], colour: '#cfc9b8' },
+    { name: 'roller shutter', u: at270([2.0, 4.0]), h: [.1, 2.4], colour: '#c3c4c0' },
+    { name: 'wooden door', u: at270([4.29, 4.86]), h: [.1, 2.1], colour: '#b08d6a' },
+  ],
+};
+export const no25 = {
+  id: 'l17-25', buildingIds: ['454254271'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 25 Lorong 17, Wee Ghee Athletic Association (June 2024 exterior, not listed)', address: '25 Lorong 17 Geylang (the north bay)',
+  ...whiteBay, evidence: evidence2325, sources: sources2325('454254271'),
+  windows: win25.flatMap(u => [{ u, h: [4.43, 5.72], panes: 2 }, { u, h: [7.72, 8.86], panes: 2 }]),
+  blocks: [
+    { name: 'roof slab', u: [0, W271], h: [10.0, 10.3], out: .2, depth: .4, colour: '#e0ded7' },
+    ...win25.flatMap(u => [hood(u, 5.72), hood(u, 8.86)]),
+    { name: 'blank yellow board', u: at271([7.23, 8.57]), h: [4.57, 5.86], out: .05, depth: .04, colour: '#e7c43a' },
+    { name: 'blank lettered band', u: at271([6.0, 10.4]), h: [3.86, 4.45], out: .05, depth: .04, colour: '#f2efe8' },
+    { name: 'air conditioner', u: at271([10.0, 10.86]), h: [3.95, 4.55], out: .3, depth: .5, colour: '#e8e8e4' },
+    { name: 'striped awning', u: at271([5.14, 11.1]), h: [2.86, 3.2], out: .5, depth: 1.0, colour: '#d2655c' },
+  ],
+  piers: [[0, .25], [W271 - .25, W271]],
+  backFittings: [
+    { name: 'folding grille gate', u: at271([5.57, 8.71]), h: [.1, 2.7], colour: '#cfc6a8' },
+    { name: 'dark door', u: at271([8.86, 9.71]), h: [.1, 2.4], colour: '#2c2a2a' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);

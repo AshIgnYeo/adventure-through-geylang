@@ -20,7 +20,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 4 | West | 454254272 | No. 17, General Board of True Jesus Mission | Done; named |
 | 5 | West | 454254273 | No. 19, the Yang Clan General Association | Done; upper floors named |
 | 6 | West | 454254274 | No. 21, a temple on the ground floor | Done; unnamed |
-| 7–14 | West | 454254270 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
+| 7 | West | 454254270, 454254271 | Nos. 23 and 25, one white building of two bays (Wee Ghee Athletic Association) | Done; unnamed |
+| 8–14 | West | 454254275 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -170,3 +171,26 @@ A three-storey house north of No. 19:
 **Naming:** none. Google Maps lists **Bai Yun Kong Shang Fo Tang (百雲宮善佛堂)**, a Buddhist temple on floor 1, at 21 Lorong 17 Geylang, with the address point inside the way. No sign bearing its name could be read from the street, and the banner inside the glass is illegible, so it is recorded but not named.
 
 Use `?review=l17-21`.
+
+### 7. Ways 454254270 and 454254271: Nos. 23 and 25
+
+One white three-storey building of two bays. Every window on the upper floors is under a corrugated metal hood, and the flat roof is at about **10.3 m**.
+
+- **No. 23**, the south bay (letterbox 23, with a hall-rental notice):
+  - a roller shutter, a wooden door and a louvred panel;
+  - the maroon awning carried on from No. 21.
+- **No. 25**, the north bay (door plate 25), is the **Wee Ghee Athletic Association**:
+  - a yellow board reading WEE GHEE ATHLETIC ASSOCIATION between its first-floor windows, with 威義 on their glass;
+  - red lettering reading 威義體育會 under them;
+  - a cream folding grille gate under a red-and-white striped awning hung with Buddhist prayer flags.
+- **Measurement:** on the row's plane 2.2 m forward, `FeWy…`, `zA0h…` and `gBz2…` (June 2024) agree on the building:
+  - It runs from **1.0 m south to 11.1 m north** of No. 21's source corner, about 12.1 m in two bays of about 6 m.
+  - It fills the 3 m gap the map leaves after No. 21.
+  - Heights:
+    - first-floor ledge: 3.3–3.6 m;
+    - first-floor windows: 4.43–5.72 m;
+    - top-floor windows: 7.72–8.86 m.
+- **Layout:** each bay is laid on its own source way, 4.38 m and 4.01 m wide, so the gap stays open in the model.
+- **Naming:** none. No listing for the Wee Ghee Athletic Association was found at Lorong 17; the only match is a Yiwei Athletic Association elsewhere. Its boards are blank. Google's address point for No. 25 falls in way 270, the south bay, but the door plates are clear.
+
+Use `?review=l17-23` and `?review=l17-25`.
