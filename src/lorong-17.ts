@@ -1,5 +1,6 @@
 import type { World, Point } from './world';
-import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides } from './lorong-17-layout.mjs';
+import * as pc from 'playcanvas';
+import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides, lorong17Upper } from './lorong-17-layout.mjs';
 import { buildSimpleHouse, type Draw } from './simple-house';
 
 const canvasFor = (w: number, h: number, base: number, fn: Draw) => {
@@ -91,6 +92,19 @@ export function buildLorong17(world: World, id: string, poly: Point[]) {
       world.panel(pt(bl.u - .03, bl.out[0]), pt(bl.u - .03, bl.out[1]), bl.h[0], bl.h[1], m);
       world.panel(pt(bl.u + .03, bl.out[1]), pt(bl.u + .03, bl.out[0]), bl.h[0], bl.h[1], m);
     });
+  }
+  // Upper volumes: walls round their outline, a flat roof, and their fittings on the front.
+  for (const up of lorong17Upper(place, frame) as any[]) {
+    const wall = world.mat(up.colour); wall.cull = pc.CULLFACE_NONE; wall.update();
+    const pts = up.points as Point[];
+    for (let i = 0; i < pts.length; i++) world.panel(pts[i], pts[(i + 1) % pts.length], up.from, up.to, wall);
+    const roof = world.mat(up.roof); roof.cull = pc.CULLFACE_NONE; roof.update();
+    const indices: number[] = []; for (let k = 1; k < pts.length - 1; k++) indices.push(0, k, k + 1);
+    world.mesh(`${place.name} upper roof`, pts.flatMap(p => [p[0], up.to, p[1]]), pts.flatMap(() => [0, 0]), indices, roof);
+    for (const b of up.boxes) {
+      const p = frame.point(b.u, b.out) as Point;
+      world.box(`${place.name} ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour, b.glow), undefined, frame.angle);
+    }
   }
   for (const r of lorong17Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
   return true;

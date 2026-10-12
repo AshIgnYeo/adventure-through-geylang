@@ -35,6 +35,17 @@ Logged during the Lorong 17 walk (open question 35), for the owner to answer whe
     - **Recommendation:** yes. Author one footprint group for the row, as open question 1 did for the Lorong 11 west row: fronts on the triangulated line, party lines at the measured fins and pilasters, and rear lines kept. Keep the side passage, and keep way 237 (Nos. 9–15) on its own measured line.
     - **Unlocks:** true widths for every house on the west side, the gaps closed, and listing points inside the right houses.
 
+39. **No. 134 Sims Avenue (way 682928733), the Lorong 17 east corner: author its footprint about 5.5 m east?**
+    - **Evidence:** the source outline reaches into the lane, 0.9 m from its centreline, and into Sims Avenue's estimated carriageway.
+      - Straight-run June 2024 panoramas (`qR4q…` with `9Tds…`, and `qR4q…` with `Zwx6…`) triangulate the corner block's Lorong 17 face **5–6 m east** and **2–3 m south** of the source edge.
+      - The face is about 10.6 m long, against the 10.92 m source edge, so the outline's size fits and only its position is off.
+      - Panoramas taken as the car turned at the junction (`F6D3…`, `xH65…`) put the corner about 1.4 m further north. This is the "two drives disagree by 3–4 m" note made in the widened ring.
+    - **What happens now:** the photographed elevation is laid on the source edges.
+      - Every awning, board and shopfront is held within 0.25 m of the walls, so nothing reaches further into the carriageways. The real awnings project about 2 m.
+      - The building narrows the lane to about 3 m opposite No. 130, and camera poses from the June drive stand inside it.
+    - **Recommendation:** yes. Author the outline moved 5.5 m east and 2.5 m south, keeping its shape, and draw the awnings at their photographed depth. Check it against No. 136 next door, which is not modelled.
+    - **Unlocks:** the lane's true width at the Sims Avenue end, full awnings, and render-and-compare from the photographs.
+
 ## Settled
 
 ### Seventh batch, answered 12 October 2026

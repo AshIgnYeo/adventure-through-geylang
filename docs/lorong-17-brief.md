@@ -28,7 +28,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 12 | West | 454254279 | No. 35, Gyaltsap Tashi Ling Buddhist Society | Done; named |
 | 13 | West | 454254280 | Nos. 37–41, three bays with the Singapore Rattan Industry Association | Done; unnamed; split and naming question 37 |
 | 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face and splay | Done; unnamed |
-| 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
+| 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Done; unnamed; footprint question 39 |
 | 16–17 | East | 454254307, 454254308 | South of No. 134 | To do |
 | 18 | East | 454254240 | The long building | To do |
 | 19 | East | 454254238 | | To do |
@@ -355,3 +355,43 @@ The cream three-storey corner house was modelled with its Sims Avenue front in t
 **West side complete.** Every building from No. 301 to No. 130 Sims Avenue now has its Lorong 17 front. The row offset and the map gaps are [open question 38](open-questions.md).
 
 Use `?review=sims-130` for the Sims Avenue front.
+
+## East side
+
+### 15. Way 682928733: No. 134 Sims Avenue, the Lorong 17 east corner
+
+This was drawn as massing in the widened ring, because the drives disagreed on its position.
+
+- **Corner block:** cream, of three tall storeys, with a parapet at about **15.1 m** (16 m over the splay).
+  - Curved concrete hoods over each upper floor, louvred vents, brown-edged ledges and windows in pairs.
+- **Wing:** a lower two-storey wing to the south, with a balcony hung with flowers and string lights under a blue awning, and a roof at about 10 m.
+- **Ground floor:** a corner coffeeshop:
+  - red SingGas LPG awnings;
+  - green beer-sponsor boards for its stalls (K.L Hokkien Mee, Signature Intestines, Claypot Frog Porridge, Hongkong Steam Shark Head);
+  - a white board reading 驰名猪什汤大王 over the splayed corner.
+
+**Measurement:**
+- Straight-run panoramas triangulate the corner (`qR4q…` with `9Tds…`, and `qR4q…` with `Zwx6…`) and the south end of the corner block.
+  - The Lorong 17 face is about **10.6 m** long, against the 10.92 m source edge.
+  - It stands **5–6 m east and 2–3 m south** of the source edge.
+- Rectified on that line, `Zwx6…` and `qR4q…` agree on the elevation. The heights are:
+  - five-foot way: 4.5 m;
+  - sponsor boards: 4.6–6.0 m;
+  - first-floor windows: 6.25–7.5 m;
+  - first hood: 9.0–9.6 m;
+  - second-floor windows: 10.25–11.6 m;
+  - top hood: 13.2–14.3 m;
+  - parapet: 15.1 m.
+- The splay and the Sims Avenue face were read from `F6D3…` and `xH65…`.
+
+**Layout:** the source outline is the photographed outline displaced: it reaches into the lane, 0.9 m from its centreline.
+- The elevation is laid on the source edges.
+  - The corner block's Lorong 17 face is the front.
+  - The splay, the Sims Avenue face and the wing's face are side faces.
+  - The corner block above the wing's roof is a raised volume (`upper` in the layout).
+- Every street-level piece is held within 0.25 m of the walls, which stand in the estimated carriageways.
+- Authoring the footprint is [open question 39](open-questions.md).
+
+**Naming:** none. Google Maps lists 134 Sims Ave only as an address. The stalls' boards and the coffeeshop's soup-king board are not listed, so they are blank.
+
+Use `?review=sims-134`.

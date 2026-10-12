@@ -466,9 +466,102 @@ export const no37to41 = {
   }],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41];
+// ---------------------------------------------------------------------------------------------
+// 15. Way 682928733, No. 134 Sims Avenue, the Lorong 17 east corner: a cream three-storey corner block with a tall
+// parapet and curved concrete hoods, and a lower two-storey wing to the south with a flowered balcony, over a corner
+// coffeeshop. Triangulated from straight-run June 2024 panoramas, its Lorong 17 face stands 5-6 m east of the source
+// edge, which lies inside the lane, and about 2-3 m further south (open question 39); it is laid on the source edges.
+// Frame: edge 3, the corner block's Lorong 17 face, u south from the splay. The photographed face, s from the
+// corner, runs -0.6 to 10.0 m and is laid on the 10.92 m edge.
+const W134 = 10.922, at134 = lay(-.6, W134 / 10.6);
+const win134 = [[.4, 1.75], [2.4, 3.9], [5.3, 6.9], [7.6, 9.45]].map(at134);
+const brownCoping = '#8a4f3a', cream134 = '#ece6d6';
+const hood134 = (u, h) => ({ name: 'curved concrete hood', u, h, out: .5, depth: 1.0, colour: '#e4ddcc' });
+const red = '#c9302c';
+export const sims134 = {
+  id: 'sims-134', buildingIds: ['682928733'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 2.2, pitch: 32 },
+  name: 'No. 134 Sims Avenue, Lorong 17 east corner (June 2024 exterior, occupants not identified)', address: '134 Sims Avenue (Lorong 17 corner)',
+  height: 10.0, ceiling: 4.5, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' },
+  evidence: 'June 2024 Street View shows a cream corner block of three tall storeys with a parapet at about 15.1 m (16 m over the splay), curved concrete hoods over each upper floor, louvred vents, brown-edged ledges and windows in pairs, and a lower two-storey wing to the south with a balcony hung with flowers and string lights under a blue awning. The ground floor is a corner coffeeshop: red SingGas LPG awnings, green beer-sponsor boards for the stalls (K.L Hokkien Mee, Signature Intestines, Claypot Frog Porridge, Hongkong Steam Shark Head) and a white board reading 驰名猪什汤大王 over the splayed corner. Google Maps lists 134 Sims Ave only as an address, with no business, so no name is given and every board and awning is blank. Triangulated from straight-run June 2024 panoramas (qR4q..., 9Tds... and Zwx6...), the corner block\'s Lorong 17 face is about 10.6 m long, against the 10.92 m source edge, and stands 5-6 m east of the source edge and 2-3 m south of it: the source outline reaches into the lane, 0.9 m from its centreline. Panoramas taken as the car turned at the junction place the corner about 1.4 m further north. The elevation is laid on the source edges (open question 39), and its street-level pieces are held within 0.25 m of the walls, which stand in the estimated carriageways of Lorong 17 and Sims Avenue.',
+  sources: [way('682928733'), search('134 Sims Ave Singapore 387456'), pano('qR4qVlrIcfZojnmELQB3hQ', 10, 12, 70), pano('9Tdsro0uN2QtbZA28ESq8Q', 345, 12, 100), pano('Zwx6nRNu4CPL9jyWL624Fw', 40, 15, 100), pano('F6D3qY_SnKVyp-erTxBPDA', 120, 15, 100), pano('xH65Wze70tWSMzS5zLcP7Q', 160, 12, 100)],
+  colours: { wall: cream134, trim: '#e4ddcc', frame: '#3a3a36', glass: '#3f474a', pier: cream134, back: '#3a3532', floor: '#a19b90' },
+  windows: win134.map(u => ({ u, h: [6.25, 7.5], panes: 2 })),
+  vents: win134.map(u => ({ u, h: [7.75, 8.1] })),
+  blocks: [
+    ...win134.map(u => ({ name: 'brown-edged ledge', u: [u[0] - .1, u[1] + .1], h: [6.1, 6.25], out: .08, depth: .16, colour: brownCoping })),
+    hood134(at134([-.6, 4.25]), [9.0, 9.6]), hood134(at134([4.6, 10.0]), [9.0, 9.6]),
+    { name: 'blank green sponsor boards', u: [.1, W134 - .1], h: [4.6, 6.0], out: .05, depth: .04, colour: '#2f5a3f' },
+    { name: 'red awning, held flat', u: [0, W134], h: [3.0, 4.5], out: .12, depth: .24, colour: red },
+  ],
+  piers: [[0, .4], [W134 - .4, W134]],
+  backFittings: [{ name: 'coffeeshop front', u: [.4, W134 - .4], h: [.1, 4.3], colour: '#3a332e', glow: .14 }],
+  // The corner block above the wing's roof: its outline in this frame, from the splay to the cut square to the face
+  // at the wing's step, back to the party wall and round to the Sims Avenue end of the splay.
+  upper: [{ outline: [[0, 0], [W134, 0], [W134, -7.6], [-2.42, -7.6], [-2.48, -3.47]], from: 10.0, to: 15.1, colour: cream134, roof: '#9c9a94',
+    windows: win134.map(u => ({ u, h: [10.25, 11.6], panes: 2 })),
+    vents: win134.map(u => ({ u, h: [12.1, 12.5] })),
+    blocks: [
+      ...win134.map(u => ({ name: 'brown-edged ledge', u: [u[0] - .1, u[1] + .1], h: [10.1, 10.25], out: .08, depth: .16, colour: brownCoping })),
+      hood134(at134([-.6, 4.25]), [13.2, 14.3]), hood134(at134([4.6, 10.0]), [13.2, 14.3]),
+      { name: 'parapet coping', u: [0, W134], h: [14.9, 15.1], out: .1, depth: .2, colour: brownCoping },
+      ...[[1.0, 1.9], [7.9, 8.9]].map(s => ({ name: 'air conditioner', u: at134(s), h: [9.6, 10.25], out: .3, depth: .5, colour: '#e8e8e4' })),
+    ] }],
+  sides: [
+    {
+      edge: 4, // the splay, u from its Sims Avenue end to the Lorong 17 corner, read s -0.5 to 4.1 m
+      windows: [{ u: [1.4, 2.88], h: [6.5, 7.6], panes: 2 }, { u: [1.4, 2.88], h: [10.4, 12.0], panes: 2 }],
+      vents: [{ u: [1.4, 2.88], h: [8.2, 8.5] }, { u: [1.4, 2.88], h: [12.4, 13.0] }],
+      blocks: [
+        { name: 'curved concrete hood', u: [.09, 4.09], h: [9.5, 9.9], out: .5, depth: 1.0, colour: '#e4ddcc' },
+        { name: 'curved concrete hood', u: [.09, 4.09], h: [13.5, 14.2], out: .5, depth: 1.0, colour: '#e4ddcc' },
+        { name: 'brown-edged ledge', u: [1.3, 2.98], h: [6.3, 6.45], out: .08, depth: .16, colour: brownCoping },
+        { name: 'brown-edged ledge', u: [1.3, 2.98], h: [10.2, 10.35], out: .08, depth: .16, colour: brownCoping },
+        { name: 'stepped parapet', u: [.5, 3.8], h: [15.1, 16.0], out: -.1, depth: .2, colour: cream134 },
+        { name: 'parapet coping', u: [.5, 3.8], h: [16.0, 16.15], out: -.05, depth: .3, colour: brownCoping },
+        { name: 'blank soup-king board', u: [.1, 4.18], h: [5.0, 5.6], out: .05, depth: .04, colour: '#f3efe6' },
+        { name: 'red awning, held flat', u: [0, 4.279], h: [3.4, 4.4], out: .12, depth: .24, colour: red },
+        { name: 'coffeeshop front', u: [.3, 3.98], h: [.13, 3.3], out: .03, depth: .04, colour: '#3a332e', glow: .14 },
+      ],
+    },
+    {
+      edge: 5, // Sims Avenue, u west from the party wall
+      windows: [[.45, 1.65], [2.35, 3.55]].flatMap(u => [{ u, h: [6.3, 7.5], panes: 2 }, { u, h: [10.4, 11.7], panes: 2 }]),
+      vents: [[.45, 1.65], [2.35, 3.55]].flatMap(u => [{ u, h: [7.75, 8.1] }, { u, h: [12.1, 12.5] }]),
+      blocks: [
+        { name: 'curved concrete hood', u: [.1, 4.06], h: [9.4, 9.9], out: .5, depth: 1.0, colour: '#e4ddcc' },
+        { name: 'curved concrete hood', u: [.1, 4.06], h: [13.4, 14.2], out: .5, depth: 1.0, colour: '#e4ddcc' },
+        { name: 'blank green sponsor board', u: [.1, 4.06], h: [4.6, 6.0], out: .05, depth: .04, colour: '#2f5a3f' },
+        { name: 'red awning, held flat', u: [0, 4.162], h: [3.0, 4.5], out: .12, depth: .24, colour: red },
+        { name: 'coffeeshop front', u: [.3, 3.86], h: [.13, 2.9], out: .03, depth: .04, colour: '#3a332e', glow: .14 },
+      ],
+    },
+    {
+      edge: 1, // the two-storey wing's Lorong 17 face, u south from the step
+      windows: [[1.0, 4.0], [5.5, 8.5]].map(u => ({ u, h: [6.5, 7.4], panes: 3 })),
+      vents: [[1.0, 4.0], [5.5, 8.5]].map(u => ({ u, h: [8.4, 8.8] })),
+      blocks: [
+        { name: 'roof slab', u: [0, 10.48], h: [9.7, 10.0], out: .3, depth: .6, colour: '#e4ddcc' },
+        { name: 'balcony slab', u: [0, 10.48], h: [5.0, 5.3], out: .4, depth: .8, colour: '#e4ddcc' },
+        { name: 'balcony railing', u: [.1, 10.38], h: [5.3, 6.2], out: .78, depth: .04, colour: '#d6d6d0' },
+        { name: 'flowering creepers', u: [.1, 10.38], h: [5.6, 6.0], out: .82, depth: .04, colour: '#c47a96' },
+        { name: 'blue awning', u: [0, 10.48], h: [7.6, 8.1], out: .5, depth: 1.0, colour: '#2e5c9e' },
+        { name: 'red awning, held flat', u: [0, 10.48], h: [3.0, 4.4], out: .12, depth: .24, colour: red },
+        { name: 'coffeeshop dining', u: [.3, 10.18], h: [.13, 2.9], out: .03, depth: .04, colour: '#3a332e', glow: .12 },
+      ],
+    },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
+// Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own
+// fittings on the front edge (the outline's first edge, which lies on the front).
+export const lorong17Upper = (place, frame) => (place.upper ?? []).map(up => ({
+  ...up, points: up.outline.map(([u, out]) => frame.point(u, out)),
+  boxes: simpleHouseLayout(frame.width, { height: 0, ceiling: 0, fiveFootWay: 0, colours: place.colours, windows: up.windows, vents: up.vents, blocks: up.blocks }).boxes
+    .filter(b => !['upper wall', 'five-foot way floor', 'five-foot way ceiling', 'five-foot way return', 'back wall'].includes(b.name)),
+}));
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);
 
 // Side faces: windows, vents, bands, blocks and drawn signs on another source edge, with no five-foot way.

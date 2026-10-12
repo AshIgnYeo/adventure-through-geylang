@@ -97,17 +97,7 @@ export const greyHouse = {
   }, 5.8),
 };
 
-// No. 134 Sims Avenue, the Lorong 17 east corner. Its outline lies almost entirely beyond the study bounds and
-// two June 2024 drives disagree on its position by 3-4 m, so it is drawn as massing with its awnings only.
-export const sims134 = {
-  id: 'sims-134', buildingIds: ['682928733'], kind: 'unnamed', unnamed: true, massing: true,
-  name: 'Corner coffeeshop, 134 Sims Avenue at Lorong 17 (June 2024 exterior, massing only)', address: '134 Sims Avenue',
-  height: 14.0, colour: '#ece6d6',
-  // Red canvas awnings along the Lorong 17 face and the splayed corner: [edge index, from, to] in metres.
-  awnings: [[3, .3, 10.6], [4, .2, 4.1]], awning: { wall: 3.6, drop: .8, depth: 2.0, colour: '#c9302c' },
-  evidence: 'A cream four-storey corner building on the east corner of Lorong 17 and Sims Avenue (tagged three levels), with louvred vents and windows on its upper storeys and a coffeeshop under red canvas awnings, green drink-sponsor boards and stall signs at street level in June 2024 Street View. Its outline lies almost entirely beyond the study bounds and two June 2024 drives disagree on its position by 3-4 m, so it is drawn as plain massing at an estimated 14 m with its awnings, and no name is given.',
-  sources: [way('682928733'), pano('Zwx6nRNu4CPL9jyWL624Fw', 120, 15, 100)],
-};
+// No. 134 Sims Avenue, the Lorong 17 east corner, was rebuilt with its fronts in src/lorong-17-layout.mjs (open question 35).
 
 // The west side of Lorong 17, south of Sims Avenue: eleven walk-ups whose fronts face Lorong 17 beyond the study's
 // east edge. Only their backs and roofs are visible from the modelled streets, so they are massing, coloured after
@@ -123,7 +113,7 @@ export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
   sources: [way(id), pano('8zShCoV5q2fYvPBEC901Vw', 255, 18, 100), pano('gBz2E1aqjym_0qAkSZxE2A', 255, 18, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 255, 18, 100)],
 }));
 
-export const ringEast = [no291, no260East, greyHouse, sims134, ...lorong17West];
+export const ringEast = [no291, no260East, greyHouse, ...lorong17West];
 export const ringEastFrame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const ringEastLayout = (place, width) => simpleHouseLayout(width, place);
 export const ringEastReviews = (place, frame) => facing(frame, place.id, 10, 18);

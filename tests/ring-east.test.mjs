@@ -25,14 +25,6 @@ test('No. 291 keeps its source way; the row east of Lorong 12 fills the rest of 
   assert.ok(green.u[0] > frame.width - 5 && green.u[1] <= frame.width);
 });
 
-test('No. 134 is massing only, with its awnings on its Lorong 17 face and corner', () => {
-  const place = ringEast.find(p => p.id === 'sims-134');
-  assert.equal(place.massing, true); assert.equal(place.unnamed, true);
-  assert.equal(landmarkFor('682928733'), undefined);
-  const poly = outline('682928733');
-  for (const [edge, from, to] of place.awnings) assert.ok(from >= 0 && to <= ringEastFrame(poly, { frontEdge: edge }).width);
-});
-
 test('the Lorong 17 west side walk-ups not yet rebuilt are massing, one entry per way, coloured and unnamed', () => {
   const row = ringEast.filter(p => p.id.startsWith('l17-'));
   // Each of the eleven ways is either still massing here or rebuilt with its front in the Lorong 17 layout.

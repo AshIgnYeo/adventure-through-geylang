@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { project, studyArea, pointInPolygon } from '../src/geo.mjs';
-import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides } from '../src/lorong-17-layout.mjs';
+import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
+import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides, lorong17Upper } from '../src/lorong-17-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map } from './helpers.mjs';
 
 const lane = sourceMap.corridors.find(c => c.name === 'Lorong 17 Geylang');
+const lanePath = lane.path.map(p => project(p, sourceMap.origin)), laneSegments = lanePath.slice(1).map((b, i) => [lanePath[i], b]);
 
 test('Lorong 17 brings in its own buildings and road ways, not the backs of Lorong 19', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));
@@ -39,11 +40,20 @@ test('the Lorong 17 exteriors fit their outlines, face the lane and keep their r
     assertReviews(frame, lorong17Reviews(place, frame));
     assert.match(place.evidence, /(April|June) 2024/);
     assert.ok(place.sources.some(s => s.includes(`way/${place.buildingIds[0]}`)));
-    // West-side fronts look east onto the lane, east-side fronts west.
-    const west = frame.point(frame.width / 2, 0)[0] < 170;
-    assert.ok(west ? frame.nx > .9 : frame.nx < -.9, place.id);
-    const out = (place.blocks ?? []).filter(b => b.out > 0 && b.h[0] < 5);
-    assertClearOfCarriageway(out.flatMap(b => [frame.point(b.u[0], b.out + b.depth / 2), frame.point(b.u[1], b.out + b.depth / 2)]));
+    // Every front looks across the lane: its outward normal points at the nearest point of the lane's centreline.
+    const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
+    assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
+    assert.ok(Math.abs(frame.nx) > .9, place.id);
+    // Street-level pieces stay clear of the modelled carriageways; No. 134's source edges stand inside them, so its
+    // pieces are held within 0.25 m of its walls instead (open question 39).
+    const faces = [{ frame, blocks: place.blocks ?? [] }, ...lorong17Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [] }))];
+    for (const { frame: f, blocks } of faces) {
+      const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
+      if (place.id === 'sims-134') { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+      assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
+    }
+    // Upper volumes stand inside the footprint.
+    for (const up of lorong17Upper(place, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), place.id);
     if (place.unnamed) {
       assert.equal(landmarkFor(place.buildingIds[0]), undefined);
       assert.equal(place.boards, undefined); assert.equal(place.blades, undefined);
