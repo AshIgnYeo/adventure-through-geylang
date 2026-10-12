@@ -10,6 +10,97 @@ None at present.
 
 ## Settled
 
+### Eighth batch, answered 12 October 2026
+
+The project owner chose the recommended option for each ("yes to all"), after the Lorong 17 walk.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 36 | **Yes.** Author Feng Shang's footprint on the photographed front | Part of the Lorong 17 west row group (`lorong-17-west-row`); the photographed front is 12.9 m, not the 12.5 m first written |
+| 37 | **Yes.** Split way 454254280 into its three bays and name No. 39 | Cut at the fins, 4.4 m and 9.6 m along the source edge (the 5.1 m and 11.6 m in the question were photographed distances before scaling onto the 14.62 m edge); the middle bay's upper floors are named the Singapore Rattan Industry Association |
+| 38 | **Yes.** Re-author the Lorong 17 west row, Nos. 5–35, on its photographed line | One footprint group: fronts on the triangulated line, party lines at the measured fins and pilasters, rear lines kept, the side passage and way 237 kept |
+| 39 | **Yes.** Move No. 134 Sims Avenue's outline 5.5 m east and 2.5 m south | Shape kept; the awnings drawn at their photographed depth |
+| 40 | **Yes.** Author the temple's footprint over the whole photographed temple | About 8.6 m on the way's front line, keeping its depth and clear of Bright Star Hotel |
+| 41 | **Yes.** Add footprints for the white row's two northern houses | Nos. 8 and 10 by the row's sequence, on way 249's front and rear lines |
+
+The original wording of questions 36–41 is kept here:
+
+36. **Lorong 17, way 454254236 (Feng Shang Hair Salon): author its footprint on the photographed front?**
+    - **Evidence:** two June 2024 panoramas (`h2GM…`, `qC7t…`) triangulate the four upper windows and the north party line. All five agree on a front **1.4–1.7 m in front of** the source edge. On that plane the building photographs **12.5 m** wide against the 9.04 m source edge: from 1.56 m south of the source corner to 11.35 m north of it, where it meets the south wall of way 454254237. The source map leaves a 1.3 m gap between the two ways.
+    - **What happens now:** the elevation is squeezed proportionally onto the source edge (×0.72), so the 1.45 m windows draw about 1.05 m wide, and the gap stays open. The salon's listing point lies 1.3 m in front of the source front, inside the photographed front; it is named under open question 12.
+    - **Recommendation:** yes. Author the footprint from the triangulated corners, with the front 1.5 m forward and the north wall on way 454254237's south wall, and lay the elevation at its photographed widths.
+    - **Unlocks:** true window and bay widths, the closed gap, and the listing point inside the way.
+
+37. **Lorong 17, way 454254280 (Nos. 37–41): split it into its three photographed bays, and name the middle bay's upper floors the Singapore Rattan Industry Association?**
+    - **Evidence:** June 2024 Street View shows one three-storey building of three finned bays.
+      - **Middle bay:** a white board reading 新加坡籐業公會 S'PORE RATTAN INDUSTRY ASSN. between its first-floor windows.
+      - **Measurement:** two pairs of panoramas triangulate the ends and fins 0.2–1.0 m behind the source edge. The building is 17.4 m long, from 2.7 m south of the way's corner, with bays of about **5.4, 6.1 and 5.9 m**. The fins fall at about 5.1 m and 11.6 m along the 14.62 m source edge, laid proportionally.
+    - **Listing:** Google Maps lists Singapore Rattan Industry Assoc. with its point inside this way.
+      - The listed address is **39 Sims Cl, Singapore 388562**, but the postal code belongs to this stretch of Lorong 17, between No. 31 (388555) and No. 35. So the association is at **No. 39**, the middle bay.
+      - Open question 12 allows a clearly signed occupant when published addresses disagree.
+    - **What happens now:** the building is modelled as one unnamed place on the whole way, with every board blank.
+    - **Recommendation:** yes. Split the way at the two fins, as under questions 30 and 31, and name the middle bay's upper floors after the board, with no claim about its ground floor.
+    - **Unlocks:** one named association. The Ah Qi Trading & Construction board on the ground floor stays blank either way: the company is listed only at Woodlands and Lim Chu Kang.
+
+38. **Lorong 17 west side, Nos. 5–35 (ways 236 to 279): re-author the row on its photographed line?**
+    - **Evidence:** every house from No. 5 to No. 35 was triangulated from June 2024 panoramas (see the [Lorong 17 brief](lorong-17-brief.md)).
+      - **Depth:** the fronts stand **1.4–2.3 m in front of** their source edges, except Nos. 9–15, which run from on the edge to 1.2 m behind it.
+      - **Gaps:** the photographed fronts run continuously. The source map leaves gaps after No. 7 (1.3 m), No. 21 (3 m) and No. 25 (2.5 m), plus the 5.6 m side passage after No. 15, which is real.
+      - **Drift:** from No. 21 north, the photographed houses drift south of their source ways, by up to about 2.6 m at No. 29. Google's address points for Nos. 29, 33 and 35 fall on the photographed houses, not on their source ways.
+      - **Widths:** the photographed widths vary from 5.3 m to 7.1 m. Each house is laid proportionally on its own 4.0–5.8 m source edge.
+    - **What happens now:** each house keeps its source way, so windows and bays are squeezed or stretched by up to about 30%. The fronts stand up to 2.3 m back from the street, and the gaps show as dark slots between houses.
+    - **Recommendation:** yes. Author one footprint group for the row, as open question 1 did for the Lorong 11 west row: fronts on the triangulated line, party lines at the measured fins and pilasters, and rear lines kept. Keep the side passage, and keep way 237 (Nos. 9–15) on its own measured line.
+    - **Unlocks:** true widths for every house on the west side, the gaps closed, and listing points inside the right houses.
+
+39. **No. 134 Sims Avenue (way 682928733), the Lorong 17 east corner: author its footprint about 5.5 m east?**
+    - **Evidence:** the source outline reaches into the lane, 0.9 m from its centreline, and into Sims Avenue's estimated carriageway.
+      - Straight-run June 2024 panoramas (`qR4q…` with `9Tds…`, and `qR4q…` with `Zwx6…`) triangulate the corner block's Lorong 17 face **5–6 m east** and **2–3 m south** of the source edge.
+      - The face is about 10.6 m long, against the 10.92 m source edge, so the outline's size fits and only its position is off.
+      - Panoramas taken as the car turned at the junction (`F6D3…`, `xH65…`) put the corner about 1.4 m further north. This is the "two drives disagree by 3–4 m" note made in the widened ring.
+    - **What happens now:** the photographed elevation is laid on the source edges.
+      - Every awning, board and shopfront is held within 0.25 m of the walls, so nothing reaches further into the carriageways. The real awnings project about 2 m.
+      - The building narrows the lane to about 3 m opposite No. 130, and camera poses from the June drive stand inside it.
+    - **Recommendation:** yes. Author the outline moved 5.5 m east and 2.5 m south, keeping its shape, and draw the awnings at their photographed depth. Check it against No. 136 next door, which is not modelled.
+    - **Unlocks:** the lane's true width at the Sims Avenue end, full awnings, and render-and-compare from the photographs.
+
+40. **Lorong 17, the temple by No. 14 (way 454254238): author its footprint over the whole photographed temple?**
+    - **Evidence:** three June 2024 panoramas (`GX6R…` with `M_9s…`, and `GX6R…` with `qKWw…`) triangulate the single-storey temple's eaves.
+      - They are about **10 m** long and 1–1.5 m in front of the source front.
+      - They run from about 4 m north of the way, into the 5 m gap the map leaves before Bright Star Hotel, to about 1.2 m south of it.
+      - The source way is 4.84 m wide and 13.2 m deep.
+    - **What happens now:** the 4.84 m slice of the temple that falls on the way is modelled at its photographed scale. The rest of its front, the north entrance with the 和友社 board and green railings, is empty ground.
+    - **Recommendation:** yes. Author the outline from the triangulated eave ends, about 9 m wide on the way's front line (the eaves overhang by about 1 m), keeping its depth, and lay the full elevation on it.
+    - **Unlocks:** the whole temple front and the gap closed. It stays unnamed: neither 和友社 nor 華德善室 is listed.
+
+41. **Lorong 17 east side: add footprints for the two northern houses of the white row south of the temple?**
+    - **Evidence:** `M_9s…` and `qC7t…` (June 2024) agree on a white two-storey row of six shophouses, about 24 m long, starting about 5 m south of the temple behind a side lane.
+      - **Source map:** it has four ways for this row (454254249, 250, 252 and 251, z 0.8 to 18.5), and they overlap the four southern houses.
+      - **The gap:** the two northern houses, about 5.4 m and 4.3 m wide, stand in the 15 m gap the map leaves between the temple's way and way 249.
+      - **The north house:** an end house with an arcaded five-foot way, louvred vents and a pitched roof, its gable on the side lane.
+      - **Numbers:** the row is numbered down to No. 6 (letterbox 6-B on the third house), so these are probably Nos. 8 and 10.
+    - **What happens now:** the four southern houses are modelled, one per way, each laid proportionally on its way. The two northern houses are missing, leaving an open gap where they stand.
+    - **Recommendation:** yes. Author two footprints north of way 249, on its front and rear lines, at the photographed widths, and model them on the row's shared elevation, unnamed unless a listing and sign agree.
+    - **Unlocks:** the whole row, and the gap closed.
+
+### Seventh batch, answered 12 October 2026
+
+The project owner chose Lorong 17 as the next street and accepted the recommended option for each part of question 35.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 35 | **Yes.** Model Lorong 17 between Geylang Road and Sims Avenue, one building at a time in street order | The lane, its buildings and its two junctions join the map; the walk is recorded in the [Lorong 17 brief](lorong-17-brief.md) |
+
+The original wording of question 35 is kept here:
+
+35. **Lorong 17, Geylang Road to Sims Avenue: how should the street be built?**
+    - **Order:** start at the Geylang Road end, go north up the west side to Sims Avenue, then come back south down the east side. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Sims Avenue. The part of Lorong 17 north of Sims Avenue waits for a later pass.
+    - **Corners:** take in the corner buildings at both ends and stop there. The Geylang Road houses east of the corner, and Sims Avenue Nos. 136 onward, wait for a later pass.
+    - **Map:** add only Lorong 17's own buildings and road ways, not everything a wider rectangle would take in (about ten more, mostly the backs of Lorong 19). The lane and its two junctions become walkable corridors beyond the rectangle.
+    - **Unnamed buildings:** labelled by their Google Maps address and modelled from the photographed façade, with signboards drawn but their lettering left blank, as elsewhere.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-17` branch, each written up in the Lorong 17 brief.
+
 ### Sixth batch, answered 11 October 2026
 
 The project owner chose the recommended option.

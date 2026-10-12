@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { withAuthoredFootprints } from '../src/authored-footprints.mjs';
-import { project, pointInPolygon, nearestOnSegment, roadWidth } from '../src/geo.mjs';
+import { project, pointInPolygon, nearestOnSegment, roadWidth, studyArea } from '../src/geo.mjs';
 
 export const sourceMap = JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8'));
 export const map = withAuthoredFootprints(sourceMap);
@@ -27,9 +27,9 @@ export function assertClearOfCarriageway(points) {
 
 /** Review starts are inside the study margins, outside every rendered footprint, and the first faces the frontage. */
 export function assertReviews(frame, reviews) {
-  const low = project(map.bounds.slice(0, 2), map.origin), high = project(map.bounds.slice(2), map.origin);
+  const inStudy = studyArea(map);
   for (const { p, yaw } of reviews) {
-    assert.ok(p[0] > low[0] + 3 && p[0] < high[0] - 3 && p[1] > high[1] + 3 && p[1] < low[1] - 3);
+    assert.ok(inStudy(p, 3));
     for (const b of map.buildings) {
       const o = b.coordinates.slice(0, -1).map(c => project(c, map.origin));
       assert.equal(pointInPolygon(p, o), false, b.id);

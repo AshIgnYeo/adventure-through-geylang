@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ringEast, ringEastFrame, ringEastLayout, ringEastReviews } from '../src/ring-east-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
-import { assertFittings, assertReviews, outline } from './helpers.mjs';
+import { lorong17 } from '../src/lorong-17-layout.mjs';
+import { assertFittings, assertReviews, outline, building } from './helpers.mjs';
 
 test('the east-ring exteriors fit their outlines and keep their review starts clear', () => {
   for (const place of ringEast.filter(p => !p.massing)) {
@@ -24,24 +25,9 @@ test('No. 291 keeps its source way; the row east of Lorong 12 fills the rest of 
   assert.ok(green.u[0] > frame.width - 5 && green.u[1] <= frame.width);
 });
 
-test('No. 134 is massing only, with its awnings on its Lorong 17 face and corner', () => {
-  const place = ringEast.find(p => p.id === 'sims-134');
-  assert.equal(place.massing, true); assert.equal(place.unnamed, true);
-  assert.equal(landmarkFor('682928733'), undefined);
-  const poly = outline('682928733');
-  for (const [edge, from, to] of place.awnings) assert.ok(from >= 0 && to <= ringEastFrame(poly, { frontEdge: edge }).width);
-});
-
-test('the Lorong 17 west side is massing only, one entry per way, coloured and unnamed', () => {
-  const row = ringEast.filter(p => p.id.startsWith('l17-'));
-  assert.equal(row.length, 11);
-  const ids = ringEast.flatMap(p => p.buildingIds);
-  assert.equal(new Set(ids).size, ids.length);
-  for (const place of row) {
-    assert.equal(place.massing, true); assert.equal(place.unnamed, true);
-    assert.match(place.colour, /^#[0-9a-f]{6}$/);
-    assert.ok(place.height > 10 && place.height < 16);
-    assert.equal(landmarkFor(place.buildingIds[0]), undefined);
-    assert.ok(outline(place.buildingIds[0]).length >= 4);
-  }
+test('the Lorong 17 west side walk-ups have all left the east-ring massing for their re-spaced footprints', () => {
+  assert.equal(ringEast.filter(p => p.id.startsWith('l17-')).length, 0);
+  const west = ['454254272', '454254273', '454254274', '454254270', '454254271', '454254275', '454254276', '454254277', '454254278', '454254279', '454254280'];
+  const used = lorong17.flatMap(p => [...p.buildingIds, ...(building(p.buildingIds[0]).replaces ?? [])]);
+  for (const id of west) assert.ok(used.includes(id), id);
 });

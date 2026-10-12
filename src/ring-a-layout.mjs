@@ -22,10 +22,11 @@ function slice(spec, from, to) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// The Lorong 15 corner block on Geylang Road's north side (way 454254264): a four-storey commercial
-// block with three street faces. The splayed corner (edge 4) faces the junction and is the front;
-// the Geylang Road face (edge 3) and the Lorong 15 face (edge 5) carry their windows as side faces.
-// Heights are the mean of the Geylang Road and corner readings, which differ by about 3.5%.
+// The corner block on Geylang Road's north side between Lorong 15 and Lorong 17 (way 454254264): a four-storey
+// commercial block with five street faces. The Lorong 15 splayed corner (edge 4) is the front; the Geylang Road
+// face (edge 3), the Lorong 15 face (edge 5), the Lorong 17 splayed corner (edge 2) and the Lorong 17 face (edge 1)
+// carry their windows as side faces. Heights are the mean of the Geylang Road and corner readings, which differ
+// by about 3.5%.
 const B = { floors: [[4.9, 7.4], [8.1, 10.65], [11.3, 13.9]], bands: [[7.45, 7.92], [10.8, 11.24], [14.15, 14.65]], parapet: 15.85 };
 const blue = '#2f55a8', coping = '#d9d8d2', brown = '#4b3a33';
 const bandBlocks = spans => spans.flatMap(u => [...B.bands.map(h => ({ name: 'blue sunshade band', u, h, out: .45, depth: .9, colour: blue })), { name: 'coping', u, h: [15.65, 15.85], out: .15, depth: .3, colour: coping }]);
@@ -38,21 +39,36 @@ const curtainMullions = (u0, u1, n, h) => [
   ...Array.from({ length: n + 1 }, (_, i) => u0 + (u1 - u0) * i / n).map(c => ({ name: 'curtain wall mullion', u: [Math.max(u0, c - .04), Math.min(u1, c + .04)], h, out: .26, depth: .04, colour: '#1f3f8c' })),
   ...[4.8, 7.7, 11.0, 14.4, 16.4].map(y => ({ name: 'curtain wall transom', u: [u0, u1], h: [y - .06, y + .06], out: .26, depth: .04, colour: '#1f3f8c' })),
 ];
-const W3 = 22.863, W5 = 11.849;
+const W3 = 22.863, W5 = 11.849, W2 = 7.323, W1 = 14.926;
+// The Lorong 17 faces (open question 35). The splay photographs 8.8 m wide on its source plane, where two panoramas
+// agree, from 0.2 m along it; the Lorong 17 face about 13.5 m, read on a plane 0.9 m in front of its source edge,
+// where the band spacing matches the other faces. Both are laid proportionally on their source edges.
+const uS = s => +((s - .2) * W2 / 8.8).toFixed(2), uF = s => +((s - .5) * W1 / 13.5).toFixed(2);
+const towerMullions = (u0, u1, h) => [
+  ...[0, 1, 2, 3].map(i => u0 + (u1 - u0) * i / 3).map(c => ({ name: 'stair tower mullion', u: [Math.max(u0, c - .04), Math.min(u1, c + .04)], h, out: .26, depth: .04, colour: '#1f3f8c' })),
+  ...[5.8, 7.0, 8.2, 9.4, 10.6, 11.8, 13.0, 14.2, 15.4].map(y => ({ name: 'stair tower transom', u: [u0, u1], h: [y - .05, y + .05], out: .26, depth: .04, colour: '#1f3f8c' })),
+];
+// The closed Bee Cheng Hiang shop at the Lorong 17 corner: red awning, yellow boards and vertical signs, all blank.
+const redAwning = (from, to) => [
+  { name: 'red awning', u: [from, to], h: [3.95, 4.35], out: .9, depth: 1.8, colour: '#c23a2e' },
+  { name: 'blank red awning valance', u: [from, to], h: [3.1, 3.55], out: 1.78, depth: .04, colour: '#a52a22' },
+];
+const yellow = '#f0c419';
 export const corner301 = {
-  id: 'gr-301', buildingIds: ['454254264'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Geylang Road',
-  name: 'Four-storey commercial block, Geylang Road and Lorong 15 east corner (June 2024 exterior, occupants not identified)',
-  address: 'Geylang Road, north side, Lorong 15 east corner (signed 301)',
+  id: 'sheng-siong-301', buildingIds: ['454254264'], kind: 'sheng-siong-301', frontEdge: 4, reviewRoad: 'Geylang Road',
+  name: 'Sheng Siong Supermarket and Anytime Fitness Geylang Central (June 2024 exterior)',
+  address: '301 Geylang Road (Lorong 15 to Lorong 17)',
   height: B.parapet, ceiling: 4.45, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#a7a59e' },
-  evidence: 'Way 454254264 is a modern four-storey block, not a shophouse, so it is modelled plainly. June 2024 Street View shows white walls, three floors of orange-framed window bands under projecting blue sunshade bands on all three street faces, a blue glass curtain-wall bay on the Geylang Road face rising to a rooftop sign reading BCH@301, a black gym blade sign, and a 24-hour supermarket under a long brown awning wrapping the splayed corner, with green supermarket lettering on the corner\'s first-floor glazing and blue wave murals along the Lorong 15 ground floor. The occupants were not matched to listings in this pass, so no name is given and every sign, banner and board is blank. Two June 2024 panoramas agree on the Geylang Road face on the source front, where it photographs about 24.9 m long against the 22.9 m source edge; the corner face photographs about 9 m against 11.7 m, and the Lorong 15 face, read on April 2024 panoramas, about 1.4 m behind its source edge. Window bays are laid proportionally on each source edge; storey heights are the mean of the Geylang Road and corner readings.',
-  sources: [way('454254264'), pano('-tVuCuhwTBBFqueftEw2DQ', 40, 15, 100), pano('Y1SvdAjAS2SvYC5qQMSPuw', 20, 15, 90), pano('4Jat29IpmSnlxt5arsXTmQ', 330, 20, 110), pano('e01RVJ9hD_jReamZvvSPpA', 20, 15, 100), pano('-c4xoia0Omo8Xivp3SgiTA', 60, 15, 100), pano('I9194KuNbTrP1n1u2naA7w', 80, 15, 100)],
+  evidence: 'Way 454254264 is a modern four-storey block, not a shophouse, so it is modelled plainly. June 2024 Street View shows white walls, three floors of orange-framed window bands under projecting blue sunshade bands on all three street faces, a blue glass curtain-wall bay on the Geylang Road face rising to a rooftop sign reading BCH@301, a black gym blade sign, and a 24-hour supermarket under a long brown awning wrapping the splayed corner, with green supermarket lettering on the corner\'s first-floor glazing and blue wave murals along the Lorong 15 ground floor. On Lorong 17, a second splayed corner carries the supermarket\'s 昇菘超市 lettering on its first-floor glazing over a Bee Cheng Hiang shop (red awning, yellow boards and vertical signs), and the Lorong 17 face has one window bay, a blue glass stair tower rising just above the parapet over a lobby door, and a shuttered unit under a dark awning. Google Maps lists Sheng Siong Supermarket (#01-02, open 24 hours) and Anytime Fitness Geylang Central (#04-01, open 24 hours) at 301 Geylang Road in October 2026, with their shared point inside this way, so the block is named after them: the supermarket\'s window lettering and awning valances and the gym\'s blade are redrawn in original type, with no claim about the other floors. Bee Cheng Hiang\'s listing at 301 Geylang Road is marked permanently closed, so its boards stay blank, and the BCH@301 rooftop sign is left blank with it. Two June 2024 panoramas agree on the Geylang Road face on the source front, where it photographs about 24.9 m long against the 22.9 m source edge; the corner face photographs about 9 m against 11.7 m, and the Lorong 15 face, read on April 2024 panoramas, about 1.4 m behind its source edge. On Lorong 17, two panoramas from different sides agree on the splay on its source plane, where it photographs about 8.8 m wide against the 7.3 m source edge; the Lorong 17 face, read on an April 2024 panorama square to it, photographs about 13.5 m against the 14.9 m source edge, on a plane about 0.9 m in front of it where its band spacing matches the other faces. Window bays are laid proportionally on each source edge; storey heights are the mean of the Geylang Road and corner readings.',
+  sources: [way('454254264'), pano('-tVuCuhwTBBFqueftEw2DQ', 40, 15, 100), pano('Y1SvdAjAS2SvYC5qQMSPuw', 20, 15, 90), pano('4Jat29IpmSnlxt5arsXTmQ', 330, 20, 110), pano('e01RVJ9hD_jReamZvvSPpA', 20, 15, 100), pano('-c4xoia0Omo8Xivp3SgiTA', 60, 15, 100), pano('I9194KuNbTrP1n1u2naA7w', 80, 15, 100),
+    pano('xZa10M9A9cBOuqHgQL5w5A', 300, 15, 100), pano('R0licFeVz38dKLAM_gICTg', 320, 15, 100), pano('BUPeoAsGocsyXOdFQHewCw', 250, 25, 110), pano('PcP8fdxa3FdNxOSFtx1EAA', 318, 12, 90),
+    'https://www.google.com/maps/search/?api=1&query=Sheng+Siong+Supermarket+301+Geylang+Road', 'https://www.google.com/maps/search/?api=1&query=Anytime+Fitness+Geylang+Central'],
   colours: { wall: '#e8e8e4', trim: blue, frame: '#c87a2c', glass: '#5f7f7c', pier: '#e8e8e4', back: '#3a3c3c', floor: '#a49f96' },
   bands: [...B.bands.map(([b, t]) => [b, t, .9, blue]), [15.65, 15.85, .3, coping]],
   windows: B.floors.map(h => ({ u: [.9, 11.0], h, panes: 9 })),
-  blocks: [
-    { name: 'blank green window banner', u: [.8, 10.7], h: [6.0, 7.0], out: .03, depth: .02, colour: '#5aa86e' },
-    ...awning(2.4, 11.749),
-  ],
+  blocks: awning(2.4, 11.749),
+  // The supermarket's window banner and the awning valance, drawn in ring-a.ts.
+  boards: [{ u: [.8, 10.7], h: [6.0, 7.0], out: .03 }, { u: [2.4, 11.749], h: [3.1, 3.55], out: 1.81 }],
   piers: [[0, .5], [11.25, 11.749]],
   backFittings: [{ name: 'supermarket entrance', u: [.5, 11.25], h: [.1, 4.2], colour: '#3d4646', glow: .15 }],
   sides: [
@@ -64,10 +80,11 @@ export const corner301 = {
         { name: 'blue glass curtain wall', u: [6.78, 14.45], h: [4.75, 16.45], out: .12, depth: .24, colour: '#3c6a96' },
         ...curtainMullions(6.78, 14.45, 6, [4.75, 16.45]),
         { name: 'blank rooftop sign', u: [8.0, 14.16], h: [16.75, 18.45], out: .12, depth: .3, colour: '#30485f' },
-        { name: 'blank blade sign', u: [14.5, 14.62], h: [11.8, 15.0], out: .6, depth: .9, colour: '#1c1c1c' },
         ...awning(0, W3),
         { name: 'supermarket front', u: [.3, 22.56], h: [.13, 3.9], out: .03, depth: .04, colour: '#3d4646', glow: .15 },
       ],
+      boards: [{ u: [0, W3], h: [3.1, 3.55], out: 1.81 }],
+      blades: [{ u: 14.56, out: [.15, 1.05], h: [11.8, 15.0] }],
     },
     {
       edge: 5, // Lorong 15, u south from the north corner
@@ -76,6 +93,39 @@ export const corner301 = {
         ...bandBlocks([[0, W5]]),
         { name: 'blank blue mural panel', u: [.25, 5.0], h: [1.8, 4.0], out: .03, depth: .04, colour: '#3f6fb5' },
         { name: 'blank blue mural panel', u: [5.55, 11.6], h: [1.8, 4.0], out: .03, depth: .04, colour: '#3f6fb5' },
+      ],
+    },
+    {
+      edge: 2, // the Lorong 17 splayed corner, u north-east from the Geylang Road face
+      windows: B.floors.map(h => ({ u: [uS(1.28), uS(8.15)], h, panes: 7 })),
+      blocks: [
+        ...bandBlocks([[0, W2]]),
+        ...redAwning(uS(1.0), W2),
+        ...[[1.5, 3.6], [4.25, 5.4], [6.1, 8.1]].map(([a, b]) => ({ name: 'blank yellow board', u: [uS(a), uS(b)], h: [4.38, 4.78], out: .05, depth: .04, colour: yellow })),
+        { name: 'blank yellow vertical sign', u: [0, .3], h: [4.9, 7.6], out: .12, depth: .06, colour: yellow },
+        { name: 'shop front', u: [.3, W2 - .2], h: [.13, 3.9], out: .03, depth: .04, colour: '#3d4646', glow: .15 },
+      ],
+      // The supermarket's 昇菘超市 lettering on the first-floor glazing.
+      boards: [{ u: [uS(2.35), uS(7.1)], h: [5.95, 6.65], out: .04 }],
+    },
+    {
+      edge: 1, // Lorong 17, u north from the splayed corner
+      windows: B.floors.map(h => ({ u: [uF(1.2), uF(7.4)], h, panes: 6 })),
+      blocks: [
+        ...bandBlocks([[0, uF(7.63)]]),
+        { name: 'coping', u: [uF(12.0), W1], h: [15.65, 15.85], out: .15, depth: .3, colour: coping },
+        { name: 'blue glass stair tower', u: [uF(7.63), uF(12.0)], h: [4.6, 16.2], out: .12, depth: .24, colour: '#3c6a96' },
+        ...towerMullions(uF(7.63), uF(12.0), [4.6, 16.2]),
+        ...redAwning(0, 2.5),
+        { name: 'blank yellow vertical sign', u: [.1, .45], h: [4.9, 7.6], out: .12, depth: .06, colour: yellow },
+        { name: 'shop front', u: [uF(1.2), uF(3.75)], h: [.13, 3.6], out: .03, depth: .04, colour: '#3d4646', glow: .15 },
+        { name: 'blank food photo board', u: [uF(4.1), uF(4.7)], h: [2.45, 3.15], out: .03, depth: .03, colour: '#c99a6b' },
+        { name: 'blank food photo board', u: [uF(4.1), uF(4.7)], h: [1.35, 2.05], out: .03, depth: .03, colour: '#c99a6b' },
+        { name: 'dark awning', u: [uF(4.75), uF(8.0)], h: [3.5, 3.85], out: .5, depth: 1.0, colour: '#3f4a55' },
+        { name: 'roller shutter', u: [uF(5.25), uF(7.75)], h: [.13, 3.0], out: .03, depth: .04, colour: '#b9bbb8' },
+        { name: 'stair tower lobby', u: [uF(8.5), uF(10.1)], h: [.13, 3.0], out: .03, depth: .04, colour: '#2f3436', glow: .1 },
+        { name: 'glazed lobby panel', u: [uF(10.25), uF(11.3)], h: [.13, 3.0], out: .03, depth: .04, colour: '#6d8790' },
+        { name: 'grilled gate', u: [uF(13.0), uF(13.75)], h: [.13, 2.3], out: .03, depth: .04, colour: '#7d827f' },
       ],
     },
   ],
@@ -287,12 +337,14 @@ export const sims128 = {
   backFittings: [{ name: 'lounge front', u: [.5, 6.1], h: [.1, 2.9], colour: '#2e2a28', glow: .06 }],
 };
 
+// No. 130's Lorong 17 faces (open question 35): edge 6 is the main face and edge 5 the splay.
+const W130L = 10.189, W130S = 3.761, u130 = ([a, b]) => [+((a - .1) * W130L / 12.0).toFixed(2), +((b - .1) * W130L / 12.0).toFixed(2)];
 export const sims130 = {
   id: 'sims-130', buildingIds: ['682928766'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue', review: { distance: 1.1, pitch: 40 },
   name: 'No. 130 Sims Avenue, Lorong 17 west corner (June 2024 exterior, occupant not identified)', address: '130 Sims Avenue (Lorong 17 corner)',
   height: 10.9, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a9a69e' },
-  evidence: 'The cream three-storey corner house on the west side of the Lorong 17 mouth; its splayed corner (edge 5) carries a projecting bay with circular-motif grilles and a glazed top storey over a yellow board reading 福满香 FULL HOUSE F&B. Its Sims Avenue face (edge 4, the front) shows two windows on each upper floor in tan surrounds under louvred vents, red-and-white striped awnings over the top-floor windows, and a blue awning over an eating house. Google Maps lists Full House F&B, a coffee shop, at 128 Sims Ave, with its point beyond the study edge outside every source way, so no name is given; the board is not modelled and the awnings are plain. The Sims Avenue face photographs about 7.15 m wide against the 6.5 m source edge; the splayed corner and the Lorong 17 face (Lorong 17 is not modelled) are left as plain walls. ' + simsNote,
-  sources: [...simsSources('682928766'), pano('F6D3qY_SnKVyp-erTxBPDA', 250, 15, 80)],
+  evidence: 'The cream three-storey corner house on the west side of the Lorong 17 mouth; its splayed corner (edge 5) carries a projecting bay with circular-motif grilles and a glazed top storey over a yellow board reading 福满香 FULL HOUSE F&B. Its Sims Avenue face (edge 4, the front) shows two windows on each upper floor in tan surrounds under louvred vents, red-and-white striped awnings over the top-floor windows, and a blue awning over an eating house. Google Maps lists Full House F&B, a coffee shop, at 128 Sims Ave, with its point beyond the study edge outside every source way, so no name is given; the board is drawn blank and the awnings are plain. The Sims Avenue face photographs about 7.15 m wide against the 6.5 m source edge. ' + simsNote + ' The Lorong 17 faces were added with the Lorong 17 walk (open question 35). The Lorong 17 face (edge 6) has three windows on each upper floor in tan surrounds, louvred vents over the first-floor windows, red-and-white striped awnings over the top-floor windows and air-conditioners, over the eating house\'s long blue awning; the set-back annex south of it carries a metal exhaust duct and a grilled verandah, but its source edge faces the notch in the outline, so it is left plain. Two pairs of June 2024 panoramas triangulate the Lorong 17 face 1.3-2.4 m west of its source edge and about 12 m long, its corner 3-4 m north of the source corner, as the two drives disagree on this corner and on No. 134 opposite; its elevation is laid proportionally on the 10.19 m source edge, with the splay on its own edge.',
+  sources: [...simsSources('682928766'), pano('F6D3qY_SnKVyp-erTxBPDA', 250, 15, 80), pano('F6D3qY_SnKVyp-erTxBPDA', 240, 15, 100), pano('qR4qVlrIcfZojnmELQB3hQ', 250, 15, 100), pano('Zwx6nRNu4CPL9jyWL624Fw', 215, 12, 100)],
   colours: cream,
   bands: rowBands,
   windows: [[.85, 2.55], [4.16, 6.08]].map(u => ({ u, h: [8.5, 9.92], panes: 2, surround: true }))
@@ -306,6 +358,42 @@ export const sims130 = {
   ],
   piers: [[0, .35], [6.2, 6.501]],
   backFittings: [{ name: 'eating house front', u: [.4, 6.1], h: [.1, 3.2], colour: '#3a332e', glow: .12 }],
+  sides: [
+    {
+      // The Lorong 17 face, u north from the annex to the splay. Read on its triangulated line, s from 0.1 m to 12.1 m.
+      edge: 6,
+      windows: [[2.4, 3.6], [5.9, 7.8], [8.9, 10.0]].flatMap(s => [{ u: u130(s), h: [5.12, 6.35], panes: 2, surround: true }, { u: u130(s), h: [8.5, 9.92], panes: 2, surround: true }]),
+      vents: [[2.4, 3.6], [5.9, 7.8], [8.9, 10.0]].map(s => ({ u: u130(s), h: [6.61, 6.97] })),
+      blocks: [
+        ...[[2.4, 3.6], [5.9, 7.8], [8.9, 10.0]].flatMap(s => stripes('striped window awning', u130([s[0] - .2, s[1] + .2]), [9.95, 10.4], .45, .9, ['#b5483f', '#efece4'], .21)),
+        { name: 'ledge', u: [0, W130L], h: [7.26, 7.52], out: .175, depth: .35, colour: '#ddd6c4' },
+        { name: 'ledge', u: [0, W130L], h: [4.0, 4.25], out: .12, depth: .24, colour: '#ddd6c4' },
+        { name: 'parapet coping', u: [0, W130L], h: [10.65, 10.9], out: .15, depth: .3, colour: '#ddd6c4' },
+        ...[[6.2, 7.4], [8.0, 9.4]].map(s => ({ name: 'air conditioner', u: u130(s), h: [8.4, 8.95], out: .25, depth: .45, colour: '#e8e8e4' })),
+        // The source edge lies 3.0 m from the lane's centreline, inside the estimated carriageway (the face
+        // photographs 1.3-2.4 m behind it), so the street-level pieces are held within 0.25 m of the face.
+        { name: 'air conditioner', u: u130([7.6, 8.8]), h: [4.6, 5.1], out: .12, depth: .24, colour: '#e8e8e4' },
+        { name: 'blue awning', u: [0, W130L], h: [3.2, 3.85], out: .12, depth: .24, colour: '#2f4f8f' },
+        { name: 'blue awning valance', u: [0, W130L], h: [2.4, 3.2], out: .22, depth: .04, colour: '#2a477f' },
+        { name: 'eating house front', u: [.3, W130L - .3], h: [.13, 3.2], out: .03, depth: .04, colour: '#3a332e', glow: .12 },
+      ],
+    },
+    {
+      // The splayed corner: a projecting first-floor bay with circular-motif grilles under a glazed top storey,
+      // over the Full House F&B board (blank: its listing point lies outside every way). Its north end lies inside the
+      // lane's estimated carriageway too, so its street-level pieces are also held within 0.25 m.
+      edge: 5,
+      blocks: [
+        { name: 'circular-motif grille bay', u: [.3, W130S - .3], h: [5.0, 7.0], out: .4, depth: .8, colour: '#d9cfc0' },
+        { name: 'grille shadow', u: [.45, W130S - .45], h: [5.15, 6.85], out: .81, depth: .02, colour: '#6f665c' },
+        { name: 'glazed top storey', u: [.3, W130S - .3], h: [7.6, 10.4], out: .4, depth: .8, colour: '#3e4a50' },
+        { name: 'top storey hood', u: [.1, W130S - .1], h: [10.4, 10.7], out: .5, depth: 1.0, colour: '#ddd6c4' },
+        { name: 'blank yellow board', u: [.2, W130S - .2], h: [3.0, 3.6], out: .1, depth: .06, colour: '#e9c52e' },
+        { name: 'blue awning', u: [0, W130S], h: [3.2, 3.85], out: .12, depth: .24, colour: '#2f4f8f' },
+        { name: 'eating house front', u: [.3, W130S - .3], h: [.13, 3.0], out: .03, depth: .04, colour: '#3a332e', glow: .12 },
+      ],
+    },
+  ],
 };
 
 export const ringA = [corner301, no2, row235, yardNorth, yardHouse, yardSouth, sims126, sims128, sims130];
@@ -318,6 +406,6 @@ export const ringAReviews = (place, frame) => facing(frame, place.id, place.revi
 const shell = new Set(['upper wall', 'five-foot way floor', 'five-foot way ceiling', 'five-foot way return', 'back wall']);
 export const ringASides = (place, poly) => (place.sides ?? []).map(side => {
   const frame = frontageFrame(poly, side.edge);
-  const { boxes } = simpleHouseLayout(frame.width, { height: 0, ceiling: 0, fiveFootWay: 0, colours: place.colours, windows: side.windows, vents: side.vents, blocks: side.blocks, bands: side.bands });
-  return { edge: side.edge, frame, boxes: boxes.filter(b => !shell.has(b.name)) };
+  const { boxes, boards, blades } = simpleHouseLayout(frame.width, { height: 0, ceiling: 0, fiveFootWay: 0, colours: place.colours, windows: side.windows, vents: side.vents, blocks: side.blocks, bands: side.bands, boards: side.boards, blades: side.blades });
+  return { edge: side.edge, frame, boxes: boxes.filter(b => !shell.has(b.name)), boards, blades };
 });

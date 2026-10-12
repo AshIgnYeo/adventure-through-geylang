@@ -89,6 +89,34 @@ function splitAlongFront(map, id, from, to, cuts) {
   return strips(src, P0, front, cut, cuts).map(o => frontFirst(o, P0, front));
 }
 
+/**
+ * Re-space a row along its own front line. Points are read as (t, d): t along `dir` from `origin`, d towards the
+ * street. One monotonic, piecewise-linear map of t takes the source party lines (`breaks`, [source, measured] pairs)
+ * to the measured ones and is applied to every vertex of every house, so neighbours keep their shared walls and
+ * interlocking rear parts stay apart; vertices on the source front (|d| < 0.5 m) move to the measured front `d`.
+ * Each outline keeps its source vertex order, so its edge numbers are unchanged.
+ */
+function warpRow(map, origin, dir, breaks, houses) {
+  const n = [-dir[1], dir[0]];
+  const T = t => {
+    if (t <= breaks[0][0]) return breaks[0][1] + t - breaks[0][0];
+    for (let i = 1; i < breaks.length; i++) {
+      const [a0, b0] = breaks[i - 1], [a1, b1] = breaks[i];
+      if (t <= a1) return a1 === a0 ? b1 : b0 + (t - a0) * (b1 - b0) / (a1 - a0);
+    }
+    const [a, b] = breaks.at(-1); return b + t - a;
+  };
+  return houses.map(h => {
+    const src = map.buildings.find(b => b.id === h.source).coordinates.slice(0, -1).map(c => project(c, map.origin));
+    const outline = src.map(p => {
+      const q = sub(p, origin), t = q[0] * dir[0] + q[1] * dir[1], d = q[0] * n[0] + q[1] * n[1];
+      return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * (Math.abs(d) < .5 ? h.front : d), n[1] * (Math.abs(d) < .5 ? h.front : d)]);
+    });
+    return { id: h.id, street: h.street, number: h.number, levels: h.levels, outline };
+  });
+}
+const unit = (p, q) => { const l = Math.hypot(q[0] - p[0], q[1] - p[1]); return [(q[0] - p[0]) / l, (q[1] - p[1]) / l]; };
+
 export const authoredFootprintGroups = [
   {
     id: 'lorong-11-west-row', question: 1, approved: '2026-10-10',
@@ -429,6 +457,72 @@ export const authoredFootprintGroups = [
         { id: 'l10-ibis', street: null, number: null, levels: 7, outline: middle },
         { id: 'l10-jxin', street: null, number: null, levels: 8, outline: south },
       ];
+    },
+  },
+  {
+    id: 'lorong-17-white-row-north', question: 41, approved: '2026-10-12',
+    evidence: 'The white two-storey row of six shophouses on the east side of Lorong 17, south of the temple. The map has ways for its four southern houses only; June 2024 panoramas (M_9s..., qC7t...) put the two northern houses, about 4.8 m and 4.25 m wide, in the gap between the temple and way 454254249 (No. 6). They are added north of that way on its front and rear lines, at their photographed widths, ending on its north wall; the photographed row starts about 1.15 m further south, the same shift as the southern houses on their stretched ways. Way 454254249 is carried through unchanged so the three houses are built together.',
+    replaces: ['454254249'],
+    build(map) {
+      const o = map.buildings.find(b => b.id === '454254249').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      // Vertex 1 is the north front corner, vertex 2 the north rear corner; the front (edge 0) runs north from vertex 0.
+      const north = unit(o[0], o[1]), depth = sub(o[2], o[1]);
+      const house = (from, width) => { const f0 = at(o[1], north, from), f1 = at(o[1], north, from + width); return [f0, f1, add(f1, depth), add(f0, depth)]; };
+      const street = 'Lorong 17 Geylang';
+      return [
+        { id: 'l17e-10', street, number: '10', levels: 2, outline: house(4.25, 4.8) },
+        { id: 'l17e-8', street, number: '8', levels: 2, outline: house(0, 4.25) },
+        { id: 'l17e-6', street, number: '6', levels: 2, outline: o },
+      ];
+    },
+  },
+  {
+    id: 'lorong-17-temple', question: 40, approved: '2026-10-12',
+    evidence: 'The single-storey temple by No. 14 Lorong 17. Three June 2024 panoramas (GX6R... with M_9s..., and GX6R... with qKWw...) triangulate its eaves about 10.3 m long, 1-1.5 m in front of the source front, from about 4 m north of way 454254238 to 1.5 m south of it; with eaves overhanging about 0.7 m, its walls run about 8.6 m along the front. The 4.84 m way is extended 2.9 m north, which leaves about 0.4 m to Bright Star Hotel at the rear, and 0.86 m south, square to its front, keeping its 13.2 m depth and vertex order.',
+    replaces: ['454254238'],
+    build(map) {
+      const o = map.buildings.find(b => b.id === '454254238').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      // Vertices 0-1 are the north side and 2-3 the south side; the front (edge 3) runs north from vertex 3 to 0.
+      const south = unit(o[0], o[3]);
+      const outline = [at(o[0], south, -2.9), at(o[1], south, -2.9), at(o[2], south, .86), at(o[3], south, .86)];
+      return [{ id: 'l17-temple', street: 'Lorong 17 Geylang', number: null, levels: 1, outline }];
+    },
+  },
+  {
+    id: 'sims-134', question: 39, approved: '2026-10-12',
+    evidence: 'No. 134 Sims Avenue, the Lorong 17 east corner. Its source outline reaches into the lane, 0.9 m from its centreline, and into Sims Avenue\'s estimated carriageway. Straight-run June 2024 panoramas (qR4q... with 9Tds..., and qR4q... with Zwx6...) triangulate the corner block\'s Lorong 17 face 5-6 m east and 2-3 m south of the source edge, about 10.6 m long against the 10.92 m source edge, so the outline\'s size fits and only its position is off. The outline is moved 5.5 m east and 2.5 m south, with its shape and vertex order kept.',
+    replaces: ['682928733'],
+    build(map) {
+      const outline = map.buildings.find(b => b.id === '682928733').coordinates.slice(0, -1).map(c => add(project(c, map.origin), [5.5, 2.5]));
+      return [{ id: 'sa-134', street: 'Sims Avenue', number: '134', levels: 3, outline }];
+    },
+  },
+  {
+    id: 'lorong-17-37-41', question: 37, approved: '2026-10-12',
+    evidence: 'Source way 454254280 holds one pale yellow three-storey building of three bays between projecting fins, Nos. 37, 39 and 41 Lorong 17. Two pairs of June 2024 panoramas triangulate the building 17.4 m long, 0.2-1.0 m behind the source edge, with fins about 5.4 m and 11.5 m from its south end; laid proportionally on the 14.62 m source front, the fin centres fall about 4.4 m and 9.6 m from the south corner. The way is cut there, square to its front; the source front and rear are kept.',
+    replaces: ['454254280'],
+    build(map) {
+      const [s37, s39, s41] = splitAlongFront(map, '454254280', 2, 1, [4.4, 9.6]);
+      const street = 'Lorong 17 Geylang';
+      return [
+        { id: 'l17w-37', street, number: '37', levels: 3, outline: s37 },
+        { id: 'l17w-39', street, number: '39', levels: 3, outline: s39 },
+        { id: 'l17w-41', street, number: '41', levels: 3, outline: s41 },
+      ];
+    },
+  },
+  {
+    id: 'lorong-17-west-row', question: 38, approved: '2026-10-12',
+    evidence: 'The west side of Lorong 17 from No. 5 to No. 35 on its photographed line (open questions 36 and 38). Each house was triangulated from June 2024 panoramas during the Lorong 17 walk (docs/lorong-17-brief.md): the fronts stand 1.4-2.6 m in front of their source edges, the photographed houses run continuously where the map leaves gaps after Nos. 7, 21 and 25, and from No. 21 north they drift up to 2.6 m south of their source ways. Measured along the walk-ups\' source front line from No. 17\'s south corner, the party lines are taken midway between neighbouring measured ends: -1.56 (No. 17 south end, on the side passage), 4.54, 10.45, 16.04, 22.09, 28.43, 34.23, 39.86, 46.03, 52.58 and 59.43 m (No. 35 north end), with the fronts 1.5 m forward at No. 17 and 2.3 m forward elsewhere, the mean of the readings (2.1-2.5 m). Nos. 5-7 (Feng Shang Hair Salon and its north bay) are measured on their own source edge: 1.5 m forward, from 1.56 m south of the source corner to the north party line triangulated 11.35 m north of it. Rear lines and rear steps are kept: one monotonic re-spacing along each front line moves every vertex, so neighbours keep their shared walls. The side passage between Nos. 15 and 17 and way 454254237 (Nos. 9-15, on its own measured line) are unchanged.',
+    replaces: ['454254236', '454254272', '454254273', '454254274', '454254270', '454254271', '454254275', '454254276', '454254277', '454254278', '454254279'],
+    build(map) {
+      const street = 'Lorong 17 Geylang';
+      const O = sourcePoint(map, '454254272', 1), row = unit(O, sourcePoint(map, '454254279', 0));
+      const breaks = [[0, -1.56], [5.70, 4.54], [11.39, 10.45], [17.09, 16.04], [20.18, 16.04], [24.55, 22.09], [28.57, 28.43], [31.01, 28.43], [36.82, 34.23], [42.62, 39.86], [48.43, 46.03], [54.23, 52.58], [60.04, 59.43]];
+      const walkUps = [['454254272', '17', 1.5], ['454254273', '19'], ['454254274', '21'], ['454254270', '23'], ['454254271', '25'], ['454254275', '27'], ['454254276', '29'], ['454254277', '31'], ['454254278', '33'], ['454254279', '35']]
+        .map(([source, number, front = 2.3]) => ({ source, id: `l17w-${number}`, street, number, levels: 3, front }));
+      const A = sourcePoint(map, '454254236', 2), nos5to7 = { source: '454254236', id: 'l17w-5', street, number: '5-7', levels: 2, front: 1.5 };
+      return [...warpRow(map, A, unit(A, sourcePoint(map, '454254236', 1)), [[0, -1.56], [9.04, 11.35]], [nos5to7]), ...warpRow(map, O, row, breaks, walkUps)];
     },
   },
 ];
