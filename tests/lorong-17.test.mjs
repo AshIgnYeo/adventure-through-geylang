@@ -102,3 +102,10 @@ test('Bright Star Hotel is named on No. 20, its listing point 0.28 m in front of
   const out = (point[0] - frame.a[0]) * frame.nx + (point[1] - frame.a[1]) * frame.nz;
   assert.ok(out > 0 && out < .5);
 });
+
+test('the Singapore Chinaware Merchants Association is named on No. 6, its listing point two houses south', () => {
+  assert.equal(landmarkFor('454254249').id, 'chinaware-merchants');
+  const point = project([103.8788852, 1.3129874], map.origin);
+  assert.equal(pointInPolygon(point, outline('454254249')), false);
+  assert.equal(pointInPolygon(point, outline('454254252')), true);
+});

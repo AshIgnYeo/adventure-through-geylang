@@ -55,6 +55,16 @@ Logged during the Lorong 17 walk (open question 35), for the owner to answer whe
     - **Recommendation:** yes. Author the outline from the triangulated eave ends, about 9 m wide on the way's front line (the eaves overhang by about 1 m), keeping its depth, and lay the full elevation on it.
     - **Unlocks:** the whole temple front and the gap closed. It stays unnamed: neither 和友社 nor 華德善室 is listed.
 
+41. **Lorong 17 east side: add footprints for the two northern houses of the white row south of the temple?**
+    - **Evidence:** `M_9s…` and `qC7t…` (June 2024) agree on a white two-storey row of six shophouses, about 24 m long, starting about 5 m south of the temple behind a side lane.
+      - **Source map:** it has four ways for this row (454254249, 250, 252 and 251, z 0.8 to 18.5), and they overlap the four southern houses.
+      - **The gap:** the two northern houses, about 5.4 m and 4.3 m wide, stand in the 15 m gap the map leaves between the temple's way and way 249.
+      - **The north house:** an end house with an arcaded five-foot way, louvred vents and a pitched roof, its gable on the side lane.
+      - **Numbers:** the row is numbered down to No. 6 (letterbox 6-B on the third house), so these are probably Nos. 8 and 10.
+    - **What happens now:** the four southern houses are modelled, one per way, each laid proportionally on its way. The two northern houses are missing, leaving an open gap where they stand.
+    - **Recommendation:** yes. Author two footprints north of way 249, on its front and rear lines, at the photographed widths, and model them on the row's shared elevation, unnamed unless a listing and sign agree.
+    - **Unlocks:** the whole row, and the gap closed.
+
 ## Settled
 
 ### Seventh batch, answered 12 October 2026

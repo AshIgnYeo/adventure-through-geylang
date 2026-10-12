@@ -62,6 +62,11 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
     }
     text(c, 'Tel: 6742 7666', w * .5, h * .93, h * .07, '#f6efe0', '600', sans);
   }] },
+  'chinaware-merchants': { boards: [(c, w, h) => {
+    c.fillStyle = '#b5523e'; c.fillRect(0, 0, w, h); c.fillStyle = 'rgba(255,255,255,.12)'; c.fillRect(0, 0, w, h * .45);
+    [...'新加坡瓷商公會'].forEach((ch, i) => text(c, ch, w * (.1 + i * .135), h * .34, h * .4, '#f6f2ea', '700', '"Kaiti SC", "STKaiti", serif'));
+    text(c, 'SINGAPORE CHINAWARE MERCHANTS ASSOCIATION', w * .5, h * .8, h * .2, '#f6f2ea', '700', sans, w * .94);
+  }] },
   // Dark slate lettering on white: the parapet reads right to left, the ground-floor board left to right.
   'true-jesus-mission': {
     boards: [(c, w, h) => {

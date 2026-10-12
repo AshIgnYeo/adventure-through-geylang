@@ -725,7 +725,46 @@ export const temple238 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238];
+// ---------------------------------------------------------------------------------------------
+// 20-23. The white two-storey row south of the temple. June 2024 panoramas (M_9s..., qC7t...) agree on six houses
+// on a line through the source fronts of ways 249-251, s from (170.35, -13.0) towards the Geylang Road end: A 5.5-10.9,
+// B 10.9-15.2, C 15.2-19.0, D 19.0-22.8, E 22.8-26.4, F 26.4-29.9 m. The four source ways (z 0.8-18.5) overlap houses
+// C-F, one each; A and B stand in the gap the map leaves north of way 249 (open question 41). Each house is laid
+// proportionally on its own way, u south. Heights read on that line.
+const rowHouse = ({ id, way: w, W, s0, s1, windows, blocks = [], backFittings = [], ...rest }) => {
+  const at = lay(s0, W / (s1 - s0));
+  return {
+    id, buildingIds: [w], frontEdge: w === '454254249' ? 0 : 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 20 },
+    height: 6.8, ceiling: 3.5, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 8.2, ridgeDepth: .4, colour: '#7d746c' },
+    colours: { wall: '#eeede8', trim: '#e4e2dc', frame: '#2c3032', glass: '#3c4549', pier: '#eeede8', back: '#e2e0da', floor: '#a19b90' },
+    bands: [[6.32, 6.76, .3], [3.75, 3.95, .2]],
+    windows: windows.map(sw => ({ u: at(sw), h: [4.45, 5.74], panes: 2 })),
+    blocks: [{ name: 'pilaster', u: [0, .2], h: [3.95, 6.32], out: .05, depth: .1, colour: '#e4e2dc' }, ...blocks(at)],
+    piers: [[0, .25], [W - .25, W]],
+    backFittings: backFittings(at),
+    sources: [way(w), pano('qC7tdabb-uutEWXfday1Jw', 97, 15, 100), pano('M_9st2eoKa2qvAZ10P9vRQ', 100, 12, 110), pano('h2GMbpqMlF5I3mVPjbwO9w', 60, 12, 100)],
+    ...rest,
+  };
+};
+const rowEvidence = 'June 2024 Street View shows a white two-storey row of six shophouses south of the temple, under pitched roofs behind a cornice at about 6.8 m: two windows on each upper floor, a ledge at about 3.9 m, and a five-foot way, with a long maroon awning across the middle houses. Two June 2024 panoramas agree on the six houses on a line through the source fronts, from north to south about 5.4, 4.3, 3.8, 3.8, 3.6 and 3.5 m wide. The map\'s four source ways overlap the four southern houses, one each, and the two northern houses stand in the gap it leaves after the temple (open question 41). Each house is laid proportionally on its own way.';
+export const chinaware = rowHouse({
+  id: 'chinaware-merchants', way: '454254249', W: 3.765, s0: 15.2, s1: 19.0, kind: 'chinaware-merchants',
+  name: 'Singapore Chinaware Merchants Association (June 2024 exterior)', address: '6 Lorong 17 Geylang (letterbox 6-B)',
+  windows: [[15.5, 16.9], [17.4, 18.7]],
+  evidence: rowEvidence + ' The third house from the north carries the left part of a long red board reading 新加坡瓷商公會 SINGAPORE CHINAWARE MERCHANTS ASSOCIATION over its five-foot way, which runs on over the fourth house; its stair door carries a letterbox lettered 6-B, beside red-framed glazed doors with fretwork panels. Google Maps lists the Singapore Chinaware Merchants Association at 6 Lorong 17 Geylang, Singapore 388537, with its point about 8 m south, inside way 454254252: the address, the letterbox and the board agree on this house, so it is named after the board (the Bamboo Lounge precedent, open question 33) and the whole board is redrawn on this house in original type. No claim is made about the ground floor.',
+  // The fronts stand 3.4-3.5 m from the lane's centreline, so the awning is held within 0.1 m of the wall.
+  blocks: () => [{ name: 'maroon awning, held flat', u: [0, 3.765], h: [2.5, 3.4], out: .04, depth: .08, colour: '#6e2b33' }],
+  // The board, drawn whole on this house although it runs on over No. 4.
+  boards: [{ u: [.2, 3.6], h: [3.53, 4.41], out: .1 }],
+  backFittings: at => [
+    { name: 'stair door', u: at([15.3, 15.95]), h: [.1, 2.3], colour: '#4a3a32' },
+    { name: 'brass letterbox', u: at([15.5, 15.75]), h: [1.1, 1.35], out: .04, depth: .08, colour: '#b48a3a' },
+    { name: 'red-framed glazed doors', u: at([16.1, 18.0]), h: [.1, 2.6], colour: '#9c2a24', glow: .08 },
+    { name: 'fretwork panel', u: at([18.15, 18.85]), h: [.3, 2.6], colour: '#e3c88a' },
+  ],
+});
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own

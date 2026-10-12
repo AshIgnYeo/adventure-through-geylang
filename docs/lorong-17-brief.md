@@ -33,7 +33,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 17 | East | 454254308 | Nos. 38–40, a cream block with a stair tower | Done; unnamed |
 | 18 | East | 454254240 | No. 20, Bright Star Hotel | Done; named |
 | 19 | East | 454254238 | A temple by No. 14 (和友社, 華德善室) | Done (a slice); unnamed; footprint question 40 |
-| 20–23 | East | 454254249 … 454254251 | Four narrow units | To do |
+| 20 | East | 454254249 | No. 6, Singapore Chinaware Merchants Association | Done; named; row question 41 |
+| 21–23 | East | 454254250, 454254252, 454254251 | The rest of the white row, Nos. 4 to 2 | To do |
 | 24 | East | 454254253 | The Geylang Road corner house | To do |
 
 Stops 7 (Nos. 23 and 25) and 13 (Nos. 37–41) each took in a whole photographed building, so the stops after them are numbered one and two lower than first planned. A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
@@ -487,3 +488,29 @@ A single-storey temple behind a tiled forecourt, between Bright Star Hotel and a
 - Google's address point for 14 Lorong 17 lies just in front of this way and carries no business.
 
 Use `?review=l17-14-temple`.
+
+### 20–23. The white row south of the temple
+
+A side lane about 5 m wide separates the temple from a white two-storey row of six shophouses.
+
+- **Shared elevation:**
+  - pitched roofs behind a cornice at about **6.8 m**;
+  - two windows on each upper floor, at 4.45–5.74 m;
+  - a ledge at about 3.9 m, and a five-foot way;
+  - a long maroon awning across the middle houses.
+- **Measurement:** `M_9s…` and `qC7t…` (June 2024) agree, to about 0.5 m, on six houses on a line through the source fronts. From north to south they are about 5.4, 4.3, 3.8, 3.8, 3.6 and 3.5 m wide, about 24 m in all.
+- **Fit to the map:** the map's four source ways (z 0.8–18.5) overlap the four southern houses, one each. The two northern houses stand in the gap the map leaves after the temple: [open question 41](open-questions.md).
+- **Layout:** each house is laid proportionally on its own way.
+  - The fronts are only 3.3–3.5 m from the lane's centreline, so the awning is held within 0.1 m of the walls.
+  - The real awning projects about 1.5 m.
+
+### 20. Way 454254249: No. 6, Singapore Chinaware Merchants Association
+
+- **Front:** the third house of the row carries the left part of a long red board reading **新加坡瓷商公會 SINGAPORE CHINAWARE MERCHANTS ASSOCIATION**, which runs on over the fourth house.
+- **Ground floor:** the stair door carries a letterbox lettered **6-B**, beside red-framed glazed doors with fretwork panels.
+- **Naming:** Google Maps lists the **Singapore Chinaware Merchants Association** at 6 Lorong 17 Geylang, Singapore 388537. Its point lies about 8 m south, inside way 454254252.
+  - The address, the letterbox and the board agree on this house, so it is named after the board, under the Bamboo Lounge precedent (open question 33).
+  - The whole board is redrawn on this house in original type.
+  - No claim is made about the ground floor.
+
+Use `?review=chinaware-merchants`.
