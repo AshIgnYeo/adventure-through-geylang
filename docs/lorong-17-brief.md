@@ -19,7 +19,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 3 | West | 454254237 | Nos. 9–15, a row of four shophouses | Done; unnamed |
 | 4 | West | 454254272 | No. 17, General Board of True Jesus Mission | Done; named |
 | 5 | West | 454254273 | No. 19, the Yang Clan General Association | Done; upper floors named |
-| 6–14 | West | 454254274 … 454254280 | The rest of the west row | Massing, to rebuild |
+| 6 | West | 454254274 | No. 21, a temple on the ground floor | Done; unnamed |
+| 7–14 | West | 454254270 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -153,3 +154,19 @@ A weathered cream three-storey house between dark-stained party pilasters:
 **Row offset:** No. 17 and No. 19 both stand about 2 m in front of their source edges. If the rest of the row does too, it goes to the owner as one question at the end of the west side.
 
 Use `?review=yang-clan`.
+
+- **Correction, from stop 6:** No. 19's ground floor carries a black board reading 昆仲联… KUNTIONG A… under a red valance. It belongs to the **Kun Tiong Association**, which Google Maps lists at 19 Lorong 17 #01-19 but marks permanently closed. The board is drawn blank. The listing also confirms way 273 as No. 19.
+
+### 6. Way 454254274: No. 21
+
+A three-storey house north of No. 19:
+
+- **First floor:** panelled in peach inside a brownish-pink frame, with two windows under a lattice band.
+- **Top floor:** a cream balcony storey with two windows under vents and air-conditioners, under a roof slab at about **10.5 m**.
+- **Ground floor:** a glazed temple front under a dark maroon scalloped awning hung with paper charms, with lotus lamps and a red banner inside.
+
+**Measurement:** on the row's plane 2.2 m forward, `zA0h…`, `FeWy…` and `qKWw…` (June 2024) agree on the front to within 0.5 m. It runs from 0.8 m south of the source corner and is **5.4 m** long. It is laid on the 5.70 m source edge.
+
+**Naming:** none. Google Maps lists **Bai Yun Kong Shang Fo Tang (百雲宮善佛堂)**, a Buddhist temple on floor 1, at 21 Lorong 17 Geylang, with the address point inside the way. No sign bearing its name could be read from the street, and the banner inside the glass is illegible, so it is recorded but not named.
+
+Use `?review=l17-21`.

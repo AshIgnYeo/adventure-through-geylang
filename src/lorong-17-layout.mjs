@@ -141,7 +141,7 @@ export const yangClan = {
   id: 'yang-clan', buildingIds: ['454254273'], kind: 'yang-clan', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
   name: 'Yang Clan General Association (June 2024 exterior)', address: '19A Lorong 17 Geylang (the upper floors of No. 19)',
   height: 10.0, ceiling: 3.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8a82' },
-  evidence: 'June 2024 Street View shows a weathered cream three-storey house north of No. 17, between dark-stained party pilasters: two windows under louvred vents on each upper floor, air-conditioners on the ledges, a red board with a round emblem reading 楊氏總會 YANG CLAN GENERAL ASSOCIATION under the second-floor balcony, a white lightbox hanging from an open top-floor window, and a dark roof frame; below, a five-foot way with a grilled gate, a small window and an open altar front. Google Maps lists Yang Clan General Assn at 19A Lorong 17 Geylang, Singapore 388549, the upper floors of the house after No. 17; its point lies about 1 m south of this way, in No. 17\'s, as the row\'s 2 m registration error would place it. Address and board agree, so the upper floors are named after the board, which is redrawn in original type (the Bamboo Lounge precedent, open question 33), with no claim about the ground floor. Four June 2024 panoramas triangulate the two party pilasters 2.0-2.3 m in front of the source edge; read on a plane 2.2 m forward, the front measures 5.55 m to the middle of the wide north pilaster and is laid on the 5.69 m source edge.',
+  evidence: 'June 2024 Street View shows a weathered cream three-storey house north of No. 17, between dark-stained party pilasters: two windows under louvred vents on each upper floor, air-conditioners on the ledges, a red board with a round emblem reading 楊氏總會 YANG CLAN GENERAL ASSOCIATION under the second-floor balcony, a white lightbox hanging from an open top-floor window, and a dark roof frame; below, a five-foot way with a grilled gate, a small window and an open altar front. Google Maps lists Yang Clan General Assn at 19A Lorong 17 Geylang, Singapore 388549, the upper floors of the house after No. 17; its point lies about 1 m south of this way, in No. 17\'s, as the row\'s 2 m registration error would place it. Address and board agree, so the upper floors are named after the board, which is redrawn in original type (the Bamboo Lounge precedent, open question 33), with no claim about the ground floor. Its black ground-floor board, reading 昆仲联… KUNTIONG A…, belongs to the Kun Tiong Association, listed at 19 Lorong 17 #01-19 but marked permanently closed, so it is blank. Four June 2024 panoramas triangulate the two party pilasters 2.0-2.3 m in front of the source edge; read on a plane 2.2 m forward, the front measures 5.55 m to the middle of the wide north pilaster and is laid on the 5.69 m source edge.',
   sources: [way('454254273'), search('Yang Clan General Association 19A Lorong 17 Geylang'), pano('qKWw6QiwVVcNE7eOEzxMSA', 250, 22, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 230, 20, 100), pano('GX6RAPRapiD3eAKqXG_3uA', 290, 20, 90), pano('FeWy4yNg9qEGZG5jKgP5XA', 200, 18, 100)],
   colours: { wall: '#e3dccb', trim: '#d8d0bd', frame: '#3a3a36', glass: '#454b4c', pier: '#e3dccb', back: '#e6e1d4', floor: '#9d978c' },
   bands: [[3.3, 3.7, .35]],
@@ -162,10 +162,43 @@ export const yangClan = {
     { name: 'grilled gate', u: [.35, .6], h: [.1, 2.2], colour: '#8c8f8c' },
     { name: 'small window', u: at273([.6, 1.16]), h: [1.6, 2.1], colour: '#3a3a3a' },
     { name: 'open altar front', u: at273([2.1, 3.7]), h: [.1, 2.6], colour: '#6b2a22', glow: .1 },
+    { name: 'red valance', u: at273([-.8, 1.5]), h: [2.5, 2.9], out: .04, colour: '#c8241c' },
+    { name: 'blank Kun Tiong board', u: at273([-.8, 1.5]), h: [2.05, 2.5], out: .04, colour: '#1c1a19' },
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan];
+// ---------------------------------------------------------------------------------------------
+// 6. Way 454254274, No. 21: a three-storey house with a peach first floor in a brownish-pink frame and a cream
+// balcony storey above. Its front (edge 0) runs north from No. 19. On the row's plane 2.2 m forward, three June 2024
+// panoramas agree on the front from 0.8 m south of the source corner, 5.4 m long; laid on the 5.70 m source edge.
+const W274 = 5.701, at274 = lay(-.8, W274 / 5.4), pairs274 = [[-.45, 1.3], [2.05, 3.9]];
+export const no21 = {
+  id: 'l17-21', buildingIds: ['454254274'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 21 Lorong 17 (June 2024 exterior, occupant not identified)', address: '21 Lorong 17 Geylang',
+  height: 10.5, ceiling: 3.1, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8a82' },
+  evidence: 'June 2024 Street View shows a three-storey house north of No. 19: a first floor panelled in peach inside a brownish-pink frame, with two windows under a lattice band; a cream balcony storey above with two windows under louvred vents and air-conditioners on the balcony; and a roof slab at about 10.5 m. The ground floor is a glazed temple front under a dark maroon scalloped awning hung with paper charms, with lotus lamps and a red banner inside. Google Maps lists Bai Yun Kong Shang Fo Tang (百雲宮善佛堂), a Buddhist temple on floor 1, at 21 Lorong 17 Geylang, Singapore 388550, but no sign bearing its name could be read from the street, so no name is given. On the row\'s plane 2.2 m in front of the source edge, three June 2024 panoramas agree on the front from 0.8 m south of the source corner, 5.4 m long; it is laid on the 5.70 m source edge.',
+  sources: [way('454254274'), search('Bai Yun Kong Shang Fo Tang 21 Lorong 17 Geylang'), pano('zA0hxiYKqVOIl4BIukFCWw', 252, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 210, 18, 100), pano('qKWw6QiwVVcNE7eOEzxMSA', 235, 18, 100)],
+  colours: { wall: '#e8e1d0', trim: '#ddd5c2', frame: '#3a3a36', glass: '#454b4c', pier: '#e8e1d0', back: '#d9d2c2', floor: '#9d978c' },
+  windows: pairs274.flatMap(s => [{ u: at274(s), h: [4.5, 5.6], panes: 2, out: .03 }, { u: at274(s), h: [7.95, 8.6], panes: 2 }]),
+  vents: pairs274.map(s => ({ u: at274(s), h: [8.8, 9.2] })),
+  blocks: [
+    { name: 'roof slab', u: [0, W274], h: [10.0, 10.5], out: .2, depth: .4, colour: '#cfc7b6' },
+    { name: 'peach first-floor panel', u: [.1, W274 - .1], h: [3.4, 6.75], out: .01, depth: .02, colour: '#e8c4a8' },
+    ...[[0, .25], [W274 - .25, W274]].map(u => ({ name: 'brownish-pink frame', u, h: [3.4, 6.75], out: .04, depth: .08, colour: '#b67a5c' })),
+    { name: 'brownish-pink frame', u: [0, W274], h: [6.6, 6.75], out: .04, depth: .08, colour: '#b67a5c' },
+    { name: 'lattice band', u: at274([-.4, 4.0]), h: [5.75, 6.5], out: .02, depth: .03, colour: '#e3c8b0' },
+    { name: 'balcony parapet', u: [0, W274], h: [6.75, 7.1], out: .25, depth: .5, colour: '#ddd5c2' },
+    { name: 'air conditioner', u: at274([-.25, 1.95]), h: [7.05, 7.6], out: .25, depth: .45, colour: '#e8e8e4' },
+    { name: 'maroon scalloped awning', u: [0, W274], h: [3.1, 3.5], out: .5, depth: 1.0, colour: '#5a2a2c' },
+  ],
+  piers: [[0, .3], [W274 - .3, W274]],
+  backFittings: [
+    { name: 'glazed temple front', u: at274([.4, 4.1]), h: [.1, 2.7], colour: '#4a2a26', glow: .15 },
+    { name: 'blank red banner', u: at274([.6, 3.9]), h: [2.1, 2.5], out: .04, colour: '#a8281e' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);
