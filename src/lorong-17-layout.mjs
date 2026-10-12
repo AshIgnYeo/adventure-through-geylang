@@ -805,7 +805,49 @@ export const no2Shop = rowHouse({
   backFittings: at => [{ name: 'glass shop door', u: at([27.1, 29.0]), h: [.1, 2.4], colour: '#4a5458', glow: .08 }],
 });
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2, no2Shop];
+// ---------------------------------------------------------------------------------------------
+// 24. Way 454254253, the Geylang Road corner house east of Lorong 17: a two-storey corner shophouse, 5.3 m on Geylang
+// Road and 28.7 m along the lane, with six bays of paired louvred-shutter windows over an arcade under a green awning.
+// The frame is the Lorong 17 side (edge 1), u south from the north end. Three panoramas place it from about 2.2 m
+// north of the source corner to 26 m south of it on the source plane; laid on the 28.71 m source edge.
+const W253 = 28.711, at253 = lay(-2.2, W253 / 28.2);
+const piers253 = [-1.0, 3.5, 8.5, 13.0, 17.0, 20.5, 24.25];
+const bays253 = piers253.slice(1).map((r, i) => [piers253[i], r]);
+export const corner253 = {
+  id: 'gr-l17-east-corner', buildingIds: ['454254253'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 17 Geylang', review: { distance: 3.5, pitch: 24 },
+  name: 'Corner shophouse at Geylang Road and Lorong 17, east side (June 2024 exterior, vacant)', address: 'Geylang Road, north side, Lorong 17 east corner',
+  height: 8.5, ceiling: 4.2, fiveFootWay: 2.2, roof: { type: 'hip', ridge: 10.2, colour: '#8e6c5a' },
+  evidence: 'June 2024 Street View shows a two-storey corner shophouse on the east corner of Lorong 17 and Geylang Road, cream with grey louvred shutters: on its long Lorong 17 side, six bays of paired shuttered windows between pilasters over pierced ventilation panels, and an arcaded five-foot way under a long green awning; on its narrow Geylang Road front, two shuttered windows with a RENT/SALE banner over an arched opening. Its boards read 明辉田鸡粥 EMINENT FROG PORRIDGE SEAFOOD RESTAURANT, CHÁO ẾCH MING HUI, with vertical boards at the corner. Google Maps now lists Eminent Frog Porridge & Seafood at 323 Geylang Road, near Lorong 19, and the RENT/SALE banner marks this corner as vacant, so no name is given and every board is blank. Three panoramas (April and June 2024) place the Lorong 17 side on the source plane from about 2.2 m north of the source corner to 26 m south of it, about 28 m against the 28.71 m source edge; heights were read on that plane: eaves at about 8.5 m, shuttered windows at 5.3-7.3 m and the five-foot way to 4.2 m.',
+  sources: [way('454254253'), search('Eminent Frog Porridge & Seafood 323 Geylang Road'), pano('BUPeoAsGocsyXOdFQHewCw', 95, 15, 110), pano('L9oNMo8yJzknAL9O3GOnbw', 100, 15, 100), pano('PcP8fdxa3FdNxOSFtx1EAA', 10, 15, 100), pano('R0licFeVz38dKLAM_gICTg', 40, 15, 100)],
+  colours: { wall: '#ebe2cc', trim: '#e0d6bd', frame: '#7d8487', glass: '#9aa3a6', pier: '#ebe2cc', back: '#4a4440', floor: '#a19b90' },
+  bands: [[8.2, 8.5, .35], [4.2, 4.5, .3]],
+  windows: bays253.flatMap(([a, b]) => { const m = (a + b) / 2; return [[a + .4, m - .2], [m + .2, b - .4]]; }).map(sw => ({ u: at253(sw), h: [5.3, 7.3], panes: 4 })),
+  vents: bays253.flatMap(([a, b]) => { const m = (a + b) / 2; return [[a + .5, m - .3], [m + .3, b - .5]]; }).map(sw => ({ u: at253(sw), h: [4.6, 5.05] })),
+  blocks: [
+    ...piers253.map(c => ({ name: 'pilaster', u: at253([c - .25, c + .25]), h: [4.5, 8.2], out: .08, depth: .16, colour: '#e0d6bd' })).filter(b => b.u[0] >= 0 && b.u[1] <= W253),
+    { name: 'green awning', u: [0, W253], h: [3.3, 4.15], out: .25, depth: .5, colour: '#2f6e58' },
+  ],
+  piers: [[0, .4], ...piers253.slice(1, -1).map(c => at253([c - .2, c + .2])), [W253 - .5, W253]],
+  backFittings: [
+    { name: 'shuttered shopfronts', u: at253([-1.5, 24.0]), h: [.1, 3.4], colour: '#7a7670' },
+    { name: 'blank vertical board', u: at253([24.4, 24.8]), h: [3.0, 4.0], out: .04, colour: '#c9a83a' },
+  ],
+  sides: [{
+    edge: 0, // the Geylang Road front, u east from the Lorong 17 corner
+    windows: [[.7, 2.3], [3.0, 4.6]].map(u => ({ u, h: [5.3, 7.3], panes: 4 })),
+    vents: [[.8, 2.2], [3.1, 4.5]].map(u => ({ u, h: [4.6, 5.05] })),
+    blocks: [
+      { name: 'cornice', u: [0, 5.305], h: [8.2, 8.5], out: .17, depth: .35, colour: '#e0d6bd' },
+      { name: 'ledge', u: [0, 5.305], h: [4.2, 4.5], out: .15, depth: .3, colour: '#e0d6bd' },
+      { name: 'blank RENT/SALE banner', u: [2.0, 3.6], h: [4.7, 5.6], out: .05, depth: .02, colour: '#e9d74a' },
+      { name: 'blank restaurant board', u: [.3, 5.0], h: [3.3, 4.15], out: .08, depth: .04, colour: '#e48a2c' },
+      { name: 'arched opening', u: [1.4, 4.0], h: [.1, 3.2], out: .02, depth: .03, colour: '#3a3532' },
+      ...[[0, .35], [4.95, 5.305]].map(u => ({ name: 'blank vertical board', u, h: [4.5, 7.6], out: .25, depth: .1, colour: '#e5c25a' })),
+    ],
+  }],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4, no2, no2Shop, corner253];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own

@@ -37,7 +37,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 21 | East | 454254250 | No. 4 | Done; unnamed |
 | 22 | East | 454254252 | No. 2, its stair and upper floors (2A, 2B) | Done; unnamed |
 | 23 | East | 454254251 | No. 2, its ground-floor shop (02) | Done; unnamed |
-| 24 | East | 454254253 | The Geylang Road corner house | To do |
+| 24 | East | 454254253 | The Geylang Road corner house (former Eminent Frog Porridge) | Done; unnamed |
 
 Stops 7 (Nos. 23 and 25) and 13 (Nos. 37–41) each took in a whole photographed building, so the stops after them are numbered one and two lower than first planned. A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
 
@@ -541,3 +541,26 @@ The plates settle the row's numbering.
   - The Singapore Chinaware Merchants Association's listing point lies inside way 252, but its board and letterbox are on No. 6.
 
 Use `?review=l17-2` and `?review=l17-2-shop`.
+
+### 24. Way 454254253: the Geylang Road corner house
+
+A two-storey corner shophouse on the east corner of Lorong 17 and Geylang Road, cream with grey louvred shutters.
+
+- **Lorong 17 side (the frame):** 28.7 m long.
+  - Six bays of paired shuttered windows between pilasters, over pierced ventilation panels.
+  - An arcaded five-foot way under a long green awning.
+- **Geylang Road front:** 5.3 m wide, with two shuttered windows and a RENT/SALE banner over an arched opening.
+- **Boards:** they read 明辉田鸡粥 EMINENT FROG PORRIDGE SEAFOOD RESTAURANT, CHÁO ẾCH MING HUI, with vertical boards at the corner.
+
+**Measurement:** `BUPe…`, `L9oN…` (April 2024) and `R0li…` (June 2024) place the Lorong 17 side on the source plane, from about 2.2 m north of the source corner to 26 m south of it. Heights read on that plane:
+- eaves: about 8.5 m;
+- shuttered windows: 5.3–7.3 m;
+- five-foot way: to 4.2 m.
+
+From `PcP8…` the corner falls within about 0.75 m of its source position.
+
+**Layout:** laid on the 28.71 m source edge, with the Geylang Road front as a side face.
+
+**Naming:** none. Google Maps now lists **Eminent Frog Porridge & Seafood** at 323 Geylang Road, near Lorong 19, and the RENT/SALE banner marks this corner as vacant. So this is the restaurant's former site, and every board is blank.
+
+Use `?review=gr-l17-east-corner`.
