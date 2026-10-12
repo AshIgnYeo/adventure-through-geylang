@@ -555,8 +555,8 @@ export const sims134 = {
 // ---------------------------------------------------------------------------------------------
 // 16. Way 454254307, Nos. 42-44 (Google's address points for both fall in this way): a white three-storey block of
 // two bays either side of a stair tower, with sloping roof hoods. Three pairs of June 2024 panoramas fix its north
-// corner 1.4 m behind the source corner; read on a plane 1.4 m behind the source edge, where three panoramas agree,
-// it runs 10.7 m from 0.6 m south of the source corner and is laid on the 11.46 m source edge, u south.
+// corner 1.4 m behind the source corner, and two more its south party line about 12.2 m along and 2-2.5 m behind.
+// Read from ghWQ... on a plane 1.4 m behind the source edge (0.6-11.3 m there) and laid proportionally, u south.
 const W307 = 11.462, at307 = lay(.6, W307 / 10.7);
 const win44 = [[1.83, 3.33], [3.67, 5.17]].map(at307), win42 = [[8.3, 9.5], [10.2, 11.2]].map(at307);
 const white307 = '#e9eaea';
@@ -564,7 +564,7 @@ export const no42to44 = {
   id: 'l17-42-44', buildingIds: ['454254307'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 26 },
   name: 'Nos. 42-44 Lorong 17 (June 2024 exterior, occupants not identified)', address: '42-44 Lorong 17 Geylang (east side)',
   height: 11.0, ceiling: 3.8, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' },
-  evidence: 'June 2024 Street View shows a white three-storey block of two bays either side of a narrow stair tower lit by tall slit windows. The north bay, No. 44, is taller: two windows on each upper floor under louvred vents, a balcony slab and a large sloping roof hood at about 12.6 m. The south bay, No. 42, has the same pattern lower down, its hood at about 11 m, over an open front with grilles, a door and a letterbox. The stair tower has a small stepped parapet at about 12 m. The ground floor is framed by deep piers, with a glazed office front and a bamboo blind in the north bay. Google Maps gives address points for 42 and 44 Lorong 17 Geylang inside this way but lists no business, and no sign was photographed, so no name is given. Three pairs of June 2024 panoramas fix the north front corner 1.4 m behind the source corner; read on a plane 1.4 m behind the source edge, where three panoramas agree to about 0.3 m, the block runs 10.7 m from 0.6 m south of the source corner and is laid on the 11.46 m source edge.',
+  evidence: 'June 2024 Street View shows a white three-storey block of two bays either side of a narrow stair tower lit by tall slit windows. The north bay, No. 44, is taller: two windows on each upper floor under louvred vents, a balcony slab and a large sloping roof hood at about 12.6 m. The south bay, No. 42, has the same pattern lower down, its hood at about 11 m, over an open front with grilles, a door and a letterbox. The stair tower has a small stepped parapet at about 12 m. The ground floor is framed by deep piers, with a glazed office front and a bamboo blind in the north bay. Google Maps gives address points for 42 and 44 Lorong 17 Geylang inside this way but lists no business, and no sign was photographed, so no name is given. Three pairs of June 2024 panoramas fix the north front corner 1.4 m behind the source corner. Two further pairs put its south party line, where the cream block of Nos. 38-40 begins, about 12.2 m along and 2.0-2.5 m behind the source front, 1.3 m south of the source party line. The elevation was read on a plane 1.4 m behind the source edge, where three panoramas agree on the north bay to about 0.3 m, and is laid proportionally on the 11.46 m source edge.',
   sources: [way('454254307'), pano('ghWQo6rbUlRhzXunm7Gf2g', 80, 15, 110), pano('9Tdsro0uN2QtbZA28ESq8Q', 100, 10, 60), pano('qR4qVlrIcfZojnmELQB3hQ', 135, 10, 60), pano('8zShCoV5q2fYvPBEC901Vw', 60, 15, 100)],
   colours: { wall: white307, trim: '#dfe0e0', frame: '#2f3436', glass: '#3c4549', pier: white307, back: '#d6d6d2', floor: '#a19b90' },
   bands: [[3.8, 4.2, .3]],
@@ -599,7 +599,52 @@ export const no42to44 = {
     blocks: [{ name: 'sloping roof hood', u: at307([.4, 5.3]), h: [11.7, 12.6], out: .6, depth: 1.2, colour: '#d9dada' }] }],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44];
+// ---------------------------------------------------------------------------------------------
+// 17. Way 454254308, Nos. 38-40 (door plate 40; address points for both in this way): a weathered cream three-storey
+// block of two bays either side of a stair tower, with deep hoods and balcony slabs. Two pairs of June 2024 panoramas
+// triangulate its north party line about 1.3 m south of the source party line and 2.0-2.5 m behind the source front,
+// and its south end on the source end, 1.6-2.0 m behind. Read square-on from 8zSh... (13.67-22.33 m there) and laid
+// on the 11.45 m source edge, u south.
+const W308 = 11.452, at308 = lay(13.67, W308 / 8.66);
+const win40 = [[14.33, 15.44], [16.0, 17.1]].map(at308), win38 = [[19.55, 20.44], [20.78, 21.78]].map(at308);
+const cream308 = '#e4dccb';
+export const no38to40 = {
+  id: 'l17-38-40', buildingIds: ['454254308'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 26 },
+  name: 'Nos. 38-40 Lorong 17 (June 2024 exterior, occupants not identified)', address: '38-40 Lorong 17 Geylang (east side; door plate 40)',
+  height: 9.7, ceiling: 3.55, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' },
+  evidence: 'June 2024 Street View shows a weathered, mould-streaked cream three-storey block of two bays either side of a narrow stair tower with vertical windows. The north bay, No. 40 (door plate 40 on a grilled door with red couplets), has two windows on each upper floor under louvred vents, a balcony slab with air-conditioners and a deep roof hood at about 10 m; the south bay, No. 38, repeats the pattern slightly lower. The ground floor is an open five-foot way with grilled doors, a barred window, a red letterbox, a ladder and an altar on the stair-tower pier. Google Maps lists CSL Engineering, an engineering consultant on floor 1, at 40 Lorong 17 Geylang, Singapore 388563, but no sign for it was photographed, so no name is given. Two pairs of June 2024 panoramas triangulate the block\'s north party line about 1.3 m south of the source party line and 2.0-2.5 m behind the source front, and its south end on the source end, 1.6-2.0 m behind it: about 10.1 m long. The elevation was read square-on from one panorama and is laid proportionally on the 11.45 m source edge.',
+  sources: [way('454254308'), search('CSL Engineering 40 Lorong 17 Geylang'), pano('8zShCoV5q2fYvPBEC901Vw', 85, 15, 100), pano('ghWQo6rbUlRhzXunm7Gf2g', 80, 15, 110), pano('9Tdsro0uN2QtbZA28ESq8Q', 75, 15, 110)],
+  colours: { wall: cream308, trim: '#d8d0bf', frame: '#3a3a36', glass: '#3f474a', pier: cream308, back: '#d9d2c2', floor: '#a19b90' },
+  bands: [[4.0, 4.45, .3]],
+  windows: [
+    ...win40.flatMap(u => [{ u, h: [4.67, 5.67], panes: 2 }, { u, h: [7.44, 8.44], panes: 2 }]),
+    ...win38.flatMap(u => [{ u, h: [4.3, 5.1], panes: 2 }, { u, h: [6.9, 7.67], panes: 2 }]),
+  ],
+  vents: [
+    ...win40.flatMap(u => [{ u, h: [5.8, 6.2] }, { u, h: [8.55, 8.9] }]),
+    ...win38.flatMap(u => [{ u, h: [5.25, 5.6] }, { u, h: [7.8, 8.15] }]),
+  ],
+  blocks: [
+    { name: 'balcony slab', u: at308([13.7, 17.6]), h: [6.67, 7.2], out: .5, depth: 1.0, colour: '#d8d0bf' },
+    { name: 'balcony slab', u: at308([19.1, 22.33]), h: [6.2, 6.7], out: .5, depth: 1.0, colour: '#d8d0bf' },
+    { name: 'deep roof hood', u: at308([13.7, 17.6]), h: [9.55, 10.1], out: .6, depth: 1.2, colour: '#d2cab8' },
+    { name: 'deep roof hood', u: at308([19.1, 22.33]), h: [8.7, 9.2], out: .6, depth: 1.2, colour: '#d2cab8' },
+    { name: 'stair tower windows', u: at308([18.0, 18.7]), h: [4.6, 9.2], out: .02, depth: .03, colour: '#3f474a' },
+    { name: 'stair tower parapet', u: at308([17.6, 19.1]), h: [9.7, 9.9], out: -.1, depth: .2, colour: cream308 },
+    ...[[14.4, 15.2], [15.7, 16.5]].map(s => ({ name: 'air conditioner', u: at308(s), h: [7.2, 7.7], out: .3, depth: .5, colour: '#e8e8e4' })),
+    { name: 'mould streaks', u: at308([17.6, 19.1]), h: [3.6, 9.7], out: .01, depth: .02, colour: '#b9b2a2' },
+  ],
+  piers: [[0, .35], at308([17.5, 18.0]), at308([18.9, 19.3]), [W308 - .35, W308]],
+  backFittings: [
+    { name: 'grilled door with red couplets', u: at308([15.3, 16.2]), h: [.1, 2.4], colour: '#6a6660' },
+    { name: 'stair door', u: at308([18.1, 18.8]), h: [.1, 2.3], colour: '#3a3a36' },
+    { name: 'barred window', u: at308([19.5, 20.2]), h: [1.0, 2.0], colour: '#3f474a' },
+    { name: 'grilled gate', u: at308([21.0, 22.0]), h: [.1, 2.4], colour: '#9a9c99' },
+    { name: 'red letterbox', u: at308([20.4, 20.7]), h: [1.1, 1.5], out: .05, depth: .1, colour: '#b5221d' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own

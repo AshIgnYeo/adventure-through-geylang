@@ -30,7 +30,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face and splay | Done; unnamed |
 | 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Done; unnamed; footprint question 39 |
 | 16 | East | 454254307 | Nos. 42–44, a white block with a stair tower | Done; unnamed |
-| 17 | East | 454254308 | Nos. 38–40 | To do |
+| 17 | East | 454254308 | Nos. 38–40, a cream block with a stair tower | Done; unnamed |
 | 18 | East | 454254240 | The long building | To do |
 | 19 | East | 454254238 | | To do |
 | 20–23 | East | 454254249 … 454254251 | Four narrow units | To do |
@@ -410,7 +410,8 @@ The block is white, three storeys, in two bays either side of a narrow stair tow
 
 **Measurement:**
 - `9Tds…`, `ghWQ…` and `qR4q…` (June 2024), paired three ways, fix the north front corner **1.4 m behind** the source corner, to within 1 m.
-- Rectified on a plane 1.4 m behind the source edge, `ghWQ…`, `8zSh…` and `9Tds…` agree to about 0.3 m. The block runs **10.7 m** from 0.6 m south of the source corner.
+- Rectified on a plane 1.4 m behind the source edge, `ghWQ…`, `8zSh…` and `9Tds…` agree on the north bay to about 0.3 m. The elevation was read there, between 0.6 m and 11.3 m along.
+- **Correction, from stop 17:** two further pairs (`ghWQ…` and `9Tds…`, each with `8zSh…`) triangulate the south party line about **12.2 m** along, **2.0–2.5 m behind** the source front, and 1.3 m south of the source party line. So the block is about 12.2 m long, and its front deepens to the south.
 - The east side here stands close to its source line, unlike No. 134.
 
 **Layout:** laid on the 11.46 m source edge. The taller north bay above the south bay's roof is a raised volume.
@@ -418,3 +419,22 @@ The block is white, three storeys, in two bays either side of a narrow stair tow
 **Naming:** none. Google Maps gives address points for 42 and 44 Lorong 17 inside this way but lists no business, and no sign was photographed.
 
 Use `?review=l17-42-44`.
+
+### 17. Way 454254308: Nos. 38–40
+
+A weathered, mould-streaked cream three-storey block of two bays either side of a narrow stair tower with vertical windows.
+
+- **No. 40, the north bay** (door plate 40 on a grilled door with red couplets): two windows on each upper floor under louvred vents, a balcony slab with air-conditioners, and a deep roof hood at about **10 m**.
+- **No. 38, the south bay:** the same pattern, slightly lower.
+- **Ground floor:** an open five-foot way with grilled doors, a barred window, a red letterbox, a ladder, and an altar on the stair-tower pier.
+
+**Measurement:**
+- Two pairs of June 2024 panoramas triangulate the block's north party line about 1.3 m south of the source party line and 2.0–2.5 m behind the source front.
+- Its south end falls on the source end, 1.6–2.0 m behind the front. The block is about **10.1 m** long.
+- The elevation was read square-on from `8zSh…`, which stands about 3.5 m in front of it, between 13.67 m and 22.33 m along the source line.
+
+**Layout:** laid proportionally on the 11.45 m source edge.
+
+**Naming:** none. Google Maps lists **CSL Engineering**, an engineering consultant on floor 1, at 40 Lorong 17 Geylang, but no sign for it was photographed.
+
+Use `?review=l17-38-40`.
