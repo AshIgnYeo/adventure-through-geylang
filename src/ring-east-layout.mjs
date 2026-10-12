@@ -116,7 +116,6 @@ export const sims134 = {
 // Ways rebuilt with their fronts in src/lorong-17-layout.mjs (open question 35) are no longer listed here.
 const lorong17 = [
   ['454254280', 13.0, '#e6dcc8', '#b5654a'], ['454254279', 14.0, '#e7e2cf'], ['454254278', 14.0, '#ebcdb8'], ['454254277', 14.0, '#e9e4d6'],
-  ['454254276', 14.0, '#ebd0bd'],
 ];
 export const lorong17West = lorong17.map(([id, height, colour, roof]) => ({
   id: `l17-${id}`, buildingIds: [id], kind: 'unnamed', unnamed: true, massing: true, height, colour, ...(roof ? { roof } : {}),

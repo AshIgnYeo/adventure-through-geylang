@@ -261,7 +261,7 @@ export const no27 = {
   name: 'No. 27 Lorong 17, with the 慕德同鄉會 board (June 2024 exterior, not listed)', address: '27 Lorong 17 Geylang (door plate 27; stair to 27-A)',
   // The walls stop at the balcony slab; the top floor, set back about 1.2 m, and the roof slab are blocks.
   height: 7.0, ceiling: 2.8, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows a white three-storey house north of No. 25: a top floor recessed behind a balcony under an overhanging roof slab with plants growing on it, two windows under a vent band on the first floor with a black board reading 慕德同鄉會 in gold between them and a phone-number board below, and a dark-stained fin on its north side. The ground floor is open under a blue striped awning, with an arched window, a wooden door plated 27 and a stair doorway under a small yellow board reading 27-A. Neither 慕德同鄉會 nor a No. 27 Lorong 17 is listed on Google Maps, so no name is given and the boards are blank. On the row\'s plane 2.2 m in front of the source edge, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner, so it fills the 2.5 m gap the map leaves after way 454254271; it is laid on the 5.81 m source edge.',
+  evidence: 'June 2024 Street View shows a white three-storey house north of No. 25: a top floor recessed behind a balcony under an overhanging roof slab with plants growing on it, two windows under a vent band on the first floor with a black board reading 慕德同鄉會 in gold between them and a phone-number board below, and a dark-stained fin on its north side. The ground floor is open under a blue striped awning, with an arched window, a wooden door plated 27 and a stair doorway under a yellow board reading 番禺慕德同鄉會 27-A 二樓, placing the association on the floor above at 27-A. Neither the association (only the Poon Yue Association 番禹會館 at New Bridge Road is listed) nor a No. 27 Lorong 17 is listed on Google Maps, so no name is given and the boards are blank. On the row\'s plane 2.2 m in front of the source edge, two June 2024 panoramas agree on its ends 5.6 m apart, from 2.33 m south of the source corner, so it fills the 2.5 m gap the map leaves after way 454254271; it is laid on the 5.81 m source edge.',
   sources: [way('454254275'), pano('gBz2E1aqjym_0qAkSZxE2A', 235, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 215, 18, 100)],
   colours: { wall: '#ecebe5', trim: '#e0ded7', frame: '#2c3032', glass: '#3b4448', pier: '#ecebe5', back: '#e6e4de', floor: '#a19b90' },
   bands: [[3.2, 3.44, .25]],
@@ -287,7 +287,38 @@ export const no27 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27];
+// ---------------------------------------------------------------------------------------------
+// 9. Way 454254276, No. 29: the first of the pale peach walk-ups with projecting side fins, a balcony slab and a
+// deep roof slab. Two June 2024 panoramas put its fins on the row's plane, 2.3 m forward, 5.3 m apart from 2.64 m
+// south of the source corner, meeting No. 27's north end. Laid on the 5.80 m source edge, u north.
+const W276 = 5.8, at276 = lay(-2.64, W276 / 5.31), win276 = [[-2.3, -1.4], [1.0, 2.3]].map(at276);
+const peach = { wall: '#ecd6c4', trim: '#e2cbb8', frame: '#3a3a36', glass: '#3f474a', pier: '#ecd6c4', back: '#e6ded3', floor: '#a19b90' };
+export const no29 = {
+  id: 'l17-29', buildingIds: ['454254276'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 29 Lorong 17 (June 2024 exterior, occupant not identified)', address: '29 Lorong 17 Geylang',
+  height: 10.9, ceiling: 3.4, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
+  evidence: 'June 2024 Street View shows the first of the pale peach three-storey walk-ups north of No. 27: two windows on each upper floor, a vent band over the first-floor windows, a balcony slab, a deep roof slab, and side fins projecting at each party wall. The ground floor has a dark fascia over a wooden door and an open front, with a chest freezer by the north pier. Google Maps lists Kaki Co @ 17 Geylang, an apartment building, at 29 Lorong 17 Geylang, Singapore 388553, with its point about 2.6 m south of this way where the photographed house stands, but no sign for it was photographed, so no name is given. Two June 2024 panoramas triangulate its fins on a plane 2.3 m in front of the source edge, 5.3 m apart from 2.64 m south of the source corner, so it meets No. 27\'s photographed north end; it is laid on the 5.80 m source edge. The east-ring massing had given it 14 m.',
+  sources: [way('454254276'), search('Kaki Co @ 17 Geylang 29 Lorong 17'), pano('gBz2E1aqjym_0qAkSZxE2A', 245, 18, 100), pano('INboFn5xnG6TxoVcRIkLXA', 230, 18, 100), pano('FeWy4yNg9qEGZG5jKgP5XA', 205, 18, 100)],
+  colours: peach,
+  bands: [[3.4, 3.75, .3]],
+  windows: win276.flatMap(u => [{ u, h: [4.75, 5.75], panes: 2 }, { u, h: [8.15, 9.25], panes: 2 }]),
+  vents: [{ u: at276([-2.4, 2.4]), h: [5.95, 6.35] }],
+  blocks: [
+    { name: 'deep roof slab', u: [0, W276], h: [10.3, 10.9], out: .5, depth: 1.0, colour: '#e2cbb8' },
+    { name: 'balcony slab', u: [0, W276], h: [7.0, 7.35], out: .4, depth: .8, colour: '#e2cbb8' },
+    ...[[0, .3], [W276 - .3, W276]].map(u => ({ name: 'side fin', u, h: [3.75, 10.3], out: .45, depth: .9, colour: '#ecd6c4' })),
+    { name: 'air conditioner', u: at276([1.5, 2.3]), h: [4.2, 4.7], out: .3, depth: .5, colour: '#e8e8e4' },
+  ],
+  piers: [[0, .3], [W276 - .3, W276]],
+  backFittings: [
+    { name: 'dark fascia', u: at276([-2.3, .6]), h: [2.6, 3.3], colour: '#2d2a28' },
+    { name: 'open front', u: at276([-2.0, -.5]), h: [.1, 2.5], colour: '#4a4440' },
+    { name: 'wooden door', u: at276([-1.4, -.85]), h: [.1, 2.3], colour: '#8a5a3a' },
+    { name: 'chest freezer', u: at276([.9, 1.7]), h: [.1, 1.4], out: .35, depth: .7, colour: '#f1f1ee' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);

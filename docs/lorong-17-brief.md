@@ -22,7 +22,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 6 | West | 454254274 | No. 21, a temple on the ground floor | Done; unnamed |
 | 7 | West | 454254270, 454254271 | Nos. 23 and 25, one white building of two bays (Wee Ghee Athletic Association) | Done; unnamed |
 | 8 | West | 454254275 | No. 27, with the 慕德同鄉會 board | Done; unnamed |
-| 9–14 | West | 454254276 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
+| 9 | West | 454254276 | No. 29, the first peach walk-up | Done; unnamed |
+| 10–14 | West | 454254277 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -215,8 +216,29 @@ A white three-storey house:
 
 **Layout:** laid on the 5.81 m source edge. The walls stop at the balcony slab, and the set-back top floor and the roof slab are drawn as blocks.
 
-**Naming:** none. Neither 慕德同鄉會 nor a No. 27 Lorong 17 is listed on Google Maps, so the board is blank.
+**Naming:** none.
+- The yellow board over the stair reads **番禺慕德同鄉會 27-A 二樓**, placing the association on the floor above, at 27-A.
+- Neither the association nor a No. 27 Lorong 17 is listed on Google Maps. The only Panyu listing is the Poon Yue Association 番禹會館 at New Bridge Road. So the boards are blank.
 
 **Map gaps so far:** the photographed fronts of Nos. 5–27 run continuously. The source map leaves gaps after Nos. 7 (1.3 m), 21 (3 m) and 25 (2.5 m), and the photographed buildings fill them. These go to the owner with the row offset at the end of the west side.
 
 Use `?review=l17-27`.
+
+### 9. Way 454254276: No. 29
+
+The first of the pale peach three-storey walk-ups with projecting side fins:
+
+- **Upper floors:** two windows on each, with a vent band over the first-floor windows.
+- **Slabs:** a balcony slab, and a deep roof slab at about **10.9 m**.
+- **Ground floor:** a dark fascia over a wooden door and an open front, with a chest freezer by the north pier.
+
+**Measurement:** `gBz2…` and `INbo…` (June 2024) triangulate its fins on a plane **2.3 m forward**. They are 5.3 m apart, from 2.64 m south of the source corner, so No. 29 meets No. 27's photographed north end. Other heights:
+- first-floor ledge: 3.4–3.75 m;
+- windows: 4.75–5.75 m and 8.15–9.25 m;
+- balcony slab: 7.0–7.35 m.
+
+**Layout:** laid on the 5.80 m source edge. The east-ring massing had given it 14 m.
+
+**Naming:** none. Google Maps lists **Kaki Co @ 17 Geylang**, an apartment building, at 29 Lorong 17. Its point lies about 2.6 m south of the way, where the photographed house stands, but no sign for it was photographed.
+
+Use `?review=l17-29`.

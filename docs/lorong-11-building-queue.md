@@ -1022,3 +1022,4 @@ Lorong 17 between Geylang Road and Sims Avenue is being built one building at a 
 - **Stop 6, way 454254274, No. 21:** a peach-and-cream three-storey house with a temple on the ground floor, unnamed. Bai Yun Kong Shang Fo Tang is listed at No. 21, but no sign with its name was photographed. No. 19's closed Kun Tiong Association board is drawn blank.
 - **Stop 7, ways 454254270 and 454254271, Nos. 23 and 25:** one white two-bay building with hooded windows, unnamed. The Wee Ghee Athletic Association at No. 25 is not listed. The building fills the 3 m gap the map leaves after No. 21.
 - **Stop 8, way 454254275, No. 27:** a white three-storey house with a recessed top floor and the 慕德同鄉會 board, unnamed because neither is listed.
+- **Stop 9, way 454254276, No. 29:** the first pale peach walk-up with side fins, unnamed. Kaki Co @ 17 Geylang is listed there as an apartment building, without a sign. No. 27's yellow board places the 番禺慕德同鄉會 at 27-A, upstairs.
