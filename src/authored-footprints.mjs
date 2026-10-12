@@ -460,6 +460,15 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'sims-134', question: 39, approved: '2026-10-12',
+    evidence: 'No. 134 Sims Avenue, the Lorong 17 east corner. Its source outline reaches into the lane, 0.9 m from its centreline, and into Sims Avenue\'s estimated carriageway. Straight-run June 2024 panoramas (qR4q... with 9Tds..., and qR4q... with Zwx6...) triangulate the corner block\'s Lorong 17 face 5-6 m east and 2-3 m south of the source edge, about 10.6 m long against the 10.92 m source edge, so the outline\'s size fits and only its position is off. The outline is moved 5.5 m east and 2.5 m south, with its shape and vertex order kept.',
+    replaces: ['682928733'],
+    build(map) {
+      const outline = map.buildings.find(b => b.id === '682928733').coordinates.slice(0, -1).map(c => add(project(c, map.origin), [5.5, 2.5]));
+      return [{ id: 'sa-134', street: 'Sims Avenue', number: '134', levels: 3, outline }];
+    },
+  },
+  {
     id: 'lorong-17-37-41', question: 37, approved: '2026-10-12',
     evidence: 'Source way 454254280 holds one pale yellow three-storey building of three bays between projecting fins, Nos. 37, 39 and 41 Lorong 17. Two pairs of June 2024 panoramas triangulate the building 17.4 m long, 0.2-1.0 m behind the source edge, with fins about 5.4 m and 11.5 m from its south end; laid proportionally on the 14.62 m source front, the fin centres fall about 4.4 m and 9.6 m from the south corner. The way is cut there, square to its front; the source front and rear are kept.',
     replaces: ['454254280'],

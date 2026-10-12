@@ -502,7 +502,8 @@ export const no41 = {
 // 15. Way 682928733, No. 134 Sims Avenue, the Lorong 17 east corner: a cream three-storey corner block with a tall
 // parapet and curved concrete hoods, and a lower two-storey wing to the south with a flowered balcony, over a corner
 // coffeeshop. Triangulated from straight-run June 2024 panoramas, its Lorong 17 face stands 5-6 m east of the source
-// edge, which lies inside the lane, and about 2-3 m further south (open question 39); it is laid on the source edges.
+// edge, which lies inside the lane, and about 2-3 m further south. Under the owner's answer to open question 39 it
+// stands on its outline moved there (sa-134), and its awnings are drawn at their photographed depth.
 // Frame: edge 3, the corner block's Lorong 17 face, u south from the splay. The photographed face, s from the
 // corner, runs -0.6 to 10.0 m and is laid on the 10.92 m edge.
 const W134 = 10.922, at134 = lay(-.6, W134 / 10.6);
@@ -510,11 +511,16 @@ const win134 = [[.4, 1.75], [2.4, 3.9], [5.3, 6.9], [7.6, 9.45]].map(at134);
 const brownCoping = '#8a4f3a', cream134 = '#ece6d6';
 const hood134 = (u, h) => ({ name: 'curved concrete hood', u, h, out: .5, depth: 1.0, colour: '#e4ddcc' });
 const red = '#c9302c';
+// A red canvas awning `depth` m deep with its blank valance, rising to the wall at 4.3 m.
+const redAwning134 = (u0, u1, depth) => [
+  { name: 'red awning', u: [u0, u1], h: [3.9, 4.3], out: depth / 2, depth, colour: red },
+  { name: 'blank red awning valance', u: [u0, u1], h: [3.2, 3.9], out: depth - .02, depth: .04, colour: '#b02a26' },
+];
 export const sims134 = {
-  id: 'sims-134', buildingIds: ['682928733'], kind: 'unnamed', unnamed: true, heldFlat: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 2.2, pitch: 32 },
+  id: 'sims-134', buildingIds: ['sa-134'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 24 },
   name: 'No. 134 Sims Avenue, Lorong 17 east corner (June 2024 exterior, occupants not identified)', address: '134 Sims Avenue (Lorong 17 corner)',
   height: 10.0, ceiling: 4.5, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' },
-  evidence: 'June 2024 Street View shows a cream corner block of three tall storeys with a parapet at about 15.1 m (16 m over the splay), curved concrete hoods over each upper floor, louvred vents, brown-edged ledges and windows in pairs, and a lower two-storey wing to the south with a balcony hung with flowers and string lights under a blue awning. The ground floor is a corner coffeeshop: red SingGas LPG awnings, green beer-sponsor boards for the stalls (K.L Hokkien Mee, Signature Intestines, Claypot Frog Porridge, Hongkong Steam Shark Head) and a white board reading 驰名猪什汤大王 over the splayed corner. Google Maps lists 134 Sims Ave only as an address, with no business, so no name is given and every board and awning is blank. Triangulated from straight-run June 2024 panoramas (qR4q..., 9Tds... and Zwx6...), the corner block\'s Lorong 17 face is about 10.6 m long, against the 10.92 m source edge, and stands 5-6 m east of the source edge and 2-3 m south of it: the source outline reaches into the lane, 0.9 m from its centreline. Panoramas taken as the car turned at the junction place the corner about 1.4 m further north. The elevation is laid on the source edges (open question 39), and its street-level pieces are held within 0.25 m of the walls, which stand in the estimated carriageways of Lorong 17 and Sims Avenue.',
+  evidence: 'June 2024 Street View shows a cream corner block of three tall storeys with a parapet at about 15.1 m (16 m over the splay), curved concrete hoods over each upper floor, louvred vents, brown-edged ledges and windows in pairs, and a lower two-storey wing to the south with a balcony hung with flowers and string lights under a blue awning. The ground floor is a corner coffeeshop: red SingGas LPG awnings, green beer-sponsor boards for the stalls (K.L Hokkien Mee, Signature Intestines, Claypot Frog Porridge, Hongkong Steam Shark Head) and a white board reading 驰名猪什汤大王 over the splayed corner. Google Maps lists 134 Sims Ave only as an address, with no business, so no name is given and every board and awning is blank. Triangulated from straight-run June 2024 panoramas (qR4q..., 9Tds... and Zwx6...), the corner block\'s Lorong 17 face is about 10.6 m long, against the 10.92 m source edge, and stands 5-6 m east of the source edge and 2-3 m south of it: the source outline reaches into the lane, 0.9 m from its centreline. Panoramas taken as the car turned at the junction place the corner about 1.4 m further north. Under the owner\'s answer to open question 39 the outline is moved 5.5 m east and 2.5 m south, keeping its shape, and the elevation is laid on it. The awnings on the Lorong 17 faces are drawn at their photographed depth, about 2 m; those on the splay and the Sims Avenue face are kept to 0.6 m, which keeps them clear of Sims Avenue\'s estimated carriageway.',
   sources: [way('682928733'), search('134 Sims Ave Singapore 387456'), pano('qR4qVlrIcfZojnmELQB3hQ', 10, 12, 70), pano('9Tdsro0uN2QtbZA28ESq8Q', 345, 12, 100), pano('Zwx6nRNu4CPL9jyWL624Fw', 40, 15, 100), pano('F6D3qY_SnKVyp-erTxBPDA', 120, 15, 100), pano('xH65Wze70tWSMzS5zLcP7Q', 160, 12, 100)],
   colours: { wall: cream134, trim: '#e4ddcc', frame: '#3a3a36', glass: '#3f474a', pier: cream134, back: '#3a3532', floor: '#a19b90' },
   windows: win134.map(u => ({ u, h: [6.25, 7.5], panes: 2 })),
@@ -523,7 +529,7 @@ export const sims134 = {
     ...win134.map(u => ({ name: 'brown-edged ledge', u: [u[0] - .1, u[1] + .1], h: [6.1, 6.25], out: .08, depth: .16, colour: brownCoping })),
     hood134(at134([-.6, 4.25]), [9.0, 9.6]), hood134(at134([4.6, 10.0]), [9.0, 9.6]),
     { name: 'blank green sponsor boards', u: [.1, W134 - .1], h: [4.6, 6.0], out: .05, depth: .04, colour: '#2f5a3f' },
-    { name: 'red awning, held flat', u: [0, W134], h: [3.0, 4.5], out: .12, depth: .24, colour: red },
+    ...redAwning134(0, W134, 2.0),
   ],
   piers: [[0, .4], [W134 - .4, W134]],
   backFittings: [{ name: 'coffeeshop front', u: [.4, W134 - .4], h: [.1, 4.3], colour: '#3a332e', glow: .14 }],
@@ -551,7 +557,7 @@ export const sims134 = {
         { name: 'stepped parapet', u: [.5, 3.8], h: [15.1, 16.0], out: -.1, depth: .2, colour: cream134 },
         { name: 'parapet coping', u: [.5, 3.8], h: [16.0, 16.15], out: -.05, depth: .3, colour: brownCoping },
         { name: 'blank soup-king board', u: [.1, 4.18], h: [5.0, 5.6], out: .05, depth: .04, colour: '#f3efe6' },
-        { name: 'red awning, held flat', u: [0, 4.279], h: [3.4, 4.4], out: .12, depth: .24, colour: red },
+        ...redAwning134(0, 4.279, .6),
         { name: 'coffeeshop front', u: [.3, 3.98], h: [.13, 3.3], out: .03, depth: .04, colour: '#3a332e', glow: .14 },
       ],
     },
@@ -563,7 +569,7 @@ export const sims134 = {
         { name: 'curved concrete hood', u: [.1, 4.06], h: [9.4, 9.9], out: .5, depth: 1.0, colour: '#e4ddcc' },
         { name: 'curved concrete hood', u: [.1, 4.06], h: [13.4, 14.2], out: .5, depth: 1.0, colour: '#e4ddcc' },
         { name: 'blank green sponsor board', u: [.1, 4.06], h: [4.6, 6.0], out: .05, depth: .04, colour: '#2f5a3f' },
-        { name: 'red awning, held flat', u: [0, 4.162], h: [3.0, 4.5], out: .12, depth: .24, colour: red },
+        ...redAwning134(0, 4.162, .6),
         { name: 'coffeeshop front', u: [.3, 3.86], h: [.13, 2.9], out: .03, depth: .04, colour: '#3a332e', glow: .14 },
       ],
     },
@@ -577,7 +583,7 @@ export const sims134 = {
         { name: 'balcony railing', u: [.1, 10.38], h: [5.3, 6.2], out: .78, depth: .04, colour: '#d6d6d0' },
         { name: 'flowering creepers', u: [.1, 10.38], h: [5.6, 6.0], out: .82, depth: .04, colour: '#c47a96' },
         { name: 'blue awning', u: [0, 10.48], h: [7.6, 8.1], out: .5, depth: 1.0, colour: '#2e5c9e' },
-        { name: 'red awning, held flat', u: [0, 10.48], h: [3.0, 4.4], out: .12, depth: .24, colour: red },
+        ...redAwning134(0, 10.48, 2.0),
         { name: 'coffeeshop dining', u: [.3, 10.18], h: [.13, 2.9], out: .03, depth: .04, colour: '#3a332e', glow: .12 },
       ],
     },

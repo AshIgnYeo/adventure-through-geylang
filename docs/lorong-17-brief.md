@@ -623,3 +623,17 @@ Group `lorong-17-37-41` in `src/authored-footprints.mjs`.
   - The Ah Qi Trading & Construction board below stays blank.
 
 Use `?review=rattan-association`, `?review=l17-37` and `?review=l17-41`.
+
+### Question 39: No. 134 Sims Avenue moved
+
+Group `sims-134` in `src/authored-footprints.mjs`: the source outline is moved **5.5 m east and 2.5 m south**, keeping its shape and vertex order, as `sa-134`.
+
+- **The lane:** its Lorong 17 faces now stand about 6 m from the lane's centreline, rather than 0.9 m. The lane is about 8 m wide opposite No. 130.
+- **Sims Avenue:** the face is about 1.1 m clear of Sims Avenue's estimated carriageway, rather than 2 m inside it.
+- **Awnings:**
+  - The Lorong 17 face and the wing are drawn at their photographed depth, about 2 m, with their valances.
+  - The splay and the Sims Avenue face are kept to 0.6 m.
+  - The `heldFlat` flag is dropped.
+- **Check:** render-and-compare from `F6D3…` and `qR4q…` now puts the corner block and its splay where they are photographed.
+
+Use `?review=sims-134`.
