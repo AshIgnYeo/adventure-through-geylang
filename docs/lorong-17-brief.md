@@ -24,7 +24,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 8 | West | 454254275 | No. 27, with the 慕德同鄉會 board | Done; unnamed |
 | 9 | West | 454254276 | No. 29, the first peach walk-up | Done; unnamed |
 | 10 | West | 454254277 | No. 31, a pipe shop | Done; unnamed |
-| 11–14 | West | 454254278 … 454254280 | The walk-up blocks to Sims Avenue | Massing, to rebuild |
+| 11 | West | 454254278 | No. 33, a temple front | Done; unnamed |
+| 12–14 | West | 454254279, 454254280 | The last walk-ups to Sims Avenue | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -258,3 +259,23 @@ A pale peach walk-up like No. 29, with side fins, a balcony slab and a deep roof
 - **Naming:** none. Google Maps lists **Visual Gallery Singapore** (artistic handicrafts) at 31 Lorong 17, but no sign for it was photographed, and the shop holds plumbing stock.
 
 Use `?review=l17-31`.
+
+### 11. Way 454254278: No. 33
+
+A pale peach finned walk-up like No. 31: two brown-framed windows under red-brown louvred hoods on each upper floor, a balcony slab, and a deep roof slab at about **11 m**.
+
+**Ground floor:** a temple front:
+- a black board with gold characters reading **覺寺** under red silk rosettes;
+- a glass door between vertical couplets;
+- painted lanterns and potted plants.
+
+**Measurement:** read on a plane **2.0 m forward** from `8zSh…`, `INbo…` and `ghWQ…` (June 2024).
+- Fin centres: about **7.0 m** apart, from 3.0 m south of the source corner.
+- Windows: 4.75–6.05 m and 8.0–9.05 m.
+- Hoods: 6.1–6.5 m and 9.4–9.8 m.
+
+**Layout:** laid on the 5.80 m source edge.
+
+**Naming:** none. Google Maps lists **Maha Mantra Buddhist Centre**, a Buddhist temple on floor 1, at 33 Lorong 17, with its point on the photographed house. But the board's visible characters, 覺寺, don't give that name, and part of the board is hidden by a lantern. So the board is blank.
+
+Use `?review=l17-33`.

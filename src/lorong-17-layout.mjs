@@ -348,7 +348,39 @@ export const no31 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31];
+// ---------------------------------------------------------------------------------------------
+// 11. Way 454254278, No. 33: a finned peach walk-up like No. 31, over a temple front with a black board reading
+// 覺寺. Read on a plane 2.0 m forward from two June 2024 panoramas: about 7.0 m between fin centres, from 3.0 m
+// south of the source corner. Laid on the 5.80 m source edge, u north.
+const W278 = 5.8, at278 = lay(-3.0, W278 / 7.0), win278 = [[-1.0, .75], [2.1, 3.6]].map(at278);
+export const no33 = {
+  id: 'l17-33', buildingIds: ['454254278'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 33 Lorong 17 (June 2024 exterior, occupant not identified)', address: '33 Lorong 17 Geylang',
+  height: 11.0, ceiling: 3.25, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
+  evidence: 'June 2024 Street View shows a pale peach finned walk-up like No. 31: two brown-framed windows under red-brown louvred hoods on each upper floor, a balcony slab and a deep roof slab at about 11 m. The ground floor is a temple front: a black board with gold characters reading 覺寺 under red silk rosettes, a glass door between vertical couplets, painted lanterns and potted plants. Google Maps lists Maha Mantra Buddhist Centre, a Buddhist temple on floor 1, at 33 Lorong 17 Geylang, with its point on the photographed house, but the board\'s visible characters do not give that name, so it is not named and the board is blank. Read on a plane 2.0 m in front of the source edge from two June 2024 panoramas, its fins are about 7.0 m apart from 3.0 m south of the source corner; it is laid on the 5.80 m source edge. The east-ring massing had given it 14 m.',
+  sources: [way('454254278'), search('Maha Mantra Buddhist Centre 33 Lorong 17 Geylang'), pano('8zShCoV5q2fYvPBEC901Vw', 232, 18, 100), pano('INboFn5xnG6TxoVcRIkLXA', 220, 18, 100), pano('ghWQo6rbUlRhzXunm7Gf2g', 210, 18, 100)],
+  colours: { ...peach, frame: '#6e3f2c' },
+  bands: [[3.25, 3.6, .3]],
+  windows: win278.flatMap(u => [{ u, h: [4.75, 6.05], panes: 3 }, { u, h: [8.0, 9.05], panes: 3 }]),
+  blocks: [
+    { name: 'deep roof slab', u: [0, W278], h: [10.6, 11.0], out: .5, depth: 1.0, colour: '#e2cbb8' },
+    { name: 'balcony slab', u: [0, W278], h: [6.9, 7.25], out: .4, depth: .8, colour: '#e2cbb8' },
+    ...[[0, .3], [W278 - .3, W278]].map(u => ({ name: 'side fin', u, h: [3.6, 10.6], out: .45, depth: .9, colour: '#ecd6c4' })),
+    ...win278.flatMap(u => [brownHood(u, [6.1, 6.5]), brownHood(u, [9.4, 9.8])]),
+    ...[[-.9, 0], [2.3, 3.2]].map(s => ({ name: 'air conditioner', u: at278(s), h: [4.0, 4.6], out: .3, depth: .5, colour: '#e8e8e4' })),
+  ],
+  piers: [[0, .3], [W278 - .3, W278]],
+  backFittings: [
+    { name: 'blank black temple board', u: at278([.3, 2.3]), h: [2.6, 3.15], out: .05, colour: '#1c1a19' },
+    { name: 'red silk rosettes', u: at278([.2, 2.4]), h: [3.0, 3.2], out: .08, colour: '#c3201a' },
+    { name: 'glass temple door', u: at278([.8, 1.9]), h: [.1, 2.55], colour: '#3e3a36', glow: .12 },
+    ...[[.45, .65], [2.05, 2.25]].map(s => ({ name: 'blank couplet', u: at278(s), h: [.6, 2.5], out: .04, colour: '#1f1d1c' })),
+    { name: 'painted lantern', u: at278([-.4, .2]), h: [2.0, 2.9], out: .5, depth: .5, colour: '#8a4a2a' },
+    { name: 'pale glazed front', u: at278([-2.5, -.6]), h: [.1, 2.6], colour: '#b8c4c0' },
+  ],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);
