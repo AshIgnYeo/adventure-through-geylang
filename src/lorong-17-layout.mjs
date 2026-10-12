@@ -732,34 +732,35 @@ export const brightStar = {
 };
 
 // ---------------------------------------------------------------------------------------------
-// 19. Way 454254238, by No. 14: the middle of a single-storey temple with a red-tiled hipped roof behind a tiled
-// forecourt. Three June 2024 panoramas triangulate its eaves about 10 m long, 1-1.5 m in front of the source front,
-// from 4 m north of the way to 1.2 m south of it (open question 40). The way holds the 4.84 m slice between, which is
-// modelled at its photographed scale, u south; s along the photographed eaves runs 0.9-10.9 m, the way 4.86-9.71 m.
-const W238 = 4.837, at238 = ([a, b]) => [+Math.max(0, a - 4.86).toFixed(2), +Math.min(W238, b - 4.86).toFixed(2)];
+// 19. The temple by No. 14: a single-storey temple with a red-tiled hipped roof behind a tiled forecourt. Three June
+// 2024 panoramas triangulate its eaves about 10.3 m long, 1-1.5 m in front of the source front. Under the owner's
+// answer to open question 40 it stands on an authored footprint over the whole temple (l17-temple), about 8.6 m along
+// the front. Positions are read along the triangulated eaves line, s 0.88-11.2 m, at their photographed scale: the
+// footprint's north corner lies at s = 1.86.
+const W238 = 8.597, at238 = ([a, b]) => [+Math.max(0, a - 1.86).toFixed(2), +Math.min(W238, b - 1.86).toFixed(2)];
 export const temple238 = {
-  id: 'l17-14-temple', buildingIds: ['454254238'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 12 },
+  id: 'l17-14-temple', buildingIds: ['l17-temple'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 12 },
   name: 'Temple with the 和友社 and 華德善室 boards, by No. 14 Lorong 17 (June 2024 exterior, not listed)', address: 'Lorong 17 Geylang, east side, south of No. 20 (Google\'s No. 14 point lies in front of it)',
   height: 3.7, ceiling: 2.75, fiveFootWay: 1.5, roof: { type: 'hip', ridge: 5.0, colour: '#b9623f' },
-  evidence: 'June 2024 Street View shows a single-storey temple behind a tiled forecourt between Bright Star Hotel and a white two-storey row: a red-tiled hipped roof with a dark ridge edge, a beige fascia under the eaves over a beige canopy, granite entrance columns carrying couplets, stone lions, an open altar front, green railings to the north and a grille gate to the south. Its gold-on-brown boards read 和友社 and 華德善室 (right to left). Neither is listed on Google Maps, and Google\'s address point for 14 Lorong 17 Geylang, in front of this way, carries no business, so no name is given and the boards are blank. Three June 2024 panoramas triangulate its eaves about 10 m long, 1-1.5 m in front of the source front, from about 4 m north of the way to 1.2 m south of it, so the 4.84 m way holds only its middle; that slice is modelled at its photographed scale, and the rest of the temple is open question 40. Heights were read on the triangulated plane: eaves at about 3.7 m and ridge at about 5 m.',
+  evidence: 'June 2024 Street View shows a single-storey temple behind a tiled forecourt between Bright Star Hotel and a white two-storey row: a red-tiled hipped roof with a dark ridge edge, a beige fascia under the eaves over a beige canopy, a north entrance behind green railings, granite entrance columns carrying couplets with stone lions in the middle, an open altar front and a grille gate to the south. Its gold-on-brown boards read 和友社 and 華德善室 (right to left). Neither is listed on Google Maps, and Google\'s address point for 14 Lorong 17 Geylang, in front of the temple, carries no business, so no name is given and the boards are blank. Three June 2024 panoramas triangulate its eaves about 10.3 m long, 1-1.5 m in front of the source front, from about 4 m north of way 454254238 to 1.5 m south of it. Under the owner\'s answer to open question 40 it stands on an authored footprint over the whole temple, about 8.6 m along the front. Heights were read on the triangulated plane: eaves at about 3.7 m and ridge at about 5 m.',
   sources: [way('454254238'), pano('GX6RAPRapiD3eAKqXG_3uA', 70, 5, 30), pano('M_9st2eoKa2qvAZ10P9vRQ', 100, 12, 110), pano('qKWw6QiwVVcNE7eOEzxMSA', 90, 12, 100)],
   colours: { wall: '#ddcdb3', trim: '#d6c3a5', frame: '#3a3a36', glass: '#3f474a', pier: '#8f8a84', back: '#5a2d26', floor: '#b5713f' },
   blocks: [
     { name: 'beige fascia', u: [0, W238], h: [3.1, 3.7], out: .55, depth: 1.1, colour: '#d9c4a2' },
     { name: 'beige canopy', u: [0, W238], h: [2.75, 3.1], out: .6, depth: 1.2, colour: '#e3d2b5' },
     { name: 'dark eaves edge', u: [0, W238], h: [3.7, 3.85], out: .7, depth: .2, colour: '#4a3a32' },
-    { name: 'green railing', u: at238([4.86, 5.86]), h: [.9, 1.9], out: .02, depth: .04, colour: '#3e6b4f' },
+    { name: 'green railings', u: at238([1.9, 5.85]), h: [.9, 1.9], out: .02, depth: .04, colour: '#3e6b4f' },
     ...[[6.28, 6.54], [7.82, 8.25]].map(s => ({ name: 'granite couplet column', u: at238(s), h: [0, 2.75], out: .15, depth: .3, colour: '#8f8a84' })),
-    { name: 'blank couplet', u: at238([6.3, 6.52]), h: [.6, 2.4], out: .31, depth: .02, colour: '#e8e2d4' },
+    ...[[6.3, 6.52], [7.85, 8.07]].map(s => ({ name: 'blank couplet', u: at238(s), h: [.6, 2.4], out: .31, depth: .02, colour: '#e8e2d4' })),
     ...[[5.9, 6.2], [8.3, 8.6]].map(s => ({ name: 'stone lion', u: at238(s), h: [0, 1.1], out: .4, depth: .5, colour: '#a6a39d' })),
-    { name: 'blank gold-on-brown board', u: at238([4.86, 6.2]), h: [2.2, 2.7], out: .02, depth: .03, colour: '#5c3d2a' },
+    ...[[2.3, 3.6], [3.9, 5.2]].map(s => ({ name: 'blank gold-on-brown board', u: at238(s), h: [2.2, 2.7], out: .02, depth: .03, colour: '#5c3d2a' })),
     { name: 'tiled forecourt', u: [0, W238], h: [0, .06], out: 1.0, depth: 2.0, colour: '#b5713f' },
   ],
   piers: [[0, .15], [W238 - .15, W238]],
   backFittings: [
+    { name: 'dark north entrance', u: at238([2.0, 5.8]), h: [.1, 2.0], colour: '#3a332e' },
     { name: 'open altar front', u: at238([6.54, 7.82]), h: [.1, 2.65], colour: '#5a2d26', glow: .18 },
-    { name: 'grille gate', u: at238([8.25, 9.55]), h: [.1, 2.4], colour: '#7d827f' },
-    { name: 'dark interior', u: at238([4.86, 6.28]), h: [.1, 2.0], colour: '#3a332e' },
+    { name: 'grille gate', u: at238([8.25, 10.2]), h: [.1, 2.4], colour: '#7d827f' },
   ],
 };
 

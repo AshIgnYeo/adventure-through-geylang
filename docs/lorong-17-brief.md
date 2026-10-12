@@ -637,3 +637,17 @@ Group `sims-134` in `src/authored-footprints.mjs`: the source outline is moved *
 - **Check:** render-and-compare from `F6D3…` and `qR4q…` now puts the corner block and its splay where they are photographed.
 
 Use `?review=sims-134`.
+
+### Question 40: the whole temple
+
+Group `lorong-17-temple` in `src/authored-footprints.mjs`. Way 454254238 is extended square to its front, as `l17-temple`:
+- **2.9 m north**, leaving about 0.4 m to Bright Star Hotel at the rear;
+- **0.86 m south**;
+- about **8.6 m** along the front in all, against the eaves' 10.3 m with about 0.7 m of overhang, keeping its 13.2 m depth.
+
+The front is laid at its photographed scale, read along the triangulated eaves line:
+- the north entrance behind green railings, under the two blank boards (和友社, 華德善室);
+- the couplet columns and stone lions round the altar front;
+- the grille gate to the south.
+
+Use `?review=l17-14-temple`.

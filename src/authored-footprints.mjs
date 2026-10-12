@@ -460,6 +460,18 @@ export const authoredFootprintGroups = [
     },
   },
   {
+    id: 'lorong-17-temple', question: 40, approved: '2026-10-12',
+    evidence: 'The single-storey temple by No. 14 Lorong 17. Three June 2024 panoramas (GX6R... with M_9s..., and GX6R... with qKWw...) triangulate its eaves about 10.3 m long, 1-1.5 m in front of the source front, from about 4 m north of way 454254238 to 1.5 m south of it; with eaves overhanging about 0.7 m, its walls run about 8.6 m along the front. The 4.84 m way is extended 2.9 m north, which leaves about 0.4 m to Bright Star Hotel at the rear, and 0.86 m south, square to its front, keeping its 13.2 m depth and vertex order.',
+    replaces: ['454254238'],
+    build(map) {
+      const o = map.buildings.find(b => b.id === '454254238').coordinates.slice(0, -1).map(c => project(c, map.origin));
+      // Vertices 0-1 are the north side and 2-3 the south side; the front (edge 3) runs north from vertex 3 to 0.
+      const south = unit(o[0], o[3]);
+      const outline = [at(o[0], south, -2.9), at(o[1], south, -2.9), at(o[2], south, .86), at(o[3], south, .86)];
+      return [{ id: 'l17-temple', street: 'Lorong 17 Geylang', number: null, levels: 1, outline }];
+    },
+  },
+  {
     id: 'sims-134', question: 39, approved: '2026-10-12',
     evidence: 'No. 134 Sims Avenue, the Lorong 17 east corner. Its source outline reaches into the lane, 0.9 m from its centreline, and into Sims Avenue\'s estimated carriageway. Straight-run June 2024 panoramas (qR4q... with 9Tds..., and qR4q... with Zwx6...) triangulate the corner block\'s Lorong 17 face 5-6 m east and 2-3 m south of the source edge, about 10.6 m long against the 10.92 m source edge, so the outline\'s size fits and only its position is off. The outline is moved 5.5 m east and 2.5 m south, with its shape and vertex order kept.',
     replaces: ['682928733'],
