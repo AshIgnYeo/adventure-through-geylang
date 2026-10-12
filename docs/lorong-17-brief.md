@@ -34,7 +34,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 18 | East | 454254240 | No. 20, Bright Star Hotel | Done; named |
 | 19 | East | 454254238 | A temple by No. 14 (和友社, 華德善室) | Done (a slice); unnamed; footprint question 40 |
 | 20 | East | 454254249 | No. 6, Singapore Chinaware Merchants Association | Done; named; row question 41 |
-| 21–23 | East | 454254250, 454254252, 454254251 | The rest of the white row, Nos. 4 to 2 | To do |
+| 21 | East | 454254250 | The row's fourth house (No. 4 by sequence) | Done; unnamed |
+| 22–23 | East | 454254252, 454254251 | The row's two southern houses | To do |
 | 24 | East | 454254253 | The Geylang Road corner house | To do |
 
 Stops 7 (Nos. 23 and 25) and 13 (Nos. 37–41) each took in a whole photographed building, so the stops after them are numbered one and two lower than first planned. A stop is a building as photographed, not a source way. Where the two disagree, the difference is recorded below and, if it needs the owner, logged in [open questions](open-questions.md).
@@ -501,7 +502,7 @@ A side lane about 5 m wide separates the temple from a white two-storey row of s
 - **Measurement:** `M_9s…` and `qC7t…` (June 2024) agree, to about 0.5 m, on six houses on a line through the source fronts. From north to south they are about 5.4, 4.3, 3.8, 3.8, 3.6 and 3.5 m wide, about 24 m in all.
 - **Fit to the map:** the map's four source ways (z 0.8–18.5) overlap the four southern houses, one each. The two northern houses stand in the gap the map leaves after the temple: [open question 41](open-questions.md).
 - **Layout:** each house is laid proportionally on its own way.
-  - The fronts are only 3.3–3.5 m from the lane's centreline, so the awning is held within 0.1 m of the walls.
+  - The fronts are only 3.2–3.5 m from the lane's centreline, at or inside the edge of the modelled carriageway. The houses are flagged `heldFlat`, as No. 134 is, and the awning is held within 0.1 m of the walls.
   - The real awning projects about 1.5 m.
 
 ### 20. Way 454254249: No. 6, Singapore Chinaware Merchants Association
@@ -514,3 +515,14 @@ A side lane about 5 m wide separates the temple from a white two-storey row of s
   - No claim is made about the ground floor.
 
 Use `?review=chinaware-merchants`.
+
+### 21. Way 454254250: the row's fourth house
+
+No. 4 by the row's sequence; no plate was seen.
+
+- **Front:** it continues the Chinaware Merchants Association's red board (drawn whole on No. 6) and the red fretwork panels round an open doorway.
+- **Ground floor:** a grey door with a red letterbox, a sink and a brass incense urn, under the maroon awning.
+- **Position:** the ground-floor features were placed by bearing from `qC7t…`, where the front line meets each sightline.
+- **Naming:** none. No listing or sign identifies it. Google's address points along the row (Nos. 2, 4 and 6) fall in the wrong order, so they are not used for numbering.
+
+Use `?review=l17-4`.

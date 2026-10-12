@@ -44,12 +44,13 @@ test('the Lorong 17 exteriors fit their outlines, face the lane and keep their r
     const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
     assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
     assert.ok(Math.abs(frame.nx) > .9, place.id);
-    // Street-level pieces stay clear of the modelled carriageways; No. 134's source edges stand inside them, so its
-    // pieces are held within 0.25 m of its walls instead (open question 39).
+    // Street-level pieces stay clear of the modelled carriageways. Where a source front stands at or inside a
+    // carriageway's edge (No. 134, open question 39; the white row south of the temple), the place is flagged
+    // heldFlat and its pieces are held within 0.25 m of its walls instead.
     const faces = [{ frame, blocks: place.blocks ?? [] }, ...lorong17Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [] }))];
     for (const { frame: f, blocks } of faces) {
       const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
-      if (place.id === 'sims-134') { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+      if (place.heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
       assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
     }
     // Upper volumes stand inside the footprint.

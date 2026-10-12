@@ -479,7 +479,7 @@ const brownCoping = '#8a4f3a', cream134 = '#ece6d6';
 const hood134 = (u, h) => ({ name: 'curved concrete hood', u, h, out: .5, depth: 1.0, colour: '#e4ddcc' });
 const red = '#c9302c';
 export const sims134 = {
-  id: 'sims-134', buildingIds: ['682928733'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 2.2, pitch: 32 },
+  id: 'sims-134', buildingIds: ['682928733'], kind: 'unnamed', unnamed: true, heldFlat: true, frontEdge: 3, reviewRoad: 'Lorong 17 Geylang', review: { distance: 2.2, pitch: 32 },
   name: 'No. 134 Sims Avenue, Lorong 17 east corner (June 2024 exterior, occupants not identified)', address: '134 Sims Avenue (Lorong 17 corner)',
   height: 10.0, ceiling: 4.5, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9c9a94' },
   evidence: 'June 2024 Street View shows a cream corner block of three tall storeys with a parapet at about 15.1 m (16 m over the splay), curved concrete hoods over each upper floor, louvred vents, brown-edged ledges and windows in pairs, and a lower two-storey wing to the south with a balcony hung with flowers and string lights under a blue awning. The ground floor is a corner coffeeshop: red SingGas LPG awnings, green beer-sponsor boards for the stalls (K.L Hokkien Mee, Signature Intestines, Claypot Frog Porridge, Hongkong Steam Shark Head) and a white board reading 驰名猪什汤大王 over the splayed corner. Google Maps lists 134 Sims Ave only as an address, with no business, so no name is given and every board and awning is blank. Triangulated from straight-run June 2024 panoramas (qR4q..., 9Tds... and Zwx6...), the corner block\'s Lorong 17 face is about 10.6 m long, against the 10.92 m source edge, and stands 5-6 m east of the source edge and 2-3 m south of it: the source outline reaches into the lane, 0.9 m from its centreline. Panoramas taken as the car turned at the junction place the corner about 1.4 m further north. The elevation is laid on the source edges (open question 39), and its street-level pieces are held within 0.25 m of the walls, which stand in the estimated carriageways of Lorong 17 and Sims Avenue.',
@@ -734,7 +734,8 @@ export const temple238 = {
 const rowHouse = ({ id, way: w, W, s0, s1, windows, blocks = [], backFittings = [], ...rest }) => {
   const at = lay(s0, W / (s1 - s0));
   return {
-    id, buildingIds: [w], frontEdge: w === '454254249' ? 0 : 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 20 },
+    // The fronts stand 3.2-3.5 m from the lane's centreline, at the carriageway's edge, so street-level pieces are held flat.
+    id, buildingIds: [w], heldFlat: true, frontEdge: w === '454254249' ? 0 : 2, reviewRoad: 'Lorong 17 Geylang', review: { distance: 6, pitch: 20 },
     height: 6.8, ceiling: 3.5, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 8.2, ridgeDepth: .4, colour: '#7d746c' },
     colours: { wall: '#eeede8', trim: '#e4e2dc', frame: '#2c3032', glass: '#3c4549', pier: '#eeede8', back: '#e2e0da', floor: '#a19b90' },
     bands: [[6.32, 6.76, .3], [3.75, 3.95, .2]],
@@ -752,7 +753,6 @@ export const chinaware = rowHouse({
   name: 'Singapore Chinaware Merchants Association (June 2024 exterior)', address: '6 Lorong 17 Geylang (letterbox 6-B)',
   windows: [[15.5, 16.9], [17.4, 18.7]],
   evidence: rowEvidence + ' The third house from the north carries the left part of a long red board reading 新加坡瓷商公會 SINGAPORE CHINAWARE MERCHANTS ASSOCIATION over its five-foot way, which runs on over the fourth house; its stair door carries a letterbox lettered 6-B, beside red-framed glazed doors with fretwork panels. Google Maps lists the Singapore Chinaware Merchants Association at 6 Lorong 17 Geylang, Singapore 388537, with its point about 8 m south, inside way 454254252: the address, the letterbox and the board agree on this house, so it is named after the board (the Bamboo Lounge precedent, open question 33) and the whole board is redrawn on this house in original type. No claim is made about the ground floor.',
-  // The fronts stand 3.4-3.5 m from the lane's centreline, so the awning is held within 0.1 m of the wall.
   blocks: () => [{ name: 'maroon awning, held flat', u: [0, 3.765], h: [2.5, 3.4], out: .04, depth: .08, colour: '#6e2b33' }],
   // The board, drawn whole on this house although it runs on over No. 4.
   boards: [{ u: [.2, 3.6], h: [3.53, 4.41], out: .1 }],
@@ -764,7 +764,22 @@ export const chinaware = rowHouse({
   ],
 });
 
-export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware];
+export const no4 = rowHouse({
+  id: 'l17-4', way: '454254250', W: 4.742, s0: 19.0, s1: 22.8, kind: 'unnamed', unnamed: true,
+  name: 'Fourth house of the white row, Lorong 17 east side (June 2024 exterior, occupant not identified)', address: '4 Lorong 17 Geylang (by the row\'s sequence; no plate seen)',
+  windows: [[19.3, 20.5], [20.9, 22.2]],
+  evidence: rowEvidence + ' The fourth house from the north continues the red board of the Chinaware Merchants Association next door (drawn whole on No. 6) and the red fretwork panels round an open doorway, then has a grey door with a red letterbox, a sink and a brass incense urn under the maroon awning. No listing or sign identifies it, so no name is given.',
+  blocks: () => [{ name: 'maroon awning, held flat', u: [0, 4.742], h: [2.5, 3.4], out: .04, depth: .08, colour: '#6e2b33' }],
+  backFittings: at => [
+    ...[[19.25, 19.6], [20.4, 20.75]].map(sw => ({ name: 'fretwork panel', u: at(sw), h: [.3, 2.6], colour: '#e3c88a' })),
+    { name: 'open doorway', u: at([19.6, 20.4]), h: [.1, 2.5], colour: '#5a2d26', glow: .1 },
+    { name: 'grey door', u: at([20.9, 21.6]), h: [.1, 2.3], colour: '#9a9c99' },
+    { name: 'red letterbox', u: at([21.65, 21.85]), h: [1.1, 1.5], out: .04, depth: .08, colour: '#b5221d' },
+    { name: 'brass incense urn', u: at([20.6, 20.9]), h: [.1, 1.1], out: .6, depth: .3, colour: '#b48a3a' },
+  ],
+});
+
+export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41, sims134, no42to44, no38to40, brightStar, temple238, chinaware, no4];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 // Upper volumes over part of a footprint: an outline in the front frame, raised from `from` to `to`, with their own
