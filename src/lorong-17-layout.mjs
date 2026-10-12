@@ -427,7 +427,7 @@ export const no37to41 = {
   id: 'l17-37-41', buildingIds: ['454254280'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 17 Geylang', review: { distance: 5, pitch: 30 },
   name: 'Nos. 37-41 Lorong 17, three bays with the Singapore Rattan Industry Association (June 2024 exterior, not yet named)', address: '37-41 Lorong 17 Geylang (the association at No. 39)',
   height: 10.4, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c84' },
-  evidence: 'June 2024 Street View shows one pale yellow three-storey building of three bays between projecting fins, its roof slab at about 10.4 m. The south bay has two windows on each upper floor, over a vent band and an open five-foot way. The middle bay carries a white board reading 新加坡籐業公會 S\'PORE RATTAN INDUSTRY ASSN. between its first-floor windows. The north bay has a louvred vent band and a grilled top-floor window. Across the ground floor of the middle and north bays runs a long yellow board reading Ah Qi Trading & Construction Pte Ltd, Islandwide Roofing & Decking Specialists, over a green awning and a builder\'s store. Google Maps lists Singapore Rattan Industry Assoc. with its point inside this way, under the address 39 Sims Cl, Singapore 388562: the postal code belongs to this stretch of Lorong 17, so the association is at No. 39, the middle bay. Naming one bay of a three-bay way needs the way split, so it waits on open question 37 and the boards are blank. Ah Qi Trading & Construction is listed only at Woodlands and Lim Chu Kang, so its board stays blank. Two pairs of June 2024 panoramas triangulate the ends and the two fins 0.2-1.0 m behind the source edge: the building is 17.4 m long from 2.7 m south of the source corner, filling most of the 4 m gap after No. 35\'s way, and is laid on the 14.62 m source edge.',
+  evidence: 'June 2024 Street View shows one pale yellow three-storey building of three bays between projecting fins, its roof slab at about 10.4 m. The south bay has two windows on each upper floor, over a vent band and an open five-foot way. The middle bay carries a white board reading 新加坡籐業公會 S\'PORE RATTAN INDUSTRY ASSN. between its first-floor windows. The north bay has a louvred vent band and a grilled top-floor window. Across the ground floor of the middle and north bays runs a long yellow board reading Ah Qi Trading & Construction Pte Ltd, Islandwide Roofing & Decking Specialists, over a green awning and a builder\'s store. Google Maps lists Singapore Rattan Industry Assoc. with its point inside this way, under the address 39 Sims Cl, Singapore 388562: the postal code belongs to this stretch of Lorong 17, so the association is at No. 39, the middle bay. Naming one bay of a three-bay way needs the way split, so it waits on open question 37 and the boards are blank. Ah Qi Trading & Construction is listed only at Woodlands and Lim Chu Kang, so its board stays blank. Two pairs of June 2024 panoramas triangulate the ends and the two fins 0.2-1.0 m behind the source edge: the building is 17.4 m long from 2.7 m south of the source corner, filling most of the 4 m gap after No. 35\'s way, and is laid on the 14.62 m source edge. Its plain white north wall on the back lane carries small windows under concrete hoods near its west end.',
   sources: [way('454254280'), search('Singapore Rattan Industry Association'), pano('ghWQo6rbUlRhzXunm7Gf2g', 245, 15, 100), pano('9Tdsro0uN2QtbZA28ESq8Q', 225, 15, 100), pano('8zShCoV5q2fYvPBEC901Vw', 260, 15, 100), pano('qR4qVlrIcfZojnmELQB3hQ', 215, 15, 100)],
   colours: { wall: '#e8e0c2', trim: '#ddd5b6', frame: '#3a3a36', glass: '#3f474a', pier: '#e8e0c2', back: '#d9d2c2', floor: '#a19b90' },
   bands: [[3.3, 3.55, .3]],
@@ -454,6 +454,16 @@ export const no37to41 = {
     { name: 'wooden door', u: at280([-.5, .2]), h: [.1, 2.3], colour: '#8a5a3a' },
     { name: 'builder\'s store', u: at280([3.2, 14.3]), h: [.1, 2.3], colour: '#6a6660' },
   ],
+  sides: [{
+    // The plain white north wall on the back lane, u west from the front corner, read from qR4q... on its source plane.
+    edge: 0,
+    windows: [{ u: [6.5, 7.1], h: [7.3, 8.4], panes: 2 }, { u: [9.0, 9.6], h: [7.6, 8.9], panes: 1 }, { u: [6.6, 7.2], h: [4.3, 5.4], panes: 1 }, { u: [9.3, 9.9], h: [4.3, 5.4], panes: 1 }],
+    vents: [{ u: [6.6, 7.2], h: [5.75, 6.0] }, { u: [9.3, 9.9], h: [5.7, 5.95] }, { u: [6.6, 7.6], h: [2.7, 3.0] }, { u: [9.3, 9.9], h: [2.7, 3.0] }],
+    blocks: [[6.3, 7.6], [8.9, 9.9]].flatMap(u => [
+      { name: 'concrete window hood', u, h: [9.2, 9.35], out: .3, depth: .6, colour: '#e6e4de' },
+      { name: 'concrete window hood', u: [u[0] + .1, u[1] + .1], h: [6.85, 7.0], out: .3, depth: .6, colour: '#e6e4de' },
+    ]),
+  }],
 };
 
 export const lorong17 = [fengShang, row237, trueJesus, yangClan, no21, no23, no25, no27, no29, no31, no33, gyaltsap, no37to41];

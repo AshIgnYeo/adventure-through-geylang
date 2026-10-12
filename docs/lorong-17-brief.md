@@ -27,7 +27,7 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 11 | West | 454254278 | No. 33, a temple front | Done; unnamed |
 | 12 | West | 454254279 | No. 35, Gyaltsap Tashi Ling Buddhist Society | Done; named |
 | 13 | West | 454254280 | Nos. 37–41, three bays with the Singapore Rattan Industry Association | Done; unnamed; split and naming question 37 |
-| 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
+| 14 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face and splay | Done; unnamed |
 | 15 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 16–17 | East | 454254307, 454254308 | South of No. 134 | To do |
 | 18 | East | 454254240 | The long building | To do |
@@ -330,3 +330,28 @@ One pale yellow three-storey building of three bays between projecting fins, wit
 - Google's address point for No. 41 also falls in this way.
 
 Use `?review=l17-37-41`.
+
+- **North wall, from stop 14:** seen from the Sims Avenue end, the plain white north wall of Nos. 37–41 on the back lane carries small windows under concrete hoods near its west end. They are added as a side face.
+
+### 14. Way 682928766: No. 130 Sims Avenue, the Lorong 17 corner
+
+The cream three-storey corner house was modelled with its Sims Avenue front in the widened ring (`src/ring-a-layout.mjs`). Its splay and Lorong 17 face were plain walls. A back lane separates it from Nos. 37–41.
+
+- **Lorong 17 face (edge 6):**
+  - three windows on each upper floor in tan surrounds;
+  - louvred vents over the first-floor windows;
+  - red-and-white striped awnings over the top-floor windows, and air-conditioners;
+  - the eating house's long blue awning at street level.
+- **Splayed corner (edge 5):** a projecting first-floor bay with circular-motif grilles under a glazed top storey, over the yellow 福满香 FULL HOUSE F&B board.
+- **Annex:** south of the face, an annex set back about 3 m carries a metal exhaust duct and a grilled verandah. Its source edge faces the notch in the outline, so the shared frame points into the building, and it is left plain.
+- **Measurement:** `qR4q…` with `9Tds…`, and `Zwx6…` with `qR4q…` (June 2024), triangulate the Lorong 17 face **1.3–2.4 m west of** its source edge and about **12 m** long.
+  - Its corner falls **3–4 m north** of the source corner. This is the same disagreement already recorded for this corner and for No. 134 opposite.
+  - Floor heights are the house's existing Sims Avenue ones.
+- **Layout:** laid proportionally on the 10.19 m source edge, with the splay on its own edge.
+  - The source edge lies only 3.0 m from the lane's centreline, inside the estimated carriageway. So, as at Bengal Kitchen, the face's street-level pieces are held within 0.25 m of the wall.
+  - The north end of the splay is handled the same way.
+- **Naming:** none, as before. Full House F&B is listed at 128 Sims Ave with its point outside every way, so its board is drawn blank.
+
+**West side complete.** Every building from No. 301 to No. 130 Sims Avenue now has its Lorong 17 front. The row offset and the map gaps are [open question 38](open-questions.md).
+
+Use `?review=sims-130` for the Sims Avenue front.

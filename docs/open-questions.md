@@ -25,6 +25,16 @@ Logged during the Lorong 17 walk (open question 35), for the owner to answer whe
     - **Recommendation:** yes. Split the way at the two fins, as under questions 30 and 31, and name the middle bay's upper floors after the board, with no claim about its ground floor.
     - **Unlocks:** one named association. The Ah Qi Trading & Construction board on the ground floor stays blank either way: the company is listed only at Woodlands and Lim Chu Kang.
 
+38. **Lorong 17 west side, Nos. 5–35 (ways 236 to 279): re-author the row on its photographed line?**
+    - **Evidence:** every house from No. 5 to No. 35 was triangulated from June 2024 panoramas (see the [Lorong 17 brief](lorong-17-brief.md)).
+      - **Depth:** the fronts stand **1.4–2.3 m in front of** their source edges, except Nos. 9–15, which run from on the edge to 1.2 m behind it.
+      - **Gaps:** the photographed fronts run continuously. The source map leaves gaps after No. 7 (1.3 m), No. 21 (3 m) and No. 25 (2.5 m), plus the 5.6 m side passage after No. 15, which is real.
+      - **Drift:** from No. 21 north, the photographed houses drift south of their source ways, by up to about 2.6 m at No. 29. Google's address points for Nos. 29, 33 and 35 fall on the photographed houses, not on their source ways.
+      - **Widths:** the photographed widths vary from 5.3 m to 7.1 m. Each house is laid proportionally on its own 4.0–5.8 m source edge.
+    - **What happens now:** each house keeps its source way, so windows and bays are squeezed or stretched by up to about 30%. The fronts stand up to 2.3 m back from the street, and the gaps show as dark slots between houses.
+    - **Recommendation:** yes. Author one footprint group for the row, as open question 1 did for the Lorong 11 west row: fronts on the triangulated line, party lines at the measured fins and pilasters, and rear lines kept. Keep the side passage, and keep way 237 (Nos. 9–15) on its own measured line.
+    - **Unlocks:** true widths for every house on the west side, the gaps closed, and listing points inside the right houses.
+
 ## Settled
 
 ### Seventh batch, answered 12 October 2026

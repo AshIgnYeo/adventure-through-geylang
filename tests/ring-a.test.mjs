@@ -24,9 +24,12 @@ test('the ring A exteriors fit their outlines and keep their review starts clear
 test('street-level projections stay clear of the modelled carriageways', () => {
   for (const place of ringA) {
     const poly = outline(place.buildingIds[0]), frame = ringAFrame(poly, place);
-    const faces = [{ frame, blocks: place.blocks ?? [] }, ...(place.sides ?? []).map((s, i) => ({ frame: ringASides(place, poly)[i].frame, blocks: s.blocks ?? [] }))];
-    for (const { frame: f, blocks } of faces) {
+    const faces = [{ frame, blocks: place.blocks ?? [] }, ...(place.sides ?? []).map((s, i) => ({ frame: ringASides(place, poly)[i].frame, blocks: s.blocks ?? [], edge: s.edge }))];
+    for (const { frame: f, blocks, edge } of faces) {
       const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
+      // No. 130's Lorong 17 source edge and the north end of its splay lie inside the lane's estimated carriageway (the
+      // face photographs 1.3-2.4 m behind it), so their street-level pieces are held within 0.25 m of the face.
+      if (place.id === 'sims-130' && [5, 6].includes(edge)) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
       // No. 2's source front itself reaches into the estimated Lorong 15 carriageway at its south end, so its
       // board, valance and awning are held within 0.25 m of the front instead.
       if (place.id === 'bengal-kitchen') { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); assert.ok(place.board.out <= .25); continue; }

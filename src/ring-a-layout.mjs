@@ -337,12 +337,14 @@ export const sims128 = {
   backFittings: [{ name: 'lounge front', u: [.5, 6.1], h: [.1, 2.9], colour: '#2e2a28', glow: .06 }],
 };
 
+// No. 130's Lorong 17 faces (open question 35): edge 6 is the main face and edge 5 the splay.
+const W130L = 10.189, W130S = 3.761, u130 = ([a, b]) => [+((a - .1) * W130L / 12.0).toFixed(2), +((b - .1) * W130L / 12.0).toFixed(2)];
 export const sims130 = {
   id: 'sims-130', buildingIds: ['682928766'], kind: 'unnamed', unnamed: true, frontEdge: 4, reviewRoad: 'Sims Avenue', review: { distance: 1.1, pitch: 40 },
   name: 'No. 130 Sims Avenue, Lorong 17 west corner (June 2024 exterior, occupant not identified)', address: '130 Sims Avenue (Lorong 17 corner)',
   height: 10.9, ceiling: 4.0, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a9a69e' },
-  evidence: 'The cream three-storey corner house on the west side of the Lorong 17 mouth; its splayed corner (edge 5) carries a projecting bay with circular-motif grilles and a glazed top storey over a yellow board reading 福满香 FULL HOUSE F&B. Its Sims Avenue face (edge 4, the front) shows two windows on each upper floor in tan surrounds under louvred vents, red-and-white striped awnings over the top-floor windows, and a blue awning over an eating house. Google Maps lists Full House F&B, a coffee shop, at 128 Sims Ave, with its point beyond the study edge outside every source way, so no name is given; the board is not modelled and the awnings are plain. The Sims Avenue face photographs about 7.15 m wide against the 6.5 m source edge; the splayed corner and the Lorong 17 face (Lorong 17 is not modelled) are left as plain walls. ' + simsNote,
-  sources: [...simsSources('682928766'), pano('F6D3qY_SnKVyp-erTxBPDA', 250, 15, 80)],
+  evidence: 'The cream three-storey corner house on the west side of the Lorong 17 mouth; its splayed corner (edge 5) carries a projecting bay with circular-motif grilles and a glazed top storey over a yellow board reading 福满香 FULL HOUSE F&B. Its Sims Avenue face (edge 4, the front) shows two windows on each upper floor in tan surrounds under louvred vents, red-and-white striped awnings over the top-floor windows, and a blue awning over an eating house. Google Maps lists Full House F&B, a coffee shop, at 128 Sims Ave, with its point beyond the study edge outside every source way, so no name is given; the board is drawn blank and the awnings are plain. The Sims Avenue face photographs about 7.15 m wide against the 6.5 m source edge. ' + simsNote + ' The Lorong 17 faces were added with the Lorong 17 walk (open question 35). The Lorong 17 face (edge 6) has three windows on each upper floor in tan surrounds, louvred vents over the first-floor windows, red-and-white striped awnings over the top-floor windows and air-conditioners, over the eating house\'s long blue awning; the set-back annex south of it carries a metal exhaust duct and a grilled verandah, but its source edge faces the notch in the outline, so it is left plain. Two pairs of June 2024 panoramas triangulate the Lorong 17 face 1.3-2.4 m west of its source edge and about 12 m long, its corner 3-4 m north of the source corner, as the two drives disagree on this corner and on No. 134 opposite; its elevation is laid proportionally on the 10.19 m source edge, with the splay on its own edge.',
+  sources: [...simsSources('682928766'), pano('F6D3qY_SnKVyp-erTxBPDA', 250, 15, 80), pano('F6D3qY_SnKVyp-erTxBPDA', 240, 15, 100), pano('qR4qVlrIcfZojnmELQB3hQ', 250, 15, 100), pano('Zwx6nRNu4CPL9jyWL624Fw', 215, 12, 100)],
   colours: cream,
   bands: rowBands,
   windows: [[.85, 2.55], [4.16, 6.08]].map(u => ({ u, h: [8.5, 9.92], panes: 2, surround: true }))
@@ -356,6 +358,42 @@ export const sims130 = {
   ],
   piers: [[0, .35], [6.2, 6.501]],
   backFittings: [{ name: 'eating house front', u: [.4, 6.1], h: [.1, 3.2], colour: '#3a332e', glow: .12 }],
+  sides: [
+    {
+      // The Lorong 17 face, u north from the annex to the splay. Read on its triangulated line, s from 0.1 m to 12.1 m.
+      edge: 6,
+      windows: [[2.4, 3.6], [5.9, 7.8], [8.9, 10.0]].flatMap(s => [{ u: u130(s), h: [5.12, 6.35], panes: 2, surround: true }, { u: u130(s), h: [8.5, 9.92], panes: 2, surround: true }]),
+      vents: [[2.4, 3.6], [5.9, 7.8], [8.9, 10.0]].map(s => ({ u: u130(s), h: [6.61, 6.97] })),
+      blocks: [
+        ...[[2.4, 3.6], [5.9, 7.8], [8.9, 10.0]].flatMap(s => stripes('striped window awning', u130([s[0] - .2, s[1] + .2]), [9.95, 10.4], .45, .9, ['#b5483f', '#efece4'], .21)),
+        { name: 'ledge', u: [0, W130L], h: [7.26, 7.52], out: .175, depth: .35, colour: '#ddd6c4' },
+        { name: 'ledge', u: [0, W130L], h: [4.0, 4.25], out: .12, depth: .24, colour: '#ddd6c4' },
+        { name: 'parapet coping', u: [0, W130L], h: [10.65, 10.9], out: .15, depth: .3, colour: '#ddd6c4' },
+        ...[[6.2, 7.4], [8.0, 9.4]].map(s => ({ name: 'air conditioner', u: u130(s), h: [8.4, 8.95], out: .25, depth: .45, colour: '#e8e8e4' })),
+        // The source edge lies 3.0 m from the lane's centreline, inside the estimated carriageway (the face
+        // photographs 1.3-2.4 m behind it), so the street-level pieces are held within 0.25 m of the face.
+        { name: 'air conditioner', u: u130([7.6, 8.8]), h: [4.6, 5.1], out: .12, depth: .24, colour: '#e8e8e4' },
+        { name: 'blue awning', u: [0, W130L], h: [3.2, 3.85], out: .12, depth: .24, colour: '#2f4f8f' },
+        { name: 'blue awning valance', u: [0, W130L], h: [2.4, 3.2], out: .22, depth: .04, colour: '#2a477f' },
+        { name: 'eating house front', u: [.3, W130L - .3], h: [.13, 3.2], out: .03, depth: .04, colour: '#3a332e', glow: .12 },
+      ],
+    },
+    {
+      // The splayed corner: a projecting first-floor bay with circular-motif grilles under a glazed top storey,
+      // over the Full House F&B board (blank: its listing point lies outside every way). Its north end lies inside the
+      // lane's estimated carriageway too, so its street-level pieces are also held within 0.25 m.
+      edge: 5,
+      blocks: [
+        { name: 'circular-motif grille bay', u: [.3, W130S - .3], h: [5.0, 7.0], out: .4, depth: .8, colour: '#d9cfc0' },
+        { name: 'grille shadow', u: [.45, W130S - .45], h: [5.15, 6.85], out: .81, depth: .02, colour: '#6f665c' },
+        { name: 'glazed top storey', u: [.3, W130S - .3], h: [7.6, 10.4], out: .4, depth: .8, colour: '#3e4a50' },
+        { name: 'top storey hood', u: [.1, W130S - .1], h: [10.4, 10.7], out: .5, depth: 1.0, colour: '#ddd6c4' },
+        { name: 'blank yellow board', u: [.2, W130S - .2], h: [3.0, 3.6], out: .1, depth: .06, colour: '#e9c52e' },
+        { name: 'blue awning', u: [0, W130S], h: [3.2, 3.85], out: .12, depth: .24, colour: '#2f4f8f' },
+        { name: 'eating house front', u: [.3, W130S - .3], h: [.13, 3.0], out: .03, depth: .04, colour: '#3a332e', glow: .12 },
+      ],
+    },
+  ],
 };
 
 export const ringA = [corner301, no2, row235, yardNorth, yardHouse, yardSouth, sims126, sims128, sims130];
