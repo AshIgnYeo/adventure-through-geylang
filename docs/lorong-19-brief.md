@@ -31,7 +31,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 13 | East | 1223524381 | Nos. 6–8, a granite-clad block | Done; unnamed; footprint question 44 |
 | 14 | East | 454254246 | No. 4, Sims Point | Done; named; footprint question 44 |
 | 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner: Straits Laundry, Nanyang Hardware and Romance Adult Shop | Done; named after three tenants; footprint question 44 |
-| 16–20 | Geylang Road | 454254262 to 454254254 | Nos. 321 to 313, west from the corner | |
+| 16–20 | Geylang Road | 454254254 to 454254262 | Nos. 313–321, the row between Lorong 17 and Lorong 19 | Done; unnamed for now; row question 45 |
 
 The names in the table are those Google Maps gives for each address. Whether a building is named in the model is decided at its stop.
 
@@ -521,3 +521,44 @@ So the block is named after them, as No. 301 was on Lorong 17. Their boards are 
 Use `?review=straits-laundry-331`.
 
 **East side complete.** Every building from No. 148 Sims Avenue to No. 325 Geylang Road now has its Lorong 19 front.
+
+## Geylang Road, Lorong 17 to Lorong 19
+
+### 16–20. Ways 454254254 to 454254262: the row of Nos. 313–321
+
+A row of two-storey shophouses between the Lorong 17 corner house and No. 323. They are cream, with louvred-shuttered windows under vent bands and corrugated eaves, over five-foot ways.
+
+**Six houses are photographed. From the west:**
+1. A shop under a yellow board with a portrait.
+2. A shop under a dark awning, with an agent's board upstairs reading DAVID and a telephone number.
+3. A salon under a green board reading **马丽发廊 MARY HAIR SALON**, with a green vertical sign.
+4. and 5. Two houses holding a supermarket under blue boards reading **思家客 SCARLETT**, with a striped awning.
+6. A mart under a fruit-stall banner, plated **321**.
+
+**Measurement:**
+- `PcP8…`, `YBiU…`, `0XmL…` and `H9pO…` (June 2024) agree on the row on its **source front**: on that plane the seams between panoramas are cleanest, 1 m either way they double.
+- **Extent:** the row runs **29 m**, from the corner house's party wall at s = −27.6 to No. 323's at +1.4 (s is measured along No. 323's front from its source west corner).
+- **Party walls:** at −23.0, −18.0, −12.85, −8.65 and −2.85.
+- **Six houses** of about 4.5, 5.0, 5.15, 4.2, 5.8 and 4.25 m. The map has **five ways** of 5.3 m for them (26.5 m).
+- **Heights:**
+  - five-foot way: 3.3 m;
+  - ledge: 4.1–4.3 m;
+  - windows: 5.0–6.2 m;
+  - vents: 6.5–6.9 m;
+  - eaves: 7.6–7.9 m.
+
+**Layout:**
+- **Elevation:** the whole elevation is laid proportionally (×0.91) on the five ways and shared out between them by slicing, as Nos. 37–41 Lorong 17 were before open question 37 split them (`geylangRow19` in the layout).
+- **Held flat:** the source fronts stand about 6.3 m from Geylang Road's centreline, at its estimated carriageway's edge. So, as on No. 323's Geylang Road side, street-level pieces are held within 0.25 m of the walls.
+- **Re-cutting the row** into its six houses is [open question 45](open-questions.md).
+
+**Naming:** none for now. Two signs could be named once the row is re-cut:
+- **Scarlett Supermarket @ Geylang:** listed at 317 Geylang Road, operating, with its point in way 454254260 (as is the steamed-bun stall Dough Magic @ Geylang Road Scarlett). But its two houses straddle three source ways.
+- **Mary Hair Salon:** its board is photographed and its listing point lies on the salon's house. But the listing's address is 538 Geylang Road. Mery Salon, at 313, is closed.
+
+**Blank boards:**
+- Lee He Trading, 好鲜生 and Absolute Liquor are listed at 321, but the mart's banner names none of them;
+- Good Bargain (319) is closed;
+- the other boards name no listed business.
+
+Use `?review=gr-l19-row-1` to `?review=gr-l19-row-5`.

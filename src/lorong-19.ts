@@ -1,5 +1,5 @@
 import type { World, Point } from './world';
-import { lorong19 } from './lorong-19-layout.mjs';
+import { lorong19, geylangRow19 } from './lorong-19-layout.mjs';
 import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
 import type { Draw } from './simple-house';
 
@@ -157,9 +157,10 @@ const draws: Draws = {
   },
 };
 
-/** Lorong 19 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */
+/** Lorong 19 between Geylang Road and Sims Avenue, and the Geylang Road row back to Lorong 17; named only where a
+ * listing and a photographed sign agree. */
 export function buildLorong19(world: World, id: string, poly: Point[]) {
-  const place = lorong19.find(p => p.buildingIds.includes(id)) as any;
+  const place = [...lorong19, ...geylangRow19].find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   buildLaneHouse(world, place, poly, draws);
   return true;
