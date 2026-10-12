@@ -7,6 +7,7 @@ import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
 import { buildRingEast } from './ring-east';
 import { buildLorong17 } from './lorong-17';
+import { buildLorong19 } from './lorong-19';
 import { buildRingWest } from './ring-west';
 import { buildRingC } from './ring-c';
 import { buildRingA } from './ring-a';
@@ -188,6 +189,7 @@ export class World {
       if(buildSimsNorthRow(this,b.id,poly))continue;
       if(buildLorong9(this,b.id,poly))continue;
       if(buildLorong17(this,b.id,poly))continue;
+      if(buildLorong19(this,b.id,poly))continue;
       if(buildRingEast(this,b.id,poly))continue;
       if(buildRingWest(this,b.id,poly))continue;
       if(buildRingC(this,b.id,poly))continue;

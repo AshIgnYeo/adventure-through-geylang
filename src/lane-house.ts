@@ -34,14 +34,24 @@ export function buildLaneHouse(world: World, place: any, poly: Point[], draws: D
       world.panel(pt(bl.u + .03, bl.out[1]), pt(bl.u + .03, bl.out[0]), bl.h[0], bl.h[1], m);
     });
   }
-  // Upper volumes: walls round their outline, a flat roof, and their fittings on the front.
+  // Upper volumes: walls round their outline, a flat roof (or a hipped one up to `ridge`), and their fittings on the front.
   for (const up of laneUpper(place, frame) as any[]) {
     const wall = world.mat(up.colour); wall.cull = pc.CULLFACE_NONE; wall.update();
     const pts = up.points as Point[];
     for (let i = 0; i < pts.length; i++) world.panel(pts[i], pts[(i + 1) % pts.length], up.from, up.to, wall);
     const roof = world.mat(up.roof); roof.cull = pc.CULLFACE_NONE; roof.update();
-    const indices: number[] = []; for (let k = 1; k < pts.length - 1; k++) indices.push(0, k, k + 1);
-    world.mesh(`${place.name} upper roof`, pts.flatMap(p => [p[0], up.to, p[1]]), pts.flatMap(() => [0, 0]), indices, roof);
+    if (up.ridge) {
+      // As buildSimpleHouse's hipped roof: the outline at eaves height rising to a ridge outline inset from every side.
+      const c = pts.reduce((s, p) => [s[0] + p[0] / pts.length, s[1] + p[1] / pts.length], [0, 0]), n = pts.length;
+      const inner = pts.map(p => [c[0] + (p[0] - c[0]) * .35, c[1] + (p[1] - c[1]) * .35]);
+      const v = [...pts.flatMap(p => [p[0], up.to, p[1]]), ...inner.flatMap(p => [p[0], up.ridge, p[1]])], idx: number[] = [];
+      for (let i = 0; i < n; i++) { const j = (i + 1) % n; idx.push(i, j, n + j, i, n + j, n + i); }
+      for (let k = 1; k < n - 1; k++) idx.push(n, n + k, n + k + 1);
+      world.mesh(`${place.name} upper hipped roof`, v, v.flatMap((_, i) => i % 3 === 1 ? [] : [v[i] / 3]).slice(0, (v.length / 3) * 2), idx, roof);
+    } else {
+      const indices: number[] = []; for (let k = 1; k < pts.length - 1; k++) indices.push(0, k, k + 1);
+      world.mesh(`${place.name} upper roof`, pts.flatMap(p => [p[0], up.to, p[1]]), pts.flatMap(() => [0, 0]), indices, roof);
+    }
     for (const b of up.boxes) {
       const p = frame.point(b.u, b.out) as Point;
       world.box(`${place.name} ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour, b.glow), undefined, frame.angle);

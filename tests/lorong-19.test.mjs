@@ -1,10 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { project, studyArea } from '../src/geo.mjs';
-import { sourceMap } from './helpers.mjs';
+import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
+import { lorong19, lorong19Frame, lorong19Layout, lorong19Reviews, lorong19Sides, lorong19Upper } from '../src/lorong-19-layout.mjs';
+import { landmarkFor } from '../src/landmarks.mjs';
+import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
 const corridor = name => sourceMap.corridors.find(c => c.name === name);
 const lane = corridor('Lorong 19 Geylang');
+const lanePath = lane.path.map(p => project(p, sourceMap.origin)), laneSegments = lanePath.slice(1).map((b, i) => [lanePath[i], b]);
 // Every metre along a path keeps the 3 m walking margin.
 const walkable = (path, inStudy) => {
   for (let i = 1; i < path.length; i++) {
@@ -35,4 +38,45 @@ test('Lorong 19 is walkable from the Geylang Road centreline to the Sims Avenue 
   for (const name of ['Geylang Road, Lorong 17 to Lorong 19', 'Sims Avenue, Lorong 17 to Lorong 19']) walkable(corridor(name).path.map(p => project(p, sourceMap.origin)), inStudy);
   // The backs of the blocks either side stay outside: between Lorong 17 and Lorong 19, and east towards Lorong 21.
   for (const p of [[188, -40], [195, 10], [262, -40], [265, 0]]) assert.equal(inStudy(p, 0), false, `${p}`);
+});
+
+test('the Lorong 19 exteriors fit their outlines, face the lane and keep their review starts clear', () => {
+  for (const place of lorong19) {
+    const poly = outline(place.buildingIds[0]), frame = lorong19Frame(poly, place);
+    assertFittings(frame, poly, lorong19Layout(place, frame.width).boxes);
+    for (const side of lorong19Sides(place, poly)) assertFittings(side.frame, poly, side.boxes);
+    assertReviews(frame, lorong19Reviews(place, frame));
+    assert.match(place.evidence, /(April|June) 2024/);
+    // Sources cite the source way, or for an authored footprint one of the ways it replaces.
+    const ways = [place.buildingIds[0], ...(building(place.buildingIds[0]).replaces ?? [])];
+    assert.ok(place.sources.some(s => ways.some(w => s.includes(`way/${w}`))), place.id);
+    // Every front looks across the lane: its outward normal points at the nearest point of the lane's centreline.
+    const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
+    assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
+    // Street-level pieces stay clear of the modelled carriageways. A face whose source edge stands at or inside a
+    // carriageway's edge is flagged heldFlat (the whole place, or one side face), and its pieces stay within 0.25 m.
+    const faces = [{ frame, blocks: place.blocks ?? [], heldFlat: place.heldFlat }, ...lorong19Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [], heldFlat: place.heldFlat || place.sides[i].heldFlat }))];
+    for (const { frame: f, blocks, heldFlat } of faces) {
+      const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
+      if (heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+      assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
+    }
+    // Upper volumes stand inside the footprint.
+    for (const up of lorong19Upper(place, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), place.id);
+    if (place.unnamed) {
+      assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+      assert.equal(place.boards, undefined); assert.equal(place.blades, undefined);
+      for (const side of place.sides ?? []) { assert.equal(side.boards, undefined); assert.equal(side.blades, undefined); }
+    } else assert.equal(landmarkFor(place.buildingIds[0]).id, place.id);
+  }
+});
+
+test('Eminent Frog Porridge & Seafood is named on the west corner, No. 323, its listing point inside the way', () => {
+  const place = lorong19.find(p => p.id === 'eminent-frog-porridge');
+  assert.equal(landmarkFor('454254263').id, place.id);
+  assert.equal(pointInPolygon(project([103.879233, 1.3127383], map.origin), outline('454254263')), true);
+  // The lane face runs north from the Geylang Road end; the two-storey block covers its first 22 m.
+  const frame = lorong19Frame(outline('454254263'), place);
+  assert.ok(frame.dz < -.95 && Math.abs(frame.width - 28.71) < .01);
+  assert.equal(place.upper[0].outline[1][0], 22.0);
 });

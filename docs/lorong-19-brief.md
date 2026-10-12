@@ -16,7 +16,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
-| 1 | West | 454254263 | No. 323 Geylang Road, the west corner | |
+| 1 | West | 454254263 | No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood | Done; named; footprint with the Geylang Road row |
 | 2 | West | 454254248 | No. 1, The Primero | |
 | 3 | West | 476113985 | No. 3 | |
 | 4 | West | 454254241 | No. 21, Nanyang Chee Clan Association | |
@@ -34,3 +34,49 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 16–20 | Geylang Road | 454254262 to 454254254 | Nos. 321 to 313, west from the corner | |
 
 The names in the table are those Google Maps gives for each address. Whether a building is named in the model is decided at its stop.
+
+## West side
+
+### 1. Way 454254263: No. 323 Geylang Road, Eminent Frog Porridge & Seafood
+
+A cream two-storey corner shophouse at Geylang Road and Lorong 19. It has salmon pilasters, maroon louvred shutters under louvred vents, a chamfered corner and a deep-eaved hipped roof.
+
+- **Geylang Road front:**
+  - a dark board reading **明輝田雞粥海鮮煮炒店 EMINENT FROG PORRIDGE & SEAFOOD (LOR 19)**, over a yellow frog lightbox;
+  - a larger frog board and red $18 promotion boards at the corner.
+- **Lorong 19 face:** six bays of windows over an arcaded five-foot way under blue Tiger awnings.
+  - **Stall boards between the floors:** Changi Village Nasi Lemak, Heng Wang Seafood, **Eminent Frog Porridge**, Sin Kee Hainan Chicken Rice and B.B.Q Express.
+  - A green **Lor 19 Geylang** street sign on the first bay.
+  - At the north end, a vertical lightbox reading 明輝田雞粥 EMINENT FROG PORRIDGE 323.
+- **Extension:** north of the two-storey block, a lower zinc-roofed shop with red promotion boards.
+
+**Measurement:**
+- **Lane face:** three June 2024 lane panoramas (`_V35…`, `PDfr…`, `ukZW…`) agree on it **3.5 m in front of** the source edge. The depth score between `_V35…` and `PDfr…` peaks sharply there.
+  - On that plane the two-storey block runs from the corner, 0.4 m along the source edge, to its north end, 22.4 m along: about **22 m**, against the 28.71 m source edge.
+  - The extension carries on to about 27 m.
+- **Geylang Road front:** read square-on from `u07Y…` and `H9pO…`, about 0.4 m behind the source front.
+  - It is about **7 m** wide, plus the chamfer.
+  - Its party wall with No. 321 stands about 1.4 m east of the source line.
+- **Result:** the building stands about 3.5 m east of its source outline, and is wider than mapped on Geylang Road.
+- **Heights** (above the five-foot-way floor, the mean of the lane and Geylang Road readings):
+  - five-foot way: 3.75 m;
+  - first-floor ledge: 3.75–3.95 m;
+  - stall boards: 4.05–4.7 m;
+  - windows: 4.6–5.95 m;
+  - vents: 6.15–6.55 m;
+  - eaves: 7.5–7.7 m;
+  - ridge: about 9.4 m.
+
+**Layout:**
+- The elevation is laid at its photographed scale from the corner on the source edges, with no stretching.
+- The two-storey block is a raised volume with a hipped roof over the first 22 m (`upper` in the layout; the shared builder gained hipped upper roofs for it). The extension is the low shell.
+- The Geylang Road front is a side face, laid from the corner (u = s − 3.5), so the westmost 2 m of the photographed front, a plain pilaster, falls off the source edge.
+- The source front stands 0.1 m inside Geylang Road's estimated carriageway, so its street-level pieces are held within 0.25 m of the wall (`heldFlat` on the side).
+- Authoring the footprint on its photographed position waits for the Geylang Road row (stops 16–20), whose party lines are also off their source lines, so the row goes to the owner as one question.
+
+**Naming:** Google Maps lists **Eminent Frog Porridge & Seafood**, a porridge restaurant open until 4 am, at 323 Geylang Road, Singapore 389359. Its point lies inside this way.
+- The listing and the photographed boards agree, so the shop board, both frog boards, the vertical lightbox and Eminent's own stall board are redrawn in original type.
+- The other stall boards are not listed, and stay blank.
+- This is the restaurant that left the Lorong 17 east corner (Lorong 17 stop 24).
+
+Use `?review=eminent-frog-porridge`.
