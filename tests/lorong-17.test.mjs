@@ -61,3 +61,8 @@ test('Feng Shang is named on way 236, with its listing point inside the photogra
   // The front runs north from the back lane.
   assert.ok(frame.dz < -.95);
 });
+
+test('the True Jesus Mission is named on No. 17, with its listing point inside way 272', () => {
+  assert.equal(landmarkFor('454254272').id, 'true-jesus-mission');
+  assert.equal(pointInPolygon(project([103.8786787, 1.3133103], map.origin), outline('454254272')), true);
+});

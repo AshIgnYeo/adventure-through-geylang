@@ -34,6 +34,24 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
     text(c, 'Hair Salon', w * .84, h * .52, h * .5, '#e8e2d0', 'italic 500', 'Georgia, "Times New Roman", serif', w * .26);
   }] },
   'feng-shang@2': { boards: [fengShangBoard] },
+  // Dark slate lettering on white: the parapet reads right to left, the ground-floor board left to right.
+  'true-jesus-mission': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#f4f4f1'; c.fillRect(0, 0, w, h);
+      text(c, '會總會教穌耶眞', w * .5, h * .34, h * .44, '#2f4650', '700', '"Kaiti SC", "STKaiti", serif', w * .9);
+      text(c, 'GENERAL BOARD OF TRUE JESUS MISSION', w * .5, h * .77, h * .2, '#2f4650', '700', sans, w * .9);
+    }, (c, w, h) => {
+      c.fillStyle = '#f4f4f1'; c.fillRect(0, 0, w, h);
+      text(c, '眞耶穌教會總會', w * .5, h * .32, h * .42, '#2a2a2a', '700', '"Kaiti SC", "STKaiti", serif', w * .8);
+      text(c, 'GENERAL BOARD OF TRUE JESUS MISSION', w * .5, h * .76, h * .24, '#2a2a2a', '700', sans, w * .9);
+    }],
+    blades: [(c, w, h) => {
+      c.fillStyle = '#f4f4f1'; c.fillRect(0, 0, w, h); c.strokeStyle = '#2f4650'; c.lineWidth = w * .03; c.strokeRect(w * .04, w * .04, w - w * .08, h - w * .08);
+      [...'眞耶穌教會總會'].forEach((ch, i) => text(c, ch, w * .5, h * (.08 + i * .1), w * .5, '#2f4650', '700', '"Kaiti SC", "STKaiti", serif'));
+      text(c, 'TRUE JESUS', w * .5, h * .83, w * .14, '#2f4650', '700', sans, w * .85);
+      text(c, 'MISSION', w * .5, h * .89, w * .14, '#2f4650', '700', sans, w * .85);
+    }],
+  },
 };
 
 /** Lorong 17 between Geylang Road and Sims Avenue; named only where a listing and a photographed sign agree. */

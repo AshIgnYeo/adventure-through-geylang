@@ -94,7 +94,44 @@ export const row237 = {
   ],
 };
 
-export const lorong17 = [fengShang, row237];
+// ---------------------------------------------------------------------------------------------
+// 4. Way 454254272, No. 17, across a side passage from No. 15: the General Board of True Jesus Mission, a white
+// three-storey building. Its front (edge 0) runs north from the passage. Two pairs of June 2024 panoramas put its
+// ends 5.9 m apart, about 1.6 m south of the source corners and 1-2 m in front of the source edge; read on a plane
+// 1.5 m forward, s from its south corner, and laid on the 5.70 m source edge.
+const W272 = 5.698, at272 = lay(-1.56, W272 / 5.89);
+export const trueJesus = {
+  id: 'true-jesus-mission', buildingIds: ['454254272'], kind: 'true-jesus-mission', frontEdge: 0, reviewRoad: 'Lorong 17 Geylang', review: { distance: 7, pitch: 22 },
+  name: 'General Board of True Jesus Mission (June 2024 exterior)', address: '17 Lorong 17 Geylang',
+  height: 10.9, ceiling: 3.6, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#a7a6a0' },
+  evidence: 'June 2024 Street View shows a white three-storey building across a bollarded side passage from No. 15, door plate 17: a ground floor behind a five-foot way with a board reading 眞耶穌教會總會 GENERAL BOARD OF TRUE JESUS MISSION over a grilled wooden door and a stair; a first floor with two windows under louvred vents, air-conditioners below them and a vertical blade sign at the south corner reading 眞耶穌教會總會 General Board of True Jesus Mission; and a second floor whose balcony parapet repeats the lettering (會總會教穌耶真, read right to left) under two windows and vents, inside a projecting roof frame. Google Maps lists General Board of True Jesus Mission (TJM), a Christian church, at 17 Lorong 17 Geylang, Singapore 388547, with its point inside this way, so the boards, parapet and blade are redrawn in original type. Two pairs of June 2024 panoramas triangulate its two ends 5.9 m apart, about 1.6 m south of the source corners and 1-2 m in front of the source edge; heights were read on a plane 1.5 m forward and the elevation is laid on the 5.70 m source edge, which is kept.',
+  sources: [way('454254272'), search('General Board of True Jesus Mission 17 Lorong 17 Geylang'), pano('qKWw6QiwVVcNE7eOEzxMSA', 250, 22, 105), pano('GX6RAPRapiD3eAKqXG_3uA', 280, 22, 100), pano('zA0hxiYKqVOIl4BIukFCWw', 215, 15, 100)],
+  colours: { wall: '#f1f1ee', trim: '#e7e7e3', frame: '#2c3134', glass: '#3b4448', pier: '#f1f1ee', back: '#e2e1dc', floor: '#a19b90' },
+  bands: [[3.73, 4.0, .3]],
+  windows: [...[[-.89, 1.04], [1.71, 3.62]].map(s => ({ u: at272(s), h: [4.56, 5.73], panes: 3 })), ...[[-.89, 1.04], [1.71, 3.62]].map(s => ({ u: at272(s), h: [8.1, 8.95], panes: 3 }))],
+  vents: [[-.89, 1.04], [1.71, 3.62]].flatMap(s => [{ u: at272(s), h: [5.89, 6.29] }, { u: at272(s), h: [9.07, 9.56] }]),
+  blocks: [
+    { name: 'projecting roof frame', u: [0, W272], h: [10.5, 10.9], out: .25, depth: .5, colour: '#f1f1ee' },
+    ...[[0, .25], [W272 - .25, W272]].map(u => ({ name: 'roof frame side', u, h: [7.0, 10.9], out: .25, depth: .5, colour: '#f1f1ee' })),
+    { name: 'balcony slab', u: [.25, W272 - .25], h: [7.0, 7.15], out: .2, depth: .4, colour: '#e7e7e3' },
+    ...[[-.82, .11], [2.73, 3.67]].map(s => ({ name: 'air conditioner', u: at272(s), h: [4.0, 4.56], out: .3, depth: .5, colour: '#e8e8e4' })),
+  ],
+  // The balcony parapet's lettering, and the board on the back wall of the five-foot way; the blade at the south corner.
+  boards: [{ u: at272([-1.04, 3.84]), h: [7.38, 8.44], out: .42 }, { u: at272([-.67, 2.67]), h: [2.22, 2.89], out: -1.92 }],
+  blades: [{ u: .15, out: [.15, .75], h: [4.0, 7.1] }],
+  piers: [[0, .35], [W272 - .3, W272]],
+  backFittings: [
+    { name: 'grilled wooden door', u: at272([-.38, .96]), h: [.1, 1.95], colour: '#5b3a2a' },
+    { name: 'notice board', u: at272([2.2, 2.8]), h: [1.5, 2.1], colour: '#d9d4c4' },
+    { name: 'stair', u: at272([2.9, 3.67]), h: [.1, 2.9], colour: '#c9b79a' },
+  ],
+  sides: [{
+    edge: 1, // the side passage, u east to the front corner
+    windows: [[6.6, 7.2], [8.2, 8.8]].flatMap(u => [{ u, h: [4.7, 5.6], panes: 1 }, { u, h: [8.2, 9.0], panes: 1 }]).concat([{ u: [8.2, 8.8], h: [1.2, 2.2], panes: 1 }]),
+  }],
+};
+
+export const lorong17 = [fengShang, row237, trueJesus];
 export const lorong17Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong17Layout = (place, width) => simpleHouseLayout(width, place);
 export const lorong17Reviews = (place, frame) => facing(frame, place.id, place.review?.distance ?? 8, place.review?.pitch ?? 18);

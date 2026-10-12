@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ringEast, ringEastFrame, ringEastLayout, ringEastReviews } from '../src/ring-east-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
+import { lorong17 } from '../src/lorong-17-layout.mjs';
 import { assertFittings, assertReviews, outline } from './helpers.mjs';
 
 test('the east-ring exteriors fit their outlines and keep their review starts clear', () => {
@@ -32,9 +33,12 @@ test('No. 134 is massing only, with its awnings on its Lorong 17 face and corner
   for (const [edge, from, to] of place.awnings) assert.ok(from >= 0 && to <= ringEastFrame(poly, { frontEdge: edge }).width);
 });
 
-test('the Lorong 17 west side is massing only, one entry per way, coloured and unnamed', () => {
+test('the Lorong 17 west side walk-ups not yet rebuilt are massing, one entry per way, coloured and unnamed', () => {
   const row = ringEast.filter(p => p.id.startsWith('l17-'));
-  assert.equal(row.length, 11);
+  // Each of the eleven ways is either still massing here or rebuilt with its front in the Lorong 17 layout.
+  const west = ['454254272', '454254273', '454254274', '454254270', '454254271', '454254275', '454254276', '454254277', '454254278', '454254279', '454254280'];
+  const rebuilt = lorong17.flatMap(p => p.buildingIds);
+  for (const id of west) assert.equal(row.some(p => p.buildingIds[0] === id), !rebuilt.includes(id), id);
   const ids = ringEast.flatMap(p => p.buildingIds);
   assert.equal(new Set(ids).size, ids.length);
   for (const place of row) {

@@ -17,7 +17,8 @@ Research and implementation from **12 October 2026**, under the owner's answer t
 | 1 | West | 454254264 | No. 301 Geylang Road, the corner block: its Lorong 17 faces | Done; named Sheng Siong Supermarket and Anytime Fitness Geylang Central |
 | 2 | West | 454254236 | Feng Shang Hair Salon and the north bay | Done; named; footprint question 36 |
 | 3 | West | 454254237 | Nos. 9–15, a row of four shophouses | Done; unnamed |
-| 4–14 | West | 454254272 … 454254280 | The eleven walk-ups | Massing, to rebuild |
+| 4 | West | 454254272 | No. 17, General Board of True Jesus Mission | Done; named |
+| 5–14 | West | 454254273 … 454254280 | The rest of the west row, from the Yang Clan General Association | Massing, to rebuild |
 | 15 | West | 682928766 | No. 130 Sims Avenue, the corner: its Lorong 17 face | To check |
 | 16 | East | 682928733 | No. 134 Sims Avenue, the corner | Massing, to rebuild |
 | 17–18 | East | 454254307, 454254308 | South of No. 134 | To do |
@@ -100,3 +101,22 @@ A row of four white two-storey shophouses under one pitched roof with a front gu
   - 友誼聯誼會 is not listed.
 
 Use `?review=l17-9-15`.
+
+### 4. Way 454254272: No. 17, General Board of True Jesus Mission
+
+The source map leaves a 5.6 m gap between ways 237 and 272. It is a side passage with bollards, so No. 17's south wall is exposed. The building is white and three storeys high:
+
+- **Ground floor:** behind a five-foot way, a board reading 眞耶穌教會總會 GENERAL BOARD OF TRUE JESUS MISSION over a grilled wooden door (door plate 17) and a stair.
+- **First floor:** two windows under louvred vents, with air-conditioners below them and a vertical blade sign at the south corner.
+- **Second floor:** a balcony parapet repeating the lettering (會總會教穌耶真, read right to left) under two windows and vents, inside a projecting roof frame.
+- **Measurement:** `GX6R…` paired with `zA0h…`, and with `qKWw…` (June 2024), triangulate its two ends **5.9 m** apart, about 1.6 m south of the source corners and 1–2 m in front of the source edge. Heights read on a plane 1.5 m forward:
+  - first-floor ledge at 3.73–4.0 m;
+  - first-floor windows at 4.56–5.73 m;
+  - balcony parapet at 7.38–8.44 m;
+  - roof frame to **10.9 m**.
+
+  The east-ring massing had given this way 14 m.
+- **Layout:** laid on the 5.70 m source edge. The south wall on the passage carries five small windows.
+- **Naming:** Google Maps lists **General Board of True Jesus Mission (TJM)**, a Christian church, at 17 Lorong 17 Geylang, Singapore 388547, with its point inside the way. So its boards, parapet and blade are redrawn in original type.
+
+Use `?review=true-jesus-mission`.
