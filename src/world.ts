@@ -1,5 +1,5 @@
 import * as pc from 'playcanvas';
-import {project, nearestOnSegment, roadWidth, pointInPolygon} from './geo.mjs';
+import {project, nearestOnSegment, roadWidth, pointInPolygon, studyArea} from './geo.mjs';
 import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
@@ -66,7 +66,7 @@ import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './t
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
 type Building = {id:string;levels:number|null;street:string|null;number:string|null;coordinates:Point[]};
-export type MapData = {origin:Point;bounds:number[];roads:Road[];buildings:Building[];contextRoads:Road[];paths:{id:string;highway:string;service:string|null;coordinates:Point[]}[]};
+export type MapData = {origin:Point;bounds:number[];corridors?:{name:string;halfWidth:number;path:Point[]}[];roads:Road[];buildings:Building[];contextRoads:Road[];paths:{id:string;highway:string;service:string|null;coordinates:Point[]}[]};
 type Segment={a:Point;b:Point;width:number;name:string;oneway:string;length:number;dx:number;dz:number};
 const palette=['#d4c7a4','#98a796','#c7ad7f','#bc9986','#c2c4b4','#a5b2b0'];
 const fictional=['夜来香 · NIGHT BLOOM','LORONG COFFEE','新月 · NEW MOON','AFTER HOURS','南风 · SOUTH WIND','LUCKY ELEVEN','SILVER SPOON','永安 · EVER PEACE'];
@@ -75,7 +75,7 @@ const color=(hex:string)=>new pc.Color().fromString(hex);
 const TILE=64;
 export class World {
   app:pc.AppBase;data:MapData; segments:Segment[]=[]; footprints:Point[][]=[];
-  bounds:number[]; lamps:pc.Entity[]=[]; emissives:pc.StandardMaterial[]=[];
+  bounds:number[]; inStudy:(p:Point,margin?:number)=>boolean; lamps:pc.Entity[]=[]; emissives:pc.StandardMaterial[]=[];
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
   private tiles=new Map<string,pc.Entity>();private merging=false;
@@ -83,7 +83,7 @@ export class World {
   constructor(app:pc.AppBase,data:MapData,camera:pc.Entity){
     this.app=app;this.data=data;this.camera=camera;
     const low=project([data.bounds[0],data.bounds[1]],data.origin), high=project([data.bounds[2],data.bounds[3]],data.origin);
-    this.bounds=[low[0],high[1],high[0],low[1]];
+    this.bounds=[low[0],high[1],high[0],low[1]];this.inStudy=studyArea(data);
     this.ground=this.mat('#434948');
     this.box('ground',0,-.14,0,1200,.25,1200,this.mat('#454c43'));
     this.sun=new pc.Entity('Evening light');this.sun.addComponent('light',{type:'directional',color:color('#c0d1e4'),intensity:1.1,castShadows:true,shadowDistance:110,shadowResolution:1024,shadowBias:.15,normalOffsetBias:.04});this.sun.setEulerAngles(43,-25,0);app.root.addChild(this.sun);
@@ -265,7 +265,7 @@ export class World {
     this.merging=false;this.mergeTiles();this.setLight('day');
   }
   nearest(p:Point){let distance=Infinity,segment=this.segments[0],point:Point=[0,0];for(const s of this.segments){const n=nearestOnSegment(p,s.a,s.b);if(n.distance<distance){distance=n.distance;segment=s;point=n.point as Point;}}return{distance,segment,point};}
-  canWalk(p:Point){if(p[0]<this.bounds[0]+3||p[0]>this.bounds[2]-3||p[1]<this.bounds[1]+3||p[1]>this.bounds[3]-3)return false;for(const poly of this.footprints){if(pointInPolygon(p,poly))return false;for(let i=0;i<poly.length;i++)if(nearestOnSegment(p,poly[i],poly[(i+1)%poly.length]).distance<.28)return false;}return true;}
+  canWalk(p:Point){if(!this.inStudy(p,3))return false;for(const poly of this.footprints){if(pointInPolygon(p,poly))return false;for(let i=0;i<poly.length;i++)if(nearestOnSegment(p,poly[i],poly[(i+1)%poly.length]).distance<.28)return false;}return true;}
   spawn(){const s=this.segments.find(s=>s.name==='Lorong 11 Geylang'&&s.length>30)!;const p:Point=[s.b[0]-s.dx*16+s.dz*2.1,s.b[1]-s.dz*16-s.dx*2.1];return{p,yaw:Math.atan2(-s.dx,-s.dz)*180/Math.PI+180};}
   lamp(x:number,z:number){this.box('lamp post',x,3.9,z,.1,7.8,.1,this.mat('#6c7976'));this.box('lamp arm',x+.75,7.75,z,1.6,.09,.09,this.mat('#6c7976'));this.box('lamp head',x+1.45,7.69,z,.6,.12,.32,this.mat('#ffdfaa',2));if(this.lamps.length<12){const e=new pc.Entity('street light');e.addComponent('light',{type:'omni',color:color('#ffd393'),intensity:.7,range:13,castShadows:false});e.setPosition(x+1.45,6.8,z);this.app.root.addChild(e);this.lamps.push(e);}}
   planter(x:number,z:number){

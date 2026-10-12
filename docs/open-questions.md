@@ -10,6 +10,25 @@ None at present.
 
 ## Settled
 
+### Seventh batch, answered 12 October 2026
+
+The project owner chose Lorong 17 as the next street and accepted the recommended option for each part of question 35.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 35 | **Yes.** Model Lorong 17 between Geylang Road and Sims Avenue, one building at a time in street order | The lane, its buildings and its two junctions join the map; the walk is recorded in the [Lorong 17 brief](lorong-17-brief.md) |
+
+The original wording of question 35 is kept here:
+
+35. **Lorong 17, Geylang Road to Sims Avenue: how should the street be built?**
+    - **Order:** start at the Geylang Road end, go north up the west side to Sims Avenue, then come back south down the east side. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Sims Avenue. The part of Lorong 17 north of Sims Avenue waits for a later pass.
+    - **Corners:** take in the corner buildings at both ends and stop there. The Geylang Road houses east of the corner, and Sims Avenue Nos. 136 onward, wait for a later pass.
+    - **Map:** add only Lorong 17's own buildings and road ways, not everything a wider rectangle would take in (about ten more, mostly the backs of Lorong 19). The lane and its two junctions become walkable corridors beyond the rectangle.
+    - **Unnamed buildings:** labelled by their Google Maps address and modelled from the photographed façade, with signboards drawn but their lettering left blank, as elsewhere.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-17` branch, each written up in the Lorong 17 brief.
+
 ### Sixth batch, answered 11 October 2026
 
 The project owner chose the recommended option.

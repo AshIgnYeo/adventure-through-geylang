@@ -28,3 +28,11 @@ export function pointInPolygon(p,polygon) {
   return inside;
 }
 export function roadWidth(road) { return road.name.startsWith('Lorong')?6.5:road.lanes*3.2; }
+// The study area in scene metres: the bounds rectangle, plus corridors within `halfWidth` of their paths
+// (Lorong 17, open question 35). A point is inside when it is at least `margin` metres from the edge.
+export function studyArea(map) {
+  const low=project(map.bounds.slice(0,2),map.origin), high=project(map.bounds.slice(2),map.origin);
+  const corridors=(map.corridors??[]).map(c=>({halfWidth:c.halfWidth,path:c.path.map(p=>project(p,map.origin))}));
+  return (p,margin=0)=>(p[0]>low[0]+margin&&p[0]<high[0]-margin&&p[1]>high[1]+margin&&p[1]<low[1]-margin)
+    ||corridors.some(c=>c.path.slice(1).some((b,i)=>nearestOnSegment(p,c.path[i],b).distance<c.halfWidth-margin));
+}

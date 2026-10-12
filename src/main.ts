@@ -58,7 +58,7 @@ async function start(){
     const dx=(Math.cos(rad)*x-Math.sin(rad)*z)*walkSpeed*dt,dz=(-Math.sin(rad)*x-Math.cos(rad)*z)*walkSpeed*dt;
     if(world.canWalk([pos[0]+dx,pos[1]]))pos[0]+=dx;
     if(world.canWalk([pos[0],pos[1]+dz]))pos[1]+=dz;
-    if((Math.abs(dx)+Math.abs(dz)>.005)&&!world.canWalk([pos[0]+dx,pos[1]+dz])&&Date.now()-lastBoundary>5000){if(pos[0]<world.bounds[0]+5||pos[0]>world.bounds[2]-5||pos[1]<world.bounds[1]+5||pos[1]>world.bounds[3]-5){notice('Edge of this street study · Turn back to explore the lorongs');lastBoundary=Date.now();}}
+    if((Math.abs(dx)+Math.abs(dz)>.005)&&!world.canWalk([pos[0]+dx,pos[1]+dz])&&Date.now()-lastBoundary>5000){if(!world.inStudy(pos,5)){notice('Edge of this street study · Turn back to explore the lorongs');lastBoundary=Date.now();}}
     camera.setPosition(pos[0],1.68,pos[1]);camera.setEulerAngles(pitch,yaw,0);
   });
 }
