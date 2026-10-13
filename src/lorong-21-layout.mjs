@@ -1,0 +1,681 @@
+// Lorong 21 between Geylang Road and Sims Avenue (open question 47), built one building at a time as Lorong 19 was:
+// north up the west side, then south down the east side, then west along Sims Avenue to Lorong 19. Each elevation is
+// read on the plane where the panoramas agree, and laid on its source edge, which is kept. Named only where a listing
+// and a photographed sign agree. See docs/lorong-21-brief.md.
+import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
+
+/** A breeze-block screen: a shadowed field crossed by light bars, about 0.4 m by 0.33 m a block. */
+/** A grille over a dark recess (or open, for a railing or gate): bars about 0.25 m apart with three rails. */
+const grille = (name, u, h, out, colour, step = .25, recess = true) => {
+  const [l, r] = u, [b, t] = h, n = Math.max(2, Math.round((r - l) / step));
+  return [
+    ...(recess ? [{ name: `${name} recess`, u, h, out: out - .05, depth: .02, colour: '#34363a' }] : []),
+    ...Array.from({ length: n + 1 }, (_, i) => ({ name, u: [+(l + (r - l) * i / n - .02).toFixed(3), +(l + (r - l) * i / n + .02).toFixed(3)].map(v => Math.min(r, Math.max(l, v))), h, out, depth: .04, colour })),
+    ...[b, (b + t) / 2, t - .05].map(y => ({ name, u, h: [+y.toFixed(3), +(y + .05).toFixed(3)], out, depth: .04, colour })),
+  ];
+};
+const breeze = (u, h, out = .03, colour = '#d8d6cf') => {
+  const [l, r] = u, [b, t] = h, nx = Math.max(1, Math.round((r - l) / .4)), ny = Math.max(1, Math.round((t - b) / .33));
+  return [
+    { name: 'breeze-block screen', u, h, out: out - .02, depth: .02, colour: '#6d6e6a' },
+    ...Array.from({ length: nx + 1 }, (_, i) => ({ name: 'breeze-block web', u: [+(l + (r - l) * i / nx - .04).toFixed(3), +(l + (r - l) * i / nx + .04).toFixed(3)].map(v => Math.min(r, Math.max(l, v))), h, out, depth: .06, colour })),
+    ...Array.from({ length: ny + 1 }, (_, j) => ({ name: 'breeze-block web', u, h: [+(b + (t - b) * j / ny - .04).toFixed(3), +(b + (t - b) * j / ny + .04).toFixed(3)].map(v => Math.min(t, Math.max(b, v))), out, depth: .06, colour })),
+  ];
+};
+
+// ---------------------------------------------------------------------------------------------
+// 1. Way 454254167, Nos. 335-351 Geylang Road, the Lorong 21 west corner: Cheng Yi Coffee Shop. One source outline
+// over two buildings: a white four-storey walk-up of breeze-block screens and balconies at the corner, with Cheng Yi's
+// coffeeshop under maroon awnings, and to its west a five-storey glass block of coloured fins standing forward on
+// Geylang Road. The walk-up's lane face (edge 8, u north from the corner) is read where three April 2024 lane
+// panoramas agree, 3.25 m behind the source edge, from 2.67 m north of the source corner to its north end; its Geylang
+// Road front (edge 9, u east to the corner) 3.0 m behind its source edge, from 4.1 m west of it to the corner; and the
+// glass front (edge 11, u east) 3.6 m behind its source edge, from 8.2 m west of the source corner to 21.3 m along.
+// Each face is laid proportionally on its source edge. The lane and Geylang Road drives disagree on the heights by
+// about 11%; as at No. 323 on Lorong 19, the mean is used (lane readings x0.947, Geylang Road readings x1.059).
+const W8 = 21.862, at8 = s => lay(2.67, W8 / 18.63)(s).map(v => Math.min(W8, Math.max(0, v)));
+const W9 = 26.343, at9 = s => lay(-4.1, W9 / 27.6)(s).map(v => Math.min(W9, Math.max(0, v)));
+const W11 = 26.41, at11 = s => lay(-8.2, W11 / 29.5)(s).map(v => Math.min(W11, Math.max(0, v)));
+const white167 = '#e6e4de', grey167 = '#55585a', frame167 = '#2e3133';
+const rows167 = [[5.3, 6.69], [8.58, 9.94], [11.93, 13.26]];
+// The recessed window panels on each upper floor of the lane face, with a hood over and a ledge under each.
+const panels167 = [[5.1, 7.2], [8.36, 10.47], [11.65, 13.92]].flatMap(([b, t]) => [
+  { name: 'recessed window panel', u: at8([5.67, 13.9]), h: [b, t], out: .01, depth: .02, colour: '#d6d4cd' },
+  { name: 'panel hood', u: at8([5.6, 13.97]), h: [t - .12, t], out: .15, depth: .3, colour: white167 },
+  { name: 'panel ledge', u: at8([5.6, 13.97]), h: [b, b + .12], out: .15, depth: .3, colour: white167 },
+]);
+// The glass block's curtain wall: coloured fins about 0.85 m apart over grey glass, between dark floor lines.
+const finColours167 = ['#e8e6df', '#8a8a68', '#b8b2a2', '#6a6656', '#e8e6df', '#9a8e74'];
+const fins167 = Array.from({ length: 30 }, (_, i) => {
+  const c = .6 + i * .85, w = [.1, .16, .12, .18][i % 4];
+  return { name: 'curtain-wall fin', u: [+c.toFixed(2), +(c + w).toFixed(2)], h: [3.76, 18.32], out: .1, depth: .12, colour: finColours167[i % finColours167.length] };
+});
+export const chengYi = {
+  id: 'cheng-yi', buildingIds: ['454254167'], kind: 'cheng-yi', frontEdge: 8, reviewRoad: 'Lorong 21 Geylang', review: { distance: 6, pitch: 24 },
+  name: 'Cheng Yi Coffee Shop (April and June 2024 exteriors)', address: '351 Geylang Road (the Lorong 21 west corner), with Nos. 335-349 to its west',
+  height: 14.3, ceiling: 3.9, fiveFootWay: 2.2, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'April and June 2024 Street View show two buildings on this source outline at the Lorong 21 west corner of Geylang Road. At the corner, a white four-storey walk-up: on Lorong 21, a recessed panel of windows and louvred vents on each upper floor, a breeze-block screen at its north end and a projecting window bay beyond, over a coffeeshop under maroon awnings; on Geylang Road, balconies, grilled windows and breeze-block columns over a single-storey extension of shops under a zinc lean-to, with a white I-TEC SUPERMART board and a red 5G board, and an overhead bridge landing in front of it. At the corner hang six vertical boards (煮炒, 炖汤, 杂菜饭, 田鸡粥, 肉骨茶, 海鲜烧烤 BBQ) over yellow lettering reading CHENG YI COFFEE SHOP. To its west, standing forward on Geylang Road, is a five-storey glass block of grey glass and coloured fins over a five-foot way on white columns. Google Maps lists Cheng Yi Coffee Shop, a seafood restaurant open until 1 am, at 351 Geylang Road, Singapore 389372, with its point in this way, so the block is named after it and its boards are redrawn in original type, the Chinese characters on its name board, which could not be read, left out; no claim is made about the other premises or the glass block. I-Tec Supermart (347) and the Geylang coffee shop (345) are listed as closed, so their boards are blank. The walk-up\'s lane face triangulates 3.25 m behind the source edge (three April 2024 lane panoramas agree) and runs from 2.67 m north of the source corner to the edge\'s north end; its Geylang Road front stands 3.0 m behind its source edge and the glass front 3.6 m behind its own (three June 2024 Geylang Road pairs each), and the glass block\'s west wall meets No. 325-333\'s block about 8.2 m west of this outline. The satellite agrees on the Geylang Road fronts. The strip between the walk-up and the source lines holds the coffeeshop\'s awnings and the single-storey extension. Each face is laid proportionally on its source edge, pending open question 48. The lane and Geylang Road drives disagree on the heights by about 11%, so, as at No. 323 on Lorong 19, the mean is used: the walk-up\'s parapet at 14.3 m and the glass block\'s top at 18.6 m. The walk-up\'s north wall on the side lane was read only obliquely and its fittings are placed by estimate.',
+  sources: [way('454254167'), search('Cheng Yi Coffee Shop 351 Geylang Road'), pano('RG105fb5zCOqHMW_Jc3YSQ', 250, 15, 90), pano('BBKtpuwk3f2y1WLGHHECJQ', 230, 15, 90), pano('hWp4rWDnHe0RwOI-Bg_jlw', 215, 15, 90), pano('J9oClFBNKf4zlsawptcpqw', 330, 10, 90), pano('vE6QsnnDx9FCAdmLUlUabg', 352, 15, 100), pano('D065AKncXwLwyIGAKe_whQ', 5, 25, 100)],
+  colours: { wall: white167, trim: '#d0cec7', frame: '#3a3c3c', glass: '#4c585c', pier: '#efeee9', back: '#4a4440', floor: '#a8a296' },
+  windows: [
+    ...rows167.flatMap(h => [{ u: at8([5.9, 7.7]), h, panes: 3 }, { u: at8([11.78, 13.67]), h, panes: 3 }]),
+    // The projecting window bay at the north end.
+    ...rows167.map(h => ({ u: at8([19.15, 20.85]), h, panes: 3, out: .38 })),
+  ],
+  vents: [[6.06, 6.53], [9.47, 9.94], [12.88, 13.45]].map(h => ({ u: at8([9.33, 10.44]), h })),
+  blocks: [
+    ...panels167,
+    ...[[3.88, 7.0], [7.39, 10.23], [11.36, 13.64]].flatMap(h => breeze(at8([14.4, 18.8]), h)),
+    ...rows167.map(([b, t]) => ({ name: 'projecting window frame', u: at8([19.0, 21.0]), h: [b - .3, t + .3], out: .2, depth: .4, colour: white167 })),
+    { name: 'parapet coping', u: [0, W8], h: [14.15, 14.3], out: .08, depth: .16, colour: '#d0cec7' },
+    { name: 'maroon awning', u: [.2, 21.6], h: [3.03, 3.85], out: .55, depth: 1.1, colour: '#8a2e32' },
+    ...[[9.0, 9.3], [14.0, 14.3]].map(s => ({ name: 'blank red hanging board', u: at8(s), h: [1.9, 2.7], out: .05, depth: .03, colour: '#c8302a' })),
+  ],
+  piers: [[2.67, 3.1], [4.0, 4.4], [9.1, 9.5], [14.1, 14.5], [18.9, 19.3], [21.0, 21.3]].map(at8),
+  backFittings: [
+    { name: 'coffeeshop with tables', u: at8([3.1, 14.1]), h: [.1, 3.5], colour: '#5a4a40', glow: .1 },
+    { name: 'roller shutter', u: at8([15.9, 18.8]), h: [.1, 3.0], colour: '#a7a9a6' },
+    { name: 'dark doorway', u: at8([19.3, 21.0]), h: [.1, 2.6], colour: '#2e2e2c' },
+  ],
+  // The glass block above the walk-up's parapet, over its part of the outline (outline in this front's frame: the
+  // glass front's two ends, then back to the outline's west rear corner's depth).
+  upper: [{ name: 'glass block', outline: [[-4.228, -52.764], [-4.289, -26.353], [12.44, -26.347], [12.5, -52.758]], from: 14.3, to: 18.64, colour: grey167, roof: '#8f8f8a' }],
+  sides: [{
+    edge: 9, // the walk-up's Geylang Road front, u east from the step at the glass block to the corner
+    windows: [
+      ...[[-4.0, -1.6], [.5, 3.0]].flatMap(s => [
+        { u: at9(s), h: [11.4, 13.5], panes: 3 }, { u: at9(s), h: [7.3, 9.53], panes: 3 }, { u: at9(s), h: [4.5, 6.35], panes: 4 },
+      ]),
+      { u: at9([8.4, 10.4]), h: [12.7, 13.66], panes: 4 },
+      ...[[11.38, 13.66], [7.94, 10.48], [4.77, 6.35]].map(h => ({ u: at9([10.4, 12.9]), h, panes: 3 })),
+      ...[[12.2, 13.6], [8.74, 9.9], [4.77, 6.88]].map(h => ({ u: at9([15.1, 17.0]), h, panes: 2 })),
+      ...[[12.2, 13.6], [8.74, 9.9]].map(h => ({ u: at9([22.0, 23.3]), h, panes: 2 })),
+    ],
+    blocks: [
+      ...[[-4.0, -1.6], [.5, 3.0], [15.1, 17.0], [22.0, 23.5]].flatMap(s => [
+        { name: 'balcony railing', u: at9(s), h: [10.7, 11.75], out: .1, depth: .06, colour: '#d8d8d4' },
+        { name: 'balcony slab', u: at9(s), h: [10.55, 10.7], out: .35, depth: .7, colour: white167 },
+        { name: 'balcony railing', u: at9(s), h: [7.3, 8.05], out: .1, depth: .06, colour: '#d8d8d4' },
+      ]),
+      ...[[-4.0, -1.6], [.5, 3.0]].map(s => ({ name: 'zinc window awning', u: at9(s), h: [6.5, 6.8], out: .3, depth: .6, colour: '#b9bdb8' })),
+      ...breeze(at9([3.1, 4.0]), [4.24, 13.24]),
+      ...breeze(at9([13.0, 14.9]), [4.24, 13.24]),
+      { name: 'parapet coping', u: [0, W9], h: [14.15, 14.3], out: .08, depth: .16, colour: '#d0cec7' },
+      // The single-storey extension of shops under a zinc lean-to, the overhead bridge's landing in front of it.
+      { name: 'zinc lean-to', u: at9([-4.1, 13.0]), h: [3.96, 4.24], out: .5, depth: 1.0, colour: '#9a9c98' },
+      { name: 'shopfronts', u: at9([-4.1, 13.0]), h: [.1, 1.9], out: .02, depth: .04, colour: '#3a4446', glow: .06 },
+      { name: 'blank white I-TEC board', u: at9([-4.1, -2.1]), h: [1.94, 3.97], out: .05, depth: .04, colour: '#f2f2ee' },
+      { name: 'blank red board', u: at9([-2.1, 5.0]), h: [1.9, 3.7], out: .05, depth: .04, colour: '#b8243a' },
+      { name: 'blank supermarket board', u: at9([8.0, 13.0]), h: [1.69, 2.12], out: .05, depth: .04, colour: '#e8e2cc' },
+      { name: 'coffeeshop', u: at9([14.0, 23.5]), h: [.1, 1.9], out: .02, depth: .04, colour: '#5a4a40', glow: .1 },
+      { name: 'maroon awning', u: at9([14.0, 23.5]), h: [1.9, 2.75], out: .9, depth: 1.8, colour: '#8a2e32' },
+      { name: 'blank green stall banner', u: at9([19.6, 21.6]), h: [2.85, 3.5], out: .1, depth: .03, colour: '#2e8a4a' },
+    ],
+    // Cheng Yi's name board, and its six vertical boards along the corner.
+    boards: [
+      { u: at9([20.0, 23.2]), h: [3.81, 4.13], out: .12 },
+      ...Array.from({ length: 6 }, (_, i) => ({ u: [+(21.8 + i * .79).toFixed(2), +(22.35 + i * .79).toFixed(2)], h: [4.24, 5.61], out: .15 })),
+    ],
+  }, {
+    edge: 11, // the glass block's Geylang Road front, u east
+    blocks: [
+      { name: 'grey glass', u: [0, W11], h: [3.76, 18.32], out: .02, depth: .04, colour: '#7d8a8c' },
+      ...fins167,
+      ...[6.88, 10.48, 14.19].map(h => ({ name: 'dark floor line', u: [0, W11], h: [h - .06, h + .06], out: .17, depth: .16, colour: frame167 })),
+      { name: 'dark top frame', u: [0, W11], h: [18.32, 18.64], out: .14, depth: .28, colour: frame167 },
+      ...[[0, .25], [W11 - .25, W11]].map(u => ({ name: 'dark side frame', u, h: [2.54, 18.64], out: .14, depth: .28, colour: frame167 })),
+      { name: 'dark fascia', u: [0, W11], h: [2.54, 3.76], out: .2, depth: .4, colour: frame167 },
+      { name: 'glazed shopfronts', u: [.3, W11 - .3], h: [.1, 2.5], out: .02, depth: .04, colour: '#3a4446', glow: .06 },
+      ...[[.4, .8], [4.5, 4.9], [9.5, 9.9], [14.7, 15.1], [19.0, 19.4]].map(s => ({ name: 'white column', u: at11(s), h: [.1, 2.54], out: .2, depth: .35, colour: '#efeee9' })),
+    ],
+  }, {
+    edge: 10, // the step between the glass front and the walk-up's: the glass block's dark east wall
+    blocks: [{ name: 'dark cladding', u: [0, 4.339], h: [3.9, 14.3], out: .02, depth: .02, colour: grey167 }],
+  }, {
+    edge: 0, // the glass block's west wall, seen past No. 325-333's block
+    blocks: [{ name: 'dark cladding', u: [0, 16.727], h: [.13, 14.3], out: .02, depth: .02, colour: grey167 }],
+  }, {
+    edge: 7, // the walk-up's north wall on the side lane, u west from the lane corner, its fittings placed by estimate
+    windows: rows167.map(h => ({ u: [2.6, 6.4], h, panes: 4, out: .32 })),
+    blocks: [
+      ...breeze([.4, 2.2], [3.88, 13.64]),
+      { name: 'projecting glazed bay', u: [2.4, 6.6], h: [4.9, 13.7], out: .15, depth: .3, colour: white167 },
+      { name: 'zinc awning', u: [2.4, 6.8], h: [6.85, 7.1], out: .5, depth: 1.0, colour: '#b9bdb8' },
+      { name: 'zinc lean-to', u: [0, 7.5], h: [2.6, 3.0], out: .6, depth: 1.2, colour: '#9a9c98' },
+      { name: 'blank yellow stall canopy', u: [.5, 6.5], h: [2.25, 2.6], out: .3, depth: .6, colour: '#e8b830' },
+      { name: 'drinks stall', u: [.3, 7.0], h: [.1, 2.2], out: .02, depth: .04, colour: '#6a5a48', glow: .1 },
+    ],
+  }],
+};
+
+// ---------------------------------------------------------------------------------------------
+// 2-3. Ways 1223524387 and 1223524388, Nos. 5 and 7: a weathered cream three-storey walk-up pair under a hipped roof
+// with deep eaves, sharing a stair lit by a breeze-block screen, set back behind a boundary wall. The front was read on
+// one plane along No. 7's front (s north from the party wall, d towards the lane): the stair screen, followed between
+// three April 2024 panoramas, stands 0.2 m behind the source line, where the pair runs from s = -8.2 to 8.3 with the
+// party line at the screen's centre (0.4), against the source ways' -6.74 to 6.72. Each house is laid proportionally on
+// its own source edge (u north from its south end). The boundary wall triangulates 7.1 m in front.
+const pairNote = ' Nos. 5 and 7 are one walk-up pair, read together on one plane along No. 7\'s front: three April 2024 lane panoramas (-BDV5..., 8yiH..., O-hH...) agree on the stair screen 0.2 m behind the source line, where the pair runs about 16.5 m, from 8.2 m south of the party wall to 8.3 m north of it, against the 13.5 m of the two source ways, with the party line at the screen\'s centre. Each house is laid proportionally on its own source edge. The boundary wall, followed between two panoramas by its letterbox panel, stands about 7.1 m in front of the houses. Heights were read on the façade\'s plane: eaves at 9.5-10.0 m and the hipped roof to about 10.9 m.';
+const cream5 = '#e4dcc4', W5 = 6.736, W7 = 6.718;
+const at5 = s => lay(-8.2, W5 / 8.6)(s).map(v => Math.min(W5, Math.max(0, v))), at7 = s => lay(.4, W7 / 7.9)(s).map(v => Math.min(W7, Math.max(0, v)));
+const pairCommon5 = {
+  kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 21 Geylang', review: { distance: 10, pitch: 22 },
+  height: 9.6, ceiling: 2.5, fiveFootWay: .3, roof: { type: 'hip', ridge: 10.9, colour: '#6e6b66' },
+  colours: { wall: cream5, trim: '#d6cdb2', frame: '#3a3836', glass: '#46504e', pier: cream5, back: '#5a5650', floor: '#a8a296' },
+};
+const eaves5 = w => ({ name: 'deep eaves', u: [0, w], h: [9.5, 9.95], out: .5, depth: 1.0, colour: '#5e5b56' });
+const brownBreeze5 = at => [...breeze(at([-.81, 1.63]), [5.4, 9.4], .05, '#b8864e'), ...breeze(at([-.81, 1.63]), [2.9, 4.75], .05, '#e2e0d8')];
+export const no5 = {
+  ...pairCommon5, id: 'l21-5', buildingIds: ['1223524387'],
+  name: 'No. 5 Lorong 21 (April 2024 exterior, occupants not identified)', address: '5 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the south half of a weathered cream three-storey walk-up pair north of the side lane by the Geylang Road corner block, behind a grey boundary wall with letterboxes reading 5, 5A and 5B: a window and a balcony with a railing on the top floor, a window and a balcony enclosed in a brick-red grille on the first, grilled windows and a door under a zinc awning on the ground floor, and the shared stair lit by a brown breeze-block screen over a white one. No sign was photographed. Google Maps gives a geocoded address for 5 Lor 21 Geylang and lists New Century Realty & Trading Co there, but its point lies in the corner block and no sign for it was photographed, so no name is given.' + pairNote,
+  sources: [way('1223524387'), search('5 Lorong 21 Geylang'), pano('8yiH4E0hcM3Bdr1egBGv2Q', 270, 15, 80), pano('-BDV5dezAGqUQQ_NAmVgew', 265, 15, 80)],
+  windows: [
+    { u: at5([-7.6, -5.4]), h: [7.25, 8.8], panes: 2 }, { u: at5([-4.0, -1.65]), h: [7.25, 8.8], panes: 3 },
+    { u: at5([-7.6, -5.4]), h: [4.0, 5.7], panes: 2 }, { u: at5([-5.0, -1.3]), h: [3.6, 5.8], panes: 3 },
+    { u: at5([-7.75, -5.7]), h: [.85, 1.9], panes: 3 }, { u: at5([-4.3, -1.3]), h: [.5, 2.1], panes: 3 },
+  ],
+  blocks: [
+    eaves5(W5),
+    ...grille('balcony railing', at5([-5.25, -1.03]), [7.1, 7.9], .9, '#3a3836', .15, false),
+    { name: 'balcony slab', u: at5([-5.25, -1.03]), h: [6.6, 7.1], out: .5, depth: 1.0, colour: '#d6cdb2' },
+    ...grille('brick-red balcony grille', at5([-5.25, -1.03]), [3.2, 6.0], .9, '#9a4a3a'),
+    { name: 'floor ledge', u: [0, W5], h: [6.5, 6.6], out: .15, depth: .3, colour: '#d6cdb2' },
+    ...brownBreeze5(at5),
+    { name: 'zinc awning', u: at5([-8.0, 0]), h: [2.5, 2.9], out: .6, depth: 1.2, colour: '#9a9c98' },
+    // The grey boundary wall along the pavement, with the pair's letterboxes and a black gate.
+    ...[[0, at5([-3.6, -3.6])[0]], [at5([-2.0, -2.0])[0], W5]].map(u => ({ name: 'boundary wall', u, h: [0, 1.9], out: 7.1, depth: .2, colour: '#b8b5ad' })),
+    ...grille('black gate', at5([-3.6, -2.0]), [0, 1.9], 7.1, '#2a2a2a', .15, false),
+    { name: 'letterboxes', u: at5([-.6, .3]), h: [.6, 1.5], out: 7.22, depth: .04, colour: '#e8e6e0' },
+  ],
+};
+export const no7 = {
+  ...pairCommon5, id: 'l21-7', buildingIds: ['1223524388'],
+  name: 'No. 7 Lorong 21 (April 2024 exterior, occupants not identified)', address: '7 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the north half of the walk-up pair behind the same boundary wall, its car gate plated 7 in red: a balcony with a railing and a window on the top floor, and a balcony enclosed in a white grille on the first; a white festival tent stands over its forecourt, and is not modelled. No sign was photographed. Google Maps lists MP Express Services and the closed Di Zhong Hai Buffet Steamboat at 7 Lor 21 Geylang, but their points lie in the corner block and no sign for either was photographed, so no name is given.' + pairNote,
+  sources: [way('1223524388'), search('7 Lorong 21 Geylang'), pano('8yiH4E0hcM3Bdr1egBGv2Q', 270, 15, 80), pano('O-hHiRaRl86cXbRRvIT4bg', 245, 15, 80)],
+  windows: [
+    { u: at7([2.2, 5.9]), h: [7.25, 8.65], panes: 4 }, { u: at7([6.22, 8.19]), h: [7.25, 8.8], panes: 2 },
+    { u: at7([2.2, 7.4]), h: [4.1, 6.0], panes: 4 },
+  ],
+  blocks: [
+    eaves5(W7),
+    ...grille('balcony railing', at7([1.78, 6.16]), [7.1, 7.9], .9, '#3a3836', .15, false),
+    { name: 'balcony slab', u: at7([1.78, 6.16]), h: [6.6, 7.1], out: .5, depth: 1.0, colour: '#d6cdb2' },
+    ...grille('white balcony grille', at7([1.9, 7.6]), [3.9, 6.3], .9, '#e8e8e4'),
+    { name: 'floor ledge', u: [0, W7], h: [6.5, 6.6], out: .15, depth: .3, colour: '#d6cdb2' },
+    ...brownBreeze5(at7),
+    { name: 'boundary wall', u: [0, at7([4.6, 4.6])[0]], h: [0, 1.9], out: 7.1, depth: .2, colour: '#b8b5ad' },
+    ...grille('black car gate', at7([4.6, 8.3]), [0, 1.9], 7.1, '#2a2a2a', .15, false),
+  ],
+  backFittings: [{ name: 'grilled ground floor', u: at7([1.0, 8.0]), h: [.1, 2.3], colour: '#4a4a46' }],
+};
+
+// ---------------------------------------------------------------------------------------------
+// 4-8. Ways 1223524384, 1223524383, 1223524382, 1223524385 and 1223524386, Nos. 9, 11, 15, 17 and 19: a two-storey
+// terrace over five-foot ways, cream at both ends and grey between. Read on one plane along No. 9's front (s north from
+// its south corner): the lane panoramas' depth scores peak 3.5-4 m forward on the festival tents, but No. 9's gold
+// emblem, followed between four panoramas, and the strongest pair (OXhE..., m4CG...) put the upper façade about 1.5 m
+// in front of the source line. On that plane the party walls stand at s = 0, 7.0, 13.4, 19.7, 26.0 and 32.2, against
+// the source's 0, 6.41, 12.82, 19.22, 25.62 and 32.02; each house is laid proportionally on its own source edge.
+const rowNote9 = ' The five houses from No. 9 to No. 19 were read together on one plane along No. 9\'s front: the April 2024 lane panoramas\' depth scores peak 3.5-4 m in front of the source line, on the festival tents, but No. 9\'s gold emblem, followed between four panoramas (8yiH..., O-hH..., OXhE..., m4CG...), and the strongest pair put the upper façades about 1.5 m in front of it. On that plane the party walls stand 0, 7.0, 13.4, 19.7, 26.0 and 32.2 m along, within 0.6 m of the source ones, and each elevation is laid proportionally on its own source edge. Heights were read on that plane: the first-floor ledge at 3.1-3.4 m, windows at about 4.5-6.1 m under louvred vents, and parapets at 7.8-8.0 m.';
+const walls9 = [0, 7.0, 13.4, 19.7, 26.0, 32.2], widths9 = [6.412, 6.403, 6.401, 6.398, 6.4];
+const onHouse9 = i => { const k = widths9[i] / (walls9[i + 1] - walls9[i]); return s => s.map(v => Math.min(widths9[i], Math.max(0, +((v - walls9[i]) * k).toFixed(3)))); };
+const row9 = (i, colour) => ({
+  frontEdge: 0, reviewRoad: 'Lorong 21 Geylang', review: { distance: 7, pitch: 16 },
+  height: 7.8, ceiling: 3.1, fiveFootWay: 1.6, roof: { type: 'flat', colour: '#8f8c86' },
+  colours: { wall: colour, trim: '#d6d2c6', frame: '#3a3c3c', glass: '#4a5658', pier: colour, back: '#4a4642', floor: '#a8a296' },
+  piers: [[0, .35], [widths9[i] - .35, widths9[i]]],
+});
+// The grey houses' three windows under louvred vents, a dark parapet band and the ledge over the five-foot way.
+const grey9 = (i, spans) => {
+  const at = onHouse9(i), W = widths9[i];
+  return {
+    windows: spans.map(s => ({ u: at(s), h: [4.5, 6.1], panes: 2, surround: true })),
+    vents: spans.map(s => ({ u: at(s), h: [6.2, 6.6] })),
+    blocks: [
+      { name: 'dark parapet band', u: [0, W], h: [7.0, 7.75], out: .06, depth: .12, colour: '#5e5f5c' },
+      { name: 'first-floor ledge', u: [0, W], h: [3.1, 3.4], out: .15, depth: .3, colour: '#8e8c84' },
+    ],
+  };
+};
+const grey9Colour = '#9c9a92';
+const grey9Sources = (w, h) => [way(w), search(`${h} Lorong 21 Geylang`), pano('OXhE51eBCy3ZbCoxdt3SnA', 262, 15, 80), pano('m4CGRqdMRofN0Fz0583zBw', 262, 15, 80)];
+export const nyingmaKathok = {
+  ...row9(0, '#efe9d8'), id: 'nyingma-kathok', buildingIds: ['1223524384'], kind: 'nyingma-kathok',
+  name: 'Nyingma Kathok Buddhist Centre (April 2024 exterior)', address: '9 Lorong 21 Geylang', height: 8.0,
+  evidence: 'April 2024 Street View shows a cream two-storey house at the south end of the terrace, three windows in raised surrounds on its upper floor under a deep cornice, a cream vertical board on its south pilaster reading 宁玛噶陀 NYINGMA KATHOK under an emblem, and a gold dharma wheel between two gold deer on the ledge over its five-foot way; below, a wooden door and a glazed front under a Tibetan valance, with a framed board reading 宁玛噶陀佛学会 NYINGMA KATHOK BUDDHIST CENTRE under a line of Tibetan script. Google Maps lists Nyingma Kathok Buddhist Centre, a Buddhist temple, at 9 Lor 21 Geylang, Singapore 388456; its point lies in the walk-up pair next door, but the address and the signs agree on this house, so it is named (as at Crystal Mansions, open question 32), and its boards are redrawn in original type, the Tibetan script drawn as a plain gold band. L E Fashion, also listed at No. 9, is closed.' + rowNote9,
+  sources: [way('1223524384'), search('Nyingma Kathok Buddhist Centre 9 Lorong 21 Geylang'), pano('O-hHiRaRl86cXbRRvIT4bg', 255, 15, 80), pano('OXhE51eBCy3ZbCoxdt3SnA', 228, 15, 60)],
+  windows: [[1.3, 2.6], [3.2, 4.6], [5.1, 6.6]].map(s => ({ u: onHouse9(0)(s), h: [4.6, 6.15], panes: 2, surround: true })),
+  blocks: [
+    { name: 'deep cornice', u: [0, 6.412], h: [7.3, 7.6], out: .35, depth: .7, colour: '#e6dfcc' },
+    { name: 'first-floor ledge', u: [0, 6.412], h: [3.1, 3.4], out: .2, depth: .4, colour: '#e6dfcc' },
+    { name: 'gold dharma wheel', u: onHouse9(0)([3.25, 3.75]), h: [3.4, 4.25], out: .3, depth: .1, colour: '#d4a838', glow: .15 },
+    ...[[2.6, 3.1], [3.9, 4.4]].map(s => ({ name: 'gold deer', u: onHouse9(0)(s), h: [3.4, 3.85], out: .3, depth: .1, colour: '#d4a838', glow: .15 })),
+    { name: 'Tibetan valance', u: onHouse9(0)([2.3, 6.6]), h: [2.1, 2.45], out: .05, depth: .04, colour: '#b8302a' },
+    { name: 'drainpipe', u: onHouse9(0)([6.65, 6.85]), h: [.1, 7.8], out: .1, depth: .1, colour: '#e8e6e0' },
+  ],
+  // The vertical board on the south pilaster, and the framed board over the door.
+  boards: [{ u: onHouse9(0)([.1, .75]), h: [3.7, 7.2], out: .12 }, { u: onHouse9(0)([3.5, 5.9]), h: [2.55, 3.0], out: -1.55 }],
+  backFittings: [
+    { name: 'wooden door', u: onHouse9(0)([.9, 1.9]), h: [.1, 2.5], colour: '#a8683a' },
+    { name: 'glazed front', u: onHouse9(0)([2.3, 6.6]), h: [.1, 2.1], colour: '#3e4a4c', glow: .08 },
+  ],
+};
+export const no11 = {
+  ...row9(1, grey9Colour), ...grey9(1, [[7.7, 8.96], [9.64, 10.94], [11.6, 12.86]]), id: 'l21-11', buildingIds: ['1223524383'], kind: 'unnamed', unnamed: true,
+  name: 'No. 11 Lorong 21 (April 2024 exterior, occupants not identified)', address: '11 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows a weathered grey two-storey house north of the Nyingma Kathok Buddhist Centre, three windows under louvred vents on its upper floor and a dark parapet band, over an open five-foot way stacked with goods. Google Maps lists Leong Yew Textiles at 11 Lor 21 Geylang, but its point lies in the corner block and no sign for it was photographed, so no name is given.' + rowNote9,
+  sources: grey9Sources('1223524383', 11),
+  backFittings: [{ name: 'open shop with goods', u: [.5, 6.0], h: [.1, 2.6], colour: '#5a5650', glow: .05 }, { name: 'air-conditioner', u: onHouse9(1)([8.0, 8.6]), h: [3.6, 4.1], out: 1.6, colour: '#e8e8e4' }],
+};
+export const no15 = {
+  ...row9(2, grey9Colour), ...grey9(2, [[14.0, 15.34], [15.96, 17.24], [17.96, 19.24]]), id: 'l21-15', buildingIds: ['1223524382'], kind: 'unnamed', unnamed: true,
+  name: 'No. 15 Lorong 21 (April 2024 exterior, occupants not identified)', address: '15 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the second grey two-storey house of the terrace, like No. 11, its five-foot way hidden behind a yellow tarpaulin and a red-and-white festival tent that run on past Nos. 17 and 19 and are not modelled. No business is listed at the address and no sign was photographed.' + rowNote9,
+  sources: grey9Sources('1223524382', 15),
+  backFittings: [{ name: 'roller shutter', u: [.5, 5.9], h: [.1, 2.7], colour: '#9a9c98' }],
+};
+export const no17 = {
+  ...row9(3, grey9Colour), ...grey9(3, [[20.3, 21.6], [22.25, 23.55], [24.2, 25.5]]), id: 'l21-17', buildingIds: ['1223524385'], kind: 'unnamed', unnamed: true,
+  name: 'No. 17 Lorong 21 (April 2024 exterior, occupants not identified)', address: '17 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the third grey two-storey house of the terrace, a grilled window and a grilled gate in its five-foot way, hung with red festival banners behind the tent, which are not modelled. No business is listed at the address and no sign was photographed.' + rowNote9,
+  sources: grey9Sources('1223524385', 17),
+  backFittings: [
+    { name: 'grilled window', u: [.7, 2.6], h: [.8, 2.3], colour: '#4a5450' },
+    { name: 'grilled gate', u: [3.0, 5.6], h: [.1, 2.4], colour: '#6a7470' },
+  ],
+};
+export const beiChenGong = {
+  ...row9(4, '#ece4cc'), id: 'bei-chen-gong', buildingIds: ['1223524386'], kind: 'bei-chen-gong', height: 8.0,
+  name: 'Bei Chen Gong Association (April 2024 exterior)', address: '19 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows a cream two-storey house at the north end of the terrace, three windows under louvred vents on its upper floor, its blank north wall on the open car park beyond; its five-foot way is a temple front, a doorway under a red banner reading 玄天上帝, hung with lanterns lettered 北辰宫, during a festival whose tent, altar and flags stand in the lane and are not modelled. Google Maps lists Bei Chen Gong Association, a religious destination, at 19 Lor 21 Geylang, Singapore 388462, with its point inside this way, so it is named after its lanterns, and the banner and a lantern are redrawn in original type.' + rowNote9,
+  sources: [way('1223524386'), search('Bei Chen Gong Association 19 Lorong 21 Geylang'), pano('m4CGRqdMRofN0Fz0583zBw', 312, 5, 40), pano('pgGtqEQ_mct-AU8DVUWYMA', 263, 10, 80), pano('TpCeu2XK3GzOs0Ju4fwGbA', 210, 10, 60)],
+  windows: [[26.6, 27.9], [28.5, 29.8], [30.5, 31.76]].map(s => ({ u: onHouse9(4)(s), h: [4.6, 6.1], panes: 2, surround: true })),
+  vents: [[26.6, 27.9], [28.5, 29.8], [30.5, 31.76]].map(s => ({ u: onHouse9(4)(s), h: [6.25, 6.6] })),
+  blocks: [
+    { name: 'cornice', u: [0, 6.4], h: [7.4, 7.6], out: .2, depth: .4, colour: '#e2d9bf' },
+    { name: 'first-floor ledge', u: [0, 6.4], h: [3.1, 3.4], out: .15, depth: .3, colour: '#e2d9bf' },
+  ],
+  // The red banner over the doorway, and a lantern lettered with the temple's name.
+  boards: [{ u: onHouse9(4)([27.0, 31.4]), h: [2.65, 3.0], out: -1.55 }, { u: onHouse9(4)([27.2, 27.75]), h: [2.0, 2.6], out: .3 }],
+  backFittings: [
+    { name: 'grilled window', u: onHouse9(4)([26.3, 27.4]), h: [.8, 2.3], colour: '#4a5450' },
+    { name: 'temple doorway', u: onHouse9(4)([28.0, 30.2]), h: [.1, 2.6], colour: '#5a2a24', glow: .12 },
+  ],
+};
+
+// ---------------------------------------------------------------------------------------------
+// 9. Way 454254329, 29 Lorong Bachok, the Lorong Bachok corner: Tan Ser Seng Herbal Soup 陳生成, a grey stuccoed
+// two-storey corner shophouse with a splayed corner under a curved parapet cap, its long side on Lorong 21 (edge 3, u
+// north from the Bachok corner). Its two grilled windows near the north end, which disagree by 4-5 m between three April
+// 2024 lane panoramas on the source plane, agree within 0.5 m on a plane 3.25 m in front of it, as do the depth scores
+// (3.0-3.5 m). On that plane the face runs from the splay, 1.3 m from the Bachok corner, to the back lane, 26.1 m
+// along; it is laid proportionally on the 26.5 m source edge.
+const W329 = 26.495, at329 = s => lay(1.3, W329 / 24.8)(s).map(v => Math.min(W329, Math.max(0, v)));
+const grey329 = '#a8a49a', wins329 = [[4.8, 5.9], [7.6, 8.7], [10.5, 11.6], [12.5, 13.7], [15.4, 16.6], [17.9, 19.0], [20.9, 22.05], [23.4, 24.6]];
+export const tanSerSeng = {
+  id: 'tan-ser-seng', buildingIds: ['454254329'], kind: 'tan-ser-seng', frontEdge: 3, reviewRoad: 'Lorong 21 Geylang', review: { distance: 8, pitch: 16 },
+  name: 'Tan Ser Seng Herbal Soup (April 2024 exterior)', address: '29 Lorong Bachok (the Lorong Bachok corner of Lorong 21)',
+  height: 8.5, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'hip', ridge: 10.2, colour: '#b4553d' },
+  evidence: 'April 2024 Street View shows a grey stuccoed two-storey corner shophouse at Lorong 21 and Lorong Bachok, with a splayed corner under a curved parapet cap carrying a red-framed board reading 陳生成 TAN SER SENG HERBAL SOUP SINCE 1946; along Lorong 21, eight windows under louvred vents, two of them grilled, below a red moulding and a plain parapet, over an open coffeeshop under red-and-green striped awnings on square columns, closed at the north end by a white wall and a door on the back lane. Google Maps lists Tan Ser Seng Herbal Soup 陳生成山瑞补品, a soup shop, at 29 Lor Bachok, with its point in the house next door to the west, and a herbal soup store at the same address with its point inside this way; the address and the board agree on this house, so it is named and its board is redrawn in original type. Three April 2024 lane panoramas agree on the Lorong 21 face 3.25 m in front of the source edge, where it runs from the splay, 1.3 m from the Bachok corner, to the back lane, 26.1 m along, against the 26.5 m source edge; it is laid proportionally on that edge. Heights were read on that plane: awnings at 2.6-3.75 m, windows at 4.6-5.9 m under vents at 6.0-6.5 m, the red moulding at 7.6-7.8 m and the parapet at 8.5 m, the corner cap to about 9.2 m.',
+  sources: [way('454254329'), search('Tan Ser Seng Herbal Soup 29 Lorong Bachok'), pano('ASmmf_U74831L5MzgK5kkw', 285, 15, 80), pano('02JzN2zcLThkH0ZkrerNlw', 260, 15, 80), pano('CWWn89B8KiWH0q7GYJwcSQ', 245, 15, 80), pano('JdEaA4aRTSoZtkCgy0gPBw', 300, 10, 80)],
+  colours: { wall: grey329, trim: '#b8b4aa', frame: '#3a3c3c', glass: '#4a5658', pier: '#b0aca2', back: '#e8e6e0', floor: '#a8a296' },
+  windows: wins329.map((s, i) => ({ u: at329(s), h: [4.6, 5.9], panes: i >= 6 ? 4 : 2 })),
+  vents: wins329.map(s => ({ u: at329(s), h: [6.0, 6.5] })),
+  blocks: [
+    { name: 'red moulding', u: [0, W329], h: [7.6, 7.8], out: .1, depth: .2, colour: '#a8433a' },
+    { name: 'parapet coping', u: [0, W329], h: [8.35, 8.5], out: .1, depth: .2, colour: '#b8b4aa' },
+    { name: 'curved parapet cap', u: at329([1.3, 3.9]), h: [8.5, 9.2], out: .05, depth: .3, colour: grey329 },
+    { name: 'first-floor slab', u: [0, W329], h: [3.75, 3.95], out: .15, depth: .3, colour: '#b8b4aa' },
+    ...Array.from({ length: 13 }, (_, i) => ({ name: 'striped awning', u: [+(i * W329 / 13).toFixed(3), +((i + 1) * W329 / 13).toFixed(3)], h: [2.6, 3.75], out: .6, depth: 1.2, colour: i % 2 ? '#2e7a5a' : '#c8505a' })),
+  ],
+  // The corner board on the splay.
+  boards: [{ u: at329([1.6, 3.8]), h: [5.5, 7.75], out: .12 }],
+  piers: [[1.3, 2.1], [3.6, 4.6], [9.4, 10.25], [14.25, 15.1], [19.4, 20.25], [25.4, 26.1]].map(at329),
+  backFittings: [
+    { name: 'coffeeshop with tables', u: at329([2.1, 24.0]), h: [.1, 3.0], colour: '#e6e2d8', glow: .06 },
+    { name: 'back wall and door', u: at329([24.0, 25.4]), h: [.1, 2.2], colour: '#6a6a66' },
+  ],
+  sides: [{
+    edge: 0, // the Lorong Bachok front, u west from the corner
+    windows: [{ u: [1.8, 3.0], h: [4.6, 5.9], panes: 2 }],
+    vents: [{ u: [1.8, 3.0], h: [6.0, 6.5] }],
+    blocks: [
+      { name: 'red moulding', u: [0, 5.83], h: [7.6, 7.8], out: .1, depth: .2, colour: '#a8433a' },
+      { name: 'striped awning', u: [0, 5.83], h: [2.6, 3.75], out: .3, depth: .6, colour: '#2e7a5a' },
+      { name: 'coffeeshop', u: [.4, 5.5], h: [.1, 2.6], out: .02, depth: .04, colour: '#e6e2d8', glow: .06 },
+    ],
+  }],
+};
+
+// ---------------------------------------------------------------------------------------------
+// 10. Way 454254330, No. 178 Sims Avenue, the Lorong 21 west corner: a white two-storey corner house of 1929 under a
+// hipped tiled roof with a small gable at the corner, blue timber casements behind louvred shutters, and an arched
+// five-foot way on round columns. Its lane face (edge 2, u north from the back lane to the splay) is read where three
+// April 2024 lane panoramas agree, 3.75 m behind the source edge, which stands inside the lane's estimated carriageway:
+// it runs from 1.0 m south of the source end to the splay, 15.3 m along. Its Sims Avenue front (edge 0, u west from the
+// splay) stands 1.85 m behind its source edge, from 0.7 m to its party wall with No. 176, 4.7 m along. Each face is
+// laid proportionally on its source edge, with the corner on the source splay (edge 1).
+const W330 = 14.251, at330 = s => lay(-1.0, W330 / 16.3)(s).map(v => Math.min(W330, Math.max(0, v)));
+const at330s = s => lay(.7, 3.612 / 4.0)(s).map(v => Math.min(3.611, Math.max(0, v)));
+const white330 = '#f2f2ee', blue330 = '#5a7aa8';
+export const sims178 = {
+  id: 'sims-178', buildingIds: ['454254330'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 21 Geylang', review: { distance: 6, pitch: 20 },
+  name: 'No. 178 Sims Avenue (April and June 2024 exteriors, occupants not identified)', address: '178 Sims Avenue (the Lorong 21 west corner)',
+  height: 6.6, ceiling: 3.33, fiveFootWay: 2.0, heldFlat: true, roof: { type: 'hip', ridge: 8.2, colour: '#b4553d' },
+  evidence: 'April and June 2024 Street View show a white two-storey corner house at Lorong 21 and Sims Avenue under a hipped tiled roof with a small gable over the corner and deep eaves on a blue fascia: blue timber casements with louvred and stained-glass shutters on its upper floor, two pierced ventilation plaques near the back lane, and an arched five-foot way on round white columns, holding pipes, meter boxes, a blue door and, at the corner, the machines of a launderette. On the splay a relief plaque dated 1929 between blue ornaments, under a blue vertical sign reading 24 HR Coin Laundry 自助洗衣, and on Sims Avenue a blue board reading WonderWash Laundromat. Google Maps lists Wonder Wash - Geylang Branch at 178 Sims Ave but marks it permanently closed, so no name is given and the boards are blank. Three April 2024 lane panoramas agree on the lane face 3.75 m behind the source edge, which stands inside the lane\'s estimated carriageway: it runs from 1.0 m south of the source end to the splay, about 16.3 m against 14.25 m. Three June 2024 Sims Avenue pairs agree on the Sims Avenue front 1.85 m behind its source edge, where it runs about 4.0 m from the splay to the party wall with No. 176. Each face is laid proportionally on its source edge, the corner on the source splay, which is 7.65 m long where the photographed splay is about 2.5 m. Heights were read on those planes: the five-foot way to 3.33 m under a ledge to 3.83 m, windows at 4.4-6.0 m and eaves at 6.5-6.85 m, the roof to about 8.2 m.',
+  sources: [way('454254330'), search('178 Sims Avenue Singapore'), pano('yvsIY7qj0bvV_cOmeLWf5A', 250, 15, 90), pano('BWwBKNFbVwf1iB5CoYfyTA', 260, 15, 90), pano('cuXdaG2HOG231FN9p4n8nw', 190, 12, 90), pano('udFId1kVM8eOQwIcsMQa3w', 194, 6, 20)],
+  colours: { wall: white330, trim: '#e6e6e0', frame: blue330, glass: '#3e4a52', pier: '#f4f4f0', back: '#e8e8e2', floor: '#a8a296' },
+  windows: [[4.3, 5.6], [8.5, 9.7], [12.5, 14.0]].map(s => ({ u: at330(s), h: [4.4, 6.0], panes: 2, shutters: true })),
+  blocks: [
+    ...[[-.2, .5], [.8, 1.5]].map(s => ({ name: 'pierced ventilation plaque', u: at330(s), h: [5.2, 5.55], out: .02, depth: .04, colour: '#c8c8c0' })),
+    { name: 'blue fascia under the eaves', u: [0, W330], h: [6.5, 6.85], out: .4, depth: .8, colour: blue330 },
+    { name: 'first-floor ledge', u: [0, W330], h: [3.33, 3.83], out: .08, depth: .16, colour: '#e6e6e0' },
+    ...[[-.5, 2.7], [3.3, 7.0], [7.8, 11.2], [11.8, 15.0]].map(s => ({ name: 'arch spandrel', u: at330(s), h: [2.8, 3.33], out: .01, depth: .02, colour: white330 })),
+  ],
+  piers: [[-1.0, -.5], [2.7, 3.3], [7.0, 7.8], [11.2, 11.8], [15.0, 15.3]].map(at330),
+  backFittings: [
+    { name: 'pipes and meter boxes', u: at330([3.5, 7.0]), h: [.8, 2.6], colour: '#b8b0a0' },
+    { name: 'blue door', u: at330([9.7, 11.0]), h: [.1, 2.3], colour: '#3e5a8a' },
+    { name: 'launderette machines', u: at330([12.0, 15.0]), h: [.1, 2.4], colour: '#c8ccd0', glow: .08 },
+  ],
+  sides: [{
+    edge: 1, // the source splay, u from the lane towards Sims Avenue: the corner column, the 1929 plaque and the sign
+    windows: [{ u: [2.8, 4.8], h: [4.4, 6.0], panes: 2, shutters: true }],
+    blocks: [
+      { name: 'blue fascia under the eaves', u: [0, 7.65], h: [6.5, 6.85], out: .25, depth: .5, colour: blue330 },
+      { name: 'first-floor ledge', u: [0, 7.65], h: [3.33, 3.83], out: .08, depth: .16, colour: '#e6e6e0' },
+      { name: '1929 relief plaque', u: [2.9, 4.7], h: [3.85, 4.3], out: .03, depth: .04, colour: '#9aaecc' },
+      { name: 'round corner column', u: [3.55, 4.1], h: [.1, 3.33], out: .1, depth: .2, colour: '#f4f4f0' },
+      { name: 'blank blue vertical sign, held flat', u: [1.2, 1.9], h: [3.9, 6.3], out: .1, depth: .2, colour: '#2a5aa8' },
+      { name: 'launderette', u: [.3, 7.3], h: [.1, 2.8], out: .01, depth: .02, colour: '#c8ccd0', glow: .08 },
+    ],
+  }, {
+    edge: 0, // the Sims Avenue front, u west from the splay to the party wall with No. 176
+    heldFlat: false, // it stands 2.6 m clear of Sims Avenue's estimated carriageway
+    windows: [[2.0, 3.0], [3.0, 4.0]].map(s => ({ u: at330s(s), h: [4.4, 6.0], panes: 2, shutters: true })),
+    blocks: [
+      { name: 'blue fascia under the eaves', u: [0, 3.611], h: [6.5, 6.85], out: .4, depth: .8, colour: blue330 },
+      { name: 'first-floor ledge', u: [0, 3.611], h: [3.33, 3.83], out: .08, depth: .16, colour: '#e6e6e0' },
+      { name: 'blank blue launderette board', u: at330s([2.0, 4.6]), h: [3.7, 4.6], out: .05, depth: .04, colour: '#2a5aa8' },
+      { name: 'launderette', u: [.1, 3.5], h: [.1, 2.8], out: .02, depth: .04, colour: '#c8ccd0', glow: .08 },
+    ],
+  }],
+};
+
+// ---------------------------------------------------------------------------------------------
+// East side
+
+// 11-14. Ways 454254164, 454254165, 454254160 and 454254144: the HCSA Community Services compound, from Sims Avenue to
+// Geylang Road, behind a fence along the pavement. One named place over four buildings, each built from its own part:
+// a single-storey hall under a hipped tiled roof at the Sims Avenue corner, behind a screened fence; a long two-storey
+// block with blue louvred bands under a tiled roof, behind a hedge; a single-storey house under a tiled roof by the
+// entrance, whose gateway reads HCSA COMMUNITY SERVICES; and a U-shaped single-storey block under zinc roofs toward
+// Geylang Road. The walls stand behind fences and hedges, where the lane panoramas' depth scores are weak; the long
+// block's upper floor reads about 1 m behind its source edge, and the registered satellite puts the roofs on their
+// source outlines, so every building is laid on its source edges. The fence's corner post at Sims Avenue triangulates
+// 2.7 m in front of the hall's source edge, and the fence is drawn 2.7 m in front of each lane face.
+const fence11 = 2.7, white11 = '#efefea', blue11 = '#3a64a8', zinc11 = '#9ea2a0', tile11 = '#9a4a36';
+// The compound's fence: an open mesh of bars and rails between posts about 2.5 m apart.
+const fenceLine = (u, colour = '#2a2c2c') => {
+  const n = Math.max(1, Math.round((u[1] - u[0]) / 2.5));
+  return [
+    ...grille('fence mesh', u, [0, 2.2], fence11, colour, .5, false),
+    ...Array.from({ length: n + 1 }, (_, i) => {
+      const c = u[0] + (u[1] - u[0]) * i / n;
+      return { name: 'fence post', u: [+Math.max(u[0], c - .05).toFixed(3), +Math.min(u[1], c + .05).toFixed(3)], h: [0, 2.3], out: fence11, depth: .08, colour: '#1e2020' };
+    }),
+  ];
+};
+const screen11 = (u, colour) => ({ name: 'fence screen', u, h: [.05, 2.1], out: fence11 - .05, depth: .04, colour });
+const hedge11 = u => ({ name: 'hedge', u, h: [0, 3.0], out: fence11 - .5, depth: .9, colour: '#4e7a3a' });
+const hcsaNote = ' The four buildings on the east side of Lorong 21, from Sims Avenue to the garden at Geylang Road, stand inside one compound behind a fence along the pavement, its entrance under a gateway reading HCSA COMMUNITY SERVICES. Google Maps lists HCSA Community Services, a non-profit organisation, operating, at 1 Lor 23 Geylang, Singapore 388352, the compound\'s other frontage, with HCSA Highpoint located in it, its point at the long two-storey block; the source map\'s HCSA Community Services area covers all four buildings. So the compound is named after its gateway, which is redrawn in original type, and each building is built from its own part. The walls stand behind fences and hedges, where the April 2024 lane panoramas\' depth scores are weak: the long block\'s upper floor reads about 1 m behind its source edge, and the registered satellite puts the roofs on their source outlines, so every building is laid on its source edges. The fence\'s corner post at Sims Avenue triangulates 2.7 m in front of the hall\'s source edge, and the fence is drawn 2.7 m in front of each lane face.';
+const hcsaSources = [search('HCSA Community Services 1 Lorong 23 Geylang'), search('HCSA Highpoint 1 Lorong 23 Geylang')];
+const hcsaColours = { wall: white11, trim: '#e2e2dc', frame: blue11, glass: '#3e4a52', pier: white11, back: '#d8d8d2', floor: '#a8a296' };
+// The U-shaped block's lane face runs over three collinear source edges (7, 6 and 5, s south from its north end); one
+// elevation is sliced across them.
+const lane144 = [[7, 0, 8.913], [6, 8.913, 16.698], [5, 16.698, 28.956]];
+const wins144 = [[2.2, 3.2], [4.6, 5.6], [10.0, 11.0], [12.4, 13.4], [14.8, 15.8], [17.4, 18.4], [19.8, 20.8], [22.4, 23.4], [24.8, 25.8]];
+const whole144 = {
+  windows: wins144.map(u => ({ u, h: [1.4, 2.6], panes: 2 })),
+  blocks: [
+    { name: 'blue skirting', u: [0, 28.958], h: [.05, .35], out: .02, depth: .04, colour: blue11 },
+    { name: 'blue door', u: [7.2, 8.2], h: [.1, 2.3], out: .02, depth: .04, colour: blue11 },
+    { name: 'zinc eaves', u: [0, 28.958], h: [3.25, 3.45], out: .45, depth: .9, colour: '#8e9290' },
+    ...fenceLine([0, 28.958]),
+    { name: 'green fence screen', u: [20.5, 28.958], h: [.05, 2.1], out: fence11 - .05, depth: .04, colour: '#2e7a68' },
+  ],
+};
+const part144 = ([edge, s0, s1]) => {
+  const keep = ([a, b]) => { const l = Math.max(a, s0), r = Math.min(b, s1); return r - l > .02 ? [+(l - s0).toFixed(3), +(r - s0).toFixed(3)] : null; };
+  const cut = xs => xs.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
+  return { edge, windows: cut(whole144.windows), blocks: cut(whole144.blocks) };
+};
+export const hcsa = {
+  id: 'hcsa-community-services', buildingIds: ['454254164', '454254165', '454254160', '454254144'], kind: 'hcsa-community-services',
+  reviewRoad: 'Lorong 21 Geylang', review: { distance: 9, pitch: 18 },
+  name: 'HCSA Community Services (April 2024 exterior)', address: 'The Lorong 21 face of the HCSA Community Services compound, 1 Lorong 23 Geylang',
+  ceiling: 3.0, fiveFootWay: .3, colours: hcsaColours, height: 9.0,
+  evidence: 'April 2024 Street View shows the east side of Lorong 21 as one fenced compound.' + hcsaNote,
+  sources: [way('454254164'), way('454254165'), way('454254160'), way('454254144'), ...hcsaSources, pano('bMBYcUClHs2tWMv7Zmgawg', 110, 10, 90), pano('02JzN2zcLThkH0ZkrerNlw', 80, 10, 90), pano('m4CGRqdMRofN0Fz0583zBw', 98, 12, 30), pano('O-hHiRaRl86cXbRRvIT4bg', 80, 10, 90)],
+  parts: {
+    // 11. The hall at the Sims Avenue corner (edge 5, u south from Sims Avenue), behind a screened fence that wraps the
+    // corner. Its eaves read at 4.3 m on a blue fascia, and its hipped tiled roof to about 7.3 m.
+    '454254164': {
+      frontEdge: 5, noReview: true, height: 4.3, ceiling: 4.0, roof: { type: 'hip', ridge: 7.3, colour: tile11 },
+      evidence: 'April 2024 Street View shows a single-storey hall at the Lorong 21 corner of Sims Avenue under a hipped tiled roof on a blue fascia, an L in plan, a zinc lean-to under its eaves, behind a black mesh fence screened in grey that wraps the corner, with a meter box on the pavement.' + hcsaNote,
+      sources: [way('454254164'), ...hcsaSources, pano('bMBYcUClHs2tWMv7Zmgawg', 110, 10, 90), pano('bcPQwg7r1EjpaDGpDcWPpw', 150, 10, 90)],
+      blocks: [
+        { name: 'blue fascia', u: [0, 19.797], h: [4.0, 4.3], out: .5, depth: .1, colour: blue11 },
+        { name: 'zinc lean-to', u: [0, 19.797], h: [3.4, 3.6], out: .5, depth: 1.0, colour: zinc11 },
+        ...fenceLine([0, 19.797]), screen11([0, 19.797], '#8a8a84'),
+        { name: 'meter box', u: [11.2, 12.0], h: [0, 1.6], out: fence11 + .3, depth: .3, colour: '#e8e8e2' },
+      ],
+      sides: [{
+        edge: 0, // the Sims Avenue front, behind the same screened fence
+        blocks: [
+          { name: 'blue fascia', u: [0, 59.255], h: [4.0, 4.3], out: .5, depth: .1, colour: blue11 },
+          { name: 'zinc lean-to', u: [20, 59.255], h: [3.4, 3.6], out: .5, depth: 1.0, colour: zinc11 },
+          ...fenceLine([0, 59.255]).map(b => ({ ...b, out: 2.4 })), { ...screen11([0, 59.255], '#8a8a84'), out: 2.35 },
+        ],
+      }],
+    },
+    // 12. The long two-storey block (edge 3, u south from its north end): a white north end block, blue louvred bands on
+    // the upper floor between white louvred clerestories, a white stair pier, and a white south end block, under a
+    // tiled roof, behind a hedge.
+    '454254165': {
+      frontEdge: 3, height: 9.0, ceiling: 4.3, roof: { type: 'hip', ridge: 11.2, colour: tile11 },
+      evidence: 'April 2024 Street View shows a long white two-storey block behind a hedge: a white end block at each end, three storeys high with small windows, and between them, on the upper floor, two long bands of blue louvres over a ledge, under white louvred clerestories and a tiled roof, with small blue square vents and air-conditioners along the ground floor and a white stair pier with a tall window between the bands. Its upper floor reads about 1 m behind its source edge, where four pairs of lane panoramas agree.' + hcsaNote,
+      sources: [way('454254165'), ...hcsaSources, pano('02JzN2zcLThkH0ZkrerNlw', 80, 10, 90), pano('JdEaA4aRTSoZtkCgy0gPBw', 80, 10, 90), pano('Q-Ohd6lHa0_Zuu89WAD58Q', 80, 10, 90)],
+      windows: [
+        ...[[1.0, 1.9], [2.3, 3.2]].map(u => ({ u, h: [5.3, 6.4], panes: 1 })),
+        ...[[50.6, 51.6], [52.2, 53.2]].map(u => ({ u, h: [7.6, 8.6], panes: 2 })),
+        { u: [27.0, 28.3], h: [5.9, 8.0], panes: 1 },
+        ...Array.from({ length: 16 }, (_, i) => ({ u: [+(6.5 + i * 2.5).toFixed(2), +(7.6 + i * 2.5).toFixed(2)], h: [2.6, 3.8], panes: 2 })),
+      ],
+      blocks: [
+        ...[[6.4, 26.4], [29.6, 46.0]].flatMap(u => [
+          { name: 'blue louvre band', u, h: [5.6, 7.0], out: .25, depth: .1, colour: '#4a72b0' },
+          { name: 'ledge', u, h: [5.2, 5.4], out: .35, depth: .7, colour: '#d8d8d2' },
+          { name: 'white louvred clerestory', u, h: [7.4, 9.0], out: .1, depth: .1, colour: '#e4e4de' },
+        ]),
+        { name: 'ground-floor ledge', u: [5.0, 46.0], h: [4.1, 4.3], out: .3, depth: .6, colour: '#d8d8d2' },
+        ...Array.from({ length: 14 }, (_, i) => ({ name: 'blue square vent', u: [+(7.3 + i * 2.8).toFixed(2), +(7.6 + i * 2.8).toFixed(2)], h: [4.5, 4.8], out: .02, depth: .04, colour: blue11 })),
+        ...[[0, 5.0], [46.0, 55.045]].map(u => ({ name: 'end block parapet', u, h: [9.0, 9.5], out: .02, depth: .1, colour: white11 })),
+        ...fenceLine([0, 55.045]), hedge11([5.5, 55.045]), screen11([0, 5.5], '#8a8a84'),
+      ],
+    },
+    // 13. The single-storey house by the entrance (edge 3, u south), under a tiled roof, a vine pergola over its north
+    // end and a garden in front; the gateway over the drive to its south reads HCSA COMMUNITY SERVICES.
+    '454254160': {
+      frontEdge: 3, noReview: true, height: 3.0, ceiling: 2.7, roof: { type: 'hip', ridge: 4.9, colour: tile11 },
+      evidence: 'April 2024 Street View shows a single-storey white house under a tiled roof by the compound\'s entrance, with dark doors and blue-framed windows, a garden of potted plants in front and a vine pergola over its north end, behind an open mesh fence and a pair of blue bins. Over the drive to its south stands a dark grey gateway with a board reading HCSA COMMUNITY SERVICES beside the organisation\'s mark.' + hcsaNote,
+      sources: [way('454254160'), ...hcsaSources, pano('pgGtqEQ_mct-AU8DVUWYMA', 80, 10, 90), pano('m4CGRqdMRofN0Fz0583zBw', 98, 12, 30)],
+      windows: [[9.4, 10.4], [17.4, 18.4]].map(u => ({ u, h: [1.6, 2.3], panes: 2 })),
+      blocks: [
+        ...[[12.2, 13.0], [14.3, 15.4], [20.2, 21.1]].map(u => ({ name: 'dark door', u, h: [.1, 2.3], out: .02, depth: .04, colour: '#2e3236' })),
+        { name: 'vine pergola', u: [.3, 9.0], h: [2.4, 3.0], out: 1.3, depth: 2.4, colour: '#56803e' },
+        { name: 'potted garden', u: [9.5, 21.5], h: [0, .7], out: 1.0, depth: 1.6, colour: '#6a7a4a' },
+        ...fenceLine([0, 22.61]),
+        ...[[17.2, 18.4], [18.6, 19.8]].map(u => ({ name: 'blue bin', u, h: [0, 1.3], out: fence11 + .6, depth: 1.0, colour: '#3a7ac8' })),
+      ],
+      sides: [{
+        edge: 2, // the south wall on the drive, u east from the lane corner: the gateway's posts at its lane end
+        blocks: [
+          ...[[.3, 1.0], [6.3, 7.0]].map(([o0, o1]) => ({ name: 'gateway post', u: [.25, .6], h: [0, 5.2], out: (o0 + o1) / 2, depth: o1 - o0, colour: '#4a4c4e' })),
+          { name: 'gateway beam', u: [.25, .6], h: [5.0, 5.3], out: 3.65, depth: 6.7, colour: '#4a4c4e' },
+        ],
+        // The gateway's board across the drive, facing the lane.
+        blades: [{ u: .42, out: [.4, 6.9], h: [4.3, 5.0] }],
+      }],
+    },
+    // 14. The U-shaped block toward Geylang Road: its west arm along the lane (edges 7, 6 and 5, one elevation sliced
+    // across them), white walls with blue-framed windows and skirting under zinc roofs; its gable faces the drive.
+    '454254144': {
+      frontEdge: 5, noReview: true, height: 3.4, ceiling: 3.1, roof: { type: 'flat', colour: zinc11 },
+      evidence: 'April 2024 Street View shows a single-storey white block under zinc roofs, its gable on the drive, with blue-framed windows, a blue door and blue skirting along the lane, behind an open mesh fence screened in green at its south end; the satellite shows it as three arms round a courtyard and a garden at the Geylang Road corner. Its lane wall was read on its source edges, where the gable\'s apex falls on the arm\'s centre line.' + hcsaNote,
+      sources: [way('454254144'), ...hcsaSources, pano('O-hHiRaRl86cXbRRvIT4bg', 80, 10, 90), pano('8yiH4E0hcM3Bdr1egBGv2Q', 80, 10, 90), pano('-BDV5dezAGqUQQ_NAmVgew', 80, 10, 90)],
+      ...(({ windows, blocks }) => ({ windows, blocks }))(part144(lane144[2])),
+      // Zinc roofs over the three arms (outlines in edge 5's frame: u south, out towards the lane).
+      upper: [
+        { name: 'west arm roof', outline: [[-16.6, 0], [12.2, 0], [12.1, -11.7], [-16.6, -11.7]], from: 3.4, to: 3.45, ridge: 6.3, colour: '#e8e8e2', roof: zinc11 },
+        { name: 'north arm roof', outline: [[-16.6, -11.7], [-7.7, -11.7], [-7.7, -57.6], [-16.6, -57.6]], from: 3.4, to: 3.45, ridge: 6.0, colour: '#e8e8e2', roof: zinc11 },
+        { name: 'south arm roof', outline: [[21.8, -7.8], [30.2, -7.8], [30.2, -64.0], [21.8, -64.0]], from: 3.4, to: 3.45, ridge: 6.0, colour: '#e8e8e2', roof: zinc11 },
+      ],
+      sides: [
+        part144(lane144[0]), part144(lane144[1]),
+        {
+          edge: 3, // the south arm's west end, set back behind the garden at Geylang Road
+          windows: [[3.0, 4.0], [6.0, 7.0], [10.0, 11.0], [13.0, 14.0]].map(u => ({ u, h: [1.4, 2.6], panes: 2 })),
+          blocks: [{ name: 'blue skirting', u: [0, 17.98], h: [.05, .35], out: .02, depth: .04, colour: blue11 }],
+        },
+      ],
+    },
+  },
+};
+
+// ---------------------------------------------------------------------------------------------
+// 15-22. Ways 454254331 to 454254338, Sims Avenue Nos. 150-176, back to Lorong 19 (open question 47): fourteen two-storey
+// shophouses on eight source ways of 9.04 m. Read on one plane along the row (s west from way 454254334's east end), where
+// the June 2024 Sims Avenue drive agrees, 1.85 m behind the source front as at No. 178: two boards and the lettering of
+// No. 176 line up between four panoramas there, and not on the planes the depth scores preferred. The photographed
+// party walls stand at s = -26.7, -21.0, -15.7, -10.0, -5.0, 1.1, 5.9, 12.1, 17.4, 23.0, 28.4, 33.85, 38.3 and 44.1,
+// and No. 150's west wall at He Ping's authored party line (48.75); the row runs from 0.4 m west of the source's east
+// end to its west end, so it is laid at its photographed positions on the source front and sliced across the eight ways.
+// Re-cutting it into its fourteen houses, and naming their tenants, is open question 50.
+const rowWays = [['454254331', -27.114], ['454254332', -18.075], ['454254333', -9.039], ['454254334', 0], ['454254335', 9.037], ['454254336', 18.075], ['454254337', 27.112], ['454254338', 36.15]];
+const wayWidth = 9.0355;
+// Each house: its number, extent along the row, top, colour, and its pieces in row coordinates.
+const tile15 = '#a8583e', white15 = '#efefea';
+const win = (u, h, extra = {}) => ({ u, h, panes: 2, ...extra });
+const rowHouses15 = [
+  { no: 176, s: [-26.7, -21.0], top: 7.0, roof: 7.8, colour: white15,
+    windows: [[-25.8, -24.8], [-24.2, -23.2], [-22.5, -21.6]].map(u => win(u, [4.7, 6.1], { shutters: true })),
+    blocks: [{ name: 'blank raised lettering', u: [-25.2, -22.3], h: [3.8, 4.3], out: .03, depth: .04, colour: '#55524c' }],
+    back: [{ name: 'glazed design studio', u: [-26.2, -21.4], h: [.1, 2.7], colour: '#2e3436', glow: .1 }, { name: 'blank studio board', u: [-26.0, -21.6], h: [2.75, 3.05], colour: '#1e1e22' }] },
+  { no: 174, s: [-21.0, -15.7], top: 7.0, roof: 7.8, colour: white15, frame: '#4a7a5a',
+    windows: [[-20.3, -19.3], [-18.7, -17.7], [-17.0, -16.2]].map(u => win(u, [4.4, 6.1])),
+    back: [{ name: 'roller shutters', u: [-20.6, -16.0], h: [.1, 3.0], colour: '#a7a9a6' }] },
+  { no: 172, s: [-15.7, -10.0], top: 8.1, colour: '#ecebe4',
+    windows: [[-14.8, -13.9], [-13.3, -12.3], [-11.8, -10.8]].map(u => win(u, [5.6, 7.0])),
+    blocks: [
+      { name: 'blank motor shop board', u: [-14.7, -10.3], h: [3.2, 3.9], out: .05, depth: .04, colour: '#e8e2cc' },
+      { name: 'rooftop extension', u: [-15.4, -10.3], h: [8.1, 9.3], out: -3.0, depth: 4.0, colour: '#d8d6cf' },
+    ],
+    back: [{ name: 'motor shop', u: [-15.2, -10.4], h: [.1, 3.0], colour: '#3a3c3c', glow: .06 }] },
+  { no: 170, s: [-10.0, -5.0], top: 8.1, colour: '#ecebe4',
+    windows: [[-8.9, -8.2], [-7.6, -6.6], [-5.9, -5.3]].map(u => win(u, [5.6, 7.0])),
+    blocks: [{ name: 'red awning', u: [-9.2, -5.2], h: [3.2, 4.2], out: .12, depth: .24, colour: '#a83a3a' }],
+    back: [{ name: 'open shop with goods', u: [-9.6, -5.4], h: [.1, 3.0], colour: '#5a5048', glow: .06 }] },
+  { no: 168, s: [-5.0, 1.1], top: 8.7, colour: '#ecebe4',
+    windows: [[-4.0, -3.0], [-2.3, -1.3], [-.6, .4]].map(u => win(u, [5.8, 7.4])),
+    blocks: [{ name: 'blank hardware board', u: [-3.9, .67], h: [3.1, 4.1], out: .05, depth: .04, colour: '#f0b030' }],
+    back: [{ name: 'hardware shop', u: [-4.6, .7], h: [.1, 2.8], colour: '#4a4a46', glow: .06 }] },
+  { no: 166, s: [1.1, 5.9], top: 8.7, colour: '#ecebe4',
+    windows: [[1.8, 2.8], [3.6, 4.6]].map(u => win(u, [5.8, 7.4])),
+    blocks: [{ name: 'blank yellow trading board', u: [1.4, 4.8], h: [3.1, 4.1], out: .05, depth: .04, colour: '#f2c83a' }],
+    back: [{ name: 'roller shutters', u: [1.5, 5.5], h: [.1, 2.8], colour: '#a7a9a6' }] },
+  { no: 164, s: [5.9, 12.1], top: 8.8, roof: 9.4, colour: '#9aa0cc',
+    windows: [[6.8, 7.9], [8.4, 9.5], [10.1, 11.2]].map(u => win(u, [5.9, 7.7], { shutters: true })),
+    blocks: [
+      { name: 'blank minimart board', u: [6.7, 9.7], h: [4.1, 4.9], out: .05, depth: .04, colour: '#e8ecf4' },
+      { name: 'green awning', u: [5.6, 12.0], h: [2.7, 4.0], out: .12, depth: .24, colour: '#3a6a4a' },
+    ],
+    back: [{ name: 'minimart with fruit', u: [6.2, 11.8], h: [.1, 2.6], colour: '#6a5a3a', glow: .08 }] },
+  { no: 162, s: [12.1, 17.4], top: 10.1, colour: '#b8504a', relief: '#efe6d2',
+    windows: [[13.0, 14.0], [15.8, 16.7]].map(u => win(u, [5.9, 7.9])),
+    blocks: [{ name: 'blank yellow Wintrade board', u: [13.4, 17.1], h: [3.6, 4.5], out: .05, depth: .04, colour: '#f2d23a' }],
+    back: [{ name: 'hardware shop', u: [12.5, 17.0], h: [.1, 3.2], colour: '#4a4644', glow: .06 }] },
+  { no: 160, s: [17.4, 23.0], top: 10.1, colour: '#b8504a', relief: '#efe6d2',
+    windows: [[18.1, 19.2], [19.6, 20.7], [21.2, 22.3]].map(u => win(u, [5.9, 7.7], { arched: true })),
+    blocks: [{ name: 'grey striped awning', u: [17.7, 22.9], h: [3.1, 3.9], out: .12, depth: .24, colour: '#7a7a76' }],
+    back: [{ name: 'glazed shop', u: [17.9, 22.6], h: [.1, 2.9], colour: '#3a3c3e', glow: .06 }] },
+  { no: 156, s: [23.0, 28.4], top: 9.6, colour: '#f2f2ec', relief: '#2e8a5a', frieze: '#cfe4d6',
+    windows: [[23.5, 24.5], [24.8, 25.8], [26.2, 27.2]].map(u => win(u, [5.9, 7.6])),
+    blocks: [{ name: 'red awning with a blank beancurd mark', u: [23.4, 28.4], h: [2.3, 3.5], out: .12, depth: .24, colour: '#a8243a' }],
+    back: [{ name: 'beancurd shop', u: [23.4, 28.0], h: [.1, 2.3], colour: '#e8e6e0', glow: .08 }] },
+  { no: 154, s: [28.4, 33.85], top: 9.6, colour: '#f2f2ec', relief: '#2e8a5a', frieze: '#cfe4d6',
+    windows: [[28.9, 29.9], [30.3, 31.3], [31.9, 33.0]].map(u => win(u, [5.9, 7.6])),
+    blocks: [{ name: 'red gas supplier awning', u: [28.4, 33.85], h: [2.3, 3.5], out: .12, depth: .24, colour: '#a8243a' }],
+    back: [{ name: 'gas supplier office', u: [28.8, 33.4], h: [.1, 2.3], colour: '#e8e6e0', glow: .05 }] },
+  { no: 152, s: [33.85, 38.3], top: 10.2, colour: white15, frame: '#b8403a',
+    windows: [win([34.2, 34.8], [6.1, 8.1], { panes: 1 }), ...[[35.0, 36.0], [36.4, 37.6]].map(u => win(u, [6.1, 8.1], { shutters: true }))],
+    blocks: [{ name: 'grey awning', u: [34.1, 37.8], h: [3.6, 4.6], out: .12, depth: .24, colour: '#6a6c6a' }],
+    back: [{ name: 'roller shutters', u: [34.2, 38.0], h: [.1, 3.4], colour: '#a7a9a6' }] },
+  { no: 150, s: [38.3, 44.1], top: 10.0, colour: '#e2e2dc',
+    windows: [[39.0, 39.8], [40.6, 41.4], [41.9, 42.8]].map(u => win(u, [6.2, 7.7], { panes: 1 })),
+    vents: [[39.0, 39.8], [40.6, 41.4], [41.9, 42.8]].map(u => ({ u, h: [7.8, 8.3] })),
+    blocks: [
+      { name: 'blank brown KRIPAL awning', u: [38.4, 44.0], h: [2.7, 4.6], out: .12, depth: .24, colour: '#8a5a4a' },
+      ...[[39.5, 40.3], [41.0, 41.8]].map(u => ({ name: 'air-conditioner', u, h: [5.1, 5.6], out: .2, depth: .4, colour: '#e8e8e4' })),
+    ],
+    back: [{ name: 'shop with ladders and goods', u: [38.6, 43.8], h: [.1, 2.6], colour: '#5a5048', glow: .06 }] },
+  { no: 150, s: [44.1, 48.75], top: 10.0, colour: '#d8dcbc', windows: [], back: [] },
+];
+const rowAll15 = {
+  windows: rowHouses15.flatMap(h => h.windows.map(w => ({ ...w, out: w.out ?? .02 }))),
+  vents: rowHouses15.flatMap(h => h.vents ?? []),
+  blocks: rowHouses15.flatMap(h => [
+    // Each house's own colour up to its own top; a tiled roof band above, where it is seen from the street.
+    { name: `colour field of No. ${h.no}`, u: h.s, h: [3.4, h.top], out: -.04, depth: .06, colour: h.colour },
+    ...(h.roof ? [{ name: `tiled roof of No. ${h.no}`, u: h.s, h: [h.top, h.roof], out: -.5, depth: 1.0, colour: tile15 }] : []),
+    { name: 'cornice', u: h.s, h: [h.top - .25, h.top], out: .08, depth: .16, colour: h.relief ?? '#d8d6cf' },
+    { name: 'first-floor ledge', u: h.s, h: [3.4, 3.65], out: .08, depth: .16, colour: h.relief ?? '#d8d6cf' },
+    ...(h.relief ? [
+      { name: 'ornate relief band', u: h.s, h: [8.3, 9.3], out: .04, depth: .08, colour: h.frieze ?? h.relief },
+      { name: 'balustrade panels', u: [h.s[0] + .3, h.s[1] - .3], h: [5.2, 5.7], out: .04, depth: .08, colour: h.relief },
+    ] : []),
+    ...(h.blocks ?? []),
+  ]),
+  piers: rowHouses15.map(h => [h.s[0] - .2, h.s[0] + .2]),
+  backFittings: rowHouses15.flatMap(h => h.back),
+};
+const simsNote15 = ' June 2024 Street View from the Sims Avenue drive shows the south side between No. 178 and He Ping as fourteen two-storey shophouse fronts, from the east: No. 176, white, with shuttered windows and the raised lettering VIVERE over a design studio, under a tiled roof; No. 174, white, with green frames, under the same roofline; No. 172, under a board reading 萬榮興摩哆公司 BAN ENG HIN MOTOR CO, with a rooftop extension; No. 170, under a red awning; Nos. 168 and 166, one plain façade, over a board reading KIAN SENG HARDWARE TRADING PTE LTD and a yellow trading board; No. 164, lavender, with white-shuttered windows over a board reading SUNRISE MINIMART and a green awning; Nos. 162 and 160, red Peranakan fronts with cream relief and arched windows, No. 162 under a yellow board reading 飙達企業(五金) WINTRADE ENTERPRISE (HARDWARE); Nos. 156 and 154, white Peranakan fronts with green relief, under a gas supplier\'s red awning carrying Rochor Beancurd\'s mark at No. 156; No. 152, white with red-framed shutters; and No. 150 in two bays, under a brown awning lettered KRIPAL over a Sunshine Electrical Trading valance, and pale green with a board reading 长青中医诊疗所 CHANG QING CHINESE MEDICAL CENTRE, the bay running on into He Ping\'s outline. The numbers follow the listings\' address points, which run about 5 m east of the photographed fronts; No. 158 is not found. The Sims Avenue panoramas agree on the row 1.85 m behind the source front, as at No. 178; the photographed party walls stand within 0.6 m of the source run\'s ends but split its eight ways of 9.04 m into fourteen fronts of 4.4-6.1 m, so the elevation is laid at its photographed positions on the source front and sliced across the eight ways, with no house named until the row is re-cut (open question 50). Heights were read on that plane: five-foot ways to about 3.4 m, upper windows at 4.4-8.1 m, and tops from 7.0 m (under tiled roofs at the east end) to 10.2 m.';
+const rowSources15 = w => [way(w), pano('-7Nu5v6FAn4fpnnkKhhs9g', 150, 10, 90), pano('gls5NE2TRD9LtUL5ZMtfUA', 190, 10, 90), pano('PIr_KE2M4QYpE2Z3RWqWOw', 190, 10, 90), pano('X9akYazsOs1oFvuI5CYKCw', 190, 10, 90)];
+export const simsRow21 = rowWays.map(([id, s0]) => {
+  const houses = rowHouses15.filter(h => h.s[1] > s0 + .02 && h.s[0] < s0 + wayWidth - .02);
+  const height = Math.min(...houses.map(h => h.top)), numbers = houses.map(h => h.no);
+  const slice = sliceSpec(rowAll15, s0, s0 + wayWidth);
+  // Windows cut at a source party line are inset by their sills, and lose open shutters that would cross it.
+  const W = wayWidth - .001, fit = w => {
+    const [l, r] = [Math.max(w.u[0], .09), Math.min(w.u[1], W - .09)], spare = Math.min(l, W - r);
+    return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)], shutters: w.shutters && spare > (r - l) / 4 + .02 }];
+  };
+  slice.windows = slice.windows.flatMap(fit);
+  return {
+    id: `sims-${numbers.at(-1)}-${numbers[0]}`, buildingIds: [id], kind: 'unnamed', unnamed: true, frontEdge: 0,
+    reviewRoad: 'Sims Avenue', review: { distance: 7, pitch: 20 },
+    name: `Sims Avenue Nos. ${numbers.at(-1)}-${numbers[0]} (June 2024 exterior, sliced across the source way; occupants not identified)`, address: `${numbers.slice().reverse().join(', ')} Sims Avenue (parts)`,
+    height, ceiling: 3.4, fiveFootWay: 2.0, heldFlat: true, roof: { type: 'flat', colour: '#8f8c86' },
+    evidence: `Source way ${id} holds parts of Nos. ${numbers.slice().reverse().join(', ')}.` + simsNote15,
+    sources: [...rowSources15(id), search(`${numbers[0]} Sims Avenue Singapore`)],
+    colours: { wall: houses[0].colour, trim: '#d8d6cf', frame: houses[0].frame ?? '#3a3c3c', glass: '#46504e', pier: '#efefea', back: '#4a4642', floor: '#a8a296' },
+    ...slice,
+  };
+});
+
+export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng, sims178, hcsa];
+// The Sims Avenue row back to Lorong 19 faces Sims Avenue, not the lane.
+export { simsRow21 as simsRow21Ways };
+export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;

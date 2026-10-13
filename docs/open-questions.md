@@ -6,9 +6,75 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+48. **Lorong 21 west corner (way 454254167): split the outline into its two buildings and move each onto its photographed walls?**
+    - **Evidence:** measured during the Lorong 21 walk ([Lorong 21 brief](lorong-21-brief.md), stop 1). The source outline covers two buildings.
+
+      | Building | Photographed against the source outline |
+      | --- | --- |
+      | The walk-up at the corner (Cheng Yi Coffee Shop) | Lane face 3.25 m behind (west of) the source edge, from 2.67 m north of the source corner to the edge's north end. Geylang Road front 3.0 m behind (north of) its source edge. |
+      | The glass block to its west | Geylang Road front 3.6 m behind its source edge. It runs from No. 325–333's east wall, about 8.2 m west of the source corner, to 21.3 m along: 29.5 m against 26.4 m. |
+
+    - **The strip between:** the walk-up's source lines follow its awnings on the lane and a single-storey extension of shops on Geylang Road. The model now carries both buildings' faces on the source lines, so they stand about 3 m in front of the real walls. The map also leaves a 6.5 m gap between this outline and No. 325–333's block, which the glass block fills.
+    - **Recommendation:** yes. Author two footprints:
+      - **The glass block:** its front 3.6 m back, from No. 325–333's authored east wall to 21.3 m along, back to the source rear line.
+      - **The walk-up:** its lane face 3.25 m back and its Geylang Road front 3.0 m back, from the glass block's east wall to the corner, with its north end and rear kept.
+      - **The extension:** in front of the walk-up on Geylang Road, kept as a single-storey part, as the extension at No. 323 on Lorong 19 is.
+    - **Unlocks:** both buildings on their true walls, the coffeeshop's awnings at their photographed depth, and the gap on Geylang Road closed.
+
+49. **Lorong 21 west side, No. 5 to No. 178 Sims Avenue: re-author the outlines on their photographed line?**
+    - **Evidence:** each building was measured from April 2024 lane panoramas during the walk ([Lorong 21 brief](lorong-21-brief.md), stops 2–10).
+
+      | Building | Way(s) | Photographed against the source outline |
+      | --- | --- | --- |
+      | Nos. 5 and 7, a walk-up pair | 1223524387, 1223524388 | Front 0.2 m back, but 16.5 m wide against 13.5 m: from 8.2 m south to 8.3 m north of the source party wall, with the party line 0.4 m north of it |
+      | Nos. 9–19, a terrace | 1223524384, -83, -82, -85, -86 | Upper façades 1.5 m forward. Party walls at 0, 7.0, 13.4, 19.7, 26.0 and 32.2 m along No. 9's front, against 0, 6.41, 12.82, 19.22, 25.62 and 32.02 |
+      | 29 Lorong Bachok, Tan Ser Seng | 454254329 | Lane face 3.25 m forward, from its splay, 1.3 m from the Bachok corner, to the back lane |
+      | No. 178 Sims Avenue | 454254330 | Lane face 3.75 m back (its source edge stands inside the lane's carriageway); Sims Avenue front 1.85 m back; a splay of about 2.5 m against the outline's 7.65 m |
+
+    - **Recommendation:** yes. Re-author each outline as the Lorong 19 west side was (question 46):
+      - **Nos. 5–19:** re-spaced along their own fronts at the photographed party walls, with each front moved to its photographed line and the rear lines kept;
+      - **Tan Ser Seng:** its lane face moved forward;
+      - **No. 178:** its lane face and Sims Avenue front moved back, with a short splay between them.
+    - **Unlocks:** true positions and widths along the west side, five-foot ways and awnings at their photographed depth, and No. 178 out of the lane's carriageway.
+
+50. **Sims Avenue Nos. 150–176, Lorong 19 to Lorong 21: re-cut the row into its fourteen fronts on their photographed line, and name five tenants?**
+    - **Evidence:** measured from the June 2024 Sims Avenue drive ([Lorong 21 brief](lorong-21-brief.md), stops 15–22).
+      - The fronts stand **1.85 m behind** the source front, as at No. 178.
+      - Measured along the row from way 454254334's east end, westward, the party walls stand at −26.7, −21.0, −15.7, −10.0, −5.0, 1.1, 5.9, 12.1, 17.4, 23.0, 28.4, 33.85, 38.3 and 44.1 m, with No. 150's west wall on He Ping's authored party line (48.75 m).
+      - The source map has eight ways of 9.04 m for them. The row's two ends agree with the source within 0.4 m.
+    - **Recommendation:** yes. Author fourteen footprints on the photographed line, cut at the party walls, keeping the source rear line, as question 45 did for the Geylang Road row between Lorong 17 and Lorong 19. No. 150's west bay joins Lorong 19's strip (`sims-150w`) as one footprint.
+    - **Naming, once re-cut:** six tenants are listed at their house's number and operating, and each one's sign is photographed on that house:
+      - **Vivere Design Studio** (176): raised lettering and a board;
+      - **Ban Eng Hin Motor Co** (172): a board;
+      - **Kian Seng Hardware Trading** (168): a board;
+      - **Sunrise Minimart** (164): a board;
+      - **Rochor Original Beancurd** (156): its mark on the awning;
+      - **Chang Qing Chinese Medical Centre** (150, west bay): a board.
+
+      The listing points run about 5 m east of the photographed fronts, as the address points do, so the houses are matched by number.
+    - **Unlocks:** fourteen fronts at their true widths and depth, and six more named places. If the answer is no, the row stays sliced across its source ways, unnamed.
 
 ## Settled
+
+### Eleventh batch, 13 October 2026
+
+The project owner asked for the next lorong to be mapped in full, without stopping until the whole lorong is finished. Lorong 21 is the next lane along the north side of Geylang Road after Lorong 19, so question 47 is recorded as answered by that instruction, on question 42's terms and with question 43's answer applied from the start.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 47 | **Yes.** Model Lorong 21 between Geylang Road and Sims Avenue, one building at a time in street order, with the block faces back to Lorong 19 | The lane, its buildings, its two junctions, Lorong Bachok's east mouth and the links back to Lorong 19 join the map; the walk is recorded in the [Lorong 21 brief](lorong-21-brief.md) |
+
+Question 47 in full:
+
+47. **Lorong 21, Geylang Road to Sims Avenue: build it as Lorong 19 was built?**
+    - **Order:** start at the Geylang Road end, go north up the west side to Sims Avenue, then come back south down the east side, then west along Sims Avenue to Lorong 19. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Sims Avenue. The part of Lorong 21 north of Sims Avenue, the Lorong Bachok row and the far sides of Geylang Road and Sims Avenue wait for a later pass. Lorong Bachok's east mouth is kept as road surface.
+    - **Corners:** take in the corner buildings at both ends of both sides, and the Lorong Bachok corner on the west side.
+    - **Block faces:** as question 43 settled for Lorong 19, take in the faces back to Lorong 19. On Geylang Road the corner block (way 454254167) already runs back to Lorong 19's east corner; on Sims Avenue the eight houses from No. 150 to No. 176 join the map.
+    - **Map:** add the lane's own buildings and road ways by id, as for Lorong 19. The lane and the Geylang Road and Sims Avenue links from Lorong 19's junctions become walkable corridors.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-21` branch, each written up in the Lorong 21 brief. Footprint changes are measured during the walk and logged here for approval, as before.
 
 ### Tenth batch, answered 13 October 2026
 

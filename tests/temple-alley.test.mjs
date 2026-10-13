@@ -24,13 +24,15 @@ test('alley import keeps source geometry and the overlooked Lorong 11 footway', 
   assert.equal(map.paths.find(p => p.id === templeAlley.footwayId).highway, 'footway');
   // Protect every previously retained footprint, not just the adjacent buildings.
   for (const b of map.buildings) assert.deepEqual(b.coordinates, coordinates(b.id), b.id);
-  // 154 before the open question 26 widening, 206 before Lorong 17 (open question 35), 217 before Lorong 19 (open question 42), 237 before Sims Avenue Nos. 136-144 (open question 43).
-  assert.equal(map.buildings.length, 242);
+  // 154 before the open question 26 widening, 206 before Lorong 17 (open question 35), 217 before Lorong 19 (open question 42), 237 before Sims Avenue Nos. 136-144 (open question 43), 242 before Lorong 21 (open question 47).
+  assert.equal(map.buildings.length, 264);
   // 34 road ways, plus the seven Lorong 15 ways added under open question 10.
   // 41 roads before Lorongs 9, 10 and 12 joined the derived set (open question 24); the access way is now one of them.
   // 63 before Lorong 17's seven lane ways and its four Geylang Road and Sims Avenue links (open question 35), and 74
-  // before Lorong 19's seven lane ways, its four links and Lorong Bachok's mouth (open question 42).
-  assert.equal(map.roads.length, 86, 'the derived road set is unchanged apart from the approved additions and the widened bounds');
+  // before Lorong 19's seven lane ways, its four links and Lorong Bachok's mouth (open question 42), and 86 before
+  // Lorong 21's twenty lane ways, its nine Geylang Road and three Sims Avenue links and Lorong Bachok's east mouth (open
+  // question 47).
+  assert.equal(map.roads.length, 119, 'the derived road set is unchanged apart from the approved additions and the widened bounds');
   assert.ok(map.roads.some(r => r.id === templeAlley.accessId), 'the Lorong 9 access way is now a derived road');
   const [service, footway] = alleyRoutes(map);
   assert.deepEqual(service.b, footway.a);

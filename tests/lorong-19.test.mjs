@@ -26,7 +26,8 @@ test('Lorong 19 brings in its own buildings, its corners and the Geylang Road ho
   for (const id of ['682928736', '682928738', '682928739', '682928741', '682928744']) assert.ok(ids.has(id), id);
   for (const id of ['454254315', '454254245']) assert.equal(ids.has(id), false, id);
   assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 19 Geylang').length, 7);
-  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong Bachok').map(r => r.id), ['23513607']);
+  // Lorong Bachok's west mouth; its east mouth came in with Lorong 21 (open question 47).
+  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong Bachok').map(r => r.id), ['23513607', '666807847']);
 });
 
 test('Lorong 19 is walkable from the Geylang Road centreline to the Sims Avenue centreline, and back to Lorong 17 along both', () => {
