@@ -417,7 +417,7 @@ South of No. 6, past an open car park at Lorong Bachok, a white apartment block 
   - the No. 10 plate (`NzRD…` with `C6Wg…`) lies **4.5 m in front of** the source edge;
   - so does the north-west corner (`ZqOX…` with `C6Wg…`, 4.45 m).
 - Only on that plane do the floors repeat at a believable 3.1 m. On the source plane they read 4.3 m.
-- On that plane the front runs from 1.3 m south of the source corner to 23.1 m north of it: about **24.4 m**, against the 22.18 m source edge.
+- On that plane the front runs from 1.3 m north of the source corner to 0.9 m beyond the south one: about **24.4 m**, against the 22.18 m source edge.
 - **Heights:**
   - porch: to 4.4 m;
   - floors: every 3.1 m from 4.6 m;
@@ -618,3 +618,24 @@ Group `lorong-19-west` in `src/authored-footprints.mjs` replaces nine source way
 - **Eminent's awning:** it is held to 0.9 m, because the lane face is now 4.3 m from the lane's centreline.
 - **Shell insets:** the Primero's re-spaced front is 0.8° off its kept side walls, and No. 3's north wall steps back along No. 21's. So their five-foot-way shells are inset from the party walls (`shellInset`).
 - **Code:** `warpRow` takes an optional `sourceFront`, and a `front` given as a function, for houses whose fronts lie off the row's line. `offsetEdges` moves the edges of an outline in parallel.
+
+### Question 44: the east side on its photographed positions
+
+Group `lorong-19-east` in `src/authored-footprints.mjs` replaces five source ways.
+
+- **He Ping (`sa-148`) and No. 150's west bay (`sa-150w`):**
+  - **He Ping:** its lane face is 0.5 m forward and 21.7 m long, reaching 2 m further down the back lane. Its Sims Avenue front is kept, and cut at the party line with No. 150, 5.47 m from the lane corner, so it is 5.97 m wide.
+  - **No. 150's west bay:** the cut-off strip is drawn plain in its pale green as its own place (`no150West`, `?review=sims-150w`), since the rest of No. 150 lies outside the study.
+- **Bougainvilla (`l19e-10`), Nos. 6–8 (`l19e-6`) and Sims Point (`l19e-4`):** one re-spacing along Nos. 6–8's source front, so the three keep their order and walls.
+  - **Bougainvilla:** front 4.5 m forward, from 1.34 m north of its source corner to its south end, 0.6 m north of Nos. 6–8.
+  - **Nos. 6–8:** columns 8.3 m forward, from 0.5 m north of the source corner to 12.3 m south of it, 12.8 m.
+  - **Sims Point:** its stepped lane face moved 3.2 m forward and fitted between its photographed ends, so its façade slices are now laid on their true positions.
+- **Nos. 325–333 Geylang Road (`gr-325`):** the whole outline moved 7.2 m east and 0.6 m south, its shape kept.
+  - Its lane face now stands about 9.4 m from the lane's centreline, behind the nose-in parking, and the June 2024 camera poses no longer stand inside it.
+  - Its `heldFlat` flag comes off.
+  - Its Geylang Road corner column and ledge start at the corner again.
+
+**Corrections from a check made before authoring:**
+- **Bougainvilla's railing:** it had been placed by estimate. A railing post (from `ZqOX…`) triangulates 4.2 m in front of its photographed front, in line with its south end, and the railing is drawn there.
+- **Nos. 6–8:** the first column of their five-foot way triangulates 0.4 m south of that post, 8.4 m forward. So they start 0.5 m north of their source corner, not the 2.4 m read on a plane 7.5 m forward, where columns standing in front of that plane read too far north. Their columns stand at the edge of the lane's estimated carriageway, so the place is flagged `heldFlat`.
+- **Bougainvilla:** its re-spaced front is 1° off its side walls, so its five-foot-way shell is inset.

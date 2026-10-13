@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
-import { lorong19, geylangRow19, lorong19Frame, lorong19Layout, lorong19Reviews, lorong19Sides, lorong19Upper } from '../src/lorong-19-layout.mjs';
+import { lorong19, geylangRow19, simsRow19, lorong19Frame, lorong19Layout, lorong19Reviews, lorong19Sides, lorong19Upper } from '../src/lorong-19-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
@@ -99,4 +99,18 @@ test('the Geylang Road row between Lorong 17 and Lorong 19 is shared out over it
   }
   // The thirteen photographed windows survive the slicing; two are cut at party lines, so fifteen pieces in all.
   assert.ok(windows >= 13 && windows <= 16, `${windows}`);
+});
+
+test('the Sims Avenue houses beside Lorong 19 fit their outlines, face Sims Avenue and are held flat at its carriageway', () => {
+  for (const place of simsRow19) {
+    const poly = outline(place.buildingIds[0]), frame = lorong19Frame(poly, place);
+    assertFittings(frame, poly, lorong19Layout(place, frame.width).boxes);
+    assertReviews(frame, lorong19Reviews(place, frame));
+    assert.ok(frame.nz < -.95, place.id);
+    const out = place.blocks.filter(b => b.out > 0 && b.h[0] < 5);
+    if (place.heldFlat) for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name);
+    else assertClearOfCarriageway(out.flatMap(b => [frame.point(b.u[0], b.out + b.depth / 2), frame.point(b.u[1], b.out + b.depth / 2)]));
+    if (place.unnamed) assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+    else assert.equal(landmarkFor(place.buildingIds[0]).id, place.id);
+  }
 });

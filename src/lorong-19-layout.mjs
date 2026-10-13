@@ -15,7 +15,7 @@ const W263 = 28.31, at263 = lay(.4, 1), main263 = 22.0;
 const cream263 = '#ecdfbf', salmon263 = '#e0ae78', maroon263 = '#74302c';
 const piers263 = [[2.5, 3.3], [7.3, 8.2], [10.2, 11.0], [13.8, 14.7], [17.2, 18.1], [20.2, 21.0], [21.8, 22.4]].map(at263);
 export const eminent = {
-  id: 'eminent-frog-porridge', buildingIds: ['l19w-323'], kind: 'eminent-frog-porridge', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 5, pitch: 18 },
+  id: 'eminent-frog-porridge', buildingIds: ['l19w-323'], kind: 'eminent-frog-porridge', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 14 },
   name: 'Eminent Frog Porridge & Seafood (June 2024 exterior)', address: '323 Geylang Road (the Lorong 19 west corner)',
   height: 3.9, ceiling: 3.75, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8e9190' },
   evidence: 'June 2024 Street View shows a cream two-storey corner shophouse at Geylang Road and Lorong 19, with salmon pilasters, maroon louvred shutters under louvred vents, a chamfered corner and a deep-eaved hipped roof. On Geylang Road it carries a dark board reading 明輝田雞粥海鮮煮炒店 EMINENT FROG PORRIDGE & SEAFOOD (LOR 19) over a yellow frog lightbox, with a larger frog board and red $18 promotion boards at the corner. Along Lorong 19 it has six bays of windows over an arcaded five-foot way under blue Tiger awnings, stall boards between the floors (among them an EMINENT FROG PORRIDGE board; the others read Changi Village Nasi Lemak, Heng Wang Seafood, Sin Kee Hainan Chicken Rice and B.B.Q Express), a green Lor 19 Geylang street sign and, at the north end, a vertical lightbox reading 明輝田雞粥 EMINENT FROG PORRIDGE 323; beyond it is a lower zinc-roofed extension. Google Maps lists Eminent Frog Porridge & Seafood, a porridge restaurant open until 4 am, at 323 Geylang Road, Singapore 389359, with its point inside this way, so its boards, lightboxes and stall board are redrawn in original type. The other stall boards are not listed and stay blank. Three June 2024 panoramas along the lane agree on its Lorong 19 face 3.5 m in front of the source edge, and its Geylang Road front is about 7 m wide with its party wall about 1.4 m east of the source line: the building stands about 3.5 m east of its source outline. Under the owner\'s answer to open question 46 it stands on an authored footprint: the lane face 3.5 m forward, the Geylang Road front 0.4 m back and the party wall with No. 321 1.4 m east; the photographed elevation is laid at its own scale from the corner, the two-storey block covering the first 22 m and the extension the rest. Heights were read on the triangulated planes, above the five-foot-way floor.',
@@ -393,16 +393,17 @@ export const sims146 = {
 // 10. Way 454254339, No. 148 Sims Avenue, the Lorong 19 east corner: He Ping Claypot Rice Restaurant, a cream
 // two-storey corner coffeeshop with ornate capitals under deep eaves. Its lane face (edge 3, u south from Sims Avenue)
 // is read 0.5 m in front of the source edge, where the lane panoramas agree: about 22.2 m from the corner to its south
-// end, triangulated 21.7 m along, against the 19.64 m source edge; laid proportionally. Its Sims Avenue front is only
-// about 5.9 m: its party line with No. 150 triangulates 3.6 m inside the source outline, so the outline's east 3.5 m
-// on Sims Avenue is drawn as No. 150's plain pale green west bay.
-const W339 = 19.635, lay339 = lay(-.5, W339 / 22.2), at339 = s => lay339(s).map(v => Math.min(W339, Math.max(0, v)));
+// end, triangulated 21.7 m along, against the 19.64 m source edge. Its Sims Avenue front is only about 5.9 m: its
+// party line with No. 150 triangulates 3.6 m inside the source outline. It stands on an authored footprint cut there
+// (sa-148, open question 44), its lane face laid at its photographed scale from the corner; the strip east of the cut
+// is No. 150's west bay (no150West).
+const W339 = 21.699, lay339 = lay(0, 1), at339 = s => lay339(s).map(v => Math.min(W339, Math.max(0, v)));
 const cream339 = '#ece6d6', rows339 = [[5.8, 7.45]];
 export const hePing = {
-  id: 'he-ping', buildingIds: ['454254339'], kind: 'he-ping', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 16 },
+  id: 'he-ping', buildingIds: ['sa-148'], kind: 'he-ping', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 16 },
   name: 'He Ping Claypot Rice Restaurant (June 2024 exterior)', address: '148 Sims Avenue (the Lorong 19 east corner)',
   height: 8.8, ceiling: 4.4, fiveFootWay: 2.5, roof: { type: 'hip', ridge: 10.8, colour: '#5d534d' },
-  evidence: 'June 2024 Street View shows a cream two-storey corner coffeeshop on the east corner of Lorong 19 and Sims Avenue: upper-floor windows between pilasters with ornate red and green relief capitals under a moulded frieze and deep eaves, a brown cornice at first-floor level, a salmon-tiled bay at its south end, and at the corner a dark wooden board with 和平 in white calligraphy; at street level an open coffeeshop under grey awnings of the gas supplier TSH Gas, lettered Esso LPG. Google Maps lists He Ping Claypot Rice Restaurant, a Chinese restaurant, at 148 Sims Ave, Singapore 387470, with its point inside this way, so the corner board is redrawn in original type; the awnings name a gas supplier and stay blank. Two pairs of June 2024 lane panoramas agree on the lane face 0.5 m in front of the source edge; its south end on the back lane triangulates 21.7 m from the source corner, so the face is about 22.2 m long against the 19.64 m source edge. On Sims Avenue, bearings from two Sims Avenue panoramas put its party line with No. 150 3.6 m inside the source outline and 1.2 m behind its front, so its Sims front is only about 5.9 m wide; the outline\'s east 3.5 m on Sims Avenue is drawn plain, in No. 150\'s pale green. Heights were read on the lane plane, above the five-foot-way floor: cornice at 4.45-4.9 m, windows at 5.8-7.45 m, eaves at about 8.8 m.',
+  evidence: 'June 2024 Street View shows a cream two-storey corner coffeeshop on the east corner of Lorong 19 and Sims Avenue: upper-floor windows between pilasters with ornate red and green relief capitals under a moulded frieze and deep eaves, a brown cornice at first-floor level, a salmon-tiled bay at its south end, and at the corner a dark wooden board with 和平 in white calligraphy; at street level an open coffeeshop under grey awnings of the gas supplier TSH Gas, lettered Esso LPG. Google Maps lists He Ping Claypot Rice Restaurant, a Chinese restaurant, at 148 Sims Ave, Singapore 387470, with its point inside this way, so the corner board is redrawn in original type; the awnings name a gas supplier and stay blank. Two pairs of June 2024 lane panoramas agree on the lane face 0.5 m in front of the source edge; its south end on the back lane triangulates 21.7 m from the source corner, so the face is about 22.2 m long against the 19.64 m source edge. On Sims Avenue, bearings from two Sims Avenue panoramas put its party line with No. 150 3.6 m inside the source outline and 1.2 m behind its front, so its Sims front is only about 5.9 m wide. Under the owner\'s answer to open question 44 it stands on an authored footprint cut at that party line, its lane face 0.5 m forward and 21.7 m long, and the strip east of the cut is drawn as No. 150\'s west bay. Heights were read on the lane plane, above the five-foot-way floor: cornice at 4.45-4.9 m, windows at 5.8-7.45 m, eaves at about 8.8 m.',
   sources: [way('454254339'), search('He Ping Claypot Rice Restaurant 148 Sims Avenue'), pano('7HvC0j9FXvZ4XoPIVwAqtA', 80, 10, 90), pano('FrRZ2jysnfLAH20E2BH4lw', 80, 15, 100), pano('2Ytwaot-jcjncvQsoDh-YA', 75, 10, 90), pano('8peXBtTZFyR4k8lv2HZbrQ', 175, 15, 100), pano('X9akYazsOs1oFvuI5CYKCw', 225, 10, 90)],
   colours: { wall: cream339, trim: '#e2dbc8', frame: '#4a4c4a', glass: '#4a5458', pier: cream339, back: '#5c544c', floor: '#a8a296' },
   bands: [[4.45, 4.9, .3, '#8a6450'], [8.1, 8.8, .15, '#e2dbc8']],
@@ -421,17 +422,15 @@ export const hePing = {
   piers: [[-.5, .3], [8.0, 8.5], [13.0, 13.4], [18.0, 18.7], [21.2, 21.7]].map(s => at339(s).map(v => Math.max(0, v))),
   backFittings: [{ name: 'open coffeeshop', u: at339([.4, 21.2]), h: [.1, 4.0], colour: '#5e5248', glow: .1 }],
   sides: [{
-    edge: 0, // the Sims Avenue front, u west from the source outline's east end; No. 148 from 3.6 m to the corner
+    edge: 0, // the Sims Avenue front, u west from the party line with No. 150 to the corner
     heldFlat: true, // its source edge stands 6.6 m from Sims Avenue's centreline, at the estimated carriageway's edge
-    windows: [[5.2, 6.0], [6.3, 7.0]].flatMap(u => rows339.map(h => ({ u, h, panes: 2 }))),
+    windows: [[1.63, 2.43], [2.73, 3.43]].flatMap(u => rows339.map(h => ({ u, h, panes: 2 }))),
     blocks: [
-      { name: 'No. 150\'s west bay, pale green', u: [.05, 3.55], h: [.1, 8.8], out: .02, depth: .03, colour: '#c9d6b4' },
-      { name: 'No. 150\'s shutter', u: [.3, 3.3], h: [.1, 3.0], out: .04, depth: .02, colour: '#bdbdb8' },
-      { name: 'cornice', u: [3.6, 9.03], h: [4.45, 4.9], out: .12, depth: .24, colour: '#8a6450' },
-      { name: 'relief capital', u: [3.6, 4.2], h: [8.0, 8.75], out: .1, depth: .2, colour: '#b8584a' },
-      { name: 'deep eaves', u: [3.6, 9.03], h: [8.8, 9.05], out: .5, depth: 1.0, colour: '#5a4a42' },
-      { name: 'grey awning, held flat', u: [3.6, 9.03], h: [2.6, 4.0], out: .12, depth: .24, colour: '#5f5f5d' },
-      { name: 'open coffeeshop', u: [3.9, 8.8], h: [.1, 3.9], out: .01, depth: .02, colour: '#5e5248' },
+      { name: 'cornice', u: [0, 5.97], h: [4.45, 4.9], out: .12, depth: .24, colour: '#8a6450' },
+      { name: 'relief capital', u: [.03, .63], h: [8.0, 8.75], out: .1, depth: .2, colour: '#b8584a' },
+      { name: 'deep eaves', u: [0, 5.97], h: [8.8, 9.05], out: .5, depth: 1.0, colour: '#5a4a42' },
+      { name: 'grey awning, held flat', u: [0, 5.97], h: [2.6, 4.0], out: .12, depth: .24, colour: '#5f5f5d' },
+      { name: 'open coffeeshop', u: [.33, 5.67], h: [.1, 3.9], out: .01, depth: .02, colour: '#5e5248' },
     ],
   }],
 };
@@ -519,15 +518,15 @@ export const kangHaPheng = {
 // 12. Way 454254247, No. 10: Bougainvilla Apartments, a white nine-storey block with a beige central bay under a
 // gable, set back behind a lawn and a railing. Its front (edge 0, u north from the south end) photographs 4.5 m in
 // front of the source edge (the No. 10 plate and the north-west corner triangulate there, and the floors repeat every
-// 3.1 m only on that plane), from 1.3 m south of the source corner to 23.1 m north of it: about 24.4 m against the
-// 22.18 m source edge. Laid proportionally on the source edge until its footprint is settled (open question 44).
-const W247 = 22.179, at247 = lay(-1.34, W247 / 24.44);
+// 3.1 m only on that plane), from 1.3 m north of the source corner to 0.9 m beyond its south end: about 24.4 m against the
+// 22.18 m source edge. It stands on an authored footprint on that line (l19e-10, open question 44).
+const W247 = 24.457, at247 = lay(-1.34, W247 / 24.44);
 const floors247 = [4.6, 7.7, 10.8, 13.9, 17.0, 20.1, 23.2, 26.3].slice(0, 7), white247 = '#f1f1ed', beige247 = '#e3d6b4';
 export const bougainvilla = {
-  id: 'bougainvilla', buildingIds: ['454254247'], kind: 'bougainvilla', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 11, pitch: 34 },
+  id: 'bougainvilla', buildingIds: ['l19e-10'], kind: 'bougainvilla', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 11, pitch: 34 },
   name: 'Bougainvilla Apartments (June 2024 exterior)', address: '10 Lorong 19 Geylang',
-  height: 28.3, ceiling: 4.4, fiveFootWay: 2.2, roof: { type: 'flat', colour: '#a8a6a0' },
-  evidence: 'June 2024 Street View shows a white apartment block of a ground-floor car porch and seven floors above, set back behind a lawn and a white railing with beige posts, north of an open car park at Lorong Bachok: angled corner bays of windows at both ends, single windows in beige surrounds, and a beige central bay of paired windows with balconies rising to an open gable; under the porch a lobby with raised lettering reading BOUGAINVILLA Apartments, a plate reading 10 and a blue sign reading BOUGAINVILLA APT. Google Maps lists Bougainvilla Apartments, an apartment complex, at 10 Lor 19 Geylang, Singapore 388492; its point lies in the block\'s rear way (454254245), outside the study, but the address, the plate and the lettering agree on this building, so it is named and the lettering is redrawn in original type (as at Crystal Mansions, open question 32). Bearings from June 2024 lane panoramas put the No. 10 plate and the north-west corner 4.5 m in front of the source edge, where the floors repeat every 3.1 m; on that plane the front runs from 1.3 m south of the source corner to 23.1 m north of it, about 24.4 m against the 22.18 m source edge. Until its footprint is settled (open question 44) the elevation is laid proportionally on the source edge, about 4.5 m behind its photographed line.',
+  height: 28.3, ceiling: 4.4, fiveFootWay: 2.2, shellInset: .08, roof: { type: 'flat', colour: '#a8a6a0' }, // the re-spaced front is 1 degree off its side walls
+  evidence: 'June 2024 Street View shows a white apartment block of a ground-floor car porch and seven floors above, set back behind a lawn and a white railing with beige posts, north of an open car park at Lorong Bachok: angled corner bays of windows at both ends, single windows in beige surrounds, and a beige central bay of paired windows with balconies rising to an open gable; under the porch a lobby with raised lettering reading BOUGAINVILLA Apartments, a plate reading 10 and a blue sign reading BOUGAINVILLA APT. Google Maps lists Bougainvilla Apartments, an apartment complex, at 10 Lor 19 Geylang, Singapore 388492; its point lies in the block\'s rear way (454254245), outside the study, but the address, the plate and the lettering agree on this building, so it is named and the lettering is redrawn in original type (as at Crystal Mansions, open question 32). Bearings from June 2024 lane panoramas put the No. 10 plate and the north-west corner 4.5 m in front of the source edge, where the floors repeat every 3.1 m; on that plane the front runs from 1.3 m north of the source corner to 0.9 m beyond its south end, about 24.4 m against the 22.18 m source edge. Under the owner\'s answer to open question 44 it stands on an authored footprint on that line, and its railing is drawn where a post triangulates, 4.2 m in front of the façade.',
   sources: [way('454254247'), search('Bougainvilla Apartments 10 Lorong 19 Geylang'), pano('NzRDDjZPo91yWpvV8BIq5A', 95, 20, 90), pano('C6WgL2wlMEl3mpMGCqZnIw', 105, 25, 100), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 110, 25, 100)],
   colours: { wall: white247, trim: beige247, frame: '#4a5654', glass: '#5d7a74', pier: white247, back: '#cfcdc6', floor: '#9e9a92' },
   bands: [[4.4, 4.75, .3, beige247]],
@@ -544,10 +543,10 @@ export const bougainvilla = {
     { name: 'gable apex', u: at247([8.4, 12.2]), h: [29.0, 30.4], out: .22, depth: .44, colour: beige247 },
     { name: 'gable crest', u: at247([9.7, 10.9]), h: [30.4, 31.0], out: .22, depth: .44, colour: beige247 },
     { name: 'parapet', u: [0, W247], h: [27.9, 28.3], out: .1, depth: .2, colour: beige247 },
-    // The white railing with beige posts along the pavement, at its photographed position about 2.8 m in front of the
+    // The white railing with beige posts along the pavement: a post triangulates 4.2 m in front of the photographed front
     // photographed front.
-    ...[[.2, .8], [1.3, 1.45]].map(h => ({ name: 'white railing', u: [0, W247], h, out: 7.3, depth: .05, colour: '#f2f2ee' })),
-    ...Array.from({ length: 8 }, (_, i) => .3 + i * 3.0).map(c => ({ name: 'beige railing post', u: [+c.toFixed(2), +(c + .45).toFixed(2)], h: [0, 1.7], out: 7.3, depth: .45, colour: beige247 })),
+    ...[[.2, .8], [1.3, 1.45]].map(h => ({ name: 'white railing', u: [0, W247], h, out: 4.2, depth: .05, colour: '#f2f2ee' })),
+    ...Array.from({ length: 9 }, (_, i) => .3 + i * 2.95).map(c => ({ name: 'beige railing post', u: [+c.toFixed(2), +(c + .45).toFixed(2)], h: [0, 1.7], out: 4.2, depth: .45, colour: beige247 })),
   ],
   // The lobby's raised lettering.
   boards: [{ u: at247([7.2, 10.2]), h: [3.5, 4.2], out: .05 }],
@@ -566,16 +565,17 @@ export const bougainvilla = {
 // its upper floors in a recessed frame of vertical fins. Its front (edge 3, u south from the north end) photographs
 // far in front of the source edge: the LOFT door on the five-foot way's back wall triangulates 6.5 m forward, and the
 // granite face 7.5 m forward, where it runs from 2.4 m north of the source corner to 13.0 m south of it, about 15.4 m
-// against the 11.19 m source edge. Laid proportionally (x0.73) on the source edge until its footprint is settled (open
-// question 44).
-const W381 = 11.188, at381 = s => lay(-2.4, W381 / 15.4)(s).map(v => Math.min(W381, Math.max(0, v)));
+// against the 11.19 m source edge. It stands on an authored footprint (l19e-6, open question 44): columns 8.3 m forward,
+// from 0.5 m north of the source corner to 12.3 m south of it, where a railing post and a column triangulate; the
+// elevation is laid proportionally on it. Its columns stand at the lane's estimated carriageway, so it is held flat.
+const W381 = 12.799, at381 = s => lay(-2.4, W381 / 15.4)(s).map(v => Math.min(W381, Math.max(0, v)));
 const fins381 = [[1.0, 1.25], [2.8, 3.05], [4.75, 5.0], [6.6, 6.85], [8.5, 8.75]];
 const granite381 = '#9c9182';
 export const no6 = {
-  id: 'l19-6-8', buildingIds: ['1223524381'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 9, pitch: 30 },
+  id: 'l19-6-8', buildingIds: ['l19e-6'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 9, pitch: 30 },
   name: 'Nos. 6-8 Lorong 19 (June 2024 exterior, occupants not identified)', address: '6-8 Lorong 19 Geylang (plates 6 and NO 8)',
   height: 15.3, ceiling: 3.45, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8a857e' },
-  evidence: 'June 2024 Street View shows a granite-clad block of four storeys between Bougainvilla Apartments and Sims Point, over a five-foot way on round white columns: a deep granite band over the five-foot way, then a recessed frame of vertical granite fins holding two rows of six windows, with single windows in the side bays and a parapet at about 15.3 m. In the five-foot way, from the north: a green door lettered LOFT, roller shutters with a plate reading NO 8, a glazed front under a board reading 三福園地 San Fu Yuan Di Learning Center (No. 6), an orange pier and a column plated 6, with a red B&W (Bed & Workspace) blade sign above. Google Maps lists several firms at 6, 6A and 8 Lor 19 Geylang (among them Voice Add, Jill Leong Advertising & Design and the Real Estate Academy) but none of their signs was photographed; San Fu Yuan Di Learning Center is listed at Lorong 29, B&W is not listed, and the businesses listed at Nos. 6 and 8 with signs are closed. So no name is given and the boards are blank. Bearings from two June 2024 lane panoramas put the LOFT door on the back wall of the five-foot way 6.5 m in front of the source edge, and on a plane 7.5 m forward the granite face runs about 15.4 m against the 11.19 m source edge. Until its footprint is settled (open question 44) the elevation is laid proportionally on the source edge, about 7.5 m behind its photographed line.',
+  evidence: 'June 2024 Street View shows a granite-clad block of four storeys between Bougainvilla Apartments and Sims Point, over a five-foot way on round white columns: a deep granite band over the five-foot way, then a recessed frame of vertical granite fins holding two rows of six windows, with single windows in the side bays and a parapet at about 15.3 m. In the five-foot way, from the north: a green door lettered LOFT, roller shutters with a plate reading NO 8, a glazed front under a board reading 三福園地 San Fu Yuan Di Learning Center (No. 6), an orange pier and a column plated 6, with a red B&W (Bed & Workspace) blade sign above. Google Maps lists several firms at 6, 6A and 8 Lor 19 Geylang (among them Voice Add, Jill Leong Advertising & Design and the Real Estate Academy) but none of their signs was photographed; San Fu Yuan Di Learning Center is listed at Lorong 29, B&W is not listed, and the businesses listed at Nos. 6 and 8 with signs are closed. So no name is given and the boards are blank. Bearings from two June 2024 lane panoramas put the LOFT door on the back wall of the five-foot way 6.5 m in front of the source edge, and on a plane 7.5 m forward the granite face runs about 15.4 m against the 11.19 m source edge. A railing post next door and the first column of the five-foot way then put its north end 0.5 m north of the source corner and its columns 8.4 m forward (columns in front of the 7.5 m plane had read too far north there); under the owner\'s answer to open question 44 it stands on an authored footprint, its columns 8.3 m forward, from there to 12.3 m south of the source corner, and the elevation is laid proportionally on it.',
   sources: [way('1223524381'), search('6 Lorong 19 Geylang'), pano('0tJ_yZzLMxOeYk3kLcr2Bw', 82, 20, 100), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 105, 15, 80), pano('NZfk6nTA1mTETJHQXIob7Q', 60, 15, 80)],
   colours: { wall: granite381, trim: '#a89e90', frame: '#3a3a38', glass: '#4a5654', pier: '#ecebe6', back: '#b8b2a6', floor: '#b88a6e' },
   bands: [[3.45, 5.9, .3, granite381], [5.6, 5.9, .55, '#a89e90']],
@@ -589,8 +589,8 @@ export const no6 = {
     ...[[-.9, -.8], [10.9, 11.0]].map(s => ({ name: 'frame edge', u: at381([s[0] - .2, s[1] + .1]), h: [5.9, 13.9], out: .25, depth: .5, colour: granite381 })),
     { name: 'frame head', u: at381([-.9, 11.0]), h: [13.6, 13.9], out: .25, depth: .5, colour: granite381 },
     { name: 'parapet', u: [0, W381], h: [14.9, 15.3], out: .05, depth: .1, colour: '#a89e90' },
-    ...[[-2.2, -1.3], [-.4, .4], [10.3, 10.8], [12.0, 12.6]].map(s => ({ name: 'round white column', u: at381(s), h: [0, 3.45], out: .1, depth: .5, colour: '#ecebe6' })),
-    { name: 'blank B&W blade sign', u: at381([11.6, 12.4]), h: [3.6, 4.6], out: .7, depth: .06, colour: '#c8302a' },
+    ...[[-2.2, -1.3], [-.4, .4], [10.3, 10.8], [12.0, 12.6]].map(s => ({ name: 'round white column', u: at381(s), h: [0, 3.45], out: .05, depth: .2, colour: '#ecebe6' })),
+    { name: 'blank B&W blade sign', u: at381([11.6, 12.4]), h: [3.6, 4.6], out: .2, depth: .06, colour: '#c8302a' },
   ],
   piers: [[-2.2, -1.3], [-.4, .4], [10.3, 10.8], [12.0, 12.6]].map(at381),
   backFittings: [
@@ -611,7 +611,7 @@ export const no6 = {
 // s = 1.1 to 20.6 against the outline's -2.2 to 21.3, so it is laid at its own scale and sliced across the edges.
 // The boundary wall along the pavement (out 8.5 from edge 9, where its lettered panel triangulates) is kept straight.
 // [edge, s at its south... north end, width, its plane's offset from edge 9's]
-const steps246 = [[11, -2.233, 2.2385, -1.25], [9, 0, 8.6208, 0], [7, 8.628, 5.3687, -1.25], [5, 13.989, 3.4072, .37], [3, 17.404, 3.864, -1.25]];
+const steps246 = [[11, 1.08, 1.8597, -1.25], [9, 2.94, 7.1619, 0], [7, 10.102, 4.4601, -1.25], [5, 14.564, 2.8307, .37], [3, 17.393, 3.2101, -1.25]];
 const cream246 = '#efe7d2', beige246 = '#dcc796', sills246 = [5.0, 8.1, 11.5, 14.6, 17.7, 20.9, 24.0];
 const bays246 = [[3.8, 6.8], [12.7, 15.9], [18.1, 20.2]];
 const whole246 = {
@@ -631,10 +631,10 @@ const whole246 = {
     { name: 'stair tower', u: [8.6, 10.6], h: [.13, 28.5], out: .15, depth: .3, colour: '#f2eee2' },
     { name: 'parapet', u: [1.1, 20.6], h: [25.4, 25.7], out: .1, depth: .2, colour: beige246 },
     // The boundary wall along the pavement: balustrades either side of the gate, the lettered panel beside it.
-    { name: 'boundary wall', u: [-2.2, 21.2], h: [0, .55], out: 8.5, depth: .3, colour: '#d8c08a' },
-    ...[[-2.2, 6.4], [12.8, 21.2]].map(s => ({ name: 'balustrade', u: s, h: [.55, 1.25], out: 8.5, depth: .22, colour: '#e3cd98' })),
-    { name: 'gate', u: [6.6, 9.6], h: [.1, 1.4], out: 8.5, depth: .05, colour: '#9a9c98' },
-    { name: 'lettered wall panel', u: [9.8, 12.8], h: [.55, 1.5], out: 8.5, depth: .3, colour: '#d8c08a' },
+    { name: 'boundary wall', u: [-2.2, 21.2], h: [0, .55], out: 5.3, depth: .3, colour: '#d8c08a' },
+    ...[[-2.2, 6.4], [12.8, 21.2]].map(s => ({ name: 'balustrade', u: s, h: [.55, 1.25], out: 5.3, depth: .22, colour: '#e3cd98' })),
+    { name: 'gate', u: [6.6, 9.6], h: [.1, 1.4], out: 5.3, depth: .05, colour: '#9a9c98' },
+    { name: 'lettered wall panel', u: [9.8, 12.8], h: [.55, 1.5], out: 5.3, depth: .3, colour: '#d8c08a' },
   ],
 };
 const part246 = ([edge, s0, width, plane]) => {
@@ -642,19 +642,20 @@ const part246 = ([edge, s0, width, plane]) => {
   const shift = Math.max(s0, -2.2) - s0, at = u => u.map(v => +(v + shift).toFixed(3));
   // Windows cut at a step are inset by their sill's overhang, and slivers dropped.
   const inset = ([l, r]) => [Math.max(l, .06), Math.min(r, width - .06)];
-  return { edge, windows: p.windows.map(w => ({ ...w, u: inset(at(w.u)) })).filter(w => w.u[1] - w.u[0] > .3), blocks: p.blocks.map(b => ({ ...b, u: at(b.u), out: b.out >= 8 ? +(b.out - plane).toFixed(2) : b.out })) };
+  return { edge, windows: p.windows.map(w => ({ ...w, u: inset(at(w.u)) })).filter(w => w.u[1] - w.u[0] > .3), blocks: p.blocks.map(b => ({ ...b, u: at(b.u), out: b.out >= 4 ? +(b.out - plane).toFixed(2) : b.out })) };
 };
 const front246 = part246(steps246[1]);
 export const simsPoint = {
-  id: 'sims-point', buildingIds: ['454254246'], kind: 'sims-point', frontEdge: 9, reviewRoad: 'Lorong 19 Geylang', review: { distance: 12, pitch: 38 },
+  id: 'sims-point', buildingIds: ['l19e-4'], kind: 'sims-point', frontEdge: 9, reviewRoad: 'Lorong 19 Geylang', review: { distance: 12, pitch: 38 },
   name: 'Sims Point (June 2024 exterior)', address: '4 Lorong 19 Geylang',
   height: 25.7, ceiling: 3.9, fiveFootWay: .3, roof: { type: 'flat', colour: '#a8a6a0' },
-  evidence: 'June 2024 Street View shows a cream apartment block of eight storeys over a ground-floor car park, south of Nos. 6-8: three stacks of curved bay windows with beige spandrels and rounded crowns, narrow columns of small windows between them, and a stair tower lit by a slot of windows rising above the parapet; in front, past a driveway gate, a balustraded beige wall along the pavement with a panel lettered SIMS POINT. Google Maps lists Sims Point, an apartment complex, at 4 Lor 19 Geylang, Singapore 388489, and the source map names this way Sims Point; the listing point lies in Nos. 6-8\'s way next door, but the address, the map and the lettering agree on this building, so it is named and the panel is redrawn in original type (as at Crystal Mansions, open question 32). Four June 2024 lane panoramas agree on the facade 3.2 m in front of the source outline\'s northern lane edge, where it runs about 19.5 m along the lane; the source lane face is stepped within 1.6 m of one line and runs about 23.5 m, so the elevation is laid at its own scale and sliced across the stepped edges. Heights were read on that plane: windows from 5.0 m, every 3.1-3.4 m, parapet at about 25.7 m, bay crowns to 28 m and the stair tower to 28.5 m.',
+  evidence: 'June 2024 Street View shows a cream apartment block of eight storeys over a ground-floor car park, south of Nos. 6-8: three stacks of curved bay windows with beige spandrels and rounded crowns, narrow columns of small windows between them, and a stair tower lit by a slot of windows rising above the parapet; in front, past a driveway gate, a balustraded beige wall along the pavement with a panel lettered SIMS POINT. Google Maps lists Sims Point, an apartment complex, at 4 Lor 19 Geylang, Singapore 388489, and the source map names this way Sims Point; the listing point lies in Nos. 6-8\'s way next door, but the address, the map and the lettering agree on this building, so it is named and the panel is redrawn in original type (as at Crystal Mansions, open question 32). Four June 2024 lane panoramas agree on the facade 3.2 m in front of the source outline\'s northern lane edge, where it runs about 19.5 m along the lane; the source lane face is stepped within 1.6 m of one line and runs about 23.5 m, so the elevation is laid at its own scale and sliced across the stepped edges; under the owner\'s answer to open question 44 the stepped outline is moved 3.2 m forward and fitted between the façade\'s photographed ends, so the slices lie on their true positions. Heights were read on that plane: windows from 5.0 m, every 3.1-3.4 m, parapet at about 25.7 m, bay crowns to 28 m and the stair tower to 28.5 m.',
   sources: [way('454254246'), search('Sims Point 4 Lorong 19 Geylang'), pano('NZfk6nTA1mTETJHQXIob7Q', 82, 30, 100), pano('gWQbjpYBNuduJ0hBOUrHGw', 70, 30, 100), pano('0tJ_yZzLMxOeYk3kLcr2Bw', 110, 30, 100), pano('ukZWTPS52TsHumpZjk8qWg', 45, 30, 100)],
   colours: { wall: cream246, trim: beige246, frame: '#3a3a36', glass: '#4a5658', pier: cream246, back: '#7a7670', floor: '#8a8680' },
   windows: front246.windows, blocks: front246.blocks,
-  // The lettered panel on the boundary wall falls on edge 7 (s 9.8-12.8), 1.25 m behind edge 9's plane.
-  sides: steps246.filter(([e]) => e !== 9).map(part246).map(p => p.edge === 7 ? { ...p, boards: [{ u: [1.3, 4.0], h: [.7, 1.35], out: 9.92 }] } : p),
+  // The lettered panel on the boundary wall (s 9.8-12.8) falls mostly on edge 7, which starts at s 10.1, 1.25 m behind
+  // edge 9's plane.
+  sides: steps246.filter(([e]) => e !== 9).map(part246).map(p => p.edge === 7 ? { ...p, boards: [{ u: [.1, 2.6], h: [.7, 1.35], out: 6.72 }] } : p),
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -663,8 +664,8 @@ export const simsPoint = {
 // from the north end) photographs about 7 m behind the source edge, behind a strip of nose-in parking: on that plane
 // three lane panoramas agree on its bays, from 0.3 m to the corner 23.7 m along. Its Geylang Road front (edge 10, a
 // side face) photographs 1.5 m forward, from the corner 7.2 m east of the source corner to a glass building 34.5 m
-// along. Both are laid proportionally on their source edges until the footprint is settled (open question 44); the
-// source lane edge stands 2.4 m from the lane's centreline, so the lane face is held flat.
+// along. The outline is moved 7.2 m east and 0.6 m south, its shape kept (gr-325, open question 44), and both faces are
+// laid proportionally on it.
 const at168 = s => lay(.3, 22.255 / 23.4)(s).map(v => Math.min(22.255, Math.max(0, v)));
 const gr168 = s => lay(7.2, 28.022 / 27.3)(s).map(v => Math.min(28.022, Math.max(0, v)));
 const white168 = '#f3f3f0', green168 = '#5f8a6c';
@@ -677,11 +678,10 @@ const face168 = (spans, at) => ({
 const lane168 = face168([[3.0, 5.6], [9.0, 11.6], [15.0, 17.6], [21.0, 23.3]], at168);
 const front168 = face168([[8.9, 10.9], [12.6, 14.6], [15.0, 16.8], [18.0, 20.0], [20.3, 22.3], [23.3, 25.3], [25.5, 27.3], [28.8, 30.6], [31.2, 33.0]], gr168);
 export const straitsLaundry = {
-  id: 'straits-laundry-331', buildingIds: ['454254168'], kind: 'straits-laundry-331', frontEdge: 11, reviewRoad: 'Lorong 19 Geylang', review: { distance: 5, pitch: 26 },
+  id: 'straits-laundry-331', buildingIds: ['gr-325'], kind: 'straits-laundry-331', frontEdge: 11, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 24 },
   name: 'Straits Laundry, Nanyang Hardware and Romance Adult Shop, Nos. 325-333 Geylang Road (June 2024 exterior)', address: '325-333 Geylang Road (the Lorong 19 east corner)',
   height: 12.3, ceiling: 3.5, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9893' },
-  heldFlat: true, // the source lane edge stands 2.4 m from the lane's centreline, inside the estimated carriageway
-  evidence: 'June 2024 Street View shows a freshly painted white three-storey block on the east corner of Lorong 19 and Geylang Road, with green steel windows between louvred vent bands under projecting grey sunshades, over a five-foot way on square columns. Along Lorong 19, behind a strip of nose-in parking, it has four window bays over meter boxes, a door, a parking sign and vacant glazed units. On Geylang Road, from the corner: two vacant glazed units (the former OCBC Geylang, listed at 325/327 and permanently closed); a shop under a lit board reading ROMANCE ADULT SHOP 情趣商店; a paint shop under orange NIPPON PAINT boards and a board reading 南洋 NANYANG HARDWARE PTE LTD; and a launderette under a board reading STRAITS LAUNDRY. Google Maps lists Romance Adult Shop (331 Geylang Rd), Nanyang Hardware Pte Ltd (331 Geylang Rd) and Straits Laundry\'s Geylang Road (333 Geylang Rd, open 24 hours), all with their points inside this way, so the block is named after them, as No. 301 was, and their boards are redrawn in original type, without the paint brand; the closed bank\'s units stay plain. The lane face photographs about 7 m behind its source edge: on that plane three June 2024 lane panoramas agree on its bays, and the Geylang Road panoramas put the corner 7.2 m east of the source corner and the front 1.5 m forward, about 27.3 m long to the glass building next door. So the building stands about 7 m east of its source outline, whose size fits; until its footprint is settled (open question 44) both faces are laid proportionally on their source edges. Heights were read on the Geylang Road plane: five-foot way to 3.5 m, windows at 5.5-6.8 and 9.3-10.7 m, sunshades at 7.65-7.95 and 12.0-12.3 m.',
+  evidence: 'June 2024 Street View shows a freshly painted white three-storey block on the east corner of Lorong 19 and Geylang Road, with green steel windows between louvred vent bands under projecting grey sunshades, over a five-foot way on square columns. Along Lorong 19, behind a strip of nose-in parking, it has four window bays over meter boxes, a door, a parking sign and vacant glazed units. On Geylang Road, from the corner: two vacant glazed units (the former OCBC Geylang, listed at 325/327 and permanently closed); a shop under a lit board reading ROMANCE ADULT SHOP 情趣商店; a paint shop under orange NIPPON PAINT boards and a board reading 南洋 NANYANG HARDWARE PTE LTD; and a launderette under a board reading STRAITS LAUNDRY. Google Maps lists Romance Adult Shop (331 Geylang Rd), Nanyang Hardware Pte Ltd (331 Geylang Rd) and Straits Laundry\'s Geylang Road (333 Geylang Rd, open 24 hours), all with their points inside this way, so the block is named after them, as No. 301 was, and their boards are redrawn in original type, without the paint brand; the closed bank\'s units stay plain. The lane face photographs about 7 m behind its source edge: on that plane three June 2024 lane panoramas agree on its bays, and the Geylang Road panoramas put the corner 7.2 m east of the source corner and the front 1.5 m forward, about 27.3 m long to the glass building next door. So the building stands about 7 m east of its source outline, whose size fits; under the owner\'s answer to open question 44 the outline is moved 7.2 m east and 0.6 m south, its shape kept, and both faces are laid proportionally on it. Heights were read on the Geylang Road plane: five-foot way to 3.5 m, windows at 5.5-6.8 and 9.3-10.7 m, sunshades at 7.65-7.95 and 12.0-12.3 m.',
   sources: [way('454254168'), search('Straits Laundry Geylang Road 333'), search('Nanyang Hardware Pte Ltd 331 Geylang Road'), search('Romance Adult Shop 331 Geylang Road'), pano('PDfryrUeGs2xTHzFqYRBlQ', 80, 15, 100), pano('ukZWTPS52TsHumpZjk8qWg', 120, 15, 90), pano('_V35ZcH4MPpWV-ImZnEVsA', 40, 15, 90), pano('YYHFimb1eboxjLahzKL00A', 345, 10, 100), pano('rxHH3aE6uvw225UPp98KpA', 345, 10, 100)],
   colours: { wall: white168, trim: '#e6e6e2', frame: green168, glass: '#6f9a80', pier: white168, back: '#e2e2de', floor: '#a8a296' },
   bands: [[3.5, 3.75, .15]],
@@ -698,14 +698,11 @@ export const straitsLaundry = {
   ],
   sides: [{
     edge: 10, // the Geylang Road front, u east from the source corner; photographed from the corner at s = 7.2
-    heldFlat: false, // its source edge stands 9.9 m from Geylang Road's centreline, clear of the carriageway
     windows: front168.windows, vents: front168.vents,
     blocks: [
       ...front168.shades,
-      // The source corner stands in Lorong 19's estimated carriageway, so the ledge and the corner column start 0.8 m in.
-      { name: 'ledge over the five-foot way', u: [.8, 28.02], h: [3.5, 3.75], out: .08, depth: .16, colour: '#e6e6e2' },
-      { name: 'square column', u: [.8, 1.3], h: [0, 3.5], out: .15, depth: .3, colour: white168 },
-      ...[[11.5, 12.3], [16.5, 17.0], [22.2, 22.6], [27.9, 28.3], [33.4, 34.0]].map(s => ({ name: 'square column', u: gr168(s), h: [0, 3.5], out: .15, depth: .3, colour: white168 })),
+      { name: 'ledge over the five-foot way', u: [0, 28.02], h: [3.5, 3.75], out: .08, depth: .16, colour: '#e6e6e2' },
+      ...[[7.2, 7.7], [11.5, 12.3], [16.5, 17.0], [22.2, 22.6], [27.9, 28.3], [33.4, 34.0]].map(s => ({ name: 'square column', u: gr168(s), h: [0, 3.5], out: .15, depth: .3, colour: white168 })),
       { name: 'vacant glazed units', u: gr168([8.2, 16.5]), h: [.1, 3.0], out: -1.6, depth: .04, colour: '#9fcfc0' },
       { name: 'adult shop front', u: gr168([17.6, 22.0]), h: [.1, 2.8], out: -1.6, depth: .04, colour: '#3a2a3a', glow: .15 },
       { name: 'orange paint-shop boards', u: gr168([22.7, 27.8]), h: [2.4, 3.4], out: .12, depth: .04, colour: '#e8682a' },
@@ -776,3 +773,28 @@ export const geylangRow19 = wayRow19.map(([w, s0, width], i) => {
 });
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
+
+// ---------------------------------------------------------------------------------------------
+// Sims Avenue houses beside Lorong 19 that are not lane houses: their fronts face Sims Avenue.
+// No. 150's west bay (sa-150w), the strip of He Ping's source outline east of its photographed party line (open
+// question 44): the pale green two-storey No. 150 continues east, outside the study, so only this bay is drawn.
+export const no150West = {
+  id: 'sims-150w', buildingIds: ['sa-150w'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Sims Avenue', review: { distance: 7, pitch: 18 },
+  name: 'No. 150 Sims Avenue, its west bay beside He Ping (June 2024 exterior, occupants not identified)', address: '150 Sims Avenue (west bay)',
+  height: 8.8, ceiling: 3.6, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8a8682' },
+  heldFlat: true, // its source front stands 6.6 m from Sims Avenue's centreline, at the estimated carriageway's edge
+  evidence: 'June 2024 Street View shows No. 150 Sims Avenue, a pale green two-storey shophouse east of He Ping, with louvred-shuttered windows between pilasters under ornate capitals and a corrugated canopy over a five-foot way with roller shutters. Bearings from two June 2024 Sims Avenue panoramas put its party line with He Ping 3.6 m inside He Ping\'s source outline, so under the owner\'s answer to open question 44 that strip is drawn as No. 150\'s west bay; the rest of No. 150 lies outside the study. Google Maps lists Chang Qing Chinese Medical Centre at 150 Sims Avenue, whose board is on the house\'s main bay, outside this strip, so no name is given.',
+  sources: [way('454254339'), search('Chang Qing Chinese Medical Centre 150 Sims Avenue'), pano('8peXBtTZFyR4k8lv2HZbrQ', 175, 15, 100), pano('X9akYazsOs1oFvuI5CYKCw', 225, 10, 90)],
+  colours: { wall: '#c9d6b4', trim: '#d8e2c8', frame: '#5a5e58', glass: '#4a5458', pier: '#d0dcbc', back: '#bdbdb8', floor: '#a8a296' },
+  bands: [[4.45, 4.9, .2, '#b8c6a2']],
+  windows: [{ u: [.9, 2.5], h: [5.8, 7.45], panes: 2, shutters: true }],
+  blocks: [
+    { name: 'pilaster', u: [3.1, 3.5], h: [4.9, 8.1], out: .08, depth: .16, colour: '#d8e2c8' },
+    { name: 'ornate capital', u: [3.1, 3.5], h: [8.0, 8.75], out: .1, depth: .2, colour: '#a85a4e' },
+    { name: 'eaves', u: [0, 3.568], h: [8.8, 9.05], out: .12, depth: .24, colour: '#5a4a42' },
+    { name: 'corrugated canopy, held flat', u: [0, 3.568], h: [3.2, 3.5], out: .12, depth: .24, colour: '#8a8c88' },
+  ],
+  piers: [[3.1, 3.5]],
+  backFittings: [{ name: 'roller shutter', u: [.3, 3.0], h: [.1, 2.9], colour: '#bdbdb8' }],
+};
+export const simsRow19 = [no150West];

@@ -94,8 +94,8 @@ function splitAlongFront(map, id, from, to, cuts) {
  * street. One monotonic, piecewise-linear map of t takes the source party lines (`breaks`, [source, measured] pairs)
  * to the measured ones and is applied to every vertex of every house, so neighbours keep their shared walls and
  * interlocking rear parts stay apart; vertices on the source front (|d| < 0.5 m) move to the measured front `d`.
- * A house whose source front lies off the row's line gives it as `sourceFront` (d), and `front` may be a function
- * (d, new t) => new d. Each outline keeps its source vertex order, so its edge numbers are unchanged.
+ * A house whose source front lies off the row's line gives it as `sourceFront` (d), within `band` (default 0.5 m) for
+ * a stepped front, and `front` may be a function (d, new t) => new d. Each outline keeps its source vertex order, so its edge numbers are unchanged.
  */
 function warpRow(map, origin, dir, breaks, houses) {
   const n = [-dir[1], dir[0]];
@@ -111,7 +111,7 @@ function warpRow(map, origin, dir, breaks, houses) {
     const src = map.buildings.find(b => b.id === h.source).coordinates.slice(0, -1).map(c => project(c, map.origin));
     const outline = src.map(p => {
       const q = sub(p, origin), t = q[0] * dir[0] + q[1] * dir[1], d = q[0] * n[0] + q[1] * n[1];
-      const onFront = Math.abs(d - (h.sourceFront ?? 0)) < .5, d1 = !onFront ? d : typeof h.front === 'function' ? h.front(d, T(t)) : h.front;
+      const onFront = Math.abs(d - (h.sourceFront ?? 0)) < (h.band ?? .5), d1 = !onFront ? d : typeof h.front === 'function' ? h.front(d, T(t)) : h.front;
       return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * d1, n[1] * d1]);
     });
     return { id: h.id, street: h.street, number: h.number, levels: h.levels, outline };
@@ -575,6 +575,32 @@ export const authoredFootprintGroups = [
       const no33 = reface('454254309', 3, 2, [[0, .5], [25.166, 24.9]], -1.5, { id: 'l19w-33', number: '33', levels: 3 });
       const no146 = { id: 'sa-146', street: 'Sims Avenue', number: '146', levels: 3, outline: outlineOf(map, '454254310').map(p => add(p, [.15, 1.8])) };
       return [eminent, primero, ...row, leiZangSi, no33, no146];
+    },
+  },
+  {
+    id: 'lorong-19-east', question: 44, approved: '2026-10-13',
+    evidence: 'The east side of Lorong 19 on its photographed positions, from June 2024 panoramas (docs/lorong-19-brief.md, stops 10 and 12-15). He Ping (No. 148 Sims Avenue): its lane face 0.5 m forward and 21.7 m long, the Sims Avenue front kept and cut at the party line with No. 150, triangulated 5.47 m from the lane corner; the cut-off strip is No. 150\'s west bay. Bougainvilla Apartments, Nos. 6-8 and Sims Point on one re-spacing along the lane, so neighbours keep their order: Bougainvilla\'s front 4.5 m forward, from 1.34 m north of its source corner to its south end, which a railing post triangulates 0.6 m north of Nos. 6-8; Nos. 6-8\'s columns 8.3 m forward (a column triangulated from one panorama at 8.4 m; the LOFT door on the five-foot way\'s back wall at 6.5 m), from 0.5 m north of the source corner to 12.3 m south of it; Sims Point\'s stepped lane face 3.2 m forward, from 3.3 m south of its source north end to 0.66 m north of its south end. Nos. 325-333 Geylang Road: the whole outline moved 7.2 m east and 0.6 m south, its shape kept, as the lane panoramas place its lane face about 7 m behind the source edge and the Geylang Road panoramas its corner 7.2 m east and 0.6 m south of the source corner.',
+    replaces: ['454254339', '454254247', '1223524381', '454254246', '454254168'],
+    build(map) {
+      const lane = 'Lorong 19 Geylang';
+      // He Ping: vertices 0 (lane corner), 1 (Sims Avenue east end), 2 and 3; the lane face is edge 3.
+      const h = outlineOf(map, '454254339'), south = unit(h[0], h[3]), east = unit(h[0], h[1]);
+      const A = at(h[0], east, -.5), P = at(h[0], east, 5.47);
+      const hePing = { id: 'sa-148', street: 'Sims Avenue', number: '148', levels: 2, outline: [A, P, at(P, south, 21.7), at(A, south, 21.7)] };
+      const no150 = { id: 'sa-150w', street: 'Sims Avenue', number: '150', levels: 2, outline: [P, h[1], h[2], add(P, sub(h[2], h[1]))] };
+      // Bougainvilla, Nos. 6-8 and Sims Point along Nos. 6-8's source front (north to south), d towards the lane. Sims
+      // Point's stepped lane face runs from vertex 0 to vertex 3; its edge 9 runs north from vertex 9 to vertex 10.
+      const s68 = outlineOf(map, '1223524381'), O = s68[0], dir = unit(O, s68[3]);
+      const tOf = p => (p[0] - O[0]) * dir[0] + (p[1] - O[1]) * dir[1], dOf = p => (p[0] - O[0]) * -dir[1] + (p[1] - O[1]) * dir[0];
+      const b = outlineOf(map, '454254247'), sp = outlineOf(map, '454254246');
+      const breaks = [[tOf(b[1]), tOf(b[1]) - 1.34], [tOf(b[0]), -.6], [0, -.5], [tOf(s68[3]), 12.3], [tOf(sp[0]), tOf(sp[10]) + 1.1], [tOf(sp[3]), tOf(sp[3]) - .66]];
+      const row = warpRow(map, O, dir, breaks, [
+        { source: '454254247', id: 'l19e-10', street: lane, number: '10', levels: 8, sourceFront: (dOf(b[0]) + dOf(b[1])) / 2, front: d => d + 4.5 },
+        { source: '1223524381', id: 'l19e-6', street: lane, number: '6-8', levels: 4, front: 8.3 },
+        { source: '454254246', id: 'l19e-4', street: lane, number: '4', levels: 8, sourceFront: (dOf(sp[0]) + dOf(sp[5])) / 2, band: 1.0, front: d => d + 3.2 },
+      ]);
+      const corner = { id: 'gr-325', street: 'Geylang Road', number: '325-333', levels: 3, outline: outlineOf(map, '454254168').map(p => add(p, [7.2, .6])) };
+      return [hePing, no150, ...row, corner];
     },
   },
 ];
