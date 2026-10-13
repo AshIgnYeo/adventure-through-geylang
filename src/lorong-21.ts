@@ -1,5 +1,5 @@
 import type { World, Point } from './world';
-import { lorong21 } from './lorong-21-layout.mjs';
+import { lorong21, simsRow21 } from './lorong-21-layout.mjs';
 import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
 import type { Draw } from './simple-house';
 
@@ -70,7 +70,7 @@ const draws: Draws = {
 /** Lorong 21 between Geylang Road and Sims Avenue, with the Sims Avenue houses back to Lorong 19; named only where a
  * listing and a photographed sign agree. */
 export function buildLorong21(world: World, id: string, poly: Point[]) {
-  const place = lorong21.find(p => p.buildingIds.includes(id)) as any;
+  const place = [...lorong21, ...simsRow21].find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   buildLaneHouse(world, place.parts ? { ...place, ...place.parts[id] } : place, poly, draws);
   return true;

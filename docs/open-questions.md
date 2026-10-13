@@ -37,6 +37,23 @@ Started: 10 October 2026.
       - **No. 178:** its lane face and Sims Avenue front moved back, with a short splay between them.
     - **Unlocks:** true positions and widths along the west side, five-foot ways and awnings at their photographed depth, and No. 178 out of the lane's carriageway.
 
+50. **Sims Avenue Nos. 150–176, Lorong 19 to Lorong 21: re-cut the row into its fourteen fronts on their photographed line, and name five tenants?**
+    - **Evidence:** measured from the June 2024 Sims Avenue drive ([Lorong 21 brief](lorong-21-brief.md), stops 15–22).
+      - The fronts stand **1.85 m behind** the source front, as at No. 178.
+      - Measured along the row from way 454254334's east end, westward, the party walls stand at −26.7, −21.0, −15.7, −10.0, −5.0, 1.1, 5.9, 12.1, 17.4, 23.0, 28.4, 33.85, 38.3 and 44.1 m, with No. 150's west wall on He Ping's authored party line (48.75 m).
+      - The source map has eight ways of 9.04 m for them. The row's two ends agree with the source within 0.4 m.
+    - **Recommendation:** yes. Author fourteen footprints on the photographed line, cut at the party walls, keeping the source rear line, as question 45 did for the Geylang Road row between Lorong 17 and Lorong 19. No. 150's west bay joins Lorong 19's strip (`sims-150w`) as one footprint.
+    - **Naming, once re-cut:** six tenants are listed at their house's number and operating, and each one's sign is photographed on that house:
+      - **Vivere Design Studio** (176): raised lettering and a board;
+      - **Ban Eng Hin Motor Co** (172): a board;
+      - **Kian Seng Hardware Trading** (168): a board;
+      - **Sunrise Minimart** (164): a board;
+      - **Rochor Original Beancurd** (156): its mark on the awning;
+      - **Chang Qing Chinese Medical Centre** (150, west bay): a board.
+
+      The listing points run about 5 m east of the photographed fronts, as the address points do, so the houses are matched by number.
+    - **Unlocks:** fourteen fronts at their true widths and depth, and six more named places. If the answer is no, the row stays sliced across its source ways, unnamed.
+
 ## Settled
 
 ### Eleventh batch, 13 October 2026

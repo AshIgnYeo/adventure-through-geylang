@@ -35,7 +35,7 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 | 12 | East | 454254165 | HCSA Community Services | Done; named |
 | 13 | East | 454254160 | HCSA Community Services, with its gateway | Done; named |
 | 14 | East | 454254144 | HCSA Community Services, by Geylang Road | Done; named |
-| 15–22 | Sims Avenue | 454254331 to 454254338 | Nos. 150–176, west from the corner | |
+| 15–22 | Sims Avenue | 454254331 to 454254338 | Nos. 150–176, west from the corner | Done; fourteen fronts sliced across eight ways; question 50 |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
 
@@ -263,3 +263,49 @@ The whole east side, from Sims Avenue to the garden at Geylang Road, is one comp
 Use `?review=hcsa-community-services`.
 
 **East side complete.** Every building from Sims Avenue to Geylang Road on the east side now has its Lorong 21 front. The garden at the Geylang Road corner has no footprint.
+
+## Sims Avenue, Lorong 19 to Lorong 21
+
+### 15–22. Ways 454254331 to 454254338: Nos. 150–176
+
+A row of two-storey shophouses on the south side of Sims Avenue, between No. 178 and He Ping at Lorong 19. The source map has **eight ways of 9.04 m**; the photographs show **fourteen fronts**.
+
+**Measurement:**
+- **Depth:** the June 2024 Sims Avenue drive was read on one plane along the row (s west from way 454254334's east end).
+  - The depth scores preferred planes 1.5–3.25 m in front of the source front. There, the panoramas' views of No. 176's lettering and of two boards drift apart.
+  - On a plane **1.85 m behind** the source front, as at No. 178, they line up between four panoramas: VIVERE, the Kian Seng board, and the yellow board at s 14–18.
+- **Party walls on that plane:** at s = −26.7, −21.0, −15.7, −10.0, −5.0, 1.1, 5.9, 12.1, 17.4, 23.0, 28.4, 33.85, 38.3 and 44.1. No. 150's west wall is He Ping's authored party line (48.75, Lorong 19 question 44).
+- **The row against its source run:** it runs from 0.4 m west of the source run's east end to its west end. So its length agrees with the source, but its fourteen fronts of 4.4–6.1 m do not fall on the eight source ways.
+- **Numbers:** they follow the listings' address points, which run about 5 m east of the photographed fronts. No. 158 is not found, and No. 150 has two bays.
+- **Heights:** five-foot ways to about 3.4 m; upper windows at 4.4–8.1 m; tops from 7.0 m (under tiled roofs at the east end) to 10.2 m (the Peranakan fronts and the west end).
+
+| Front | s | Photographed | Listed and signed |
+| --- | --- | --- | --- |
+| No. 176 | −26.7 to −21.0 | White, shuttered windows, raised lettering **VIVERE** over a glazed design studio under a board reading VIVERE DESIGN STUDIO; tiled roof | **Vivere Design Studio** (176, operating) |
+| No. 174 | −21.0 to −15.7 | White, green frames, roller shutters; the same roofline | No (Caesar Palace Thai Massage, closed) |
+| No. 172 | −15.7 to −10.0 | A board reading **萬榮興摩哆公司 BAN ENG HIN MOTOR CO** with an Idemitsu mark; a rooftop extension | **Ban Eng Hin Motor Co** (172, operating) |
+| No. 170 | −10.0 to −5.0 | A red awning over an open shop | No (Sin Poh Joo Hardware is listed; no sign photographed) |
+| No. 168 | −5.0 to 1.1 | An orange board reading **KIAN SENG HARDWARE TRADING PTE LTD** | **Kian Seng Hardware Trading** (168, operating) |
+| No. 166 | 1.1 to 5.9 | A yellow trading board (建威), roller shutters | No (Farz Engineering listed; its sign not photographed) |
+| No. 164 | 5.9 to 12.1 | Lavender, white-shuttered windows, a board reading **SUNRISE MINIMART**, a green awning | **Sunrise Minimart** (164, operating) |
+| No. 162 | 12.1 to 17.4 | A red Peranakan front with cream relief, under a board reading 飙達企業(五金) WINTRADE ENTERPRISE (HARDWARE) | No: Wintrade Enterprise is listed at 123 Sims Avenue |
+| No. 160 | 17.4 to 23.0 | Its red Peranakan twin, three arched windows, a grey striped awning | No |
+| No. 156 | 23.0 to 28.4 | A white Peranakan front with green relief, under a red gas-supplier awning carrying **Rochor Beancurd**'s mark | **Rochor Original Beancurd** (156, operating) |
+| No. 154 | 28.4 to 33.85 | Its green twin, under the same awning | No (Union Energy Group closed) |
+| No. 152 | 33.85 to 38.3 | White, red-framed shutters, a grey awning | No |
+| No. 150, east bay | 38.3 to 44.1 | Grey-white, louvred windows, a brown awning lettered KRIPAL over a Sunshine Electrical Trading valance | No (neither listed) |
+| No. 150, west bay | 44.1 to 48.75 | Pale green, a board reading **长青中医诊疗所 CHANG QING CHINESE MEDICAL CENTRE**; it runs into He Ping's outline | **Chang Qing Chinese Medical Centre** (150, operating) |
+
+**Layout:**
+- **Slicing:** the row's elevation is laid at its photographed positions on the source front and sliced across the eight source ways (`simsRow21` in the layout), as the Geylang Road row on Lorong 19 was before question 45 re-cut it.
+- **Each way:**
+  - its wall stands at the lower of its houses' tops, and each house's colour and roofline are drawn over its own part;
+  - windows cut at a source party line are inset by their sills.
+- **Held flat:** the source fronts stand 0.5–2.4 m clear of Sims Avenue's estimated carriageway, so street-level pieces are held within 0.25 m.
+- **Unnamed:** no house is named while its front is sliced across source ways, and every board is blank.
+- **The west bay** that carries Chang Qing's board lies mostly in No. 150's west-bay strip (`sims-150w`) from Lorong 19, which is still drawn plain.
+- Re-cutting the row into its fourteen fronts, on their photographed line, and naming the five signed tenants is [open question 50](open-questions.md).
+
+Use `?review=sims-174-176` to `?review=sims-150-152` (one per source way).
+
+**Sims Avenue complete.** The block face from Lorong 19 to Lorong 21 now has every front.

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
-import { lorong21, lorong21Frame, lorong21Layout, lorong21Reviews, lorong21Sides, lorong21Upper } from '../src/lorong-21-layout.mjs';
+import { lorong21, simsRow21, lorong21Frame, lorong21Layout, lorong21Reviews, lorong21Sides, lorong21Upper } from '../src/lorong-21-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
@@ -99,4 +99,24 @@ test('HCSA Community Services is named over the four buildings of its compound, 
   assert.equal(gate.blades.length, 1);
   const f = lorong21Frame(outline('454254160'), { frontEdge: 2 }), end = f.point(gate.blades[0].u, gate.blades[0].out[1]);
   assert.ok(nearestOnSegment(end, ...[outline('454254144')[8], outline('454254144')[9]]).distance < 1.5);
+});
+
+test('the Sims Avenue row back to Lorong 19 is laid at its photographed positions across its eight source ways and faces Sims Avenue', () => {
+  assert.deepEqual(simsRow21.map(p => p.buildingIds[0]), ['454254331', '454254332', '454254333', '454254334', '454254335', '454254336', '454254337', '454254338']);
+  let windows = 0;
+  for (const place of simsRow21) {
+    const poly = outline(place.buildingIds[0]), frame = lorong21Frame(poly, place);
+    assertFittings(frame, poly, lorong21Layout(place, frame.width).boxes);
+    assertReviews(frame, lorong21Reviews(place, frame));
+    assert.ok(frame.nz < -.95, place.id);
+    // The fronts stand at the edge of Sims Avenue's estimated carriageway, so street-level pieces are held flat.
+    assert.equal(place.heldFlat, true);
+    for (const b of place.blocks.filter(b => b.out > 0 && b.h[0] < 5)) assert.ok(b.out + b.depth / 2 <= .25, b.name);
+    // Unnamed until the row is re-cut (open question 50): no boards, no landmark.
+    assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+    assert.equal(place.boards, undefined);
+    windows += place.windows.length;
+  }
+  // Every photographed upper window is laid once, a window cut by a source party line counting on both sides.
+  assert.ok(windows >= 38, `${windows}`);
 });

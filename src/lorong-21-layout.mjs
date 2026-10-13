@@ -2,7 +2,7 @@
 // north up the west side, then south down the east side, then west along Sims Avenue to Lorong 19. Each elevation is
 // read on the plane where the panoramas agree, and laid on its source edge, which is kept. Named only where a listing
 // and a photographed sign agree. See docs/lorong-21-brief.md.
-import { pano, way, search, lay, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
+import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 
 /** A breeze-block screen: a shadowed field crossed by light bars, about 0.4 m by 0.33 m a block. */
 /** A grille over a dark recess (or open, for a railing or gate): bars about 0.25 m apart with three rails. */
@@ -555,5 +555,127 @@ export const hcsa = {
   },
 };
 
+// ---------------------------------------------------------------------------------------------
+// 15-22. Ways 454254331 to 454254338, Sims Avenue Nos. 150-176, back to Lorong 19 (open question 47): fourteen two-storey
+// shophouses on eight source ways of 9.04 m. Read on one plane along the row (s west from way 454254334's east end), where
+// the June 2024 Sims Avenue drive agrees, 1.85 m behind the source front as at No. 178: two boards and the lettering of
+// No. 176 line up between four panoramas there, and not on the planes the depth scores preferred. The photographed
+// party walls stand at s = -26.7, -21.0, -15.7, -10.0, -5.0, 1.1, 5.9, 12.1, 17.4, 23.0, 28.4, 33.85, 38.3 and 44.1,
+// and No. 150's west wall at He Ping's authored party line (48.75); the row runs from 0.4 m west of the source's east
+// end to its west end, so it is laid at its photographed positions on the source front and sliced across the eight ways.
+// Re-cutting it into its fourteen houses, and naming their tenants, is open question 50.
+const rowWays = [['454254331', -27.114], ['454254332', -18.075], ['454254333', -9.039], ['454254334', 0], ['454254335', 9.037], ['454254336', 18.075], ['454254337', 27.112], ['454254338', 36.15]];
+const wayWidth = 9.0355;
+// Each house: its number, extent along the row, top, colour, and its pieces in row coordinates.
+const tile15 = '#a8583e', white15 = '#efefea';
+const win = (u, h, extra = {}) => ({ u, h, panes: 2, ...extra });
+const rowHouses15 = [
+  { no: 176, s: [-26.7, -21.0], top: 7.0, roof: 7.8, colour: white15,
+    windows: [[-25.8, -24.8], [-24.2, -23.2], [-22.5, -21.6]].map(u => win(u, [4.7, 6.1], { shutters: true })),
+    blocks: [{ name: 'blank raised lettering', u: [-25.2, -22.3], h: [3.8, 4.3], out: .03, depth: .04, colour: '#55524c' }],
+    back: [{ name: 'glazed design studio', u: [-26.2, -21.4], h: [.1, 2.7], colour: '#2e3436', glow: .1 }, { name: 'blank studio board', u: [-26.0, -21.6], h: [2.75, 3.05], colour: '#1e1e22' }] },
+  { no: 174, s: [-21.0, -15.7], top: 7.0, roof: 7.8, colour: white15, frame: '#4a7a5a',
+    windows: [[-20.3, -19.3], [-18.7, -17.7], [-17.0, -16.2]].map(u => win(u, [4.4, 6.1])),
+    back: [{ name: 'roller shutters', u: [-20.6, -16.0], h: [.1, 3.0], colour: '#a7a9a6' }] },
+  { no: 172, s: [-15.7, -10.0], top: 8.1, colour: '#ecebe4',
+    windows: [[-14.8, -13.9], [-13.3, -12.3], [-11.8, -10.8]].map(u => win(u, [5.6, 7.0])),
+    blocks: [
+      { name: 'blank motor shop board', u: [-14.7, -10.3], h: [3.2, 3.9], out: .05, depth: .04, colour: '#e8e2cc' },
+      { name: 'rooftop extension', u: [-15.4, -10.3], h: [8.1, 9.3], out: -3.0, depth: 4.0, colour: '#d8d6cf' },
+    ],
+    back: [{ name: 'motor shop', u: [-15.2, -10.4], h: [.1, 3.0], colour: '#3a3c3c', glow: .06 }] },
+  { no: 170, s: [-10.0, -5.0], top: 8.1, colour: '#ecebe4',
+    windows: [[-8.9, -8.2], [-7.6, -6.6], [-5.9, -5.3]].map(u => win(u, [5.6, 7.0])),
+    blocks: [{ name: 'red awning', u: [-9.2, -5.2], h: [3.2, 4.2], out: .12, depth: .24, colour: '#a83a3a' }],
+    back: [{ name: 'open shop with goods', u: [-9.6, -5.4], h: [.1, 3.0], colour: '#5a5048', glow: .06 }] },
+  { no: 168, s: [-5.0, 1.1], top: 8.7, colour: '#ecebe4',
+    windows: [[-4.0, -3.0], [-2.3, -1.3], [-.6, .4]].map(u => win(u, [5.8, 7.4])),
+    blocks: [{ name: 'blank hardware board', u: [-3.9, .67], h: [3.1, 4.1], out: .05, depth: .04, colour: '#f0b030' }],
+    back: [{ name: 'hardware shop', u: [-4.6, .7], h: [.1, 2.8], colour: '#4a4a46', glow: .06 }] },
+  { no: 166, s: [1.1, 5.9], top: 8.7, colour: '#ecebe4',
+    windows: [[1.8, 2.8], [3.6, 4.6]].map(u => win(u, [5.8, 7.4])),
+    blocks: [{ name: 'blank yellow trading board', u: [1.4, 4.8], h: [3.1, 4.1], out: .05, depth: .04, colour: '#f2c83a' }],
+    back: [{ name: 'roller shutters', u: [1.5, 5.5], h: [.1, 2.8], colour: '#a7a9a6' }] },
+  { no: 164, s: [5.9, 12.1], top: 8.8, roof: 9.4, colour: '#9aa0cc',
+    windows: [[6.8, 7.9], [8.4, 9.5], [10.1, 11.2]].map(u => win(u, [5.9, 7.7], { shutters: true })),
+    blocks: [
+      { name: 'blank minimart board', u: [6.7, 9.7], h: [4.1, 4.9], out: .05, depth: .04, colour: '#e8ecf4' },
+      { name: 'green awning', u: [5.6, 12.0], h: [2.7, 4.0], out: .12, depth: .24, colour: '#3a6a4a' },
+    ],
+    back: [{ name: 'minimart with fruit', u: [6.2, 11.8], h: [.1, 2.6], colour: '#6a5a3a', glow: .08 }] },
+  { no: 162, s: [12.1, 17.4], top: 10.1, colour: '#b8504a', relief: '#efe6d2',
+    windows: [[13.0, 14.0], [15.8, 16.7]].map(u => win(u, [5.9, 7.9])),
+    blocks: [{ name: 'blank yellow Wintrade board', u: [13.4, 17.1], h: [3.6, 4.5], out: .05, depth: .04, colour: '#f2d23a' }],
+    back: [{ name: 'hardware shop', u: [12.5, 17.0], h: [.1, 3.2], colour: '#4a4644', glow: .06 }] },
+  { no: 160, s: [17.4, 23.0], top: 10.1, colour: '#b8504a', relief: '#efe6d2',
+    windows: [[18.1, 19.2], [19.6, 20.7], [21.2, 22.3]].map(u => win(u, [5.9, 7.7], { arched: true })),
+    blocks: [{ name: 'grey striped awning', u: [17.7, 22.9], h: [3.1, 3.9], out: .12, depth: .24, colour: '#7a7a76' }],
+    back: [{ name: 'glazed shop', u: [17.9, 22.6], h: [.1, 2.9], colour: '#3a3c3e', glow: .06 }] },
+  { no: 156, s: [23.0, 28.4], top: 9.6, colour: '#f2f2ec', relief: '#2e8a5a', frieze: '#cfe4d6',
+    windows: [[23.5, 24.5], [24.8, 25.8], [26.2, 27.2]].map(u => win(u, [5.9, 7.6])),
+    blocks: [{ name: 'red awning with a blank beancurd mark', u: [23.4, 28.4], h: [2.3, 3.5], out: .12, depth: .24, colour: '#a8243a' }],
+    back: [{ name: 'beancurd shop', u: [23.4, 28.0], h: [.1, 2.3], colour: '#e8e6e0', glow: .08 }] },
+  { no: 154, s: [28.4, 33.85], top: 9.6, colour: '#f2f2ec', relief: '#2e8a5a', frieze: '#cfe4d6',
+    windows: [[28.9, 29.9], [30.3, 31.3], [31.9, 33.0]].map(u => win(u, [5.9, 7.6])),
+    blocks: [{ name: 'red gas supplier awning', u: [28.4, 33.85], h: [2.3, 3.5], out: .12, depth: .24, colour: '#a8243a' }],
+    back: [{ name: 'gas supplier office', u: [28.8, 33.4], h: [.1, 2.3], colour: '#e8e6e0', glow: .05 }] },
+  { no: 152, s: [33.85, 38.3], top: 10.2, colour: white15, frame: '#b8403a',
+    windows: [win([34.2, 34.8], [6.1, 8.1], { panes: 1 }), ...[[35.0, 36.0], [36.4, 37.6]].map(u => win(u, [6.1, 8.1], { shutters: true }))],
+    blocks: [{ name: 'grey awning', u: [34.1, 37.8], h: [3.6, 4.6], out: .12, depth: .24, colour: '#6a6c6a' }],
+    back: [{ name: 'roller shutters', u: [34.2, 38.0], h: [.1, 3.4], colour: '#a7a9a6' }] },
+  { no: 150, s: [38.3, 44.1], top: 10.0, colour: '#e2e2dc',
+    windows: [[39.0, 39.8], [40.6, 41.4], [41.9, 42.8]].map(u => win(u, [6.2, 7.7], { panes: 1 })),
+    vents: [[39.0, 39.8], [40.6, 41.4], [41.9, 42.8]].map(u => ({ u, h: [7.8, 8.3] })),
+    blocks: [
+      { name: 'blank brown KRIPAL awning', u: [38.4, 44.0], h: [2.7, 4.6], out: .12, depth: .24, colour: '#8a5a4a' },
+      ...[[39.5, 40.3], [41.0, 41.8]].map(u => ({ name: 'air-conditioner', u, h: [5.1, 5.6], out: .2, depth: .4, colour: '#e8e8e4' })),
+    ],
+    back: [{ name: 'shop with ladders and goods', u: [38.6, 43.8], h: [.1, 2.6], colour: '#5a5048', glow: .06 }] },
+  { no: 150, s: [44.1, 48.75], top: 10.0, colour: '#d8dcbc', windows: [], back: [] },
+];
+const rowAll15 = {
+  windows: rowHouses15.flatMap(h => h.windows.map(w => ({ ...w, out: w.out ?? .02 }))),
+  vents: rowHouses15.flatMap(h => h.vents ?? []),
+  blocks: rowHouses15.flatMap(h => [
+    // Each house's own colour up to its own top; a tiled roof band above, where it is seen from the street.
+    { name: `colour field of No. ${h.no}`, u: h.s, h: [3.4, h.top], out: -.04, depth: .06, colour: h.colour },
+    ...(h.roof ? [{ name: `tiled roof of No. ${h.no}`, u: h.s, h: [h.top, h.roof], out: -.5, depth: 1.0, colour: tile15 }] : []),
+    { name: 'cornice', u: h.s, h: [h.top - .25, h.top], out: .08, depth: .16, colour: h.relief ?? '#d8d6cf' },
+    { name: 'first-floor ledge', u: h.s, h: [3.4, 3.65], out: .08, depth: .16, colour: h.relief ?? '#d8d6cf' },
+    ...(h.relief ? [
+      { name: 'ornate relief band', u: h.s, h: [8.3, 9.3], out: .04, depth: .08, colour: h.frieze ?? h.relief },
+      { name: 'balustrade panels', u: [h.s[0] + .3, h.s[1] - .3], h: [5.2, 5.7], out: .04, depth: .08, colour: h.relief },
+    ] : []),
+    ...(h.blocks ?? []),
+  ]),
+  piers: rowHouses15.map(h => [h.s[0] - .2, h.s[0] + .2]),
+  backFittings: rowHouses15.flatMap(h => h.back),
+};
+const simsNote15 = ' June 2024 Street View from the Sims Avenue drive shows the south side between No. 178 and He Ping as fourteen two-storey shophouse fronts, from the east: No. 176, white, with shuttered windows and the raised lettering VIVERE over a design studio, under a tiled roof; No. 174, white, with green frames, under the same roofline; No. 172, under a board reading 萬榮興摩哆公司 BAN ENG HIN MOTOR CO, with a rooftop extension; No. 170, under a red awning; Nos. 168 and 166, one plain façade, over a board reading KIAN SENG HARDWARE TRADING PTE LTD and a yellow trading board; No. 164, lavender, with white-shuttered windows over a board reading SUNRISE MINIMART and a green awning; Nos. 162 and 160, red Peranakan fronts with cream relief and arched windows, No. 162 under a yellow board reading 飙達企業(五金) WINTRADE ENTERPRISE (HARDWARE); Nos. 156 and 154, white Peranakan fronts with green relief, under a gas supplier\'s red awning carrying Rochor Beancurd\'s mark at No. 156; No. 152, white with red-framed shutters; and No. 150 in two bays, under a brown awning lettered KRIPAL over a Sunshine Electrical Trading valance, and pale green with a board reading 长青中医诊疗所 CHANG QING CHINESE MEDICAL CENTRE, the bay running on into He Ping\'s outline. The numbers follow the listings\' address points, which run about 5 m east of the photographed fronts; No. 158 is not found. The Sims Avenue panoramas agree on the row 1.85 m behind the source front, as at No. 178; the photographed party walls stand within 0.6 m of the source run\'s ends but split its eight ways of 9.04 m into fourteen fronts of 4.4-6.1 m, so the elevation is laid at its photographed positions on the source front and sliced across the eight ways, with no house named until the row is re-cut (open question 50). Heights were read on that plane: five-foot ways to about 3.4 m, upper windows at 4.4-8.1 m, and tops from 7.0 m (under tiled roofs at the east end) to 10.2 m.';
+const rowSources15 = w => [way(w), pano('-7Nu5v6FAn4fpnnkKhhs9g', 150, 10, 90), pano('gls5NE2TRD9LtUL5ZMtfUA', 190, 10, 90), pano('PIr_KE2M4QYpE2Z3RWqWOw', 190, 10, 90), pano('X9akYazsOs1oFvuI5CYKCw', 190, 10, 90)];
+export const simsRow21 = rowWays.map(([id, s0]) => {
+  const houses = rowHouses15.filter(h => h.s[1] > s0 + .02 && h.s[0] < s0 + wayWidth - .02);
+  const height = Math.min(...houses.map(h => h.top)), numbers = houses.map(h => h.no);
+  const slice = sliceSpec(rowAll15, s0, s0 + wayWidth);
+  // Windows cut at a source party line are inset by their sills, and lose open shutters that would cross it.
+  const W = wayWidth - .001, fit = w => {
+    const [l, r] = [Math.max(w.u[0], .09), Math.min(w.u[1], W - .09)], spare = Math.min(l, W - r);
+    return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)], shutters: w.shutters && spare > (r - l) / 4 + .02 }];
+  };
+  slice.windows = slice.windows.flatMap(fit);
+  return {
+    id: `sims-${numbers.at(-1)}-${numbers[0]}`, buildingIds: [id], kind: 'unnamed', unnamed: true, frontEdge: 0,
+    reviewRoad: 'Sims Avenue', review: { distance: 7, pitch: 20 },
+    name: `Sims Avenue Nos. ${numbers.at(-1)}-${numbers[0]} (June 2024 exterior, sliced across the source way; occupants not identified)`, address: `${numbers.slice().reverse().join(', ')} Sims Avenue (parts)`,
+    height, ceiling: 3.4, fiveFootWay: 2.0, heldFlat: true, roof: { type: 'flat', colour: '#8f8c86' },
+    evidence: `Source way ${id} holds parts of Nos. ${numbers.slice().reverse().join(', ')}.` + simsNote15,
+    sources: [...rowSources15(id), search(`${numbers[0]} Sims Avenue Singapore`)],
+    colours: { wall: houses[0].colour, trim: '#d8d6cf', frame: houses[0].frame ?? '#3a3c3c', glass: '#46504e', pier: '#efefea', back: '#4a4642', floor: '#a8a296' },
+    ...slice,
+  };
+});
+
 export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng, sims178, hcsa];
+// The Sims Avenue row back to Lorong 19 faces Sims Avenue, not the lane.
+export { simsRow21 as simsRow21Ways };
 export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;
