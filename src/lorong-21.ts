@@ -46,6 +46,16 @@ const draws: Draws = {
       [...'北辰宫'].forEach((ch, i) => text(c, ch, w * .5, h * (.27 + i * .23), w * .36, '#f0c64a', '700', kai));
     }],
   },
+  // The red-framed corner board: 陳生成 over the English name, with SINCE 1946 in a red box.
+  'tan-ser-seng': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#b8242a'; c.fillRect(0, 0, w, h); c.fillStyle = '#f6e6e2'; c.fillRect(w * .06, h * .06, w * .88, h * .88);
+      text(c, '陳生成', w * .5, h * .38, h * .4, '#c8242a', '800', kai, w * .8);
+      text(c, 'TAN SER SENG HERBAL SOUP', w * .5, h * .68, h * .09, '#c8242a', '800', sans, w * .82);
+      c.fillStyle = '#c8242a'; c.fillRect(w * .32, h * .76, w * .36, h * .1);
+      text(c, 'SINCE 1946', w * .5, h * .81, h * .07, '#f6e6e2', '700', sans, w * .32);
+    }],
+  },
 };
 
 /** Lorong 21 between Geylang Road and Sims Avenue, with the Sims Avenue houses back to Lorong 19; named only where a

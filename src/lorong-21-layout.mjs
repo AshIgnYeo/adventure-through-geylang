@@ -305,5 +305,49 @@ export const beiChenGong = {
   ],
 };
 
-export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong];
+// ---------------------------------------------------------------------------------------------
+// 9. Way 454254329, 29 Lorong Bachok, the Lorong Bachok corner: Tan Ser Seng Herbal Soup 陳生成, a grey stuccoed
+// two-storey corner shophouse with a splayed corner under a curved parapet cap, its long side on Lorong 21 (edge 3, u
+// north from the Bachok corner). Its two grilled windows near the north end, which disagree by 4-5 m between three April
+// 2024 lane panoramas on the source plane, agree within 0.5 m on a plane 3.25 m in front of it, as do the depth scores
+// (3.0-3.5 m). On that plane the face runs from the splay, 1.3 m from the Bachok corner, to the back lane, 26.1 m
+// along; it is laid proportionally on the 26.5 m source edge.
+const W329 = 26.495, at329 = s => lay(1.3, W329 / 24.8)(s).map(v => Math.min(W329, Math.max(0, v)));
+const grey329 = '#a8a49a', wins329 = [[4.8, 5.9], [7.6, 8.7], [10.5, 11.6], [12.5, 13.7], [15.4, 16.6], [17.9, 19.0], [20.9, 22.05], [23.4, 24.6]];
+export const tanSerSeng = {
+  id: 'tan-ser-seng', buildingIds: ['454254329'], kind: 'tan-ser-seng', frontEdge: 3, reviewRoad: 'Lorong 21 Geylang', review: { distance: 8, pitch: 16 },
+  name: 'Tan Ser Seng Herbal Soup (April 2024 exterior)', address: '29 Lorong Bachok (the Lorong Bachok corner of Lorong 21)',
+  height: 8.5, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'hip', ridge: 10.2, colour: '#b4553d' },
+  evidence: 'April 2024 Street View shows a grey stuccoed two-storey corner shophouse at Lorong 21 and Lorong Bachok, with a splayed corner under a curved parapet cap carrying a red-framed board reading 陳生成 TAN SER SENG HERBAL SOUP SINCE 1946; along Lorong 21, eight windows under louvred vents, two of them grilled, below a red moulding and a plain parapet, over an open coffeeshop under red-and-green striped awnings on square columns, closed at the north end by a white wall and a door on the back lane. Google Maps lists Tan Ser Seng Herbal Soup 陳生成山瑞补品, a soup shop, at 29 Lor Bachok, with its point in the house next door to the west, and a herbal soup store at the same address with its point inside this way; the address and the board agree on this house, so it is named and its board is redrawn in original type. Three April 2024 lane panoramas agree on the Lorong 21 face 3.25 m in front of the source edge, where it runs from the splay, 1.3 m from the Bachok corner, to the back lane, 26.1 m along, against the 26.5 m source edge; it is laid proportionally on that edge. Heights were read on that plane: awnings at 2.6-3.75 m, windows at 4.6-5.9 m under vents at 6.0-6.5 m, the red moulding at 7.6-7.8 m and the parapet at 8.5 m, the corner cap to about 9.2 m.',
+  sources: [way('454254329'), search('Tan Ser Seng Herbal Soup 29 Lorong Bachok'), pano('ASmmf_U74831L5MzgK5kkw', 285, 15, 80), pano('02JzN2zcLThkH0ZkrerNlw', 260, 15, 80), pano('CWWn89B8KiWH0q7GYJwcSQ', 245, 15, 80), pano('JdEaA4aRTSoZtkCgy0gPBw', 300, 10, 80)],
+  colours: { wall: grey329, trim: '#b8b4aa', frame: '#3a3c3c', glass: '#4a5658', pier: '#b0aca2', back: '#e8e6e0', floor: '#a8a296' },
+  windows: wins329.map((s, i) => ({ u: at329(s), h: [4.6, 5.9], panes: i >= 6 ? 4 : 2 })),
+  vents: wins329.map(s => ({ u: at329(s), h: [6.0, 6.5] })),
+  blocks: [
+    { name: 'red moulding', u: [0, W329], h: [7.6, 7.8], out: .1, depth: .2, colour: '#a8433a' },
+    { name: 'parapet coping', u: [0, W329], h: [8.35, 8.5], out: .1, depth: .2, colour: '#b8b4aa' },
+    { name: 'curved parapet cap', u: at329([1.3, 3.9]), h: [8.5, 9.2], out: .05, depth: .3, colour: grey329 },
+    { name: 'first-floor slab', u: [0, W329], h: [3.75, 3.95], out: .15, depth: .3, colour: '#b8b4aa' },
+    ...Array.from({ length: 13 }, (_, i) => ({ name: 'striped awning', u: [+(i * W329 / 13).toFixed(3), +((i + 1) * W329 / 13).toFixed(3)], h: [2.6, 3.75], out: .6, depth: 1.2, colour: i % 2 ? '#2e7a5a' : '#c8505a' })),
+  ],
+  // The corner board on the splay.
+  boards: [{ u: at329([1.6, 3.8]), h: [5.5, 7.75], out: .12 }],
+  piers: [[1.3, 2.1], [3.6, 4.6], [9.4, 10.25], [14.25, 15.1], [19.4, 20.25], [25.4, 26.1]].map(at329),
+  backFittings: [
+    { name: 'coffeeshop with tables', u: at329([2.1, 24.0]), h: [.1, 3.0], colour: '#e6e2d8', glow: .06 },
+    { name: 'back wall and door', u: at329([24.0, 25.4]), h: [.1, 2.2], colour: '#6a6a66' },
+  ],
+  sides: [{
+    edge: 0, // the Lorong Bachok front, u west from the corner
+    windows: [{ u: [1.8, 3.0], h: [4.6, 5.9], panes: 2 }],
+    vents: [{ u: [1.8, 3.0], h: [6.0, 6.5] }],
+    blocks: [
+      { name: 'red moulding', u: [0, 5.83], h: [7.6, 7.8], out: .1, depth: .2, colour: '#a8433a' },
+      { name: 'striped awning', u: [0, 5.83], h: [2.6, 3.75], out: .3, depth: .6, colour: '#2e7a5a' },
+      { name: 'coffeeshop', u: [.4, 5.5], h: [.1, 2.6], out: .02, depth: .04, colour: '#e6e2d8', glow: .06 },
+    ],
+  }],
+};
+
+export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng];
 export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;

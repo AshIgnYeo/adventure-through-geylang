@@ -29,7 +29,7 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 | 6 | West | 1223524382 | No. 15 | Done; unnamed; question 49 |
 | 7 | West | 1223524385 | No. 17 | Done; unnamed; question 49 |
 | 8 | West | 1223524386 | No. 19, Bei Chen Gong Association | Done; named; question 49 |
-| 9 | West | 454254329 | 29 Lorong Bachok, the Bachok corner: Tan Ser Seng Herbal Soup | |
+| 9 | West | 454254329 | 29 Lorong Bachok, the Bachok corner: Tan Ser Seng Herbal Soup | Done; named; question 49 |
 | 10 | West | 454254330 | No. 178 Sims Avenue, the west corner | |
 | 11 | East | 454254164 | The Sims Avenue east corner, HCSA Community Services | |
 | 12 | East | 454254165 | HCSA Community Services | |
@@ -153,3 +153,37 @@ A two-storey terrace over five-foot ways, cream at both ends and grey between. I
 - **The grey houses:** Leong Yew Textiles is listed at No. 11, but its point lies in the corner block and no sign was photographed. Nothing is listed at Nos. 15 and 17.
 
 Use `?review=nyingma-kathok`, `?review=l21-11`, `?review=l21-15`, `?review=l21-17` and `?review=bei-chen-gong`.
+
+North of No. 19 the west side opens onto a car park with a barrier gantry and street trees, up to Lorong Bachok. It has no footprint.
+
+### 9. Way 454254329: 29 Lorong Bachok, Tan Ser Seng Herbal Soup
+
+A grey stuccoed two-storey corner shophouse at Lorong 21 and Lorong Bachok, its long side on the lane.
+
+- **The splayed corner:** under a curved parapet cap, a red-framed board reading **陳生成 TAN SER SENG HERBAL SOUP SINCE 1946**.
+- **Along Lorong 21:**
+  - upper floor: eight windows under louvred vents, two of them grilled, below a red moulding and a plain parapet;
+  - ground floor: an open coffeeshop under red-and-green striped awnings on square columns, closed at the north end by a white wall and a door on the back lane.
+- **On Lorong Bachok:** one window under a vent, over the coffeeshop. The Bachok row continues west and waits for a later pass.
+
+**Measurement:**
+- **Depth:** on the source plane, the two grilled windows near the north end disagree by 4–5 m between `02Jz…`, `CWWn…` and `rci6…` (April 2024). On a plane **3.25 m in front of** the source edge they agree within 0.5 m. The depth scores agree (3.0–3.5 m).
+  - A first reading from one window's drift (2.45 m) had matched the wrong window between views.
+- **Extent:** on that plane the face runs from the splay, 1.3 m from the Bachok corner, to the back lane, **26.1 m** along, against the 26.5 m source edge.
+- **Heights:**
+  - awnings: 2.6–3.75 m;
+  - windows: 4.6–5.9 m, under vents at 6.0–6.5 m;
+  - red moulding: 7.6–7.8 m;
+  - parapet: 8.5 m;
+  - corner cap: to about 9.2 m.
+
+**Layout:**
+- **Lane face:** laid proportionally on the source edge (×1.07). The splay and its board are drawn on the face's first 2.8 m, since the source outline is square-cornered.
+- **The Lorong Bachok front:** a side face. It stands 0.75 m clear of Bachok's estimated carriageway, so its awning is held to 0.6 m.
+- **Roof:** the tiled roof seen on the satellite is a hipped roof behind the parapet.
+- **Footprint:** the face stands about 3.25 m in front of its source edge: part of [open question 49](open-questions.md).
+
+**Naming:** Google Maps lists **Tan Ser Seng Herbal Soup 陳生成山瑞补品**, a soup shop, at 29 Lor Bachok, with its point in the house next door to the west. It also lists a herbal soup store at the same address, with its point inside this way.
+- The address and the board agree on this house, so it is named, and its board is redrawn in original type.
+
+Use `?review=tan-ser-seng`.

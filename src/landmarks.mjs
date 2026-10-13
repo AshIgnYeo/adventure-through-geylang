@@ -63,7 +63,7 @@ import { lexHotel, creamSouth as engineeringMerchants, crystalMansions } from '.
 import { no2 as bengalKitchen, sims128 as bambooLounge, corner301 as shengSiong301 } from './ring-a-layout.mjs';
 import { fengShang, trueJesus, yangClan, gyaltsap, brightStar, chinaware, rattanAssociation } from './lorong-17-layout.mjs';
 import { eminent, primero, nanyangChee, cheeHoeHong, leiZangSi, starlonTektron, hePing, kangHaPheng, bougainvilla, simsPoint, straitsLaundry, maryHairSalon, scarlett, lefon, guangxiGaozhou, bikeMart, vietsea } from './lorong-19-layout.mjs';
-import { chengYi, nyingmaKathok, beiChenGong } from './lorong-21-layout.mjs';
+import { chengYi, nyingmaKathok, beiChenGong, tanSerSeng } from './lorong-21-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
@@ -111,6 +111,7 @@ export const landmarks = [
   { ...chengYi },
   { ...nyingmaKathok },
   { ...beiChenGong },
+  { ...tanSerSeng },
   { ...engineeringMerchants },
   { ...crystalMansions },
   { ...thirteenBbq },
