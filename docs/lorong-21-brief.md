@@ -12,6 +12,28 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph. Other buildings are labelled by address, with their signboards drawn and their lettering blank.
 - **Code:** each place is a measured elevation on one edge of its footprint, built with the lane-house helpers shared with Lorong 17 and Lorong 19 (`src/lane-house-layout.mjs`, `src/lane-house.ts`).
 
+## Status, 13 October 2026
+
+**Complete; three footprint questions wait for the owner.** All 22 stops are modelled. Every building on Lorong 21 between Geylang Road and Sims Avenue has its photographed exterior, with the corners at both ends, the Lorong Bachok corner and the Sims Avenue houses back to Lorong 19.
+
+- **Coverage:** 22 source ways, all with photographed exteriors; none is left as a generic block.
+- **Footprints:** every building stands on its source outline for now.
+- **Named places:** five are added, bringing the study to 137:
+  - Cheng Yi Coffee Shop at No. 351 Geylang Road;
+  - the Nyingma Kathok Buddhist Centre, No. 9;
+  - Bei Chen Gong Association, No. 19;
+  - Tan Ser Seng Herbal Soup, 29 Lorong Bachok;
+  - HCSA Community Services, the whole east side.
+- **Open questions:** three, each with a recommendation:
+  - [48](open-questions.md): split the Geylang Road corner block into its walk-up and its glass block, on their photographed walls;
+  - [49](open-questions.md): the west side on its photographed line;
+  - [50](open-questions.md): re-cut the Sims Avenue row into its fourteen fronts and name six tenants (Vivere Design Studio, Ban Eng Hin Motor Co, Kian Seng Hardware Trading, Sunrise Minimart, Rochor Original Beancurd, Chang Qing Chinese Medical Centre).
+- **Left for a later pass:**
+  - the part of Lorong 21 north of Sims Avenue;
+  - the Lorong Bachok row;
+  - the far sides of Geylang Road and Sims Avenue;
+  - the garden at the east side's Geylang Road corner, which has no footprint.
+
 ## The lane
 
 - **West side:** the Geylang Road corner block; a row of houses from No. 5 to No. 19; an open car park up to Lorong Bachok; the Bachok corner coffeeshop; a back lane; and the Sims Avenue corner house.
