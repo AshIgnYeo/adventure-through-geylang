@@ -155,6 +155,27 @@ const draws: Draws = {
       text(c, 'STRAITS LAUNDRY', w * .5, h * .55, h * .58, '#3a7ad8', '800', sans, w * .94);
     }],
   },
+  // Mary Hair Salon's green board: an M mark, the name in Chinese and English, and its services.
+  'mary-hair-salon': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#1f7a4a'; c.fillRect(0, 0, w, h);
+      c.fillStyle = '#f4f4ee'; c.fillRect(w * .02, h * .1, h * .8, h * .8);
+      text(c, 'M', w * .02 + h * .4, h * .46, h * .62, '#1f7a4a', '900', 'Georgia, "Times New Roman", serif');
+      text(c, 'MARY HAIR SALON', w * .02 + h * .4, h * .84, h * .09, '#1f7a4a', '700', sans, h * .76);
+      text(c, '马丽发廊', w * .58, h * .38, h * .5, '#f4f4ee', '800', kai, w * .7);
+      text(c, '美甲  美睫  纹绣  养生经络', w * .58, h * .78, h * .18, '#f4f4ee', '600', kai, w * .7);
+    }],
+  },
+  // Scarlett's blue boards: the house mark, 思家客 and SCARLETT.
+  'scarlett-supermarket': {
+    boards: Array(3).fill((c: CanvasRenderingContext2D, w: number, h: number) => {
+      c.fillStyle = '#1f4fa8'; c.fillRect(0, 0, w, h);
+      c.strokeStyle = '#f4f4ee'; c.lineWidth = h * .07; c.beginPath(); c.moveTo(h * .2, h * .55); c.lineTo(h * .55, h * .2); c.lineTo(h * .9, h * .55); c.stroke();
+      c.strokeRect(h * .32, h * .5, h * .46, h * .32);
+      text(c, '思家客', w * .45, h * .42, h * .44, '#f4f4ee', '800', kai, w * .45);
+      text(c, 'SCARLETT', w * .45, h * .82, h * .2, '#f4f4ee', '800', sans, w * .4);
+    }),
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue, with the Geylang Road and Sims Avenue houses back to Lorong 17;
@@ -162,6 +183,7 @@ const draws: Draws = {
 export function buildLorong19(world: World, id: string, poly: Point[]) {
   const place = [...lorong19, ...geylangRow19, ...simsRow19].find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
-  buildLaneHouse(world, place, poly, draws);
+  // A place over two buildings is built from each building's own part of its elevation.
+  buildLaneHouse(world, place.parts ? { ...place, ...place.parts[id] } : place, poly, draws);
   return true;
 }

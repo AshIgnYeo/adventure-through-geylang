@@ -82,23 +82,30 @@ test('Eminent Frog Porridge & Seafood is named on the west corner, No. 323, its 
   assert.equal(place.upper[0].outline[1][0], 22.0);
 });
 
-test('the Geylang Road row between Lorong 17 and Lorong 19 is shared out over its five source ways and faces Geylang Road', () => {
-  assert.deepEqual(geylangRow19.map(p => p.buildingIds[0]), ['454254254', '454254256', '454254258', '454254260', '454254262']);
+test('the Geylang Road row between Lorong 17 and Lorong 19 is re-cut into its six houses and faces Geylang Road', () => {
+  // Each house, with a place over two houses built from its parts.
+  const houses = geylangRow19.flatMap(place => place.buildingIds.map(id => ({ id, place, spec: place.parts ? { ...place, ...place.parts[id] } : place })));
+  assert.deepEqual(houses.map(h => h.id), ['gr-l19-a', 'gr-l19-b', 'gr-l19-c', 'gr-l19-d', 'gr-l19-e', 'gr-l19-f']);
+  const widths = houses.map(h => lorong19Frame(outline(h.id), { frontEdge: 0 }).width);
+  [3.487, 5.0, 5.15, 4.2, 5.8, 4.25].forEach((w, i) => assert.ok(Math.abs(widths[i] - w) < .01, `${houses[i].id}: ${widths[i]}`));
   let windows = 0;
-  for (const place of geylangRow19) {
-    const poly = outline(place.buildingIds[0]), frame = lorong19Frame(poly, place);
-    assertFittings(frame, poly, lorong19Layout(place, frame.width).boxes);
-    assertReviews(frame, lorong19Reviews(place, frame));
-    // The source fronts stand at the edge of Geylang Road's estimated carriageway, so street-level pieces are held flat.
-    assert.equal(place.heldFlat, true);
-    for (const b of place.blocks.filter(b => b.out > 0 && b.h[0] < 5)) assert.ok(b.out + b.depth / 2 <= .25, b.name);
-    // The front looks south across Geylang Road.
-    assert.ok(frame.nz > .95, place.id);
-    assert.equal(landmarkFor(place.buildingIds[0]), undefined);
-    windows += place.windows.length;
+  for (const { id, place, spec } of houses) {
+    const poly = outline(id), frame = lorong19Frame(poly, spec);
+    assertFittings(frame, poly, lorong19Layout(spec, frame.width).boxes);
+    if (!spec.noReview) assertReviews(frame, lorong19Reviews(spec, frame));
+    // The front looks south across Geylang Road, at the edge of its estimated carriageway, so pieces are held flat.
+    assert.ok(frame.nz > .95, id);
+    assert.equal(spec.heldFlat, true);
+    for (const b of spec.blocks.filter(b => b.out > 0 && b.h[0] < 5)) assert.ok(b.out + b.depth / 2 <= .25, b.name);
+    if (place.unnamed) { assert.equal(landmarkFor(id), undefined); assert.equal(spec.boards, undefined); }
+    else assert.equal(landmarkFor(id).id, place.id);
+    windows += spec.windows.length;
   }
-  // The thirteen photographed windows survive the slicing; two are cut at party lines, so fifteen pieces in all.
-  assert.ok(windows >= 13 && windows <= 16, `${windows}`);
+  // Thirteen photographed windows; the first is cut at the corner house's kept party wall.
+  assert.equal(windows, 13);
+  // Scarlett's listing points fall on its fifth house, and Mary Hair Salon's on the third.
+  assert.equal(pointInPolygon(project([103.8791656, 1.3126833], map.origin), outline('gr-l19-e')), true);
+  assert.equal(pointInPolygon(project([103.8790802, 1.3126795], map.origin), outline('gr-l19-c')), true);
 });
 
 test('the Sims Avenue houses beside Lorong 19 fit their outlines, face Sims Avenue and are held flat at its carriageway', () => {

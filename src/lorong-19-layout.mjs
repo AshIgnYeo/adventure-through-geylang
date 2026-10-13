@@ -717,60 +717,85 @@ export const straitsLaundry = {
 export const lorong19 = [eminent, primero, no3, nanyangChee, no23, cheeHoeHong, leiZangSi, starlonTektron, sims146, hePing, kangHaPheng, bougainvilla, no6, simsPoint, straitsLaundry];
 
 // ---------------------------------------------------------------------------------------------
-// 16-20. Ways 454254254 to 454254262: the two-storey shophouse row on Geylang Road between the Lorong 17 corner house
-// and No. 323 (open question 43). Read on the source front from the June 2024 Geylang Road drive, with s along No.
-// 323's front frame (0 at its source west corner, east positive): the photographed row runs from the Lorong 17 corner
-// house's party wall at s = -27.6 to No. 323's at +1.4, 29 m in six houses (party walls at -23.0, -18.0, -12.85,
-// -8.65 and -2.85), where the map has five ways in 26.5 m. The whole elevation is laid proportionally on the five
-// ways and shared out between them by slicing, as Nos. 37-41 Lorong 17 were; re-cutting it is open question 45. The source fronts stand at the edge of Geylang
-// Road's estimated carriageway, so street-level pieces are held within 0.25 m of the walls, as on No. 323's Geylang Road side.
-const kRow = 26.487 / 29.0, onRow = ([a, b]) => [a, b].map(s => +(-26.487 + (s + 27.6) * kRow).toFixed(3));
+// 16-20. The two-storey shophouse row on Geylang Road between the Lorong 17 corner house and No. 323 (open question
+// 43), read on the source front from the June 2024 Geylang Road drive, with s along No. 323's source front (0 at its
+// west corner, east positive): six houses, party walls at -23.0, -18.0, -12.85, -8.65 and -2.85, ending at No. 323's
+// photographed party wall at +1.4. Under the owner's answer to open question 45 the row is re-cut into its six houses
+// (gr-l19-a to -f), starting at the Lorong 17 corner house's source party wall (-26.49), and the elevation is laid at
+// its photographed positions and shared out between them. The fronts stand at the edge of Geylang Road's estimated
+// carriageway, so street-level pieces are held within 0.25 m of the walls, as on No. 323's Geylang Road side.
 const cream19r = '#e6dcc2', partyWalls19r = [-27.6, -23.0, -18.0, -12.85, -8.65, -2.85];
 const windows19r = [[-26.9, -25.2], [-24.9, -23.4], [-22.4, -20.8], [-20.3, -18.8], [-17.7, -16.4], [-16.0, -14.6], [-12.2, -10.7], [-10.4, -9.0], [-8.3, -7.2], [-6.5, -5.2], [-4.7, -3.3], [-2.4, -1.1], [-.7, .6]];
 const row19 = {
-  windows: windows19r.map(s => ({ u: onRow(s), h: [5.0, 6.2], panes: 3 })),
-  vents: windows19r.map(s => ({ u: onRow(s), h: [6.5, 6.9] })),
+  windows: windows19r.map(u => ({ u, h: [5.0, 6.2], panes: 3 })),
+  vents: windows19r.map(u => ({ u, h: [6.5, 6.9] })),
   blocks: [
-    { name: 'ledge', u: onRow([-27.6, 1.4]), h: [4.1, 4.3], out: .12, depth: .24, colour: '#ddd2b6' },
-    { name: 'eaves', u: onRow([-27.6, 1.4]), h: [7.6, 7.9], out: .45, depth: .9, colour: '#6a6660' },
-    ...partyWalls19r.map(c => ({ name: 'party pilaster', u: onRow([c - .25, c + .25]), h: [3.3, 7.6], out: .08, depth: .16, colour: '#ddd2b6' })),
-    { name: 'blank yellow board with a portrait', u: onRow([-27.4, -23.6]), h: [3.0, 3.8], out: .05, depth: .04, colour: '#e8c84a' },
-    { name: 'dark awning, held flat', u: onRow([-22.6, -18.3]), h: [2.7, 3.2], out: .12, depth: .24, colour: '#3a3634' },
-    { name: 'blank agent sign', u: onRow([-21.5, -20.4]), h: [4.3, 5.0], out: .05, depth: .03, colour: '#f2f0ea' },
-    { name: 'blank green salon board', u: onRow([-17.6, -13.2]), h: [3.3, 4.0], out: .05, depth: .04, colour: '#1f7a4a' },
-    { name: 'green vertical sign', u: onRow([-18.2, -17.9]), h: [3.3, 5.6], out: .12, depth: .2, colour: '#1f7a4a' },
-    ...[[-12.6, -8.9], [-8.4, -4.9], [-4.6, -3.0]].map(s => ({ name: 'blank blue supermarket board', u: onRow(s), h: [3.1, 3.6], out: .05, depth: .04, colour: '#2a5ab0' })),
-    { name: 'striped awning, held flat', u: onRow([-12.8, -3.0]), h: [3.6, 3.9], out: .12, depth: .24, colour: '#c9a86a' },
-    { name: 'blank fruit-stall banner', u: onRow([-2.6, 1.2]), h: [3.4, 4.0], out: .05, depth: .04, colour: '#4a8a5a' },
+    { name: 'ledge', u: [-27.6, 1.4], h: [4.1, 4.3], out: .12, depth: .24, colour: '#ddd2b6' },
+    { name: 'eaves', u: [-27.6, 1.4], h: [7.6, 7.9], out: .45, depth: .9, colour: '#6a6660' },
+    ...partyWalls19r.map(c => ({ name: 'party pilaster', u: [c - .25, c + .25], h: [3.3, 7.6], out: .08, depth: .16, colour: '#ddd2b6' })),
+    { name: 'blank yellow board with a portrait', u: [-27.4, -23.6], h: [3.0, 3.8], out: .05, depth: .04, colour: '#e8c84a' },
+    { name: 'dark awning, held flat', u: [-22.6, -18.3], h: [2.7, 3.2], out: .12, depth: .24, colour: '#3a3634' },
+    { name: 'blank agent sign', u: [-21.5, -20.4], h: [4.3, 5.0], out: .05, depth: .03, colour: '#f2f0ea' },
+    { name: 'green vertical sign', u: [-17.95, -17.65], h: [3.3, 5.6], out: .12, depth: .2, colour: '#1f7a4a' },
+    { name: 'striped awning, held flat', u: [-12.8, -3.0], h: [3.6, 3.9], out: .12, depth: .24, colour: '#c9a86a' },
+    { name: 'blank fruit-stall banner', u: [-2.6, 1.2], h: [3.4, 4.0], out: .05, depth: .04, colour: '#4a8a5a' },
   ],
   backFittings: [
-    { name: 'shop', u: onRow([-27.3, -23.3]), h: [.1, 2.9], colour: '#4a3a32' },
-    { name: 'shop with a fridge', u: onRow([-22.7, -18.3]), h: [.1, 2.6], colour: '#5a5a54', glow: .06 },
-    { name: 'salon', u: onRow([-17.7, -13.1]), h: [.1, 3.1], colour: '#4a3a3a', glow: .08 },
-    { name: 'supermarket', u: onRow([-12.6, -3.1]), h: [.1, 3.0], colour: '#3a5a7a', glow: .1 },
-    { name: 'mart', u: onRow([-2.6, 1.2]), h: [.1, 3.2], colour: '#5a5a54', glow: .08 },
+    { name: 'shop', u: [-27.3, -23.3], h: [.1, 2.9], colour: '#4a3a32' },
+    { name: 'shop with a fridge', u: [-22.7, -18.3], h: [.1, 2.6], colour: '#5a5a54', glow: .06 },
+    { name: 'salon', u: [-17.7, -13.1], h: [.1, 3.1], colour: '#4a3a3a', glow: .08 },
+    { name: 'supermarket', u: [-12.6, -3.1], h: [.1, 3.0], colour: '#3a5a7a', glow: .1 },
+    { name: 'mart', u: [-2.6, 1.2], h: [.1, 3.2], colour: '#5a5a54', glow: .08 },
   ],
-  piers: partyWalls19r.map(c => onRow([c - .25, c + .25])),
+  piers: partyWalls19r.map(c => [c - .25, c + .25]),
 };
-const rowNote19 = 'June 2024 Street View shows a row of two-storey shophouses on the north side of Geylang Road between the Lorong 17 corner house and No. 323, cream with louvred-shuttered windows under vent bands and corrugated eaves, over five-foot ways. Six houses photographed, from the west: a shop under a yellow board with a portrait; a shop under a dark awning, with an agent\'s board reading DAVID and a telephone number upstairs; a salon under a green board reading 马丽发廊 with a green vertical sign; two houses holding a supermarket under blue boards reading 思家客 SCARLETT and a striped awning; and a mart under a fruit-stall banner, plated 321. The Geylang Road panoramas agree on the row on its source front, where it runs 29 m from the corner house\'s party wall to No. 323\'s, in six houses (about 4.5, 5.0, 5.15, 4.2, 5.8 and 4.25 m), against five source ways of 5.3 m. The whole elevation is laid proportionally (x0.91) on the five ways and shared out between them (open question 45). Google Maps lists Scarlett Supermarket @ Geylang at 317 Geylang Road, operating, with its point in way 454254260, but its two houses straddle three source ways, so it is named only once the row is re-cut; the salon\'s listings are at another address or closed, and the other boards name no listed business, so every board is blank.';
-const wayRow19 = [['454254254', -26.487, 5.2953], ['454254256', -21.191, 5.2953], ['454254258', -15.896, 5.2942], ['454254260', -10.602, 5.3064], ['454254262', -5.295, 5.2953]];
-export const geylangRow19 = wayRow19.map(([w, s0, width], i) => {
-  const p = sliceSpec(row19, s0, s0 + width - .002);
-  const inset = ([l, r]) => [Math.max(l, .06), Math.min(r, width - .06)];
+// The salon's and the supermarket's boards, in s; each house keeps the ones that fall on it.
+const salonBoard19 = { u: [-17.6, -13.2], h: [3.3, 4.0], out: .05 }, scarlettBoards19 = [[-12.6, -8.9], [-8.4, -4.9], [-4.6, -3.0]].map(u => ({ u, h: [3.1, 3.6], out: .05 }));
+const houses19 = [['gr-l19-a', -26.487, -23.0], ['gr-l19-b', -23.0, -18.0], ['gr-l19-c', -18.0, -12.85], ['gr-l19-d', -12.85, -8.65], ['gr-l19-e', -8.65, -2.85], ['gr-l19-f', -2.85, 1.4]];
+const house19 = ([id, s0, s1]) => {
+  const width = +(s1 - s0).toFixed(3), p = sliceSpec(row19, s0, s1 - .002), inset = ([l, r]) => [Math.max(l, .06), Math.min(r, width - .06)];
+  const boards = [salonBoard19, ...scarlettBoards19].filter(b => b.u[0] >= s0 && b.u[1] <= s1).map(b => ({ ...b, u: b.u.map(v => +(v - s0).toFixed(3)) }));
   return {
-    id: `gr-l19-row-${i + 1}`, buildingIds: [w], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 7, pitch: 16 },
-    name: `Geylang Road shophouse row between Lorong 17 and Lorong 19, part ${i + 1} of 5 from the west (June 2024 exterior, occupants not identified)`,
-    address: `Geylang Road, north side, Nos. 313-321 (source way ${w})`,
-    height: 7.8, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 9.6, ridgeDepth: .45, overhang: .4, colour: '#8a8682' },
-    heldFlat: true, // the source fronts stand about 6.3 m from Geylang Road's centreline, at its estimated carriageway's edge
-    evidence: rowNote19,
-    sources: [way(w), search('Scarlett Supermarket 317 Geylang Road'), pano('YBiUPOlJN5S-q8M8MsdnVA', 350, 10, 100), pano('0XmLfVywkSW7HpPrXmiKPg', 350, 10, 100), pano('H9pOadTVwBJU8Ex7cmpLWQ', 350, 10, 100)],
-    colours: { wall: cream19r, trim: '#ddd2b6', frame: '#8a8270', glass: '#c8c0a8', pier: cream19r, back: '#d6ccb2', floor: '#a19b90' },
     windows: p.windows.map(x => ({ ...x, u: inset(x.u) })).filter(x => x.u[1] - x.u[0] > .3),
     vents: p.vents.map(x => ({ ...x, u: inset(x.u) })).filter(x => x.u[1] - x.u[0] > .3),
-    blocks: p.blocks, backFittings: p.backFittings, piers: p.piers,
+    blocks: p.blocks, backFittings: p.backFittings, piers: p.piers, boards,
   };
-});
+};
+const rowNote19 = 'June 2024 Street View shows a row of two-storey shophouses on the north side of Geylang Road between the Lorong 17 corner house and No. 323, cream with louvred-shuttered windows under vent bands and corrugated eaves, over five-foot ways. Six houses photographed, from the west: a shop under a yellow board with a portrait; a shop under a dark awning, with an agent\'s board reading DAVID and a telephone number upstairs; a salon under a green board reading 马丽发廊 MARY HAIR SALON with a green vertical sign; two houses holding a supermarket under blue boards reading 思家客 SCARLETT and a striped awning; and a mart under a fruit-stall banner, plated 321. The Geylang Road panoramas agree on the row on its source front, where it runs 29 m from the corner house\'s party wall to No. 323\'s, in six houses of about 4.5, 5.0, 5.15, 4.2, 5.8 and 4.25 m, against five source ways of 5.3 m. Under the owner\'s answer to open question 45 it is re-cut into its six houses, starting at the corner house\'s source party wall, which is kept, and the elevation is laid at its photographed positions.';
+const rowCommon19 = {
+  frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 7, pitch: 16 },
+  height: 7.8, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'gable', ridge: 9.6, ridgeDepth: .45, overhang: .4, colour: '#8a8682' },
+  heldFlat: true, // the fronts stand about 6.3 m from Geylang Road's centreline, at its estimated carriageway's edge
+  colours: { wall: cream19r, trim: '#ddd2b6', frame: '#8a8270', glass: '#c8c0a8', pier: cream19r, back: '#d6ccb2', floor: '#a19b90' },
+};
+const rowSources19 = w => [way(w), pano('YBiUPOlJN5S-q8M8MsdnVA', 350, 10, 100), pano('0XmLfVywkSW7HpPrXmiKPg', 350, 10, 100), pano('H9pOadTVwBJU8Ex7cmpLWQ', 350, 10, 100)];
+const unnamedRow19 = (h, name, address, w) => {
+  const { boards, ...rest } = house19(h);
+  return { id: h[0], buildingIds: [h[0]], kind: 'unnamed', unnamed: true, ...rowCommon19, name, address, evidence: rowNote19 + ' No listing or sign identifies it, so no name is given.', sources: rowSources19(w), ...rest };
+};
+export const maryHairSalon = {
+  id: 'mary-hair-salon', buildingIds: ['gr-l19-c'], kind: 'mary-hair-salon', ...rowCommon19,
+  name: 'Mary Hair Salon (June 2024 exterior)', address: 'Geylang Road, north side, the third house east of the Lorong 17 corner house (listed at 538 Geylang Road)',
+  evidence: rowNote19 + ' Google Maps lists Mary Hair Salon, a hair salon, with its point on the third house, but at 538 Geylang Road, Singapore 389493; Mery Salon, at 313 Geylang Road, is marked closed. The board reads MARY HAIR SALON, so under open question 12, which allows a clearly signed occupant when published addresses disagree, and the owner\'s answer to open question 45, the house is named after its board, which is redrawn in original type, and the 538 Geylang Road address is recorded.',
+  sources: [...rowSources19('454254256'), way('454254258'), search('Mary Hair Salon Geylang')],
+  ...house19(houses19[2]),
+};
+export const scarlett = {
+  id: 'scarlett-supermarket', buildingIds: ['gr-l19-d', 'gr-l19-e'], kind: 'scarlett-supermarket', ...rowCommon19,
+  name: 'Scarlett Supermarket @ Geylang (June 2024 exterior)', address: '317 Geylang Road (two houses)',
+  evidence: rowNote19 + ' Google Maps lists Scarlett Supermarket @ Geylang 思家客芽笼店, a Chinese supermarket, operating, at 317 Geylang Road, Singapore 389356, with its points on the fifth house; its boards run over the fourth and fifth, so under the owner\'s answer to open question 45 both houses are named after it and its boards are redrawn in original type.',
+  sources: [...rowSources19('454254260'), way('454254258'), way('454254262'), search('Scarlett Supermarket 317 Geylang Road')],
+  // One place over two houses: each building is built from its own part of the elevation, with one review start.
+  parts: { 'gr-l19-d': house19(houses19[3]), 'gr-l19-e': { ...house19(houses19[4]), noReview: true } },
+  ...house19(houses19[3]),
+};
+export const geylangRow19 = [
+  unnamedRow19(houses19[0], 'Geylang Road shophouse east of the Lorong 17 corner house (June 2024 exterior, occupants not identified)', 'Geylang Road, north side, the first house east of the Lorong 17 corner house', '454254254'),
+  unnamedRow19(houses19[1], 'Geylang Road shophouse, the second east of the Lorong 17 corner house (June 2024 exterior, occupants not identified)', 'Geylang Road, north side, the second house east of the Lorong 17 corner house', '454254256'),
+  maryHairSalon, scarlett,
+  unnamedRow19(houses19[5], 'No. 321 Geylang Road (June 2024 exterior, occupants not identified)', '321 Geylang Road (plate 321)', '454254262'),
+];
+
 // The shared lane-house helpers under this lane's names.
 export const lorong19Frame = laneFrame, lorong19Layout = laneLayout, lorong19Upper = laneUpper, lorong19Reviews = laneReviews, lorong19Sides = laneSides;
 

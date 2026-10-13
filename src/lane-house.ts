@@ -13,7 +13,8 @@ export const text = (c: CanvasRenderingContext2D, t: string, x: number, y: numbe
 export const sans = '"Helvetica Neue", Arial, sans-serif', hei = '"PingFang SC", "Heiti SC", sans-serif', kai = '"Kaiti SC", "STKaiti", serif';
 export type Draws = Record<string, { boards?: Draw[]; blades?: Draw[] }>;
 
-/** One lane house: its front elevation, side faces, upper volumes and review starts. Signs are drawn only where `draws` has them. */
+/** One lane house: its front elevation, side faces, upper volumes and review starts (unless `noReview`, for the second
+ * part of a place built over two buildings). Signs are drawn only where `draws` has them. */
 export function buildLaneHouse(world: World, place: any, poly: Point[], draws: Draws) {
   const frame = laneFrame(poly, place);
   const { textured } = buildSimpleHouse(world, place.name, frame, poly, place, laneLayout(place, frame.width) as any, draws[place.id] ?? {});
@@ -57,5 +58,5 @@ export function buildLaneHouse(world: World, place: any, poly: Point[], draws: D
       world.box(`${place.name} ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour, b.glow), undefined, frame.angle);
     }
   }
-  for (const r of laneReviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+  if (!place.noReview) for (const r of laneReviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
 }

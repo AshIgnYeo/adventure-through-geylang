@@ -603,6 +603,19 @@ export const authoredFootprintGroups = [
       return [hePing, no150, ...row, corner];
     },
   },
+  {
+    id: 'geylang-313-321', question: 45, approved: '2026-10-13',
+    evidence: 'The two-storey row on the north side of Geylang Road between the Lorong 17 corner house and No. 323, re-cut into its six photographed houses. The June 2024 Geylang Road drive agrees on the row on its source front; measured along No. 323\'s source front from its west corner, the party walls stand at -23.0, -18.0, -12.85, -8.65 and -2.85 m, and the row ends at No. 323\'s photographed party wall, 1.4 m east of the source line (open question 46). It starts at the Lorong 17 corner house\'s source party wall (-26.49 m), which is kept, about 1.1 m east of where that wall photographs. The source front and the party walls\' direction are kept, and each house runs back to the source rear line.',
+    replaces: ['454254254', '454254256', '454254258', '454254260', '454254262'],
+    build(map) {
+      const o = outlineOf(map, '454254263'), A = o[1], east = unit(o[1], o[0]), back = sub(o[2], o[1]);
+      const F = s => at(A, east, s), cuts = [-26.487, -23.0, -18.0, -12.85, -8.65, -2.85, 1.4];
+      return 'abcdef'.split('').map((k, i) => ({
+        id: `gr-l19-${k}`, street: 'Geylang Road', number: k === 'f' ? '321' : null, levels: 2,
+        outline: [F(cuts[i]), F(cuts[i + 1]), add(F(cuts[i + 1]), back), add(F(cuts[i]), back)],
+      }));
+    },
+  },
 ];
 
 const ring = (outline, origin) => {

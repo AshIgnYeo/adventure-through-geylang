@@ -54,7 +54,7 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 | 13 | East | 1223524381 | Nos. 6–8, a granite-clad block | Done; unnamed; footprint question 44 |
 | 14 | East | 454254246 | No. 4, Sims Point | Done; named; footprint question 44 |
 | 15 | East | 454254168 | Nos. 325–333 Geylang Road, the east corner: Straits Laundry, Nanyang Hardware and Romance Adult Shop | Done; named after three tenants; footprint question 44 |
-| 16–20 | Geylang Road | 454254254 to 454254262 | Nos. 313–321, the row between Lorong 17 and Lorong 19 | Done; unnamed for now; row question 45 |
+| 16–20 | Geylang Road | 454254254 to 454254262 | Nos. 313–321, the row between Lorong 17 and Lorong 19 | Done; re-cut into six houses; Mary Hair Salon and Scarlett Supermarket named (question 45) |
 
 The names in the table are those Google Maps gives for each address. Whether a building is named in the model is decided at its stop.
 
@@ -639,3 +639,23 @@ Group `lorong-19-east` in `src/authored-footprints.mjs` replaces five source way
 - **Bougainvilla's railing:** it had been placed by estimate. A railing post (from `ZqOX…`) triangulates 4.2 m in front of its photographed front, in line with its south end, and the railing is drawn there.
 - **Nos. 6–8:** the first column of their five-foot way triangulates 0.4 m south of that post, 8.4 m forward. So they start 0.5 m north of their source corner, not the 2.4 m read on a plane 7.5 m forward, where columns standing in front of that plane read too far north. Their columns stand at the edge of the lane's estimated carriageway, so the place is flagged `heldFlat`.
 - **Bougainvilla:** its re-spaced front is 1° off its side walls, so its five-foot-way shell is inset.
+
+### Question 45: the Geylang Road row in its six houses
+
+Group `geylang-313-321` in `src/authored-footprints.mjs` replaces the five source ways with six houses, `gr-l19-a` to `gr-l19-f`.
+
+- **Geometry:** they keep the source front, the party walls' direction and the source rear line. They are cut at the photographed party walls (−23.0, −18.0, −12.85, −8.65 and −2.85 m along No. 323's front).
+- **Ends:**
+  - The row ends at No. 323's photographed party wall (+1.4 m), which question 46 also moved.
+  - It starts at the Lorong 17 corner house's source party wall (−26.49 m). That wall is kept, as it was settled with Lorong 17, so the first house is 3.5 m wide where it photographs about 4.6 m.
+- **Layout:** the row's elevation is laid at its photographed positions and shared out between the six houses (`house19` in the layout). Each house keeps the boards that fall on it.
+- **Named:**
+  - **Mary Hair Salon** on the third house, after its green board reading 马丽发廊 MARY HAIR SALON, redrawn in original type (`?review=mary-hair-salon`).
+    - Its listing point lies on the house, but the listing gives 538 Geylang Road. Under open question 12 the signed occupant is named, and the address conflict is recorded in its address.
+    - Mery Salon, at 313, is closed.
+  - **Scarlett Supermarket @ Geylang** on the fourth and fifth houses, after its blue boards, redrawn in original type (`?review=scarlett-supermarket`).
+    - Its listing is at 317 Geylang Road, operating, with its points on the fifth house.
+    - It is one place over two buildings: the lane builder now builds each building from its own part (`parts`), with one review start (`noReview` on the second).
+- **Unnamed:**
+  - the first two houses;
+  - **No. 321**, plated, under a fruit-stall banner that names none of the businesses listed there.
