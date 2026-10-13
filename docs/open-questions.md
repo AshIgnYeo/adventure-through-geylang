@@ -21,6 +21,22 @@ Started: 10 October 2026.
       - **The extension:** in front of the walk-up on Geylang Road, kept as a single-storey part, as the extension at No. 323 on Lorong 19 is.
     - **Unlocks:** both buildings on their true walls, the coffeeshop's awnings at their photographed depth, and the gap on Geylang Road closed.
 
+49. **Lorong 21 west side, No. 5 to No. 178 Sims Avenue: re-author the outlines on their photographed line?**
+    - **Evidence:** each building was measured from April 2024 lane panoramas during the walk ([Lorong 21 brief](lorong-21-brief.md), stops 2–10).
+
+      | Building | Way(s) | Photographed against the source outline |
+      | --- | --- | --- |
+      | Nos. 5 and 7, a walk-up pair | 1223524387, 1223524388 | Front 0.2 m back, but 16.5 m wide against 13.5 m: from 8.2 m south to 8.3 m north of the source party wall, with the party line 0.4 m north of it |
+      | Nos. 9–19, a terrace | 1223524384, -83, -82, -85, -86 | Upper façades 1.5 m forward. Party walls at 0, 7.0, 13.4, 19.7, 26.0 and 32.2 m along No. 9's front, against 0, 6.41, 12.82, 19.22, 25.62 and 32.02 |
+      | 29 Lorong Bachok, Tan Ser Seng | 454254329 | Lane face 3.25 m forward, from its splay, 1.3 m from the Bachok corner, to the back lane |
+      | No. 178 Sims Avenue | 454254330 | Lane face 3.75 m back (its source edge stands inside the lane's carriageway); Sims Avenue front 1.85 m back; a splay of about 2.5 m against the outline's 7.65 m |
+
+    - **Recommendation:** yes. Re-author each outline as the Lorong 19 west side was (question 46):
+      - **Nos. 5–19:** re-spaced along their own fronts at the photographed party walls, with each front moved to its photographed line and the rear lines kept;
+      - **Tan Ser Seng:** its lane face moved forward;
+      - **No. 178:** its lane face and Sims Avenue front moved back, with a short splay between them.
+    - **Unlocks:** true positions and widths along the west side, five-foot ways and awnings at their photographed depth, and No. 178 out of the lane's carriageway.
+
 ## Settled
 
 ### Eleventh batch, 13 October 2026
