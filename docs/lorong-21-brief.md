@@ -22,8 +22,8 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
 | 1 | West | 454254167 | Nos. 335–351 Geylang Road, the west corner: Cheng Yi Coffee Shop and a glass block | Done; named; question 48 |
-| 2 | West | 1223524387 | No. 5 | |
-| 3 | West | 1223524388 | No. 7 | |
+| 2 | West | 1223524387 | No. 5 | Done; unnamed; question 49 |
+| 3 | West | 1223524388 | No. 7 | Done; unnamed; question 49 |
 | 4 | West | 1223524384 | No. 9, Nyingma Kathok Buddhist Centre | |
 | 5 | West | 1223524383 | No. 11 | |
 | 6 | West | 1223524382 | No. 15 | |
@@ -83,3 +83,34 @@ One source outline over two buildings at the Lorong 21 west corner of Geylang Ro
 - the 5G board and a Bengali stall banner name no listed business.
 
 Use `?review=cheng-yi`.
+
+### 2–3. Ways 1223524387 and 1223524388: Nos. 5 and 7
+
+North of the side lane, behind a grey boundary wall: a weathered cream three-storey walk-up pair under a hipped roof with deep eaves, sharing a stair lit by a breeze-block screen, brown over white.
+
+- **No. 5** (the south half):
+  - top floor: a window and a balcony with a railing;
+  - first floor: a window and a balcony enclosed in a brick-red grille;
+  - ground floor: grilled windows and a door under a zinc awning.
+- **No. 7** (the north half): a balcony and a window on the top floor, and a balcony enclosed in a white grille on the first.
+- **The wall:** letterboxes reading 5, 5A, 5B and 7, 7A, 7B, a black gate, and a car gate plated **7** in red. A white festival tent stands over No. 7's forecourt and is not modelled.
+
+**Measurement:**
+- **Depth:** the pairs' depth scores peaked 3–7 m in front, on the boundary wall and the tent. The stair screen was therefore followed between three April 2024 panoramas (`-BDV5…`, `8yiH…`, `O-hH…`). Its drift on a plane 4 m forward puts it **0.2 m behind** the source line, and on that plane the three views agree.
+- **Extent:** read along No. 7's front from the party wall, the pair runs from **8.2 m south to 8.3 m north**: about **16.5 m**, against the 13.5 m of the two source ways. The party line is taken at the screen's centre, 0.4 m north of the source one.
+- **The boundary wall:** followed between two panoramas by its letterbox panel, it stands **7.1 m in front of** the houses.
+- **Heights:**
+  - window rows: 0.5–2.1, 3.6–5.8 and 7.25–8.8 m;
+  - floor ledge: 6.5 m;
+  - eaves: 9.5–10.0 m;
+  - hipped roof: to about 10.9 m.
+
+**Layout:**
+- Each house is laid proportionally on its own source edge (No. 5 ×0.78, No. 7 ×0.85). The stair screen is shared between them at the party wall.
+- The boundary wall, its gates and the letterboxes are drawn at their triangulated line.
+- The width is part of [open question 49](open-questions.md).
+
+**Naming:** none.
+- Google Maps lists New Century Realty & Trading at No. 5, and MP Express Services and the closed Di Zhong Hai Buffet Steamboat at No. 7. Their points lie in the corner block, and no sign for any of them was photographed.
+
+Use `?review=l21-5` and `?review=l21-7`.

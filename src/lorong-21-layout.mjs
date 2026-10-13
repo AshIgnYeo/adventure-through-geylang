@@ -5,6 +5,15 @@
 import { pano, way, search, lay, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 
 /** A breeze-block screen: a shadowed field crossed by light bars, about 0.4 m by 0.33 m a block. */
+/** A grille over a dark recess (or open, for a railing or gate): bars about 0.25 m apart with three rails. */
+const grille = (name, u, h, out, colour, step = .25, recess = true) => {
+  const [l, r] = u, [b, t] = h, n = Math.max(2, Math.round((r - l) / step));
+  return [
+    ...(recess ? [{ name: `${name} recess`, u, h, out: out - .05, depth: .02, colour: '#34363a' }] : []),
+    ...Array.from({ length: n + 1 }, (_, i) => ({ name, u: [+(l + (r - l) * i / n - .02).toFixed(3), +(l + (r - l) * i / n + .02).toFixed(3)].map(v => Math.min(r, Math.max(l, v))), h, out, depth: .04, colour })),
+    ...[b, (b + t) / 2, t - .05].map(y => ({ name, u, h: [+y.toFixed(3), +(y + .05).toFixed(3)], out, depth: .04, colour })),
+  ];
+};
 const breeze = (u, h, out = .03, colour = '#d8d6cf') => {
   const [l, r] = u, [b, t] = h, nx = Math.max(1, Math.round((r - l) / .4)), ny = Math.max(1, Math.round((t - b) / .33));
   return [
@@ -139,5 +148,68 @@ export const chengYi = {
   }],
 };
 
-export const lorong21 = [chengYi];
+// ---------------------------------------------------------------------------------------------
+// 2-3. Ways 1223524387 and 1223524388, Nos. 5 and 7: a weathered cream three-storey walk-up pair under a hipped roof
+// with deep eaves, sharing a stair lit by a breeze-block screen, set back behind a boundary wall. The front was read on
+// one plane along No. 7's front (s north from the party wall, d towards the lane): the stair screen, followed between
+// three April 2024 panoramas, stands 0.2 m behind the source line, where the pair runs from s = -8.2 to 8.3 with the
+// party line at the screen's centre (0.4), against the source ways' -6.74 to 6.72. Each house is laid proportionally on
+// its own source edge (u north from its south end). The boundary wall triangulates 7.1 m in front.
+const pairNote = ' Nos. 5 and 7 are one walk-up pair, read together on one plane along No. 7\'s front: three April 2024 lane panoramas (-BDV5..., 8yiH..., O-hH...) agree on the stair screen 0.2 m behind the source line, where the pair runs about 16.5 m, from 8.2 m south of the party wall to 8.3 m north of it, against the 13.5 m of the two source ways, with the party line at the screen\'s centre. Each house is laid proportionally on its own source edge. The boundary wall, followed between two panoramas by its letterbox panel, stands about 7.1 m in front of the houses. Heights were read on the façade\'s plane: eaves at 9.5-10.0 m and the hipped roof to about 10.9 m.';
+const cream5 = '#e4dcc4', W5 = 6.736, W7 = 6.718;
+const at5 = s => lay(-8.2, W5 / 8.6)(s).map(v => Math.min(W5, Math.max(0, v))), at7 = s => lay(.4, W7 / 7.9)(s).map(v => Math.min(W7, Math.max(0, v)));
+const pairCommon5 = {
+  kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 21 Geylang', review: { distance: 10, pitch: 22 },
+  height: 9.6, ceiling: 2.5, fiveFootWay: .3, roof: { type: 'hip', ridge: 10.9, colour: '#6e6b66' },
+  colours: { wall: cream5, trim: '#d6cdb2', frame: '#3a3836', glass: '#46504e', pier: cream5, back: '#5a5650', floor: '#a8a296' },
+};
+const eaves5 = w => ({ name: 'deep eaves', u: [0, w], h: [9.5, 9.95], out: .5, depth: 1.0, colour: '#5e5b56' });
+const brownBreeze5 = at => [...breeze(at([-.81, 1.63]), [5.4, 9.4], .05, '#b8864e'), ...breeze(at([-.81, 1.63]), [2.9, 4.75], .05, '#e2e0d8')];
+export const no5 = {
+  ...pairCommon5, id: 'l21-5', buildingIds: ['1223524387'],
+  name: 'No. 5 Lorong 21 (April 2024 exterior, occupants not identified)', address: '5 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the south half of a weathered cream three-storey walk-up pair north of the side lane by the Geylang Road corner block, behind a grey boundary wall with letterboxes reading 5, 5A and 5B: a window and a balcony with a railing on the top floor, a window and a balcony enclosed in a brick-red grille on the first, grilled windows and a door under a zinc awning on the ground floor, and the shared stair lit by a brown breeze-block screen over a white one. No sign was photographed. Google Maps gives a geocoded address for 5 Lor 21 Geylang and lists New Century Realty & Trading Co there, but its point lies in the corner block and no sign for it was photographed, so no name is given.' + pairNote,
+  sources: [way('1223524387'), search('5 Lorong 21 Geylang'), pano('8yiH4E0hcM3Bdr1egBGv2Q', 270, 15, 80), pano('-BDV5dezAGqUQQ_NAmVgew', 265, 15, 80)],
+  windows: [
+    { u: at5([-7.6, -5.4]), h: [7.25, 8.8], panes: 2 }, { u: at5([-4.0, -1.65]), h: [7.25, 8.8], panes: 3 },
+    { u: at5([-7.6, -5.4]), h: [4.0, 5.7], panes: 2 }, { u: at5([-5.0, -1.3]), h: [3.6, 5.8], panes: 3 },
+    { u: at5([-7.75, -5.7]), h: [.85, 1.9], panes: 3 }, { u: at5([-4.3, -1.3]), h: [.5, 2.1], panes: 3 },
+  ],
+  blocks: [
+    eaves5(W5),
+    ...grille('balcony railing', at5([-5.25, -1.03]), [7.1, 7.9], .9, '#3a3836', .15, false),
+    { name: 'balcony slab', u: at5([-5.25, -1.03]), h: [6.6, 7.1], out: .5, depth: 1.0, colour: '#d6cdb2' },
+    ...grille('brick-red balcony grille', at5([-5.25, -1.03]), [3.2, 6.0], .9, '#9a4a3a'),
+    { name: 'floor ledge', u: [0, W5], h: [6.5, 6.6], out: .15, depth: .3, colour: '#d6cdb2' },
+    ...brownBreeze5(at5),
+    { name: 'zinc awning', u: at5([-8.0, 0]), h: [2.5, 2.9], out: .6, depth: 1.2, colour: '#9a9c98' },
+    // The grey boundary wall along the pavement, with the pair's letterboxes and a black gate.
+    ...[[0, at5([-3.6, -3.6])[0]], [at5([-2.0, -2.0])[0], W5]].map(u => ({ name: 'boundary wall', u, h: [0, 1.9], out: 7.1, depth: .2, colour: '#b8b5ad' })),
+    ...grille('black gate', at5([-3.6, -2.0]), [0, 1.9], 7.1, '#2a2a2a', .15, false),
+    { name: 'letterboxes', u: at5([-.6, .3]), h: [.6, 1.5], out: 7.22, depth: .04, colour: '#e8e6e0' },
+  ],
+};
+export const no7 = {
+  ...pairCommon5, id: 'l21-7', buildingIds: ['1223524388'],
+  name: 'No. 7 Lorong 21 (April 2024 exterior, occupants not identified)', address: '7 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the north half of the walk-up pair behind the same boundary wall, its car gate plated 7 in red: a balcony with a railing and a window on the top floor, and a balcony enclosed in a white grille on the first; a white festival tent stands over its forecourt, and is not modelled. No sign was photographed. Google Maps lists MP Express Services and the closed Di Zhong Hai Buffet Steamboat at 7 Lor 21 Geylang, but their points lie in the corner block and no sign for either was photographed, so no name is given.' + pairNote,
+  sources: [way('1223524388'), search('7 Lorong 21 Geylang'), pano('8yiH4E0hcM3Bdr1egBGv2Q', 270, 15, 80), pano('O-hHiRaRl86cXbRRvIT4bg', 245, 15, 80)],
+  windows: [
+    { u: at7([2.2, 5.9]), h: [7.25, 8.65], panes: 4 }, { u: at7([6.22, 8.19]), h: [7.25, 8.8], panes: 2 },
+    { u: at7([2.2, 7.4]), h: [4.1, 6.0], panes: 4 },
+  ],
+  blocks: [
+    eaves5(W7),
+    ...grille('balcony railing', at7([1.78, 6.16]), [7.1, 7.9], .9, '#3a3836', .15, false),
+    { name: 'balcony slab', u: at7([1.78, 6.16]), h: [6.6, 7.1], out: .5, depth: 1.0, colour: '#d6cdb2' },
+    ...grille('white balcony grille', at7([1.9, 7.6]), [3.9, 6.3], .9, '#e8e8e4'),
+    { name: 'floor ledge', u: [0, W7], h: [6.5, 6.6], out: .15, depth: .3, colour: '#d6cdb2' },
+    ...brownBreeze5(at7),
+    { name: 'boundary wall', u: [0, at7([4.6, 4.6])[0]], h: [0, 1.9], out: 7.1, depth: .2, colour: '#b8b5ad' },
+    ...grille('black car gate', at7([4.6, 8.3]), [0, 1.9], 7.1, '#2a2a2a', .15, false),
+  ],
+  backFittings: [{ name: 'grilled ground floor', u: at7([1.0, 8.0]), h: [.1, 2.3], colour: '#4a4a46' }],
+};
+
+export const lorong21 = [chengYi, no5, no7];
 export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;
