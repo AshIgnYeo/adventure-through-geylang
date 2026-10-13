@@ -349,5 +349,60 @@ export const tanSerSeng = {
   }],
 };
 
-export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng];
+// ---------------------------------------------------------------------------------------------
+// 10. Way 454254330, No. 178 Sims Avenue, the Lorong 21 west corner: a white two-storey corner house of 1929 under a
+// hipped tiled roof with a small gable at the corner, blue timber casements behind louvred shutters, and an arched
+// five-foot way on round columns. Its lane face (edge 2, u north from the back lane to the splay) is read where three
+// April 2024 lane panoramas agree, 3.75 m behind the source edge, which stands inside the lane's estimated carriageway:
+// it runs from 1.0 m south of the source end to the splay, 15.3 m along. Its Sims Avenue front (edge 0, u west from the
+// splay) stands 1.85 m behind its source edge, from 0.7 m to its party wall with No. 176, 4.7 m along. Each face is
+// laid proportionally on its source edge, with the corner on the source splay (edge 1).
+const W330 = 14.251, at330 = s => lay(-1.0, W330 / 16.3)(s).map(v => Math.min(W330, Math.max(0, v)));
+const at330s = s => lay(.7, 3.612 / 4.0)(s).map(v => Math.min(3.611, Math.max(0, v)));
+const white330 = '#f2f2ee', blue330 = '#5a7aa8';
+export const sims178 = {
+  id: 'sims-178', buildingIds: ['454254330'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 21 Geylang', review: { distance: 6, pitch: 20 },
+  name: 'No. 178 Sims Avenue (April and June 2024 exteriors, occupants not identified)', address: '178 Sims Avenue (the Lorong 21 west corner)',
+  height: 6.6, ceiling: 3.33, fiveFootWay: 2.0, heldFlat: true, roof: { type: 'hip', ridge: 8.2, colour: '#b4553d' },
+  evidence: 'April and June 2024 Street View show a white two-storey corner house at Lorong 21 and Sims Avenue under a hipped tiled roof with a small gable over the corner and deep eaves on a blue fascia: blue timber casements with louvred and stained-glass shutters on its upper floor, two pierced ventilation plaques near the back lane, and an arched five-foot way on round white columns, holding pipes, meter boxes, a blue door and, at the corner, the machines of a launderette. On the splay a relief plaque dated 1929 between blue ornaments, under a blue vertical sign reading 24 HR Coin Laundry 自助洗衣, and on Sims Avenue a blue board reading WonderWash Laundromat. Google Maps lists Wonder Wash - Geylang Branch at 178 Sims Ave but marks it permanently closed, so no name is given and the boards are blank. Three April 2024 lane panoramas agree on the lane face 3.75 m behind the source edge, which stands inside the lane\'s estimated carriageway: it runs from 1.0 m south of the source end to the splay, about 16.3 m against 14.25 m. Three June 2024 Sims Avenue pairs agree on the Sims Avenue front 1.85 m behind its source edge, where it runs about 4.0 m from the splay to the party wall with No. 176. Each face is laid proportionally on its source edge, the corner on the source splay, which is 7.65 m long where the photographed splay is about 2.5 m. Heights were read on those planes: the five-foot way to 3.33 m under a ledge to 3.83 m, windows at 4.4-6.0 m and eaves at 6.5-6.85 m, the roof to about 8.2 m.',
+  sources: [way('454254330'), search('178 Sims Avenue Singapore'), pano('yvsIY7qj0bvV_cOmeLWf5A', 250, 15, 90), pano('BWwBKNFbVwf1iB5CoYfyTA', 260, 15, 90), pano('cuXdaG2HOG231FN9p4n8nw', 190, 12, 90), pano('udFId1kVM8eOQwIcsMQa3w', 194, 6, 20)],
+  colours: { wall: white330, trim: '#e6e6e0', frame: blue330, glass: '#3e4a52', pier: '#f4f4f0', back: '#e8e8e2', floor: '#a8a296' },
+  windows: [[4.3, 5.6], [8.5, 9.7], [12.5, 14.0]].map(s => ({ u: at330(s), h: [4.4, 6.0], panes: 2, shutters: true })),
+  blocks: [
+    ...[[-.2, .5], [.8, 1.5]].map(s => ({ name: 'pierced ventilation plaque', u: at330(s), h: [5.2, 5.55], out: .02, depth: .04, colour: '#c8c8c0' })),
+    { name: 'blue fascia under the eaves', u: [0, W330], h: [6.5, 6.85], out: .4, depth: .8, colour: blue330 },
+    { name: 'first-floor ledge', u: [0, W330], h: [3.33, 3.83], out: .08, depth: .16, colour: '#e6e6e0' },
+    ...[[-.5, 2.7], [3.3, 7.0], [7.8, 11.2], [11.8, 15.0]].map(s => ({ name: 'arch spandrel', u: at330(s), h: [2.8, 3.33], out: .01, depth: .02, colour: white330 })),
+  ],
+  piers: [[-1.0, -.5], [2.7, 3.3], [7.0, 7.8], [11.2, 11.8], [15.0, 15.3]].map(at330),
+  backFittings: [
+    { name: 'pipes and meter boxes', u: at330([3.5, 7.0]), h: [.8, 2.6], colour: '#b8b0a0' },
+    { name: 'blue door', u: at330([9.7, 11.0]), h: [.1, 2.3], colour: '#3e5a8a' },
+    { name: 'launderette machines', u: at330([12.0, 15.0]), h: [.1, 2.4], colour: '#c8ccd0', glow: .08 },
+  ],
+  sides: [{
+    edge: 1, // the source splay, u from the lane towards Sims Avenue: the corner column, the 1929 plaque and the sign
+    windows: [{ u: [2.8, 4.8], h: [4.4, 6.0], panes: 2, shutters: true }],
+    blocks: [
+      { name: 'blue fascia under the eaves', u: [0, 7.65], h: [6.5, 6.85], out: .25, depth: .5, colour: blue330 },
+      { name: 'first-floor ledge', u: [0, 7.65], h: [3.33, 3.83], out: .08, depth: .16, colour: '#e6e6e0' },
+      { name: '1929 relief plaque', u: [2.9, 4.7], h: [3.85, 4.3], out: .03, depth: .04, colour: '#9aaecc' },
+      { name: 'round corner column', u: [3.55, 4.1], h: [.1, 3.33], out: .1, depth: .2, colour: '#f4f4f0' },
+      { name: 'blank blue vertical sign, held flat', u: [1.2, 1.9], h: [3.9, 6.3], out: .1, depth: .2, colour: '#2a5aa8' },
+      { name: 'launderette', u: [.3, 7.3], h: [.1, 2.8], out: .01, depth: .02, colour: '#c8ccd0', glow: .08 },
+    ],
+  }, {
+    edge: 0, // the Sims Avenue front, u west from the splay to the party wall with No. 176
+    heldFlat: false, // it stands 2.6 m clear of Sims Avenue's estimated carriageway
+    windows: [[2.0, 3.0], [3.0, 4.0]].map(s => ({ u: at330s(s), h: [4.4, 6.0], panes: 2, shutters: true })),
+    blocks: [
+      { name: 'blue fascia under the eaves', u: [0, 3.611], h: [6.5, 6.85], out: .4, depth: .8, colour: blue330 },
+      { name: 'first-floor ledge', u: [0, 3.611], h: [3.33, 3.83], out: .08, depth: .16, colour: '#e6e6e0' },
+      { name: 'blank blue launderette board', u: at330s([2.0, 4.6]), h: [3.7, 4.6], out: .05, depth: .04, colour: '#2a5aa8' },
+      { name: 'launderette', u: [.1, 3.5], h: [.1, 2.8], out: .02, depth: .04, colour: '#c8ccd0', glow: .08 },
+    ],
+  }],
+};
+
+export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng, sims178];
 export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;

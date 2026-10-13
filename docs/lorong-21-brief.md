@@ -30,7 +30,7 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 | 7 | West | 1223524385 | No. 17 | Done; unnamed; question 49 |
 | 8 | West | 1223524386 | No. 19, Bei Chen Gong Association | Done; named; question 49 |
 | 9 | West | 454254329 | 29 Lorong Bachok, the Bachok corner: Tan Ser Seng Herbal Soup | Done; named; question 49 |
-| 10 | West | 454254330 | No. 178 Sims Avenue, the west corner | |
+| 10 | West | 454254330 | No. 178 Sims Avenue, the west corner | Done; unnamed; question 49 |
 | 11 | East | 454254164 | The Sims Avenue east corner, HCSA Community Services | |
 | 12 | East | 454254165 | HCSA Community Services | |
 | 13 | East | 454254160 | HCSA Community Services | |
@@ -187,3 +187,34 @@ A grey stuccoed two-storey corner shophouse at Lorong 21 and Lorong Bachok, its 
 - The address and the board agree on this house, so it is named, and its board is redrawn in original type.
 
 Use `?review=tan-ser-seng`.
+
+### 10. Way 454254330: No. 178 Sims Avenue, the Lorong 21 west corner
+
+A back lane separates Tan Ser Seng from a white two-storey corner house of **1929** at Lorong 21 and Sims Avenue, under a hipped tiled roof with a small gable over the corner.
+
+- **Upper floor:** blue timber casements with louvred and stained-glass shutters, deep eaves on a blue fascia, and two pierced ventilation plaques near the back lane.
+- **Ground floor:** an arched five-foot way on round white columns, holding pipes, meter boxes, a blue door and, at the corner, a launderette's machines.
+- **On the splay:** a relief plaque dated 1929 between blue ornaments, under a blue vertical sign reading 24 HR Coin Laundry 自助洗衣.
+- **On Sims Avenue:** a blue board reading WonderWash Laundromat.
+
+**Measurement:**
+- **Lane face (edge 2):** `rci6…`, `yvsI…`, `bMBY…` and `BWwB…` (April 2024) agree on it **3.75 m behind** the source edge. The source edge itself stands 2.8 m from the lane's centreline, inside its estimated carriageway.
+  - On that plane it runs from 1.0 m south of the source end to the splay: about **16.3 m**, against 14.25 m.
+- **Sims Avenue front (edge 0):** three June 2024 Sims Avenue pairs agree on it **1.85 m behind** its source edge. It runs about **4.0 m** from the splay to the party wall with No. 176, against the 3.6 m source edge.
+- **The splay:** about 2.5 m, against the source outline's 7.65 m diagonal.
+- **Heights:**
+  - five-foot way: to 3.33 m, under a ledge to 3.83 m;
+  - windows: 4.4–6.0 m;
+  - eaves: 6.5–6.85 m;
+  - roof: to about 8.2 m.
+
+**Layout:**
+- Each face is laid proportionally on its source edge: the lane face ×0.87, the Sims Avenue front ×0.90. The corner column, the plaque and the sign stand on the source splay.
+- **Held flat:** the lane face and the splay's lane end stand inside the lane's estimated carriageway, so their street-level pieces are held within 0.25 m.
+- **Footprint:** moving the outline onto its photographed walls is part of [open question 49](open-questions.md).
+
+**Naming:** none. Google Maps lists Wonder Wash - Geylang Branch at 178 Sims Ave but marks it permanently closed, so both of its signs are blank.
+
+Use `?review=sims-178`.
+
+**West side complete.** Every building from Nos. 335–351 Geylang Road to No. 178 Sims Avenue now has its Lorong 21 front.
