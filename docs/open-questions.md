@@ -6,6 +6,23 @@ Started: 10 October 2026.
 
 ## Open
 
+None at present.
+
+## Settled
+
+### Tenth batch, answered 13 October 2026
+
+The project owner chose the recommended option for each ("yes to all"), after the Lorong 19 walk.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 43 | **Yes.** Take in both block faces between Lorong 17 and Lorong 19 | The Geylang Road houses stay in; Sims Avenue Nos. 136–144 are measured, taken into the map and modelled |
+| 44 | **Yes.** Move the east side's five outlines onto their photographed positions | One footprint group (`lorong-19-east`); He Ping cut at its party line with No. 150 |
+| 45 | **Yes.** Re-cut the Geylang Road row into six houses, and name Scarlett Supermarket and Mary Hair Salon | One footprint group (`geylang-313-321`); the row starts at the Lorong 17 corner house's source party wall, which is kept |
+| 46 | **Yes.** Re-author the west side on its photographed line | One footprint group (`lorong-19-west`) |
+
+The original wording of questions 43–46 is kept here:
+
 43. **Lorong 19: take in the block faces between Lorong 17 and Lorong 19, on Geylang Road (Nos. 313–321) and Sims Avenue (Nos. 136–144)?**
     - **Why it comes up:** under question 35 these houses waited for a later pass. The new links from Lorong 17's junctions to Lorong 19's now run past them, so leaving them out leaves empty lots along both walks.
     - **What happens now:**
@@ -71,8 +88,6 @@ Started: 10 October 2026.
       - party lines at the measured ends;
       - rear lines kept.
     - **Unlocks:** true positions and widths on the west side, full awnings at The Primero and No. 33, and the lane's true width.
-
-## Settled
 
 ### Ninth batch, 12 October 2026
 
