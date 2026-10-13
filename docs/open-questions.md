@@ -10,6 +10,26 @@ None at present.
 
 ## Settled
 
+### Eleventh batch, 13 October 2026
+
+The project owner asked for the next lorong to be mapped in full, without stopping until the whole lorong is finished. Lorong 21 is the next lane along the north side of Geylang Road after Lorong 19, so question 47 is recorded as answered by that instruction, on question 42's terms and with question 43's answer applied from the start.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 47 | **Yes.** Model Lorong 21 between Geylang Road and Sims Avenue, one building at a time in street order, with the block faces back to Lorong 19 | The lane, its buildings, its two junctions, Lorong Bachok's east mouth and the links back to Lorong 19 join the map; the walk is recorded in the [Lorong 21 brief](lorong-21-brief.md) |
+
+Question 47 in full:
+
+47. **Lorong 21, Geylang Road to Sims Avenue: build it as Lorong 19 was built?**
+    - **Order:** start at the Geylang Road end, go north up the west side to Sims Avenue, then come back south down the east side, then west along Sims Avenue to Lorong 19. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Sims Avenue. The part of Lorong 21 north of Sims Avenue, the Lorong Bachok row and the far sides of Geylang Road and Sims Avenue wait for a later pass. Lorong Bachok's east mouth is kept as road surface.
+    - **Corners:** take in the corner buildings at both ends of both sides, and the Lorong Bachok corner on the west side.
+    - **Block faces:** as question 43 settled for Lorong 19, take in the faces back to Lorong 19. On Geylang Road the corner block (way 454254167) already runs back to Lorong 19's east corner; on Sims Avenue the eight houses from No. 150 to No. 176 join the map.
+    - **Map:** add the lane's own buildings and road ways by id, as for Lorong 19. The lane and the Geylang Road and Sims Avenue links from Lorong 19's junctions become walkable corridors.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-21` branch, each written up in the Lorong 21 brief. Footprint changes are measured during the walk and logged here for approval, as before.
+
 ### Tenth batch, answered 13 October 2026
 
 The project owner chose the recommended option for each ("yes to all"), after the Lorong 19 walk.
