@@ -94,7 +94,8 @@ function splitAlongFront(map, id, from, to, cuts) {
  * street. One monotonic, piecewise-linear map of t takes the source party lines (`breaks`, [source, measured] pairs)
  * to the measured ones and is applied to every vertex of every house, so neighbours keep their shared walls and
  * interlocking rear parts stay apart; vertices on the source front (|d| < 0.5 m) move to the measured front `d`.
- * Each outline keeps its source vertex order, so its edge numbers are unchanged.
+ * A house whose source front lies off the row's line gives it as `sourceFront` (d), and `front` may be a function
+ * (d, new t) => new d. Each outline keeps its source vertex order, so its edge numbers are unchanged.
  */
 function warpRow(map, origin, dir, breaks, houses) {
   const n = [-dir[1], dir[0]];
@@ -110,12 +111,29 @@ function warpRow(map, origin, dir, breaks, houses) {
     const src = map.buildings.find(b => b.id === h.source).coordinates.slice(0, -1).map(c => project(c, map.origin));
     const outline = src.map(p => {
       const q = sub(p, origin), t = q[0] * dir[0] + q[1] * dir[1], d = q[0] * n[0] + q[1] * n[1];
-      return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * (Math.abs(d) < .5 ? h.front : d), n[1] * (Math.abs(d) < .5 ? h.front : d)]);
+      const onFront = Math.abs(d - (h.sourceFront ?? 0)) < .5, d1 = !onFront ? d : typeof h.front === 'function' ? h.front(d, T(t)) : h.front;
+      return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * d1, n[1] * d1]);
     });
     return { id: h.id, street: h.street, number: h.number, levels: h.levels, outline };
   });
 }
 const unit = (p, q) => { const l = Math.hypot(q[0] - p[0], q[1] - p[1]); return [(q[0] - p[0]) / l, (q[1] - p[1]) / l]; };
+/** Move each edge of a convex outline along its outward normal by `offsets[i]` (negative is inward); vertex i is where
+ * the moved edges i - 1 and i meet, so the vertex order and edge numbers are kept. */
+function offsetEdges(o, offsets) {
+  const c = o.reduce((s, p) => [s[0] + p[0] / o.length, s[1] + p[1] / o.length], [0, 0]);
+  const lines = o.map((p, i) => {
+    const q = o[(i + 1) % o.length], d = unit(p, q); let n = [-d[1], d[0]];
+    if (n[0] * (p[0] - c[0]) + n[1] * (p[1] - c[1]) < 0) n = neg(n);
+    return { p: add(p, [n[0] * offsets[i], n[1] * offsets[i]]), d };
+  });
+  return o.map((_, i) => {
+    const A = lines[(i + o.length - 1) % o.length], B = lines[i], det = A.d[0] * -B.d[1] - A.d[1] * -B.d[0];
+    const r = sub(B.p, A.p), k = (r[0] * -B.d[1] - r[1] * -B.d[0]) / det;
+    return at(A.p, A.d, k);
+  });
+}
+const outlineOf = (map, id) => map.buildings.find(b => b.id === id).coordinates.slice(0, -1).map(c => project(c, map.origin));
 
 export const authoredFootprintGroups = [
   {
@@ -523,6 +541,40 @@ export const authoredFootprintGroups = [
         .map(([source, number, front = 2.3]) => ({ source, id: `l17w-${number}`, street, number, levels: 3, front }));
       const A = sourcePoint(map, '454254236', 2), nos5to7 = { source: '454254236', id: 'l17w-5', street, number: '5-7', levels: 2, front: 1.5 };
       return [...warpRow(map, A, unit(A, sourcePoint(map, '454254236', 1)), [[0, -1.56], [9.04, 11.35]], [nos5to7]), ...warpRow(map, O, row, breaks, walkUps)];
+    },
+  },
+  {
+    id: 'lorong-19-west', question: 46, approved: '2026-10-13',
+    evidence: 'The west side of Lorong 19 from No. 323 Geylang Road to No. 146 Sims Avenue on its photographed line. Each building was measured from June 2024 panoramas during the Lorong 19 walk (docs/lorong-19-brief.md, stops 1-9). No. 323: the lane face 3.5 m in front of its source edge, the Geylang Road front 0.4 m behind its source front, and its party wall with No. 321 1.4 m east of the source line, each edge moved in parallel. The Primero (No. 1): front 2.2 m behind at its south end and 2.6 m at its north end, from 0.8 m south of the source corner to 1.0 m north of the source north corner. No. 3: front 2.3 m behind, from 0.9 m south of the source corner; Nos. 21, 23 and 25 on one plane 1.25 m behind, with party lines at -8.3, 0, 10.0 and 17.6 m along No. 23\'s source front (the No. 3/No. 21 wall taken between the two houses\' readings). Lei Zang Si (No. 29): front 1.5 m behind, from 1.8 m south of the source corner, 14.4 m. No. 33: front 1.5 m behind, from 0.5 m north of the source corner, 24.4 m. No. 146 Sims Avenue: bearings from three Sims Avenue panoramas put its splay pier 1.8 m south of the source splay, and its lane face starts 2.0 m south of its source corner, so the outline moves 1.8 m south with its shape kept. Each re-spacing moves the house\'s vertices along its own front line, so rear lines and steps are kept.',
+    replaces: ['454254263', '454254248', '476113985', '454254241', '476113983', '476113984', '454254239', '454254309', '454254310'],
+    build(map) {
+      const lane = 'Lorong 19 Geylang';
+      const o263 = outlineOf(map, '454254263');
+      // Edges: 0 the Geylang Road front, 1 the party wall with No. 321, 2 the rear, 3 the lane face.
+      const eminent = { id: 'l19w-323', street: 'Geylang Road', number: '323', levels: 2, outline: offsetEdges(o263, [-.4, -1.4, 0, 3.5]) };
+      // A house re-spaced along its own source front, from `south` to `north` (vertex indices on that front).
+      const reface = (id, south, north, breaks, front, house) => {
+        const o = outlineOf(map, id), A = o[south];
+        return warpRow(map, A, unit(A, o[north]), breaks, [{ source: id, street: lane, levels: null, front, ...house }])[0];
+      };
+      const w248 = Math.hypot(...sub(outlineOf(map, '454254248')[0], outlineOf(map, '454254248')[1]));
+      const primero = reface('454254248', 1, 0, [[0, -.8], [w248, w248 + 1.0]], (d, t) => -2.2 - .4 * (t + .8) / (w248 + 1.8), { id: 'l19w-1', number: '1', levels: 4 });
+      // Nos. 3-25 on one re-spacing along No. 23's source front, so No. 3 and No. 21 keep their shared wall.
+      const O = outlineOf(map, '476113983')[0], north = unit(O, outlineOf(map, '476113983')[1]);
+      const tOf = p => (p[0] - O[0]) * north[0] + (p[1] - O[1]) * north[1];
+      const o985 = outlineOf(map, '476113985'), o241 = outlineOf(map, '454254241'), o984 = outlineOf(map, '476113984');
+      const dFront3 = (o985[2][0] - O[0]) * -north[1] + (o985[2][1] - O[1]) * north[0];
+      const breaks = [[tOf(o985[2]), tOf(o985[2]) - .9], [tOf(o241[1]), -8.3], [0, 0], [tOf(outlineOf(map, '476113983')[1]), 10.0], [tOf(o984[1]), 17.6]];
+      const row = warpRow(map, O, north, breaks, [
+        { source: '476113985', id: 'l19w-3', street: lane, number: '3', levels: 4, sourceFront: dFront3, front: d => d - 2.3 },
+        { source: '454254241', id: 'l19w-21', street: lane, number: '21', levels: 1, front: -1.25 },
+        { source: '476113983', id: 'l19w-23', street: lane, number: '23', levels: 1, front: -1.25 },
+        { source: '476113984', id: 'l19w-25', street: lane, number: '25', levels: 1, front: -1.25 },
+      ]);
+      const leiZangSi = reface('454254239', 2, 1, [[0, -1.8], [13.873, 12.6]], -1.5, { id: 'l19w-29', number: '29', levels: 5 });
+      const no33 = reface('454254309', 3, 2, [[0, .5], [25.166, 24.9]], -1.5, { id: 'l19w-33', number: '33', levels: 3 });
+      const no146 = { id: 'sa-146', street: 'Sims Avenue', number: '146', levels: 3, outline: outlineOf(map, '454254310').map(p => add(p, [.15, 1.8])) };
+      return [eminent, primero, ...row, leiZangSi, no33, no146];
     },
   },
 ];

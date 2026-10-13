@@ -72,13 +72,13 @@ test('the Lorong 19 exteriors fit their outlines, face the lane and keep their r
   }
 });
 
-test('Eminent Frog Porridge & Seafood is named on the west corner, No. 323, its listing point inside the way', () => {
+test('Eminent Frog Porridge & Seafood is named on the west corner, No. 323, its listing point inside its footprint', () => {
   const place = lorong19.find(p => p.id === 'eminent-frog-porridge');
-  assert.equal(landmarkFor('454254263').id, place.id);
-  assert.equal(pointInPolygon(project([103.879233, 1.3127383], map.origin), outline('454254263')), true);
+  assert.equal(landmarkFor('l19w-323').id, place.id);
+  assert.equal(pointInPolygon(project([103.879233, 1.3127383], map.origin), outline('l19w-323')), true);
   // The lane face runs north from the Geylang Road end; the two-storey block covers its first 22 m.
-  const frame = lorong19Frame(outline('454254263'), place);
-  assert.ok(frame.dz < -.95 && Math.abs(frame.width - 28.71) < .01);
+  const frame = lorong19Frame(outline('l19w-323'), place);
+  assert.ok(frame.dz < -.95 && Math.abs(frame.width - 28.31) < .01);
   assert.equal(place.upper[0].outline[1][0], 22.0);
 });
 

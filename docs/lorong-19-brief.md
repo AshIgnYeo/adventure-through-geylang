@@ -585,3 +585,36 @@ A row of two-storey shophouses between the Lorong 17 corner house and No. 323. T
 - the other boards name no listed business.
 
 Use `?review=gr-l19-row-1` to `?review=gr-l19-row-5`.
+
+## The owner's answers applied, 13 October 2026
+
+All four questions from the walk were answered with the recommended option ([open questions](open-questions.md), tenth batch).
+
+### Question 46: the west side on its photographed line
+
+Group `lorong-19-west` in `src/authored-footprints.mjs` replaces nine source ways.
+
+- **No. 323, Eminent (`l19w-323`):** each edge of the source outline is moved in parallel.
+  - the lane face 3.5 m forward;
+  - the Geylang Road front 0.4 m back;
+  - the party wall with No. 321 1.4 m east;
+  - the rear kept.
+
+  The Geylang Road front is now 7.4 m, and carries its plain west pilaster.
+- **The Primero (`l19w-1`):** its front is re-spaced from 0.8 m south of the source corner to 1.0 m north of the north corner. It stands 2.2 m back at its south end and 2.6 m at its north end. Its central tower now sits inside the rear step, which is 2.95 m behind the front.
+- **Nos. 3–25 (`l19w-3`, `-21`, `-23`, `-25`):** one re-spacing along No. 23's source front, so No. 3 and No. 21 keep their shared wall.
+  - No. 3's front 2.3 m back;
+  - Nos. 21–25 1.25 m back;
+  - party lines at −8.3, 0, 10.0 and 17.6 m. The No. 3/No. 21 wall is taken between the two houses' readings.
+- **Lei Zang Si (`l19w-29`):** 1.5 m back, 14.4 m from 1.8 m south of the source corner.
+- **No. 33 (`l19w-33`):** 1.5 m back, 24.4 m from 0.5 m north of the source corner.
+- **No. 146 Sims Avenue (`sa-146`):** moved 1.8 m south, with its shape kept.
+  - Before moving it, bearings from three Sims Avenue panoramas (`u2pt…`, `dBpl…`, `EVsA…`) were taken to its splay pier. They agree to within 2 cm, 1.8 m south of the source splay and on the source lane line.
+  - The 1.5 m forward reading in stop 9 came from the boards, which stand proud of the wall.
+
+**Effects:**
+- **Widths:** each elevation is laid on its photographed width.
+- **Held flat:** The Primero's and No. 33's fronts now stand clear of the lane's carriageway, so their awnings and boards are drawn at their photographed depth and the `heldFlat` flags are dropped.
+- **Eminent's awning:** it is held to 0.9 m, because the lane face is now 4.3 m from the lane's centreline.
+- **Shell insets:** the Primero's re-spaced front is 0.8° off its kept side walls, and No. 3's north wall steps back along No. 21's. So their five-foot-way shells are inset from the party walls (`shellInset`).
+- **Code:** `warpRow` takes an optional `sourceFront`, and a `front` given as a function, for houses whose fronts lie off the row's line. `offsetEdges` moves the edges of an outline in parallel.

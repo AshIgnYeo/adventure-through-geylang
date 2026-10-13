@@ -8,16 +8,17 @@ import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, la
 // 1. Way 454254263, No. 323 Geylang Road, the west corner: Eminent Frog Porridge & Seafood. A cream two-storey corner
 // shophouse with a chamfered corner, its long face on Lorong 19 (edge 3, u north from the Geylang Road end) and a
 // lower zinc-roofed extension beyond it. Three June 2024 lane panoramas agree on the lane face 3.5 m in front of the
-// source edge, from the corner (0.4 m along) to the two-storey block's north end (22.4 m along). Laid at its
-// photographed scale from the corner; the two-storey block is a raised volume, and the extension the low shell.
-const W263 = 28.711, at263 = lay(.4, 1), main263 = 22.0;
+// source edge, from the corner (0.4 m along) to the two-storey block's north end (22.4 m along). It stands on its
+// authored footprint (l19w-323, open question 46) and is laid at its photographed scale from the corner; the two-storey
+// block is a raised volume, and the extension the low shell.
+const W263 = 28.31, at263 = lay(.4, 1), main263 = 22.0;
 const cream263 = '#ecdfbf', salmon263 = '#e0ae78', maroon263 = '#74302c';
 const piers263 = [[2.5, 3.3], [7.3, 8.2], [10.2, 11.0], [13.8, 14.7], [17.2, 18.1], [20.2, 21.0], [21.8, 22.4]].map(at263);
 export const eminent = {
-  id: 'eminent-frog-porridge', buildingIds: ['454254263'], kind: 'eminent-frog-porridge', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 14 },
+  id: 'eminent-frog-porridge', buildingIds: ['l19w-323'], kind: 'eminent-frog-porridge', frontEdge: 3, reviewRoad: 'Lorong 19 Geylang', review: { distance: 5, pitch: 18 },
   name: 'Eminent Frog Porridge & Seafood (June 2024 exterior)', address: '323 Geylang Road (the Lorong 19 west corner)',
   height: 3.9, ceiling: 3.75, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8e9190' },
-  evidence: 'June 2024 Street View shows a cream two-storey corner shophouse at Geylang Road and Lorong 19, with salmon pilasters, maroon louvred shutters under louvred vents, a chamfered corner and a deep-eaved hipped roof. On Geylang Road it carries a dark board reading 明輝田雞粥海鮮煮炒店 EMINENT FROG PORRIDGE & SEAFOOD (LOR 19) over a yellow frog lightbox, with a larger frog board and red $18 promotion boards at the corner. Along Lorong 19 it has six bays of windows over an arcaded five-foot way under blue Tiger awnings, stall boards between the floors (among them an EMINENT FROG PORRIDGE board; the others read Changi Village Nasi Lemak, Heng Wang Seafood, Sin Kee Hainan Chicken Rice and B.B.Q Express), a green Lor 19 Geylang street sign and, at the north end, a vertical lightbox reading 明輝田雞粥 EMINENT FROG PORRIDGE 323; beyond it is a lower zinc-roofed extension. Google Maps lists Eminent Frog Porridge & Seafood, a porridge restaurant open until 4 am, at 323 Geylang Road, Singapore 389359, with its point inside this way, so its boards, lightboxes and stall board are redrawn in original type. The other stall boards are not listed and stay blank. Three June 2024 panoramas along the lane agree on its Lorong 19 face 3.5 m in front of the source edge, and its Geylang Road front is about 7 m wide with its party wall about 1.4 m east of the source line: the building stands about 3.5 m east of its source outline. Until its footprint is settled with the Geylang Road row, the photographed elevation is laid at its own scale from the corner on the source edges; the two-storey block covers the first 22 m and the extension the rest. Heights were read on the triangulated planes, above the five-foot-way floor.',
+  evidence: 'June 2024 Street View shows a cream two-storey corner shophouse at Geylang Road and Lorong 19, with salmon pilasters, maroon louvred shutters under louvred vents, a chamfered corner and a deep-eaved hipped roof. On Geylang Road it carries a dark board reading 明輝田雞粥海鮮煮炒店 EMINENT FROG PORRIDGE & SEAFOOD (LOR 19) over a yellow frog lightbox, with a larger frog board and red $18 promotion boards at the corner. Along Lorong 19 it has six bays of windows over an arcaded five-foot way under blue Tiger awnings, stall boards between the floors (among them an EMINENT FROG PORRIDGE board; the others read Changi Village Nasi Lemak, Heng Wang Seafood, Sin Kee Hainan Chicken Rice and B.B.Q Express), a green Lor 19 Geylang street sign and, at the north end, a vertical lightbox reading 明輝田雞粥 EMINENT FROG PORRIDGE 323; beyond it is a lower zinc-roofed extension. Google Maps lists Eminent Frog Porridge & Seafood, a porridge restaurant open until 4 am, at 323 Geylang Road, Singapore 389359, with its point inside this way, so its boards, lightboxes and stall board are redrawn in original type. The other stall boards are not listed and stay blank. Three June 2024 panoramas along the lane agree on its Lorong 19 face 3.5 m in front of the source edge, and its Geylang Road front is about 7 m wide with its party wall about 1.4 m east of the source line: the building stands about 3.5 m east of its source outline. Under the owner\'s answer to open question 46 it stands on an authored footprint: the lane face 3.5 m forward, the Geylang Road front 0.4 m back and the party wall with No. 321 1.4 m east; the photographed elevation is laid at its own scale from the corner, the two-storey block covering the first 22 m and the extension the rest. Heights were read on the triangulated planes, above the five-foot-way floor.',
   sources: [way('454254263'), search('Eminent Frog Porridge & Seafood 323 Geylang Road'), pano('_V35ZcH4MPpWV-ImZnEVsA', 262, 10, 100), pano('PDfryrUeGs2xTHzFqYRBlQ', 262, 10, 100), pano('ukZWTPS52TsHumpZjk8qWg', 235, 10, 100), pano('u07Yl1k8nX72_c24lJZ5hg', 330, 10, 100), pano('sH6CfyvyQsxgdBweKtGXhg', 300, 10, 100)],
   colours: { wall: cream263, trim: salmon263, frame: '#4f2422', glass: maroon263, pier: '#ece2c6', back: '#5a5652', floor: '#a8a296' },
   bands: [[3.75, 3.95, .3]],
@@ -36,7 +37,7 @@ export const eminent = {
     { name: 'deep eaves', u: [0, main263], h: [7.5, 7.7], out: .45, depth: .9, colour: '#5e4a40' },
     ...[[4.8, 7.5], [8.2, 10.3], [15.2, 17.5], [18.1, 20.0], [20.1, 21.3]].map(s => ({ name: 'blank stall board', u: at263(s), h: [4.05, 4.7], out: .04, depth: .05, colour: '#e6dfcd' })),
     ...piers263.map(u => ({ name: 'orange pier base', u, h: [0, .8], out: -.19, depth: .44, colour: '#d9a05a' })),
-    { name: 'blue Tiger awning', u: at263([4.3, 22.0]), h: [2.85, 3.5], out: .55, depth: 1.1, colour: '#23427c' },
+    { name: 'blue Tiger awning', u: at263([4.3, 22.0]), h: [2.85, 3.5], out: .45, depth: .9, colour: '#23427c' },
     // The lower extension north of the two-storey block: a zinc lean-to over a shop with red promotion boards.
     { name: 'zinc lean-to', u: [main263, W263], h: [3.3, 3.5], out: .5, depth: 1.0, colour: '#8e9190' },
     { name: 'blank red promotion boards', u: [22.9, 23.5], h: [1.2, 2.6], out: .05, depth: .03, colour: '#c8302a' },
@@ -52,21 +53,23 @@ export const eminent = {
     { name: 'extension shutter', u: [24.0, 27.4], h: [.1, 2.4], colour: '#9fa19e' },
   ],
   sides: [{
-    edge: 0, // the Geylang Road front, u east from the source party wall; laid from the corner, u = s - 3.5
-    heldFlat: true, // the source front stands 0.1 m inside Geylang Road's estimated carriageway
-    windows: [{ u: [.6, 1.5], h: [4.6, 5.95], panes: 2 }, { u: [1.9, 3.3], h: [4.6, 5.95], panes: 2 }, { u: [4.5, 5.0], h: [4.6, 5.95], panes: 1 }],
-    vents: [{ u: [.6, 1.5], h: [6.15, 6.55] }, { u: [1.9, 3.3], h: [6.15, 6.55] }],
+    edge: 0, // the Geylang Road front, u east from the party wall with No. 321 (photographed s = 1.4) to the corner (8.8)
+    heldFlat: true, // the front stands about 0.3 m clear of Geylang Road's estimated carriageway
+    windows: [{ u: [2.7, 3.6], h: [4.6, 5.95], panes: 2 }, { u: [4.0, 5.4], h: [4.6, 5.95], panes: 2 }, { u: [6.6, 7.1], h: [4.6, 5.95], panes: 1 }],
+    vents: [{ u: [2.7, 3.6], h: [6.15, 6.55] }, { u: [4.0, 5.4], h: [6.15, 6.55] }],
     blocks: [
-      { name: 'deep eaves', u: [0, 5.295], h: [7.5, 7.7], out: .45, depth: .9, colour: '#5e4a40' },
-      { name: 'salmon corner pilaster', u: [3.4, 4.1], h: [3.95, 7.45], out: .05, depth: .1, colour: salmon263 },
-      { name: 'ledge', u: [0, 5.295], h: [3.75, 3.95], out: .1, depth: .2, colour: salmon263 },
-      { name: 'arcade', u: [.4, 3.4], h: [0, 3.75], out: .01, depth: .02, colour: '#4a4440' },
-      { name: 'corner pier', u: [3.4, 4.1], h: [0, 3.75], out: .05, depth: .1, colour: '#ece2c6' },
-      { name: 'orange pier base', u: [3.4, 4.1], h: [0, .8], out: .06, depth: .12, colour: '#d9a05a' },
-      { name: 'blank red $18 boards', u: [3.45, 4.1], h: [1.7, 3.0], out: .13, depth: .02, colour: '#c8302a' },
+      { name: 'deep eaves', u: [0, 7.39], h: [7.5, 7.7], out: .45, depth: .9, colour: '#5e4a40' },
+      { name: 'plain west pilaster', u: [.1, 1.9], h: [3.95, 7.45], out: .05, depth: .1, colour: salmon263 },
+      { name: 'salmon corner pilaster', u: [5.5, 6.2], h: [3.95, 7.45], out: .05, depth: .1, colour: salmon263 },
+      { name: 'ledge', u: [0, 7.39], h: [3.75, 3.95], out: .1, depth: .2, colour: salmon263 },
+      { name: 'arcade', u: [2.5, 5.5], h: [0, 3.75], out: .01, depth: .02, colour: '#4a4440' },
+      { name: 'west pier', u: [.1, 1.9], h: [0, 3.75], out: .05, depth: .1, colour: '#ece2c6' },
+      { name: 'corner pier', u: [5.5, 6.2], h: [0, 3.75], out: .05, depth: .1, colour: '#ece2c6' },
+      { name: 'orange pier base', u: [5.5, 6.2], h: [0, .8], out: .06, depth: .12, colour: '#d9a05a' },
+      { name: 'blank red $18 boards', u: [5.55, 6.2], h: [1.7, 3.0], out: .13, depth: .02, colour: '#c8302a' },
     ],
     // Eminent's board and frog lightbox over the arcade, and the larger frog board at the corner.
-    boards: [{ u: [.5, 3.2], h: [3.27, 3.74], out: .06 }, { u: [.5, 2.6], h: [2.7, 3.2], out: .06 }, { u: [4.1, 5.3], h: [2.85, 3.85], out: .06 }],
+    boards: [{ u: [2.6, 5.3], h: [3.27, 3.74], out: .06 }, { u: [2.6, 4.7], h: [2.7, 3.2], out: .06 }, { u: [6.2, 7.39], h: [2.85, 3.85], out: .06 }],
   }],
 };
 
@@ -76,16 +79,15 @@ export const eminent = {
 // the source edge, from 0.8 m south of the source corner to 27.8 m north of it: read on a plane 2.4 m behind and laid
 // proportionally on the 26.81 m source edge (x0.94). The source face stands 3.8 m from the lane's centreline, so its
 // street-level pieces stay within half a metre of the wall.
-const W248 = 26.808, at248 = lay(-.8, W248 / 28.6);
+const W248 = 28.61, at248 = lay(-.8, W248 / 28.6);
 const bays248 = [[-.4, 1.0], [2.75, 4.5], [5.6, 7.0], [8.0, 9.6], [10.8, 13.0], [13.4, 15.2], [16.3, 17.8], [18.9, 20.2], [22.1, 23.9], [24.9, 26.4]];
 const ribbons248 = [[-.3, 4.7], [5.6, 9.9], [10.8, 15.2], [16.1, 19.9], [22.1, 26.5]];
 const cols248 = [[-.8, -.3], [4.7, 5.5], [10.0, 10.7], [15.3, 16.1], [20.5, 21.2], [26.5, 27.8]];
 const grey248 = '#bdb7ae';
 export const primero = {
-  id: 'the-primero', buildingIds: ['454254248'], kind: 'the-primero', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 30 },
+  id: 'the-primero', buildingIds: ['l19w-1'], kind: 'the-primero', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 30 },
   name: 'The Primero (June 2024 exterior)', address: '1 Lorong 19 Geylang',
-  height: 13.9, ceiling: 3.1, fiveFootWay: 2.2, roof: { type: 'flat', colour: '#8f8a84' },
-  heldFlat: true, // the source face's south end stands 2.7 m from the lane's centreline, inside the estimated carriageway
+  height: 13.9, ceiling: 3.1, fiveFootWay: 2.2, shellInset: .08, roof: { type: 'flat', colour: '#8f8a84' }, // the re-spaced front is 0.8 degrees off its side walls
   evidence: 'June 2024 Street View shows a weathered grey four-storey block of five bays north of the side lane behind No. 323 Geylang Road, with ribbon windows on each upper floor between full-height piers, deep concrete hoods over the first-floor windows, ribbed balcony panels, a thick fascia under the top floor and a raised central tower under a pyramidal roof. In its five-foot way, from the south: a paint shop under an orange awning and a long orange board reading NIPPON PAINT B&S (2017) PTE LTD #01-01; a shop under a yellow board reading 显密度母林佛学会 XIAN MI DU MU LIN BUDDHIST ASSOCIATION; the lobby under raised lettering reading THE PRIMERO; a glazed shop; and a red temple front under a banner reading 南北斗母宫, with gold couplets and an incense urn. Google Maps lists The Primero, an apartment building, at 1 Lorong 19 Geylang, Singapore 388487, and B&S hardware lorong 19, a paint store, at 1 Lor 19 Geylang #01-01; so the building is named after its lettering and the shop board is redrawn in original type, without the paint brand, with no claim about the other premises. The Primero\'s listing point lies about 20 m west, in way 454254249 on Lorong 17, and B&S\'s south of Geylang Road, but the addresses and the signs agree on this building. The Buddhist association is now listed at Lorong 21A and the temple is not listed, so their boards are blank. Bearings from four June 2024 panoramas put its south-east corner 2.2 m and its north-east corner 2.6 m behind the source edge, 28.6 m apart against the 26.81 m source edge; the elevation was read on a plane 2.4 m behind, where the panoramas agree, and is laid proportionally on the source edge.',
   sources: [way('454254248'), search('The Primero 1 Lorong 19 Geylang'), search('B&S hardware lorong 19'), pano('ukZWTPS52TsHumpZjk8qWg', 315, 15, 80), pano('gWQbjpYBNuduJ0hBOUrHGw', 262, 25, 110), pano('NZfk6nTA1mTETJHQXIob7Q', 262, 25, 110), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 205, 15, 80)],
   colours: { wall: grey248, trim: '#aaa49b', frame: '#3a4446', glass: '#7fa3a0', pier: '#c4beb4', back: '#4a4846', floor: '#a19b90' },
@@ -100,13 +102,13 @@ export const primero = {
     { name: 'thick fascia under the top floor', u: [0, W248], h: [9.9, 10.9], out: .3, depth: .6, colour: '#a59f96' },
     { name: 'top fascia', u: [0, W248], h: [13.0, 13.9], out: .15, depth: .3, colour: '#a59f96' },
     ...cols248.map(s => { const [l, r] = at248(s); return { name: 'pier', u: [Math.max(0, l), Math.min(W248, r)], h: [4.6, 13.0], out: .1, depth: .2, colour: '#c4beb4' }; }),
-    { name: 'orange awning', u: at248([-.8, 4.6]).map(v => Math.max(0, v)), h: [2.45, 3.0], out: .12, depth: .24, colour: '#e0652a' },
+    { name: 'orange awning', u: at248([-.8, 4.6]).map(v => Math.max(0, v)), h: [2.45, 3.0], out: .2, depth: .4, colour: '#e0652a' },
     { name: 'blank yellow association board', u: at248([5.4, 9.0]), h: [2.9, 3.4], out: .05, depth: .04, colour: '#e9c23a' },
-    { name: 'blank white fascia panel', u: at248([13.25, 17.75]), h: [4.15, 4.55], out: .22, depth: .02, colour: '#e8e6e0' },
+    { name: 'blank white fascia panel', u: at248([13.25, 17.75]), h: [4.15, 4.55], out: .32, depth: .02, colour: '#e8e6e0' },
     { name: 'blank red temple banner', u: at248([22.3, 26.5]), h: [2.4, 2.9], out: .05, depth: .03, colour: '#c8241c' },
   ],
   // B&S's board over its shop, and THE PRIMERO's raised lettering on the beam over the lobby.
-  boards: [{ u: at248([-.6, 4.6]).map(v => Math.max(0, v)), h: [3.75, 4.55], out: .22 }, { u: at248([11.4, 14.4]), h: [3.4, 3.9], out: .22 }],
+  boards: [{ u: at248([-.6, 4.6]).map(v => Math.max(0, v)), h: [3.75, 4.55], out: .32 }, { u: at248([11.4, 14.4]), h: [3.4, 3.9], out: .32 }],
   piers: [[-.8, -.2], [5.0, 5.5], [10.0, 10.6], [15.4, 16.0], [20.6, 21.1], [27.2, 27.8]].map(s => { const [l, r] = at248(s); return [Math.max(0, l), Math.min(W248, r)]; }),
   backFittings: [
     { name: 'paint shop with stacked goods', u: at248([-.2, 4.6]), h: [.1, 2.4], colour: '#c8693a', glow: .08 },
@@ -116,8 +118,8 @@ export const primero = {
     { name: 'red temple front', u: at248([22.0, 27.0]), h: [.1, 2.4], colour: '#9a2018', glow: .1 },
     ...[[22.5, 22.8], [26.2, 26.5]].map(s => ({ name: 'gold couplet', u: at248(s), h: [.4, 2.3], out: .05, colour: '#c9a23a' })),
   ],
-  // The raised central tower under a pyramidal roof, set back from the front.
-  upper: [{ name: 'central tower', outline: [[11.5, -1.5], [15.8, -1.5], [15.8, -5.0], [11.5, -5.0]], from: 13.9, to: 16.0, ridge: 17.6, colour: grey248, roof: '#6e5a4e' }],
+  // The raised central tower under a pyramidal roof, set back from the front, within the rear step 2.95 m behind it.
+  upper: [{ name: 'central tower', outline: [[11.5, -.6], [15.8, -.6], [15.8, -2.8], [11.5, -2.8]], from: 13.9, to: 16.0, ridge: 17.6, colour: grey248, roof: '#6e5a4e' }],
   sides: [{
     edge: 9, // the north wall on the side lane, u west from the lane corner: three bays of windows on each upper floor
     windows: [[1.0, 2.6], [3.6, 5.2], [6.2, 7.8]].flatMap(u => [[4.7, 6.2], [8.0, 9.45], [11.3, 13.0]].map(h => ({ u, h, panes: 2 }))),
@@ -130,13 +132,13 @@ export const primero = {
 // floors in three cream window frames over a pilotis. Its front (edge 1, u north from the side lane) is read where
 // three June 2024 panoramas agree on the frames, 2.3 m behind the source edge: 9.2 m wide from 0.9 m south of the source
 // corner, laid proportionally on the 9.45 m source edge.
-const W985 = 9.445, at985 = lay(-.9, W985 / 9.2);
+const W985 = 9.661, at985 = lay(-.9, W985 / 9.2);
 const frameWindows985 = (h, spans) => spans.map(s => ({ u: at985(s), h, panes: 2, out: .12 }));
 const brown985 = '#645a55', cream985 = '#d9d3c0';
 export const no3 = {
-  id: 'l19-3', buildingIds: ['476113985'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 32 },
+  id: 'l19-3', buildingIds: ['l19w-3'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 32 },
   name: 'No. 3 Lorong 19 (June 2024 exterior, occupants not identified)', address: '3 Lorong 19 Geylang',
-  height: 13.7, ceiling: 2.9, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8a8580' },
+  height: 13.7, ceiling: 2.9, fiveFootWay: 2.0, shellInset: .3, roof: { type: 'flat', colour: '#8a8580' }, // its north wall steps back along No. 21's
   evidence: 'June 2024 Street View shows a dark brown modern house of four storeys north of the side lane beside The Primero: an open ground floor between dark columns, with a wooden door, a window over a bank of letterboxes and a wooden slatted gate on its back wall; three upper floors of four windows each, set in raised cream frames; a white strip with a tall louvred slot at the south edge; and a low gable over the parapet. Its south wall on the side lane is panelled in white, beige and brown, and its white north wall shows above the single-storey Nanyang Chee Clan Association next door. Google Maps gives an address point for 3 Lorong 19 Geylang inside this way but lists no business there, and no sign was photographed, so no name is given. Three June 2024 panoramas agree on the window frames on a plane 2.3 m behind the source front, where the front is about 9.2 m wide from 0.9 m south of the source corner, against the 9.45 m source edge; so it stands about 1.2 m in front of the Nanyang Chee Clan Association, not the 3.5 m the source map gives. Heights were read on that plane: ground floor to 2.9 m, frames at 4.7-6.8, 8.0-10.0 and 11.0-12.5 m, parapet at 13.7 m and the gable to about 14.8 m.',
   sources: [way('476113985'), search('3 Lorong 19 Geylang'), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 262, 30, 100), pano('0tJ_yZzLMxOeYk3kLcr2Bw', 280, 15, 90), pano('C6WgL2wlMEl3mpMGCqZnIw', 215, 15, 90)],
   colours: { wall: brown985, trim: cream985, frame: '#3a3634', glass: '#4c5658', pier: '#4e4744', back: '#4a4442', floor: '#b39a86' },
@@ -181,23 +183,23 @@ export const no3 = {
 // behind the source line where the lane panoramas agree; each elevation is laid proportionally on its own source edge
 // (u north from its south corner). No. 21 photographs from s = -8.1 to 0, No. 23 from 0 to 9.9 and No. 25 from 10.1
 // to 17.6, so the row drifts about 1 m north of its source ways by No. 25.
-const rowNote = ' The three single-storey houses from No. 21 to No. 25 were read together on one plane 1.25 m behind their source fronts, where the June 2024 lane panoramas (C6Wg..., NzRD..., DRAX...) agree; each elevation is laid proportionally on its own source edge.';
-const at241 = lay(-8.1, 7.6 / 8.1), at983 = lay(0, 9.126 / 9.9), at984 = lay(10.1, 7.49 / 7.5);
+const rowNote = ' The three single-storey houses from No. 21 to No. 25 were read together on one plane 1.25 m behind their source fronts, where the June 2024 lane panoramas (C6Wg..., NzRD..., DRAX...) agree. Under the owner\'s answer to open question 46 they stand on authored footprints on that plane, cut at the photographed party lines, and each elevation is laid on its own.';
+const at241 = lay(-8.3, 1), at983 = lay(0, 9.999 / 9.9), at984 = lay(10.0, 1);
 export const nanyangChee = {
-  id: 'nanyang-chee', buildingIds: ['454254241'], kind: 'nanyang-chee', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
+  id: 'nanyang-chee', buildingIds: ['l19w-21'], kind: 'nanyang-chee', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
   name: 'Nanyang Chee Clan Association (June 2024 exterior)', address: '21 Lorong 19 Geylang',
   height: 3.75, ceiling: 2.85, fiveFootWay: .25, roof: { type: 'hip', ridge: 5.6, colour: '#b4553d' },
   evidence: 'June 2024 Street View shows a single-storey house north of No. 3 under a red corrugated roof whose deep fascia overhangs the front: a white board along the front reading NANYANG CHEE CLAN ASSOCIATION 南洋徐氏總會 in red, over blue glazed doors, a white panel with a red 徐 and XU 21, and a wide glazed front, with two steps and potted plants. Google Maps lists Nanyang Chee Clan Assn at 21 Lor 19 Geylang, Singapore 388496, with its point inside this way, so the board and the panel are redrawn in original type.' + rowNote + ' It photographs about 8.1 m wide against the 7.6 m source edge.',
   sources: [way('454254241'), search('Nanyang Chee Clan Association 21 Lorong 19 Geylang'), pano('C6WgL2wlMEl3mpMGCqZnIw', 262, 5, 90), pano('ZqOXZ8yOp3uJbHKrYGYtcQ', 240, 5, 90)],
   colours: { wall: '#e9e5da', trim: '#d6d0c0', frame: '#3c4446', glass: '#5d7f8a', pier: '#e9e5da', back: '#d9d3c2', floor: '#b8a99a' },
   blocks: [
-    { name: 'red corrugated fascia', u: [0, 7.59], h: [2.85, 3.75], out: .35, depth: .7, colour: '#b8503a' },
+    { name: 'red corrugated fascia', u: [0, 8.299], h: [2.85, 3.75], out: .35, depth: .7, colour: '#b8503a' },
     { name: 'front steps', u: at241([-7.6, -.4]), h: [0, .3], out: .35, depth: .7, colour: '#b9b2a6' },
     { name: 'potted plants', u: at241([-8.0, -7.5]), h: [0, .8], out: .35, depth: .5, colour: '#4e6a3e' },
   ],
   // The red-lettered board along the front, and the white 徐 XU 21 panel between the doors.
   boards: [{ u: [0, at241([-.2, 0])[0]], h: [2.3, 2.75], out: .05 }, { u: at241([-4.8, -3.7]), h: [.15, 2.1], out: .05 }],
-  piers: [[0, .3], [7.29, 7.59]],
+  piers: [[0, .3], [8.0, 8.299]],
   backFittings: [
     { name: 'boarded panel', u: at241([-7.9, -7.2]), h: [.1, 2.2], colour: '#c8a878' },
     { name: 'blue glazed doors', u: at241([-7.2, -5.3]), h: [.1, 2.2], colour: '#4f8a9a', glow: .05 },
@@ -206,7 +208,7 @@ export const nanyangChee = {
   ],
 };
 export const no23 = {
-  id: 'l19-23', buildingIds: ['476113983'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
+  id: 'l19-23', buildingIds: ['l19w-23'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
   name: 'No. 23 Lorong 19 (June 2024 exterior, occupants not identified)', address: '23 Lorong 19 Geylang (plate 23)',
   height: 3.25, ceiling: 2.65, fiveFootWay: .25, roof: { type: 'hip', ridge: 5.9, colour: '#b8583e' },
   evidence: 'June 2024 Street View shows a cream single-storey house under a red tiled hipped roof, plated 23: a grilled door under a dark canopy at its south end with a red letterbox, two wide barred windows behind potted plants and trees, and a cream beam under the eaves. Google Maps lists Commercial Industrial Supplies & Services Pte Ltd and the Singapore PickleBall Association at 23 Lor 19 Geylang, the first with its point inside this way, but no sign for either was photographed, so no name is given.' + rowNote + ' It photographs about 9.9 m wide against the 9.13 m source edge.',
@@ -217,7 +219,7 @@ export const no23 = {
     { name: 'dark canopy', u: at983([.1, 3.6]), h: [2.7, 3.0], out: .4, depth: .8, colour: '#4a4440' },
     { name: 'potted plants and trees', u: at983([4.5, 8.6]), h: [0, 1.1], out: .4, depth: .6, colour: '#4e6a3e' },
   ],
-  piers: [[0, .25], [8.9, 9.126]],
+  piers: [[0, .25], [9.75, 9.999]],
   backFittings: [
     { name: 'grilled door', u: at983([.6, 2.6]), h: [.1, 2.25], colour: '#5a5c58' },
     { name: 'red letterbox', u: at983([1.2, 1.45]), h: [1.0, 1.4], out: .04, depth: .08, colour: '#b5221d' },
@@ -227,20 +229,20 @@ export const no23 = {
   ],
 };
 export const cheeHoeHong = {
-  id: 'chee-hoe-hong', buildingIds: ['476113984'], kind: 'chee-hoe-hong', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
+  id: 'chee-hoe-hong', buildingIds: ['l19w-25'], kind: 'chee-hoe-hong', frontEdge: 0, reviewRoad: 'Lorong 19 Geylang', review: { distance: 7, pitch: 10 },
   name: 'Chee Hoe Hong (Pte) Ltd (June 2024 exterior)', address: '25 Lorong 19 Geylang',
   height: 3.75, ceiling: 3.05, fiveFootWay: .25, roof: { type: 'hip', ridge: 6.1, colour: '#b8583e' },
   evidence: 'June 2024 Street View shows a single-storey house under a red tiled hipped roof with a deep orange fascia: a wide mesh-grilled window over a low wall of grey tiles, and a grilled doorway up two steps under a blue board reading 志和行(私人)有限公司 CHEE HOE HONG (PTE) LTD. Google Maps lists Chee Hoe Hong Pte Ltd at 25 Lor 19 Geylang, Singapore 388498, with its point inside this way, so the board is redrawn in original type. Zhejiang Shenghua Steel is also listed at No. 25, with its point 1.7 m outside the way, but no sign for it was photographed.' + rowNote + ' It photographs about 7.5 m wide, on the 7.49 m source edge but about 1 m north of it.',
   sources: [way('476113984'), search('Chee Hoe Hong Pte Ltd 25 Lorong 19 Geylang'), pano('DRAXJ_U9_f5azRj8xhBdEA', 262, 5, 90), pano('NzRDDjZPo91yWpvV8BIq5A', 235, 5, 90)],
   colours: { wall: '#ddd9cc', trim: '#d9824a', frame: '#3a3c3c', glass: '#6c7472', pier: '#ddd9cc', back: '#ddd9cc', floor: '#a8a296' },
   blocks: [
-    { name: 'orange fascia', u: [0, 7.49], h: [3.05, 3.75], out: .3, depth: .6, colour: '#d9824a' },
+    { name: 'orange fascia', u: [0, 7.599], h: [3.05, 3.75], out: .3, depth: .6, colour: '#d9824a' },
     { name: 'tiled low wall', u: at984([10.2, 14.3]), h: [.05, 1.05], out: .02, depth: .02, colour: '#cfd2d0' },
     { name: 'front steps', u: at984([14.6, 17.4]), h: [0, .3], out: .3, depth: .6, colour: '#b9b2a6' },
   ],
   windows: [{ u: at984([10.2, 14.3]), h: [1.05, 2.65], panes: 6, out: .02 }],
   boards: [{ u: at984([14.5, 17.6]), h: [2.5, 2.85], out: .05 }],
-  piers: [[0, .2], [7.29, 7.49]],
+  piers: [[0, .2], [7.4, 7.599]],
   backFittings: [{ name: 'grilled doorway', u: at984([14.6, 17.4]), h: [.3, 2.4], colour: '#3e3e3c' }],
 };
 
@@ -249,12 +251,12 @@ export const cheeHoeHong = {
 // striped Tibetan lintels and a central bay of blue balconies. Its front (edge 1, u north from the south corner) is
 // read 1.5 m behind the source edge, where the lane panoramas agree: about 14.4 m wide from 1.8 m south of the source
 // corner, laid proportionally on the 13.87 m source edge.
-const W239 = 13.873, at239 = lay(-1.8, W239 / 14.4);
+const W239 = 14.4, at239 = lay(-1.8, W239 / 14.4);
 const blue239 = '#2a62a8', rows239 = [[5.0, 6.7], [8.3, 9.9], [11.6, 13.1], [15.2, 16.8]];
 const cols239 = [[-1.7, -.95], [-.1, 1.25], [9.1, 11.0], [11.7, 12.4]];
 const lintel239 = (u, top) => [['#c8302a', 0, .14], ['#e8c23a', .14, .24], ['#3f8a4a', .24, .34]].map(([colour, b, t]) => ({ name: 'striped lintel', u: [u[0] - .08, u[1] + .08], h: [top + .06 + b, top + .06 + t], out: .1, depth: .2, colour }));
 export const leiZangSi = {
-  id: 'lei-zang-si', buildingIds: ['454254239'], kind: 'lei-zang-si', frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 12, pitch: 32 },
+  id: 'lei-zang-si', buildingIds: ['l19w-29'], kind: 'lei-zang-si', frontEdge: 1, reviewRoad: 'Lorong 19 Geylang', review: { distance: 12, pitch: 32 },
   name: 'Lei Zang Si (Singapore) 雷藏寺 (June 2024 exterior)', address: '29 Lorong 19 Geylang',
   height: 18.5, ceiling: 4.0, fiveFootWay: .3, roof: { type: 'flat', colour: '#9a9a96' },
   evidence: 'June 2024 Street View shows a white five-storey temple set back behind a garden north of No. 25, hung with strings of Tibetan prayer flags: blue-framed windows under striped red, yellow and green lintels in four rows either side; a central bay of blue balconies with yellow lattice balustrades, over which tall windows carry the large characters 雷藏寺 between gold emblems and columns of black script; blue eaves; and, under maroon awnings, a yellow lattice gate, a glazed front and a red door with gold, with an incense burner chimney in the garden. Google Maps lists Lei Zang Si (Singapore) 雷藏寺 (新加坡) at 29 Lor 19 Geylang, Singapore 388500, with its point inside this way, so the characters are redrawn in original type. Two pairs of June 2024 lane panoramas agree on the front about 1.5 m behind the source edge, where it is about 14.4 m wide from 1.8 m south of the source corner, against the 13.87 m source edge. Heights were read on that plane, with the top floor allowed for the eaves\' overhang: window rows at about 5.0-6.7, 8.3-9.9, 11.6-13.1 and 15.2-16.8 m, eaves at about 18.5 m.',
@@ -297,16 +299,15 @@ export const leiZangSi = {
 // side lane) is read 1.5 m behind the source edge, where the lane panoramas agree: about 24.4 m long from 0.5 m north
 // of the source corner, laid proportionally on the 25.17 m source edge. The source face's north end stands 2.7 m from
 // the lane's centreline, inside the estimated carriageway, so its street-level pieces are held within 0.25 m.
-const W309 = 25.165, at309 = lay(.5, W309 / 24.4);
+const W309 = 24.399, at309 = lay(.5, W309 / 24.4);
 const bays309 = [[.6, 4.6], [7.6, 11.8], [12.5, 16.5], [18.7, 20.6], [20.9, 24.6]];
 const wins309 = [[.6, 2.0], [2.6, 4.0], [8.0, 9.25], [9.9, 11.25], [13.0, 14.25], [14.9, 16.1], [19.25, 20.25], [21.4, 22.5], [23.0, 24.0]];
 const towers309 = [[5.4, 6.4], [17.25, 18.0]];
 const pink309 = '#d9a3a0';
 export const starlonTektron = {
-  id: 'starlon-tektron', buildingIds: ['454254309'], kind: 'starlon-tektron', frontEdge: 2, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 24 },
+  id: 'starlon-tektron', buildingIds: ['l19w-33'], kind: 'starlon-tektron', frontEdge: 2, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 24 },
   name: 'Starlon and Tektron Pacific, No. 33 Lorong 19 (June 2024 exterior)', address: '33 Lorong 19 Geylang (Treasures @ G19)',
   height: 12.0, ceiling: 3.3, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9893' },
-  heldFlat: true, // the source face's north end stands 2.7 m from the lane's centreline, inside the estimated carriageway
   evidence: 'June 2024 Street View shows a white three-storey streamline block across a side lane from Lei Zang Si, in five bays either side of two stair towers lit by tall strips of windows: paired windows on each upper floor under curved concrete hoods, triple pink speed stripes above and below them, and a stepped parapet with small fins over the towers; its south wall on the side lane is mauve. Its five-foot way holds a row of shops: a hair salon with barber poles under a black board reading Starlon & Spa, 33 Lorong 19 Geylang #01-05; an empty unit; Tektron Pacific under two boards reading tektron pacific, the sticker & signage workshop; a florist under a board reading MISS BECCA FLORAL; a green board reading QUAN AN VIETNAM; and two boards reading 康记冰糖葫芦 over stalls with tiled canopies. Google Maps lists Starlon (hair salon, 33 Lor 19 Geylang #01-05, Treasures @ G19) and Tektron Pacific (print shop, #01-06) here, both operating, with their points inside this way, so the block is named after them, as No. 301 Geylang Road was, and their boards are redrawn in original type, with no claim about the other units. The florist is listed as Orae Fleur, Quan An Viet Nam is marked permanently closed and the candied-fruit stall is not listed, so their boards are blank. Two June 2024 lane panoramas agree strongly on the front 1.5 m behind the source edge, where it is about 24.4 m long against the 25.17 m source edge. Heights were read on that plane, above the five-foot-way floor: five-foot way 3.3 m, windows 5.1-6.3 and 8.7-9.8 m, hoods 7.2-7.9 and 10.8-11.6 m, parapet about 12 m.',
   sources: [way('454254309'), search('Starlon 33 Lorong 19 Geylang'), search('Tektron Pacific 33 Lorong 19 Geylang'), pano('BwN_1fcMAZiFLmKGW-VM4A', 262, 20, 100), pano('XLi_3Ajhl22orFwbiySNYQ', 262, 20, 100), pano('IzKmZuCt4YSUbvuGY87eag', 250, 20, 100)],
   colours: { wall: '#f1f0ec', trim: '#e6e4de', frame: '#55595b', glass: '#5d6a6e', pier: '#f1f0ec', back: '#d6d4cf', floor: '#a8a296' },
@@ -337,7 +338,7 @@ export const starlonTektron = {
   ],
   sides: [{
     edge: 3, // the mauve south wall on the side lane, u east to the lane corner
-    blocks: [{ name: 'mauve wall', u: [.2, 26.8], h: [.1, 12.0], out: .02, depth: .02, colour: '#a87e8a' }],
+    blocks: [{ name: 'mauve wall', u: [.2, 25.3], h: [.1, 12.0], out: .02, depth: .02, colour: '#a87e8a' }],
     windows: [[21.0, 22.0], [23.5, 24.5]].flatMap(u => [[5.1, 6.3], [8.7, 9.8]].map(h => ({ u, h, panes: 2, out: .03 }))),
   }],
 };
@@ -352,7 +353,7 @@ const W310 = 21.021, at310 = lay(-2.0, W310 / 20.9);
 const cream310 = '#e9dcb8', hood310 = '#d6bd8e', rows310 = [[5.1, 6.4], [8.6, 9.9]], hoodRows310 = [[7.1, 7.8], [10.75, 11.6]];
 const hoods310 = (spans, at = s => s) => spans.flatMap(s => hoodRows310.map(h => ({ name: 'curved concrete hood', u: at(s), h, out: .32, depth: .64, colour: hood310 })));
 export const sims146 = {
-  id: 'sims-146', buildingIds: ['454254310'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 22 },
+  id: 'sims-146', buildingIds: ['sa-146'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 19 Geylang', review: { distance: 8, pitch: 22 },
   name: 'No. 146 Sims Avenue, Lorong 19 west corner (June 2024 exterior, occupants not identified)', address: '146 Sims Avenue (Lorong 19 corner)',
   height: 12.0, ceiling: 3.9, fiveFootWay: 2.5, roof: { type: 'flat', colour: '#96928a' },
   evidence: 'June 2024 Street View shows a cream three-storey corner coffeeshop at Lorong 19 and Sims Avenue: windows in pairs on its upper floors under curved concrete hoods, bathroom louvres at its south end, a stepped parapet and a splayed corner; at street level an open coffeeshop under a maroon awning of the gas supplier Union Energy Group, with a cream board reading 中国炒菜 杂菜饭 on the lane, a yellow board reading 中国炒菜·杂菜饭 on the splay, and on Sims Avenue a yellow board reading 津程餐室 JING CHEN EATING HOUSE and stall boards (板面, LẨU GÀ CÔ BA). On its back lane are a metal spiral stair and a tall exhaust duct. Google Maps lists Jing Chen Eating House at 146 Sims Ave but marks it permanently closed, and Rong Cheng Fu Qing Restaurant, also at No. 146, is closed too; the tenants listed now (Monster Eating House and Thai and Vietnamese stalls) were not photographed, and the other boards name no business, so no name is given and every board is blank. Three June 2024 lane panoramas agree on its boards 1.5 m in front of the source lane edge, where the lane face runs about 20.9 m from 2.0 m south of the source corner to the splay, against the 21.02 m source edge. Heights were read on that plane, above the five-foot-way floor: windows 5.1-6.4 and 8.6-9.9 m, hoods 7.1-7.8 and 10.75-11.6 m, parapet about 12 m.',
