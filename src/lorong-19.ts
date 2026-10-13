@@ -176,6 +176,50 @@ const draws: Draws = {
       text(c, 'SCARLETT', w * .45, h * .82, h * .2, '#f4f4ee', '800', sans, w * .4);
     }),
   },
+  // Lefon's board: red characters over blue lettering on white.
+  'lefon-sewing': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#f2f0ea'; c.fillRect(0, 0, w, h);
+      text(c, '立峯縫紉機械公司', w * .5, h * .33, h * .42, '#b8241c', '700', kai, w * .94);
+      text(c, 'LEFON SEWING MACHINE & MACHINERY', w * .5, h * .78, h * .28, '#2a4a8a', '700', sans, w * .94);
+    }],
+  },
+  // The pediment's 桂高 and the column of characters in red relief; the association's board; Bali Nasi Lemak's board.
+  'guangxi-gaozhou': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#9a6f63'; c.fillRect(0, 0, w, h);
+      text(c, '桂', w * .3, h * .55, h * .8, '#a8241c', '700', kai); text(c, '高', w * .7, h * .55, h * .8, '#a8241c', '700', kai);
+    }, (c, w, h) => {
+      c.fillStyle = '#9a6f63'; c.fillRect(0, 0, w, h);
+      [...'廣西暨高州會館大廈'].forEach((ch, i) => text(c, ch, w * .5, h * (.06 + i * .111), w * .86, '#b8241c', '700', kai));
+    }, (c, w, h) => {
+      c.fillStyle = '#9a6f63'; c.fillRect(0, 0, w, h);
+      text(c, '廣西暨高州會館', w * .5, h * .36, h * .5, '#f2ede4', '700', kai, w * .9);
+      text(c, 'GUANGXI AND GAOZHOU ASSOCIATION', w * .5, h * .82, h * .2, '#c8a26a', '700', sans, w * .9);
+    }, (c, w, h) => {
+      c.fillStyle = '#f4f4f0'; c.fillRect(0, 0, w, h);
+      text(c, 'TRADITIONAL INDONESIAN', w * .5, h * .14, h * .12, '#2a2a2a', '600', sans, w * .5);
+      text(c, 'BALI NASI LEMAK', w * .5, h * .5, h * .46, '#1e1e1e', '800', sans, w * .94);
+      text(c, '巴厘島椰漿飯', w * .5, h * .86, h * .16, '#2a2a2a', '600', kai, w * .4);
+    }],
+  },
+  'bike-mart': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#2a2a2c'; c.fillRect(0, 0, w, h);
+      text(c, 'BIKE MART SG', w * .5, h * .5, h * .56, '#f4f4f0', '800', sans, w * .9);
+    }],
+  },
+  // VIETSEA II in gold letters, and the Xóm Nhậu board below.
+  'vietsea-ii': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#1e1e1e'; c.fillRect(0, 0, w, h);
+      text(c, 'VIETSEA II', w * .5, h * .55, h * .82, '#d9b45a', '700', 'Georgia, "Times New Roman", serif', w * .94);
+    }, (c, w, h) => {
+      c.fillStyle = '#1e1e1e'; c.fillRect(0, 0, w, h);
+      text(c, 'Xóm Nhậu', w * .5, h * .36, h * .48, '#e0342c', '800', sans, w * .9);
+      text(c, 'Hải Sản Việt Nam', w * .5, h * .8, h * .26, '#f4f4f0', '700', sans, w * .9);
+    }],
+  },
 };
 
 /** Lorong 19 between Geylang Road and Sims Avenue, with the Geylang Road and Sims Avenue houses back to Lorong 17;

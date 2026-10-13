@@ -822,4 +822,146 @@ export const no150West = {
   piers: [[3.1, 3.5]],
   backFittings: [{ name: 'roller shutter', u: [.3, 3.0], h: [.1, 2.9], colour: '#bdbdb8' }],
 };
-export const simsRow19 = [no150West];
+
+// Sims Avenue Nos. 136-144 (open question 43), between No. 134 and No. 146, on authored footprints with their fronts
+// 2.5 m behind the source front (sims-136-144). Read on that plane from June 2024 Sims Avenue panoramas, with s along
+// No. 138's source front from its east end, westward; each house's frame starts at its east wall (u = s - wall).
+// Five houses, two of them with a stair tower: No. 144 (Lefon); a pink stair tower and No. 142's granite front
+// (Guangxi and Gaozhou Association over Bali Nasi Lemak); No. 140 (Bike Mart); a white stair section and No. 138
+// (Erisam, closed); and No. 136 (VIETSEA II) with a pink grid tower beside No. 134. The fronts stand about 0.4 m clear
+// of Sims Avenue's estimated carriageway, so street-level pieces are held within 0.25 m of the walls.
+const walls19s = { 144: [-18.87, -14.56], 142: [-14.56, -7.67], 140: [-7.67, -2.78], 138: [-2.78, 4.56], 136: [4.56, 12.0] };
+const simsNote19 = ' June 2024 Street View from the Sims Avenue drive shows the south side between No. 134 and No. 146 as five three-storey houses, two of them with a stair tower: from the east, No. 144 (cream, with curved hoods); a pink-framed stair tower and No. 142\'s granite front under a gable pediment lettered 桂高; No. 140, grey stone under a gable pediment with an emblem and a lower pediment over the first floor; a white stair section and No. 138, stained cream with a curved hood and a balcony ledge; and No. 136, white with louvred vents and a curved hood, beside a pink-framed tower of grid windows. Two pairs of Sims Avenue panoramas agree on the fronts 2.5 m behind the source front, where the houses stand about 5.5 m east of their source ways, since No. 134 next door photographs 5.5 m east of its source outline (open question 39). Under the owner\'s answers to open questions 43 and 44 they stand on authored footprints on that line, cut at the photographed party walls, and each elevation is laid at its photographed scale. Heights were read on that plane: ground floor to about 4.1 m, first-floor windows at 5.5-6.9 m, second-floor windows at 8.95-10.6 m and parapets at 12.0-13.6 m.';
+const simsCommon19 = { reviewRoad: 'Sims Avenue', review: { distance: 6, pitch: 22 }, ceiling: 4.0, fiveFootWay: 2.0, heldFlat: true };
+const simsSources19 = w => [way(w), pano('dBplyXvr1DgRiNECzZv7Ow', 190, 15, 100), pano('yRlmjQkTiUHcIUNuqXCwRg', 190, 15, 100), pano('XyG8XKnJsb0kr-03U6bjOA', 190, 15, 100)];
+// A house's spans in row positions s, made local to its frame.
+const widthOf19 = n => +(walls19s[n][1] - walls19s[n][0] - .005).toFixed(3);
+const onHouse19 = n => { const [e] = walls19s[n], w = widthOf19(n); return ([a, b]) => [a, b].map(v => Math.min(w, Math.max(0, +(v - e).toFixed(3)))); };
+const hood19 = (u, h, colour, out = .4) => ({ name: 'curved hood', u, h, out, depth: out * 2, colour });
+
+const at144 = onHouse19(144), W144 = widthOf19(144);
+export const lefon = {
+  id: 'lefon-sewing', buildingIds: ['sa-144'], kind: 'lefon-sewing', frontEdge: 2, ...simsCommon19,
+  name: 'Lefon Sewing Machine & Machinery (June 2024 exterior)', address: '144 Sims Avenue',
+  height: 12.75, roof: { type: 'flat', colour: '#8f8a84' },
+  evidence: 'No. 144, a cream three-storey house: two windows on each upper floor under projecting curved hoods, over a shop behind a grilled shutter under a board reading 立峯縫紉機械公司 LEFON SEWING MACHINE & MACHINERY, plated 144. Google Maps lists Lefon Sewing Machine & Machinery at 144 Sims Ave, Singapore 387466, operating, so it is named after its board, which is redrawn in original type; its listing point lies about 0.4 m from the house, in No. 146\'s source way.' + simsNote19,
+  sources: [...simsSources19('682928744'), search('Lefon Sewing Machine & Machinery 144 Sims Avenue')],
+  colours: { wall: '#ebe5d2', trim: '#ddd5bf', frame: '#4a4c4a', glass: '#4a5458', pier: '#ebe5d2', back: '#9a9890', floor: '#a8a296' },
+  windows: [[-18.9, -17.6], [-17.0, -15.6]].flatMap(s => [[5.5, 6.6], [8.95, 10.05]].map(h => ({ u: at144(s).map(v => Math.max(.06, v)), h, panes: 3 }))),
+  blocks: [
+    hood19([0, W144], [7.4, 7.9], '#ddd5bf'), hood19([0, W144], [11.0, 11.5], '#ddd5bf'),
+    { name: 'canopy, held flat', u: [0, W144], h: [3.9, 4.1], out: .12, depth: .24, colour: '#d6cfb8' },
+  ],
+  boards: [{ u: at144([-17.9, -15.3]), h: [3.0, 3.4], out: .05 }],
+  piers: [[0, .25], [W144 - .25, W144]],
+  backFittings: [{ name: 'grilled shutter', u: at144([-18.6, -15.0]), h: [.1, 2.9], colour: '#8a8c88' }],
+};
+
+const at142 = onHouse19(142), W142 = widthOf19(142), granite142 = '#9a6f63';
+export const guangxiGaozhou = {
+  id: 'guangxi-gaozhou', buildingIds: ['sa-142'], kind: 'guangxi-gaozhou', frontEdge: 4, ...simsCommon19,
+  name: 'Guangxi and Gaozhou Association and Bali Nasi Lemak (June 2024 exterior)', address: '142 and 142A Sims Avenue',
+  height: 12.0, roof: { type: 'flat', colour: '#8f8a84' },
+  evidence: 'No. 142, a pink-framed stair tower beside a three-storey front clad in brown granite under a gable pediment with the characters 桂高 in red relief: two windows on each upper floor, a vertical column of red characters reading 廣西暨高州會館大廈 between them, a board reading 廣西暨高州會館 GUANGXI AND GAOZHOU ASSOCIATION, and below it a white board reading BALI NASI LEMAK over a glazed restaurant. Google Maps lists the Guangxi And Gaozhou Association at 142a Sims Ave, Singapore 387464, and Bali Nasi Lemak, a restaurant, at 142 Sims Ave, both operating, so the building is named after them, as No. 301 Geylang Road was, and their boards, the column of characters and the pediment\'s 桂高 are redrawn in original type.' + simsNote19,
+  sources: [...simsSources19('682928741'), search('Guangxi and Gaozhou Association 142a Sims Avenue'), search('Bali Nasi Lemak 142 Sims Avenue')],
+  colours: { wall: granite142, trim: '#a88070', frame: '#2e2a28', glass: '#3e4446', pier: granite142, back: '#4a4644', floor: '#a8a296' },
+  windows: [
+    ...[[-11.95, -10.4], [-9.9, -8.25]].flatMap(s => [[5.55, 6.75], [9.1, 10.25]].map(h => ({ u: at142(s), h, panes: 3 }))),
+    { u: at142([-14.35, -13.3]), h: [4.7, 10.9], panes: 2, out: .02 },
+  ],
+  blocks: [
+    { name: 'white stair tower', u: [0, at142([-13.05, 0])[0]], h: [.1, 12.6], out: .01, depth: .02, colour: '#ecebe6' },
+    { name: 'pink stair-tower frame', u: at142([-14.55, -13.1]), h: [4.5, 11.1], out: .04, depth: .08, colour: '#c99a92' },
+    { name: 'grey cornice', u: at142([-13.1, -7.67]), h: [11.5, 12.0], out: .2, depth: .4, colour: '#8c8a85' },
+    ...[[12.0, 12.6, -13.1, -7.67], [12.6, 13.2, -12.4, -8.4], [13.2, 13.75, -11.3, -9.5]].map(([b, t, l, r]) => ({ name: 'gable pediment', u: at142([l, r]), h: [b, t], out: .02, depth: .04, colour: granite142 })),
+  ],
+  // The pediment's 桂高, the column of characters, the association's board and Bali Nasi Lemak's board.
+  boards: [
+    { u: at142([-11.3, -9.5]), h: [12.15, 12.95], out: .06 },
+    { u: at142([-10.4, -9.9]), h: [6.9, 10.4], out: .06 },
+    { u: at142([-12.5, -7.75]), h: [4.25, 5.4], out: .06 },
+    { u: at142([-12.05, -8.1]), h: [3.05, 4.0], out: .06 },
+  ],
+  piers: [at142([-13.15, -12.85]), [W142 - .2, W142]],
+  backFittings: [
+    { name: 'stair-tower doorway', u: at142([-14.3, -13.3]), h: [.1, 2.6], colour: '#3a3a38' },
+    { name: 'glazed restaurant', u: at142([-12.6, -7.9]), h: [.1, 2.9], colour: '#5a6466', glow: .1 },
+  ],
+};
+
+const at140 = onHouse19(140), W140 = widthOf19(140), stone140 = '#8f8c86';
+export const bikeMart = {
+  id: 'bike-mart', buildingIds: ['sa-140'], kind: 'bike-mart', frontEdge: 4, ...simsCommon19,
+  name: 'Bikemart SG (June 2024 exterior)', address: '140 Sims Avenue',
+  height: 12.6, roof: { type: 'flat', colour: '#8f8a84' },
+  evidence: 'No. 140, a grey stone-clad three-storey front between pilasters, under a gable pediment carrying an emblem: two windows on each upper floor, a lower pediment over the first floor, and a dark board reading BIKE MART SG over a glazed bicycle shop under a grey awning, with round BIKE MART signs at the door. Google Maps lists Bikemart SG, a bicycle shop, operating, at 140 Sims Ave, Singapore 387462, with its point inside the source way, so it is named after its board, which is redrawn in original type; the pediment\'s emblem is drawn plain.' + simsNote19,
+  sources: [...simsSources19('682928739'), search('Bikemart SG 140 Sims Avenue')],
+  colours: { wall: stone140, trim: '#a19e98', frame: '#2e3032', glass: '#3a4244', pier: stone140, back: '#2e2e2e', floor: '#a8a296' },
+  windows: [[-6.75, -5.5], [-5.0, -3.8]].flatMap(s => [[5.7, 6.9], [9.2, 10.45]].map(h => ({ u: at140(s), h, panes: 2 }))),
+  blocks: [
+    ...[[-7.55, -7.15], [-3.3, -2.9]].map(s => ({ name: 'pilaster', u: at140(s).map(v => Math.max(0, Math.min(W140, v))), h: [4.4, 9.0], out: .08, depth: .16, colour: '#a19e98' })),
+    ...[[7.75, 8.2, -7.3, -3.2], [8.2, 8.6, -6.6, -3.9], [8.6, 9.0, -5.8, -4.7]].map(([b, t, l, r]) => ({ name: 'lower pediment', u: at140([l, r]), h: [b, t], out: .1, depth: .2, colour: '#a19e98' })),
+    ...[[12.6, 13.15, -7.67, -2.78], [13.15, 13.6, -6.6, -3.8], [13.6, 14.0, -5.7, -4.7]].map(([b, t, l, r]) => ({ name: 'gable pediment', u: at140([l, r]), h: [b, t], out: .02, depth: .04, colour: stone140 })),
+    { name: 'plain emblem', u: at140([-5.6, -4.9]), h: [12.7, 13.45], out: .06, depth: .04, colour: '#f0f0ec' },
+    { name: 'grey awning, held flat', u: at140([-7.4, -3.1]), h: [3.1, 3.75], out: .12, depth: .24, colour: '#5a5c5c' },
+  ],
+  boards: [{ u: at140([-7.0, -3.45]), h: [4.0, 5.0], out: .05 }],
+  piers: [[0, .3], [W140 - .3, W140]],
+  backFittings: [{ name: 'glazed bicycle shop', u: at140([-7.3, -3.1]), h: [.1, 2.9], colour: '#2e3436', glow: .1 }],
+};
+
+const at138 = onHouse19(138), W138 = widthOf19(138), cream138 = '#e2d8b8';
+export const sims138 = {
+  id: 'sims-138', buildingIds: ['sa-138'], kind: 'unnamed', unnamed: true, frontEdge: 6, ...simsCommon19,
+  name: 'No. 138 Sims Avenue (June 2024 exterior, occupants not identified)', address: '138 Sims Avenue',
+  height: 13.2, roof: { type: 'flat', colour: '#8f8a84' },
+  evidence: 'No. 138, a white stair section lit by a column of tall windows beside a stained cream three-storey house with a curved hood under its parapet, a balcony ledge between its upper floors and two windows on each; its shop below, stacked with refrigeration equipment, hangs a banner reading ERISAM ... BUY SELL RENTAL. Google Maps lists Erisam Refrigeration Sales & Services at 138 Sims Ave but marks it permanently closed, and Form & Function Supplies, operating there, has no photographed sign, so no name is given and the banner is blank.' + simsNote19,
+  sources: [...simsSources19('682928738'), search('138 Sims Avenue Singapore 387460')],
+  colours: { wall: cream138, trim: '#d4c9a6', frame: '#3e403e', glass: '#4a5254', pier: cream138, back: '#5a5650', floor: '#a8a296' },
+  windows: [
+    ...[[.3, 1.7], [2.3, 3.7]].flatMap(s => [[5.7, 6.9], [9.3, 10.55]].map(h => ({ u: at138(s), h, panes: 2 }))),
+    ...[[5.75, 7.3], [7.6, 9.2], [9.5, 10.9]].map(h => ({ u: at138([-2.1, -1.0]), h, panes: 1 })),
+  ],
+  blocks: [
+    { name: 'white stair section', u: [0, at138([0, 0])[0]], h: [.1, 13.2], out: .01, depth: .02, colour: '#ecebe6' },
+    hood19(at138([-.1, 4.2]), [11.5, 12.0], '#d4c9a6'),
+    { name: 'balcony ledge', u: at138([0, 4.4]), h: [7.9, 8.1], out: .4, depth: .8, colour: '#d4c9a6' },
+    { name: 'blank Erisam banner', u: at138([.5, 3.5]), h: [3.25, 4.6], out: .05, depth: .03, colour: '#f2f0e6' },
+  ],
+  piers: [[0, .25], at138([-.1, .2]), [W138 - .2, W138]],
+  backFittings: [
+    { name: 'dark doorway', u: at138([-2.3, -1.2]), h: [.1, 2.5], colour: '#2e2e2c' },
+    { name: 'shop with refrigeration equipment', u: at138([.2, 4.3]), h: [.1, 3.0], colour: '#7a7c7a', glow: .06 },
+  ],
+};
+
+const at136 = onHouse19(136), W136 = widthOf19(136), white136 = '#efefea';
+export const vietsea = {
+  id: 'vietsea-ii', buildingIds: ['sa-136'], kind: 'vietsea-ii', frontEdge: 4, ...simsCommon19,
+  name: 'Vietsea II - Xom Nhau (June 2024 exterior)', address: '136 Sims Avenue',
+  height: 13.6, roof: { type: 'flat', colour: '#8f8a84' },
+  evidence: 'No. 136, a white three-storey house with louvred vents above and below its windows, a ledge between the upper floors and a curved hood under its parapet, beside a pink-framed tower of grid windows next to No. 134; its restaurant has a black board lettered VIETSEA II in gold and Xóm Nhậu, Hải Sản Việt Nam, over a black awning of a gas supplier. Google Maps lists Vietsea II - Xom Nhau, a bistro, operating, at 136 Sims Ave, Singapore 387458, so it is named after its board, which is redrawn in original type without the beer brand\'s mark.' + simsNote19,
+  sources: [...simsSources19('682928736'), search('Vietsea II Xom Nhau 136 Sims Avenue')],
+  colours: { wall: white136, trim: '#e2e2dc', frame: '#3a3c3c', glass: '#4a5658', pier: white136, back: '#3a3634', floor: '#a8a296' },
+  windows: [
+    ...[[5.1, 6.6], [7.2, 8.75]].flatMap(s => [[5.7, 6.9], [9.4, 10.6]].map(h => ({ u: at136(s), h, panes: 2 }))),
+    { u: at136([10.15, 11.35]), h: [5.0, 11.6], panes: 4, out: .02 },
+  ],
+  vents: [[5.1, 6.6], [7.2, 8.75]].flatMap(s => [[7.25, 7.6], [8.6, 9.0], [11.0, 11.4]].map(h => ({ u: at136(s), h }))),
+  blocks: [
+    hood19(at136([4.5, 9.7]), [11.5, 12.2], '#e2e2dc'),
+    { name: 'ledge', u: at136([4.56, 10.0]), h: [7.95, 8.3], out: .3, depth: .6, colour: '#e2e2dc' },
+    { name: 'pink tower frame', u: at136([10.0, 11.5]), h: [4.9, 11.75], out: .01, depth: .02, colour: '#c99a92' },
+    { name: 'black board', u: at136([4.5, 9.0]), h: [3.5, 5.6], out: .03, depth: .04, colour: '#1e1e1e' },
+    { name: 'black awning, held flat', u: at136([4.6, 9.9]), h: [2.0, 3.5], out: .12, depth: .24, colour: '#1e1e1e' },
+  ],
+  // VIETSEA II in gold, and Xóm Nhậu Hải Sản Việt Nam.
+  boards: [{ u: at136([5.8, 8.1]), h: [5.1, 5.55], out: .06 }, { u: at136([5.4, 8.5]), h: [3.6, 5.05], out: .06 }],
+  piers: [[0, .25], at136([9.9, 10.1]), [W136 - .25, W136]],
+  backFittings: [
+    { name: 'restaurant', u: at136([4.7, 9.8]), h: [.1, 2.9], colour: '#4a3a32', glow: .12 },
+    { name: 'tower doorway', u: at136([10.2, 11.2]), h: [.1, 2.6], colour: '#3a3a38' },
+  ],
+};
+
+export const simsRow19 = [no150West, lefon, guangxiGaozhou, bikeMart, sims138, vietsea];

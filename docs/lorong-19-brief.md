@@ -14,10 +14,10 @@ Research and implementation from **12 October 2026**, under open question 42. Th
 
 ## Status, 13 October 2026
 
-**Complete.** All 20 stops are modelled. Every building on Lorong 19 between Geylang Road and Sims Avenue, with the corners at both ends and the Geylang Road row back to Lorong 17, now has its photographed front.
+**Complete, with the owner's answers applied.** All 20 stops are modelled, and open questions 43–46 were answered "yes to all" on 13 October 2026 and applied (below). Every building on Lorong 19 between Geylang Road and Sims Avenue now stands on its photographed position, with the corners at both ends and the Geylang Road and Sims Avenue houses back to Lorong 17.
 
-- **Coverage:** 20 source ways, all photographed exteriors; none is left as a generic block.
-- **Named places:** eleven are added, bringing the study to 126:
+- **Coverage:** 25 source ways, replaced by 30 authored footprints on their photographed positions. All have photographed exteriors; none is left as a generic block.
+- **Named places:** seventeen are added, bringing the study to 132:
   - Eminent Frog Porridge & Seafood at No. 323 Geylang Road;
   - The Primero, No. 1 (with B&S's paint-shop board);
   - the Nanyang Chee Clan Association, No. 21;
@@ -28,12 +28,10 @@ Research and implementation from **12 October 2026**, under open question 42. Th
   - Kang Ha Pheng Sim Kok, 1 Lorong Bachok;
   - Bougainvilla Apartments, No. 10;
   - Sims Point, No. 4;
-  - Straits Laundry, Nanyang Hardware and Romance Adult Shop, Nos. 325–333 Geylang Road.
-- **Open questions:** four for the owner, 43–46 in [open questions](open-questions.md):
-  - **43:** taking in the block faces back to Lorong 17;
-  - **44:** the east side's footprints;
-  - **45:** re-cutting the Geylang Road row, and naming Scarlett Supermarket and Mary Hair Salon;
-  - **46:** the west side's footprints.
+  - Straits Laundry, Nanyang Hardware and Romance Adult Shop, Nos. 325–333 Geylang Road;
+  - Mary Hair Salon and Scarlett Supermarket @ Geylang, on the Geylang Road row (question 45);
+  - Lefon Sewing Machine & Machinery, the Guangxi and Gaozhou Association with Bali Nasi Lemak, Bikemart SG, and Vietsea II, on Sims Avenue Nos. 136–144 (question 43).
+- **Open questions:** none.
 
 ## The walk
 
@@ -659,3 +657,37 @@ Group `geylang-313-321` in `src/authored-footprints.mjs` replaces the five sourc
 - **Unnamed:**
   - the first two houses;
   - **No. 321**, plated, under a fruit-stall banner that names none of the businesses listed there.
+
+### Question 43: the block faces back to Lorong 17
+
+- **Geylang Road:** the five houses between the two corners stay in the map. They are now the six houses of question 45.
+- **Sims Avenue Nos. 136–144:** the five source ways join the map (`scripts/prepare-map.mjs`, 242 buildings).
+  - Group `sims-136-144` in `src/authored-footprints.mjs` authors them on their photographed line, between No. 134's authored east wall (question 39) and No. 146's (question 46).
+
+**Measurement:**
+- `XyG8…` with `yRlm…`, and `yRlm…` with `dBpl…` (June 2024), agree on the fronts **2.5 m behind** the source front.
+- Party walls are measured along No. 138's source front from its east end, westward:
+  - 144/142 at −14.56 m;
+  - 142/140 at −7.67 m;
+  - 140/138 at −2.78 m;
+  - 138/136 at 4.56 m.
+- The row runs from No. 146's wall (−18.87 m; photographed −19.6 m) to No. 134's (12.0 m; photographed 11.6 m).
+- The houses stand about 5 m east of their source ways, the same shift as No. 134's outline (question 39). The source map's No. 136 is mostly No. 134's coffeeshop.
+
+**Five houses,** each laid at its photographed scale (`walls19s` in the layout):
+
+| Way | House | Photographed | Named |
+| --- | --- | --- | --- |
+| `sa-144` | No. 144: cream, curved hoods, a grilled shop under a board reading 立峯縫紉機械公司 LEFON SEWING MACHINE & MACHINERY | 4.3 m | **Lefon Sewing Machine & Machinery** (listed at No. 144, operating) |
+| `sa-142` | A pink-framed stair tower and a granite front under a pediment lettered 桂高, with 廣西暨高州會館大廈 down its middle, a board reading 廣西暨高州會館 GUANGXI AND GAOZHOU ASSOCIATION, and BALI NASI LEMAK below | 6.9 m | **Guangxi and Gaozhou Association and Bali Nasi Lemak** (listed at 142A and 142, both operating) |
+| `sa-140` | Grey stone under a gable pediment with an emblem, a lower pediment, and a board reading BIKE MART SG | 4.9 m | **Bikemart SG** (listed at No. 140, operating) |
+| `sa-138` | A white stair section and a stained cream house with a curved hood and a balcony ledge, over a refrigeration-equipment shop | 7.3 m | No: Erisam's listing is closed, and Form & Function Supplies has no photographed sign |
+| `sa-136` | White, with louvred vents and a curved hood, VIETSEA II over Xóm Nhậu Hải Sản Việt Nam, beside a pink-framed tower of grid windows | 7.4 m | **Vietsea II - Xom Nhau** (listed at No. 136, operating) |
+
+**Layout:**
+- **Held flat:** the fronts stand about 0.4 m clear of Sims Avenue's estimated carriageway, so their awnings and canopies are held within 0.25 m of the walls.
+- **Boards:** each named place's boards are redrawn in original type, without the beer brand's mark on VIETSEA II's board. The pediment emblem on No. 140 is drawn plain.
+
+Use `?review=lefon-sewing`, `?review=guangxi-gaozhou`, `?review=bike-mart`, `?review=sims-138` and `?review=vietsea-ii`.
+
+**All four questions applied.** The Lorong 19 walk has no open questions left.

@@ -22,8 +22,9 @@ test('Lorong 19 brings in its own buildings, its corners and the Geylang Road ho
   const east = ['454254168', '454254246', '1223524381', '454254247', '454254314', '454254339'];
   const geylangRoad = ['454254254', '454254256', '454254258', '454254260', '454254262'];
   for (const id of [...west, ...east, ...geylangRoad]) assert.ok(ids.has(id), id);
-  // Sims Avenue Nos. 136-144 wait for their measurement (open question 43), and the Lorong Bachok row for a later pass.
-  for (const id of ['682928736', '682928738', '682928739', '682928741', '682928744', '454254315', '454254245']) assert.equal(ids.has(id), false, id);
+  // Sims Avenue Nos. 136-144 came in with open question 43; the Lorong Bachok row waits for a later pass.
+  for (const id of ['682928736', '682928738', '682928739', '682928741', '682928744']) assert.ok(ids.has(id), id);
+  for (const id of ['454254315', '454254245']) assert.equal(ids.has(id), false, id);
   assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 19 Geylang').length, 7);
   assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong Bachok').map(r => r.id), ['23513607']);
 });

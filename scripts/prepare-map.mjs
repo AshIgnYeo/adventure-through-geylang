@@ -16,14 +16,15 @@ const lorong17 = {
   links: ['632255677', '660070909', '727628958', '75512569'],
 };
 // Lorong 19 between Geylang Road and Sims Avenue (open question 42, 12 October 2026), taken the same way: the lane's
-// buildings with the corners at both ends, and the Geylang Road houses between Lorong 17 and Lorong 19 that line the
-// Geylang Road link (open question 43). Sims Avenue Nos. 136-144 wait until the row is measured: No. 134's outline,
-// moved under open question 39, overlaps No. 136's source outline. Lorong Bachok's mouth is kept as road surface.
+// buildings with the corners at both ends, and the Geylang Road and Sims Avenue houses between Lorong 17 and Lorong 19
+// that line the links (open question 43; Sims Avenue Nos. 136-144 stand on authored footprints, since No. 134's
+// outline, moved under open question 39, overlaps No. 136's source outline). Lorong Bachok's mouth is kept as road.
 const lorong19 = {
   buildings: [
     '454254263', '454254248', '476113985', '454254241', '476113983', '476113984', '454254239', '454254309', '454254310',
     '454254168', '454254246', '1223524381', '454254247', '454254314', '454254339',
     '454254254', '454254256', '454254258', '454254260', '454254262',
+    '682928736', '682928738', '682928739', '682928741', '682928744',
   ],
   // The lane's ways run south, so they are listed from Sims Avenue to Geylang Road; the corridor reverses them.
   lane: ['23513604', '476106528', '666818478', '476106525', '666818477', '666818476', '476106529'],

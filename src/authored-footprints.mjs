@@ -616,6 +616,19 @@ export const authoredFootprintGroups = [
       }));
     },
   },
+  {
+    id: 'sims-136-144', question: 43, approved: '2026-10-13',
+    evidence: 'Sims Avenue Nos. 136-144, the south side between No. 134 (moved under open question 39) and No. 146 (moved under open question 46). Two pairs of June 2024 Sims Avenue panoramas agree on the fronts 2.5 m behind the source front. Measured along No. 138\'s source front from its east end, westward, the photographed party walls stand at -14.56 (Nos. 144/142), -7.67 (142/140), -2.78 (140/138) and 4.56 m (138/136); the row runs from No. 146\'s authored west wall (-18.87 m, its photographed wall about -19.6 m) to No. 134\'s authored east wall (12.0 m, photographed about 11.6 m). The source party lines (-19.10, -12.48, -6.94, 0, 9.70 and 16.88 m) are mapped to these by one re-spacing along the front, so neighbours keep their shared walls and rear lines are kept.',
+    replaces: ['682928736', '682928738', '682928739', '682928741', '682928744'],
+    build(map) {
+      const street = 'Sims Avenue';
+      // Along No. 138's Sims Avenue front (edge 6), from its east end westward; d is towards Sims Avenue.
+      const o = outlineOf(map, '682928738'), O = o[7], west = unit(o[7], o[6]);
+      const breaks = [[-19.10, -18.87], [-12.48, -14.56], [-6.94, -7.67], [0, -2.78], [9.70, 4.56], [16.88, 12.0]];
+      return warpRow(map, O, west, breaks, [['682928744', '144'], ['682928741', '142'], ['682928739', '140'], ['682928738', '138'], ['682928736', '136']]
+        .map(([source, number]) => ({ source, id: `sa-${number}`, street, number, levels: 3, front: -2.5 })));
+    },
+  },
 ];
 
 const ring = (outline, origin) => {
