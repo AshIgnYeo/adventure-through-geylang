@@ -94,7 +94,8 @@ function splitAlongFront(map, id, from, to, cuts) {
  * street. One monotonic, piecewise-linear map of t takes the source party lines (`breaks`, [source, measured] pairs)
  * to the measured ones and is applied to every vertex of every house, so neighbours keep their shared walls and
  * interlocking rear parts stay apart; vertices on the source front (|d| < 0.5 m) move to the measured front `d`.
- * Each outline keeps its source vertex order, so its edge numbers are unchanged.
+ * A house whose source front lies off the row's line gives it as `sourceFront` (d), within `band` (default 0.5 m) for
+ * a stepped front, and `front` may be a function (d, new t) => new d. Each outline keeps its source vertex order, so its edge numbers are unchanged.
  */
 function warpRow(map, origin, dir, breaks, houses) {
   const n = [-dir[1], dir[0]];
@@ -110,12 +111,29 @@ function warpRow(map, origin, dir, breaks, houses) {
     const src = map.buildings.find(b => b.id === h.source).coordinates.slice(0, -1).map(c => project(c, map.origin));
     const outline = src.map(p => {
       const q = sub(p, origin), t = q[0] * dir[0] + q[1] * dir[1], d = q[0] * n[0] + q[1] * n[1];
-      return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * (Math.abs(d) < .5 ? h.front : d), n[1] * (Math.abs(d) < .5 ? h.front : d)]);
+      const onFront = Math.abs(d - (h.sourceFront ?? 0)) < (h.band ?? .5), d1 = !onFront ? d : typeof h.front === 'function' ? h.front(d, T(t)) : h.front;
+      return add(add(origin, [dir[0] * T(t), dir[1] * T(t)]), [n[0] * d1, n[1] * d1]);
     });
     return { id: h.id, street: h.street, number: h.number, levels: h.levels, outline };
   });
 }
 const unit = (p, q) => { const l = Math.hypot(q[0] - p[0], q[1] - p[1]); return [(q[0] - p[0]) / l, (q[1] - p[1]) / l]; };
+/** Move each edge of a convex outline along its outward normal by `offsets[i]` (negative is inward); vertex i is where
+ * the moved edges i - 1 and i meet, so the vertex order and edge numbers are kept. */
+function offsetEdges(o, offsets) {
+  const c = o.reduce((s, p) => [s[0] + p[0] / o.length, s[1] + p[1] / o.length], [0, 0]);
+  const lines = o.map((p, i) => {
+    const q = o[(i + 1) % o.length], d = unit(p, q); let n = [-d[1], d[0]];
+    if (n[0] * (p[0] - c[0]) + n[1] * (p[1] - c[1]) < 0) n = neg(n);
+    return { p: add(p, [n[0] * offsets[i], n[1] * offsets[i]]), d };
+  });
+  return o.map((_, i) => {
+    const A = lines[(i + o.length - 1) % o.length], B = lines[i], det = A.d[0] * -B.d[1] - A.d[1] * -B.d[0];
+    const r = sub(B.p, A.p), k = (r[0] * -B.d[1] - r[1] * -B.d[0]) / det;
+    return at(A.p, A.d, k);
+  });
+}
+const outlineOf = (map, id) => map.buildings.find(b => b.id === id).coordinates.slice(0, -1).map(c => project(c, map.origin));
 
 export const authoredFootprintGroups = [
   {
@@ -523,6 +541,92 @@ export const authoredFootprintGroups = [
         .map(([source, number, front = 2.3]) => ({ source, id: `l17w-${number}`, street, number, levels: 3, front }));
       const A = sourcePoint(map, '454254236', 2), nos5to7 = { source: '454254236', id: 'l17w-5', street, number: '5-7', levels: 2, front: 1.5 };
       return [...warpRow(map, A, unit(A, sourcePoint(map, '454254236', 1)), [[0, -1.56], [9.04, 11.35]], [nos5to7]), ...warpRow(map, O, row, breaks, walkUps)];
+    },
+  },
+  {
+    id: 'lorong-19-west', question: 46, approved: '2026-10-13',
+    evidence: 'The west side of Lorong 19 from No. 323 Geylang Road to No. 146 Sims Avenue on its photographed line. Each building was measured from June 2024 panoramas during the Lorong 19 walk (docs/lorong-19-brief.md, stops 1-9). No. 323: the lane face 3.5 m in front of its source edge, the Geylang Road front 0.4 m behind its source front, and its party wall with No. 321 1.4 m east of the source line, each edge moved in parallel. The Primero (No. 1): front 2.2 m behind at its south end and 2.6 m at its north end, from 0.8 m south of the source corner to 1.0 m north of the source north corner. No. 3: front 2.3 m behind, from 0.9 m south of the source corner; Nos. 21, 23 and 25 on one plane 1.25 m behind, with party lines at -8.3, 0, 10.0 and 17.6 m along No. 23\'s source front (the No. 3/No. 21 wall taken between the two houses\' readings). Lei Zang Si (No. 29): front 1.5 m behind, from 1.8 m south of the source corner, 14.4 m. No. 33: front 1.5 m behind, from 0.5 m north of the source corner, 24.4 m. No. 146 Sims Avenue: bearings from three Sims Avenue panoramas put its splay pier 1.8 m south of the source splay, and its lane face starts 2.0 m south of its source corner, so the outline moves 1.8 m south with its shape kept. Each re-spacing moves the house\'s vertices along its own front line, so rear lines and steps are kept.',
+    replaces: ['454254263', '454254248', '476113985', '454254241', '476113983', '476113984', '454254239', '454254309', '454254310'],
+    build(map) {
+      const lane = 'Lorong 19 Geylang';
+      const o263 = outlineOf(map, '454254263');
+      // Edges: 0 the Geylang Road front, 1 the party wall with No. 321, 2 the rear, 3 the lane face.
+      const eminent = { id: 'l19w-323', street: 'Geylang Road', number: '323', levels: 2, outline: offsetEdges(o263, [-.4, -1.4, 0, 3.5]) };
+      // A house re-spaced along its own source front, from `south` to `north` (vertex indices on that front).
+      const reface = (id, south, north, breaks, front, house) => {
+        const o = outlineOf(map, id), A = o[south];
+        return warpRow(map, A, unit(A, o[north]), breaks, [{ source: id, street: lane, levels: null, front, ...house }])[0];
+      };
+      const w248 = Math.hypot(...sub(outlineOf(map, '454254248')[0], outlineOf(map, '454254248')[1]));
+      const primero = reface('454254248', 1, 0, [[0, -.8], [w248, w248 + 1.0]], (d, t) => -2.2 - .4 * (t + .8) / (w248 + 1.8), { id: 'l19w-1', number: '1', levels: 4 });
+      // Nos. 3-25 on one re-spacing along No. 23's source front, so No. 3 and No. 21 keep their shared wall.
+      const O = outlineOf(map, '476113983')[0], north = unit(O, outlineOf(map, '476113983')[1]);
+      const tOf = p => (p[0] - O[0]) * north[0] + (p[1] - O[1]) * north[1];
+      const o985 = outlineOf(map, '476113985'), o241 = outlineOf(map, '454254241'), o984 = outlineOf(map, '476113984');
+      const dFront3 = (o985[2][0] - O[0]) * -north[1] + (o985[2][1] - O[1]) * north[0];
+      const breaks = [[tOf(o985[2]), tOf(o985[2]) - .9], [tOf(o241[1]), -8.3], [0, 0], [tOf(outlineOf(map, '476113983')[1]), 10.0], [tOf(o984[1]), 17.6]];
+      const row = warpRow(map, O, north, breaks, [
+        { source: '476113985', id: 'l19w-3', street: lane, number: '3', levels: 4, sourceFront: dFront3, front: d => d - 2.3 },
+        { source: '454254241', id: 'l19w-21', street: lane, number: '21', levels: 1, front: -1.25 },
+        { source: '476113983', id: 'l19w-23', street: lane, number: '23', levels: 1, front: -1.25 },
+        { source: '476113984', id: 'l19w-25', street: lane, number: '25', levels: 1, front: -1.25 },
+      ]);
+      const leiZangSi = reface('454254239', 2, 1, [[0, -1.8], [13.873, 12.6]], -1.5, { id: 'l19w-29', number: '29', levels: 5 });
+      const no33 = reface('454254309', 3, 2, [[0, .5], [25.166, 24.9]], -1.5, { id: 'l19w-33', number: '33', levels: 3 });
+      const no146 = { id: 'sa-146', street: 'Sims Avenue', number: '146', levels: 3, outline: outlineOf(map, '454254310').map(p => add(p, [.15, 1.8])) };
+      return [eminent, primero, ...row, leiZangSi, no33, no146];
+    },
+  },
+  {
+    id: 'lorong-19-east', question: 44, approved: '2026-10-13',
+    evidence: 'The east side of Lorong 19 on its photographed positions, from June 2024 panoramas (docs/lorong-19-brief.md, stops 10 and 12-15). He Ping (No. 148 Sims Avenue): its lane face 0.5 m forward and 21.7 m long, the Sims Avenue front kept and cut at the party line with No. 150, triangulated 5.47 m from the lane corner; the cut-off strip is No. 150\'s west bay. Bougainvilla Apartments, Nos. 6-8 and Sims Point on one re-spacing along the lane, so neighbours keep their order: Bougainvilla\'s front 4.5 m forward, from 1.34 m north of its source corner to its south end, which a railing post triangulates 0.6 m north of Nos. 6-8; Nos. 6-8\'s columns 8.3 m forward (a column triangulated from one panorama at 8.4 m; the LOFT door on the five-foot way\'s back wall at 6.5 m), from 0.5 m north of the source corner to 12.3 m south of it; Sims Point\'s stepped lane face 3.2 m forward, from 3.3 m south of its source north end to 0.66 m north of its south end. Nos. 325-333 Geylang Road: the whole outline moved 7.2 m east and 0.6 m south, its shape kept, as the lane panoramas place its lane face about 7 m behind the source edge and the Geylang Road panoramas its corner 7.2 m east and 0.6 m south of the source corner.',
+    replaces: ['454254339', '454254247', '1223524381', '454254246', '454254168'],
+    build(map) {
+      const lane = 'Lorong 19 Geylang';
+      // He Ping: vertices 0 (lane corner), 1 (Sims Avenue east end), 2 and 3; the lane face is edge 3.
+      const h = outlineOf(map, '454254339'), south = unit(h[0], h[3]), east = unit(h[0], h[1]);
+      const A = at(h[0], east, -.5), P = at(h[0], east, 5.47);
+      const hePing = { id: 'sa-148', street: 'Sims Avenue', number: '148', levels: 2, outline: [A, P, at(P, south, 21.7), at(A, south, 21.7)] };
+      const no150 = { id: 'sa-150w', street: 'Sims Avenue', number: '150', levels: 2, outline: [P, h[1], h[2], add(P, sub(h[2], h[1]))] };
+      // Bougainvilla, Nos. 6-8 and Sims Point along Nos. 6-8's source front (north to south), d towards the lane. Sims
+      // Point's stepped lane face runs from vertex 0 to vertex 3; its edge 9 runs north from vertex 9 to vertex 10.
+      const s68 = outlineOf(map, '1223524381'), O = s68[0], dir = unit(O, s68[3]);
+      const tOf = p => (p[0] - O[0]) * dir[0] + (p[1] - O[1]) * dir[1], dOf = p => (p[0] - O[0]) * -dir[1] + (p[1] - O[1]) * dir[0];
+      const b = outlineOf(map, '454254247'), sp = outlineOf(map, '454254246');
+      const breaks = [[tOf(b[1]), tOf(b[1]) - 1.34], [tOf(b[0]), -.6], [0, -.5], [tOf(s68[3]), 12.3], [tOf(sp[0]), tOf(sp[10]) + 1.1], [tOf(sp[3]), tOf(sp[3]) - .66]];
+      const row = warpRow(map, O, dir, breaks, [
+        { source: '454254247', id: 'l19e-10', street: lane, number: '10', levels: 8, sourceFront: (dOf(b[0]) + dOf(b[1])) / 2, front: d => d + 4.5 },
+        { source: '1223524381', id: 'l19e-6', street: lane, number: '6-8', levels: 4, front: 8.3 },
+        { source: '454254246', id: 'l19e-4', street: lane, number: '4', levels: 8, sourceFront: (dOf(sp[0]) + dOf(sp[5])) / 2, band: 1.0, front: d => d + 3.2 },
+      ]);
+      const corner = { id: 'gr-325', street: 'Geylang Road', number: '325-333', levels: 3, outline: outlineOf(map, '454254168').map(p => add(p, [7.2, .6])) };
+      return [hePing, no150, ...row, corner];
+    },
+  },
+  {
+    id: 'geylang-313-321', question: 45, approved: '2026-10-13',
+    evidence: 'The two-storey row on the north side of Geylang Road between the Lorong 17 corner house and No. 323, re-cut into its six photographed houses. The June 2024 Geylang Road drive agrees on the row on its source front; measured along No. 323\'s source front from its west corner, the party walls stand at -23.0, -18.0, -12.85, -8.65 and -2.85 m, and the row ends at No. 323\'s photographed party wall, 1.4 m east of the source line (open question 46). It starts at the Lorong 17 corner house\'s source party wall (-26.49 m), which is kept, about 1.1 m east of where that wall photographs. The source front and the party walls\' direction are kept, and each house runs back to the source rear line.',
+    replaces: ['454254254', '454254256', '454254258', '454254260', '454254262'],
+    build(map) {
+      const o = outlineOf(map, '454254263'), A = o[1], east = unit(o[1], o[0]), back = sub(o[2], o[1]);
+      const F = s => at(A, east, s), cuts = [-26.487, -23.0, -18.0, -12.85, -8.65, -2.85, 1.4];
+      return 'abcdef'.split('').map((k, i) => ({
+        id: `gr-l19-${k}`, street: 'Geylang Road', number: k === 'f' ? '321' : null, levels: 2,
+        outline: [F(cuts[i]), F(cuts[i + 1]), add(F(cuts[i + 1]), back), add(F(cuts[i]), back)],
+      }));
+    },
+  },
+  {
+    id: 'sims-136-144', question: 43, approved: '2026-10-13',
+    evidence: 'Sims Avenue Nos. 136-144, the south side between No. 134 (moved under open question 39) and No. 146 (moved under open question 46). Two pairs of June 2024 Sims Avenue panoramas agree on the fronts 2.5 m behind the source front. Measured along No. 138\'s source front from its east end, westward, the photographed party walls stand at -14.56 (Nos. 144/142), -7.67 (142/140), -2.78 (140/138) and 4.56 m (138/136); the row runs from No. 146\'s authored west wall (-18.87 m, its photographed wall about -19.6 m) to No. 134\'s authored east wall (12.0 m, photographed about 11.6 m). The source party lines (-19.10, -12.48, -6.94, 0, 9.70 and 16.88 m) are mapped to these by one re-spacing along the front, so neighbours keep their shared walls and rear lines are kept.',
+    replaces: ['682928736', '682928738', '682928739', '682928741', '682928744'],
+    build(map) {
+      const street = 'Sims Avenue';
+      // Along No. 138's Sims Avenue front (edge 6), from its east end westward; d is towards Sims Avenue.
+      const o = outlineOf(map, '682928738'), O = o[7], west = unit(o[7], o[6]);
+      const breaks = [[-19.10, -18.87], [-12.48, -14.56], [-6.94, -7.67], [0, -2.78], [9.70, 4.56], [16.88, 12.0]];
+      return warpRow(map, O, west, breaks, [['682928744', '144'], ['682928741', '142'], ['682928739', '140'], ['682928738', '138'], ['682928736', '136']]
+        .map(([source, number]) => ({ source, id: `sa-${number}`, street, number, levels: 3, front: -2.5 })));
     },
   },
 ];

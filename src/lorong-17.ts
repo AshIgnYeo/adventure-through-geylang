@@ -1,16 +1,7 @@
 import type { World, Point } from './world';
-import * as pc from 'playcanvas';
-import { lorong17, lorong17Frame, lorong17Layout, lorong17Reviews, lorong17Sides, lorong17Upper } from './lorong-17-layout.mjs';
-import { buildSimpleHouse, type Draw } from './simple-house';
-
-const canvasFor = (w: number, h: number, base: number, fn: Draw) => {
-  const canvas = document.createElement('canvas'); canvas.width = base; canvas.height = Math.max(16, Math.round(base * h / w));
-  fn(canvas.getContext('2d')!, canvas.width, canvas.height); return canvas;
-};
-const text = (c: CanvasRenderingContext2D, t: string, x: number, y: number, size: number, colour: string, weight: string, family: string, maxWidth?: number) => {
-  c.fillStyle = colour; c.font = `${weight} ${Math.round(size)}px ${family}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(t, x, y, maxWidth);
-};
-const sans = '"Helvetica Neue", Arial, sans-serif', hei = '"PingFang SC", "Heiti SC", sans-serif';
+import { lorong17 } from './lorong-17-layout.mjs';
+import { buildLaneHouse, text, sans, hei, type Draws } from './lane-house';
+import type { Draw } from './simple-house';
 
 // Named places only: original lettering after the photographed boards.
 // Feng Shang's mark: a swirl of white strokes, like a flame or a lock of hair.
@@ -26,7 +17,7 @@ const fengShangBoard: Draw = (c, w, h) => {
   text(c, '造型', w * .66, h * .4, h * .34, '#f2f2f2', '600', '"Kaiti SC", "STKaiti", serif');
   text(c, 'HAIR SALON', w * .66, h * .78, h * .16, '#f2f2f2', '700', 'Georgia, "Times New Roman", serif', w * .4);
 };
-const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
+const draws: Draws = {
   'feng-shang': { boards: [fengShangBoard, (c, w, h) => {
     c.fillStyle = '#1a1714'; c.fillRect(0, 0, w, h);
     text(c, '峰尚', w * .1, h * .52, h * .7, '#e07a2a', '700', hei);
@@ -96,38 +87,6 @@ const draws: Record<string, { boards?: Draw[]; blades?: Draw[] }> = {
 export function buildLorong17(world: World, id: string, poly: Point[]) {
   const place = lorong17.find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
-  const frame = lorong17Frame(poly, place);
-  const { textured } = buildSimpleHouse(world, place.name, frame, poly, place, lorong17Layout(place, frame.width) as any, draws[place.id] ?? {});
-  for (const side of lorong17Sides(place, poly) as any[]) {
-    for (const b of side.boxes) {
-      const p = side.frame.point(b.u, b.out) as Point;
-      world.box(`${place.name} ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour, b.glow), undefined, side.frame.angle);
-    }
-    const sd = draws[`${place.id}@${side.edge}`] ?? {}, pt = (u: number, out: number) => side.frame.point(u, out) as Point;
-    side.boards.forEach((s: any, i: number) => {
-      const fn = sd.boards?.[i]; if (!fn) return;
-      world.panel(pt(s.left, s.out), pt(s.right, s.out), s.bottom, s.top, textured(canvasFor(s.right - s.left, s.top - s.bottom, 1024, fn), .1));
-    });
-    side.blades.forEach((bl: any, i: number) => {
-      const fn = sd.blades?.[i]; if (!fn) return;
-      const m = textured(canvasFor(bl.out[1] - bl.out[0], bl.h[1] - bl.h[0], 256, fn), .2);
-      world.panel(pt(bl.u - .03, bl.out[0]), pt(bl.u - .03, bl.out[1]), bl.h[0], bl.h[1], m);
-      world.panel(pt(bl.u + .03, bl.out[1]), pt(bl.u + .03, bl.out[0]), bl.h[0], bl.h[1], m);
-    });
-  }
-  // Upper volumes: walls round their outline, a flat roof, and their fittings on the front.
-  for (const up of lorong17Upper(place, frame) as any[]) {
-    const wall = world.mat(up.colour); wall.cull = pc.CULLFACE_NONE; wall.update();
-    const pts = up.points as Point[];
-    for (let i = 0; i < pts.length; i++) world.panel(pts[i], pts[(i + 1) % pts.length], up.from, up.to, wall);
-    const roof = world.mat(up.roof); roof.cull = pc.CULLFACE_NONE; roof.update();
-    const indices: number[] = []; for (let k = 1; k < pts.length - 1; k++) indices.push(0, k, k + 1);
-    world.mesh(`${place.name} upper roof`, pts.flatMap(p => [p[0], up.to, p[1]]), pts.flatMap(() => [0, 0]), indices, roof);
-    for (const b of up.boxes) {
-      const p = frame.point(b.u, b.out) as Point;
-      world.box(`${place.name} ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour, b.glow), undefined, frame.angle);
-    }
-  }
-  for (const r of lorong17Reviews(place, frame)) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
+  buildLaneHouse(world, place, poly, draws);
   return true;
 }
