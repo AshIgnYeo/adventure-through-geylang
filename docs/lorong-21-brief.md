@@ -24,11 +24,11 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 | 1 | West | 454254167 | Nos. 335–351 Geylang Road, the west corner: Cheng Yi Coffee Shop and a glass block | Done; named; question 48 |
 | 2 | West | 1223524387 | No. 5 | Done; unnamed; question 49 |
 | 3 | West | 1223524388 | No. 7 | Done; unnamed; question 49 |
-| 4 | West | 1223524384 | No. 9, Nyingma Kathok Buddhist Centre | |
-| 5 | West | 1223524383 | No. 11 | |
-| 6 | West | 1223524382 | No. 15 | |
-| 7 | West | 1223524385 | No. 17 | |
-| 8 | West | 1223524386 | No. 19, Bei Chen Gong Association | |
+| 4 | West | 1223524384 | No. 9, Nyingma Kathok Buddhist Centre | Done; named; question 49 |
+| 5 | West | 1223524383 | No. 11 | Done; unnamed; question 49 |
+| 6 | West | 1223524382 | No. 15 | Done; unnamed; question 49 |
+| 7 | West | 1223524385 | No. 17 | Done; unnamed; question 49 |
+| 8 | West | 1223524386 | No. 19, Bei Chen Gong Association | Done; named; question 49 |
 | 9 | West | 454254329 | 29 Lorong Bachok, the Bachok corner: Tan Ser Seng Herbal Soup | |
 | 10 | West | 454254330 | No. 178 Sims Avenue, the west corner | |
 | 11 | East | 454254164 | The Sims Avenue east corner, HCSA Community Services | |
@@ -114,3 +114,42 @@ North of the side lane, behind a grey boundary wall: a weathered cream three-sto
 - Google Maps lists New Century Realty & Trading at No. 5, and MP Express Services and the closed Di Zhong Hai Buffet Steamboat at No. 7. Their points lie in the corner block, and no sign for any of them was photographed.
 
 Use `?review=l21-5` and `?review=l21-7`.
+
+### 4–8. Ways 1223524384, 1223524383, 1223524382, 1223524385 and 1223524386: Nos. 9 to 19
+
+A two-storey terrace over five-foot ways, cream at both ends and grey between. In April 2024 a festival at No. 19 had red-and-white tents, a yellow tarpaulin, an altar, flags and a paper furnace along its front and in the car park beyond; none of them is modelled.
+
+**Measurement:** the five fronts were read together on one plane along No. 9's front (s north from its south corner).
+- **Depth:** the lane panoramas' depth scores peak 3.5–4 m in front of the source line, on the festival tents. So the depth was read instead from:
+  - **No. 9's gold emblem,** followed between `8yiH…`, `O-hH…`, `OXhE…` and `m4CG…`: 1.3–2.1 m in front;
+  - **the strongest pair** (`OXhE…` with `m4CG…`, depth score 0.25): 1.25 m.
+
+  On a plane **1.5 m in front of** the source line, rectified views at 0, 2 and 3.5 m bracket the agreement.
+- **Party walls on that plane:** at s = 0, 7.0, 13.4, 19.7, 26.0 and 32.2, against the source's 0, 6.41, 12.82, 19.22, 25.62 and 32.02. They read from the windows' rhythm (about 1.95 m within a house, 2.4 m across a party wall) and the colour changes.
+- **Heights:**
+  - first-floor ledge: 3.1–3.4 m;
+  - windows: 4.5–6.1 m, under louvred vents at 6.2–6.6 m;
+  - dark parapet band: 7.0–7.75 m;
+  - parapets: 7.8 m (grey) and 8.0 m (cream).
+
+**Layout:**
+- Each house is laid proportionally on its own source edge: No. 9 ×0.92, the others ×1.00–1.03.
+- The five-foot ways are 1.6 m deep under a 3.1 m ceiling.
+- The upper façades stand about 1.5 m in front of their source edges: part of [open question 49](open-questions.md).
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 4 | 1223524384 | **No. 9**: cream, three windows in raised surrounds under a deep cornice. A vertical board on its south pilaster reading 宁玛噶陀 NYINGMA KATHOK under an emblem; a gold dharma wheel between two gold deer on the ledge; a wooden door and a glazed front under a Tibetan valance, with a framed board reading 宁玛噶陀佛学会 NYINGMA KATHOK BUDDHIST CENTRE under a line of Tibetan script | 7.0 m | **Nyingma Kathok Buddhist Centre** |
+| 5 | 1223524383 | **No. 11**: weathered grey, three windows under louvred vents and a dark parapet band, over an open five-foot way stacked with goods | 6.4 m | No |
+| 6 | 1223524382 | **No. 15**: like No. 11, its five-foot way behind the yellow tarpaulin | 6.3 m | No |
+| 7 | 1223524385 | **No. 17**: like No. 11, a grilled window and a grilled gate in its five-foot way | 6.3 m | No |
+| 8 | 1223524386 | **No. 19**: cream, three windows under louvred vents. A temple doorway under a red banner reading 玄天上帝, hung with lanterns lettered 北辰宫. Its blank north wall faces the car park | 6.2 m | **Bei Chen Gong Association** |
+
+**Naming:**
+- **Nyingma Kathok Buddhist Centre:** listed at 9 Lor 21 Geylang, Singapore 388456. Its point lies in the walk-up pair next door, but the address and the signs agree on this house, so it is named (as at Crystal Mansions, open question 32).
+  - Its boards are redrawn in original type, with the Tibetan script drawn as a plain gold band.
+  - L E Fashion, also listed at No. 9, is closed.
+- **Bei Chen Gong Association:** listed at 19 Lor 21 Geylang, Singapore 388462, with its point inside this way. It is named after its lanterns, which carry the temple's name; the banner names its deity, Xuan Tian Shang Di. The banner and a lantern are redrawn in original type.
+- **The grey houses:** Leong Yew Textiles is listed at No. 11, but its point lies in the corner block and no sign was photographed. Nothing is listed at Nos. 15 and 17.
+
+Use `?review=nyingma-kathok`, `?review=l21-11`, `?review=l21-15`, `?review=l21-17` and `?review=bei-chen-gong`.

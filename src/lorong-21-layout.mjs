@@ -211,5 +211,99 @@ export const no7 = {
   backFittings: [{ name: 'grilled ground floor', u: at7([1.0, 8.0]), h: [.1, 2.3], colour: '#4a4a46' }],
 };
 
-export const lorong21 = [chengYi, no5, no7];
+// ---------------------------------------------------------------------------------------------
+// 4-8. Ways 1223524384, 1223524383, 1223524382, 1223524385 and 1223524386, Nos. 9, 11, 15, 17 and 19: a two-storey
+// terrace over five-foot ways, cream at both ends and grey between. Read on one plane along No. 9's front (s north from
+// its south corner): the lane panoramas' depth scores peak 3.5-4 m forward on the festival tents, but No. 9's gold
+// emblem, followed between four panoramas, and the strongest pair (OXhE..., m4CG...) put the upper façade about 1.5 m
+// in front of the source line. On that plane the party walls stand at s = 0, 7.0, 13.4, 19.7, 26.0 and 32.2, against
+// the source's 0, 6.41, 12.82, 19.22, 25.62 and 32.02; each house is laid proportionally on its own source edge.
+const rowNote9 = ' The five houses from No. 9 to No. 19 were read together on one plane along No. 9\'s front: the April 2024 lane panoramas\' depth scores peak 3.5-4 m in front of the source line, on the festival tents, but No. 9\'s gold emblem, followed between four panoramas (8yiH..., O-hH..., OXhE..., m4CG...), and the strongest pair put the upper façades about 1.5 m in front of it. On that plane the party walls stand 0, 7.0, 13.4, 19.7, 26.0 and 32.2 m along, within 0.6 m of the source ones, and each elevation is laid proportionally on its own source edge. Heights were read on that plane: the first-floor ledge at 3.1-3.4 m, windows at about 4.5-6.1 m under louvred vents, and parapets at 7.8-8.0 m.';
+const walls9 = [0, 7.0, 13.4, 19.7, 26.0, 32.2], widths9 = [6.412, 6.403, 6.401, 6.398, 6.4];
+const onHouse9 = i => { const k = widths9[i] / (walls9[i + 1] - walls9[i]); return s => s.map(v => Math.min(widths9[i], Math.max(0, +((v - walls9[i]) * k).toFixed(3)))); };
+const row9 = (i, colour) => ({
+  frontEdge: 0, reviewRoad: 'Lorong 21 Geylang', review: { distance: 7, pitch: 16 },
+  height: 7.8, ceiling: 3.1, fiveFootWay: 1.6, roof: { type: 'flat', colour: '#8f8c86' },
+  colours: { wall: colour, trim: '#d6d2c6', frame: '#3a3c3c', glass: '#4a5658', pier: colour, back: '#4a4642', floor: '#a8a296' },
+  piers: [[0, .35], [widths9[i] - .35, widths9[i]]],
+});
+// The grey houses' three windows under louvred vents, a dark parapet band and the ledge over the five-foot way.
+const grey9 = (i, spans) => {
+  const at = onHouse9(i), W = widths9[i];
+  return {
+    windows: spans.map(s => ({ u: at(s), h: [4.5, 6.1], panes: 2, surround: true })),
+    vents: spans.map(s => ({ u: at(s), h: [6.2, 6.6] })),
+    blocks: [
+      { name: 'dark parapet band', u: [0, W], h: [7.0, 7.75], out: .06, depth: .12, colour: '#5e5f5c' },
+      { name: 'first-floor ledge', u: [0, W], h: [3.1, 3.4], out: .15, depth: .3, colour: '#8e8c84' },
+    ],
+  };
+};
+const grey9Colour = '#9c9a92';
+const grey9Sources = (w, h) => [way(w), search(`${h} Lorong 21 Geylang`), pano('OXhE51eBCy3ZbCoxdt3SnA', 262, 15, 80), pano('m4CGRqdMRofN0Fz0583zBw', 262, 15, 80)];
+export const nyingmaKathok = {
+  ...row9(0, '#efe9d8'), id: 'nyingma-kathok', buildingIds: ['1223524384'], kind: 'nyingma-kathok',
+  name: 'Nyingma Kathok Buddhist Centre (April 2024 exterior)', address: '9 Lorong 21 Geylang', height: 8.0,
+  evidence: 'April 2024 Street View shows a cream two-storey house at the south end of the terrace, three windows in raised surrounds on its upper floor under a deep cornice, a cream vertical board on its south pilaster reading 宁玛噶陀 NYINGMA KATHOK under an emblem, and a gold dharma wheel between two gold deer on the ledge over its five-foot way; below, a wooden door and a glazed front under a Tibetan valance, with a framed board reading 宁玛噶陀佛学会 NYINGMA KATHOK BUDDHIST CENTRE under a line of Tibetan script. Google Maps lists Nyingma Kathok Buddhist Centre, a Buddhist temple, at 9 Lor 21 Geylang, Singapore 388456; its point lies in the walk-up pair next door, but the address and the signs agree on this house, so it is named (as at Crystal Mansions, open question 32), and its boards are redrawn in original type, the Tibetan script drawn as a plain gold band. L E Fashion, also listed at No. 9, is closed.' + rowNote9,
+  sources: [way('1223524384'), search('Nyingma Kathok Buddhist Centre 9 Lorong 21 Geylang'), pano('O-hHiRaRl86cXbRRvIT4bg', 255, 15, 80), pano('OXhE51eBCy3ZbCoxdt3SnA', 228, 15, 60)],
+  windows: [[1.3, 2.6], [3.2, 4.6], [5.1, 6.6]].map(s => ({ u: onHouse9(0)(s), h: [4.6, 6.15], panes: 2, surround: true })),
+  blocks: [
+    { name: 'deep cornice', u: [0, 6.412], h: [7.3, 7.6], out: .35, depth: .7, colour: '#e6dfcc' },
+    { name: 'first-floor ledge', u: [0, 6.412], h: [3.1, 3.4], out: .2, depth: .4, colour: '#e6dfcc' },
+    { name: 'gold dharma wheel', u: onHouse9(0)([3.25, 3.75]), h: [3.4, 4.25], out: .3, depth: .1, colour: '#d4a838', glow: .15 },
+    ...[[2.6, 3.1], [3.9, 4.4]].map(s => ({ name: 'gold deer', u: onHouse9(0)(s), h: [3.4, 3.85], out: .3, depth: .1, colour: '#d4a838', glow: .15 })),
+    { name: 'Tibetan valance', u: onHouse9(0)([2.3, 6.6]), h: [2.1, 2.45], out: .05, depth: .04, colour: '#b8302a' },
+    { name: 'drainpipe', u: onHouse9(0)([6.65, 6.85]), h: [.1, 7.8], out: .1, depth: .1, colour: '#e8e6e0' },
+  ],
+  // The vertical board on the south pilaster, and the framed board over the door.
+  boards: [{ u: onHouse9(0)([.1, .75]), h: [3.7, 7.2], out: .12 }, { u: onHouse9(0)([3.5, 5.9]), h: [2.55, 3.0], out: -1.55 }],
+  backFittings: [
+    { name: 'wooden door', u: onHouse9(0)([.9, 1.9]), h: [.1, 2.5], colour: '#a8683a' },
+    { name: 'glazed front', u: onHouse9(0)([2.3, 6.6]), h: [.1, 2.1], colour: '#3e4a4c', glow: .08 },
+  ],
+};
+export const no11 = {
+  ...row9(1, grey9Colour), ...grey9(1, [[7.7, 8.96], [9.64, 10.94], [11.6, 12.86]]), id: 'l21-11', buildingIds: ['1223524383'], kind: 'unnamed', unnamed: true,
+  name: 'No. 11 Lorong 21 (April 2024 exterior, occupants not identified)', address: '11 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows a weathered grey two-storey house north of the Nyingma Kathok Buddhist Centre, three windows under louvred vents on its upper floor and a dark parapet band, over an open five-foot way stacked with goods. Google Maps lists Leong Yew Textiles at 11 Lor 21 Geylang, but its point lies in the corner block and no sign for it was photographed, so no name is given.' + rowNote9,
+  sources: grey9Sources('1223524383', 11),
+  backFittings: [{ name: 'open shop with goods', u: [.5, 6.0], h: [.1, 2.6], colour: '#5a5650', glow: .05 }, { name: 'air-conditioner', u: onHouse9(1)([8.0, 8.6]), h: [3.6, 4.1], out: 1.6, colour: '#e8e8e4' }],
+};
+export const no15 = {
+  ...row9(2, grey9Colour), ...grey9(2, [[14.0, 15.34], [15.96, 17.24], [17.96, 19.24]]), id: 'l21-15', buildingIds: ['1223524382'], kind: 'unnamed', unnamed: true,
+  name: 'No. 15 Lorong 21 (April 2024 exterior, occupants not identified)', address: '15 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the second grey two-storey house of the terrace, like No. 11, its five-foot way hidden behind a yellow tarpaulin and a red-and-white festival tent that run on past Nos. 17 and 19 and are not modelled. No business is listed at the address and no sign was photographed.' + rowNote9,
+  sources: grey9Sources('1223524382', 15),
+  backFittings: [{ name: 'roller shutter', u: [.5, 5.9], h: [.1, 2.7], colour: '#9a9c98' }],
+};
+export const no17 = {
+  ...row9(3, grey9Colour), ...grey9(3, [[20.3, 21.6], [22.25, 23.55], [24.2, 25.5]]), id: 'l21-17', buildingIds: ['1223524385'], kind: 'unnamed', unnamed: true,
+  name: 'No. 17 Lorong 21 (April 2024 exterior, occupants not identified)', address: '17 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows the third grey two-storey house of the terrace, a grilled window and a grilled gate in its five-foot way, hung with red festival banners behind the tent, which are not modelled. No business is listed at the address and no sign was photographed.' + rowNote9,
+  sources: grey9Sources('1223524385', 17),
+  backFittings: [
+    { name: 'grilled window', u: [.7, 2.6], h: [.8, 2.3], colour: '#4a5450' },
+    { name: 'grilled gate', u: [3.0, 5.6], h: [.1, 2.4], colour: '#6a7470' },
+  ],
+};
+export const beiChenGong = {
+  ...row9(4, '#ece4cc'), id: 'bei-chen-gong', buildingIds: ['1223524386'], kind: 'bei-chen-gong', height: 8.0,
+  name: 'Bei Chen Gong Association (April 2024 exterior)', address: '19 Lorong 21 Geylang',
+  evidence: 'April 2024 Street View shows a cream two-storey house at the north end of the terrace, three windows under louvred vents on its upper floor, its blank north wall on the open car park beyond; its five-foot way is a temple front, a doorway under a red banner reading 玄天上帝, hung with lanterns lettered 北辰宫, during a festival whose tent, altar and flags stand in the lane and are not modelled. Google Maps lists Bei Chen Gong Association, a religious destination, at 19 Lor 21 Geylang, Singapore 388462, with its point inside this way, so it is named after its lanterns, and the banner and a lantern are redrawn in original type.' + rowNote9,
+  sources: [way('1223524386'), search('Bei Chen Gong Association 19 Lorong 21 Geylang'), pano('m4CGRqdMRofN0Fz0583zBw', 312, 5, 40), pano('pgGtqEQ_mct-AU8DVUWYMA', 263, 10, 80), pano('TpCeu2XK3GzOs0Ju4fwGbA', 210, 10, 60)],
+  windows: [[26.6, 27.9], [28.5, 29.8], [30.5, 31.76]].map(s => ({ u: onHouse9(4)(s), h: [4.6, 6.1], panes: 2, surround: true })),
+  vents: [[26.6, 27.9], [28.5, 29.8], [30.5, 31.76]].map(s => ({ u: onHouse9(4)(s), h: [6.25, 6.6] })),
+  blocks: [
+    { name: 'cornice', u: [0, 6.4], h: [7.4, 7.6], out: .2, depth: .4, colour: '#e2d9bf' },
+    { name: 'first-floor ledge', u: [0, 6.4], h: [3.1, 3.4], out: .15, depth: .3, colour: '#e2d9bf' },
+  ],
+  // The red banner over the doorway, and a lantern lettered with the temple's name.
+  boards: [{ u: onHouse9(4)([27.0, 31.4]), h: [2.65, 3.0], out: -1.55 }, { u: onHouse9(4)([27.2, 27.75]), h: [2.0, 2.6], out: .3 }],
+  backFittings: [
+    { name: 'grilled window', u: onHouse9(4)([26.3, 27.4]), h: [.8, 2.3], colour: '#4a5450' },
+    { name: 'temple doorway', u: onHouse9(4)([28.0, 30.2]), h: [.1, 2.6], colour: '#5a2a24', glow: .12 },
+  ],
+};
+
+export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong];
 export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;
