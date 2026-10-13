@@ -404,5 +404,156 @@ export const sims178 = {
   }],
 };
 
-export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng, sims178];
+// ---------------------------------------------------------------------------------------------
+// East side
+
+// 11-14. Ways 454254164, 454254165, 454254160 and 454254144: the HCSA Community Services compound, from Sims Avenue to
+// Geylang Road, behind a fence along the pavement. One named place over four buildings, each built from its own part:
+// a single-storey hall under a hipped tiled roof at the Sims Avenue corner, behind a screened fence; a long two-storey
+// block with blue louvred bands under a tiled roof, behind a hedge; a single-storey house under a tiled roof by the
+// entrance, whose gateway reads HCSA COMMUNITY SERVICES; and a U-shaped single-storey block under zinc roofs toward
+// Geylang Road. The walls stand behind fences and hedges, where the lane panoramas' depth scores are weak; the long
+// block's upper floor reads about 1 m behind its source edge, and the registered satellite puts the roofs on their
+// source outlines, so every building is laid on its source edges. The fence's corner post at Sims Avenue triangulates
+// 2.7 m in front of the hall's source edge, and the fence is drawn 2.7 m in front of each lane face.
+const fence11 = 2.7, white11 = '#efefea', blue11 = '#3a64a8', zinc11 = '#9ea2a0', tile11 = '#9a4a36';
+// The compound's fence: an open mesh of bars and rails between posts about 2.5 m apart.
+const fenceLine = (u, colour = '#2a2c2c') => {
+  const n = Math.max(1, Math.round((u[1] - u[0]) / 2.5));
+  return [
+    ...grille('fence mesh', u, [0, 2.2], fence11, colour, .5, false),
+    ...Array.from({ length: n + 1 }, (_, i) => {
+      const c = u[0] + (u[1] - u[0]) * i / n;
+      return { name: 'fence post', u: [+Math.max(u[0], c - .05).toFixed(3), +Math.min(u[1], c + .05).toFixed(3)], h: [0, 2.3], out: fence11, depth: .08, colour: '#1e2020' };
+    }),
+  ];
+};
+const screen11 = (u, colour) => ({ name: 'fence screen', u, h: [.05, 2.1], out: fence11 - .05, depth: .04, colour });
+const hedge11 = u => ({ name: 'hedge', u, h: [0, 3.0], out: fence11 - .5, depth: .9, colour: '#4e7a3a' });
+const hcsaNote = ' The four buildings on the east side of Lorong 21, from Sims Avenue to the garden at Geylang Road, stand inside one compound behind a fence along the pavement, its entrance under a gateway reading HCSA COMMUNITY SERVICES. Google Maps lists HCSA Community Services, a non-profit organisation, operating, at 1 Lor 23 Geylang, Singapore 388352, the compound\'s other frontage, with HCSA Highpoint located in it, its point at the long two-storey block; the source map\'s HCSA Community Services area covers all four buildings. So the compound is named after its gateway, which is redrawn in original type, and each building is built from its own part. The walls stand behind fences and hedges, where the April 2024 lane panoramas\' depth scores are weak: the long block\'s upper floor reads about 1 m behind its source edge, and the registered satellite puts the roofs on their source outlines, so every building is laid on its source edges. The fence\'s corner post at Sims Avenue triangulates 2.7 m in front of the hall\'s source edge, and the fence is drawn 2.7 m in front of each lane face.';
+const hcsaSources = [search('HCSA Community Services 1 Lorong 23 Geylang'), search('HCSA Highpoint 1 Lorong 23 Geylang')];
+const hcsaColours = { wall: white11, trim: '#e2e2dc', frame: blue11, glass: '#3e4a52', pier: white11, back: '#d8d8d2', floor: '#a8a296' };
+// The U-shaped block's lane face runs over three collinear source edges (7, 6 and 5, s south from its north end); one
+// elevation is sliced across them.
+const lane144 = [[7, 0, 8.913], [6, 8.913, 16.698], [5, 16.698, 28.956]];
+const wins144 = [[2.2, 3.2], [4.6, 5.6], [10.0, 11.0], [12.4, 13.4], [14.8, 15.8], [17.4, 18.4], [19.8, 20.8], [22.4, 23.4], [24.8, 25.8]];
+const whole144 = {
+  windows: wins144.map(u => ({ u, h: [1.4, 2.6], panes: 2 })),
+  blocks: [
+    { name: 'blue skirting', u: [0, 28.958], h: [.05, .35], out: .02, depth: .04, colour: blue11 },
+    { name: 'blue door', u: [7.2, 8.2], h: [.1, 2.3], out: .02, depth: .04, colour: blue11 },
+    { name: 'zinc eaves', u: [0, 28.958], h: [3.25, 3.45], out: .45, depth: .9, colour: '#8e9290' },
+    ...fenceLine([0, 28.958]),
+    { name: 'green fence screen', u: [20.5, 28.958], h: [.05, 2.1], out: fence11 - .05, depth: .04, colour: '#2e7a68' },
+  ],
+};
+const part144 = ([edge, s0, s1]) => {
+  const keep = ([a, b]) => { const l = Math.max(a, s0), r = Math.min(b, s1); return r - l > .02 ? [+(l - s0).toFixed(3), +(r - s0).toFixed(3)] : null; };
+  const cut = xs => xs.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
+  return { edge, windows: cut(whole144.windows), blocks: cut(whole144.blocks) };
+};
+export const hcsa = {
+  id: 'hcsa-community-services', buildingIds: ['454254164', '454254165', '454254160', '454254144'], kind: 'hcsa-community-services',
+  reviewRoad: 'Lorong 21 Geylang', review: { distance: 9, pitch: 18 },
+  name: 'HCSA Community Services (April 2024 exterior)', address: 'The Lorong 21 face of the HCSA Community Services compound, 1 Lorong 23 Geylang',
+  ceiling: 3.0, fiveFootWay: .3, colours: hcsaColours, height: 9.0,
+  evidence: 'April 2024 Street View shows the east side of Lorong 21 as one fenced compound.' + hcsaNote,
+  sources: [way('454254164'), way('454254165'), way('454254160'), way('454254144'), ...hcsaSources, pano('bMBYcUClHs2tWMv7Zmgawg', 110, 10, 90), pano('02JzN2zcLThkH0ZkrerNlw', 80, 10, 90), pano('m4CGRqdMRofN0Fz0583zBw', 98, 12, 30), pano('O-hHiRaRl86cXbRRvIT4bg', 80, 10, 90)],
+  parts: {
+    // 11. The hall at the Sims Avenue corner (edge 5, u south from Sims Avenue), behind a screened fence that wraps the
+    // corner. Its eaves read at 4.3 m on a blue fascia, and its hipped tiled roof to about 7.3 m.
+    '454254164': {
+      frontEdge: 5, noReview: true, height: 4.3, ceiling: 4.0, roof: { type: 'hip', ridge: 7.3, colour: tile11 },
+      evidence: 'April 2024 Street View shows a single-storey hall at the Lorong 21 corner of Sims Avenue under a hipped tiled roof on a blue fascia, an L in plan, a zinc lean-to under its eaves, behind a black mesh fence screened in grey that wraps the corner, with a meter box on the pavement.' + hcsaNote,
+      sources: [way('454254164'), ...hcsaSources, pano('bMBYcUClHs2tWMv7Zmgawg', 110, 10, 90), pano('bcPQwg7r1EjpaDGpDcWPpw', 150, 10, 90)],
+      blocks: [
+        { name: 'blue fascia', u: [0, 19.797], h: [4.0, 4.3], out: .5, depth: .1, colour: blue11 },
+        { name: 'zinc lean-to', u: [0, 19.797], h: [3.4, 3.6], out: .5, depth: 1.0, colour: zinc11 },
+        ...fenceLine([0, 19.797]), screen11([0, 19.797], '#8a8a84'),
+        { name: 'meter box', u: [11.2, 12.0], h: [0, 1.6], out: fence11 + .3, depth: .3, colour: '#e8e8e2' },
+      ],
+      sides: [{
+        edge: 0, // the Sims Avenue front, behind the same screened fence
+        blocks: [
+          { name: 'blue fascia', u: [0, 59.255], h: [4.0, 4.3], out: .5, depth: .1, colour: blue11 },
+          { name: 'zinc lean-to', u: [20, 59.255], h: [3.4, 3.6], out: .5, depth: 1.0, colour: zinc11 },
+          ...fenceLine([0, 59.255]).map(b => ({ ...b, out: 2.4 })), { ...screen11([0, 59.255], '#8a8a84'), out: 2.35 },
+        ],
+      }],
+    },
+    // 12. The long two-storey block (edge 3, u south from its north end): a white north end block, blue louvred bands on
+    // the upper floor between white louvred clerestories, a white stair pier, and a white south end block, under a
+    // tiled roof, behind a hedge.
+    '454254165': {
+      frontEdge: 3, height: 9.0, ceiling: 4.3, roof: { type: 'hip', ridge: 11.2, colour: tile11 },
+      evidence: 'April 2024 Street View shows a long white two-storey block behind a hedge: a white end block at each end, three storeys high with small windows, and between them, on the upper floor, two long bands of blue louvres over a ledge, under white louvred clerestories and a tiled roof, with small blue square vents and air-conditioners along the ground floor and a white stair pier with a tall window between the bands. Its upper floor reads about 1 m behind its source edge, where four pairs of lane panoramas agree.' + hcsaNote,
+      sources: [way('454254165'), ...hcsaSources, pano('02JzN2zcLThkH0ZkrerNlw', 80, 10, 90), pano('JdEaA4aRTSoZtkCgy0gPBw', 80, 10, 90), pano('Q-Ohd6lHa0_Zuu89WAD58Q', 80, 10, 90)],
+      windows: [
+        ...[[1.0, 1.9], [2.3, 3.2]].map(u => ({ u, h: [5.3, 6.4], panes: 1 })),
+        ...[[50.6, 51.6], [52.2, 53.2]].map(u => ({ u, h: [7.6, 8.6], panes: 2 })),
+        { u: [27.0, 28.3], h: [5.9, 8.0], panes: 1 },
+        ...Array.from({ length: 16 }, (_, i) => ({ u: [+(6.5 + i * 2.5).toFixed(2), +(7.6 + i * 2.5).toFixed(2)], h: [2.6, 3.8], panes: 2 })),
+      ],
+      blocks: [
+        ...[[6.4, 26.4], [29.6, 46.0]].flatMap(u => [
+          { name: 'blue louvre band', u, h: [5.6, 7.0], out: .25, depth: .1, colour: '#4a72b0' },
+          { name: 'ledge', u, h: [5.2, 5.4], out: .35, depth: .7, colour: '#d8d8d2' },
+          { name: 'white louvred clerestory', u, h: [7.4, 9.0], out: .1, depth: .1, colour: '#e4e4de' },
+        ]),
+        { name: 'ground-floor ledge', u: [5.0, 46.0], h: [4.1, 4.3], out: .3, depth: .6, colour: '#d8d8d2' },
+        ...Array.from({ length: 14 }, (_, i) => ({ name: 'blue square vent', u: [+(7.3 + i * 2.8).toFixed(2), +(7.6 + i * 2.8).toFixed(2)], h: [4.5, 4.8], out: .02, depth: .04, colour: blue11 })),
+        ...[[0, 5.0], [46.0, 55.045]].map(u => ({ name: 'end block parapet', u, h: [9.0, 9.5], out: .02, depth: .1, colour: white11 })),
+        ...fenceLine([0, 55.045]), hedge11([5.5, 55.045]), screen11([0, 5.5], '#8a8a84'),
+      ],
+    },
+    // 13. The single-storey house by the entrance (edge 3, u south), under a tiled roof, a vine pergola over its north
+    // end and a garden in front; the gateway over the drive to its south reads HCSA COMMUNITY SERVICES.
+    '454254160': {
+      frontEdge: 3, noReview: true, height: 3.0, ceiling: 2.7, roof: { type: 'hip', ridge: 4.9, colour: tile11 },
+      evidence: 'April 2024 Street View shows a single-storey white house under a tiled roof by the compound\'s entrance, with dark doors and blue-framed windows, a garden of potted plants in front and a vine pergola over its north end, behind an open mesh fence and a pair of blue bins. Over the drive to its south stands a dark grey gateway with a board reading HCSA COMMUNITY SERVICES beside the organisation\'s mark.' + hcsaNote,
+      sources: [way('454254160'), ...hcsaSources, pano('pgGtqEQ_mct-AU8DVUWYMA', 80, 10, 90), pano('m4CGRqdMRofN0Fz0583zBw', 98, 12, 30)],
+      windows: [[9.4, 10.4], [17.4, 18.4]].map(u => ({ u, h: [1.6, 2.3], panes: 2 })),
+      blocks: [
+        ...[[12.2, 13.0], [14.3, 15.4], [20.2, 21.1]].map(u => ({ name: 'dark door', u, h: [.1, 2.3], out: .02, depth: .04, colour: '#2e3236' })),
+        { name: 'vine pergola', u: [.3, 9.0], h: [2.4, 3.0], out: 1.3, depth: 2.4, colour: '#56803e' },
+        { name: 'potted garden', u: [9.5, 21.5], h: [0, .7], out: 1.0, depth: 1.6, colour: '#6a7a4a' },
+        ...fenceLine([0, 22.61]),
+        ...[[17.2, 18.4], [18.6, 19.8]].map(u => ({ name: 'blue bin', u, h: [0, 1.3], out: fence11 + .6, depth: 1.0, colour: '#3a7ac8' })),
+      ],
+      sides: [{
+        edge: 2, // the south wall on the drive, u east from the lane corner: the gateway's posts at its lane end
+        blocks: [
+          ...[[.3, 1.0], [6.3, 7.0]].map(([o0, o1]) => ({ name: 'gateway post', u: [.25, .6], h: [0, 5.2], out: (o0 + o1) / 2, depth: o1 - o0, colour: '#4a4c4e' })),
+          { name: 'gateway beam', u: [.25, .6], h: [5.0, 5.3], out: 3.65, depth: 6.7, colour: '#4a4c4e' },
+        ],
+        // The gateway's board across the drive, facing the lane.
+        blades: [{ u: .42, out: [.4, 6.9], h: [4.3, 5.0] }],
+      }],
+    },
+    // 14. The U-shaped block toward Geylang Road: its west arm along the lane (edges 7, 6 and 5, one elevation sliced
+    // across them), white walls with blue-framed windows and skirting under zinc roofs; its gable faces the drive.
+    '454254144': {
+      frontEdge: 5, noReview: true, height: 3.4, ceiling: 3.1, roof: { type: 'flat', colour: zinc11 },
+      evidence: 'April 2024 Street View shows a single-storey white block under zinc roofs, its gable on the drive, with blue-framed windows, a blue door and blue skirting along the lane, behind an open mesh fence screened in green at its south end; the satellite shows it as three arms round a courtyard and a garden at the Geylang Road corner. Its lane wall was read on its source edges, where the gable\'s apex falls on the arm\'s centre line.' + hcsaNote,
+      sources: [way('454254144'), ...hcsaSources, pano('O-hHiRaRl86cXbRRvIT4bg', 80, 10, 90), pano('8yiH4E0hcM3Bdr1egBGv2Q', 80, 10, 90), pano('-BDV5dezAGqUQQ_NAmVgew', 80, 10, 90)],
+      ...(({ windows, blocks }) => ({ windows, blocks }))(part144(lane144[2])),
+      // Zinc roofs over the three arms (outlines in edge 5's frame: u south, out towards the lane).
+      upper: [
+        { name: 'west arm roof', outline: [[-16.6, 0], [12.2, 0], [12.1, -11.7], [-16.6, -11.7]], from: 3.4, to: 3.45, ridge: 6.3, colour: '#e8e8e2', roof: zinc11 },
+        { name: 'north arm roof', outline: [[-16.6, -11.7], [-7.7, -11.7], [-7.7, -57.6], [-16.6, -57.6]], from: 3.4, to: 3.45, ridge: 6.0, colour: '#e8e8e2', roof: zinc11 },
+        { name: 'south arm roof', outline: [[21.8, -7.8], [30.2, -7.8], [30.2, -64.0], [21.8, -64.0]], from: 3.4, to: 3.45, ridge: 6.0, colour: '#e8e8e2', roof: zinc11 },
+      ],
+      sides: [
+        part144(lane144[0]), part144(lane144[1]),
+        {
+          edge: 3, // the south arm's west end, set back behind the garden at Geylang Road
+          windows: [[3.0, 4.0], [6.0, 7.0], [10.0, 11.0], [13.0, 14.0]].map(u => ({ u, h: [1.4, 2.6], panes: 2 })),
+          blocks: [{ name: 'blue skirting', u: [0, 17.98], h: [.05, .35], out: .02, depth: .04, colour: blue11 }],
+        },
+      ],
+    },
+  },
+};
+
+export const lorong21 = [chengYi, no5, no7, nyingmaKathok, no11, no15, no17, beiChenGong, tanSerSeng, sims178, hcsa];
 export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;

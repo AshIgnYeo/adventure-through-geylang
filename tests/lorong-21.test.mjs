@@ -40,33 +40,37 @@ test('Lorong 21 is walkable from the Geylang Road centreline to the Sims Avenue 
 });
 
 test('the Lorong 21 exteriors fit their outlines, face the lane and keep their review starts clear', () => {
-  for (const place of lorong21) {
-    const poly = outline(place.buildingIds[0]), frame = lorong21Frame(poly, place);
-    assertFittings(frame, poly, lorong21Layout(place, frame.width).boxes);
-    for (const side of lorong21Sides(place, poly)) assertFittings(side.frame, poly, side.boxes);
-    assertReviews(frame, lorong21Reviews(place, frame));
-    assert.match(place.evidence, /(April|June) 2024/);
+  // Each building, with a place over several buildings built from its parts.
+  const houses = lorong21.flatMap(place => place.buildingIds.map(id => ({ id, place, spec: place.parts ? { ...place, ...place.parts[id] } : place })));
+  for (const { id, place, spec } of houses) {
+    const poly = outline(id), frame = lorong21Frame(poly, spec);
+    assertFittings(frame, poly, lorong21Layout(spec, frame.width).boxes);
+    for (const side of lorong21Sides(spec, poly)) assertFittings(side.frame, poly, side.boxes);
+    if (!spec.noReview) assertReviews(frame, lorong21Reviews(spec, frame));
+    assert.match(spec.evidence, /(April|June) 2024/);
     // Sources cite the source way, or for an authored footprint one of the ways it replaces.
-    const ways = [place.buildingIds[0], ...(building(place.buildingIds[0]).replaces ?? [])];
-    assert.ok(place.sources.some(s => ways.some(w => s.includes(`way/${w}`))), place.id);
+    const ways = [id, ...(building(id).replaces ?? [])];
+    assert.ok(spec.sources.some(s => ways.some(w => s.includes(`way/${w}`))), id);
     // Every front looks across the lane: its outward normal points at the nearest point of the lane's centreline.
     const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
-    assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
+    assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, id);
     // Street-level pieces stay clear of the modelled carriageways, or within 0.25 m of a face flagged heldFlat.
-    const faces = [{ frame, blocks: place.blocks ?? [], heldFlat: place.heldFlat }, ...lorong21Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [], heldFlat: place.sides[i].heldFlat ?? place.heldFlat }))];
+    const faces = [{ frame, blocks: spec.blocks ?? [], heldFlat: spec.heldFlat }, ...lorong21Sides(spec, poly).map((side, i) => ({ frame: side.frame, blocks: spec.sides[i].blocks ?? [], heldFlat: spec.sides[i].heldFlat ?? spec.heldFlat }))];
     for (const { frame: f, blocks, heldFlat } of faces) {
       const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
       if (heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
       assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
     }
     // Upper volumes stand inside the footprint.
-    for (const up of lorong21Upper(place, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), place.id);
+    for (const up of lorong21Upper(spec, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), id);
     if (place.unnamed) {
-      assert.equal(landmarkFor(place.buildingIds[0]), undefined);
-      assert.equal(place.boards, undefined); assert.equal(place.blades, undefined);
-      for (const side of place.sides ?? []) { assert.equal(side.boards, undefined); assert.equal(side.blades, undefined); }
-    } else assert.equal(landmarkFor(place.buildingIds[0]).id, place.id);
+      assert.equal(landmarkFor(id), undefined);
+      assert.equal(spec.boards, undefined); assert.equal(spec.blades, undefined);
+      for (const side of spec.sides ?? []) { assert.equal(side.boards, undefined); assert.equal(side.blades, undefined); }
+    } else assert.equal(landmarkFor(id).id, place.id);
   }
+  // One review start per place.
+  for (const place of lorong21.filter(p => p.parts)) assert.equal(place.buildingIds.filter(id => !place.parts[id].noReview).length, 1, place.id);
 });
 
 test('Cheng Yi Coffee Shop is named on the west corner, its listing point inside the outline, with the glass block raised over its part', () => {
@@ -82,4 +86,17 @@ test('Cheng Yi Coffee Shop is named on the west corner, its listing point inside
   const gr = place.sides.find(s => s.edge === 9);
   assert.equal(gr.boards.length, 7);
   for (const b of gr.boards) assert.ok(b.u[0] >= 0 && b.u[1] <= 26.344, `${b.u}`);
+});
+
+test('HCSA Community Services is named over the four buildings of its compound, its gateway on the drive', () => {
+  const place = lorong21.find(p => p.id === 'hcsa-community-services');
+  for (const id of ['454254164', '454254165', '454254160', '454254144']) assert.equal(landmarkFor(id).id, place.id);
+  // HCSA Highpoint, located in the compound, has its listing point at the long two-storey block.
+  const p = project([103.8802537, 1.3139771], map.origin), o = outline('454254165');
+  assert.ok(pointInPolygon(p, o) || o.some((a, i) => nearestOnSegment(p, a, o[(i + 1) % o.length]).distance < .2));
+  // The gateway's board spans the drive between the house by the entrance and the U-shaped block.
+  const gate = place.parts['454254160'].sides.find(s => s.edge === 2);
+  assert.equal(gate.blades.length, 1);
+  const f = lorong21Frame(outline('454254160'), { frontEdge: 2 }), end = f.point(gate.blades[0].u, gate.blades[0].out[1]);
+  assert.ok(nearestOnSegment(end, ...[outline('454254144')[8], outline('454254144')[9]]).distance < 1.5);
 });

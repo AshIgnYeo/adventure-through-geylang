@@ -31,10 +31,10 @@ Research and implementation from **13 October 2026**, under open question 47. Th
 | 8 | West | 1223524386 | No. 19, Bei Chen Gong Association | Done; named; question 49 |
 | 9 | West | 454254329 | 29 Lorong Bachok, the Bachok corner: Tan Ser Seng Herbal Soup | Done; named; question 49 |
 | 10 | West | 454254330 | No. 178 Sims Avenue, the west corner | Done; unnamed; question 49 |
-| 11 | East | 454254164 | The Sims Avenue east corner, HCSA Community Services | |
-| 12 | East | 454254165 | HCSA Community Services | |
-| 13 | East | 454254160 | HCSA Community Services | |
-| 14 | East | 454254144 | HCSA Community Services, by Geylang Road | |
+| 11 | East | 454254164 | The Sims Avenue east corner, HCSA Community Services | Done; named |
+| 12 | East | 454254165 | HCSA Community Services | Done; named |
+| 13 | East | 454254160 | HCSA Community Services, with its gateway | Done; named |
+| 14 | East | 454254144 | HCSA Community Services, by Geylang Road | Done; named |
 | 15–22 | Sims Avenue | 454254331 to 454254338 | Nos. 150–176, west from the corner | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
@@ -218,3 +218,48 @@ A back lane separates Tan Ser Seng from a white two-storey corner house of **192
 Use `?review=sims-178`.
 
 **West side complete.** Every building from Nos. 335–351 Geylang Road to No. 178 Sims Avenue now has its Lorong 21 front.
+
+## East side
+
+### 11–14. Ways 454254164, 454254165, 454254160 and 454254144: HCSA Community Services
+
+The whole east side, from Sims Avenue to the garden at Geylang Road, is one compound behind a fence along the pavement. Its entrance is under a dark grey gateway whose board reads **HCSA COMMUNITY SERVICES** beside the organisation's mark. From Sims Avenue south:
+
+| Stop | Way | Building |
+| --- | --- | --- |
+| 11 | 454254164 | A single-storey hall at the Sims Avenue corner, an L in plan. A hipped tiled roof on a blue fascia, a zinc lean-to under the eaves. Behind a black mesh fence screened in grey, which wraps the corner. |
+| 12 | 454254165 | A long white two-storey block behind a hedge. A three-storey white end block at each end. Between them on the upper floor, two long bands of blue louvres over a ledge, under white louvred clerestories and a tiled roof. Small blue square vents and air-conditioners along the ground floor, and a white stair pier with a tall window between the bands. |
+| 13 | 454254160 | A single-storey white house under a tiled roof by the entrance: dark doors, blue-framed windows, a garden of potted plants, and a vine pergola over its north end. Two blue bins at the fence. The gateway stands over the drive to its south. |
+| 14 | 454254144 | A single-storey white block under zinc roofs, its gable on the drive. Blue-framed windows, a blue door and blue skirting along the lane, behind an open mesh fence screened in green at its south end. On the satellite: three arms round a courtyard, and a garden at the Geylang Road corner. |
+
+**Measurement:**
+- **Depth from the panoramas:** the walls stand behind fences and hedges, where the April 2024 lane panoramas' depth scores are weak.
+  - At window height the scores stay under 0.06.
+  - Above the fence the hall's scores (0.32–0.38) peak on the fence top and the eaves together, about 3 m in front.
+  - Only the long block's upper floor reads clearly: about **1 m behind** its source edge, where four pairs agree (0.36–0.51).
+- **Satellite:** with the registration used elsewhere in the study, it puts the four roofs on their source outlines, within about 1–2 m. On the west side it agrees with the panoramas, for example on Tan Ser Seng's face 3 m forward.
+- **The fence:** its corner post at Sims Avenue triangulates from `7L7g…`'s bearing and the post foot's elevation at (305.0, −157.25). That is **2.7 m in front of** the hall's source edge on the lane, and 2.4 m in front on Sims Avenue.
+- **The gateway:** bearings from `m4CG…` and `OXhE…` put it about 0.3 m east of the house's lane corner, spanning the 7 m drive.
+- **The gable on the drive:** read on the U-shaped block's source plane from `O-hH…`, its apex falls where the arm's centre line projects. So the block's lane wall stands on the source line.
+- **Heights:**
+  - the hall: eaves 4.3 m, roof to about 7.3 m;
+  - the long block: ground-floor ledge 4.1–4.3 m, louvre bands 5.6–7.0 m, clerestories 7.4–9.0 m, end blocks to 9.5 m;
+  - the house: eaves 3.0 m;
+  - the U-shaped block: eaves 3.4 m, the gable to 6.3 m.
+
+**Layout:**
+- **Footprints:** every building is laid on its source edges, which the satellite supports. The long block's 1 m is recorded but not acted on.
+- **One place over four buildings:** each building is built from its own part, with one review start at the long block.
+- **The U-shaped block's lane face** runs over three collinear source edges (7, 6 and 5). One elevation is laid along them and sliced across them, as Sims Point's was on Lorong 19. Its three arms carry hipped zinc roofs as raised volumes. The photographed gable on the drive is drawn as a hip.
+- **The fence** is drawn 2.7 m in front of each lane face as open mesh between posts: screened in grey at the hall, hedged at the long block, and screened in green at the south end.
+- **The gateway** is drawn on the house's south wall: two posts and a beam across the drive, with its board as a double-faced sign facing the lane.
+- **Not modelled:** the courtyard building inside the U and the garden's trees.
+
+**Naming:** Google Maps lists **HCSA Community Services**, a non-profit organisation, operating, at 1 Lor 23 Geylang, Singapore 388352, the compound's other frontage. HCSA Highpoint is listed as located in it, with its point at the long block. The source map's HCSA Community Services area covers all four buildings.
+- So the compound is named after its gateway, which is redrawn in original type, its mark drawn as plain lettering.
+- Dr Mocc, a shoe store listed in HCSA Community Services, has no photographed sign.
+- The other plaque on the long block's south end reads CAMERA IN OPERATION.
+
+Use `?review=hcsa-community-services`.
+
+**East side complete.** Every building from Sims Avenue to Geylang Road on the east side now has its Lorong 21 front. The garden at the Geylang Road corner has no footprint.

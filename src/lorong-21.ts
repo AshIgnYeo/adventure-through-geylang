@@ -56,6 +56,15 @@ const draws: Draws = {
       text(c, 'SINCE 1946', w * .5, h * .81, h * .07, '#f6e6e2', '700', sans, w * .32);
     }],
   },
+  // The gateway's board: the organisation's mark and HCSA COMMUNITY SERVICES in dark capitals on cream.
+  'hcsa-community-services@2': {
+    blades: [(c, w, h) => {
+      c.fillStyle = '#ece4d0'; c.fillRect(0, 0, w, h); c.strokeStyle = '#3a3c3e'; c.lineWidth = h * .06; c.strokeRect(0, 0, w, h);
+      text(c, 'HCSA', w * .1, h * .42, h * .42, '#c8302a', '900', sans, w * .14);
+      text(c, 'COMMUNITY SERVICES', w * .1, h * .76, h * .12, '#3a3c3e', '700', sans, w * .15);
+      text(c, 'HCSA COMMUNITY SERVICES', w * .6, h * .55, h * .5, '#3a2c2a', '800', sans, w * .74);
+    }],
+  },
 };
 
 /** Lorong 21 between Geylang Road and Sims Avenue, with the Sims Avenue houses back to Lorong 19; named only where a
