@@ -1,10 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { project, studyArea } from '../src/geo.mjs';
-import { sourceMap } from './helpers.mjs';
+import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
+import { lorong21, lorong21Frame, lorong21Layout, lorong21Reviews, lorong21Sides, lorong21Upper } from '../src/lorong-21-layout.mjs';
+import { landmarkFor } from '../src/landmarks.mjs';
+import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
 const corridor = name => sourceMap.corridors.find(c => c.name === name);
 const lane = corridor('Lorong 21 Geylang');
+const lanePath = lane.path.map(p => project(p, sourceMap.origin)), laneSegments = lanePath.slice(1).map((b, i) => [lanePath[i], b]);
 // Every metre along a path keeps the 3 m walking margin.
 const walkable = (path, inStudy) => {
   for (let i = 1; i < path.length; i++) {
@@ -34,4 +37,49 @@ test('Lorong 21 is walkable from the Geylang Road centreline to the Sims Avenue 
   // The backs of the blocks either side stay outside: between Lorong 19 and Lorong 21 (behind Bougainvilla, and the
   // back lane between the Lorong Bachok and Sims Avenue rows), and the HCSA compound east of the lane.
   for (const p of [[265, -40], [270, -125], [350, -60], [360, -120]]) assert.equal(inStudy(p, 0), false, `${p}`);
+});
+
+test('the Lorong 21 exteriors fit their outlines, face the lane and keep their review starts clear', () => {
+  for (const place of lorong21) {
+    const poly = outline(place.buildingIds[0]), frame = lorong21Frame(poly, place);
+    assertFittings(frame, poly, lorong21Layout(place, frame.width).boxes);
+    for (const side of lorong21Sides(place, poly)) assertFittings(side.frame, poly, side.boxes);
+    assertReviews(frame, lorong21Reviews(place, frame));
+    assert.match(place.evidence, /(April|June) 2024/);
+    // Sources cite the source way, or for an authored footprint one of the ways it replaces.
+    const ways = [place.buildingIds[0], ...(building(place.buildingIds[0]).replaces ?? [])];
+    assert.ok(place.sources.some(s => ways.some(w => s.includes(`way/${w}`))), place.id);
+    // Every front looks across the lane: its outward normal points at the nearest point of the lane's centreline.
+    const centre = frame.point(frame.width / 2, 0), lanePoint = laneSegments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
+    assert.ok((lanePoint[0] - centre[0]) * frame.nx + (lanePoint[1] - centre[1]) * frame.nz > 0, place.id);
+    // Street-level pieces stay clear of the modelled carriageways, or within 0.25 m of a face flagged heldFlat.
+    const faces = [{ frame, blocks: place.blocks ?? [], heldFlat: place.heldFlat }, ...lorong21Sides(place, poly).map((side, i) => ({ frame: side.frame, blocks: place.sides[i].blocks ?? [], heldFlat: place.sides[i].heldFlat ?? place.heldFlat }))];
+    for (const { frame: f, blocks, heldFlat } of faces) {
+      const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
+      if (heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+      assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
+    }
+    // Upper volumes stand inside the footprint.
+    for (const up of lorong21Upper(place, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), place.id);
+    if (place.unnamed) {
+      assert.equal(landmarkFor(place.buildingIds[0]), undefined);
+      assert.equal(place.boards, undefined); assert.equal(place.blades, undefined);
+      for (const side of place.sides ?? []) { assert.equal(side.boards, undefined); assert.equal(side.blades, undefined); }
+    } else assert.equal(landmarkFor(place.buildingIds[0]).id, place.id);
+  }
+});
+
+test('Cheng Yi Coffee Shop is named on the west corner, its listing point inside the outline, with the glass block raised over its part', () => {
+  const place = lorong21.find(p => p.id === 'cheng-yi');
+  assert.equal(landmarkFor('454254167').id, place.id);
+  assert.equal(pointInPolygon(project([103.8800790, 1.3129369], map.origin), outline('454254167')), true);
+  // The lane face runs north from the Geylang Road corner; the walk-up stands 14.3 m and the glass block 18.64 m.
+  const frame = lorong21Frame(outline('454254167'), place);
+  assert.ok(frame.dz < -.95 && Math.abs(frame.width - 21.863) < .01);
+  assert.equal(place.height, 14.3);
+  assert.deepEqual([place.upper[0].from, place.upper[0].to], [14.3, 18.64]);
+  // Its name board and six dish boards hang on the Geylang Road front, within it.
+  const gr = place.sides.find(s => s.edge === 9);
+  assert.equal(gr.boards.length, 7);
+  for (const b of gr.boards) assert.ok(b.u[0] >= 0 && b.u[1] <= 26.344, `${b.u}`);
 });

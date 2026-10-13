@@ -6,7 +6,20 @@ Started: 10 October 2026.
 
 ## Open
 
-None at present.
+48. **Lorong 21 west corner (way 454254167): split the outline into its two buildings and move each onto its photographed walls?**
+    - **Evidence:** measured during the Lorong 21 walk ([Lorong 21 brief](lorong-21-brief.md), stop 1). The source outline covers two buildings.
+
+      | Building | Photographed against the source outline |
+      | --- | --- |
+      | The walk-up at the corner (Cheng Yi Coffee Shop) | Lane face 3.25 m behind (west of) the source edge, from 2.67 m north of the source corner to the edge's north end. Geylang Road front 3.0 m behind (north of) its source edge. |
+      | The glass block to its west | Geylang Road front 3.6 m behind its source edge. It runs from No. 325–333's east wall, about 8.2 m west of the source corner, to 21.3 m along: 29.5 m against 26.4 m. |
+
+    - **The strip between:** the walk-up's source lines follow its awnings on the lane and a single-storey extension of shops on Geylang Road. The model now carries both buildings' faces on the source lines, so they stand about 3 m in front of the real walls. The map also leaves a 6.5 m gap between this outline and No. 325–333's block, which the glass block fills.
+    - **Recommendation:** yes. Author two footprints:
+      - **The glass block:** its front 3.6 m back, from No. 325–333's authored east wall to 21.3 m along, back to the source rear line.
+      - **The walk-up:** its lane face 3.25 m back and its Geylang Road front 3.0 m back, from the glass block's east wall to the corner, with its north end and rear kept.
+      - **The extension:** in front of the walk-up on Geylang Road, kept as a single-storey part, as the extension at No. 323 on Lorong 19 is.
+    - **Unlocks:** both buildings on their true walls, the coffeeshop's awnings at their photographed depth, and the gap on Geylang Road closed.
 
 ## Settled
 

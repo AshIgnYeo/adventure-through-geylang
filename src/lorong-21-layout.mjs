@@ -1,0 +1,143 @@
+// Lorong 21 between Geylang Road and Sims Avenue (open question 47), built one building at a time as Lorong 19 was:
+// north up the west side, then south down the east side, then west along Sims Avenue to Lorong 19. Each elevation is
+// read on the plane where the panoramas agree, and laid on its source edge, which is kept. Named only where a listing
+// and a photographed sign agree. See docs/lorong-21-brief.md.
+import { pano, way, search, lay, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
+
+/** A breeze-block screen: a shadowed field crossed by light bars, about 0.4 m by 0.33 m a block. */
+const breeze = (u, h, out = .03, colour = '#d8d6cf') => {
+  const [l, r] = u, [b, t] = h, nx = Math.max(1, Math.round((r - l) / .4)), ny = Math.max(1, Math.round((t - b) / .33));
+  return [
+    { name: 'breeze-block screen', u, h, out: out - .02, depth: .02, colour: '#6d6e6a' },
+    ...Array.from({ length: nx + 1 }, (_, i) => ({ name: 'breeze-block web', u: [+(l + (r - l) * i / nx - .04).toFixed(3), +(l + (r - l) * i / nx + .04).toFixed(3)].map(v => Math.min(r, Math.max(l, v))), h, out, depth: .06, colour })),
+    ...Array.from({ length: ny + 1 }, (_, j) => ({ name: 'breeze-block web', u, h: [+(b + (t - b) * j / ny - .04).toFixed(3), +(b + (t - b) * j / ny + .04).toFixed(3)].map(v => Math.min(t, Math.max(b, v))), out, depth: .06, colour })),
+  ];
+};
+
+// ---------------------------------------------------------------------------------------------
+// 1. Way 454254167, Nos. 335-351 Geylang Road, the Lorong 21 west corner: Cheng Yi Coffee Shop. One source outline
+// over two buildings: a white four-storey walk-up of breeze-block screens and balconies at the corner, with Cheng Yi's
+// coffeeshop under maroon awnings, and to its west a five-storey glass block of coloured fins standing forward on
+// Geylang Road. The walk-up's lane face (edge 8, u north from the corner) is read where three April 2024 lane
+// panoramas agree, 3.25 m behind the source edge, from 2.67 m north of the source corner to its north end; its Geylang
+// Road front (edge 9, u east to the corner) 3.0 m behind its source edge, from 4.1 m west of it to the corner; and the
+// glass front (edge 11, u east) 3.6 m behind its source edge, from 8.2 m west of the source corner to 21.3 m along.
+// Each face is laid proportionally on its source edge. The lane and Geylang Road drives disagree on the heights by
+// about 11%; as at No. 323 on Lorong 19, the mean is used (lane readings x0.947, Geylang Road readings x1.059).
+const W8 = 21.862, at8 = s => lay(2.67, W8 / 18.63)(s).map(v => Math.min(W8, Math.max(0, v)));
+const W9 = 26.343, at9 = s => lay(-4.1, W9 / 27.6)(s).map(v => Math.min(W9, Math.max(0, v)));
+const W11 = 26.41, at11 = s => lay(-8.2, W11 / 29.5)(s).map(v => Math.min(W11, Math.max(0, v)));
+const white167 = '#e6e4de', grey167 = '#55585a', frame167 = '#2e3133';
+const rows167 = [[5.3, 6.69], [8.58, 9.94], [11.93, 13.26]];
+// The recessed window panels on each upper floor of the lane face, with a hood over and a ledge under each.
+const panels167 = [[5.1, 7.2], [8.36, 10.47], [11.65, 13.92]].flatMap(([b, t]) => [
+  { name: 'recessed window panel', u: at8([5.67, 13.9]), h: [b, t], out: .01, depth: .02, colour: '#d6d4cd' },
+  { name: 'panel hood', u: at8([5.6, 13.97]), h: [t - .12, t], out: .15, depth: .3, colour: white167 },
+  { name: 'panel ledge', u: at8([5.6, 13.97]), h: [b, b + .12], out: .15, depth: .3, colour: white167 },
+]);
+// The glass block's curtain wall: coloured fins about 0.85 m apart over grey glass, between dark floor lines.
+const finColours167 = ['#e8e6df', '#8a8a68', '#b8b2a2', '#6a6656', '#e8e6df', '#9a8e74'];
+const fins167 = Array.from({ length: 30 }, (_, i) => {
+  const c = .6 + i * .85, w = [.1, .16, .12, .18][i % 4];
+  return { name: 'curtain-wall fin', u: [+c.toFixed(2), +(c + w).toFixed(2)], h: [3.76, 18.32], out: .1, depth: .12, colour: finColours167[i % finColours167.length] };
+});
+export const chengYi = {
+  id: 'cheng-yi', buildingIds: ['454254167'], kind: 'cheng-yi', frontEdge: 8, reviewRoad: 'Lorong 21 Geylang', review: { distance: 6, pitch: 24 },
+  name: 'Cheng Yi Coffee Shop (April and June 2024 exteriors)', address: '351 Geylang Road (the Lorong 21 west corner), with Nos. 335-349 to its west',
+  height: 14.3, ceiling: 3.9, fiveFootWay: 2.2, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'April and June 2024 Street View show two buildings on this source outline at the Lorong 21 west corner of Geylang Road. At the corner, a white four-storey walk-up: on Lorong 21, a recessed panel of windows and louvred vents on each upper floor, a breeze-block screen at its north end and a projecting window bay beyond, over a coffeeshop under maroon awnings; on Geylang Road, balconies, grilled windows and breeze-block columns over a single-storey extension of shops under a zinc lean-to, with a white I-TEC SUPERMART board and a red 5G board, and an overhead bridge landing in front of it. At the corner hang six vertical boards (煮炒, 炖汤, 杂菜饭, 田鸡粥, 肉骨茶, 海鲜烧烤 BBQ) over yellow lettering reading CHENG YI COFFEE SHOP. To its west, standing forward on Geylang Road, is a five-storey glass block of grey glass and coloured fins over a five-foot way on white columns. Google Maps lists Cheng Yi Coffee Shop, a seafood restaurant open until 1 am, at 351 Geylang Road, Singapore 389372, with its point in this way, so the block is named after it and its boards are redrawn in original type, the Chinese characters on its name board, which could not be read, left out; no claim is made about the other premises or the glass block. I-Tec Supermart (347) and the Geylang coffee shop (345) are listed as closed, so their boards are blank. The walk-up\'s lane face triangulates 3.25 m behind the source edge (three April 2024 lane panoramas agree) and runs from 2.67 m north of the source corner to the edge\'s north end; its Geylang Road front stands 3.0 m behind its source edge and the glass front 3.6 m behind its own (three June 2024 Geylang Road pairs each), and the glass block\'s west wall meets No. 325-333\'s block about 8.2 m west of this outline. The satellite agrees on the Geylang Road fronts. The strip between the walk-up and the source lines holds the coffeeshop\'s awnings and the single-storey extension. Each face is laid proportionally on its source edge, pending open question 48. The lane and Geylang Road drives disagree on the heights by about 11%, so, as at No. 323 on Lorong 19, the mean is used: the walk-up\'s parapet at 14.3 m and the glass block\'s top at 18.6 m. The walk-up\'s north wall on the side lane was read only obliquely and its fittings are placed by estimate.',
+  sources: [way('454254167'), search('Cheng Yi Coffee Shop 351 Geylang Road'), pano('RG105fb5zCOqHMW_Jc3YSQ', 250, 15, 90), pano('BBKtpuwk3f2y1WLGHHECJQ', 230, 15, 90), pano('hWp4rWDnHe0RwOI-Bg_jlw', 215, 15, 90), pano('J9oClFBNKf4zlsawptcpqw', 330, 10, 90), pano('vE6QsnnDx9FCAdmLUlUabg', 352, 15, 100), pano('D065AKncXwLwyIGAKe_whQ', 5, 25, 100)],
+  colours: { wall: white167, trim: '#d0cec7', frame: '#3a3c3c', glass: '#4c585c', pier: '#efeee9', back: '#4a4440', floor: '#a8a296' },
+  windows: [
+    ...rows167.flatMap(h => [{ u: at8([5.9, 7.7]), h, panes: 3 }, { u: at8([11.78, 13.67]), h, panes: 3 }]),
+    // The projecting window bay at the north end.
+    ...rows167.map(h => ({ u: at8([19.15, 20.85]), h, panes: 3, out: .38 })),
+  ],
+  vents: [[6.06, 6.53], [9.47, 9.94], [12.88, 13.45]].map(h => ({ u: at8([9.33, 10.44]), h })),
+  blocks: [
+    ...panels167,
+    ...[[3.88, 7.0], [7.39, 10.23], [11.36, 13.64]].flatMap(h => breeze(at8([14.4, 18.8]), h)),
+    ...rows167.map(([b, t]) => ({ name: 'projecting window frame', u: at8([19.0, 21.0]), h: [b - .3, t + .3], out: .2, depth: .4, colour: white167 })),
+    { name: 'parapet coping', u: [0, W8], h: [14.15, 14.3], out: .08, depth: .16, colour: '#d0cec7' },
+    { name: 'maroon awning', u: [.2, 21.6], h: [3.03, 3.85], out: .55, depth: 1.1, colour: '#8a2e32' },
+    ...[[9.0, 9.3], [14.0, 14.3]].map(s => ({ name: 'blank red hanging board', u: at8(s), h: [1.9, 2.7], out: .05, depth: .03, colour: '#c8302a' })),
+  ],
+  piers: [[2.67, 3.1], [4.0, 4.4], [9.1, 9.5], [14.1, 14.5], [18.9, 19.3], [21.0, 21.3]].map(at8),
+  backFittings: [
+    { name: 'coffeeshop with tables', u: at8([3.1, 14.1]), h: [.1, 3.5], colour: '#5a4a40', glow: .1 },
+    { name: 'roller shutter', u: at8([15.9, 18.8]), h: [.1, 3.0], colour: '#a7a9a6' },
+    { name: 'dark doorway', u: at8([19.3, 21.0]), h: [.1, 2.6], colour: '#2e2e2c' },
+  ],
+  // The glass block above the walk-up's parapet, over its part of the outline (outline in this front's frame: the
+  // glass front's two ends, then back to the outline's west rear corner's depth).
+  upper: [{ name: 'glass block', outline: [[-4.228, -52.764], [-4.289, -26.353], [12.44, -26.347], [12.5, -52.758]], from: 14.3, to: 18.64, colour: grey167, roof: '#8f8f8a' }],
+  sides: [{
+    edge: 9, // the walk-up's Geylang Road front, u east from the step at the glass block to the corner
+    windows: [
+      ...[[-4.0, -1.6], [.5, 3.0]].flatMap(s => [
+        { u: at9(s), h: [11.4, 13.5], panes: 3 }, { u: at9(s), h: [7.3, 9.53], panes: 3 }, { u: at9(s), h: [4.5, 6.35], panes: 4 },
+      ]),
+      { u: at9([8.4, 10.4]), h: [12.7, 13.66], panes: 4 },
+      ...[[11.38, 13.66], [7.94, 10.48], [4.77, 6.35]].map(h => ({ u: at9([10.4, 12.9]), h, panes: 3 })),
+      ...[[12.2, 13.6], [8.74, 9.9], [4.77, 6.88]].map(h => ({ u: at9([15.1, 17.0]), h, panes: 2 })),
+      ...[[12.2, 13.6], [8.74, 9.9]].map(h => ({ u: at9([22.0, 23.3]), h, panes: 2 })),
+    ],
+    blocks: [
+      ...[[-4.0, -1.6], [.5, 3.0], [15.1, 17.0], [22.0, 23.5]].flatMap(s => [
+        { name: 'balcony railing', u: at9(s), h: [10.7, 11.75], out: .1, depth: .06, colour: '#d8d8d4' },
+        { name: 'balcony slab', u: at9(s), h: [10.55, 10.7], out: .35, depth: .7, colour: white167 },
+        { name: 'balcony railing', u: at9(s), h: [7.3, 8.05], out: .1, depth: .06, colour: '#d8d8d4' },
+      ]),
+      ...[[-4.0, -1.6], [.5, 3.0]].map(s => ({ name: 'zinc window awning', u: at9(s), h: [6.5, 6.8], out: .3, depth: .6, colour: '#b9bdb8' })),
+      ...breeze(at9([3.1, 4.0]), [4.24, 13.24]),
+      ...breeze(at9([13.0, 14.9]), [4.24, 13.24]),
+      { name: 'parapet coping', u: [0, W9], h: [14.15, 14.3], out: .08, depth: .16, colour: '#d0cec7' },
+      // The single-storey extension of shops under a zinc lean-to, the overhead bridge's landing in front of it.
+      { name: 'zinc lean-to', u: at9([-4.1, 13.0]), h: [3.96, 4.24], out: .5, depth: 1.0, colour: '#9a9c98' },
+      { name: 'shopfronts', u: at9([-4.1, 13.0]), h: [.1, 1.9], out: .02, depth: .04, colour: '#3a4446', glow: .06 },
+      { name: 'blank white I-TEC board', u: at9([-4.1, -2.1]), h: [1.94, 3.97], out: .05, depth: .04, colour: '#f2f2ee' },
+      { name: 'blank red board', u: at9([-2.1, 5.0]), h: [1.9, 3.7], out: .05, depth: .04, colour: '#b8243a' },
+      { name: 'blank supermarket board', u: at9([8.0, 13.0]), h: [1.69, 2.12], out: .05, depth: .04, colour: '#e8e2cc' },
+      { name: 'coffeeshop', u: at9([14.0, 23.5]), h: [.1, 1.9], out: .02, depth: .04, colour: '#5a4a40', glow: .1 },
+      { name: 'maroon awning', u: at9([14.0, 23.5]), h: [1.9, 2.75], out: .9, depth: 1.8, colour: '#8a2e32' },
+      { name: 'blank green stall banner', u: at9([19.6, 21.6]), h: [2.85, 3.5], out: .1, depth: .03, colour: '#2e8a4a' },
+    ],
+    // Cheng Yi's name board, and its six vertical boards along the corner.
+    boards: [
+      { u: at9([20.0, 23.2]), h: [3.81, 4.13], out: .12 },
+      ...Array.from({ length: 6 }, (_, i) => ({ u: [+(21.8 + i * .79).toFixed(2), +(22.35 + i * .79).toFixed(2)], h: [4.24, 5.61], out: .15 })),
+    ],
+  }, {
+    edge: 11, // the glass block's Geylang Road front, u east
+    blocks: [
+      { name: 'grey glass', u: [0, W11], h: [3.76, 18.32], out: .02, depth: .04, colour: '#7d8a8c' },
+      ...fins167,
+      ...[6.88, 10.48, 14.19].map(h => ({ name: 'dark floor line', u: [0, W11], h: [h - .06, h + .06], out: .17, depth: .16, colour: frame167 })),
+      { name: 'dark top frame', u: [0, W11], h: [18.32, 18.64], out: .14, depth: .28, colour: frame167 },
+      ...[[0, .25], [W11 - .25, W11]].map(u => ({ name: 'dark side frame', u, h: [2.54, 18.64], out: .14, depth: .28, colour: frame167 })),
+      { name: 'dark fascia', u: [0, W11], h: [2.54, 3.76], out: .2, depth: .4, colour: frame167 },
+      { name: 'glazed shopfronts', u: [.3, W11 - .3], h: [.1, 2.5], out: .02, depth: .04, colour: '#3a4446', glow: .06 },
+      ...[[.4, .8], [4.5, 4.9], [9.5, 9.9], [14.7, 15.1], [19.0, 19.4]].map(s => ({ name: 'white column', u: at11(s), h: [.1, 2.54], out: .2, depth: .35, colour: '#efeee9' })),
+    ],
+  }, {
+    edge: 10, // the step between the glass front and the walk-up's: the glass block's dark east wall
+    blocks: [{ name: 'dark cladding', u: [0, 4.339], h: [3.9, 14.3], out: .02, depth: .02, colour: grey167 }],
+  }, {
+    edge: 0, // the glass block's west wall, seen past No. 325-333's block
+    blocks: [{ name: 'dark cladding', u: [0, 16.727], h: [.13, 14.3], out: .02, depth: .02, colour: grey167 }],
+  }, {
+    edge: 7, // the walk-up's north wall on the side lane, u west from the lane corner, its fittings placed by estimate
+    windows: rows167.map(h => ({ u: [2.6, 6.4], h, panes: 4, out: .32 })),
+    blocks: [
+      ...breeze([.4, 2.2], [3.88, 13.64]),
+      { name: 'projecting glazed bay', u: [2.4, 6.6], h: [4.9, 13.7], out: .15, depth: .3, colour: white167 },
+      { name: 'zinc awning', u: [2.4, 6.8], h: [6.85, 7.1], out: .5, depth: 1.0, colour: '#b9bdb8' },
+      { name: 'zinc lean-to', u: [0, 7.5], h: [2.6, 3.0], out: .6, depth: 1.2, colour: '#9a9c98' },
+      { name: 'blank yellow stall canopy', u: [.5, 6.5], h: [2.25, 2.6], out: .3, depth: .6, colour: '#e8b830' },
+      { name: 'drinks stall', u: [.3, 7.0], h: [.1, 2.2], out: .02, depth: .04, colour: '#6a5a48', glow: .1 },
+    ],
+  }],
+};
+
+export const lorong21 = [chengYi];
+export const lorong21Frame = laneFrame, lorong21Layout = laneLayout, lorong21Upper = laneUpper, lorong21Reviews = laneReviews, lorong21Sides = laneSides;
