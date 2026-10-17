@@ -86,6 +86,14 @@ const draws: Draws = {
       text(c, 'Singapore Poh Clan Association', w * .5, h * .82, h * .2, '#c89a2a', '700', 'Georgia, "Times New Roman", serif', w * .72);
     }),
   },
+  // The Soon clan's black board: 孫氏公會, read from left to right, in gold over SINGAPORE SOON CLAN ASSOCIATION.
+  'soon-clan': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#5a2a22'; c.fillRect(0, 0, w, h); c.fillStyle = '#1e1c1a'; c.fillRect(h * .06, h * .06, w - h * .12, h - h * .12);
+      [...'孫氏公會'].forEach((ch, i) => text(c, ch, w * (.2 + i * .2), h * .38, Math.min(h * .48, w * .12), '#d8b058', '700', kai));
+      text(c, 'SINGAPORE SOON CLAN ASSOCIATION', w * .5, h * .8, h * .17, '#d8b058', '700', sans, w * .86);
+    }],
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {

@@ -736,7 +736,33 @@ export const pohClan = {
   backFittings: [{ name: 'association hall', u: [.5, 4.4], h: [.1, 3.2], colour: '#5a3e38', glow: .08 }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan];
+// 19. No. 43 (way 763764672): Singapore Soon Clan Association. Read on No. 45's plane (u_g), its front runs from u_g =
+// -3.7 to 0, that is from 0.82 m to 4.52 m along its own lane edge (u_ph); laid proportionally (x1.22).
+const at672 = s => lay(.82, 4.518 / 3.7)(s).map(v => Math.min(4.517, Math.max(0, v)));
+export const soonClan = {
+  id: 'soon-clan', buildingIds: ['763764672'], kind: 'soon-clan', frontEdge: 10, reviewRoad: 'Lorong 16 Geylang', review: { distance: 12, pitch: 14 },
+  name: 'Singapore Soon Clan Association (June 2024 exterior)', address: '43 Lorong 16 Geylang',
+  height: 7.0, ceiling: 3.45, fiveFootWay: 1.8, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a two-storey house between Lodge 41 and the Poh Clan Association, pale green above and yellow below: under a green tiled roof with a red ridge, a black board lettered in gold 孫氏公會 SINGAPORE SOON CLAN ASSOCIATION over a band of four windows, two air-conditioners on its north pier, and over its ground floor a green tiled canopy on yellow columns, sheltering an altar hall hung with lanterns behind red folding gates, with a yellow and red banner at the gate. Google Maps lists Soon Clan Assn, a non-governmental organisation, at 43 Lorong 16 Geylang; its point lies deep inside the outline of No. 47 two doors south, but the address and the board agree on this house, so it is named (as at Crystal Mansions, open question 32), and the board is redrawn in original type. On No. 45\'s plane, where rTwd... and 978C... agree on the boards on the source line, its front runs about 3.7 m, from Lodge 41\'s front to its party wall with No. 45, against the 4.52 m source edge; it is laid proportionally (x1.22). Heights were read on that plane: the canopy at 3.55-4.45 m, the windows at 4.9-5.8 m, the board at 5.85-6.45 m and the roof at 7.0-7.6 m.' + eastRowNote,
+  sources: [way('763764672'), search('Soon Clan Association 43 Lorong 16 Geylang'), pano('rTwd74g8I0xX5Kv269SUPw', 72, 4, 34), pano('978C2KrUtxtel_U9_J90Ow', 55, 10, 50)],
+  colours: rowColours('#d6d6aa', { frame: '#3a3c36', back: '#5a2e26', pier: '#e6e08a' }),
+  windows: [[1.52, 2.17], [2.17, 2.82], [2.82, 3.47], [3.47, 4.12]].map(s => ({ u: at672(s), h: [4.9, 5.8], panes: 1 })),
+  blocks: [
+    ...clanBlocks(4.517, at672, [.92, 4.47], '#e6e08a'),
+    ...[[.82, 1.42, 5.0], [.82, 1.42, 5.55]].map(([a, b, y]) => ({ name: 'air-conditioner', u: at672([a, b]), h: [y, y + .5], out: .2, depth: .4, colour: '#e8e8e4' })),
+    { name: 'yellow and red banner', u: at672([3.3, 3.6]), h: [2.0, 3.6], out: 1.4, depth: .04, colour: '#e8b030' },
+  ],
+  // The black board over the windows.
+  boards: [{ u: at672([1.52, 3.92]), h: [5.85, 6.45], out: .06 }],
+  piers: [[.25, .5], [4.1, 4.35]], shellInset: .2,
+  backFittings: [
+    { name: 'altar hall with lanterns', u: [.6, 3.9], h: [.1, 3.2], colour: '#6a2e26', glow: .12 },
+    { name: 'red folding gate', u: [.5, .9], h: [.1, 2.2], out: .3, colour: '#b8302a' },
+    { name: 'red folding gate', u: [3.6, 4.0], h: [.1, 2.2], out: .3, colour: '#b8302a' },
+  ],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
