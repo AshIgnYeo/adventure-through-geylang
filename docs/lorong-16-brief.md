@@ -34,7 +34,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 13–14 | East | 763764665, 763764664 | Nos. 43 and 45 Westerhout Road, a pink pair | Done; unnamed |
 | 15 | East | 454274647 | No. 51 | Done; unnamed |
 | 16 | East | 763764669 | No. 49 | Done; unnamed |
-| 17 | East | 763764670 | No. 47, a narrow tower | |
+| 17 | East | 763764670 | No. 47, a narrow tower | Done; unnamed |
 | 18 | East | 763764671 | No. 45 | |
 | 19 | East | 763764672 | No. 43, Soon Clan Association | |
 | 20 | East | 763764673 | No. 41, Lodge 41 | |
@@ -281,3 +281,4 @@ North of the grassed verge, a row of narrow houses about 30 m deep, set back beh
 | --- | --- | --- | --- | --- |
 | 15 | 454274647 | **No. 51** | Orange, two storeys under a red tiled roof: raised panels and a white casement window under three dark vent slots, over a dark corrugated carport canopy that runs on south over the verge, hung with a round plate numbered 51 and a gold board lettered 泰. Two panoramas (`978C…`, `PBc3…`) agree on its window on the source edge; about 4.7 m against 4.9 m. Canopy 3.0–3.5 m, window 5.4–6.6 m, eaves 7.0 m, roof to 8.3 m | No: nothing is listed at No. 51 and the board names no business |
 | 16 | 763764669 | **No. 49** | Brown, two storeys under a weathered zinc roof with a pink gutter: a louvred timber window under a vent and two air-conditioners, over a pink tiled canopy and a red awning before a pink shopfront lit by purple strips. `978C…` and `gUrd…` agree on its upper floor on the source edge; about 4 m against 3.84 m. Awning 1.9–2.7 m, canopy 3.5–4.2 m, window 4.7–6.6 m, eaves 7.2 m | No: nothing is listed and no sign names it |
+| 17 | 763764670 | **No. 47** | A narrow cream four-storey tower standing about 6 m in front of its neighbours: two tall strips of brown-framed windows between spandrel panels, under a deep cornice and a pointed parapet with a round medallion; a tree grows from its roof. Its ground floor was behind grey sheeting and tarpaulins, which are not modelled. Four panoramas line up on its front about 0.5 m in front of the source edge (depth scores 0.34–0.43); about 4.3 m against 5.05 m, laid ×1.17. Ledge 5.1 m, windows 5.5–7.2 and 8.7–10.2 m, cornice 11.1–11.7 m, point 12.7 m | No: nothing is listed and no sign was photographed |

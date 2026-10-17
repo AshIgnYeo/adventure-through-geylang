@@ -672,7 +672,37 @@ export const no49 = {
   backFittings: [{ name: 'pink shopfront', u: [.4, 3.4], h: [.1, 2.8], colour: '#c89aa8', glow: .08 }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49];
+// 17. No. 47 (way 763764670): a narrow cream four-storey tower standing about 6 m in front of its neighbours, two tall
+// strips of brown-framed windows between spandrel panels under a deep cornice and a pointed parapet with a round
+// medallion; a tree grows from its roof. Its front (edge 8) lines up between four June 2024 panoramas about 0.5 m in
+// front of the source edge (depth scores 0.34-0.43), where it runs about 4.3 m, from u_ph = 1.35 to 5.65; laid
+// proportionally (x1.17).
+const at670 = s => lay(1.35, 5.048 / 4.3)(s).map(v => Math.min(5.047, Math.max(0, v)));
+export const no47 = {
+  id: 'l16-47', buildingIds: ['763764670'], kind: 'unnamed', unnamed: true, frontEdge: 8, reviewRoad: 'Lorong 16 Geylang', review: { distance: 10, pitch: 28 },
+  name: 'No. 47 Lorong 16 (June 2024 exterior, occupants not identified)', address: '47 Lorong 16 Geylang',
+  height: 11.7, ceiling: 4.4, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a narrow cream four-storey tower between No. 45 and No. 49, standing about 6 m in front of its neighbours: two tall strips of brown-framed windows between cream spandrel panels on its upper floors, under a deep cornice and a pointed parapet carrying a round medallion, with a tree growing from its roof. Its ground floor was hidden behind grey sheeting, scaffold poles and blue tarpaulins, which are not modelled. No business is listed at the address and no sign was photographed. Four June 2024 lane panoramas (gUrd..., 978C..., rTwd..., YJ5N...) line up on its front about 0.5 m in front of the source edge, which is itself 6 m in front of the row (depth scores 0.34-0.43), where it runs about 4.3 m against the 5.05 m edge; it is laid proportionally on the edge. Heights were read on that plane: a ledge at about 5.1 m, windows at 5.5-7.2 and 8.7-10.2 m, the cornice at 11.1-11.7 m and the parapet\'s point at about 12.7 m.' + eastRowNote,
+  sources: [way('763764670'), search('47 Lorong 16 Geylang Singapore'), pano('978C2KrUtxtel_U9_J90Ow', 75, 20, 50), pano('rTwd74g8I0xX5Kv269SUPw', 105, 20, 50), pano('gUrdY-azKFUqo5xT_-hfnA', 45, 20, 50)],
+  colours: rowColours('#e4dfd2', { frame: '#6a3a2a', trim: '#ece8de' }),
+  windows: [[1.96, 3.25], [3.55, 4.9]].flatMap(s => [{ u: at670(s), h: [5.5, 7.2], panes: 2 }, { u: at670(s), h: [8.7, 10.2], panes: 2 }]),
+  blocks: [
+    ...[[1.96, 3.25], [3.55, 4.9]].flatMap(s => [
+      ...[[s[0] - .1, s[0]], [s[1], s[1] + .1]].map(e => ({ name: 'brown window strip frame', u: at670(e), h: [5.3, 10.4], out: .04, depth: .04, colour: '#6a3a2a' })),
+      { name: 'spandrel panel', u: at670(s), h: [7.4, 8.6], out: .05, depth: .06, colour: '#ece8de' },
+    ]),
+    { name: 'ledge', u: [0, 5.047], h: [5.0, 5.2], out: .1, depth: .2, colour: '#ece8de' },
+    { name: 'deep cornice', u: [0, 5.047], h: [11.1, 11.7], out: .3, depth: .6, colour: '#ece8de' },
+    { name: 'pointed parapet', u: at670([2.5, 4.5]), h: [11.7, 12.3], out: .02, depth: .1, colour: '#e4dfd2' },
+    { name: 'parapet point', u: at670([3.1, 3.9]), h: [12.3, 12.7], out: .02, depth: .1, colour: '#e4dfd2' },
+    { name: 'round medallion', u: at670([3.2, 3.8]), h: [11.75, 12.25], out: .05, depth: .03, colour: '#b8ae98' },
+    { name: 'dark ground floor', u: [.1, 4.95], h: [.13, 4.4], out: .01, depth: .02, colour: '#3e3c3a' },
+  ],
+  piers: [[.15, .4], [4.65, 4.9]], shellInset: .2,
+  backFittings: [{ name: 'ground floor behind sheeting', u: [.3, 4.7], h: [.1, 4.2], colour: '#4a4846' }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
