@@ -1,6 +1,6 @@
 import type { World, Point } from './world';
 import { lorong18 } from './lorong-18-layout.mjs';
-import { buildLaneHouse, text, sans, hei, type Draws } from './lane-house';
+import { buildLaneHouse, text, sans, hei, kai, type Draws } from './lane-house';
 import type { Draw } from './simple-house';
 
 // A perforated grey screen with dark triangular openings and coloured strips laid across it, all in fractions of the
@@ -92,6 +92,15 @@ const draws: Draws = {
       text(c, 'HOTEL 81', w * .5, h * .38, h * .5, '#1e8a8e', '800', sans, w * .9);
       c.fillStyle = '#1e6a6e'; c.fillRect(w * .05, h * .7, w * .9, h * .22);
       text(c, 'PREMIER', w * .5, h * .81, h * .17, '#f4f6f4', '700', 'Georgia, "Times New Roman", serif', w * .6);
+    }],
+  },
+  // DIAMOND HOTEL in gold serif capitals on teal, and 鑽石大旅店 set down the façade in a zigzag.
+  'diamond-hotel': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#1e7a72'; c.fillRect(0, 0, w, h); c.strokeStyle = '#d8b048'; c.lineWidth = h * .04; c.strokeRect(h * .06, h * .06, w - h * .12, h - h * .12);
+      text(c, 'DIAMOND HOTEL', w * .52, h * .55, h * .62, '#e8c050', '800', 'Georgia, "Times New Roman", serif', w * .86);
+    }, (c, w, h) => {
+      [...'鑽石大旅店'].forEach((ch, i) => text(c, ch, w * (i % 2 ? .66 : .34), h * (.1 + i * .2), w * .5, '#6a5a6a', '700', kai));
     }],
   },
   // The number 340 on the corner's fascia.

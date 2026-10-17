@@ -41,7 +41,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | Done; unnamed; question 73 |
 | 20 | East | 764372540 | No. 55, the Westerhout Road east corner | Done; unnamed |
 | 21 | East | 121872891 | No. 31, Hotel 81 (Premier) Star | Done; named |
-| 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | |
+| 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | Done; named |
 | 23 | East | 1470917582 | No. 1, Dabu Hakka Building | |
 | 24–26 | East | 764372559, 764372560, 454438314 | Nos. 350, 348 and 346 Geylang Road, the east corner | |
 
@@ -320,3 +320,27 @@ A pale blue nine-storey hotel in a neoclassical dress of white mouldings.
 **Naming:** Google Maps lists **Hotel 81 (Premier) Star**, a hotel, at 31 Lor 18 Geylang, Singapore 398828, with its point inside this way. Its board is photographed, so it is named, and the board is redrawn in original type. TMHK, also listed at No. 31, has no photographed sign.
 
 Use `?review=hotel-81-star`.
+
+### 22. Way 764372541: Nos. 21 and 25, Diamond Hotel
+
+An eight-storey hotel, yellow on its lower floors and pink above, between the scaffolded Dabu Hakka Building and Hotel 81 Star.
+
+- **Front:** three bays between orange pilasters, with white-framed windows on each floor.
+- **Middle bay:** rises to a pediment with a diamond, over a tall glazed top floor above an orange cornice. The characters **鑽石大旅店** are set down its face in a zigzag.
+- **Ground floor:** a teal board with gold letters reading **DIAMOND HOTEL**, over a maroon awning lettered with a gas supplier's name, 鑽石大旅店 and the hotel's telephone number.
+- **Below it:** a drive-through to the car park, paved in brick, with a vending machine and palms at the north end.
+
+**Measurement:**
+- **Depth:** the vertical characters and the windows line up between `zOAB…`, `D46t…` and `FA-o…` (June 2024) on the **source plane**. The depth scores agree (0 to +0.75 m).
+- **Heights:**
+  - awning at 3.2–4.0 m, under the board at 4.2–5.1 m;
+  - window rows from 6.0 m, every 3.1 m;
+  - orange cornice at 20.6–21.2 m;
+  - top floor to 26.8 m, parapet at 27.2 m, pediment to about 28.6 m.
+- **Render-and-compare:** from `zOAB…` and `D46t…` the floors, pilasters and board fall on the photographed ones.
+
+**Layout:** laid on its source edge (edge 3). The north wall above the Dabu Hakka Building is a side face.
+
+**Naming:** Google Maps lists **Diamond Hotel** at 25 Lor 18 Geylang, Singapore 398806, with its point inside this way; the source map tags the way Nos. 21 and 25 and names it Diamond Hotel. Its board is photographed, so it is named, and the board and the vertical characters are redrawn in original type.
+
+Use `?review=diamond-hotel`.

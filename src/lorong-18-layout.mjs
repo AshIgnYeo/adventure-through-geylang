@@ -739,5 +739,48 @@ export const hotel81Star = {
 // The vertical lightbox at the north corner, seen only edge-on: drawn as a blank teal box.
 hotel81Star.sides[0].blocks.push({ name: 'blank teal vertical lightbox', u: [.3, .5], h: [12.0, 18.0], out: .8, depth: 1.2, colour: '#2e8a8a' });
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star];
+// ---------------------------------------------------------------------------------------------
+// 22. Way 764372541, Nos. 21 and 25, Diamond Hotel: an eight-storey hotel, yellow below and pink above, in three bays
+// between orange pilasters, the middle one rising to a pediment over a tall glazed top floor and lettered 鑽石大旅店 down
+// its face; on the ground floor a teal board reading DIAMOND HOTEL over a maroon awning and a drive-through to the car
+// park. Its lane face (edge 3, u south from its north end) lines up between three June 2024 lane panoramas on the
+// source plane, and is laid on its source edge.
+const W541d = 12.503, yellow25 = '#ece2a0', pink25 = '#ecc8c4', orange25 = '#e0a050';
+const rows25 = [[6.0, 7.1], [9.1, 10.2], [12.3, 13.4], [15.4, 16.6], [18.6, 19.8]];
+export const diamondHotel = {
+  id: 'diamond-hotel', buildingIds: ['764372541'], kind: 'diamond-hotel', frontEdge: 3, reviewRoad: 'Lorong 18 Geylang', review: { distance: 9, pitch: 30 },
+  name: 'Diamond Hotel (June 2024 exterior)', address: '25 Lorong 18 Geylang (Nos. 21 and 25)',
+  height: 27.2, ceiling: 4.0, fiveFootWay: 2.4, shellInset: .2, roof: { type: 'flat', colour: '#9b9a95' },
+  colours: { wall: pink25, trim: orange25, frame: '#e8ece8', glass: '#4a5a5a', pier: yellow25, back: '#3a3634', floor: '#a8907a' },
+  evidence: 'June 2024 Street View shows an eight-storey hotel between the scaffolded Dabu Hakka Building and Hotel 81 Star: yellow on its lower floors and pink above, in three bays between orange pilasters, white-framed windows on each floor, and the middle bay rising to a pediment with a diamond over a tall glazed top floor, above an orange cornice; the characters 鑽石大旅店 are set down its face in a zigzag. On the ground floor a teal board with gold letters reading DIAMOND HOTEL hangs over a maroon awning lettered with a gas supplier\'s name, 鑽石大旅店 and the hotel\'s telephone number, over a drive-through to its car park paved in brick, with a vending machine and palms at its north end. Google Maps lists Diamond Hotel at 25 Lor 18 Geylang, Singapore 398806, with its point inside this way, which the source map tags Nos. 21 and 25 and names Diamond Hotel, so it is named after its board, which is redrawn in original type with the vertical characters. Three June 2024 lane panoramas (zOAB..., D46t..., FA-o...) agree on the vertical characters and the windows on the source plane, so the face is laid on its source edge. Heights were read on that plane: the awning at 3.2-4.0 m under the board at 4.2-5.1 m, window rows from 6.0 m every 3.1 m, the orange cornice at 20.6-21.2 m, the top floor to 26.8 m, the parapet at 27.2 m and the pediment to about 28.6 m.',
+  sources: [way('764372541'), search('Diamond Hotel 25 Lorong 18 Geylang'), pano('zOABkuSTa8EV0waK82wcQg', 70, 20, 90), pano('D46tgWFRjVIkWNPE9YXH6w', 85, 20, 90), pano('FA-o7CNNp9nWc64Y24bQSg', 60, 20, 90)],
+  windows: [
+    ...rows25.flatMap(h => [{ u: [1.1, 2.5], h, panes: 2 }, { u: [4.6, 6.0], h, panes: 2 }, { u: [7.9, 9.0], h, panes: 2 }, { u: [10.0, 11.4], h, panes: 2 }]),
+    { u: [4.4, 8.6], h: [21.8, 26.4], panes: 5 },
+    ...[[1.1, 2.5], [10.0, 11.4]].flatMap(u => [{ u, h: [22.4, 23.6], panes: 2 }, { u: [u[0] + .3, u[1] - .3], h: [25.2, 26.4], panes: 1, arched: true }]),
+  ],
+  blocks: [
+    { name: 'yellow lower floors', u: [0, W541d], h: [4.0, 10.6], out: -.03, depth: .06, colour: yellow25 },
+    ...[[3.3, 3.8], [9.2, 9.7]].map(u => ({ name: 'orange pilaster', u, h: [4.0, 27.2], out: .15, depth: .3, colour: orange25 })),
+    ...[[0, .3], [12.2, W541d]].map(u => ({ name: 'orange corner pilaster', u, h: [4.0, 27.2], out: .1, depth: .2, colour: orange25 })),
+    { name: 'orange cornice', u: [3.3, 9.7], h: [20.6, 21.2], out: .3, depth: .6, colour: orange25 },
+    { name: 'pediment', u: [3.6, 9.4], h: [27.2, 28.6], out: .05, depth: .3, colour: pink25 },
+    { name: 'diamond in the pediment', u: [6.1, 6.9], h: [27.5, 28.2], out: .2, depth: .06, colour: '#f2f2ee' },
+    { name: 'parapet coping', u: [0, W541d], h: [27.0, 27.2], out: .1, depth: .2, colour: orange25 },
+    { name: 'maroon awning', u: [3.6, W541d], h: [3.2, 4.0], out: .6, depth: 1.2, colour: '#7a2a2e' },
+    { name: 'vending machine', u: [.4, 1.4], h: [0, 1.9], out: 2.6, depth: .8, colour: '#e8ecee' },
+    { name: 'palms and planters', u: [1.6, 3.4], h: [0, 2.4], out: 1.6, depth: 1.0, colour: '#4a7a3a' },
+  ],
+  piers: [[3.3, 3.8], [9.2, 9.7]],
+  backFittings: [{ name: 'reception', u: [3.9, 6.5], h: [.1, 2.8], colour: '#4a3a30', glow: .12 }, { name: 'drive-through to the car park', u: [6.5, 12.2], h: [.1, 3.2], colour: '#3a3a3a', glow: .04 }, { name: 'yellow wall', u: [.3, 3.2], h: [.1, 3.8], colour: yellow25 }],
+  // The DIAMOND HOTEL board, and the characters 鑽石大旅店 down the middle bay.
+  boards: [{ u: [3.9, 9.4], h: [4.2, 5.1], out: .2 }, { u: [6.15, 7.75], h: [8.0, 19.6], out: .06 }],
+  sides: [{
+    edge: 0, // the north wall, above the Dabu Hakka Building
+    windows: rows25.map(h => ({ u: [5.6, 6.6], h, panes: 1 })),
+    blocks: [{ name: 'parapet coping', u: [0, 12.81], h: [27.0, 27.2], out: .1, depth: .2, colour: orange25 }],
+  }],
+};
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star, diamondHotel];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;
