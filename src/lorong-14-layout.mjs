@@ -237,7 +237,43 @@ export const wingFongMansions = {
   }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions];
+// ---------------------------------------------------------------------------------------------
+// East side, north from the edge of the extract
+
+// 3. Way 454274618, No. 37: a mint-green three-storey house set back about 8 m behind No. 35, its second floor a
+// glazed box over a balcony slab, behind brick gate pillars and arched railings. Its front (edge 0, u south from the
+// north end) is seen square-on only from 7Umz...: rendered from there, the gate pillars' feet and lamps fall on the
+// photographed ones with the gate on the source edge, the porch's back wall 2.5 m behind it and the glazed box over
+// the gate line. So it stands on its source edge, laid proportionally.
+const W618 = 7.530, mint618 = '#bfdcc8';
+export const no37 = {
+  id: 'l14-37', buildingIds: ['454274618'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 9, pitch: 18 },
+  name: 'No. 37 Lorong 14 (June 2024 exterior, occupants not identified)', address: '37 Lorong 14 Geylang',
+  height: 10.3, ceiling: 3.0, fiveFootWay: 2.5, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a mint-green three-storey house at the south end of the east side within the extract, set back about 8 m behind No. 35: a porch of folding grilles and timber posts on the ground floor, two windows on the first floor under a mint balcony slab, and a second floor glazed from end to end under a zinc eave, behind brick gate pillars with white globe lamps, a low brick wall and beige arched railings. South of it a narrow alley separates it from a corrugated hoarding, beyond the extract, plated 43. No business is listed at the address and no sign was photographed. Its front is seen square-on only from 7Umz..., the lane panoramas further north looking at it past No. 35 and a flowering tree, so its depth was checked by render-and-compare: rendered from 7Umz..., the gate pillars\' feet and lamps fall on the photographed ones with the gate on the source edge, the porch\'s back wall about 2.5 m behind it and the glazed box over the gate line. So it stands on its source edge, laid proportionally. Heights were read on that plane: the porch to about 3.0 m, the balcony slab at 5.8-6.3 m, the glazed box at 6.3-9.8 m and the eave to 10.3 m.',
+  sources: [way('454274618'), search('37 Lorong 14 Geylang'), pano('7UmzxcpG70_3sM6VXFAFhw', 62, 10, 70), pano('15hkcTGDkfNoapXIU24Aiw', 40, 10, 70)],
+  colours: { wall: mint618, trim: '#d8e8dc', frame: '#2e3a34', glass: '#2a3438', pier: '#b8683a', back: '#9aa89e', floor: '#b07a58' },
+  windows: [
+    ...[[1.0, 3.2], [4.3, 6.5]].map(u => ({ u, h: [3.9, 5.4], panes: 2 })),
+    { u: [.3, 7.2], h: [6.4, 9.7], panes: 6, out: .9 },
+  ],
+  blocks: [
+    { name: 'mint balcony slab', u: [.1, 7.4], h: [5.8, 6.3], out: .6, depth: 1.2, colour: '#d8e8dc' },
+    { name: 'glazed box frame', u: [.2, 7.3], h: [6.3, 9.8], out: .45, depth: .9, colour: mint618 },
+    { name: 'zinc eave', u: [0, W618], h: [9.8, 10.3], out: .6, depth: 1.2, colour: '#a8aaa6' },
+    ...[[0, .6], [6.95, W618]].flatMap(u => [
+      { name: 'brick gate pillar', u, h: [0, 1.9], out: .1, depth: .5, colour: '#a85a3a' },
+      { name: 'white globe lamp', u: [(u[0] + u[1]) / 2 - .15, (u[0] + u[1]) / 2 + .15], h: [1.9, 2.2], out: .1, depth: .3, colour: '#f4f4ee', glow: .2 },
+    ]),
+    { name: 'low brick wall', u: [.6, 2.4], h: [0, .9], out: .1, depth: .25, colour: '#a85a3a' },
+    ...grille('beige arched railing', [.6, 2.4], [.9, 1.7], .1, '#d8ccb0', .15, false),
+    ...grille('beige gate', [2.4, 6.95], [0, 1.7], .1, '#d8ccb0', .2, false),
+  ],
+  piers: [[3.5, 3.8]],
+  backFittings: [{ name: 'folding grilles', u: [.5, 7.0], h: [.1, 2.8], colour: '#6a4a34' }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

@@ -28,7 +28,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | --- | --- | --- | --- | --- |
 | 1 | West | 121872892 | No. 10, Wing Fong Court | Done; named (address conflict recorded) |
 | 2 | West | 764372595 | No. 12, Wing Fong Mansions, south of Talma Road | Done; named; runs on past the extract (question 52) |
-| 3 | East | 454274618 | No. 37 | |
+| 3 | East | 454274618 | No. 37 | Done; unnamed |
 | 4 | East | 454274615 | No. 35 | |
 | 5 | East | 454274614 | No. 33 (no number in the source) | |
 | 6 | East | 454274611 | No. 31 | |
@@ -114,3 +114,27 @@ Wing Fong Court's twin south of Talma Road: an eight-storey block in cream over 
 Use `?review=wing-fong-mansions`.
 
 **West side complete** within the extract. Every building from the Geylang Road corner to the extract's edge has its Lorong 14 face; Wing Fong Mansions runs on past the edge, where the lane continues to Guillemard Road ([open question 52](open-questions.md)).
+
+## East side
+
+The east side within the extract ends at No. 37. South of it a narrow alley separates it from a corrugated hoarding plated 43, with single-storey houses under tiled roofs and a temple compound beyond, outside the extract ([open question 52](open-questions.md)). The walk turns north there.
+
+### 3. Way 454274618: No. 37
+
+A mint-green three-storey house set back behind No. 35's front.
+
+- **Ground floor:** a porch of folding grilles behind a timber post, under a mint balcony slab.
+- **First floor:** two windows.
+- **Second floor:** glazed from end to end under a zinc eave, with television aerials on the roof.
+- **At the pavement:** brick gate pillars with white globe lamps, a low brick wall, and beige arched railings and gates.
+
+**Measurement:**
+- **Depth:** the house is seen square-on only from `7Umz…`; the lane panoramas further north look at it past No. 35 and a flowering tree, and the depth scores find nothing (under 0.06).
+  - So it was checked by render-and-compare: rendered from `7Umz…`, the gate pillars' feet and lamps fall on the photographed ones with the gate on the **source edge**. The porch's back wall stands about 2.5 m behind it, and the glazed box over the gate line.
+- **Heights:** the porch to about 3.0 m; the balcony slab at 5.8–6.3 m; the glazed box at 6.3–9.8 m; the eave to 10.3 m.
+
+**Layout:** laid proportionally on its 7.53 m source edge, with the porch as a 2.5 m five-foot way behind the gate line, and the glazed box and balcony slab projecting over it.
+
+**Naming:** none. Nothing is listed at No. 37 and no sign was photographed.
+
+Use `?review=l14-37`.
