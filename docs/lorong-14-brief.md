@@ -30,7 +30,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 2 | West | 764372595 | No. 12, Wing Fong Mansions, south of Talma Road | Done; named; runs on past the extract (question 52) |
 | 3 | East | 454274618 | No. 37 | Done; unnamed |
 | 4 | East | 454274615 | No. 35 | Done; unnamed |
-| 5 | East | 454274614 | No. 33 (no number in the source) | |
+| 5 | East | 454274614 | No. 33 (no number in the source) | Done; unnamed; question 53 |
 | 6 | East | 454274611 | No. 31 | |
 | 7 | East | 454274608 | No. 29 | |
 | 8 | East | 764372579 | No. 27 | |
@@ -159,3 +159,25 @@ A white three-storey house standing forward of its neighbours.
 **Naming:** none. Nothing is listed at No. 35, and a search for 慈懷蓮社 finds no listing, so the characters are drawn as a blank gold strip.
 
 Use `?review=l14-35`.
+
+### 5. Way 454274614: No. 33
+
+A three-storey house between No. 31's brown slatted front and No. 35, behind brown slatted gates. The source way has no number; Google Maps geocodes No. 33 beside it.
+
+- **Second floor:** two windows between timber blinds, under a dark metal canopy.
+- **First floor:** two windows between timber blinds and two air-conditioners, under a red tiled pent roof.
+- **Ground floor:** a balcony screened in bamboo, running on across No. 31, over a maroon awning.
+- **At the pavement:** brown slatted gates and a letterbox pier.
+
+**Measurement:**
+- **Depth:** the upper floors' depth scores peak **2.0–2.25 m in front of** the source edge (`bPco…` with `2NQa…`, 0.33), as do the whole house's between three pairs (0.24–0.33).
+- **Party walls:** on a plane 2.25 m forward, read square-on from `2NQa…`, they stand at u 1.0 and 6.7 (u south from the source north end), against the source's 0 and 6.07. The house is about 5.7 m wide.
+- **The gates:** from the elevation of their foot in `2NQa…`, about **6 m in front of** the source edge.
+- **Heights:** the awning at 2.1–3.25 m; the bamboo screen at 3.95–4.45 m; first-floor windows at 4.6–6.0 m; the pent roof at 6.1–6.9 m; second-floor windows at 7.0–8.4 m under a canopy to 8.9 m; the parapet at 9.9 m.
+- **Check:** renders from `2NQa…` and `bPco…`, blended with the photographs: from `2NQa…`, square-on, the windows, the pent roof and the gates fall on their photographed places; from `bPco…` the upper floors fall behind them, as their 2.25 m predicts.
+
+**Layout:** laid proportionally on its source edge (×1.06). The gates and letterbox pier are drawn at their triangulated line, 6 m out. The front's photographed line is part of [open question 53](open-questions.md).
+
+**Naming:** none. Nothing is listed at No. 33 and no sign was photographed.
+
+Use `?review=l14-33`.

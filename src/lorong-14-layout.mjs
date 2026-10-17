@@ -306,7 +306,42 @@ export const no35 = {
   ],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35];
+// 5. Way 454274614, No. 33 (no number in the source): a three-storey house of timber blinds under a red tiled pent roof,
+// over a bamboo-screened balcony and a maroon awning, behind brown slatted gates. Its front (edge 0, u south from the
+// north end) reads 2.0-2.25 m in front of the source edge, where the depth scores of its upper floors peak (bPco... with
+// 2NQa..., 0.33) and the whole house's (three pairs, 0.24-0.33). On a plane 2.25 m forward, read square-on from 2NQa...,
+// its party walls stand at u 1.0 and 6.7, against the source's 0 and 6.07; it is laid proportionally on the source
+// edge. The gates triangulate from the elevation of their foot about 6 m in front of the source edge.
+const W614 = 6.069, at614 = s => lay(1.0, W614 / 5.7)(s).map(v => Math.min(W614, Math.max(0, v)));
+const white614 = '#e6e2d8', timber614 = '#b08a5a';
+export const no33 = {
+  id: 'l14-33', buildingIds: ['454274614'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 9, pitch: 20 },
+  name: 'No. 33 Lorong 14 (June 2024 exterior, occupants not identified)', address: '33 Lorong 14 Geylang (unnumbered in the source)',
+  height: 9.9, ceiling: 3.3, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a three-storey house between the brown slatted front of No. 31 and the white front of No. 35: on the second floor two windows between timber blinds under a dark metal canopy; on the first floor two windows between timber blinds and two air-conditioners, under a red tiled pent roof; a balcony screened in bamboo, running on across No. 31, over a maroon awning; and brown slatted gates with a letterbox at the pavement. The source way has no number; Google Maps geocodes 33 Lor 14 Geylang beside it, and no business is listed there or signed, so no name is given. The depth scores of its upper floors peak 2.0-2.25 m in front of the source edge (bPco... with 2NQa..., 0.33), as do the whole house\'s between three pairs of lane panoramas (0.24-0.33). On a plane 2.25 m forward, read square-on from 2NQa..., the party walls stand 1.0 m and 6.7 m along the source edge, against its 0 and 6.07 m; the elevation is laid proportionally on the source edge (open question 53). The gates triangulate, from the elevation of their foot in 2NQa..., about 6 m in front of the source edge. Heights were read on that plane: the awning at 2.1-3.25 m, the bamboo screen at 3.95-4.45 m, first-floor windows at 4.6-6.0 m, the pent roof at 6.1-6.9 m, second-floor windows at 7.0-8.4 m under a canopy to 8.9 m, and the parapet at 9.9 m.',
+  sources: [way('454274614'), search('33 Lorong 14 Geylang'), pano('2NQaljbY-ry-_7uNSyFjJg', 80, 15, 60), pano('bPcoR5AOs4FXgQbHv6fiew', 110, 15, 60)],
+  colours: { wall: white614, trim: '#d8d2c4', frame: '#3a3a36', glass: '#3a4042', pier: white614, back: '#4a4440', floor: '#a8a296' },
+  windows: [
+    ...[[2.5, 3.6], [4.4, 5.5]].map(s => ({ u: at614(s), h: [7.0, 8.4], panes: 2 })),
+    ...[[2.2, 3.4], [4.0, 5.2]].map(s => ({ u: at614(s), h: [4.6, 6.0], panes: 2 })),
+  ],
+  blocks: [
+    ...[[1.3, 2.4], [3.7, 4.3], [5.6, 6.5]].flatMap(s => [[7.0, 8.4], [4.6, 6.0]].map(h => ({ name: 'timber blind', u: at614(s), h, out: .02, depth: .04, colour: timber614 }))),
+    { name: 'dark metal canopy', u: at614([1.0, 6.7]), h: [8.4, 8.9], out: .5, depth: 1.0, colour: '#3a3a3a' },
+    { name: 'parapet', u: at614([1.0, 6.7]), h: [9.6, 9.9], out: .05, depth: .1, colour: '#d8d2c4' },
+    { name: 'red tiled pent roof', u: at614([1.0, 6.8]), h: [6.1, 6.9], out: .6, depth: 1.2, colour: '#8a3a3a' },
+    ...[[4.4, 5.0], [5.2, 5.8]].map(s => ({ name: 'air-conditioner', u: at614(s), h: [4.45, 5.0], out: .25, depth: .5, colour: '#e8e8e4' })),
+    { name: 'bamboo balcony screen', u: [0, W614], h: [3.95, 4.45], out: .8, depth: .1, colour: '#b8a888' },
+    { name: 'balcony slab', u: [0, W614], h: [3.3, 3.95], out: .4, depth: .8, colour: '#d8d2c4' },
+    { name: 'maroon awning', u: [0, W614], h: [2.1, 3.25], out: 1.2, depth: 1.6, colour: '#7a2a30' },
+    // The brown slatted gates and the letterbox pier at the pavement, about 6 m in front of the source edge.
+    ...grille('brown slatted gate', at614([.6, 6.5]), [0, 1.3], 6.0, '#6a5040', .12, false),
+    { name: 'letterbox pier', u: at614([6.5, 7.0]), h: [0, 1.5], out: 6.0, depth: .3, colour: '#d8d2c4' },
+  ],
+  backFittings: [{ name: 'porch and doors', u: [.4, 5.7], h: [.1, 2.6], colour: '#4a4440' }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;
