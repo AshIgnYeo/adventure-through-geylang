@@ -16,6 +16,39 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph. Other buildings are labelled by address, with their signboards drawn and their lettering blank.
 - **Code:** each place is a measured elevation on one edge of its footprint, built with the lane-house helpers shared with Lorong 17, Lorong 19 and Lorong 21 (`src/lane-house-layout.mjs`, `src/lane-house.ts`).
 
+## Status, 17 October 2026
+
+**Complete within the extract; six questions wait for the owner.** All 25 stops are modelled. Every building on Lorong 14 between Geylang Road and the extract's edge has its photographed exterior, with the east corner block and the Geylang Road row east to Lorong 16.
+
+- **Coverage:** 25 source ways, all with photographed exteriors; none is left as a generic block. The west corner on Geylang Road is a lawn, with no building and no missing outline.
+- **Footprints:** every building stands on its source outline for now.
+- **Named places:** thirteen are added, bringing the study to 150:
+  - Wing Fong Court, No. 10 (its listing gives No. 12);
+  - Wing Fong Mansions, No. 12;
+  - 樂緣 (HAPPY 31), No. 31;
+  - ibis budget Singapore Pearl, No. 21, a dated exterior (now listed as ibis budget Singapore Vanda);
+  - Central Imperial, No. 3;
+  - The Amazing Inn, No. 1;
+  - Little Charcoal Stove, No. 284 Geylang Road, the east corner;
+  - Sea Mu To TCM Wellness 水木堂, No. 286;
+  - Em Salon Spa with 暹罗指压保健, No. 288;
+  - Valu$, Nos. 290 and 292;
+  - The Green Essential, No. 296;
+  - 傅兴记 with B&S Food Corner, Nos. 302 and 304;
+  - B&S hardware, No. 308.
+- **Open questions:** six, each with a recommendation:
+  - [52](open-questions.md): extend the extract to the lane's south end at Guillemard Road;
+  - [53](open-questions.md): the east terrace, Nos. 25–33, on its photographed line;
+  - [54](open-questions.md): keep the photographed name of the ibis budget hotel, or take the listing's;
+  - [55](open-questions.md): No. 284's lane face 2 m forward, onto its photographed line;
+  - [56](open-questions.md): re-space Nos. 296–300 on their photographed party walls;
+  - [57](open-questions.md): Nos. 302–308 2.25 m forward, on their photographed party walls.
+- **Left for a later pass:**
+  - the part of Lorong 14 south of the extract, to Guillemard Road (question 52);
+  - the Talma Road row;
+  - the far side of Geylang Road;
+  - No. 310 and the Lorong 16 corner, which belong to the Lorong 16 walk.
+
 ## The lane
 
 - **West side:** the lawn at the Geylang Road corner; Wing Fong Court, an eight-storey block behind a fenced garden of palms; Talma Road; and Wing Fong Mansions, another eight-storey block, running on past the extract's edge.
