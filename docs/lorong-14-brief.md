@@ -27,7 +27,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
 | 1 | West | 121872892 | No. 10, Wing Fong Court | Done; named (address conflict recorded) |
-| 2 | West | 764372595 | No. 12, Wing Fong Mansions, south of Talma Road | |
+| 2 | West | 764372595 | No. 12, Wing Fong Mansions, south of Talma Road | Done; named; runs on past the extract (question 52) |
 | 3 | East | 454274618 | No. 37 | |
 | 4 | East | 454274615 | No. 35 | |
 | 5 | East | 454274614 | No. 33 (no number in the source) | |
@@ -80,3 +80,37 @@ An eight-storey block from the back lane to Talma Road, behind a garden of palms
 - Reliable Paint SG and General Heating & Cooling, listed at No. 10, have no photographed signs.
 
 Use `?review=wing-fong-court`.
+
+Talma Road's east mouth opens south of Wing Fong Court. Its row waits for a later pass.
+
+### 2. Way 764372595: No. 12, Wing Fong Mansions
+
+Wing Fong Court's twin south of Talma Road: an eight-storey block in cream over a terracotta-red ground floor, behind a garden of trees and a cream boundary wall with salmon-capped posts and grey railings. A four-storey annex closes its south end, beyond the extract's edge.
+
+- **The lane face:** eight projecting bays under red cornices, single and paired gabled dormers alternating over cream bay windows.
+  - Rounded cream balconies with teal lattice panels on the fifth and sixth floors.
+  - Cream arches over the red ground floor, with pyramid studs.
+- **Between the bays:** Greek-key strips in the recesses, and porches of teal lattice under tiled gables. A drive-through portal opens under the sixth bay.
+- **At the Talma Road corner:** a granite panel on the boundary wall lettered **永豐樓 Wing Fong Mansions**.
+
+**Measurement:**
+- **Depth:** trees hide most of the face from the lane. Where the dormers show, they line up on planes 0.4–1.5 m **behind** the source edge (`odvH…` with `15hk…`, and `odvH…` with `7Umz…`), while drifting at 1.5 m forward. So the face stands on its source line, its bays about half a metre proud.
+- **Extent:** the whole 122.4 m source edge, from the annex at the south end (to u ≈ 10.5) to Talma Road.
+- **Bays** (u north from the south end): 10.6–16.0, 19.6–30.9, 34.5–45.8, 49.4–60.6, 64.2–75.5, 79.1–90.4, 94.0–105.3 and 108.9–122.3. The recesses' Greek-key strips repeat every 14.9 m. The portal runs from 80.0 to 87.5.
+- **Heights:** as at Wing Fong Court: floors every 3.0 m, the main wall to 24.8 m under a red cornice to 25.9 m, dormer apexes at about 27.5 m. The red ground floor rises to 3.9 m and the annex to 14.3 m.
+- **The boundary wall:** from the elevation of its foot in three panoramas, about **6 m in front of** the source edge. The corner panel triangulates from `jrMz…`, `bPco…` and `Pm_y…` at about (194.5, 212.4), 5 m north of the block's north-east corner.
+- **Check:** renders from `2NQa…`, `jrMz…` and `odvH…`, blended with the photographs, put the red ground floor, the cornice and the north corner on their photographed lines.
+
+**Layout:**
+- **Volumes:** the outline is built to the annex's 14.3 m. The eight-storey block is a raised volume from 14.3 m to 24.8 m, from the annex to the north end and back to the shallowest of its rear notches, 14.5 m deep.
+- **Faces:** the elevation is laid at its own scale on the source edge. The Talma Road end (edge 73) and the short splay at the corner (edge 74) are side faces; the boundary wall runs 5 m in front of the Talma Road end, and the curved corner with its panel stands where it triangulates.
+- **Review start:** the face runs about 85 m past the lane's last way, outside the corridor, so its review start stands opposite its north end (`review.at` in the layout) instead of its middle.
+- **Not modelled:** the trees and garden, and the pyramid studs.
+
+**Naming:** Google Maps lists **Wing Fong Mansions**, a condominium complex, at 12 Lor 14 Geylang, Singapore 398924, with its point inside this way. The source map names it Wing Fong Mansions, No. 12, eight storeys, of 1997.
+- The listing, the source and the lettering agree, so it is named and its panel is redrawn in original type.
+- Wing Fong Court is also listed at No. 12 with its point inside this way, but its lettering stands on No. 10 (stop 1).
+
+Use `?review=wing-fong-mansions`.
+
+**West side complete** within the extract. Every building from the Geylang Road corner to the extract's edge has its Lorong 14 face; Wing Fong Mansions runs on past the edge, where the lane continues to Guillemard Road ([open question 52](open-questions.md)).

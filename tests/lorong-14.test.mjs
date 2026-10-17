@@ -59,7 +59,14 @@ test('the Lorong 14 exteriors fit their outlines, face their streets and keep th
     const poly = outline(id), frame = lorong14Frame(poly, spec);
     assertFittings(frame, poly, lorong14Layout(spec, frame.width).boxes);
     for (const side of lorong14Sides(spec, poly)) assertFittings(side.frame, poly, side.boxes);
-    if (!spec.noReview) assertReviews(frame, lorong14Reviews(spec, frame));
+    if (!spec.noReview && spec.review?.at === undefined) assertReviews(frame, lorong14Reviews(spec, frame));
+    // A face running on past the corridor has its review start opposite a point of its walkable part.
+    if (!spec.noReview && spec.review?.at !== undefined) {
+      const [r] = lorong14Reviews(spec, frame), inStudy = studyArea(map), t = frame.point(spec.review.at, 0);
+      assert.ok(inStudy(r.p, 3), id);
+      for (const b of map.buildings) assert.equal(pointInPolygon(r.p, b.coordinates.slice(0, -1).map(c => project(c, map.origin))), false, b.id);
+      assert.ok(Math.cos((r.yaw - Math.atan2(r.p[0] - t[0], r.p[1] - t[1]) * 180 / Math.PI) * Math.PI / 180) > .99);
+    }
     assert.match(spec.evidence, /June 2024/);
     const ways = [id, ...(building(id).replaces ?? [])];
     assert.ok(spec.sources.some(s => ways.some(w => s.includes(`way/${w}`))), id);
@@ -103,4 +110,24 @@ test('Wing Fong Court is named after the lettering on its corner wall, its listi
   assert.equal(talma.boards.length, 1);
   const p = f.point((talma.boards[0].u[0] + talma.boards[0].u[1]) / 2, talma.boards[0].out);
   assert.ok(Math.hypot(p[0] - 189.2, p[1] - 190.3) < 1.5, `${p}`);
+});
+
+test('Wing Fong Mansions is named after its corner panel and listing, its face running on past the extract', () => {
+  const place = lorong14.find(p => p.id === 'wing-fong-mansions');
+  assert.equal(landmarkFor('764372595').id, place.id);
+  assert.equal(building('764372595').number, '12');
+  // Its listing point lies inside the outline.
+  assert.equal(pointInPolygon(project([103.8789011, 1.3109433], map.origin), outline('764372595')), true);
+  // The lane face is 122 m long and runs south past the lane's last way; the review start is at its north end.
+  const frame = lorong14Frame(outline('764372595'), place), end = lane.path.at(-1), south = frame.point(0, 0);
+  assert.ok(Math.abs(frame.width - 122.353) < .01);
+  assert.ok(south[1] - project(end, sourceMap.origin)[1] > 80);
+  assert.ok(place.review.at > 100);
+  // The eight-storey block is a raised volume over the four-storey annex's height.
+  assert.equal(place.height, 14.3);
+  assert.deepEqual([place.upper[0].from, place.upper[0].to], [14.3, 24.8]);
+  // The panel on the corner wall stands where it triangulates, about (194.5, 212.4).
+  const side = place.sides.find(s => s.edge === 74), f = lorong14Frame(outline('764372595'), { frontEdge: 74 });
+  const p = f.point((side.boards[0].u[0] + side.boards[0].u[1]) / 2, side.boards[0].out);
+  assert.ok(Math.hypot(p[0] - 194.5, p[1] - 212.4) < 1.5, `${p}`);
 });

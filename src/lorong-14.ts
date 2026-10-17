@@ -1,21 +1,25 @@
 import type { World, Point } from './world';
-import { lorong14 } from './lorong-14-layout.mjs';
-import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
+import { lorong14, lorong14Frame, lorong14Reviews } from './lorong-14-layout.mjs';
+import { buildLaneHouse, text, kai, type Draws } from './lane-house';
 
 // Named places only: original lettering after the photographed boards.
+// A granite panel set in a boundary wall: Chinese in bronze down its left, the English name in script beside it.
+const granitePanel = (chinese: string, english: string, ground: string) => (c: CanvasRenderingContext2D, w: number, h: number) => {
+  c.fillStyle = ground; c.fillRect(0, 0, w, h);
+  const x0 = w * .1, y0 = h * .28, pw = w * .82, ph = h * .5;
+  c.fillStyle = '#b8b6b0'; c.fillRect(x0, y0, pw, ph); c.fillStyle = '#cac8c2';
+  for (let i = 0; i < 700; i++) c.fillRect(x0 + (i * 97) % pw, y0 + (i * 61) % ph, 3, 3);
+  [...chinese].forEach((ch, i) => text(c, ch, x0 + pw * .1, y0 + ph * (.2 + i * .3), ph * .24, '#6a5434', '700', kai));
+  text(c, english, x0 + pw * .58, y0 + ph * .45, ph * .26, '#6a5434', 'italic 600', 'Georgia, "Times New Roman", serif', pw * .76);
+};
 const draws: Draws = {
   // The granite panel on the boundary wall at the Talma Road corner: 永豐閣 in bronze down its left, Wing Fong Court in
   // script beside it.
   'wing-fong-court@1': {
-    boards: [(c, w, h) => {
-      c.fillStyle = '#f2f2ee'; c.fillRect(0, 0, w, h);
-      const x0 = w * .1, y0 = h * .28, pw = w * .82, ph = h * .5;
-      c.fillStyle = '#b8b6b0'; c.fillRect(x0, y0, pw, ph); c.fillStyle = '#cac8c2';
-      for (let i = 0; i < 700; i++) c.fillRect(x0 + (i * 97) % pw, y0 + (i * 61) % ph, 3, 3);
-      [...'永豐閣'].forEach((ch, i) => text(c, ch, x0 + pw * .12, y0 + ph * (.2 + i * .3), ph * .24, '#6a5434', '700', kai));
-      text(c, 'Wing Fong Court', x0 + pw * .6, y0 + ph * .45, ph * .24, '#6a5434', 'italic 600', 'Georgia, "Times New Roman", serif', pw * .7);
-    }],
+    boards: [granitePanel('永豐閣', 'Wing Fong Court', '#f2f2ee')],
   },
+  // The same on Wing Fong Mansions' corner wall: 永豐樓 Wing Fong Mansions.
+  'wing-fong-mansions@74': { boards: [granitePanel('永豐樓', 'Wing Fong Mansions', '#f0e8d6')] },
 };
 
 /** Lorong 14 from Geylang Road to the edge of the extract, with the Geylang Road row east to Lorong 16; named only
@@ -23,6 +27,9 @@ const draws: Draws = {
 export function buildLorong14(world: World, id: string, poly: Point[]) {
   const place = (lorong14 as any[]).find(p => p.buildingIds.includes(id));
   if (!place) return false;
-  buildLaneHouse(world, place.parts ? { ...place, ...place.parts[id] } : place, poly, draws);
+  const spec = place.parts ? { ...place, ...place.parts[id] } : place;
+  // Review starts are set here, so that a face running on past the corridor can have one opposite its walkable part.
+  buildLaneHouse(world, { ...spec, noReview: true }, poly, draws);
+  if (!spec.noReview) for (const r of lorong14Reviews(spec, lorong14Frame(poly, spec)) as any[]) world.reviewSpawns.set(r.id, { p: r.p as Point, yaw: r.yaw, pitch: r.pitch });
   return true;
 }

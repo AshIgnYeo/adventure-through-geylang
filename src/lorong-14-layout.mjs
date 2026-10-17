@@ -132,6 +132,118 @@ export const wingFongCourt = {
   }],
 };
 
-export const lorong14 = [wingFongCourt];
-export const lorong14Frame = laneFrame, lorong14Layout = laneLayout, lorong14Upper = laneUpper, lorong14Reviews = laneReviews, lorong14Sides = laneSides;
+// 2. Way 764372595, No. 12, Wing Fong Mansions 永豐樓: the eight-storey block south of Talma Road, Wing Fong Court's
+// twin in cream over a terracotta-red ground floor, with a four-storey annex at its south end beyond the extract's
+// edge. Its lane face (edge 75, u north from the south end) runs eight projecting bays under red cornices, single and
+// paired dormers alternating, with Greek-key strips in the recesses between them. The dormers, followed between
+// odvH... and 15hk... and between odvH... and 7Umz..., line up on planes 0.4-1.5 m behind the source edge, so the face
+// stands on its source line, its bays about half a metre proud, and is laid at its own scale. The face runs on about
+// 85 m past the extract's last way (open question 52), so its review start stands at its north end. The boundary wall
+// stands about 6 m in front of the source edge.
+const W595 = 122.352, cream595 = '#efe7d8', red595 = '#b8504a', redTop595 = '#c0605a', teal595 = '#2f6f6c';
+const bays595 = [
+  { u: [10.6, 16.0], dormers: [13.3] }, { u: [19.6, 30.9], dormers: [23.05, 27.45] }, { u: [34.5, 45.8], dormers: [39.1] },
+  { u: [49.4, 60.6], dormers: [52.8, 57.2] }, { u: [64.2, 75.5], dormers: [68.9] }, { u: [79.1, 90.4], dormers: [83.3, 87.7] },
+  { u: [94.0, 105.3], dormers: [98.3] }, { u: [108.9, 122.3], dormers: [113.4, 117.8] },
+];
+const recesses595 = bays595.slice(1).map((b, i) => [bays595[i].u[1], b.u[0]]);
+const porches595 = [18.0, 61.0, 76.2, 94.4, 109.6];
+const portal595 = [80.0, 87.5];
+const posts595 = Array.from({ length: 30 }, (_, i) => +(10.8 + i * 3.9).toFixed(2)).filter(c => c < W595 - .4 && (c < portal595[0] - .3 || c > portal595[1] + .3));
+// The drive-through portal under the sixth bay leaves its ground floor open.
+const bay595 = ({ u: [l, r], dormers }) => [
+  { name: 'projecting bay', u: [l, r], h: [5.0, 24.8], out: .25, depth: .5, colour: cream595 },
+  { name: 'cream arch spandrel', u: [l, r], h: [3.9, 5.0], out: .25, depth: .5, colour: '#e8dcc6' },
+  ...[[l, Math.min(r, portal595[0])], [Math.max(l, portal595[1]), r]].filter(([a, b]) => b - a > .1)
+    .map(u => ({ name: 'red ground floor of the bay', u, h: [.05, 3.9], out: .25, depth: .5, colour: red595 })),
+  { name: 'red cornice', u: [l, r], h: [24.8, 25.9], out: .55, depth: 1.1, colour: redTop595 },
+  ...dormers.flatMap(c => [
+    { name: 'dormer gable', u: [c - 1.15, c + 1.15], h: [25.9, 26.6], out: .3, depth: .6, colour: redTop595 },
+    { name: 'dormer gable', u: [c - .7, c + .7], h: [26.6, 27.2], out: .3, depth: .6, colour: redTop595 },
+    { name: 'dormer apex', u: [c - .25, c + .25], h: [27.2, 27.6], out: .3, depth: .6, colour: redTop595 },
+    { name: 'cream bay window box', u: [c - 1.0, c + 1.0], h: [22.3, 23.6], out: .8, depth: 1.1, colour: '#e8dcc6' },
+    ...[[12.6, 13.7], [15.7, 16.8]].flatMap(h => [
+      { name: 'rounded cream balcony', u: [c - 1.15, c + 1.15], h, out: .9, depth: 1.2, colour: '#e8dcc6' },
+      { name: 'teal lattice panel', u: [c - .45, c + .45], h: [h[0] + .2, h[1] - .2], out: 1.52, depth: .02, colour: teal595 },
+    ]),
+  ]),
+];
+export const wingFongMansions = {
+  id: 'wing-fong-mansions', buildingIds: ['764372595'], kind: 'wing-fong-mansions', frontEdge: 75, reviewRoad: 'Lorong 14 Geylang', review: { at: 112, distance: 13, pitch: 24 },
+  name: 'Wing Fong Mansions 永豐樓 (June 2024 exterior)', address: '12 Lorong 14 Geylang (south of Talma Road)',
+  height: 14.3, ceiling: 3.0, fiveFootWay: .3, roof: { type: 'flat', colour: '#a8583e' },
+  evidence: 'June 2024 Street View shows an eight-storey block on the west side of Lorong 14 south of Talma Road, Wing Fong Court\'s twin in cream over a terracotta-red ground floor, behind a garden of trees and a cream boundary wall with salmon-capped posts and grey railings, with a four-storey annex at its south end. Its lane face runs eight projecting bays under red cornices, single and paired gabled dormers alternating over cream bay windows, rounded cream balconies with teal lattice panels on the fifth and sixth floors and cream arches over the red ground floor; between the bays, recessed walls carry Greek-key strips, with small porches of teal lattice under tiled gables at their feet, and a drive-through portal under the sixth bay. At the Talma Road corner the boundary wall carries a granite panel lettered 永豐樓 and Wing Fong Mansions. Google Maps lists Wing Fong Mansions, a condominium complex, at 12 Lor 14 Geylang, Singapore 398924, with its point inside this way, and the source map names it Wing Fong Mansions, No. 12, eight storeys, of 1997; the listing, the source and the lettering agree, so it is named and the panel is redrawn in original type. Wing Fong Court is also listed at No. 12, with its point inside this way, but its lettering stands on No. 10 north of Talma Road. The dormers, followed between June 2024 lane panoramas (odvH... with 15hk... and with 7Umz...), line up on planes 0.4-1.5 m behind the source edge, so the face stands on its source line, its bays about half a metre proud, and is laid at its own scale; floors repeat every 3.0 m, the main wall stands at 24.8 m under a 1.1 m red cornice, the dormer apexes at about 27.5 m and the annex at 14.3 m. The boundary wall, read from the elevation of its foot in three panoramas, stands about 6 m in front of the source edge, and the corner panel triangulates from three panoramas about 5 m north of the block\'s north-east corner. The face runs on about 85 m past the extract\'s last way, where the lane continues to Guillemard Road (open question 52).',
+  sources: [way('764372595'), search('Wing Fong Mansions 12 Lorong 14 Geylang'), pano('2NQaljbY-ry-_7uNSyFjJg', 245, 20, 90), pano('15hkcTGDkfNoapXIU24Aiw', 250, 25, 90), pano('C_NxGSjPG6B_eMJvOxuQxw', 255, 20, 90), pano('jrMzKbxEkHu-lNNinj-HiA', 226, 0, 30)],
+  colours: { wall: cream595, trim: '#e2d6c0', frame: teal595, glass: '#4a5a5c', pier: red595, back: red595, floor: '#a8a296' },
+  windows: [
+    // The annex's four floors, then two windows a dormer on every floor of each bay.
+    ...rows892.slice(0, 4).flatMap(h => [[1.5, 3.4], [5.2, 7.1]].map(u => ({ u, h, panes: 2 }))),
+    ...bays595.flatMap(b => b.dormers.flatMap(c => [...rows892, [23.6, 25.0]].map(h => ({ u: [c - .85, c + .85], h, panes: 2, out: h[0] > 22 ? .62 : .52 })))),
+  ],
+  blocks: [
+    { name: 'red ground floor', u: [0, W595], h: [3.0, 3.9], out: .01, depth: .02, colour: red595 },
+    { name: 'red annex cornice', u: [0, 10.2], h: [13.6, 14.3], out: .3, depth: .6, colour: redTop595 },
+    ...bays595.flatMap(bay595),
+    ...recesses595.flatMap(([l, r]) => {
+      const c = (l + r) / 2;
+      return [
+        ...[[c - .75, c - .35], [c + .35, c + .75]].map(u => ({ name: 'Greek-key strip', u, h: [1.0, 21.5], out: .05, depth: .06, colour: '#8a8070' })),
+        { name: 'cream half-round lattice', u: [l + .3, r - .3], h: [22.6, 24.3], out: .3, depth: .6, colour: '#e8dcc6' },
+      ];
+    }),
+    ...porches595.flatMap(c => [
+      { name: 'teal lattice porch', u: [c - .7, c + .7], h: [0, 2.9], out: .6, depth: 1.2, colour: teal595 },
+      { name: 'porch gable', u: [c - .8, c + .8], h: [2.9, 3.3], out: .6, depth: 1.3, colour: '#b4553d' },
+      { name: 'porch gable', u: [c - .4, c + .4], h: [3.3, 3.65], out: .6, depth: 1.3, colour: '#b4553d' },
+    ]),
+    { name: 'drive-through portal', u: portal595, h: [3.0, 5.6], out: -.1, depth: .06, colour: '#3a3a38' },
+    { name: 'portal soffit', u: portal595, h: [5.6, 5.9], out: .05, depth: .1, colour: '#efe7d8' },
+    // The boundary wall about 6 m in front: cream, with salmon-capped posts, beige planters and grey railings, and a
+    // grey gate across the portal's drive.
+    ...[[10.5, portal595[0]], [portal595[1], W595]].flatMap(u => [
+      { name: 'boundary wall', u, h: [0, 1.0], out: 6.0, depth: .3, colour: '#f0e8d6' },
+      { name: 'beige planter', u, h: [1.0, 1.3], out: 6.0, depth: .45, colour: '#d8c8a8' },
+      ...grille('grey railing', u, [1.3, 2.0], 6.0, '#5a5c5c', .3, false),
+    ]),
+    ...grille('grey gate', portal595, [0, 2.0], 6.0, '#4a4c4c', .3, false),
+    ...posts595.flatMap(c => [
+      { name: 'boundary post', u: [c - .3, c + .3], h: [0, 2.0], out: 6.0, depth: .55, colour: '#f0e8d6' },
+      { name: 'salmon post cap', u: [c - .25, c + .25], h: [2.0, 2.4], out: 6.0, depth: .45, colour: '#d07060' },
+    ]),
+  ],
+  backFittings: [
+    ...porches595.map(c => ({ name: 'porch door', u: [c - .5, c + .5], h: [.1, 2.3], colour: '#3a3a36' })),
+    { name: 'courtyard beyond the portal', u: portal595, h: [.1, 2.9], colour: '#4a4a46' },
+  ],
+  // The eight-storey block over the annex's height, from the annex to the north end, to the shallowest of its rear
+  // notches.
+  upper: [{ name: 'eight-storey block', outline: [[10.5, 0], [W595, 0], [W595, -14.5], [10.5, -14.5]], from: 14.3, to: 24.8, colour: cream595, roof: '#a8583e' }],
+  sides: [{
+    edge: 73, // the north end on Talma Road, u west from the corner's splay
+    windows: rows892.flatMap(h => [[3.0, 5.0], [9.0, 11.0]].map(u => ({ u, h, panes: 2 }))),
+    blocks: [
+      { name: 'red ground floor', u: [0, 16.488], h: [.13, 3.9], out: .01, depth: .02, colour: red595 },
+      { name: 'red cornice', u: [0, 16.488], h: [24.8, 25.9], out: .4, depth: .8, colour: redTop595 },
+      { name: 'boundary wall', u: [0, 16.488], h: [0, 1.9], out: 5.0, depth: .3, colour: '#f0e8d6' },
+    ],
+  }, {
+    edge: 74, // the short splay at the Lorong 14 corner, its boundary wall carrying the lettered panel
+    blocks: [
+      { name: 'red ground floor', u: [0, 4.721], h: [.13, 3.9], out: .01, depth: .02, colour: red595 },
+      { name: 'red cornice', u: [0, 4.721], h: [24.8, 25.9], out: .4, depth: .8, colour: redTop595 },
+    ],
+    // The corner of the boundary wall with its granite panel lettered 永豐樓 Wing Fong Mansions.
+    boards: [{ u: [-1.9, 3.1], h: [0, 1.9], out: 5.0 }],
+  }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions];
+// A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
+export const lorong14Reviews = (place, frame) => {
+  const at = place.review?.at;
+  if (at === undefined) return laneReviews(place, frame);
+  const p = frame.point(at, place.review.distance ?? 8), t = frame.point(at, 0);
+  return [{ id: place.id, p, pitch: place.review.pitch ?? 18, yaw: Math.atan2(p[0] - t[0], p[1] - t[1]) * 180 / Math.PI }];
+};
+export const lorong14Frame = laneFrame, lorong14Layout = laneLayout, lorong14Upper = laneUpper, lorong14Sides = laneSides;
 export { grille, each, clampTo, pano, way, search, lay };
