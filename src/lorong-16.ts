@@ -1,6 +1,6 @@
 import type { World, Point } from './world';
 import * as pc from 'playcanvas';
-import { lorong16, geylangRow16, westerhout16, sites16 } from './lorong-16-layout.mjs';
+import { lorong16, geylangRow16, westerhout16, sites16, backLane16 } from './lorong-16-layout.mjs';
 import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
 
 // Named places only: original lettering after the photographed boards.
@@ -120,6 +120,13 @@ const draws: Draws = {
       text(c, '81', w * .5, h * .79, w * .55, '#f2f4f2', '900', sans);
     }],
   },
+  // 善缘古佛社's brown board, its characters in gold brush script, read left to right.
+  'shan-yuan-gu-fo-she': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#4a2e22'; c.fillRect(0, 0, w, h);
+      [...'善缘古佛社'].forEach((ch, i) => text(c, ch, w * (.14 + i * .18), h * .52, Math.min(h * .6, w * .15), '#d8b04a', '700', kai));
+    }],
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {
@@ -142,7 +149,7 @@ export function buildLorong16(world: World, id: string, poly: Point[]) {
     for (let i = 0; i < poly.length; i++) world.panel(poly[i], poly[(i + 1) % poly.length], 0, site.hoarding.height, m);
     return true;
   }
-  const place = [...lorong16, ...geylangRow16, ...westerhout16].find(p => p.buildingIds.includes(id)) as any;
+  const place = [...lorong16, ...geylangRow16, ...westerhout16, ...backLane16].find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   buildLaneHouse(world, place.parts ? { ...place, ...place.parts[id] } : place, poly, draws);
   return true;

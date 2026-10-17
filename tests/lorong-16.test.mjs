@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
-import { lorong16, geylangRow16, westerhout16, sites16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
+import { lorong16, geylangRow16, westerhout16, sites16, backLane16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
@@ -141,5 +141,22 @@ test('the terrace north of No. 23 has four houses, and the site of No. 19 is dra
     assert.equal(landmarkFor(site.buildingIds[0]), undefined);
     assert.match(site.evidence, /June 2024/);
     assert.ok(site.sources.some(s => s.includes(`way/${site.buildingIds[0]}`)));
+  }
+});
+
+test('the walk-up block on the back lane: No. 7 named on the lane, Nos. 5, 3 and 1 facing the back lane', () => {
+  const corner = lorong16.find(p => p.id === 'shan-yuan-gu-fo-she');
+  assert.equal(landmarkFor('763764686').id, corner.id);
+  assert.equal(corner.boards.length, 1);
+  assert.deepEqual(backLane16.map(p => p.buildingIds[0]), ['763764685', '763764684', '763764683']);
+  for (const place of backLane16) {
+    const id = place.buildingIds[0], poly = outline(id), frame = lorong16Frame(poly, place);
+    assertFittings(frame, poly, lorong16Layout(place, frame.width).boxes);
+    assert.ok(frame.nz < -.95, place.id);
+    assert.equal(place.noReview, true);
+    assert.equal(landmarkFor(id), undefined);
+    assert.equal(place.boards, undefined);
+    assert.match(place.evidence, /June 2024/);
+    assert.ok(place.sources.some(s => s.includes(`way/${id}`)), id);
   }
 });

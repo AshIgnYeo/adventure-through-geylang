@@ -967,7 +967,96 @@ export const no19Site = {
   sources: [way('763764678'), search('19 Lorong 16 Geylang Singapore'), pano('3ZQqgioQm3wQleRlKAjrrQ', 110, 10, 90), pano('EUihB-GBrXccUSAKjWM_2g', 80, 8, 90)],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37, hotel81Palace, no17, no15, no11, no9];
+// ---------------------------------------------------------------------------------------------
+// 29-32. Ways 763764686, 763764685, 763764684 and 763764683, Nos. 7, 5, 3 and 1: a white walk-up block of four storeys
+// and a roof terrace on the back lane behind Geylang Road, its windows in grey surrounds. No. 7 turns the corner onto
+// the lane; Nos. 5, 3 and 1 face north onto the back lane, where no Street View drive has passed since 2018, and are seen
+// only obliquely from the lane. No. 7's lane face (edge 3, u_ph south from its north end) lines up between three June
+// 2024 panoramas (epU_..., t5yp..., o1zP...) about 0.5 m behind its source edge (depth scores -0.25 to -0.5, 0.14-0.16),
+// where it runs from u_ph = 0.6 to 9.9; laid proportionally (x0.98). Heights were read on that plane.
+const white686 = '#ecece8', grey686 = '#7a7e80';
+const rows686 = [[3.9, 5.5], [7.0, 8.7], [10.0, 11.6]];
+const at686 = s => lay(.6, 9.098 / 9.3)(s).map(v => Math.min(9.097, Math.max(0, v)));
+const walkUpNote = ' Nos. 1, 3, 5 and 7 are one white walk-up block of four storeys and a roof terrace behind railings, on the back lane behind Geylang Road, its windows in grey surrounds, with maroon awnings over the ground floor. No. 7\'s lane face lines up between three June 2024 lane panoramas (epU_..., t5yp..., o1zP...) about 0.5 m behind its source edge, where it runs about 9.3 m against 9.1 m, and it is laid proportionally; heights were read on that plane: the ground floor to about 3.3 m, windows at 3.9-5.5, 7.0-8.7 and 10.0-11.6 m, the parapet at about 12.8 m and the railing to 13.6 m. The back-lane faces have not been driven since 2018 and are seen only obliquely from the lane, so their fittings follow the lane face\'s rhythm and are placed by estimate.';
+const railing686 = W => [
+  { name: 'parapet ledge', u: [0, W], h: [12.55, 12.8], out: .08, depth: .16, colour: '#dcdcd8' },
+  ...grille('roof terrace railing', [0, W], [12.8, 13.6], -.2, '#3a3c3c', .9, false),
+];
+const walkUpRows = spans => spans.flatMap(u => rows686.map(h => ({ u, h, panes: 2, surround: true })));
+export const shanYuan = {
+  id: 'shan-yuan-gu-fo-she', buildingIds: ['763764686'], kind: 'shan-yuan-gu-fo-she', frontEdge: 3, reviewRoad: 'Lorong 16 Geylang', review: { distance: 9, pitch: 26 },
+  name: '善缘古佛社 (June 2024 exterior)', address: '7 Lorong 16 Geylang (the corner of the back lane)',
+  height: 12.8, ceiling: 3.3, fiveFootWay: 1.5, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows the west end of a white walk-up block at the corner of Lorong 16 and the back lane behind Geylang Road, four storeys and a roof terrace behind railings: on the lane face two windows in grey surrounds on each upper floor, and over the ground floor a grey tiled canopy hung with Buddhist flags over a brown board lettered in gold 善缘古佛社, above a maroon awning and a shop of gilded statues. Google Maps lists 善缘古佛社, a Buddhist temple, at 7 Lorong 16 Geylang, Singapore 398853; its point lies about 3 m in front of the lane face, and the address and the board agree on this house, so it is named (as at Crystal Mansions, open question 32), and the board is redrawn in original type. 雷山殿, a place of worship listed at the same point, has no photographed sign; Singapore International Hotlisten, also at No. 7, is closed.' + walkUpNote,
+  sources: [way('763764686'), search('善缘古佛社 7 Lorong 16 Geylang'), pano('o1zPdNWSWM89tQnp0aWb0A', 70, 10, 70), pano('t5ypPj9vaHlwphFWbCHmsQ', 110, 15, 70), pano('epU_kXrLWJOyHtmPT3xPew', 110, 15, 80)],
+  colours: { wall: white686, trim: grey686, frame: '#e8e8e4', glass: '#3a4248', pier: white686, back: '#5a4030', floor: '#a8a296' },
+  windows: walkUpRows([[2.3, 3.9], [6.7, 8.4]].map(at686)),
+  blocks: [
+    ...railing686(9.097),
+    { name: 'drainpipe', u: at686([.8, .95]), h: [.13, 12.6], out: .08, depth: .1, colour: '#e0e0dc' },
+    { name: 'grey tiled canopy', u: at686([3.5, 9.9]), h: [4.3, 4.8], out: .9, depth: 1.8, colour: '#8a8c88' },
+    ...Array.from({ length: 6 }, (_, i) => ({ name: 'Buddhist flag', u: at686([3.8 + i * 1.0, 4.4 + i * 1.0]), h: [3.85, 4.3], out: 1.75, depth: .02, colour: ['#3a5aa8', '#e8c040', '#c8403a', '#f2f0ea', '#e88a3a', '#3a5aa8'][i] })),
+    { name: 'maroon awning', u: at686([.8, 9.9]), h: [2.0, 3.0], out: 1.0, depth: 2.0, colour: '#8e3a40' },
+  ],
+  // The brown board under the canopy.
+  boards: [{ u: at686([4.5, 7.0]), h: [3.35, 4.0], out: .06 }],
+  piers: [[.15, .4], [8.7, 8.95]], shellInset: .2,
+  backFittings: [{ name: 'shop of gilded statues', u: [.5, 8.6], h: [.1, 3.0], colour: '#5a4030', glow: .12 }],
+  sides: [{
+    edge: 4, // the north face on the back lane, u west from the party wall with No. 5
+    windows: walkUpRows([[2.8, 5.0], [6.3, 8.6]]),
+    blocks: [
+      ...railing686(9.535),
+      ...breezeScreen686([.8, 2.3]),
+      { name: 'maroon awning', u: [.2, 9.4], h: [2.4, 3.3], out: .9, depth: 1.8, colour: '#8e3a40' },
+      { name: 'ground floor shops', u: [.2, 9.4], h: [.13, 2.4], out: .01, depth: .02, colour: '#4a3a32', glow: .06 },
+      ...[[3.0, 3.7, 6.0], [6.6, 7.3, 9.1]].map(([a, b, y]) => ({ name: 'air-conditioner', u: [a, b], h: [y, y + .5], out: .25, depth: .4, colour: '#e8e8e4' })),
+    ],
+  }, {
+    edge: 0, // the south face on No. 9's forecourt, placed by estimate
+    windows: walkUpRows([[1.5, 3.2], [4.2, 5.9]]),
+    blocks: railing686(7.205),
+  }],
+};
+// The block's breeze-block stair screens: a tall shadowed panel crossed by light webs.
+function breezeScreen686(u) {
+  const [l, r] = u, n = Math.round((r - l) / .4), m = 22;
+  return [
+    { name: 'breeze-block stair screen', u, h: [3.3, 12.5], out: .02, depth: .02, colour: '#5a5c5a' },
+    ...Array.from({ length: n + 1 }, (_, i) => ({ name: 'breeze-block web', u: [+(l + (r - l) * i / n - .04).toFixed(3), +(l + (r - l) * i / n + .04).toFixed(3)].map(v => Math.min(r, Math.max(l, v))), h: [3.3, 12.5], out: .05, depth: .04, colour: '#d8d8d2' })),
+    ...Array.from({ length: m + 1 }, (_, j) => ({ name: 'breeze-block web', u, h: [+(3.3 + 9.2 * j / m - .04).toFixed(3), +(3.3 + 9.2 * j / m + .04).toFixed(3)].map(v => Math.min(12.5, Math.max(3.3, v))), out: .05, depth: .04, colour: '#d8d8d2' })),
+  ];
+}
+// Nos. 5, 3 and 1 face north onto the back lane, beyond the corridor: no review starts, fittings by estimate.
+const walkUpBack = (no, wayId, edge, W, screen, extra) => ({
+  id: `l16-${no}`, buildingIds: [wayId], kind: 'unnamed', unnamed: true, frontEdge: edge, noReview: true, reviewRoad: 'Lorong 16 Geylang',
+  name: `No. ${no} Lorong 16 (June 2024 exterior, occupants not identified)`, address: `${no} Lorong 16 Geylang (on the back lane behind Geylang Road)`,
+  height: 12.8, ceiling: 3.3, fiveFootWay: 1.2, roof: { type: 'flat', colour: '#8f8c86' },
+  colours: { wall: white686, trim: grey686, frame: '#e8e8e4', glass: '#3a4248', pier: white686, back: '#4a3a32', floor: '#a8a296' },
+  sources: [way(wayId), search(`${no} Lorong 16 Geylang Singapore`), pano('t5ypPj9vaHlwphFWbCHmsQ', 75, 10, 70), pano('epU_kXrLWJOyHtmPT3xPew', 95, 10, 70)],
+  windows: walkUpRows(screen[0] < 1 ? [[2.4, 4.4], [5.8, 7.8]] : [[1.0, 3.0], [4.4, 6.4]]),
+  blocks: [
+    ...railing686(W),
+    ...breezeScreen686(screen),
+    { name: 'maroon awning', u: [.2, +(W - .2).toFixed(2)], h: [2.4, 3.3], out: .9, depth: 1.8, colour: '#8e3a40' },
+  ],
+  piers: [[.15, .4], [+(W - .4).toFixed(2), +(W - .15).toFixed(2)]], shellInset: .2,
+  backFittings: [{ name: 'ground floor shop', u: [.5, +(W - .5).toFixed(2)], h: [.1, 2.4], colour: '#4a3a32', glow: .06 }],
+  ...extra,
+});
+export const no5 = walkUpBack(5, '763764685', 3, 8.94, [7.2, 8.6], {
+  evidence: 'June 2024 Street View shows No. 5, the second house of the walk-up block, seen obliquely along the back lane from Lorong 16: windows in grey surrounds on each upper floor, air-conditioners, and a maroon awning over a shop. Google Maps lists Tho Hng Association, with its point inside this way, and Moustache Man Barber Shop at 5 Lorong 16, but no sign for either was photographed, so no name is given.' + walkUpNote,
+});
+export const no3 = walkUpBack(3, '763764684', 0, 8.892, [.3, 1.7], {
+  evidence: 'June 2024 Street View shows No. 3, the third house of the walk-up block, seen obliquely along the back lane from Lorong 16, behind trees: windows in grey surrounds on each upper floor and a maroon awning over a shop. No business is listed at the address and no sign was photographed.' + walkUpNote,
+});
+export const no1 = walkUpBack(1, '763764683', 0, 10.323, [8.6, 10.0], {
+  evidence: 'June 2024 Street View shows No. 1, the east end of the walk-up block, only glimpsed along the back lane from Lorong 16, behind trees: windows in grey surrounds and a maroon awning over a shop. Google Maps lists the closed Singapore Clock & Watch Trade Association at 05-05 Lorong 16, with its point near the lane\'s Geylang Road end; no sign was photographed, so no name is given.' + walkUpNote,
+});
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37, hotel81Palace, no17, no15, no11, no9, shanYuan];
+// The walk-up block's back-lane houses face the back lane, not the lane.
+export const backLane16 = [no5, no3, no1];
 // The hoarded site of No. 19 has no building.
 export const sites16 = [no19Site];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.

@@ -42,7 +42,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 22 | East | 763764675 | No. 37 | Done; unnamed |
 | 23 | East | 121872890 | No. 25, Hotel 81 Palace | Done; named |
 | 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | The site of No. 19, and the terrace of Nos. 17, 15, 11 and 9 | Done; unnamed; No. 19 hoarded (question 68) |
-| 29–32 | East | 763764686, 763764685, 763764684, 763764683 | Nos. 7, 5, 3 and 1, on the back lane | |
+| 29–32 | East | 763764686, 763764685, 763764684, 763764683 | Nos. 7, 5, 3 and 1, a walk-up block on the back lane: 善缘古佛社 (7) | Done; No. 7 named |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
 
@@ -340,3 +340,32 @@ North of No. 23's hoarded site, a two-storey terrace under grey tiled roofs runs
 | 28 | 763764682 | **No. 9** | Grey; two windows with open shutters over breeze-block panels, a vent between them, over a five-foot way of dark openings | No: nothing is listed |
 
 Use `?review=l16-17`, `?review=l16-15`, `?review=l16-11` and `?review=l16-9`.
+
+### 29–32. Ways 763764686 to 763764683: Nos. 7, 5, 3 and 1, and 善缘古佛社
+
+At the north end of the east side, a white walk-up block of four storeys and a roof terrace behind railings stands on the back lane behind Geylang Road. Its windows sit in grey surrounds, with maroon awnings over the ground floor and breeze-block stair screens.
+
+- **No. 7** turns the corner onto the lane.
+  - **Lane face:** two windows on each upper floor. Over the ground floor, a grey tiled canopy hung with Buddhist flags over a brown board lettered in gold **善缘古佛社**, above a maroon awning and a shop of gilded statues.
+  - **Back-lane face:** windows, air-conditioners and a stair screen.
+- **Nos. 5, 3 and 1** face north onto the back lane.
+
+**Measurement:**
+- **No. 7's lane face (edge 3):** `epU_…`, `t5yp…` and `o1zP…` (June 2024) line up on it about **0.5 m behind** the source edge (depth scores peak at −0.25 to −0.5 m, 0.14–0.16). It runs about 9.3 m against 9.1 m.
+- **Heights,** on that plane: the ground floor to about 3.3 m; windows at 3.9–5.5, 7.0–8.7 and 10.0–11.6 m; the parapet at about 12.8 m; the railing to 13.6 m.
+- **The back-lane faces** have not been driven since 2018. From the lane they are seen only obliquely, past trees, so their fittings follow the lane face's rhythm and are placed by estimate.
+
+**Layout:**
+- **No. 7:** the lane face is the front, laid proportionally (×0.98). The back-lane face (edge 4) and the south face (edge 0) are side faces.
+- **Nos. 5, 3 and 1:** each is laid on its back-lane edge. They face the back lane, beyond the corridor, so they have no review starts.
+- **Not modelled:** the Geylang Road block across the back lane (way 541941365) is walked with Lorong 18.
+
+**Naming:**
+- **善缘古佛社:** a Buddhist temple listed at 7 Lorong 16 Geylang, Singapore 398853. Its point lies about 3 m in front of the lane face, and the address and the board agree, so No. 7 is named (as at Crystal Mansions, question 32). Its board is redrawn in original type.
+  - 雷山殿, listed at the same point, has no photographed sign. Singapore International Hotlisten, also at No. 7, is closed.
+- **No. 5:** Tho Hng Association (its point inside the way) and Moustache Man Barber Shop are listed, but no sign for either was photographed.
+- **Nos. 3 and 1:** none.
+
+Use `?review=shan-yuan-gu-fo-she`.
+
+**East side complete.** Every building on the east side from the head of Westerhout Road to the back lane behind Geylang Road now has its Lorong 16 front.
