@@ -48,6 +48,16 @@ const draws: Draws = {
       text(c, '3 LORONG 14 GEYLANG', w * .5, h * .87, h * .08, '#e8e8e4', '600', sans, w * .7);
     }],
   },
+  // Copper script reading The Amazing Inn either side of the door's arch, with the 1 in the arch.
+  'amazing-inn': {
+    boards: [(c, w, h) => {
+      const script = 'italic 600 ' + Math.round(h * .3) + 'px "Brush Script MT", "Snell Roundhand", cursive';
+      c.fillStyle = '#c88a6a'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.font = script; c.fillText('The', w * .14, h * .55); c.fillText('Inn', w * .86, h * .55);
+      c.save(); c.translate(w / 2, h * 1.05); for (const [i, ch] of [...'Amazing'].entries()) { c.save(); c.rotate((i - 3) * .17); c.fillText(ch, 0, -h * .82); c.restore(); } c.restore();
+      text(c, '1', w * .5, h * .62, h * .34, '#d8a888', '700', 'Georgia, "Times New Roman", serif');
+    }],
+  },
   'le-yuan': {
     boards: [(c, w, h) => {
       c.fillStyle = '#c8282a'; c.fillRect(0, 0, w, h);

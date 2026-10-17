@@ -168,3 +168,13 @@ test('Central Imperial is named after its name board and listing, the board at t
   // Seven floors of balconies over the ground floor.
   assert.equal(new Set(place.blocks.filter(x => x.name === 'wavy balcony slab').map(x => x.h[1])).size, 7);
 });
+
+test('The Amazing Inn is named after its lettering and listing, its corner on the source corner', () => {
+  const place = lorong14.find(p => p.id === 'amazing-inn');
+  assert.equal(landmarkFor('476141643').id, place.id);
+  assert.equal(building('476141643').number, '1');
+  assert.equal(pointInPolygon(project([103.8790912, 1.3121824], map.origin), outline('476141643')), true);
+  const frame = lorong14Frame(outline('476141643'), place);
+  assert.ok(Math.abs(frame.width - 6.824) < .01 && frame.dz > .95);
+  assert.equal(place.boards.length, 1);
+});

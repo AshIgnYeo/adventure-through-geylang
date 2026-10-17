@@ -37,7 +37,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 9 | East | 764372578 | No. 25 | Done; unnamed; question 53 |
 | 10 | East | 454274677 | No. 21, ibis budget Singapore Pearl | Done; named (a dated exterior; question 54) |
 | 11 | East | 764372577 | No. 3, Central Imperial | Done; named |
-| 12 | East | 476141643 | No. 1, The Amazing Inn | |
+| 12 | East | 476141643 | No. 1, The Amazing Inn | Done; named |
 | 13–16 | East | 454254175 to 454254172 | Nos. 284–290 Geylang Road, the east corner block | |
 | 17–25 | Geylang Road | 454254171 to 764372573 | Nos. 292–308, east to Lorong 16 | |
 
@@ -287,3 +287,28 @@ An eight-storey condominium between The Amazing Inn and the ibis budget hotel.
 - KSP General Contractors and Catch Cheaters are listed at units inside it; they have no photographed signs.
 
 Use `?review=central-imperial`.
+
+### 12. Way 476141643: No. 1, The Amazing Inn
+
+A three-storey hotel at the corner of the lane and the back lane behind the Geylang Road shophouses. (In August 2018 it was white.)
+
+- **The lane face:** narrow, in pale grey panels between dark grey pilasters and a dark grey centre bay.
+  - An arched window in each pale panel on both upper floors, and a pair of small arched windows in the centre.
+  - Cornices at each floor, and a curved parapet over the centre.
+  - Over the ground floor, copper lettering reading **The Amazing Inn** either side of an arch over the door carrying a **1**, over a glazed front.
+- **The north wall on the back lane:** pale grey, with rows of small arched windows and tall arched stair windows.
+
+**Measurement:**
+- **The north-west corner:** triangulated from six pairs of `r047…`, `x44k…`, `kLBG…` and `owb1…`, it stands **within 0.5 m of the source corner** (u 0.0–0.6, 0.6 m behind to 0.2 m in front). So the lane face is on its source line. The depth scores (0.11–0.23) were not used; the tree in front and Central Imperial behind confuse them.
+- **Extent:** read square-on from `kLBG…`, the face runs from 0.4 m to the source edge's south end.
+- **Heights:** the ground floor to 4.25 m under a cornice to 4.55 m; arched windows at 4.9–6.25 m and 8.4–9.9 m; a cornice at 7.1–7.45 m; the parapet at 11.9 m, its centre to 12.6 m.
+- **The north wall** is seen only obliquely from the lane. Its windows are placed from a rectification of `x44k…`, and are approximate.
+- **Check:** renders from `kLBG…` and `x44k…`, blended with the photographs, put the bands, the windows, the lettering and the parapet on their photographed places.
+
+**Layout:** the lane face is laid proportionally on its source edge (×1.08); the north wall (edge 1) is a side face.
+
+**Naming:** Google Maps lists **Amazing Inn**, a 3-star hotel, at 1 Lor 14 Geylang, Singapore 398913, with its point inside this way. The source map names it The Amazing Inn, No. 1.
+- The listing, the source and the lettering agree, so it is named and its lettering is redrawn in original type.
+- De Yue Lou - Wanton Mee, listed at No. 1, is closed.
+
+Use `?review=amazing-inn`.

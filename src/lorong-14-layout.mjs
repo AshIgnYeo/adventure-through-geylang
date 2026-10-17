@@ -560,7 +560,55 @@ export const centralImperial = {
   ],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial];
+// 12. Way 476141643, No. 1, The Amazing Inn: a three-storey hotel in pale and dark grey bands at the corner of the back
+// lane, arched windows on its upper floors and a curved parapet, with THE AMAZING INN lettered over its ground floor and
+// a 1 in the arch over its door. Its lane face (edge 2, u south from the back lane) is narrow: its north-west corner,
+// triangulated from six pairs of June 2024 lane panoramas, stands within 0.5 m of the source corner, so the face is on
+// its source line; read square-on from kLBG... it runs from 0.4 m to the south end, and is laid proportionally. Its long
+// north wall on the back lane (edge 1) is seen only obliquely from the lane, so its windows are placed from a
+// rectification of x44k... and are approximate.
+const W643 = 6.823, at643 = s => lay(.4, W643 / 6.3)(s).map(v => Math.min(W643, Math.max(0, v)));
+const pale643 = '#d4d8dc', dark643 = '#5a6068';
+export const amazingInn = {
+  id: 'amazing-inn', buildingIds: ['476141643'], kind: 'amazing-inn', frontEdge: 2, reviewRoad: 'Lorong 14 Geylang', review: { distance: 9, pitch: 24 },
+  name: 'The Amazing Inn (June 2024 exterior)', address: '1 Lorong 14 Geylang (the back lane corner)',
+  height: 11.9, ceiling: 4.25, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a three-storey hotel at the corner of Lorong 14 and the back lane behind the Geylang Road shophouses, its narrow lane face in pale grey panels between dark grey pilasters and a dark grey centre bay: an arched window in each pale panel on both upper floors and a pair of small arched windows in the centre, cornices at each floor and a curved parapet over the centre; over the ground floor, copper lettering reading The Amazing Inn either side of an arch over the door carrying a 1, over a glazed front. Its long north wall on the back lane is pale grey, with rows of small arched windows and tall arched stair windows. (In August 2018 the building was white.) Google Maps lists Amazing Inn, a 3-star hotel, at 1 Lor 14 Geylang, Singapore 398913, with its point inside this way, and the source map names it The Amazing Inn, No. 1; the listing, the source and the lettering agree, so it is named and the lettering is redrawn in original type. Its north-west corner, triangulated from six pairs of June 2024 lane panoramas (r047..., x44k..., kLBG..., owb1...), stands within 0.5 m of the source corner, so the lane face is on its source line; read square-on from kLBG... it runs from 0.4 m to the south end and is laid proportionally on its source edge. Heights were read on that plane: the ground floor to 4.25 m under a cornice to 4.55 m, arched windows at 4.9-6.25 and 8.4-9.9 m, a cornice at 7.1-7.45 m, and the parapet at 11.9 m, its centre to 12.6 m. The north wall is seen only obliquely from the lane, so its windows are placed from a rectification of x44k... and are approximate.',
+  sources: [way('476141643'), search('Amazing Inn 1 Lorong 14 Geylang'), pano('kLBGXoqMhqFUI1S0kwAnPA', 100, 20, 60), pano('x44kWhxi0KGn26zNAQiq6g', 110, 20, 80)],
+  colours: { wall: pale643, trim: '#e4e6e8', frame: '#2e4a3a', glass: '#2e4038', pier: dark643, back: '#3a3634', floor: '#a8a49c' },
+  windows: [
+    ...[[1.5, 2.4], [4.6, 5.5]].flatMap(s => [[8.4, 9.9], [4.9, 6.25]].map(h => ({ u: at643(s), h, panes: 2, arched: true, surround: true }))),
+    ...[[2.9, 3.3], [3.7, 4.1]].flatMap(s => [[8.6, 9.6], [5.1, 6.0]].map(h => ({ u: at643(s), h, panes: 1, arched: true }))),
+  ],
+  blocks: [
+    ...[[.4, 1.0], [2.6, 4.4], [6.0, 6.7]].map(s => ({ name: 'dark grey band', u: at643(s), h: [4.55, 11.6], out: .03, depth: .06, colour: dark643 })),
+    ...[[7.1, 7.45], [4.25, 4.55], [11.55, 11.9]].map(h => ({ name: 'cornice', u: [0, W643], h, out: .15, depth: .3, colour: '#e4e6e8' })),
+    { name: 'curved centre parapet', u: at643([2.6, 4.4]), h: [11.9, 12.6], out: .05, depth: .2, colour: dark643 },
+    { name: 'dark ground floor', u: [0, W643], h: [2.5, 4.25], out: .02, depth: .04, colour: '#4a4e54' },
+    { name: 'arch over the door', u: at643([2.6, 4.4]), h: [2.5, 4.1], out: .06, depth: .06, colour: '#3e4248' },
+  ],
+  // The lettering over the ground floor, with the 1 in the arch.
+  boards: [{ u: at643([.7, 6.4]), h: [2.55, 4.15], out: .1 }],
+  backFittings: [
+    { name: 'glazed front', u: at643([.6, 2.6]), h: [.1, 2.5], colour: '#2e3436', glow: .1 },
+    { name: 'hotel door', u: at643([2.8, 4.2]), h: [.1, 2.5], colour: '#3a2e2a', glow: .08 },
+    { name: 'glazed front', u: at643([4.4, 6.4]), h: [.1, 2.5], colour: '#2e3436', glow: .1 },
+  ],
+  sides: [{
+    edge: 1, // the north wall on the back lane, u west from its east end to the lane corner; windows placed approximately
+    windows: [
+      ...[[9.4, 10.1], [10.5, 11.2], [11.6, 12.3], [12.7, 13.4], [13.8, 14.5], [20.4, 21.3], [22.5, 23.4]].flatMap(u => [[9.4, 10.6], [5.3, 6.5]].map(h => ({ u, h, panes: 1, arched: true }))),
+      ...[[16.0, 16.8], [17.2, 18.0]].map(u => ({ u, h: [5.5, 11.0], panes: 2, arched: true })),
+    ],
+    blocks: [
+      ...[[7.1, 7.45], [11.55, 11.9]].map(h => ({ name: 'cornice', u: [0, 25.278], h, out: .1, depth: .2, colour: '#e4e6e8' })),
+      ...[[19.0, 19.6], [21.6, 22.2]].map(u => ({ name: 'air-conditioner', u, h: [7.6, 8.2], out: .25, depth: .5, colour: '#e8e8e4' })),
+      { name: 'back door', u: [18.5, 19.6], h: [.1, 2.3], out: .02, depth: .04, colour: '#4a4e54' },
+    ],
+  }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;
