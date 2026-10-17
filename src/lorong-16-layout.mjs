@@ -320,7 +320,60 @@ export const thenShen = {
   backFittings: [{ name: 'temple hall', u: [.7, 15.3], h: [.1, 3.8], colour: '#4a2e26', glow: .08 }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen];
+// ---------------------------------------------------------------------------------------------
+// 7. Way 763764676, No. 30, Crystal Lodge: an eight-storey block of flats over an open car park, banded in white and
+// beige, its lane face (edge 8, u north from the south-east corner) in three bays: a flat south bay, a recessed middle
+// bay of balconies and a north bay of projecting ledges, with an open roof terrace on the top floor. Behind a white
+// boundary wall lettered CRYSTAL ODGE (its L lost) and 30 LORONG 16 GEYLANG. Four June 2024 lane panoramas agree on the
+// south and north bays on the source edge (depth scores peak at -0.75 to +0.5 m), from about 1 m north of the source
+// corner to 31.6 m along; the wall's lettering triangulates 5.8 m in front.
+const white676 = '#e6e2da', beige676 = '#cdbfa8';
+const rows676 = [[6.2, 7.5], [9.3, 10.6], [12.5, 13.8], [15.7, 17.0], [18.9, 20.2], [22.1, 23.4]];
+const wall676 = 5.8;
+export const crystalLodge = {
+  id: 'crystal-lodge', buildingIds: ['763764676'], kind: 'crystal-lodge', frontEdge: 8, reviewRoad: 'Lorong 16 Geylang', review: { distance: 14, pitch: 26 },
+  name: 'Crystal Lodge (June 2024 exterior)', address: '30 Lorong 16 Geylang',
+  height: 28.4, ceiling: 4.6, fiveFootWay: 3.0, upperInset: .1, shellInset: 1.0, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows an eight-storey block of flats on the west side of Lorong 16 over an open car park, banded in white and beige, its lane face in three bays: a flat south bay of narrow and wide windows, a recessed middle bay of balconies with grey railings, and a north bay whose windows sit between projecting ledges; on the top floor, open roof terraces under a deep parapet. A white boundary wall along the pavement, with white railings and gates, is lettered in raised grey capitals CRYSTAL ODGE, the L lost, over 30 LORONG 16 GEYLANG. Google Maps lists Crystal Lodge, an apartment building, at 30 Lorong 16 Geylang, Singapore 398870, with its point inside this way, and the source map names it, so it is named and its lettering is redrawn as photographed. Four June 2024 lane panoramas (gUrd..., 978C..., rTwd..., YJ5N...) agree on the south and north bays on the source edge, where the face runs from about 1 m north of the source corner to 31.6 m along, against the 32.6 m edge; the middle bay is recessed about 1.5 m. The lettering, triangulated between two panoramas, puts the boundary wall about 5.8 m in front. Heights were read on the source plane: the car park to about 4.6 m, windows at 6.2-7.5 m and on every 3.2 m above to 22.1-23.4 m, the top floor\'s terraces at 24.9-26.4 m and the parapet at about 28.4 m.',
+  sources: [way('763764676'), search('Crystal Lodge 30 Lorong 16 Geylang'), pano('rTwd74g8I0xX5Kv269SUPw', 270, 15, 85), pano('978C2KrUtxtel_U9_J90Ow', 295, 15, 85), pano('YJ5NrMKa3ziNs3OkKvpTGA', 265, 15, 85), pano('gUrdY-azKFUqo5xT_-hfnA', 280, 15, 85)],
+  colours: { wall: white676, trim: beige676, frame: '#5a6a68', glass: '#3e5a58', pier: white676, back: '#3a3a38', floor: '#9a968e' },
+  windows: [
+    ...[[1.5, 2.7], [4.3, 5.6], [7.3, 9.1]].flatMap(u => rows676.map(h => ({ u, h, panes: 2 }))),
+    ...[[13.2, 15.4], [16.5, 18.0]].flatMap(u => rows676.map(h => ({ u, h: [h[0] - .3, h[1]], panes: 3 }))),
+    ...[[20.0, 21.2], [22.3, 23.3], [24.7, 25.7], [28.4, 30.4]].flatMap(u => rows676.map(h => ({ u, h, panes: 2 }))),
+    { u: [28.4, 30.4], h: [24.9, 26.3], panes: 2 },
+  ],
+  blocks: [
+    // Beige bands at each floor slab, and the beige ground of the north bay's upper floors.
+    ...[4.6, 7.9, 11.1, 14.3, 17.5, 20.7, 23.9].map(b => ({ name: 'beige floor band', u: [1.0, 31.6], h: [b, b + .9], out: .02, depth: .04, colour: beige676 })),
+    { name: 'recessed balcony bay', u: [11.0, 19.8], h: [4.6, 27.4], out: -.04, depth: .03, colour: '#a8a294' },
+    ...rows676.map(([b]) => ({ name: 'grey balcony railing', u: [11.4, 19.4], h: [b - .3, b + .5], out: .05, depth: .04, colour: '#8a8e8a' })),
+    ...[7.9, 11.1, 14.3, 17.5, 20.7, 23.9].map(b => ({ name: 'projecting ledge', u: [19.8, 27.6], h: [b, b + .2], out: .45, depth: .9, colour: white676 })),
+    { name: 'open roof terrace', u: [1.0, 4.6], h: [24.9, 26.4], out: -.03, depth: .02, colour: '#c8d0d4' },
+    { name: 'dark terrace opening', u: [7.0, 10.4], h: [24.9, 26.2], out: -.03, depth: .02, colour: '#3a3e40' },
+    { name: 'deep parapet', u: [1.0, 31.6], h: [27.4, 28.4], out: .25, depth: .5, colour: white676 },
+    // The white boundary wall along the pavement: wall and pillars, railings over a car gate, and the bin centre.
+    { name: 'white boundary wall', u: [0, 17.0], h: [0, 1.9], out: wall676, depth: .3, colour: '#ecebe6' },
+    { name: 'white boundary wall', u: [19.6, 21.5], h: [0, 1.9], out: wall676, depth: .3, colour: '#ecebe6' },
+    ...[0, 5.0, 11.0, 17.0, 19.6, 21.5, 28.0].map(p => ({ name: 'boundary wall pillar', u: [p, +(p + .6).toFixed(1)], h: [0, 2.5], out: wall676, depth: .55, colour: '#f2f1ec' })),
+    ...grille('white railing gate', [17.6, 19.6], [0, 1.6], wall676, '#f2f1ec', .2, false),
+    ...grille('white car gate', [22.1, 28.0], [0, 1.7], wall676, '#f2f1ec', .25, false),
+    ...grille('white car gate', [28.6, 32.4], [0, 1.7], wall676, '#f2f1ec', .25, false),
+    { name: 'louvred bin centre', u: [1.4, 4.6], h: [0, 3.4], out: 2.0, depth: 2.4, colour: '#e8e8e4' },
+    { name: 'blank address plate', u: [18.0, 19.2], h: [.55, .75], out: wall676 + .17, depth: .02, colour: '#9a9a96' },
+  ],
+  piers: [[1.0, 1.6], [6.0, 6.6], [11.0, 11.6], [19.8, 20.4], [25.0, 25.6], [31.0, 31.6]],
+  backFittings: [{ name: 'open car park', u: [1.6, 31.0], h: [.1, 4.4], colour: '#4a4a46' }],
+  // The raised lettering on the boundary wall, by the gate.
+  boards: [{ u: [14.0, 17.0], h: [.9, 1.75], out: wall676 + .18 }],
+  sides: [{
+    edge: 7, // the south wall, on the hoarded site
+    windows: [[3.0, 4.2], [7.4, 8.6], [13.6, 14.8], [18.0, 19.2]].flatMap(u => rows676.map(h => ({ u, h, panes: 2 }))),
+    blocks: [4.6, 7.9, 11.1, 14.3, 17.5, 20.7, 23.9].map(b => ({ name: 'beige floor band', u: [0, 22.245], h: [b, b + .9], out: .02, depth: .04, colour: beige676 })),
+  }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

@@ -65,6 +65,15 @@ const draws: Draws = {
       [...'天善堂'].forEach((ch, i) => text(c, ch, w * (.78 - i * .28), h * .54, h * .62, '#d8a848', '700', kai));
     }],
   },
+  // Crystal Lodge's raised grey capitals on the boundary wall, its L lost, over the address.
+  'crystal-lodge': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#ecebe6'; c.fillRect(0, 0, w, h);
+      text(c, 'CRYSTAL', w * .5, h * .3, h * .36, '#5a5a56', '500', 'Georgia, "Times New Roman", serif', w * .9);
+      text(c, 'ODGE', w * .56, h * .62, h * .3, '#5a5a56', '500', 'Georgia, "Times New Roman", serif', w * .5);
+      text(c, '30 LORONG 16 GEYLANG', w * .5, h * .88, h * .1, '#5a5a56', '600', sans, w * .7);
+    }],
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {

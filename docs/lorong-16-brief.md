@@ -25,7 +25,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 4 | West | 763764689 | Nos. 6–18, the pink walk-up behind the car park | Done; unnamed; question 64 |
 | 5 | West | 763764687 | No. 20, Hotel 81 Geylang | Done; named; question 65 |
 | 6 | West | 763764688 | No. 24, Then Shen Temple | Done; named; question 65 |
-| 7 | West | 763764676 | No. 30, Crystal Lodge | |
+| 7 | West | 763764676 | No. 30, Crystal Lodge | Done; named |
 | 8 | West | 764372580 | No. 50 | |
 | 9 | West | 763764654 | No. 54 | |
 | 10–12 | East | 763764664, 763764665, 763764666 | The terrace at the head of Westerhout Road | |
@@ -161,3 +161,25 @@ A single-storey temple south of the hotel, behind a red-brick boundary wall with
 **Naming:** Google Maps lists **Then Shen Temple**, a place of worship, at 24 Lorong 16 Geylang, Singapore 398866, with its point inside this way. Its board is photographed, so it is named. The board is redrawn in original type as photographed in 2024, gold on black; its third character, hidden by a lantern in June 2024, is taken from the 2022 board.
 
 Use `?review=then-shen-temple`.
+
+### 7. Way 763764676: No. 30, Crystal Lodge
+
+An eight-storey block of flats over an open car park, banded in white and beige, south of the temple. Its lane face is in three bays:
+
+- **the south bay:** flat, with narrow and wide windows;
+- **the middle bay:** recessed, with balconies behind grey railings;
+- **the north bay:** windows between projecting ledges.
+
+On the top floor are open roof terraces under a deep parapet. A white boundary wall along the pavement, with white railings and gates, is lettered in raised grey capitals **CRYSTAL ODGE** (the L is lost) over 30 LORONG 16 GEYLANG.
+
+**Measurement:**
+- **Depth:** `gUrd…`, `978C…`, `rTwd…` and `YJ5N…` (June 2024) agree on the south and north bays **on the source edge** (depth scores peak between −0.75 and +0.5 m, 0.17–0.28). The middle bay is recessed about 1.5 m.
+- **Extent:** from about 1 m north of the source corner to 31.6 m along, against the 32.6 m edge.
+- **The boundary wall:** its lettering, read between `978C…` and `rTwd…`, triangulates **5.8 m in front**.
+- **Heights:** the car park to about 4.6 m; windows at 6.2–7.5 m and every 3.2 m above to 22.1–23.4 m; the top floor's terraces at 24.9–26.4 m; the parapet at about **28.4 m**.
+
+**Layout:** the face is laid on its source edge at its own scale, the open car park as its five-foot way. The recessed bay is drawn as a shaded field behind its railings; the south wall (edge 7) carries the window rows seen from the south. The boundary wall, its gates and the bin centre are drawn at their measured depths.
+
+**Naming:** Google Maps lists **Crystal Lodge**, an apartment building, at 30 Lorong 16 Geylang, Singapore 398870, with its point inside this way, and the source map names it. Its lettering is photographed, so it is named, and the lettering is redrawn as photographed, without the lost L. The businesses listed in it (a shutter repairer, a landscape firm and a helper agency) have no photographed signs.
+
+Use `?review=crystal-lodge`.
