@@ -413,7 +413,84 @@ export const no50 = {
   }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50];
+// ---------------------------------------------------------------------------------------------
+// 9. Way 763764654, Nos. 54-58: a pale grey four-storey walk-up south of the car park aisle, its outline crossing the
+// edge of the extract, half hidden by mango trees: windows in grey surrounds, louvred windows and air-conditioners under
+// a deep roof slab, an open ground floor on columns, and on the lane a projecting bay plated 54-A and a grilled balcony
+// plated 58A under 58-B, behind a white boundary wall with railings. Its north-east corner, followed from three June 2024
+// panoramas (PBc3..., gUrd..., 5TUz...), triangulates about 1 m west and 1.8 m south of the source corner; the rest of
+// the lane face is hidden by the trees, so every face is laid on its source edges. The east face steps four times; its
+// northern segment (edge 21, u north) is the front.
+const grey654 = '#d6d8d6', surround654 = '#8a9290';
+const floors654 = [[5.0, 6.6], [8.1, 9.6], [11.0, 12.5]];
+const wall654 = x => +(285.0 - x).toFixed(2); // the boundary wall's line, x = 285.0, out from an east face at x
+const slab654 = w => [
+  { name: 'roof slab', u: [0, w], h: [13.0, 13.5], out: .45, depth: .9, colour: '#e2e4e2' },
+  { name: 'open ground floor', u: [.15, +(w - .15).toFixed(3)], h: [.13, 3.9], out: .01, depth: .02, colour: '#4a4a46' },
+];
+const boundary654 = (w, out) => [
+  { name: 'white boundary wall', u: [0, w], h: [0, 1.05], out, depth: .25, colour: '#ecece8' },
+  ...grille('white railing', [0, w], [1.05, 2.0], out, '#f2f2ee', .14, false),
+  ...Array.from({ length: Math.floor(w / 2.6) + 1 }, (_, i) => ({ name: 'boundary wall pier', u: [+Math.min(w - .3, i * 2.6).toFixed(3), +Math.min(w, i * 2.6 + .3).toFixed(3)], h: [0, 2.2], out, depth: .35, colour: '#ecece8' })),
+];
+export const no54 = {
+  id: 'l16-54', buildingIds: ['763764654'], kind: 'unnamed', unnamed: true, frontEdge: 21, reviewRoad: 'Lorong 16 Geylang', review: { distance: 9, pitch: 24 },
+  name: 'Nos. 54-58 Lorong 16 (June 2024 exterior, occupants not identified)', address: '54-58 Lorong 16 Geylang',
+  height: 13.5, ceiling: 3.9, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a pale grey four-storey walk-up on the west side of Lorong 16, south of the car park aisle, half hidden by mango trees: windows in grey surrounds, louvred windows and air-conditioners on its three upper floors under a deep roof slab, over an open ground floor on columns where its households keep goods and potted plants. On the lane a projecting bay is plated 54-A, and a grilled balcony plated 58A in red, under a white striped awning, stands below a glazed floor plated 58-B; a white boundary wall with railings runs along the pavement, and a plate at the aisle lists 56, 58A, 58B and 58C. Google Maps lists Fairus78 at 54 and International Machine Tools Trading and Sun Electrical Plumbing Renovation Works at 58 Lorong 16, but no sign for any of them was photographed, so no name is given. The outline crosses the edge of the retained extract (open question 62). Its north-east corner, followed from three June 2024 panoramas (PBc3..., gUrd..., 5TUz...) within 1.2 degrees, triangulates about 1 m west and 1.8 m south of the source corner, where the registered satellite instead shows its roof slab 3-4 m east of the outline; the rest of the lane face is hidden by the trees, so every face is laid on its source edges (open question 65). Heights were read on the north face\'s source plane: the ground floor to about 3.9 m, windows at 5.0-6.6, 8.1-9.6 and 11.0-12.5 m and the roof slab at 13.0-13.5 m.',
+  sources: [way('763764654'), search('54 Lorong 16 Geylang Singapore'), pano('FATWSwwGn6cUCAdZuoUnlw', 262, 8, 50), pano('PBc3mXjx_CkswYrrBoTUIQ', 226, 14, 30), pano('5TUzhfcSfz2IBlfs_sQnhA', 235, 15, 80), pano('gUrdY-azKFUqo5xT_-hfnA', 206, 10, 30)],
+  colours: { wall: grey654, trim: surround654, frame: '#4a5250', glass: '#3e4648', pier: '#e8eae8', back: '#4a4a46', floor: '#a8a8a2' },
+  windows: [[.9, 2.5], [3.5, 5.4]].flatMap(u => floors654.map(h => ({ u, h, panes: 2, surround: true }))),
+  blocks: [
+    ...slab654(6.354).slice(0, 1),
+    ...[[2.7, 3.3, 5.3], [4.0, 4.6, 8.4]].map(([a, b, y]) => ({ name: 'air-conditioner', u: [a, b], h: [y, y + .5], out: .2, depth: .4, colour: '#e8e8e4' })),
+    ...boundary654(6.354, wall654(278.8)),
+  ],
+  piers: [[.1, .45], [5.9, 6.25]],
+  backFittings: [{ name: 'household goods and plants', u: [.6, 5.7], h: [.1, 1.8], colour: '#6a6a62', glow: .04 }],
+  sides: [{
+    edge: 20, // the north face on the aisle, u west from the north-east corner
+    windows: [[.6, 2.2], [4.3, 6.1]].flatMap(u => floors654.map(h => ({ u, h, panes: 2, surround: true }))),
+    blocks: [
+      ...slab654(8.127),
+      ...floors654.map(h => ({ name: 'louvred window', u: [2.8, 3.8], h, out: .03, depth: .04, colour: '#9aa2a0' })),
+      ...[[1.2, 1.9, 6.7], [4.8, 5.5, 6.7], [1.2, 1.9, 9.7], [4.8, 5.5, 12.6]].map(([a, b, y]) => ({ name: 'air-conditioner', u: [a, b], h: [y, y + .5], out: .2, depth: .4, colour: '#e8e8e4' })),
+    ],
+  }, {
+    edge: 23, // the projecting bay plated 54-A
+    windows: [{ u: [.5, 4.1], h: [4.6, 6.8], panes: 4 }, ...floors654.slice(1).map(h => ({ u: [.8, 3.8], h, panes: 3, surround: true }))],
+    blocks: [
+      ...slab654(4.565),
+      { name: 'blank 54-A plate', u: [1.3, 2.0], h: [4.1, 4.4], out: .03, depth: .02, colour: '#c8a8a8' },
+      ...boundary654(4.565, wall654(280.85)),
+    ],
+  }, {
+    edge: 27, // the grilled balcony plated 58A under the glazed floor plated 58-B
+    windows: [{ u: [.4, 4.0], h: [8.0, 10.0], panes: 4 }, { u: [.6, 3.8], h: floors654[2], panes: 3, surround: true }],
+    blocks: [
+      ...slab654(4.398),
+      ...grille('balcony grille', [.3, 4.1], [4.4, 7.0], .2, '#4a4a48', .2),
+      { name: 'blank red 58A lettering', u: [2.2, 3.2], h: [5.8, 6.2], out: .25, depth: .02, colour: '#c8302a' },
+      { name: 'white striped awning', u: [.2, 4.2], h: [7.2, 7.6], out: .5, depth: 1.0, colour: '#e8e8e4' },
+      { name: 'blank 58-B plate', u: [.8, 1.6], h: [10.3, 10.6], out: .03, depth: .02, colour: '#2a2a2a' },
+      ...boundary654(4.398, wall654(281.7)),
+    ],
+  }, {
+    edge: 25, // the recess between the bay and the balcony: its wall, and the boundary wall in front
+    windows: floors654.map(h => ({ u: [.5, 1.7], h, panes: 1, surround: true })),
+    blocks: [...slab654(2.244), ...boundary654(2.244, wall654(277.96))],
+  }, {
+    edge: 1, // the southern segment, behind the trees
+    windows: [[1.0, 2.8], [4.4, 6.4]].flatMap(u => floors654.map(h => ({ u, h, panes: 2, surround: true }))),
+    blocks: [
+      ...slab654(7.62),
+      { name: 'yellow canopy', u: [4.5, 7.4], h: [2.4, 2.8], out: .8, depth: 1.6, colour: '#e8b830' },
+      ...boundary654(7.62, wall654(281.3)),
+    ],
+  }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

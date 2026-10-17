@@ -27,7 +27,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 6 | West | 763764688 | No. 24, Then Shen Temple | Done; named; question 65 |
 | 7 | West | 763764676 | No. 30, Crystal Lodge | Done; named |
 | 8 | West | 764372580 | No. 50, a timber house behind hoarding | Done; unnamed; question 65 |
-| 9 | West | 763764654 | No. 54 | |
+| 9 | West | 763764654 | Nos. 54–58, a walk-up on the extract's edge | Done; unnamed; question 65 |
 | 10–12 | East | 763764664, 763764665, 763764666 | The terrace at the head of Westerhout Road | |
 | 13–14 | East | 763764667, 763764668 | The terrace's west end, on the grassed verge | |
 | 15–22 | East | 454274647, 763764669, 763764670, 763764671, 763764672, 763764673, 763764674, 763764675 | The row south of Hotel 81 Palace: Lodge 41 (41), Soon Clan Association (43) | |
@@ -206,3 +206,29 @@ An old timber house behind the hoarding, raised on low stilts under a hipped roo
 **Naming:** none. No sign names the house and no business is listed at the address.
 
 Use `?review=l16-50`.
+
+The car park aisle (way 542172608) turns in from the lane south of No. 50, between grey walls.
+
+### 9. Way 763764654: Nos. 54–58
+
+A pale grey four-storey walk-up south of the aisle, its outline crossing the edge of the extract, half hidden by mango trees.
+
+- **Upper floors:** windows in grey surrounds, louvred windows and air-conditioners, under a deep roof slab.
+- **Ground floor:** open, on columns, where the households keep goods and potted plants.
+- **On the lane:** a projecting bay plated 54-A, and a grilled balcony plated **58A** in red under a white striped awning, below a glazed floor plated 58-B.
+- **The boundary wall:** white, with railings and piers, along the pavement. A plate by the aisle lists 56, 58A, 58B and 58C.
+
+**Measurement:**
+- **The north-east corner:** bearings from `PBc3…`, `gUrd…` and `5TUz…` (June 2024) meet within 1.2° about **1 m west and 1.8 m south** of the source corner.
+- **The rest of the lane face** is hidden by the trees.
+- **Satellite:** it shows the roof slab 3–4 m east of the outline instead, so the two disagree by about 5 m. The building is therefore laid on its source edges.
+- **The boundary wall:** its north end, read from `5TUz…` by its foot's elevation, and its foot in `FATW…`, put it on a line about **x = 285**, 3–6 m in front of the stepped east face.
+- **Heights,** on the north face's source plane: the ground floor to about 3.9 m; windows at 5.0–6.6, 8.1–9.6 and 11.0–12.5 m; the roof slab at 13.0–13.5 m.
+
+**Layout:** the east face steps four times. Its northern segment (edge 21) is the front, with the open ground floor as its five-foot way. The bay (edge 23), the recess (edge 25), the balcony segment (edge 27) and the southern segment (edge 1) are side faces, as is the north face on the aisle (edge 20). The boundary wall is drawn on one line in front of all of them.
+
+**Naming:** none. Fairus78 is listed at No. 54, and International Machine Tools Trading and Sun Electrical Plumbing Renovation Works at No. 58, but no sign for any of them was photographed.
+
+Use `?review=l16-54`.
+
+**West side complete.** Every building from No. 314 Geylang Road to the edge of the extract now has its Lorong 16 front.

@@ -87,6 +87,23 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Author one footprint: a straight east face 2.6 m east of the longest step, from the source face's south end to its north end, keeping the source north, south and west sides.
     - **Unlocks:** a flat front at its true line, whole windows and a straight eave.
 
+65. **Lorong 16 west side, No. 20 to No. 54: re-author four outlines on their photographed positions?**
+    - **Evidence:** measured from the June 2024 lane drive, and for the temple the December 2022 drive ([Lorong 16 brief](lorong-16-brief.md), stops 5–9). Crystal Lodge (stop 7) stands on its source edge and needs no change.
+
+      | Building | Way | Photographed against the source outline |
+      | --- | --- | --- |
+      | No. 20, Hotel 81 Geylang | 763764687 | East face 12.4 m long against 10.06 m: from 0.4 m south of the source face to 2.3 m north of it, its stair tower about 1 m forward, beyond the outline's north-east corner |
+      | No. 24, Then Shen Temple | 763764688 | Front 1.5 m forward; corner piers 14.8 m apart against the 16.04 m edge; its boundary wall about 7 m forward |
+      | No. 50 | 764372580 | Not measurable from the lane (19–23 m behind hoarding). The satellite shows its dark roof 3–5 m east of the outline |
+      | Nos. 54–58 | 763764654 | North-east corner about 1 m west and 1.8 m south of the source corner, from three panoramas; the satellite shows the roof slab 3–4 m east instead |
+
+    - **What happens now:** each building is laid on its source edges: the hotel's face is squeezed to 0.81 of its length, and the temple's front stands 1.5 m behind its photographed line.
+    - **Recommendation:**
+      - **Hotel 81 Geylang:** yes. Extend the east face 0.4 m south and 2.3 m north, with the tower 1 m forward on its north end.
+      - **Then Shen Temple:** yes. Move the front 1.5 m forward at its photographed width, keeping the rear line.
+      - **Nos. 50 and 54–58:** not yet. The panoramas and the satellite disagree by about 5 m, so keep the source outlines until a closer capture or a survey settles them.
+    - **Unlocks:** the hotel's tower and face at their true size, and the temple's verandah at its true depth.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
