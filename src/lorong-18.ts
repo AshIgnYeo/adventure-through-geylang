@@ -18,6 +18,21 @@ const screen = (holes: number[][][], strips: Strip[]): Draw => (c, w, h) => {
 };
 const Y = '#e4d27a', P = '#d27aa8';
 
+// GoFit's floor directory, top to bottom, drawn whole and cut into its left (0) or right (1) half.
+const gofitFloors: [string, string, string][] = [['6', 'ROOFTOP GARDEN & CHILL ZONE', '#e8e4d8'], ['5', 'MY GOFIT VIRTUAL PT', '#f0e8d0'], ['4', 'CARDIO', '#e8a0b0'], ['3', 'FITNESS MACHINES & SUPER CIRCUIT', '#d8e8e0'], ['2', 'FREE WEIGHTS', '#5a8ac8'], ['1P', 'CAR PARK', '#f0ecd8']];
+const gofitBanner = (half: number): Draw => (c, w, h) => {
+  c.save(); c.translate(-half * w, 0); const W = w * 2, top = h * .1, step = (h - top) / gofitFloors.length;
+  c.fillStyle = '#e8e6e0'; c.fillRect(0, 0, W, h); c.fillStyle = '#2a2a2a'; c.fillRect(W * .3, h * .02, W * .4, top * .7);
+  text(c, 'GO FIT', W * .5, h * .02 + top * .35, top * .45, '#e8c840', '800', sans, W * .36);
+  gofitFloors.forEach(([n, label, colour], i) => {
+    const y = top + i * step; c.fillStyle = colour; c.fillRect(W * .04, y + step * .04, W * .92, step * .92);
+    text(c, label, W * .5, y + step * .2, step * .07, '#2a2a2a', '700', sans, W * .86);
+    text(c, n, W * .55, y + step * .6, step * .42, n === '1P' ? '#2a3a8a' : '#2a2a2a', '800', sans, W * .8);
+  });
+  c.restore();
+};
+const gofitLetter = (ch: string): Draw => (c, w, h) => text(c, ch, w * .5, h * .55, h * .95, '#e8c840', '800', sans, w);
+
 // Named places only: original lettering after the photographed boards.
 const draws: Draws = {
   'le-regal': {
@@ -65,6 +80,11 @@ const draws: Draws = {
       text(c, '20公館', w * .5, h * .55, h * .62, '#2e8a6a', '700', hei, w * .9);
     }],
   },
+  // GoFit's banner, in two halves either side of a step in the source front, its plate, and GOFIT letter by letter.
+  'gofit': { boards: [gofitBanner(0), (c, w, h) => { c.fillStyle = '#e8862a'; c.fillRect(0, 0, w, h); text(c, '22 Geylang Lor 18', w * .5, h * .55, h * .62, '#2a2a2a', '700', sans, w * .92); }] },
+  'gofit@5': { boards: [gofitBanner(1), gofitLetter('G')] },
+  'gofit-22': { boards: [gofitLetter('O'), gofitLetter('F'), gofitLetter('I')] },
+  'gofit-22@1': { boards: [gofitLetter('T')] },
   // The number 340 on the corner's fascia.
   'le-regal@8': {
     boards: [(c, w, h) => { c.fillStyle = '#6a6d70'; c.fillRect(0, 0, w, h); text(c, '340', w * .5, h * .55, h * .78, '#f0f0ec', '700', sans, w * .9); }],

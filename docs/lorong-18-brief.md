@@ -27,8 +27,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 4 | West | 764372568 | No. 16 | Done; unnamed; question 73 |
 | 5 | West | 764372567 | No. 18 | Done; unnamed; question 73 |
 | 6 | West | 764372566 | No. 20, Club 20 | Done; named; question 73 |
-| 7 | West | 454274634 | No. 22 | |
-| 8 | West | 764372565 | No. 24 | |
+| 7–8 | West | 764372565, 454274634 | Nos. 24 and 22, GoFit X Gym Geylang | Done; named; question 73 |
 | 9 | West | 454274635 | No. 26 | |
 | 10 | West | 454274637 | No. 28 | |
 | 11 | West | 454274639 | No. 30 | |
@@ -146,3 +145,31 @@ A two-storey terrace under one red tiled roof, its houses painted grey, blue, or
 - **Not named:** Adult Secret, listed at No. 18, is permanently closed. SG山水庄园, listed at No. 20, has no photographed sign. Nothing is listed at No. 16.
 
 Use `?review=cygon`, `?review=l18-16`, `?review=l18-18` and `?review=club-20`.
+
+### 7–8. Ways 764372565 and 454274634: Nos. 22 and 24, GoFit X Gym Geylang
+
+One six-storey building stands over both source ways.
+
+- **Front:** white, with grilled openings in coloured frames (grey, pink, green and orange), four floors of them over a timber-slatted soffit and a drive-through car park.
+- **South end:** a stair strip of small framed windows, and a banner listing the gym's floors (6 rooftop garden and chill zone, 5 my GoFit virtual PT, 4 cardio, 3 fitness machines and super circuit, 2 free weights, 1P car park).
+- **Along the top:** the letters **GOFIT**.
+- **On the wall:** a plate reading 22 Geylang Lor 18, with a GoFit A-board and a pink vending machine in front.
+
+**Measurement:** read on No. 30's front line, s north from the building's south end.
+- **Depth:** the frames line up between `FA-o…`, `zOAB…`, `D46t…` and `Z5Yk…` (June 2024) on a plane **1.25 m behind** that line. That is 2–2.5 m in front of the two ways' projecting source edges and about 5 m in front of their recessed ones. On planes 1–2 m further back the frames drift across the panoramas.
+- **Extent:** on that plane the building runs from s = 18.3 to 31.8, about 13.5 m, against the source ways' 12.2 m.
+- **Heights:**
+  - car park to 3.6 m, under the soffit to 4.3 m;
+  - four floors of frames to 15.8 m;
+  - rooftop louvres to 16.5 m, and the lettering to about 17.6 m.
+
+**Layout:**
+- **One place over two ways:** the elevation is laid proportionally across the four source front edges, No. 24's and then No. 22's. Each way's longer edge is its front and the other a side face; No. 24 carries the review start.
+- **The banner** is drawn in two halves, either side of the step between No. 24's front edges. The lettering goes letter by letter to the edge under each.
+- The front stands 2–5 m behind its photographed line: part of [open question 73](open-questions.md).
+
+**Naming:** Google Maps lists **GoFit X Gym Geylang**, a gym open 24 hours, at 22 Lor 18 Geylang, Singapore 398804, with its point inside the building (in way 764372565). Its marks are photographed, so the building is named after it, and its lettering, banner and plate are redrawn in original type.
+- The Foochow Building (Geylang), listed at the same address, is marked permanently closed.
+- Alpha Omega Wellness & Recovery, listed on the fifth floor, and the Singapore Hock Chew Kong Kien Phor Tor have no photographed signs.
+
+Use `?review=gofit`.

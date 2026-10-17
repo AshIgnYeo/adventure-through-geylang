@@ -9,25 +9,32 @@ import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, la
 // edge takes its share of the elevation, scaled to the two edges' combined width. The front edge carries the five-foot
 // way and the review start; the other is a side face, its back-wall fittings and piers drawn on its wall.
 const scaleSpan = k => x => ({ ...x, u: [+(x.u[0] * k).toFixed(3), +(x.u[1] * k).toFixed(3)] });
-function across(elev, Wp, parts, front) {
-  const total = parts.reduce((s, p) => s + p.w, 0), k = total / Wp, sc = scaleSpan(k);
+// The same for a building over several source ways (`houses`, south to north, each with its front edges): the elevation is
+// scaled to all their edges' combined width and shared out in turn. Boards go to the edge holding their centre.
+function acrossHouses(elev, Wp, houses) {
+  const total = houses.flatMap(h => h.parts).reduce((s, p) => s + p.w, 0), k = total / Wp, sc = scaleSpan(k);
   const scaled = { windows: elev.windows?.map(sc), vents: elev.vents?.map(sc), blocks: elev.blocks?.map(sc), backFittings: elev.backFittings?.map(sc), piers: elev.piers?.map(([a, b]) => [+(a * k).toFixed(3), +(b * k).toFixed(3)]) };
-  let t = 0;
-  // Each edge keeps a hair's margin of its width; windows cut at a slice are inset by their sills, and back-wall
-  // fittings by 0.12 m, since the source party walls and steps are not quite square to the front.
+  const boards = (elev.boards ?? []).map(sc);
+  // Each edge keeps a hair's margin of its width; windows cut at a slice are inset by their sills, and fittings behind
+  // the front by 0.12-0.15 m, since the source party walls and steps are not quite square to the front.
   const inset = (xs, w, m) => xs?.flatMap(x => { const l = Math.max(x.u[0], m), r = Math.min(x.u[1], w - m); return r - l > .25 ? [{ ...x, u: [+l.toFixed(3), +r.toFixed(3)] }] : []; });
-  const cut = parts.map(p => {
-    const w = p.w - .002, piece = sliceSpec(scaled, t, t + w); t += p.w;
-    const behind = (piece.blocks ?? []).filter(b => (b.out ?? 0) + (b.depth ?? .1) / 2 <= 0), proud = (piece.blocks ?? []).filter(b => !behind.includes(b));
-    return { edge: p.edge, ...piece, windows: inset(piece.windows, w, .09), backFittings: inset(piece.backFittings, w, .12), blocks: [...proud, ...inset(behind, w, .15)] };
+  let t = 0;
+  return houses.map(house => {
+    const cut = house.parts.map(p => {
+      const w = p.w - .002, t0 = t, piece = sliceSpec(scaled, t0, t0 + w); t += p.w;
+      const behind = (piece.blocks ?? []).filter(b => (b.out ?? 0) + (b.depth ?? .1) / 2 <= 0), proud = (piece.blocks ?? []).filter(b => !behind.includes(b));
+      const mine = boards.filter(b => (b.u[0] + b.u[1]) / 2 >= t0 && (b.u[0] + b.u[1]) / 2 < t0 + p.w).map(b => ({ ...b, u: [+Math.max(.02, b.u[0] - t0).toFixed(3), +Math.min(w - .02, b.u[1] - t0).toFixed(3)] }));
+      return { edge: p.edge, ...piece, windows: inset(piece.windows, w, .09), backFittings: inset(piece.backFittings, w, .12), blocks: [...proud, ...inset(behind, w, .15)], boards: mine.length ? mine : undefined };
+    });
+    const main = cut.find(c => c.edge === house.front);
+    const sides = cut.filter(c => c.edge !== house.front).map(c => ({
+      edge: c.edge, windows: c.windows, vents: c.vents, boards: c.boards,
+      blocks: [...(c.blocks ?? []), ...(c.backFittings ?? []).map(f => ({ ...f, out: .02, depth: .04 })), ...(c.piers ?? []).map(u => ({ name: 'pier', u, h: [0, elev.ceiling ?? 3], out: .15, depth: .3, colour: elev.pierColour ?? '#e8e6e0' }))],
+    }));
+    return { frontEdge: house.front, windows: main.windows, vents: main.vents, blocks: main.blocks, backFittings: main.backFittings, piers: main.piers, boards: main.boards, sides };
   });
-  const main = cut.find(c => c.edge === front);
-  const sides = cut.filter(c => c.edge !== front).map(c => ({
-    edge: c.edge, windows: c.windows, vents: c.vents,
-    blocks: [...(c.blocks ?? []), ...(c.backFittings ?? []).map(f => ({ ...f, out: .02, depth: .04 })), ...(c.piers ?? []).map(u => ({ name: 'pier', u, h: [0, elev.ceiling ?? 3], out: .15, depth: .3, colour: elev.pierColour ?? '#e8e6e0' }))],
-  }));
-  return { frontEdge: front, windows: main.windows, vents: main.vents, blocks: main.blocks, backFittings: main.backFittings, piers: main.piers, sides };
 }
+const across = (elev, Wp, parts, front) => acrossHouses(elev, Wp, [{ parts, front }])[0];
 
 // ---------------------------------------------------------------------------------------------
 // 1. Way 541941365, Le Regal, 340 Geylang Road: the Lorong 18 west corner, back to Lorong 16. A white five-storey
@@ -233,9 +240,9 @@ export const cygon = {
     ],
     backFittings: [{ name: 'grey concrete-textured front', u: [.4, 6.2], h: [.1, 2.9], colour: '#8e9294' }, { name: 'dark door', u: [2.3, 3.4], h: [.1, 2.4], colour: '#2e3032' }],
     piers: [[.4, .7], [5.9, 6.2]], pierColour: '#c8ccce', ceiling: 3.0,
+    // The CYGON lettering on the canopy's fascia.
+    boards: [{ u: [1.0, 3.2], h: [3.08, 3.52], out: .72 }],
   }, 6.6, [{ edge: 0, w: 4.027 }, { edge: 6, w: 3.993 }], 0),
-  // The CYGON lettering on the canopy's fascia, on the projecting edge.
-  boards: [{ u: [1.2, 3.9], h: [3.08, 3.52], out: .72 }],
 };
 export const no16 = {
   ...t14('#3a68c4'), id: 'l18-16', buildingIds: ['764372568'], kind: 'unnamed', unnamed: true,
@@ -289,11 +296,67 @@ export const club20 = {
       { name: 'low cream wall', u: [0, 1.0], h: [0, 1.8], out: 1.1, depth: .3, colour: '#e8dcc0' },
       { name: 'lightbox post', u: [7.6, 7.75], h: [0, 2.0], out: 1.0, depth: .15, colour: '#d8d8d4' },
     ],
+    // The 20公館 lightbox on its post at the north side.
+    boards: [{ u: [7.0, 8.3], h: [2.0, 2.8], out: 1.08 }],
     backFittings: [{ name: 'dark lobby', u: [1.4, 7.0], h: [.1, 3.2], colour: '#3a3634', glow: .06 }],
   }, 8.4, [{ edge: 5, w: 3.938 }, { edge: 7, w: 2.997 }], 5),
 };
-// The 20公館 lightbox on its post at the north side, on the projecting edge.
-club20.sides[0].boards = [{ u: [1.85, 2.95], h: [2.0, 2.8], out: 1.08 }];
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20];
+
+// ---------------------------------------------------------------------------------------------
+// 7-8. Ways 764372565 and 454274634, Nos. 24 and 22: one six-storey building over both ways, GoFit X Gym Geylang. A
+// white front of grilled openings in coloured frames, grey, pink, green and orange, over a timber-slatted soffit and a
+// drive-through car park, with a stair strip and a floor-directory banner at its south end and GOFIT lettered along its
+// top. Read on No. 30's front line (s north from the building's south end): its frames line up between four June 2024
+// lane panoramas 1.25 m behind that line, which is 2-2.5 m in front of the two ways' projecting source edges and about
+// 5 m in front of their recessed ones. On that plane it runs from s = 18.3 to 31.8, about 13.5 m against the source
+// ways' 12.2 m.
+const frame22 = (u, h, colour) => {
+  const [l, r] = u, [b, t] = h, k = .2;
+  return [
+    { name: 'grey louvred infill', u: [l + k, r - k], h: [b + k, t - k], out: .12, depth: .04, colour: '#c8cacb' },
+    ...[[l, l + k], [r - k, r]].map(uu => ({ name: 'coloured frame', u: uu, h, out: .2, depth: .3, colour })),
+    ...[[b, b + k], [t - k, t]].map(hh => ({ name: 'coloured frame', u, h: hh, out: .2, depth: .3, colour })),
+  ];
+};
+const grey22 = '#8e9294', pink22 = '#d8607a', green22 = '#2e8a5a', orange22 = '#e8a030';
+const rows22 = [[4.3, 7.3], [7.4, 10.2], [10.3, 13.0], [13.1, 15.8]], cols22 = [[5.4, 9.5], [9.6, 13.2]];
+const colours22 = [[grey22, pink22], [green22, grey22], [grey22, orange22], [orange22, grey22]];
+const gofitNote = ' Google Maps lists GoFit X Gym Geylang, a gym open 24 hours, at 22 Lor 18 Geylang, Singapore 398804, with its point inside this building (in way 764372565), and its marks are photographed: GOFIT along the top of the front, and its banner and boards. So the building is named after it, and its lettering and banner are redrawn in original type. The Foochow Building (Geylang), listed at the same address, is marked permanently closed; Alpha Omega Wellness & Recovery, listed on its fifth floor, and the Singapore Hock Chew Kong Kien Phor Tor have no photographed signs. The front was read on No. 30\'s front line: four June 2024 lane panoramas (FA-o..., zOAB..., D46t..., Z5Yk...) agree on its frames 1.25 m behind that line, 2-2.5 m in front of the two ways\' projecting source edges and about 5 m in front of their recessed ones; on that plane the building runs about 13.5 m, against the ways\' 12.2 m. The elevation is laid proportionally across the four source front edges, No. 24\'s and then No. 22\'s. Heights were read on that plane: the car park to 3.6 m under a timber-slatted soffit to 4.3 m, four floors of frames to 15.8 m, rooftop louvres to 16.5 m and the lettering to about 17.6 m.';
+const [gofit24, gofit22] = acrossHouses({
+  windows: rows22.flatMap(h => cols22.map(u => ({ u: [u[0] + .3, u[1] - .3], h: [h[0] + .5, h[1] - .5], panes: 4 }))),
+  blocks: [
+    ...rows22.flatMap((h, i) => cols22.flatMap((u, j) => frame22(u, h, colours22[i][j]))),
+    { name: 'timber-slatted soffit', u: [4.9, 13.5], h: [3.6, 4.3], out: .15, depth: .3, colour: '#b06a4a' },
+    { name: 'rooftop louvres', u: [4.9, 13.5], h: [15.9, 16.5], out: .1, depth: .2, colour: '#c8cacb' },
+    // The stair strip at the south end: small framed windows over grey louvres.
+    ...frame22([.6, 2.0], [5.8, 8.2], orange22), ...frame22([.5, 2.1], [10.8, 14.0], pink22),
+    ...[[8.5, 10.5], [14.3, 16.0]].map(h => ({ name: 'grey louvres', u: [.6, 2.0], h, out: .05, depth: .04, colour: '#a6aaac' })),
+    { name: 'pink vending machine', u: [12.0, 12.9], h: [0, 1.8], out: .5, depth: .7, colour: '#e8a0c0' },
+  ],
+  backFittings: [{ name: 'drive-through car park', u: [5.5, 11.6], h: [.1, 3.5], colour: '#3a3c3e', glow: .05 }, { name: 'white wall', u: [.2, 5.5], h: [.1, 3.5], colour: '#efeeea' }],
+  // The floor-directory banner, the plate reading 22 Geylang Lor 18, and GOFIT along the top, letter by letter.
+  // The banner is drawn in two halves, either side of the step between No. 24's two front edges.
+  boards: [
+    { u: [2.75, 3.72], h: [3.9, 16.4], out: .12 }, { u: [3.78, 4.85], h: [3.9, 16.4], out: .12 }, { u: [1.4, 3.1], h: [1.5, 1.95], out: .05 },
+    ...[[5.6, 6.8], [7.0, 8.2], [8.5, 9.5], [9.8, 10.3], [10.6, 11.8]].map(u => ({ u, h: [16.5, 17.6], out: .05 })),
+  ],
+  ceiling: 3.6,
+}, 13.5, [{ parts: [{ edge: 3, w: 3.373 }, { edge: 5, w: 2.891 }], front: 3 }, { parts: [{ edge: 3, w: 3.027 }, { edge: 1, w: 2.860 }], front: 3 }]);
+export const gofit = {
+  id: 'gofit', buildingIds: ['764372565', '454274634'], kind: 'gofit', reviewRoad: 'Lorong 18 Geylang', review: { distance: 7, pitch: 30 },
+  name: 'GoFit X Gym Geylang (June 2024 exterior)', address: '22 Lorong 18 Geylang (over Nos. 22 and 24)',
+  height: 16.5, ceiling: 3.6, fiveFootWay: 1.5, shellInset: .15, roof: { type: 'flat', colour: '#9b9a95' },
+  colours: { wall: '#efeeea', trim: '#e4e4e0', frame: '#3a3c3c', glass: '#3e4a4e', pier: '#efeeea', back: '#3a3c3e', floor: '#a8a296' },
+  evidence: 'June 2024 Street View shows one six-storey building over Nos. 22 and 24: a white front of grilled openings in coloured frames, grey, pink, green and orange, four floors of them over a timber-slatted soffit and a drive-through car park; at its south end a stair strip of small framed windows and a banner listing the floors (6 rooftop garden and chill zone, 5 my GoFit virtual PT, 4 cardio, 3 fitness machines and super circuit, 2 free weights, 1P car park); along its top the letters GOFIT; and on its wall a plate reading 22 Geylang Lor 18, with a GoFit board and a pink vending machine in front.' + gofitNote,
+  sources: [way('764372565'), way('454274634'), search('GoFit X Gym Geylang 22 Lorong 18'), pano('D46tgWFRjVIkWNPE9YXH6w', 262, 15, 75), pano('zOABkuSTa8EV0waK82wcQg', 300, 20, 45), pano('FA-o7CNNp9nWc64Y24bQSg', 300, 15, 75)],
+  parts: {
+    // No. 24, the south way: the stair strip, the banner and the south column of frames; the review start.
+    '764372565': { ...gofit24 },
+    // No. 22, the north way: the north column of frames and the end of the lettering.
+    '454274634': { ...gofit22, id: 'gofit-22', noReview: true },
+  },
+};
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;
