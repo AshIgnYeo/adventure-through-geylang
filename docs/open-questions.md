@@ -54,7 +54,37 @@ Started: 10 October 2026.
       The listing points run about 5 m east of the photographed fronts, as the address points do, so the houses are matched by number.
     - **Unlocks:** fourteen fronts at their true widths and depth, and six more named places. If the answer is no, the row stays sliced across its source ways, unnamed.
 
+72. **Lorong 18: leave the stub south of Westerhout Road and the Westerhout Road row for a later pass?**
+    - **Why it comes up:** question 71 stops Lorong 18 at Westerhout Road. The lane's carriageway carries on south of the junction about 58 m to the edge of the extract (way 632503609), and is drawn there as road surface, outside the walkable corridor. Westerhout Road's mouth either side of the lane is drawn the same way.
+    - **What the extract holds there:**
+      - **Westerhout Road's north side,** east of No. 55: No. 61 (way 454438307), listed as the address of Kip Inn, and No. 69 (way 764372539).
+      - **Its south side and the stub:** No. 54 (way 764372525) and No. 56 (way 454274544), east of the stub. The extract's southern edge, 1.3110 N, runs just south of Westerhout Road, so the stub's west side and the rest of Westerhout Road's south side have no outlines.
+      - **The head of Westerhout Road,** west of No. 44B, is the Lorong 16 walk's.
+    - **Recommendation:** yes. Leave them for a Westerhout Road pass. Taking in the stub's west side would need the extract extended south, which is a separate decision.
+    - **Unlocks:** nothing now; it records where the lane stops.
+
 ## Settled
+
+### Twelfth batch, 17 October 2026
+
+The project owner asked for Lorong 18 to be mapped in full, without stopping until the whole lane is finished, while Lorong 14 and Lorong 16 are walked on their own branches. Lorong 18 is the next lane along the south side of Geylang Road after Lorong 16, so question 71 is recorded as answered by that instruction, on question 47's terms.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 71 | **Yes.** Model Lorong 18 between Geylang Road and Westerhout Road, one building at a time in street order, with the Geylang Road block back to Lorong 16 | The lane, its buildings, its Geylang Road junction, Westerhout Road's mouth and a Geylang Road link on from the Lorong 21 link join the map; the walk is recorded in the [Lorong 18 brief](lorong-18-brief.md) |
+
+Question 71 in full:
+
+71. **Lorong 18, Geylang Road to Westerhout Road: build it as Lorong 21 was built?**
+    - **Order:** start with the Geylang Road block at the west corner, then go south down the west side to Westerhout Road, then come back north up the east side to Geylang Road. Each stop is one photographed building, measured before the next is started; a uniform row may be one stop. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Westerhout Road, and keep its mouth as road surface. The stub of Lorong 18 south of Westerhout Road and the Westerhout Road row wait for a later pass (question 72). Geylang Road east of No. 350 (Nos. 352–364) waits for Lorong 20.
+    - **Corners:** take in the corner buildings at both ends of both sides.
+    - **Block faces:** on Geylang Road the west corner block (way 541941365) is the only source outline on the face back to Lorong 16, and it is also Lorong 16's east corner. All of its faces are modelled with Lorong 18, including the one on Lorong 16; the Lorong 16 walk leaves it alone.
+    - **Map:** add the lane's own buildings and road ways by id, as for Lorong 21. The lane becomes a walkable corridor. A Geylang Road link carries the Lorong 21 link on from 17 m east of Lorong 21's junction to about 18 m past Lorong 18's, to take in the east corner. Where it overlaps the Lorong 16 walk's Geylang Road link, the two are reconciled when the branches are merged.
+    - **North side of Geylang Road:** east of Lorong 21 it is in nobody's walk, so its pavement has no buildings beside it for now.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-18` branch, each written up in the Lorong 18 brief. Footprint changes are measured during the walk and logged here for approval, as before.
 
 ### Eleventh batch, 13 October 2026
 
