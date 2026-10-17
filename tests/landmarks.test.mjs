@@ -203,6 +203,8 @@ test('real landmark identities have unique, existing street-study footprints and
       // Valu$ runs over No. 290, tagged Geylang Road, and No. 292, untagged.
       else if (['valu'].includes(place.id)) assert.ok([null, 'Geylang Road'].includes(building?.street));
       else if (['wing-fong-court', 'wing-fong-mansions', 'le-yuan', 'ibis-budget-pearl', 'central-imperial', 'amazing-inn'].includes(place.id)) assert.equal(building?.street, 'Lorong 14 Geylang');
+      else if (['chang-jiang-g1', 'bs-mini-mart', 'hotel-81-geylang', 'then-shen-temple', 'crystal-lodge', 'poh-clan', 'soon-clan', 'lodge-41'].includes(place.id)) assert.equal(building?.street, null);
+      else if (['hotel-81-palace', 'shan-yuan-gu-fo-she'].includes(place.id)) assert.equal(building?.street, 'Lorong 16 Geylang');
       else if (['yaju-hotel', 'summer-view', 'hotel-81-cherry', 'master-tailors', 'chinese-eating-house-owners'].includes(place.id)) assert.equal(building?.street, 'Lorong 12 Geylang');
       else if (['lex-hotel', 'engineering-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 8 Geylang');
       else if (['crystal-mansions'].includes(place.id)) assert.equal(building?.street, 'Lorong 6 Geylang');

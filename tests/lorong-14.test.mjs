@@ -24,8 +24,10 @@ const geylangRow = ['454254171', '454254170', '454254169', '764372576', '4751732
 test('Lorong 14 brings in its own buildings, its east corner block and the Geylang Road row east to Lorong 16', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));
   for (const id of [...west, ...east, ...corner, ...geylangRow]) assert.ok(ids.has(id), id);
-  // Lorong 16's corner (Nos. 310-314), its west side and the Talma Road row wait for their own walks.
-  for (const id of ['764372570', '764372571', '764372569', '763764689', '763764687', '454438325', '454438317']) assert.equal(ids.has(id), false, id);
+  // Lorong 16's corner (Nos. 310-314) and its west side are walked with Lorong 16, not here; the Talma Road row waits.
+  const claimed = new Set(lorong14.flatMap(p => p.buildingIds));
+  for (const id of ['764372570', '764372571', '764372569', '763764689', '763764687']) assert.equal(claimed.has(id), false, id);
+  for (const id of ['454438325', '454438317']) assert.equal(ids.has(id), false, id);
   assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 14 Geylang').length, 13);
   // Talma Road's east mouth is kept as road.
   assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Talma Road').map(r => r.id), ['644896804']);
