@@ -795,7 +795,33 @@ export const lodge41 = {
   backFittings: [{ name: 'glazed entrance', u: [.5, 4.2], h: [.1, 2.6], colour: '#2e3436', glow: .1 }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41];
+// 21-22. Nos. 39 and 37 (ways 763764674 and 763764675): two two-storey houses north of Lodge 41, read on No. 39's lane
+// edge (u_g south from its north end). Z8Z... and YJ5N..., 10 m apart, agree on their upper floors on that line: No.
+// 37 runs from u_g = -3.6 to 1.15 and No. 39 from 1.15 to Lodge 41's north wall at about 5.5, each about 1.2 m south
+// of its source span. Each is laid proportionally on its own source edge.
+const at674 = s => lay(1.15, 4.544 / 4.35)(s).map(v => Math.min(4.543, Math.max(0, v)));
+export const no39 = {
+  id: 'l16-39', buildingIds: ['763764674'], kind: 'unnamed', unnamed: true, frontEdge: 10, reviewRoad: 'Lorong 16 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 39 Lorong 16 (June 2024 exterior, occupants not identified)', address: '39 Lorong 16 Geylang',
+  height: 7.0, ceiling: 3.5, fiveFootWay: 1.5, roof: { type: 'hip', ridge: 7.9, colour: '#b4553d' },
+  evidence: 'June 2024 Street View shows a pale pink two-storey house north of Lodge 41 under a red tiled roof with a ventilator: a band of white-framed windows and four air-conditioners on its upper floor, over an orange tiled canopy hung with a round neon sign numbered 39, and below it a dark timber front under a gold-lettered board reading THAILAND PARADISE behind a grey gate. No business of that name is listed, nor any at the address, so no name is given and the boards are blank. Two June 2024 lane panoramas (Z8Z..., YJ5N...), 10 m apart, agree on its upper floor on its source line, where it runs about 4.35 m, from its party wall with No. 37 to the north wall of Lodge 41\'s tower, about 1.1 m south of its source span; it is laid proportionally on the source edge. Heights were read on that plane: the canopy at 3.5-4.5 m, the windows at 5.3-6.3 m and the eaves at about 7.0 m.' + eastRowNote,
+  sources: [way('763764674'), search('39 Lorong 16 Geylang Singapore'), pano('YJ5NrMKa3ziNs3OkKvpTGA', 62, 8, 40), pano('Z8Z-ljVYEyMx7D21fBKcjQ', 100, 8, 60)],
+  colours: rowColours('#ecdcd6', { frame: '#e8e8e4', back: '#4a3428' }),
+  windows: [{ u: at674([2.54, 5.4]), h: [5.3, 6.3], panes: 4 }],
+  blocks: [
+    { name: 'air-conditioner', u: at674([1.6, 2.3]), h: [5.6, 6.1], out: .2, depth: .4, colour: '#e8e8e4' },
+    ...[[2.6, 3.3], [3.6, 4.3], [4.6, 5.3]].map(s => ({ name: 'air-conditioner', u: at674(s), h: [4.75, 5.2], out: .2, depth: .4, colour: '#e8e8e4' })),
+    { name: 'gutter', u: [0, 4.543], h: [6.95, 7.1], out: .3, depth: .2, colour: '#e8dcd6' },
+    { name: 'orange tiled canopy', u: [0, 4.543], h: [3.5, 4.5], out: .8, depth: 1.6, colour: '#d8783e' },
+    { name: 'blank round neon sign', u: at674([1.6, 2.5]), h: [1.9, 2.85], out: 1.3, depth: .04, colour: '#2a3034', glow: .1 },
+    { name: 'blank gold-lettered board', u: at674([3.3, 5.5]), h: [1.7, 2.7], out: .05, depth: .04, colour: '#4a3428' },
+    ...grille('grey gate', at674([1.3, 5.4]), [0, 1.3], 1.4, '#6a6c6a', .2, false),
+  ],
+  piers: [[.15, .4], [4.15, 4.4]], shellInset: .2,
+  backFittings: [{ name: 'dark timber front', u: [.5, 4.1], h: [.1, 3.2], colour: '#3a2a22', glow: .05 }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
