@@ -5,17 +5,47 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 ## Scope and method
 
 - **Stretch:** Lorong 16 from Geylang Road south to the edge of the retained extract (1.3110 N), about 190 m, with the corner buildings at both ends of both sides. The lane runs on about 95 m beyond the extract's edge to Guillemard Road; extending the extract is [open question 62](open-questions.md).
-- **Block faces:** shared out between the three lanes walked on 17 October 2026. On Geylang Road this lane takes the west corner, Nos. 310–314. The row back to Lorong 14 (Nos. 292–308) is walked with Lorong 14, and the Geylang Road block east of the lane (way 541941365), with its Lorong 16 face, with Lorong 18. At the south end, the three houses at the head of Westerhout Road are taken in.
+- **Block faces:** shared out between the three lanes walked on 17 October 2026. On Geylang Road this lane takes the west corner, Nos. 310–314. The row back to Lorong 14 (Nos. 292–308) is walked with Lorong 14, and the Geylang Road block east of the lane (way 541941365), with its Lorong 16 face, with Lorong 18. At the south end, the terrace at the head of Westerhout Road (Nos. 15–45 Westerhout Road), whose west gable stands on the lane, is taken in.
 - **Map:** `scripts/prepare-map.mjs` takes the lane's 32 buildings and its five road ways by id. The study rectangle is unchanged. The lane is a walkable corridor (`corridors` in `map.json`) from the Geylang Road centreline to the end of its last way in the extract. Its junction lies on the Geylang Road corridor from Lorong 19 to Lorong 21, about 52 m west of Lorong 21's junction, so the corners are reached from it and no new Geylang Road link is needed.
 - **Order:** south down the west side from Geylang Road, then north up the east side from the head of Westerhout Road back to Geylang Road. Each stop is one photographed building, measured and modelled before the next.
 - **Imagery:** the June 2024 Lorong 16 drive, northbound, from `5TUz…` at the extract's edge to `GUcb…` at Geylang Road, about 10 m apart, with the June 2024 Geylang Road drive at the corner. It is the latest drive along the lane.
 - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph. Other buildings are labelled by address, with their signboards drawn and their lettering blank.
 - **Code:** each place is a measured elevation on one edge of its footprint, built with the lane-house helpers shared with Lorong 17, Lorong 19 and Lorong 21 (`src/lane-house-layout.mjs`, `src/lane-house.ts`).
 
+## Status, 17 October 2026
+
+**Complete; seven footprint and extract questions wait for the owner.** All 32 stops are walked. Every building the extract holds on Lorong 16, from Geylang Road to the extract's southern edge, has its photographed exterior, with the west corner on Geylang Road, the walk-up block on the back lane and the terrace at the head of Westerhout Road.
+
+- **Coverage:** 32 source ways. 31 have photographed exteriors. The way of No. 19 is drawn as the hoarding of the cleared site it lies in. None is left as a generic block.
+- **Footprints:** every building stands on its source outline for now.
+- **Named places:** ten are added, bringing the study to 147:
+  - Chang Jiang G1 Claypot Frog Porridge, No. 314 Geylang Road;
+  - B & S Mini Mart, No. 310 Geylang Road;
+  - Hotel 81 Geylang, No. 20;
+  - Then Shen Temple, No. 24;
+  - Crystal Lodge, No. 30;
+  - the Singapore Poh Clan Association, No. 45;
+  - the Singapore Soon Clan Association, No. 43;
+  - Lodge 41, No. 41;
+  - Hotel 81 Palace, No. 25;
+  - 善缘古佛社, No. 7.
+- **Open questions:** seven, each with a recommendation:
+  - [62](open-questions.md): extend the extract south to Guillemard Road, for the rest of the lane;
+  - [63](open-questions.md): the Geylang Road corner row on its photographed line, with the corner carried to the back lane;
+  - [64](open-questions.md): a straight east face for the pink walk-up, Nos. 6–18;
+  - [65](open-questions.md): Hotel 81 Geylang and Then Shen Temple on their photographed positions (Nos. 50 and 54 to wait);
+  - [66](open-questions.md): the Westerhout Road fronts moved back from the porch line;
+  - [67](open-questions.md): Lodge 41's tower 8.5 m forward, and No. 43's party line;
+  - [68](open-questions.md): drop No. 19's way and re-cut the terrace of Nos. 9–17 into its four houses.
+- **Left for a later pass:**
+  - Lorong 16 south of the extract's edge, to Guillemard Road (question 62), and Westerhout Road;
+  - the Geylang Road row back to Lorong 14 and the block east of the lane, walked with Lorong 14 and Lorong 18;
+  - the open and hoarded sites without footprints: the car park in front of Nos. 6–18, and the hoarded sites at Nos. 23 and 35.
+
 ## The lane
 
-- **West side:** the Geylang Road corner row of three-storey shophouses; a back lane; an open car park in front of a pink five-storey walk-up; Hotel 81 Geylang; Then Shen Temple behind its red boundary wall; Crystal Lodge; a hoarded site; and No. 50 and No. 54 on the car park aisle at the extract's edge.
-- **East side:** the five-storey walk-ups of Nos. 1–7 on the back lane behind Geylang Road; a row of two-storey houses from No. 9 to No. 19; a hoarded site; Hotel 81 Palace; another hoarded site; a row of two- to five-storey houses; a grassed verge; and the west gable of the terrace that fronts Westerhout Road (Nos. 15–45), just beyond the extract's edge.
+- **West side:** the Geylang Road corner row of three-storey shophouses; a back lane; an open car park in front of a pink four-storey walk-up (Nos. 6–18); Hotel 81 Geylang; Then Shen Temple behind its red-brick boundary wall; Crystal Lodge; No. 50, a timber house behind rust-red hoarding; the car park aisle; and Nos. 54–58 on the extract's edge.
+- **East side:** the white walk-up block of Nos. 1–7 on the back lane behind Geylang Road, with 善缘古佛社 at its corner; a two-storey terrace of four houses from No. 9 to No. 17; a hoarded site over the way of No. 19 and No. 23; Hotel 81 Palace; the hoarded site of No. 35; a row of two- to four-storey houses from No. 37 to No. 51, with two clan associations and Lodge 41; a grassed verge; and the west gable of the terrace that fronts Westerhout Road (Nos. 15–45 Westerhout Road), just beyond the extract's edge.
 
 ## The walk
 
