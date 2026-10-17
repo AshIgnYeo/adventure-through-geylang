@@ -603,10 +603,13 @@ const westerhoutHouse = (no, wayId, frontEdge, front, side, height, extra) => {
 export const westerhout17 = westerhoutHouse(17, '763764667', 3, [3, -12.71, 3.055], [1, -10.08, 3.07], 9.5, {
   evidence: 'December 2022 Street View from Westerhout Road shows No. 17, between No. 15 and No. 19: an orange upper floor of louvred grilles over a white band, under a deep roof slab, over a maroon tiled porch and a white gate of rings plated 17. Its photographed front runs about 6.2 m between the party walls, against the source span\'s 5.7 m.' + westerhoutNote,
 });
+export const westerhout19 = westerhoutHouse(19, '763764666', 8, [8, -6.54, 3.915], [6, -3.05, 3.408], 9.6, {
+  evidence: 'December 2022 Street View from Westerhout Road shows No. 19, between No. 17 and the pink pair: a white upper floor with two small windows and a weathered grey side wall where it rises above No. 43, over a dark flat canopy plated 19 and a black railing gate in front of a car porch. Its photographed front runs about 6.7 m, against the source span\'s 6.9 m.' + westerhoutNote,
+});
 
 export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
-export const westerhout16 = [westerhout17];
+export const westerhout16 = [westerhout17, westerhout19];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;
