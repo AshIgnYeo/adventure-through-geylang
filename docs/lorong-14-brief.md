@@ -42,7 +42,9 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 17 | Geylang Road | 454254171 | No. 292, Valu$ (with No. 290) | Done; named |
 | 18 | Geylang Road | 454254170 | No. 294 | Done; unnamed |
 | 19 | Geylang Road | 454254169 | No. 296, The Green Essential | Done; named (address conflict recorded); question 56 |
-| 20–25 | Geylang Road | 764372576 to 764372573 | Nos. 298–308, east to Lorong 16 | |
+| 20 | Geylang Road | 764372576 | No. 298, the Paramount building | Done; unnamed; question 56 |
+| 21 | Geylang Road | 475173286 | No. 300, the Paramount building's extension | Done; unnamed; question 56 |
+| 22–25 | Geylang Road | 764372575 to 764372573 | Nos. 302–308, east to Lorong 16 | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
 
@@ -390,3 +392,25 @@ The fronts were read on the same line as Nos. 284–290, along No. 290's front (
 - **The Green Essential**, a beauty salon open until 1 am, is listed at 296 Geylang Rd, but with No. 298's postal code (389342) and its point in No. 298's way. The address and the board agree on this house, so it is named (as at Crystal Mansions, question 32), with the conflict recorded under [question 12](open-questions.md). Its board is redrawn in original type.
 
 Use `?review=valu`, `?review=gr-294` and `?review=green-essential`.
+
+### 20–21. Ways 764372576 and 475173286: Nos. 298 and 300, the Paramount building
+
+A yellow two-storey shophouse and its single-storey extension to the east, both under one long board reading 百樂門 PARAMOUNT MUSIC LOUNGE between MARTELL marks.
+
+- **No. 298:** two timber windows with small upper panes on its upper floor, one with an air-conditioner, under a dentilled frieze and a plain parapet. On the ground floor a roller shutter and a door behind a tiled step, under a board reading Tiger 百乐门.
+- **No. 300:** a lean-to roof of corrugated tiles falling eastward from No. 298's wall. Under the long board, a board reading PARAMOUNT BISTRO between Heineken marks, and bamboo in planters along the pavement. At its east corner a MARTELL board and a vertical 百樂門 board turn onto a blue east wall facing No. 302's forecourt.
+
+**Measurement:**
+- **No. 298:** its pilaster with No. 296 triangulates at g −14.84 and its east wall at −19.75, against the source's −13.85 and −18.59. So the whole front stands about a metre east of its source position.
+- **No. 300's corner:** triangulated from `sH6…`, `YYHF…` and `u07…` at about g −25.3 (±0.5 m), against the source's −24.89. The extension photographs 5.55 m wide on its 6.3 m way.
+- **Heights** (scaled as for Nos. 284–290): the long board at 2.85–4.0 m; No. 298's windows at 4.85–6.75 m under a dentilled frieze at 7.35–7.8 m and a parapet at 8.2 m; the lean-to falling from about 6.85 m at No. 298's wall to 4.4 m.
+- **Check:** renders from `u07…` and `sH6…`, blended with the photographs, put the board, the windows, the frieze and the extension's corner on their photographed places, with No. 298 about a metre west, as measured.
+
+**Layout:**
+- Each front is laid proportionally on its source edge. The blue east wall is a side face on No. 300's edge 1.
+- The lean-to is drawn as a hipped roof over No. 300's L-shaped outline, rising to the photographed 6.85 m.
+- The re-spacing is part of [open question 56](open-questions.md).
+
+**Naming:** none. Google Maps lists Paramount Music Lounge, a karaoke bar, at 298 Geylang Rd, but marks it permanently closed, so every board is blank.
+
+Use `?review=gr-298` and `?review=gr-300`.

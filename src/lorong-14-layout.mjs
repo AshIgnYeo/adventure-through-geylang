@@ -843,7 +843,66 @@ export const greenEssential = {
   backFittings: [{ name: 'glazed salon front with shelves', u: at296([-14.4, -10.5]), h: [.1, 2.7], colour: '#3a4442', glow: .1 }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu, no294, greenEssential];
+// 20-21. Ways 764372576 and 475173286, Nos. 298 and 300, the Paramount building: a yellow two-storey shophouse under a
+// dentilled frieze, and its single-storey extension to the east under a lean-to roof, both under one long board reading
+// 百樂門 PARAMOUNT MUSIC LOUNGE between MARTELL marks. No. 298's front runs from g -14.84 to -19.75, against the source's
+// -13.85 to -18.59, and No. 300's from there to its corner, which triangulates (sH6..., YYHF..., u07...) at about g
+// -25.3, against the source's -24.89 (open question 56). Each is laid proportionally on its source edge.
+const at298 = s => lay(-1.16, 4.747 / 4.91)(s.map(v => v + 18.59)).map(v => Math.min(4.747, Math.max(0, v)));
+const at300 = s => lay(-.86, 6.298 / 5.55)(s.map(v => v + 24.89)).map(v => Math.min(6.298, Math.max(0, v)));
+const yellow298 = '#e6c070';
+const paramountNote = ' Google Maps lists Paramount Music Lounge, a karaoke bar, at 298 Geylang Rd but marks it permanently closed, so its boards are blank and no name is given. The fronts were read on the line of Nos. 284-290: No. 298\'s pilaster with No. 296 triangulates at 14.84 m east of No. 290\'s east party wall and its east wall at 19.75 m, against the source\'s 13.85 and 18.59 m, and No. 300\'s corner, from three June 2024 Geylang Road panoramas (sH6..., YYHF..., u07...), at about 25.3 m, against 24.89 m (open question 56). Each front is laid proportionally on its source edge. Heights were read on that line and scaled as for Nos. 284-290 (x1.04): the long board at 2.85-4.0 m, No. 298\'s windows at 4.85-6.75 m under a dentilled frieze at 7.35-7.8 m and a parapet at 8.2 m, and the extension\'s lean-to falling from about 6.85 m at No. 298\'s wall to 4.4 m.';
+const paramountSources = w => [way(w), search('Paramount Music Lounge 298 Geylang Road'), pano('u07Yl1k8nX72_c24lJZ5hg', 175, 10, 100), pano('sH6CfyvyQsxgdBweKtGXhg', 210, 10, 100)];
+export const no298 = {
+  id: 'gr-298', buildingIds: ['764372576'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  name: 'No. 298 Geylang Road, the Paramount building (June 2024 exterior, occupants not identified)', address: '298 Geylang Road',
+  height: 8.2, ceiling: 2.65, fiveFootWay: .5, shellInset: grShell, roof: { ...grRoof, ridge: 9.4 },
+  evidence: 'June 2024 Street View shows a yellow two-storey shophouse east of The Green Essential, two timber windows with small upper panes on its upper floor, one with an air-conditioner, under a dentilled frieze and a plain parapet; on the ground floor a roller shutter and a door behind a tiled step, under a board reading Tiger 百乐门 and, over that, the west end of a long board reading 百樂門 PARAMOUNT MUSIC LOUNGE between MARTELL marks, which runs on over the extension to the east.' + paramountNote,
+  sources: paramountSources('764372576'),
+  colours: { wall: yellow298, trim: '#ecd8a0', frame: '#5a4030', glass: '#3a3a36', pier: '#c89a8a', back: '#4a4440', floor: '#a8a49c' },
+  windows: [[-18.9, -17.7], [-16.8, -15.6]].flatMap(s => [{ u: at298(s), h: [4.85, 6.2], panes: 2 }, { u: at298(s), h: [6.25, 6.75], panes: 2 }]),
+  blocks: [
+    { name: 'parapet', u: [0, 4.747], h: [7.8, 8.2], out: .1, depth: .2, colour: '#ecd8a0' },
+    { name: 'frieze', u: [0, 4.747], h: [7.35, 7.8], out: .14, depth: .28, colour: '#e0b868' },
+    ...Array.from({ length: 16 }, (_, i) => +(.15 + i * .29).toFixed(2)).map(c => ({ name: 'dentil', u: [c, +(c + .14).toFixed(2)], h: [7.2, 7.35], out: .2, depth: .12, colour: '#ecd8a0' })),
+    { name: 'air-conditioner', u: at298([-16.5, -15.9]), h: [5.2, 5.6], out: .2, depth: .4, colour: '#e8e8e4' },
+    { name: 'blank long board', u: [0, 4.747], h: [2.85, 4.0], out: .1, depth: .1, colour: '#7a2a3a' },
+    { name: 'blank Tiger board', u: at298([-19.3, -15.6]), h: [1.95, 2.6], out: .06, depth: .04, colour: '#2a5aa8' },
+    { name: 'pink tiled pier', u: at298([-19.75, -19.35]), h: [.1, 1.95], out: .05, depth: .1, colour: '#c89a8a' },
+    { name: 'pink tiled pier', u: at298([-15.3, -14.84]), h: [.1, 1.95], out: .05, depth: .1, colour: '#c89a8a' },
+  ],
+  backFittings: [
+    { name: 'tiled door', u: at298([-19.2, -17.6]), h: [.1, 1.95], colour: '#5a6a8a' },
+    { name: 'roller shutter', u: at298([-17.4, -15.4]), h: [.1, 1.95], colour: '#a0a2a0' },
+  ],
+};
+export const no300 = {
+  id: 'gr-300', buildingIds: ['475173286'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 12 },
+  name: 'No. 300 Geylang Road, the Paramount building\'s extension (June 2024 exterior, occupants not identified)', address: '300 Geylang Road',
+  height: 4.4, ceiling: 2.6, fiveFootWay: .5, roof: { type: 'hip', ridge: 6.85, colour: '#8a5a48' },
+  evidence: 'June 2024 Street View shows a single-storey extension east of No. 298 under a lean-to roof of corrugated tiles, its front a yellow wall under the long board reading 百樂門 PARAMOUNT MUSIC LOUNGE, with a board reading PARAMOUNT BISTRO under it between Heineken marks and bamboo in planters along the pavement; at its east corner a MARTELL board and a vertical 百樂門 board turn onto a blue east wall facing the forecourt of No. 302.' + paramountNote,
+  sources: paramountSources('475173286'),
+  colours: { wall: yellow298, trim: '#ecd8a0', frame: '#5a4030', glass: '#3a3a36', pier: '#c89a8a', back: '#4a4440', floor: '#a8a49c' },
+  blocks: [
+    { name: 'blank long board', u: [0, 6.298], h: [2.85, 4.0], out: .1, depth: .1, colour: '#7a2a3a' },
+    { name: 'blank MARTELL corner board', u: at300([-25.3, -24.2]), h: [2.95, 4.3], out: .14, depth: .08, colour: '#2a2a28' },
+    { name: 'blank PARAMOUNT BISTRO board', u: at300([-24.0, -20.4]), h: [1.85, 2.6], out: .08, depth: .04, colour: '#3a9a5a' },
+    { name: 'pink tiled base', u: [0, 6.298], h: [.1, .9], out: .03, depth: .06, colour: '#c89a8a' },
+    { name: 'blue band', u: [0, 6.298], h: [.9, 1.0], out: .04, depth: .06, colour: '#3a6ac8' },
+    // Bamboo in planters along the pavement.
+    ...[-24.4, -23.2, -22.0, -20.8].map(g => ({ name: 'bamboo in a planter', u: at300([g - .5, g + .5]), h: [0, 2.6], out: .9, depth: .8, colour: '#6a9a4a' })),
+  ],
+  backFittings: [{ name: 'dark glazing', u: at300([-24.8, -20.2]), h: [1.0, 2.5], colour: '#3a3e40' }],
+  sides: [{
+    edge: 1, // the blue east wall on No. 302's forecourt
+    blocks: [
+      { name: 'blue east wall', u: [0, 7.593], h: [.13, 4.3], out: .01, depth: .02, colour: '#3a6ac8' },
+      { name: 'blank vertical 百樂門 board', u: [.3, 1.1], h: [2.4, 4.3], out: .06, depth: .04, colour: '#7a2a3a' },
+    ],
+  }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu, no294, greenEssential, no298, no300];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

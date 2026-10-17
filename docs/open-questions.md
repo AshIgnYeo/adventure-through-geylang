@@ -110,7 +110,7 @@ Started: 10 October 2026.
       | --- | --- | --- | --- |
       | No. 296, The Green Essential | 454254169 | g −10.0 to −14.84 (4.84 m) | −9.87 to −13.85 (3.98 m) |
       | No. 298, the Paramount building | 764372576 | −14.84 to −19.75 (4.9 m) | −13.85 to −18.59 (4.74 m) |
-      | No. 300, its single-storey extension | 475173286 | −19.75 to about −25.0 (5.25 m) | −18.59 to −24.89 (6.3 m) |
+      | No. 300, its single-storey extension | 475173286 | −19.75 to about −25.3 (5.55 m) | −18.59 to −24.89 (6.3 m) |
 
     - **What happens now:** each front is laid proportionally on its source edge, so No. 298's two-storey front stands about a metre west of its photographed place and No. 300's extension is stretched.
     - **Recommendation:** yes. Re-space the three ways on their source front and rear lines, cut at the photographed party walls, as question 45 did for Nos. 313–321.
