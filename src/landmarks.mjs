@@ -66,6 +66,7 @@ import { eminent, primero, nanyangChee, cheeHoeHong, leiZangSi, starlonTektron, 
 import { chengYi, nyingmaKathok, beiChenGong, tanSerSeng, hcsa } from './lorong-21-layout.mjs';
 import { wingFongCourt, wingFongMansions, leYuan, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu, greenEssential, fuXingJi, bsHardware } from './lorong-14-layout.mjs';
 import { changJiang, bsMiniMart, hotel81Geylang, thenShen, crystalLodge, pohClan, soonClan, lodge41, hotel81Palace, shanYuan } from './lorong-16-layout.mjs';
+import { leRegal, budgetone, cygon, club20, gofit, hotel81Star, diamondHotel, dabuHakka, t1Trading, hinSheng } from './lorong-18-layout.mjs';
 export { authoredLandmarks } from './authored-sites.mjs';
 // Partial-block identities deliberately stay out of whole-footprint lookup.
 export const partialBlockLandmarks = [mongkok, nanyangDentist, shaxianEatery];
@@ -138,6 +139,16 @@ export const landmarks = [
   { ...lodge41 },
   { ...hotel81Palace },
   { ...shanYuan },
+  { ...leRegal },
+  { ...budgetone },
+  { ...cygon },
+  { ...club20 },
+  { ...gofit },
+  { ...hotel81Star },
+  { ...diamondHotel },
+  { ...dabuHakka },
+  { ...t1Trading },
+  { ...hinSheng },
   { ...engineeringMerchants },
   { ...crystalMansions },
   { ...thirteenBbq },
