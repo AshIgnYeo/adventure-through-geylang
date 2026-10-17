@@ -821,7 +821,30 @@ export const no39 = {
   backFittings: [{ name: 'dark timber front', u: [.5, 4.1], h: [.1, 3.2], colour: '#3a2a22', glow: .05 }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39];
+// No. 37's front, on its own lane edge (u_ph south from its north end), runs from 1.3 to 6.05.
+const at675 = s => lay(1.3, 4.91 / 4.75)(s).map(v => Math.min(4.909, Math.max(0, v)));
+export const no37 = {
+  id: 'l16-37', buildingIds: ['763764675'], kind: 'unnamed', unnamed: true, frontEdge: 7, reviewRoad: 'Lorong 16 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 37 Lorong 16 (June 2024 exterior, occupants not identified)', address: '37 Lorong 16 Geylang',
+  height: 7.1, ceiling: 3.6, fiveFootWay: 1.5, roof: { type: 'hip', ridge: 7.9, colour: '#a9a49c' },
+  evidence: 'June 2024 Street View shows a grey two-storey house at the north end of the row, beside the hoarded site of No. 35, under a zinc roof with a weathered parapet: two white-framed windows on its upper floor, damp-stained under the eaves, over a maroon tiled canopy and a red-and-white striped awning above a front crowded with potted plants. No business is listed at the address and no sign was photographed. Two June 2024 lane panoramas (Z8Z..., YJ5N...), 10 m apart, agree on its upper floor on its source line, where it runs about 4.75 m, about 1.3 m south of its source span; it is laid proportionally on the source edge. Heights were read on that plane: the awning at 2.0-3.6 m, the canopy at 3.9-4.6 m, the windows at 5.4-6.4 m and the eaves at about 7.1 m.' + eastRowNote,
+  sources: [way('763764675'), search('37 Lorong 16 Geylang Singapore'), pano('Z8Z-ljVYEyMx7D21fBKcjQ', 100, 8, 60), pano('YJ5NrMKa3ziNs3OkKvpTGA', 50, 8, 50), pano('2YRDXiSJdEBL2CpWbqIedQ', 110, 8, 60)],
+  colours: rowColours('#7e7c84', { frame: '#e8e8e4', back: '#3e3a36' }),
+  windows: [[2.0, 3.1], [4.3, 5.5]].map(s => ({ u: at675(s), h: [5.4, 6.4], panes: 2 })),
+  blocks: [
+    ...[[2.0, 3.1], [4.3, 5.5]].map(s => ({ name: 'dark transom', u: at675(s), h: [6.05, 6.4], out: .02, depth: .02, colour: '#2a2e30' })),
+    { name: 'damp stain', u: at675([1.5, 2.2]), h: [6.4, 7.0], out: .01, depth: .02, colour: '#5a5852' },
+    { name: 'weathered parapet', u: [0, 4.909], h: [7.0, 7.35], out: .1, depth: .2, colour: '#9a9690' },
+    { name: 'maroon tiled canopy', u: [0, 4.909], h: [3.9, 4.6], out: .8, depth: 1.6, colour: '#a8443e' },
+    { name: 'red-and-white striped awning', u: [.1, 4.8], h: [2.2, 3.6], out: 1.0, depth: 2.0, colour: '#c0505a' },
+    ...Array.from({ length: 9 }, (_, i) => ({ name: 'white awning stripe', u: [+(.3 + i * .52).toFixed(2), +(.42 + i * .52).toFixed(2)], h: [2.2, 3.6], out: 2.01, depth: .02, colour: '#f0e8e8' })),
+    { name: 'potted plants', u: [.4, 3.6], h: [0, 1.3], out: 1.0, depth: 1.2, colour: '#4e7a3a' },
+  ],
+  piers: [[.15, .4], [4.5, 4.75]], shellInset: .2,
+  backFittings: [{ name: 'front behind the plants', u: [.5, 4.4], h: [.1, 3.0], colour: '#3e3a36' }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
