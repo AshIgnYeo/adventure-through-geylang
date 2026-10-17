@@ -1,10 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { project, studyArea } from '../src/geo.mjs';
-import { sourceMap } from './helpers.mjs';
+import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
+import { lorong16, geylangRow16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
+import { landmarkFor } from '../src/landmarks.mjs';
+import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
 const corridor = name => sourceMap.corridors.find(c => c.name === name);
 const lane = corridor('Lorong 16 Geylang');
+const lanePath = lane.path.map(p => project(p, sourceMap.origin)), laneSegments = lanePath.slice(1).map((b, i) => [lanePath[i], b]);
+const geylang = corridor('Geylang Road, Lorong 19 to Lorong 21').path.map(p => project(p, sourceMap.origin));
 // Every metre along a path keeps the 3 m walking margin.
 const walkable = (path, inStudy) => {
   for (let i = 1; i < path.length; i++) {
@@ -43,4 +47,61 @@ test('Lorong 16 is walkable from the Geylang Road centreline to the end of its l
   assert.ok(inStudy([262, 56], 3));
   // The backs of the blocks either side stay outside: the Lorong 14 houses to the west and the Lorong 18 houses to the east.
   for (const p of [[225, 190], [235, 120], [350, 120], [355, 200]]) assert.equal(inStudy(p, 0), false, `${p}`);
+});
+
+// Each building's front, sides, upper volumes, review start and naming; `faces` picks the road its front must look at.
+const checkHouse = (id, place, spec, segments) => {
+  const poly = outline(id), frame = lorong16Frame(poly, spec);
+  assertFittings(frame, poly, lorong16Layout(spec, frame.width).boxes);
+  for (const side of lorong16Sides(spec, poly)) assertFittings(side.frame, poly, side.boxes);
+  if (!spec.noReview) assertReviews(frame, lorong16Reviews(spec, frame));
+  assert.match(spec.evidence, /(April|June) 2024/);
+  // Sources cite the source way, or for an authored footprint one of the ways it replaces.
+  const ways = [id, ...(building(id).replaces ?? [])];
+  assert.ok(spec.sources.some(s => ways.some(w => s.includes(`way/${w}`))), id);
+  // The front's outward normal points at the nearest point of its road's centreline.
+  const centre = frame.point(frame.width / 2, 0), roadPoint = segments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
+  assert.ok((roadPoint[0] - centre[0]) * frame.nx + (roadPoint[1] - centre[1]) * frame.nz > 0, id);
+  // Street-level pieces stay clear of the modelled carriageways, or within 0.25 m of a face flagged heldFlat.
+  const faces = [{ frame, blocks: spec.blocks ?? [], heldFlat: spec.heldFlat }, ...lorong16Sides(spec, poly).map((side, i) => ({ frame: side.frame, blocks: spec.sides[i].blocks ?? [], heldFlat: spec.sides[i].heldFlat ?? spec.heldFlat }))];
+  for (const { frame: f, blocks, heldFlat } of faces) {
+    const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
+    if (heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+    assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
+  }
+  // Upper volumes stand inside the footprint.
+  for (const up of lorong16Upper(spec, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), id);
+  if (place.unnamed) {
+    assert.equal(landmarkFor(id), undefined);
+    assert.equal(spec.boards, undefined); assert.equal(spec.blades, undefined);
+    for (const side of spec.sides ?? []) { assert.equal(side.boards, undefined); assert.equal(side.blades, undefined); }
+  } else assert.equal(landmarkFor(id).id, place.id);
+};
+
+test('the Lorong 16 exteriors fit their outlines, face the lane and keep their review starts clear', () => {
+  for (const place of lorong16) for (const id of place.buildingIds) checkHouse(id, place, place.parts ? { ...place, ...place.parts[id] } : place, laneSegments);
+  // One review start per place.
+  for (const place of lorong16.filter(p => p.parts)) assert.equal(place.buildingIds.filter(id => !place.parts[id].noReview).length, 1, place.id);
+});
+
+test('the Geylang Road houses at the west corner face Geylang Road', () => {
+  assert.deepEqual(geylangRow16.map(p => p.buildingIds[0]), ['764372571', '764372570']);
+  for (const place of geylangRow16) {
+    checkHouse(place.buildingIds[0], place, place, geylang.slice(1).map((b, i) => [geylang[i], b]));
+    assert.ok(lorong16Frame(outline(place.buildingIds[0]), place).nz < -.95, place.id);
+  }
+});
+
+test('Chang Jiang G1 Claypot Frog Porridge is named on the corner and B & S Mini Mart on No. 310, their listing points inside', () => {
+  const corner = lorong16.find(p => p.id === 'chang-jiang-g1'), no310 = geylangRow16.find(p => p.id === 'bs-mini-mart');
+  assert.equal(landmarkFor('764372569').id, corner.id);
+  assert.equal(landmarkFor('764372570').id, no310.id);
+  assert.equal(pointInPolygon(project([103.8796966, 1.3124982], map.origin), outline('764372569')), true);
+  assert.equal(pointInPolygon(project([103.8796129, 1.3125245], map.origin), outline('764372570')), true);
+  // The corner's lane face runs north along the lane; its boards hang on the splay and the Geylang Road front.
+  const frame = lorong16Frame(outline('764372569'), corner);
+  assert.ok(frame.dz < -.95 && Math.abs(frame.width - 16.18) < .01);
+  assert.deepEqual(corner.sides.map(s => s.edge), [1, 0]);
+  for (const side of corner.sides) for (const b of side.boards) assert.ok(b.u[0] >= 0 && b.u[1] <= lorong16Frame(outline('764372569'), { frontEdge: side.edge }).width, `${b.u}`);
+  assert.equal(no310.boards.length, 1);
 });

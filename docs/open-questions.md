@@ -63,6 +63,21 @@ Started: 10 October 2026.
     - **Recommendation:** yes, as a later pass. Retrieve a dated extract of the strip south of the edge to Guillemard Road (about 1.3095–1.3110 N, 103.8785–103.8810 E), keep `public/osm-source.osm` as retained, take the lane's southern ways and buildings in by id, and walk them as a continuation of the Lorong 16 brief.
     - **Unlocks:** the whole of Lorong 16, with its junction on Guillemard Road, and the corridor carried to it.
 
+63. **Lorong 16 west corner, Nos. 310–314 Geylang Road (ways 764372570, 764372571 and 764372569): move the row onto its photographed line, and carry No. 314 back to the back lane?**
+    - **Evidence:** measured from the June 2024 Geylang Road and Lorong 16 drives ([Lorong 16 brief](lorong-16-brief.md), stops 1–3).
+
+      | Building | Photographed against the source outline |
+      | --- | --- |
+      | Nos. 310 and 312 | Fronts 2.5 m in front (north) of the source front; party walls within 1 m of the source ones (No. 312 about 5.6 m wide, No. 310 about 5.6 m) |
+      | No. 314, the corner | Geylang Road front 2.5 m north and about 5.2 m wide against 3.02 m; a splay of about 3.6 m; lane face 1.75 m east of the source edge, running about 27 m from the splay to the back lane against 16.18 m |
+
+    - **Satellite:** it also puts the corner's roof about 3 m north of the source outline.
+    - **What happens now:** each front is laid proportionally on its own source edge, except No. 314's lane face, which is laid at its own scale from the splay. Its southern 11 m, with the back doors and the LPG store, is not drawn, and No. 314's Geylang Road front is squeezed to 0.58 of its width.
+    - **Recommendation:** yes. Author three footprints:
+      - **Nos. 310 and 312:** fronts 2.5 m north, cut at the photographed party walls, with their source rear lines kept;
+      - **No. 314:** its Geylang Road front 2.5 m north, its splay, and its lane face 1.75 m east, carried south to the back lane, with its west wall on No. 312's.
+    - **Unlocks:** the corner's whole lane face at its true length, its Geylang Road front at its true width, and awnings at their photographed depth.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

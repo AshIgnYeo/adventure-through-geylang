@@ -21,7 +21,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
-| 1–3 | West | 764372569, 764372571, 764372570 | Nos. 314, 312 and 310 Geylang Road, the west corner: Chang Jiang G1 Claypot Frog Porridge (314), B & S Mini Mart (310) | |
+| 1–3 | West | 764372569, 764372571, 764372570 | Nos. 314, 312 and 310 Geylang Road, the west corner: Chang Jiang G1 Claypot Frog Porridge (314), B & S Mini Mart (310) | Done; two named; question 63 |
 | 4 | West | 763764689 | The pink walk-up behind the car park | |
 | 5 | West | 763764687 | No. 20, Hotel 81 Geylang | |
 | 6 | West | 763764688 | No. 24, Then Shen Temple | |
@@ -36,3 +36,48 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 29–32 | East | 763764686, 763764685, 763764684, 763764683 | Nos. 7, 5, 3 and 1, on the back lane | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
+
+## West side
+
+### 1–3. Ways 764372569, 764372571 and 764372570: Nos. 314, 312 and 310 Geylang Road
+
+A row of three-storey shophouses at the Lorong 16 west corner of Geylang Road, under deep hoods at the second floor and the roof.
+
+- **No. 314, the corner:** cream, with a splayed corner.
+  - **On Lorong 16:** windows under louvred vents on both upper floors and a narrow window by the corner, over an open coffeeshop of red tables under a maroon scalloped awning on square columns. A dark lit board in green and gold dots reads **CHANG JIANG FROG PORRIDGE**, FROG FARM FRANCHISE, **长江1号** beside a frog, and 宫保田鸡粥, with a special offer. A white stall board reads 建通蝦麵 KIAN THONG PRAWN NOODLE.
+  - **On the splay:** a board reading **海鮮田鸡粥 SEAFOOD & FROG PORRIDGE** between two claypots.
+  - **On Geylang Road:** two narrow windows on each floor, beside a vertical board of dishes signed **长江1号**.
+  - **At the south end,** on the back lane: brown back doors, an LPG store and a ventilation duct.
+- **No. 312:** cream; two wide windows on each upper floor and a mesh railing round its roof terrace, over a shop of ladders and goods under a maroon awning and a board reading CHANG JIANG FISHERIES FARM SUPERMARKET 长江牛蛙养鱼场 超市店 in English, Chinese and Vietnamese.
+- **No. 310:** grey; windows of white glazing bars, green grilles on the lower pair, and a roof-terrace railing, over a minimart under a blue awning and a red board reading **B & S MINIMART PRIVATE LTD.** in English and Bengali, with its address.
+
+**Measurement:**
+- **Geylang Road fronts:** read on one plane along No. 312's front (u_g west from the source party point of Nos. 312 and 314).
+  - The depth scores of three pairs of June 2024 Geylang Road panoramas peak 2.25–2.75 m in front (north) of the source front.
+  - On a plane **2.5 m in front**, the party walls line up between `D065…`, `SGbX…`, `KMWZ…` and `rxHH…` within 0.1 m.
+  - Party walls on that plane: u_g = −0.6, 5.0 and 10.6. No. 312 is about **5.6 m** wide against 5.67 m, No. 310 about **5.6 m** against 5.84 m; the walls stand within 1 m of the source ones.
+  - No. 314's flat front runs from its splay, at u_g = −5.8, to its party wall: about **5.2 m**, against the 3.02 m source edge.
+- **The corner's lane face (edge 2):** `Y8N4…`, `epU_…` and `t5yp…` (June 2024) agree on its windows within 0.3 m on a plane **1.75 m in front of** (east of) the source edge (depth scores 0.22–0.34 at 1.75 m).
+  - On that plane it runs from the splay, 2.4 m north of the source edge's north end, about **27 m** south to the back lane, against the 16.18 m source edge. The south end was confirmed by its bearing from `t5yp…`.
+- **The splay:** about 3.6 m, against the source's 3.94 m.
+- **Satellite:** it also puts the corner's roof about 3 m north of its source outline.
+- **Heights:** read on the Geylang Road plane, where four panoramas agree:
+  - a beam over the five-foot way at 3.2–3.4 m, awnings at 2.3–3.15 m;
+  - windows at 4.85–6.05 m and 8.3–9.45 m, with vents over them on the corner house;
+  - a deep hood at 7.0–7.2 m, a deep roof slab at 10.9–11.25 m, and parapets at about **11.6 m**;
+  - the roof-terrace railings of Nos. 310 and 312 to about 12.6 m.
+
+  The lane panoramas, taken from the lane about 0.75 m below the five-foot way (the coffeeshop is reached by steps), read about 0.75 m higher throughout, so the Geylang Road readings are used.
+
+**Layout:**
+- **No. 314:** the lane face is the front. It is laid **at its own scale from the splay** (u = u_ph − 2.42), so the source edge holds the corner's first 16.2 m; the southern 11 m, beyond the outline, is not drawn. The splay (edge 1) and the Geylang Road front (edge 0) are side faces: the splay's window and board are drawn on the source splay, and the front is laid proportionally (×0.58).
+- **Nos. 312 and 310:** each front is laid proportionally on its own source edge (×1.01 and ×1.04). Their shells stand 0.2 m inside their east party walls, which run off square to the front.
+- **Footprints:** moving the row onto its photographed line, and carrying No. 314 to the back lane, is [open question 63](open-questions.md).
+
+**Naming:**
+- **Chang Jiang G1 Claypot Frog Porridge 长江1号:** listed at 314 Geylang Road, Singapore 389353, a restaurant, operating, with its point just inside this way. Its name is on the lit board and the vertical board, so the corner is named, and its three boards are redrawn in original type: the dishes as plain plates, the lit board's smaller lines left out.
+  - Kian Thong Prawn Mee is listed only at Sims Vista, so its stall board is blank. Ho Kian Thong, also listed at 314, is closed.
+- **B & S Mini Mart Pte Ltd:** listed at 310 Geylang Road, Singapore 389349, a supermarket, operating, with its point just inside this way. Its board is redrawn in original type, its Bengali line drawn as a plain band. The awning's lettering advertises a product and is not drawn.
+- **No. 312:** unnamed. Hwa Seng Furniture, operating, and four other businesses are listed there, but no sign for any of them was photographed. No Chang Jiang Fisheries Farm Supermarket is listed, so its board is blank.
+
+Use `?review=chang-jiang-g1`, `?review=l16-geylang-312` and `?review=bs-mini-mart`.
