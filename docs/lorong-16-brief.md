@@ -15,7 +15,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 ## The lane
 
 - **West side:** the Geylang Road corner row of three-storey shophouses; a back lane; an open car park in front of a pink five-storey walk-up; Hotel 81 Geylang; Then Shen Temple behind its red boundary wall; Crystal Lodge; a hoarded site; and No. 50 and No. 54 on the car park aisle at the extract's edge.
-- **East side:** the five-storey walk-ups of Nos. 1–7 on the back lane behind Geylang Road; a row of two-storey houses from No. 9 to No. 19; a hoarded site; Hotel 81 Palace; another hoarded site; a row of two- to five-storey houses; a grassed verge; and the terrace at the head of Westerhout Road.
+- **East side:** the five-storey walk-ups of Nos. 1–7 on the back lane behind Geylang Road; a row of two-storey houses from No. 9 to No. 19; a hoarded site; Hotel 81 Palace; another hoarded site; a row of two- to five-storey houses; a grassed verge; and the west gable of the terrace that fronts Westerhout Road (Nos. 15–45), just beyond the extract's edge.
 
 ## The walk
 
@@ -28,8 +28,10 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 7 | West | 763764676 | No. 30, Crystal Lodge | Done; named |
 | 8 | West | 764372580 | No. 50, a timber house behind hoarding | Done; unnamed; question 65 |
 | 9 | West | 763764654 | Nos. 54–58, a walk-up on the extract's edge | Done; unnamed; question 65 |
-| 10–12 | East | 763764664, 763764665, 763764666 | The terrace at the head of Westerhout Road | |
-| 13–14 | East | 763764667, 763764668 | The terrace's west end, on the grassed verge | |
+| 10 | East | 763764668 | No. 15 Westerhout Road, the south-east corner: the terrace's west gable | Done; unnamed; question 66 |
+| 11 | East | 763764667 | No. 17 Westerhout Road | |
+| 12 | East | 763764666 | No. 19 Westerhout Road | |
+| 13–14 | East | 763764665, 763764664 | Nos. 43 and 45 Westerhout Road, a pink pair | |
 | 15–22 | East | 454274647, 763764669, 763764670, 763764671, 763764672, 763764673, 763764674, 763764675 | The row south of Hotel 81 Palace: Lodge 41 (41), Soon Clan Association (43) | |
 | 23 | East | 121872890 | No. 25, Hotel 81 Palace | |
 | 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | Nos. 19, 17, 15, 11 and 9 | |
@@ -232,3 +234,24 @@ A pale grey four-storey walk-up south of the aisle, its outline crossing the edg
 Use `?review=l16-54`.
 
 **West side complete.** Every building from No. 314 Geylang Road to the edge of the extract now has its Lorong 16 front.
+
+## East side
+
+### 10–14. The terrace on Westerhout Road: Nos. 15, 17, 19, 43 and 45
+
+At the lane's south-east corner a tall blank beige gable stands on a grassed verge. It is the west end of a terrace of five houses that fronts **Westerhout Road**, just beyond the extract's edge (the extract holds the houses but not that end of the road). From the lane only the gable and the fronts' west ends are seen. The fronts were read from the **December 2022 Westerhout Road drive**, the latest along that road (`KsMA…`, `xJWU…`, `kfiA…`, `s1JD…`).
+
+**Measurement, for the whole terrace:**
+- **The plane:** one plane along No. 43's front (u_p east from its source corner). The four panoramas agree on the upper floors on it.
+- **Party walls on that plane:** u_p = −21.5, −13.0, −6.8, −0.1, 7.6 and about 15.6. Each lies within about 1.5 m of the source line.
+- **Nos. 15–19:** their outlines carry their porches 2–3 m in front of the upper floors, to the gate line (the porch edges stand 2.1–3.1 m in front of the plane, and the recessed edges 0.2–2.1 m behind it).
+- **Nos. 43 and 45:** they stand on their source fronts.
+- **Numbers:** plated 15, 17 and 19 on the gates and walls, and 43 and 45 on the pink pair. The geocoded points for 43 and 45 Westerhout Road fall inside their ways.
+- **Layout:** each house's photographed span is laid proportionally on its source span and drawn on its south edges, the upper floors on the porch line. Moving the porch-line fronts back to the upper floors is [open question 66](open-questions.md).
+- **Naming:** none of the five. No business is listed at any of their addresses, and no sign names them.
+
+| Stop | Way | House | Photographed |
+| --- | --- | --- | --- |
+| 10 | 763764668 | **No. 15**, the corner | The blank beige west gable on the lane. On Westerhout Road: a cream upper floor with a grey balcony and louvres under a deep roof slab, over a red tiled porch, a white gate and a red number plate |
+
+**Stop 10, No. 15:** the gable (edge 3) is the front, facing the lane, and its two south edges are side faces. Two June 2024 lane panoramas (`5TUz…`, `PBc3…`) agree on the gable within about 1 m of its source edge. Its top is drawn at about 9.4 m, where the Westerhout Road panoramas read the roof slab. Use `?review=l16-westerhout-15`.

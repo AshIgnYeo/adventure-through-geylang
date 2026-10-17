@@ -104,6 +104,14 @@ Started: 10 October 2026.
       - **Nos. 50 and 54–58:** not yet. The panoramas and the satellite disagree by about 5 m, so keep the source outlines until a closer capture or a survey settles them.
     - **Unlocks:** the hotel's tower and face at their true size, and the temple's verandah at its true depth.
 
+66. **Westerhout Road Nos. 15–19 (ways 763764668, 763764667 and 763764666): move the fronts back from the porch line to the upper floors?**
+    - **Evidence:** read from the December 2022 Westerhout Road drive ([Lorong 16 brief](lorong-16-brief.md), stops 10–12).
+      - The houses' upper floors line up between four panoramas on one plane with Nos. 43 and 45's fronts.
+      - The outlines' south edges step: the porch edges stand 2.1–3.1 m in front of that plane, at the gate line, and the recessed edges 0.2–2.1 m behind it.
+    - **What happens now:** each house's elevation is drawn on its porch-line edges, so the upper floors and walls rise at the gate line, about 2–3 m in front of their photographed position, and the stepped outlines show as steps in the façade.
+    - **Recommendation:** yes, as a later pass with Westerhout Road (question 62). Author three footprints whose fronts follow the upper floors' plane, with the porches and gates drawn in front as open structures.
+    - **Unlocks:** flat fronts on their true line, and open porches.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

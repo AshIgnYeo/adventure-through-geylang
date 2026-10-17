@@ -2,7 +2,7 @@
 // was: south down the west side, then north up the east side back to Geylang Road. Each elevation is read on the plane
 // where the panoramas agree, and laid on its source edge, which is kept. Named only where a listing and a photographed
 // sign agree. See docs/lorong-16-brief.md.
-import { pano, way, search, lay, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
+import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 
 /** A grille over a dark recess (or open, for a railing or gate): bars about 0.25 m apart with three rails. */
 const grille = (name, u, h, out, colour, step = .25, recess = true) => {
@@ -490,7 +490,103 @@ export const no54 = {
   }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54];
+// =============================================================================================
+// East side, north from the head of Westerhout Road.
+//
+// 10-14. Ways 763764668, 763764667, 763764666, 763764665 and 763764664: the terrace on the north side of Westerhout Road,
+// Nos. 15, 17, 19, 43 and 45, its fronts on Westerhout Road just beyond the extract's edge and its west gable on the
+// lane. Read on one plane along No. 43's front (u_p east from its source corner), from the December 2022 Westerhout
+// Road drive, the latest along it: four panoramas agree on the upper floors on that plane, where the party walls stand
+// at u_p = -21.5, -13.0, -6.8, -0.1, 7.6 and about 15.6, within about 1.5 m of the source ones. Nos. 15-19 are modern
+// two-storey houses whose outlines carry their porches about 2-3 m in front of the upper floors, to the gate line; Nos.
+// 43 and 45 are a pink pair under a tiled roof, on their source fronts. Each house's photographed span is laid
+// proportionally on its source span and sliced onto its south edges.
+const westerhoutNote = ' The terrace on the north side of Westerhout Road, Nos. 15, 17, 19, 43 and 45, fronts Westerhout Road just beyond the edge of the retained extract (open question 62); from the lane only its west gable and the fronts\' west ends are seen. It was read from the December 2022 Westerhout Road drive, the latest along that road (KsMA..., xJWU..., kfiA..., s1JD...), on one plane along No. 43\'s front: the upper floors line up there in four panoramas, and the party walls stand within about 1.5 m of the source ones. The outlines of Nos. 15-19 carry their porches 2-3 m in front of the upper floors, to the gate line, so each house\'s elevation is laid proportionally on its source span and drawn on its south edges, the upper floors on the porch line (open question 66). Nos. 43 and 45 stand on their source fronts. No business is listed at any of the five addresses and no sign names them.';
+// Each house: [photographed u_p span, source u_p span] and its pieces in photographed u_p.
+const spanW = { 15: [[-21.5, -13.0], [-19.80, -12.69]], 17: [[-13.0, -6.8], [-12.71, -7.01]], 19: [[-6.8, -.1], [-6.54, .36]], 43: [[-.1, 7.6], [0, 7.47]], 45: [[7.6, 15.6], [7.47, 15.495]] };
+const toSource = no => { const [[a, b], [c, d]] = spanW[no], k = (d - c) / (b - a); return ([l, r]) => [+(c + (l - a) * k).toFixed(3), +(c + (r - a) * k).toFixed(3)]; };
+const westerhout = (() => {
+  const w = [], b = [], f = [];
+  const S15 = toSource(15), S17 = toSource(17), S19 = toSource(19), S43 = toSource(43), S45 = toSource(45);
+  // No. 15: cream upper floor with a grey balcony, louvres under the roof slab, a red tiled porch over a white gate.
+  w.push(...[[-20.3, -18.4], [-17.8, -15.6]].map(u => ({ u: S15(u), h: [7.0, 8.0], panes: 2 })));
+  b.push(
+    { name: 'cream upper floor of No. 15', u: S15([-21.5, -13.0]), h: [5.0, 9.4], out: .01, depth: .02, colour: '#e8e0cc' },
+    { name: 'grey balcony parapet', u: S15([-21.0, -14.4]), h: [5.6, 6.8], out: .35, depth: .7, colour: '#b4b8bc' },
+    { name: 'louvre band', u: S15([-21.0, -13.3]), h: [8.2, 8.6], out: .03, depth: .04, colour: '#a89a82' },
+    { name: 'roof slab', u: S15([-21.5, -13.0]), h: [9.0, 9.4], out: .3, depth: .6, colour: '#e8e6e0' },
+    { name: 'red tiled porch canopy', u: S15([-21.4, -13.0]), h: [4.0, 4.9], out: .6, depth: 1.2, colour: '#b4553d' },
+    { name: 'white porch wall', u: S15([-21.4, -19.2]), h: [0, 2.6], out: .05, depth: .1, colour: '#efeee9' },
+    { name: 'blank red number plate', u: S15([-16.8, -16.1]), h: [1.0, 1.6], out: .06, depth: .02, colour: '#c8302a' },
+  );
+  b.push(...grille('white gate', S15([-19.2, -13.2]), [0, 1.5], .05, '#f2f2ee', .12, false));
+  f.push({ name: 'porch and front door', u: S15([-19.0, -13.4]), h: [.1, 3.8], colour: '#3e3a36' });
+  // No. 17: an orange upper floor of louvred grilles, a maroon tiled porch over a white gate of rings.
+  b.push(
+    { name: 'orange upper floor of No. 17', u: S17([-13.0, -6.9]), h: [6.4, 9.3], out: .02, depth: .04, colour: '#c8642e' },
+    ...grille('louvred window grille', S17([-12.6, -7.3]), [7.0, 8.6], .06, '#8a7a5a', .3),
+    { name: 'white upper wall', u: S17([-13.0, -6.9]), h: [5.0, 6.4], out: .01, depth: .02, colour: '#ecebe6' },
+    { name: 'roof slab', u: S17([-13.0, -6.9]), h: [9.2, 9.5], out: .3, depth: .6, colour: '#e8e6e0' },
+    { name: 'maroon tiled porch canopy', u: S17([-13.0, -6.9]), h: [4.1, 4.9], out: .6, depth: 1.2, colour: '#8a3a40' },
+  );
+  b.push(...grille('white gate of rings', S17([-12.8, -7.0]), [0, 1.8], .05, '#f2f2ee', .14, false));
+  f.push({ name: 'glazed front under the porch', u: S17([-12.6, -7.2]), h: [.1, 3.9], colour: '#3a3e40', glow: .05 });
+  // No. 19: a white upper floor with two small windows, a weathered grey side wall, and a dark flat canopy plated 19.
+  w.push(...[[-5.6, -4.9], [-3.6, -2.9]].map(u => ({ u: S19(u), h: [7.0, 7.9], panes: 1 })));
+  b.push(
+    { name: 'white upper floor of No. 19', u: S19([-6.8, -1.7]), h: [4.2, 9.6], out: .01, depth: .02, colour: '#f0efea' },
+    { name: 'weathered grey side wall', u: S19([-1.7, -.1]), h: [4.2, 9.0], out: .01, depth: .02, colour: '#8a8c88' },
+    { name: 'dark flat canopy', u: S19([-6.8, -.1]), h: [3.6, 4.2], out: .7, depth: 1.4, colour: '#3a3e42' },
+    { name: 'blank number plate', u: S19([-5.2, -4.4]), h: [3.7, 4.1], out: 1.41, depth: .02, colour: '#e8e8e4' },
+  );
+  b.push(...grille('black railing gate', S19([-6.6, -.4]), [0, 1.7], .05, '#2a2a2a', .15, false));
+  f.push({ name: 'car porch', u: S19([-6.4, -.4]), h: [.1, 3.5], colour: '#3e3c3a' });
+  // Nos. 43 and 45: a pink pair under a tiled roof, glazed bands on the upper floor, grey flat canopies on the ground.
+  for (const [S, no] of [[S43, 43], [S45, 45]]) {
+    const [l, r] = no === 43 ? [-.1, 7.6] : [7.6, 15.6];
+    b.push(
+      { name: `pink spandrel of No. ${no}`, u: S([l, r]), h: [4.3, 5.0], out: .01, depth: .02, colour: '#d89a98' },
+      { name: 'glazed upper band', u: S([l + .5, r - .4]), h: [5.0, 6.8], out: .01, depth: .02, colour: '#3a3e44' },
+      ...[.25, .5, .75].map(t => ({ name: 'glazing mullion', u: S([l + (r - l) * t - .05, l + (r - l) * t + .05]), h: [5.0, 6.8], out: .03, depth: .02, colour: '#d89a98' })),
+      { name: 'eaves', u: S([l, r]), h: [6.8, 7.05], out: .6, depth: 1.2, colour: '#6a4a3a' },
+      { name: 'grey flat canopy', u: S([l, r]), h: [3.4, 3.8], out: .9, depth: 1.8, colour: '#8a8e92' },
+      { name: 'pink party pier', u: S([r - .3, r]), h: [0, 4.3], out: .1, depth: .2, colour: '#d89a98' },
+    );
+    f.push({ name: 'front under the canopy', u: S([l + .4, r - .4]), h: [.1, 3.3], colour: '#4a3a40', glow: .08 });
+  }
+  b.push(
+    ...[[1.4, 1.7], [4.3, 4.6]].map(u => ({ name: 'purple light strip', u: S43(u), h: [.5, 3.2], out: .03, depth: .02, colour: '#8a3ac8', glow: .5 })),
+    { name: 'blank red number lettering', u: S43([5.2, 6.4]), h: [2.4, 3.0], out: .03, depth: .02, colour: '#c8302a' },
+    { name: 'air-conditioner', u: S45([10.6, 11.4]), h: [4.4, 4.9], out: .2, depth: .4, colour: '#e8e8e4' },
+    { name: 'red shrine', u: S45([14.0, 14.9]), h: [0, 1.2], out: .4, depth: .5, colour: '#b8302a' },
+  );
+  b.push(...grille('white gate', S45([8.0, 10.2]), [0, 1.6], .05, '#f2f2ee', .14, false));
+  return { windows: w, blocks: b, backFittings: f };
+})();
+// The part of the elevation on one south edge, whose start lies at u_p = up0.
+const westerhoutEdge = (edge, up0, width) => {
+  const sl = sliceSpec(westerhout, up0, +(up0 + width - .003).toFixed(3)), W = width - .003;
+  // Windows cut at an edge's end keep their sills inside it.
+  const fit = w => { const [l, r] = [Math.max(w.u[0], .08), Math.min(w.u[1], W - .08)]; return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)] }]; };
+  return { edge, windows: sl.windows.flatMap(fit), blocks: sl.blocks, backFittings: sl.backFittings };
+};
+const westerhoutColours = { wall: '#e8e0cc', trim: '#d8d2c2', frame: '#3a3c3c', glass: '#3e4648', pier: '#efeee9', back: '#3e3a36', floor: '#a8a296' };
+const westerhoutSides = (...parts) => parts.map(([edge, up0, width]) => {
+  const { backFittings, ...side } = westerhoutEdge(edge, up0, width);
+  return { ...side, blocks: [...(backFittings ?? []).map(x => ({ ...x, out: .02, depth: .02 })), ...side.blocks] };
+});
+export const westerhout15 = {
+  id: 'l16-westerhout-15', buildingIds: ['763764668'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 16 Geylang', review: { distance: 8, pitch: 20 },
+  name: 'No. 15 Westerhout Road (June 2024 and December 2022 exteriors, occupants not identified)', address: '15 Westerhout Road (the Lorong 16 south-east corner)',
+  height: 9.4, ceiling: 3.0, fiveFootWay: .2, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View from the lane shows the south-east corner of the stretch as a tall blank beige gable on a grassed verge, the west end of a terrace that fronts Westerhout Road; in December 2022 the Westerhout Road drive shows its front, No. 15: a cream upper floor with a grey balcony and louvres under a deep roof slab, over a red tiled porch, a white gate and a red number plate. Two June 2024 lane panoramas (5TUz..., PBc3...) agree on the gable within about 1 m of the source edge, and it is laid on that edge, its top at about 9.4 m where the Westerhout Road panoramas read the roof slab.' + westerhoutNote,
+  sources: [way('763764668'), search('15 Westerhout Road Singapore'), pano('5TUzhfcSfz2IBlfs_sQnhA', 95, 8, 80), pano('FATWSwwGn6cUCAdZuoUnlw', 75, 6, 80), pano('KsMAohQE5GfwvUGBOmwfNQ', 10, 12, 90), pano('xJWUlc-jGGpw21p8RSZOpw', 0, 12, 90)],
+  colours: { ...westerhoutColours, wall: '#dccdb0', back: '#dccdb0' },
+  blocks: [{ name: 'gable coping', u: [0, 12.588], h: [9.25, 9.4], out: .05, depth: .1, colour: '#e8dcc4' }],
+  sides: westerhoutSides([2, -19.80, 3.677], [0, -15.74, 3.046]),
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;
