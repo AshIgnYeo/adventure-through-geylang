@@ -1,6 +1,6 @@
 import type { World, Point } from './world';
 import { lorong14, lorong14Frame, lorong14Reviews } from './lorong-14-layout.mjs';
-import { buildLaneHouse, text, kai, type Draws } from './lane-house';
+import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
 
 // Named places only: original lettering after the photographed boards.
 // A granite panel set in a boundary wall: Chinese in bronze down its left, the English name in script beside it.
@@ -20,6 +20,16 @@ const draws: Draws = {
   },
   // The same on Wing Fong Mansions' corner wall: 永豐樓 Wing Fong Mansions.
   'wing-fong-mansions@74': { boards: [granitePanel('永豐樓', 'Wing Fong Mansions', '#f0e8d6')] },
+  // The red board across the forecourt canopy: HAPPY in white, 31 in red on a cream panel, 乐缘 in white.
+  'le-yuan': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#c8282a'; c.fillRect(0, 0, w, h);
+      c.fillStyle = '#efe4c8'; c.fillRect(w * .38, h * .1, w * .2, h * .8);
+      text(c, 'HAPPY', w * .19, h * .55, h * .66, '#f8f4ee', '700', sans, w * .34);
+      text(c, '31', w * .48, h * .55, h * .66, '#c8282a', '800', sans, w * .16);
+      text(c, '乐缘', w * .78, h * .55, h * .66, '#f8f4ee', '700', kai, w * .3);
+    }],
+  },
 };
 
 /** Lorong 14 from Geylang Road to the edge of the extract, with the Geylang Road row east to Lorong 16; named only

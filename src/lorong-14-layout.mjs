@@ -341,7 +341,39 @@ export const no33 = {
   backFittings: [{ name: 'porch and doors', u: [.4, 5.7], h: [.1, 2.6], colour: '#4a4440' }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33];
+// 6. Way 454274611, No. 31, 樂緣: a three-storey house faced in brown horizontal slats above a forecourt canopy whose
+// front carries a red board reading HAPPY 31 乐缘. Its front (edge 0, u south from the north end) reads 1.5 m in front of
+// the source edge (the slats' north edge and No. 29's windows, three pairs, 0.38-0.47), where it runs from 1.2 m to
+// 7.6 m along, against the source's 0 to 6.86; it is laid proportionally. The board lines up between jrMz... and
+// bPco... on a plane about 6 m forward, at the canopy's front over the forecourt.
+const W611 = 6.861, at611 = s => lay(1.2, W611 / 6.4)(s).map(v => Math.min(W611, Math.max(0, v)));
+const slat611 = '#6e5e56';
+export const leYuan = {
+  id: 'le-yuan', buildingIds: ['454274611'], kind: 'le-yuan', frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 10, pitch: 18 },
+  name: '樂緣 HAPPY 31 (June 2024 exterior)', address: '31 Lorong 14 Geylang (Google Maps gives Lor 14 Geylang, Singapore 398933)',
+  height: 10.25, ceiling: 3.6, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a three-storey house between No. 29 and No. 33 faced from 4.75 m to its parapet in brown horizontal slats, over a forecourt under a canopy whose front carries a red board reading HAPPY 31 乐缘, with red awnings under it and a glazed shop front behind lettered Happy Men; a red letterbox plated 31 and a welcome board stand on the forecourt. Google Maps lists 樂緣, open until midnight, with no category, at Lor 14 Geylang, Singapore 398933, with its point inside this way. The board carries the same name, in simplified characters, with the house number; the listing gives no house number and its postal code differs from No. 31\'s (398940), so the house is named under open question 12 (a clearly signed occupant may be modelled when published addresses disagree, the conflict recorded), and the board is redrawn in original type. SBL Engineering, also listed at No. 31, is closed. The slats\' north edge and No. 29\'s windows put the front 1.5 m in front of the source edge (three pairs of June 2024 lane panoramas, 0.38-0.47), where it runs from 1.2 m to 7.6 m along the source edge, against 0 to 6.86 m; the elevation is laid proportionally on the source edge (open question 53). The board lines up between jrMz... and bPco... on a plane about 6 m forward, where No. 33\'s gates also triangulate, at the front of the canopy; its height was read on that plane (3.5-4.05 m), the slats\' on the 1.5 m plane (4.75-10.25 m).',
+  sources: [way('454274611'), search('樂緣 Lorong 14 Geylang'), search('31 Lorong 14 Geylang'), pano('bPcoR5AOs4FXgQbHv6fiew', 90, 10, 60), pano('jrMzKbxEkHu-lNNinj-HiA', 100, 10, 60), pano('2NQaljbY-ry-_7uNSyFjJg', 60, 10, 60)],
+  colours: { wall: slat611, trim: '#d8d4cc', frame: '#3a3a36', glass: '#3a3436', pier: '#d8d4cc', back: '#3a3436', floor: '#c8c0b4' },
+  blocks: [
+    { name: 'brown slat facing', u: [0, W611], h: [4.75, 10.25], out: .05, depth: .1, colour: slat611 },
+    ...Array.from({ length: 22 }, (_, i) => +(4.85 + i * .25).toFixed(2)).map(y => ({ name: 'slat shadow', u: [.05, W611 - .05], h: [y, +(y + .05).toFixed(2)], out: .11, depth: .02, colour: '#4e423c' })),
+    { name: 'canopy fascia', u: [0, W611], h: [4.4, 4.75], out: .1, depth: .2, colour: '#c8c4bc' },
+    // The forecourt canopy from the wall to its front about 6 m out, with red awnings under the board.
+    { name: 'forecourt canopy', u: [0, W611], h: [4.05, 4.2], out: 3.0, depth: 6.0, colour: '#d8d4cc' },
+    { name: 'red awnings', u: at611([1.3, 7.5]), h: [2.75, 3.4], out: 5.2, depth: 1.4, colour: '#b8303a' },
+    { name: 'canopy post', u: at611([1.25, 1.4]), h: [0, 4.05], out: 5.95, depth: .1, colour: '#e8e8e4' },
+    { name: 'red letterbox', u: at611([4.6, 5.0]), h: [.9, 1.4], out: 6.6, depth: .3, colour: '#c8282a' },
+    { name: 'letterbox post', u: at611([4.76, 4.84]), h: [0, .9], out: 6.6, depth: .06, colour: '#5a5a58' },
+  ],
+  // The board across the canopy's front.
+  boards: [{ u: at611([1.2, 7.6]), h: [3.5, 4.05], out: 6.05 }],
+  backFittings: [
+    { name: 'glazed shop front', u: at611([1.6, 7.3]), h: [.1, 3.2], colour: '#3a3436', glow: .1 },
+  ],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

@@ -131,3 +131,15 @@ test('Wing Fong Mansions is named after its corner panel and listing, its face r
   const p = f.point((side.boards[0].u[0] + side.boards[0].u[1]) / 2, side.boards[0].out);
   assert.ok(Math.hypot(p[0] - 194.5, p[1] - 212.4) < 1.5, `${p}`);
 });
+
+test('樂緣 is named after its board, its listing point inside No. 31 and its postal code recorded', () => {
+  const place = lorong14.find(p => p.id === 'le-yuan');
+  assert.equal(landmarkFor('454274611').id, place.id);
+  assert.equal(building('454274611').number, '31');
+  assert.equal(pointInPolygon(project([103.8793595, 1.3111851], map.origin), outline('454274611')), true);
+  assert.match(place.address, /398933/);
+  // The board hangs at the canopy's front, about 6 m out, within the house's photographed width.
+  assert.equal(place.boards.length, 1);
+  assert.ok(Math.abs(place.boards[0].out - 6.05) < .01);
+  assert.ok(place.boards[0].u[0] >= 0 && place.boards[0].u[1] <= 6.862);
+});

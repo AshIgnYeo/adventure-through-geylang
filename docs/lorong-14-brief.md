@@ -31,7 +31,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 3 | East | 454274618 | No. 37 | Done; unnamed |
 | 4 | East | 454274615 | No. 35 | Done; unnamed |
 | 5 | East | 454274614 | No. 33 (no number in the source) | Done; unnamed; question 53 |
-| 6 | East | 454274611 | No. 31 | |
+| 6 | East | 454274611 | No. 31, 樂緣 (HAPPY 31) | Done; named (address conflict recorded); question 53 |
 | 7 | East | 454274608 | No. 29 | |
 | 8 | East | 764372579 | No. 27 | |
 | 9 | East | 764372578 | No. 25 | |
@@ -181,3 +181,27 @@ A three-storey house between No. 31's brown slatted front and No. 35, behind bro
 **Naming:** none. Nothing is listed at No. 33 and no sign was photographed.
 
 Use `?review=l14-33`.
+
+### 6. Way 454274611: No. 31, 樂緣
+
+A three-storey house faced from its first floor to its parapet in brown horizontal slats, over a forecourt.
+
+- **The canopy:** over the forecourt, its front carrying a red board reading **HAPPY 31 乐缘**, with red awnings under it.
+- **Behind:** a glazed shop front lettered Happy Men.
+- **On the forecourt:** a red letterbox plated 31 and a welcome board.
+
+**Measurement:**
+- **The façade:** the slats' north edge and No. 29's windows put it **1.5 m in front of** the source edge (three pairs, 0.38–0.47). The slats themselves repeat vertically, so they were not relied on.
+  - On that plane, read square-on from `bPco…`, the house runs from 1.2 m to 7.6 m along the source edge, against 0 to 6.86 m. Its south party wall agrees with No. 33's north one (stop 5).
+- **The board:** at 1.5 m it reads 6 m apart between `jrMz…` and `2NQa…`, and still 6.6 m apart at 3 m. On a plane **about 6 m forward** it lines up between `jrMz…` and `bPco…` (`2NQa…` loses it under the canopy there), where No. 33's gates also triangulate. So it hangs on the canopy's front at the forecourt's edge.
+- **Heights:** the board at 3.5–4.05 m (on its own plane); the canopy fascia at 4.4–4.75 m; the slats from 4.75 m to the parapet at 10.25 m.
+- **Check:** renders from `bPco…` and `jrMz…`, blended with the photographs, put the slats and the board's height on their photographed places. The board falls about 0.8 m north of the photographed one, as the proportional layout predicts.
+
+**Layout:** laid proportionally on its source edge (×1.07), with the canopy drawn from the wall to the board 6 m out. Everything on the front, including the board, follows the proportional layout. The front's photographed line is part of [open question 53](open-questions.md).
+
+**Naming:** Google Maps lists **樂緣**, open until midnight, with no category, at Lor 14 Geylang, Singapore 398933, with its point inside this way.
+- The board carries the same name, in simplified characters, with the house number 31. The listing gives no house number, and its postal code differs from No. 31's (398940).
+- So the house is named under [open question 12](open-questions.md), with the conflict recorded, and its board is redrawn in original type.
+- SBL Engineering, also listed at No. 31, is closed.
+
+Use `?review=le-yuan`.
