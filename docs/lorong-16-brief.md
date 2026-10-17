@@ -40,7 +40,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 20 | East | 763764673 | No. 41, Lodge 41 | Done; named; question 67 |
 | 21 | East | 763764674 | No. 39 | Done; unnamed |
 | 22 | East | 763764675 | No. 37 | Done; unnamed |
-| 23 | East | 121872890 | No. 25, Hotel 81 Palace | |
+| 23 | East | 121872890 | No. 25, Hotel 81 Palace | Done; named |
 | 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | Nos. 19, 17, 15, 11 and 9 | |
 | 29–32 | East | 763764686, 763764685, 763764684, 763764683 | Nos. 7, 5, 3 and 1, on the back lane | |
 
@@ -291,3 +291,29 @@ North of the grassed verge, a row of narrow houses about 30 m deep, set back beh
 The fronts of Nos. 37 and 39 and Lodge 41's tower all photograph about 1.1–1.4 m south of their source spans. That is within the drive's position error at this range, so it is recorded but not acted on.
 
 North of No. 37, the hoarded site of No. 35 (an area the source map marks "no building here") is closed along the pavement by grey hoarding. It has no footprint.
+
+### 23. Way 121872890: No. 25, Hotel 81 Palace
+
+A lilac seven-storey hotel over a car park, between the hoarded sites of No. 35 and No. 23.
+
+- **Upper floors:** nine columns of windows on each floor under white hoods and frames, arched and square in turn; a stepped parapet with three white dots at its centre.
+- **First floor:** an arcaded band over a row of arched windows.
+- **Ground floor:** a car park and a glazed lobby between white piers striped in yellow and black, under a teal board reading **HOTEL 81**, with a NOW OPEN banner and a plate numbered 25.
+- **At the north corner:** a vertical sign reading **HOTEL 81**.
+- **South of the hotel,** behind No. 35's grey hoarding, a lower lilac wing fills the rest of the outline.
+
+**Measurement:**
+- **Depth:** the depth scores are weak on the repeating windows (0.08–0.13). Rectified at 0 and 2 m, the façade's corners and columns line up between `3ZQq…`, `DIeq…`, `fiAm…` and `2YRD…` **on the source line**, and drift apart at 2 m.
+- **Extent:** the hotel runs about **22.7 m**, from 0.8 m south of the source corner. The lower wing takes the outline's remaining 5.2 m of its 28.7 m lane face, which runs over two collinear source edges.
+- **Heights:** the car park to about 2.9 m; the board at 3.1–4.1 m; the arched windows at 4.25–6.4 m under the arcaded band at 6.85–7.5 m; the upper windows at about 8.0–10.0 m and every 3.05 m above to 20.2–22.2 m; the parapet at 23.4 m, rising to 24.4 m at its centre.
+
+**Layout:**
+- **The elevation** is laid at its own scale along the two source edges, edge 4 the front and edge 5 a side face, as at Sims Point on Lorong 19.
+- **The hotel's upper floors** are a raised volume over its part of the outline, from 7.5 m to 23.4 m. The lower wing keeps the 7.5 m wall.
+- **The hoarding** of No. 35 is drawn in front of the wing, about 4.6 m out.
+
+**Naming:** Google Maps lists **Hotel 81 Palace** at 25 Lorong 16 Geylang, Singapore 398867, with its point inside this way, and the source map names it. Both signs are photographed, so it is named, and they are redrawn in original type. The banner is temporary and is left blank.
+
+Use `?review=hotel-81-palace`.
+
+North of the hotel, No. 23 (an area the source map marks "no building here") is another hoarded site, closed by grey hoarding along the pavement. It has no footprint.

@@ -3,6 +3,13 @@ import { lorong16, geylangRow16, westerhout16 } from './lorong-16-layout.mjs';
 import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
 
 // Named places only: original lettering after the photographed boards.
+// Hotel 81's board: HOTEL in teal capitals beside 81 in a teal block, on white.
+const hotel81Board = (c: CanvasRenderingContext2D, w: number, h: number) => {
+  c.fillStyle = '#f2f4f2'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8ccd0'; c.fillRect(0, h * .88, w, h * .12);
+  text(c, 'HOTEL', w * .38, h * .48, h * .62, '#1e8a8a', '900', sans, w * .5);
+  c.fillStyle = '#1e8a8a'; c.fillRect(w * .68, h * .1, w * .22, h * .74);
+  text(c, '81', w * .79, h * .48, h * .66, '#f2f4f2', '900', sans, w * .2);
+};
 const draws: Draws = {
   // The lit board along the lane, in green and gold dots on a dark crackled ground: FROG PORRIDGE, 长江1号 by a frog, 宫保田鸡粥.
   'chang-jiang-g1': {
@@ -40,14 +47,7 @@ const draws: Draws = {
     }],
   },
   // The white board over the car park: HOTEL 81 in teal capitals, the 81 in a darker block.
-  'hotel-81-geylang': {
-    boards: [(c, w, h) => {
-      c.fillStyle = '#f2f4f2'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8ccd0'; c.fillRect(0, h * .88, w, h * .12);
-      text(c, 'HOTEL', w * .38, h * .48, h * .62, '#1e8a8a', '900', sans, w * .5);
-      c.fillStyle = '#1e8a8a'; c.fillRect(w * .68, h * .1, w * .22, h * .74);
-      text(c, '81', w * .79, h * .48, h * .66, '#f2f4f2', '900', sans, w * .2);
-    }],
-  },
+  'hotel-81-geylang': { boards: [hotel81Board] },
   // The blade between the middle bay and the tower: HOTEL 81 read downwards in white on teal, GEYLANG under it.
   'hotel-81-geylang@19': {
     blades: [(c, w, h) => {
@@ -107,6 +107,16 @@ const draws: Draws = {
       c.fillStyle = '#7a4a2a'; c.fillRect(w * .2, h * .76, w * .6, h * .1);
       text(c, '41', w * .5, h * .81, w * .4, '#f2f0ea', '800', sans);
       c.strokeStyle = '#e8c040'; c.lineWidth = w * .08; c.beginPath(); c.moveTo(w * .2, h * .96); c.lineTo(w * .8, h * .9); c.stroke();
+    }],
+  },
+  // Hotel 81 Palace: the teal board over the lobby, framed in teal, and the vertical sign, HOTEL 81 read downwards.
+  'hotel-81-palace': {
+    boards: [(c, w, h) => { c.fillStyle = '#2aa0a8'; c.fillRect(0, 0, w, h); c.save(); c.translate(w * .03, h * .1); hotel81Board(c, w * .94, h * .8); c.restore(); }],
+    blades: [(c, w, h) => {
+      c.fillStyle = '#2aa0a8'; c.fillRect(0, 0, w, h); c.fillStyle = '#f2f4f2'; c.fillRect(w * .08, w * .08, w * .84, h - w * .16);
+      [...'HOTEL'].forEach((ch, i) => text(c, ch, w * .5, h * (.1 + i * .12), w * .6, '#1e8a8a', '900', sans));
+      c.fillStyle = '#1e8a8a'; c.fillRect(w * .15, h * .68, w * .7, h * .22);
+      text(c, '81', w * .5, h * .79, w * .55, '#f2f4f2', '900', sans);
     }],
   },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.

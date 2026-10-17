@@ -844,7 +844,63 @@ export const no37 = {
   backFittings: [{ name: 'front behind the plants', u: [.5, 4.4], h: [.1, 3.0], colour: '#3e3a36' }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37];
+// ---------------------------------------------------------------------------------------------
+// 23. Way 121872890, No. 25, Hotel 81 Palace: a lilac seven-storey hotel over a car park, its lane face along two
+// collinear source edges (4 and 5, u south from the north corner). Four June 2024 panoramas (3ZQq..., DIeq...,
+// fiAm..., 2YRD...) agree on its front on the source line, where the hotel runs from u = 0.8 to 23.5; the outline's
+// last 5.2 m, south of it, holds a lower lilac wing behind the hoarding of No. 35. The elevation is laid at its own
+// scale: the ground floor and the arched first-floor row on the two edges, the upper floors on a raised volume.
+const lilac890 = '#a6b0e2', white890 = '#f4f4f8';
+const cols890 = [1.9, 4.6, 7.2, 9.75, 12.4, 15.0, 17.6, 20.25, 22.9], square890 = new Set([2, 6]);
+const whole890 = {
+  windows: cols890.map(c => ({ u: [+(c - .62).toFixed(2), +(c + .62).toFixed(2)], h: [4.25, 6.4], panes: 2 })),
+  blocks: [
+    ...cols890.map(c => ({ name: 'arched white hood', u: [+(c - .75).toFixed(2), +(c + .75).toFixed(2)], h: [6.4, 6.75], out: .06, depth: .12, colour: white890 })),
+    { name: 'arcaded band', u: [.8, 23.5], h: [6.85, 7.5], out: .1, depth: .2, colour: '#b4bce6' },
+    ...[[.8, 1.4], [8.8, 9.9], [16.9, 17.5], [22.9, 23.5]].map(u => ({ name: 'white pier with hazard stripes', u, h: [.13, 3.05], out: .15, depth: .3, colour: white890 })),
+    { name: 'car park opening', u: [10.0, 22.8], h: [.13, 2.9], out: .01, depth: .02, colour: '#2a2c30' },
+    { name: 'glazed lobby', u: [1.5, 8.7], h: [.13, 2.9], out: .01, depth: .02, colour: '#3e4648', glow: .08 },
+    { name: 'blank NOW OPEN banner', u: [5.3, 8.4], h: [2.0, 2.8], out: .05, depth: .02, colour: '#f2f2ee' },
+    { name: 'blank number plate', u: [9.15, 9.6], h: [2.0, 2.6], out: .31, depth: .02, colour: '#e8e8e4' },
+    { name: 'fascia over the car park', u: [.8, 23.5], h: [2.9, 3.1], out: .1, depth: .2, colour: white890 },
+    // The lower lilac wing south of the hotel, behind No. 35's grey hoarding.
+    { name: 'lower lilac wing', u: [23.5, 28.68], h: [.13, 7.0], out: .01, depth: .02, colour: '#9ea8da' },
+    { name: 'grey corrugated hoarding', u: [23.6, 28.68], h: [0, 2.4], out: 4.6, depth: .06, colour: '#a8aaa6' },
+  ],
+};
+const cut890 = (u0, u1) => {
+  const keep = ([a, b]) => { const l = Math.max(a, u0), r = Math.min(b, u1 - .003); return r - l > .05 ? [+(l - u0).toFixed(3), +(r - u0).toFixed(3)] : null; };
+  const cut = xs => xs.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
+  const W = u1 - u0 - .003, fit = w => { const [l, r] = [Math.max(w.u[0], .08), Math.min(w.u[1], W - .08)]; return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)] }]; };
+  return { windows: cut(whole890.windows).flatMap(fit), blocks: cut(whole890.blocks) };
+};
+const front890 = cut890(0, 14.34), south890 = cut890(14.34, 28.69);
+export const hotel81Palace = {
+  id: 'hotel-81-palace', buildingIds: ['121872890'], kind: 'hotel-81-palace', frontEdge: 4, reviewRoad: 'Lorong 16 Geylang', review: { distance: 13, pitch: 34 },
+  name: 'Hotel 81 Palace (June 2024 exterior)', address: '25 Lorong 16 Geylang',
+  height: 7.5, ceiling: 3.1, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a lilac seven-storey hotel on the east side of Lorong 16, between the hoarded sites of No. 23 and No. 35: nine columns of windows on each floor under white hoods and frames, arched and square in turn, over an arcaded band and a row of arched windows on the first floor; a stepped parapet with three white dots at its centre; a car park and a glazed lobby on the ground floor between white piers striped in yellow and black, under a teal board reading HOTEL 81, with a NOW OPEN banner and a plate numbered 25; and at the north corner a vertical sign reading HOTEL 81. South of it, behind No. 35\'s grey hoarding, a lower lilac wing fills the rest of the outline. Google Maps lists Hotel 81 Palace at 25 Lorong 16 Geylang, Singapore 398867, with its point inside this way, and the source map names it, so it is named and its two signs are redrawn in original type; the banner is temporary and left blank. Four June 2024 lane panoramas (3ZQq..., DIeq..., fiAm..., 2YRD...) agree on its front on the source line, where the hotel runs about 22.7 m, from 0.8 m south of the source corner, and the lower wing the remaining 5.2 m; the elevation is laid at its own scale along the two collinear source edges. Heights were read on that plane: the car park to about 2.9 m, the board at 3.1-4.1 m, the arched windows at 4.25-6.4 m, the upper windows at about 8.0-10.0 m and every 3.05 m above to 20.1-22.2 m, and the parapet at 23.4 m, rising to 24.4 m at its centre.',
+  sources: [way('121872890'), search('Hotel 81 Palace 25 Lorong 16 Geylang'), pano('fiAmbtGnWtFj4iJB-TZ-6A', 80, 25, 90), pano('DIeq9U72OHmVQomR0vXobQ', 100, 25, 90), pano('3ZQqgioQm3wQleRlKAjrrQ', 110, 25, 90), pano('2YRDXiSJdEBL2CpWbqIedQ', 70, 25, 90)],
+  colours: rowColours(lilac890, { trim: white890, frame: '#3a3e48', glass: '#3a4250', pier: white890, back: '#2a2c30', floor: '#5a5a58' }),
+  windows: front890.windows, blocks: front890.blocks,
+  // The teal board over the lobby, and the vertical sign at the north corner.
+  boards: [{ u: [9.3, 12.1], h: [3.1, 4.1], out: .08 }],
+  blades: [{ u: .45, out: [.3, 1.5], h: [11.2, 17.6] }],
+  sides: [{ edge: 5, windows: south890.windows, blocks: south890.blocks }],
+  // The hotel's upper floors, over its part of the outline (front frame: u south, out towards the lane).
+  upper: [{
+    name: 'hotel tower', outline: [[.8, 0], [23.5, 0], [23.5, -26.0], [5.9, -26.4], [6.05, -29.9], [.8, -30.3]], from: 7.5, to: 23.4, colour: lilac890, roof: '#8f8c86',
+    windows: cols890.flatMap((c, i) => [[8.0, 10.0], [11.1, 13.1], [14.15, 16.15], [17.2, 19.2], [20.2, 22.2]].map(h => ({ u: [+(c - .62).toFixed(2), +(c + .62).toFixed(2)], h, panes: 2, ...(square890.has(i) ? { surround: true } : { arched: true }) }))),
+    blocks: [
+      { name: 'parapet coping', u: [.8, 23.5], h: [23.2, 23.4], out: .1, depth: .2, colour: white890 },
+      { name: 'raised centre of the parapet', u: [9.3, 15.0], h: [23.4, 24.4], out: .02, depth: .12, colour: lilac890 },
+      ...[11.3, 12.15, 13.0].map(c => ({ name: 'white dot', u: [c - .15, c + .15], h: [23.6, 23.9], out: .09, depth: .02, colour: white890 })),
+      ...[[.8, 1.1], [23.2, 23.5]].map(u => ({ name: 'corner pilaster', u, h: [7.5, 23.2], out: .08, depth: .16, colour: '#b4bce6' })),
+    ],
+  }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37, hotel81Palace];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
