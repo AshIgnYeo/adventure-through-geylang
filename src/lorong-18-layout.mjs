@@ -496,5 +496,85 @@ export const no36 = {
   ],
 };
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36];
+// ---------------------------------------------------------------------------------------------
+// 15-18. Ways 454274642, 764372562, 454274643 and 764372561, Nos. 38, 40, 42 and 44: a two-storey terrace behind a
+// zinc porch roof on slim posts, its houses faced in cream tiles, orange herringbone tiles, white with pink lines, and
+// lavender. Read on No. 30's front line: the lavender and white houses' party wall and windows line up between three
+// June 2024 lane panoramas 5.75 m behind that line, 0.25 m in front of their source edges. On that plane the party walls
+// stand at s = -23.0, -30.8, -37.4, -45.4 and -52.7, against the source's -22.2, -30.1, -36.9, -44.8 and -51.9.
+const terrace38Note = ' Nos. 38 to 44 are a two-storey terrace behind one zinc porch roof, read together on one plane along No. 30\'s front: three June 2024 lane panoramas (Qxql..., Crjq..., RvUa..., with GNek...) agree on the party wall between Nos. 42 and 44 and on No. 42\'s windows 5.75 m behind that line, which is 0.25 m in front of the four houses\' source edges; planes 1.25 m either side split them by about 1 m. On that plane the party walls stand at -23.0, -30.8, -37.4, -45.4 and -52.7 m along No. 30\'s front, within 0.8 m of the source ones. Each elevation is laid proportionally on its own source edge. Heights were read on that plane: the porch roof at 3.1-3.6 m, air-conditioners at 4.0-4.6 m, windows at about 4.6-5.8 m and parapets at 7.4-7.6 m.';
+const t38 = (colour, extra = {}) => ({
+  reviewRoad: 'Lorong 18 Geylang', review: { distance: 7, pitch: 16 }, kind: 'unnamed', unnamed: true,
+  height: 7.5, ceiling: 3.1, fiveFootWay: 2.0, shellInset: .3, roof: { type: 'flat', colour: '#9b9a95' },
+  colours: { wall: colour, trim: '#e8e6e0', frame: '#d8dadc', glass: '#3a4246', pier: '#efeee8', back: '#4a4642', floor: '#a8a296' },
+  ...extra,
+});
+const at38 = on30(-30.8, -23.0, 7.857), at40 = on30(-37.4, -30.8, 6.843), at42 = on30(-45.4, -37.4, 7.877), at44 = on30(-52.7, -45.4, 7.147);
+const porch38 = w => [
+  { name: 'zinc porch roof', u: [.02, w - .02], h: [3.1, 3.6], out: 1.0, depth: 2.0, colour: '#a8acaa' },
+  { name: 'porch fascia', u: [.02, w - .02], h: [3.0, 3.25], out: 2.0, depth: .06, colour: '#e8e8e4' },
+];
+const post38 = u => ({ name: 'slim porch post', u, h: [0, 3.1], out: 1.9, depth: .12, colour: '#e8e8e4' });
+export const no38 = {
+  ...t38('#e2d2b4'), id: 'l18-38', buildingIds: ['454274642'], frontEdge: 1, height: 7.4,
+  name: 'No. 38 Lorong 18 (June 2024 exterior, occupants not identified)', address: '38 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the north house of the terrace, faced in cream tiles: two small aluminium windows high on its upper floor, a white rooftop storey set back behind the parapet, and under the zinc porch roof a glazed front with a stair lit purple, behind a large street tree. No business is listed at the address and no sign was photographed.' + terrace38Note,
+  sources: [way('454274642'), search('38 Lorong 18 Geylang'), pano('OGxsF3fQsZ9otpM_qqvc3Q', 235, 10, 60), pano('QxqlKC5fT3uT0rMZmAWDvQ', 290, 10, 60)],
+  windows: [[-29.4, -27.6], [-26.6, -24.8]].map(s => ({ u: at38(s), h: [4.8, 5.6], panes: 4 })),
+  blocks: [
+    { name: 'parapet coping', u: [0, 7.857], h: [7.25, 7.4], out: .08, depth: .16, colour: '#efe8d8' },
+    ...porch38(7.857), post38(at38([-30.6, -30.5])),
+    { name: 'air-conditioner', u: at38([-30.2, -29.6]), h: [4.0, 4.5], out: .3, depth: .5, colour: '#e8e8e4' },
+  ],
+  // The white storey set back on the roof.
+  rooftop: [{ u: [.5, 7.3], top: 8.8, setback: 2.5, depth: 6.0, colour: '#ecebe6' }],
+  backFittings: [{ name: 'tiled wall', u: at38([-30.6, -28.3]), h: [.1, 3.0], colour: '#d8c8a8' }, { name: 'glazed front with a stair lit purple', u: at38([-28.3, -23.4]), h: [.1, 2.8], colour: '#5a4a6a', glow: .1 }],
+};
+export const no40 = {
+  ...t38('#e0a070'), id: 'l18-40', buildingIds: ['764372562'], frontEdge: 4, height: 7.4,
+  name: 'No. 40 Lorong 18 (June 2024 exterior, occupants not identified)', address: '40 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the second house of the terrace, faced in orange herringbone tiles under a lattice band: two windows over air-conditioners on its upper floor, and under the zinc porch roof an open front faced in the same tiles, with a gilt Thai-style ornament on the wall and a white car parked. Google Maps lists 浯乡陈氏公会 at this address, but its point and its signs are at No. 34 (open question 74); no sign was photographed here, so no name is given.' + terrace38Note,
+  sources: [way('764372562'), search('40 Lorong 18 Geylang'), pano('QxqlKC5fT3uT0rMZmAWDvQ', 262, 10, 60), pano('CrjqjRUlo0Yq4hlJxLZSkA', 295, 10, 60)],
+  windows: [[-36.6, -34.6], [-33.9, -31.9]].map(s => ({ u: at40(s), h: [4.7, 5.8], panes: 3 })),
+  blocks: [
+    { name: 'lattice band', u: [0, 6.843], h: [6.8, 7.25], out: .04, depth: .06, colour: '#e8c8a0' },
+    { name: 'parapet coping', u: [0, 6.843], h: [7.25, 7.4], out: .08, depth: .16, colour: '#e8c8a0' },
+    ...porch38(6.843), post38(at40([-37.2, -37.1])),
+    ...[[-36.4, -35.8], [-35.2, -34.6], [-34.0, -33.4]].map(s => ({ name: 'air-conditioner', u: at40(s), h: [4.0, 4.5], out: .3, depth: .5, colour: '#e8e8e4' })),
+  ],
+  backFittings: [{ name: 'herringbone-tiled wall', u: at40([-37.0, -31.2]), h: [.1, 3.0], colour: '#c88a5a' }, { name: 'gilt Thai-style ornament', u: at40([-35.6, -34.6]), h: [1.2, 2.6], colour: '#d8b048', glow: .1 }, { name: 'dark doorway', u: at40([-34.2, -32.4]), h: [.1, 2.4], colour: '#3a3634' }],
+};
+export const no42 = {
+  ...t38('#eeeef0'), id: 'l18-42', buildingIds: ['454274643'], frontEdge: 1, height: 7.6,
+  name: 'No. 42 Lorong 18 (June 2024 exterior, occupants not identified)', address: '42 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the third house of the terrace, white with pink lines framing its upper floor: a window at each end over air-conditioners, and under the zinc porch roof a car porch with a pink panel, a grilled door and a gilt Thai-style ornament at its north end. Google Maps lists 浴中屋, an adult entertainment club, at 44 Lor 18 Geylang with its point by this house, but marks it permanently closed, and no sign for it was photographed, so no name is given.' + terrace38Note,
+  sources: [way('454274643'), search('42 Lorong 18 Geylang'), pano('CrjqjRUlo0Yq4hlJxLZSkA', 262, 10, 60), pano('RvUaS2tCvcg1XuXtad5xcg', 290, 10, 60)],
+  windows: [[-44.7, -43.5], [-39.6, -38.4]].map(s => ({ u: at42(s), h: [4.9, 5.8], panes: 2 })),
+  blocks: [
+    { name: 'grey coping', u: [0, 7.877], h: [7.4, 7.6], out: .08, depth: .16, colour: '#9a9c9e' },
+    ...[[6.3, 6.4], [4.4, 4.5]].map(h => ({ name: 'pink line', u: at42([-45.2, -37.6]), h, out: .03, depth: .04, colour: '#e8b8c0' })),
+    ...[[-44.6, -44.0], [-43.4, -42.8], [-42.5, -41.8], [-41.2, -40.6]].map(s => ({ name: 'air-conditioner', u: at42(s), h: [4.0, 4.6], out: .3, depth: .5, colour: '#e8e8e4' })),
+    ...porch38(7.877), post38(at42([-45.2, -45.1])),
+    { name: 'pink panel', u: at42([-43.5, -41.8]), h: [0, 2.0], out: 1.0, depth: .06, colour: '#e8b8c8' },
+  ],
+  backFittings: [{ name: 'white wall', u: at42([-45.2, -42.5]), h: [.1, 3.0], colour: '#ecebe6' }, { name: 'grilled door', u: at42([-42.5, -40.8]), h: [.1, 2.4], colour: '#3a3a38' }, { name: 'gilt Thai-style ornament', u: at42([-38.8, -37.9]), h: [1.2, 2.6], colour: '#d8b048', glow: .1 }],
+};
+export const no44 = {
+  ...t38('#b8b4d0'), id: 'l18-44', buildingIds: ['764372561'], frontEdge: 4, height: 7.6,
+  name: 'No. 44 Lorong 18 (June 2024 exterior, occupants not identified)', address: '44 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the south house of the terrace, lavender: two windows inside a raised frame on its upper floor, over air-conditioners, and under the zinc porch roof a dark board lettered in script and wind chimes, behind a brown timber gate between low lavender walls, plated 44. No business is listed at the address but the closed 浴中屋, so the board is blank.' + terrace38Note,
+  sources: [way('764372561'), search('44 Lorong 18 Geylang'), pano('RvUaS2tCvcg1XuXtad5xcg', 262, 10, 60), pano('CrjqjRUlo0Yq4hlJxLZSkA', 240, 10, 60)],
+  windows: [[-51.4, -50.0], [-48.6, -47.2]].map(s => ({ u: at44(s), h: [4.7, 5.8], panes: 2 })),
+  blocks: [
+    { name: 'raised window frame', u: at44([-52.1, -46.0]), h: [4.4, 6.4], out: .06, depth: .12, colour: '#c8c4dc' },
+    { name: 'lavender coping', u: [0, 7.147], h: [7.4, 7.6], out: .08, depth: .16, colour: '#9a98b4' },
+    ...[[-52.4, -51.8], [-50.0, -49.4], [-48.0, -47.4], [-46.4, -45.8]].map(s => ({ name: 'air-conditioner', u: at44(s), h: [4.0, 4.5], out: .3, depth: .5, colour: '#e8e8e4' })),
+    ...porch38(7.147), post38(at44([-52.6, -52.5])),
+    { name: 'brown timber gate', u: at44([-51.6, -46.6]), h: [0, 1.9], out: 2.4, depth: .1, colour: '#8a5040' },
+    ...[[-52.6, -51.6], [-46.6, -45.5]].map(s => ({ name: 'low lavender wall', u: at44(s), h: [0, 1.4], out: 2.4, depth: .2, colour: '#a8a0c8' })),
+  ],
+  backFittings: [{ name: 'dark front', u: at44([-52.3, -45.7]), h: [.1, 2.9], colour: '#3a3a3e' }, { name: 'blank dark script board', u: at44([-50.6, -47.4]), h: [2.3, 2.75], colour: '#2a2a2c' }],
+};
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;

@@ -34,10 +34,10 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 12 | West | 454274640 | No. 32 | Done; unnamed; question 73 |
 | 13 | West | 764372564 | No. 34, lettered 浯鄉陳氏公會 | Done; unnamed; questions 73 and 74 |
 | 14 | West | 764372563 | No. 36 | Done; unnamed; question 73 |
-| 15 | West | 454274642 | No. 38 | |
-| 16 | West | 764372562 | No. 40 | |
-| 17 | West | 454274643 | No. 42 | |
-| 18 | West | 764372561 | No. 44 | |
+| 15 | West | 454274642 | No. 38 | Done; unnamed; question 73 |
+| 16 | West | 764372562 | No. 40 | Done; unnamed; question 73 |
+| 17 | West | 454274643 | No. 42 | Done; unnamed; question 73 |
+| 18 | West | 764372561 | No. 44 | Done; unnamed; question 73 |
 | 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | |
 | 20 | East | 764372540 | No. 55, the Westerhout Road east corner | |
 | 21 | East | 121872891 | No. 31, Hotel 81 Star | |
@@ -222,3 +222,29 @@ A two-storey terrace, pale blue at No. 30 and pink beyond. Each house has a porc
 - Nothing is listed at Nos. 30, 32 and 36.
 
 Use `?review=l18-30`, `?review=l18-32`, `?review=l18-34` and `?review=l18-36`.
+
+### 15–18. Ways 454274642, 764372562, 454274643 and 764372561: Nos. 38 to 44
+
+A two-storey terrace behind one zinc porch roof on slim posts.
+
+**Measurement:** the four fronts were read together on No. 30's front line.
+- **Depth:** the party wall between Nos. 42 and 44, and No. 42's windows, line up between `Qxql…`, `Crjq…` and `RvUa…` (June 2024), with `GNek…`, on a plane **5.75 m behind** that line. That is 0.25 m in front of the four houses' source edges, which step 2.4 m back from No. 36's. On planes 1.25 m either side the panoramas split them by about 1 m.
+- **Party walls on that plane:** at s = −23.0, −30.8, −37.4, −45.4 and −52.7, within 0.8 m of the source's −22.2, −30.1, −36.9, −44.8 and −51.9.
+- **Heights:** porch roof at 3.1–3.6 m, air-conditioners at 4.0–4.6 m, windows at about 4.6–5.8 m, parapets at 7.4–7.6 m. No. 38's rooftop storey reaches about 8.8 m.
+
+**Layout:** each elevation is laid proportionally on its own source edge, with the zinc porch roof 2 m deep along the front. These fronts stand close to their photographed line; they are listed in [open question 73](open-questions.md) with the rest of the row.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 15 | 454274642 | **No. 38**: faced in cream tiles. Two small aluminium windows high on the upper floor, a white rooftop storey set back behind the parapet, and a glazed front with a stair lit purple, behind a street tree | 7.8 m | No |
+| 16 | 764372562 | **No. 40**: faced in orange herringbone tiles under a lattice band. Two windows over air-conditioners; an open front in the same tiles with a gilt Thai-style ornament | 6.6 m | No |
+| 17 | 454274643 | **No. 42**: white, with pink lines framing the upper floor. A window at each end; a car porch with a pink panel, a grilled door and a gilt ornament | 8.0 m | No |
+| 18 | 764372561 | **No. 44**: lavender. Two windows inside a raised frame; a dark board lettered in script and wind chimes, behind a brown timber gate between low lavender walls, plated 44 | 7.3 m | No |
+
+**Naming:** none.
+- 浯乡陈氏公会 is listed at No. 40, but its point and its signs are at No. 34 ([question 74](open-questions.md)).
+- 浴中屋, listed at No. 44 with its point by No. 42, is permanently closed.
+- No. 44's script board names no listed business.
+- Nothing else is listed at these addresses.
+
+Use `?review=l18-38`, `?review=l18-40`, `?review=l18-42` and `?review=l18-44`.
