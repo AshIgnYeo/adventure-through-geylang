@@ -63,6 +63,13 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Leave them for a Westerhout Road pass. Taking in the stub's west side would need the extract extended south, which is a separate decision.
     - **Unlocks:** nothing now; it records where the lane stops.
 
+74. **Lorong 18, No. 34 (way 764372564): name 浯鄉陳氏公會 from its lettering, when its listing gives No. 40?**
+    - **Evidence:** in June 2024 raised black lettering along the parapet of No. 34 reads 浯鄉陳氏公會. A yellow board with the association's emblem, reading 浯鄉陳氏公會 CHEN'S ASSOCIATION, hangs over a grille gate to the stair at the house's north end. The number 34 is on the house's marble front ([Lorong 18 brief](lorong-18-brief.md), stop 13).
+    - **Listing:** Google Maps lists 浯乡陈氏公会, an association, at **40** Lor 18 Geylang, Singapore 398819, with its point inside No. 34's way. No. 40, three houses south, has no sign for it.
+    - **Current rule:** both listing and signage must agree on the address, so No. 34 is modelled unnamed, with its lettering and board blank.
+    - **Recommendation:** yes. Open question 12 allows a clearly signed occupant when published addresses disagree, and the listing point and both signs agree on this house. Name the association as the occupant of No. 34's upper floor, after its lettering, recording the No. 40 address, as the Singapore Rattan Industry Association was named under question 37.
+    - **Unlocks:** one named association, with its lettering and board redrawn.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

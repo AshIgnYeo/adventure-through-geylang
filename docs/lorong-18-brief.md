@@ -30,12 +30,12 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 7–8 | West | 764372565, 454274634 | Nos. 24 and 22, GoFit X Gym Geylang | Done; named; question 73 |
 | 9 | West | 454274635 | No. 26 | Done; unnamed; question 73 |
 | 10 | West | 454274637 | No. 28 | Done; unnamed; question 73 |
-| 11 | West | 454274639 | No. 30 | |
-| 12 | West | 454274640 | No. 32 | |
-| 13 | West | 764372564 | No. 34 | |
-| 14 | West | 764372563 | No. 36 | |
+| 11 | West | 454274639 | No. 30 | Done; unnamed; question 73 |
+| 12 | West | 454274640 | No. 32 | Done; unnamed; question 73 |
+| 13 | West | 764372564 | No. 34, lettered 浯鄉陳氏公會 | Done; unnamed; questions 73 and 74 |
+| 14 | West | 764372563 | No. 36 | Done; unnamed; question 73 |
 | 15 | West | 454274642 | No. 38 | |
-| 16 | West | 764372562 | No. 40, 浯乡陈氏公会 | |
+| 16 | West | 764372562 | No. 40 | |
 | 17 | West | 454274643 | No. 42 | |
 | 18 | West | 764372561 | No. 44 | |
 | 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | |
@@ -196,3 +196,29 @@ A single-storey pair of cream houses under red tiled hipped roofs.
 **Naming:** none. Nothing is listed at either address, and no sign was photographed.
 
 Use `?review=l18-26` and `?review=l18-28`.
+
+### 11–14. Ways 454274639, 454274640, 764372564 and 764372563: Nos. 30 to 36
+
+A two-storey terrace, pale blue at No. 30 and pink beyond. Each house has a porch roof or awning over its forecourt.
+
+**Measurement:** the four fronts were read together on No. 30's front line.
+- **Depth:** the upper façades line up between `FA-o…`, `anNq…` and `qTnZ…` (June 2024), with `OGxs…` at No. 36, on a plane **3.25 m behind** that line. The depth scores also peak there (0.33–0.39).
+  - That is 3.25 m behind the source edges of Nos. 30–34, whose lines follow the fronts of their porch roofs.
+  - It is 0.85 m behind No. 36's source edge, which steps back 2.4 m.
+- **Party walls on that plane:** at s = 6.95, −0.8, −8.7, −17.0 and −23.0, against the source's 7.97, 0, −7.83, −14.88 and −22.15. No. 34 photographs about 8.3 m wide against its 7.0 m way, and No. 36 about 6.0 m against 7.2 m.
+- **Heights:** porch roofs and awnings at 3.0–4.0 m, windows at about 4.4–6.2 m, parapets at 7.6 m.
+
+**Layout:** each elevation is laid proportionally on its own source edge, with the porch roofs and awnings drawn on the front. The upper façades stand up to 3.25 m in front of their photographed line: part of [open question 73](open-questions.md).
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 11 | 454274639 | **No. 30**: pale blue. Two windows under roller-blind boxes, over a red tiled porch roof; red boards and festive paper under it, and the number 30 on a post | 7.75 m | No |
+| 12 | 454274640 | **No. 32**: pink. Two arched white casements over a row of air-conditioners, under a curved red-striped awning; a brick-tiled ground floor round a glazed front lit purple, and the number 32 in red | 7.9 m | No |
+| 13 | 764372564 | **No. 34**: pink. Two broad windows under louvred hoods, below raised black lettering reading **浯鄉陳氏公會** along the parapet, over a flat canopy on black posts. Under it a dark marble front lettered VIETNAM PARADISE in gold, the number 34, and a grille gate to a stair, where a yellow board with an emblem reads 浯鄉陳氏公會 CHEN'S ASSOCIATION | 8.3 m | No; [question 74](open-questions.md) |
+| 14 | 764372563 | **No. 36**: pink. Two arched windows over a curved red-striped awning; a ground floor faced with brown mosaic, a woven X-shaped ornament, glass doors lit purple and the number 36 in red | 6.0 m | No |
+
+**Naming:**
+- **No. 34:** Google Maps lists 浯乡陈氏公会, an association, at **40** Lor 18 Geylang, Singapore 398819, with its point inside No. 34's way. The lettering and the yellow board name it, but the listed address is No. 40, so the house is left unnamed, its lettering blank, until [open question 74](open-questions.md) is answered. Vietnam Paradise is not listed.
+- Nothing is listed at Nos. 30, 32 and 36.
+
+Use `?review=l18-30`, `?review=l18-32`, `?review=l18-34` and `?review=l18-36`.
