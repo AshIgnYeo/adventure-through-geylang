@@ -12,6 +12,33 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph. Other buildings are labelled by address, with their signboards drawn and their lettering blank.
 - **Code:** each place is a measured elevation on one edge of its footprint, built with the lane-house helpers shared with Lorong 17, Lorong 19 and Lorong 21 (`src/lane-house-layout.mjs`, `src/lane-house.ts`).
 
+## Status, 17 October 2026
+
+**Complete; four questions wait for the owner.** All 26 stops are modelled. Every building on Lorong 18 between Geylang Road and Westerhout Road has its photographed exterior, with the corners at both ends of both sides and the Geylang Road block back to Lorong 16.
+
+- **Coverage:** 26 source ways, all with photographed exteriors; none is left as a generic block. GoFit stands over two ways, and the Dabu Hakka Building was a building site in June 2024.
+- **Footprints:** every building stands on its source outline for now.
+- **Named places:** ten are added, bringing the study to 147:
+  - Le Regal, 340 Geylang Road, the west corner back to Lorong 16;
+  - OYO 102 Budgetone Hotel, No. 10;
+  - Cygon, No. 14;
+  - Club 20, No. 20;
+  - GoFit X Gym Geylang, Nos. 22–24;
+  - Hotel 81 (Premier) Star, No. 31;
+  - the Diamond Hotel, Nos. 21 and 25;
+  - the Dabu Hakka Building, No. 1, rebuilding;
+  - Hin Sheng Coffee House, No. 346 Geylang Road, the east corner;
+  - T1 Trading, No. 350 Geylang Road.
+- **Open questions:** four, each with a recommendation:
+  - [72](open-questions.md): leave the stub south of Westerhout Road and the Westerhout Road row for a later pass;
+  - [73](open-questions.md): the west side, No. 14 to No. 44B, on its photographed line;
+  - [74](open-questions.md): name 浯鄉陳氏公會 at No. 34 from its lettering, when its listing gives No. 40;
+  - [75](open-questions.md): name Petopia on No. 346's upper floors from its signs, when its listing gives No. 348A.
+- **Left for a later pass:**
+  - the stub of Lorong 18 south of Westerhout Road, and the Westerhout Road row (question 72);
+  - Geylang Road east of No. 350, and the deep outlines behind the east side (ways 121873024 and 454274591), which face Lorong 20;
+  - the north side of Geylang Road east of Lorong 21, which is in no walk yet.
+
 ## The lane
 
 - **West side:** Le Regal, a condominium over a shopping arcade, filling the Geylang Road block back to Lorong 16; a back lane; a hotel at No. 10; then a run of two-storey terraces under tiled roofs, broken by taller blocks, down to the Westerhout Road corner.
