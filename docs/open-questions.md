@@ -94,6 +94,15 @@ Started: 10 October 2026.
     - **Recommendation:** keep the photographed name. The model shows the June 2024 exterior, and its sign reads PEARL; the brand agrees with the listing. If newer imagery shows a Vanda sign, rename it then.
     - **Unlocks:** settles how a renamed business with a dated sign is named. The ibis budget Singapore Gold model on Sims Avenue may need the same check.
 
+55. **No. 284 Geylang Road, the Lorong 14 east corner: move its lane face onto its photographed line?**
+    - **Evidence:** measured during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stops 13–16).
+      - The lane face's pilasters, triangulated from June 2024 lane panoramas (`3MIt…` with `r047…`, checked from `x44k…`), stand **2 m in front of** the source edge, towards the lane. The face runs about 25.5 m from the corner to the back lane, the source edge's length.
+      - The corner triangulates from two Geylang Road panoramas about 1.8 m west of the source chamfer. So the Geylang Road front, with its corner bay, is about 7.1 m against the source's 4.07 m plus a 1.62 m chamfer.
+      - The Geylang Road fronts of Nos. 286–290 stand on their source line, their party walls within 0.4 m of the source ones.
+    - **What happens now:** the lane face is laid on its source edge, so it stands 2 m behind its photographed line, and its corner bay stands on the source chamfer. The source edge is 5.9 m from the lane's centreline; on the photographed line the face would be about 3.9 m from it, 0.65 m clear of the estimated carriageway.
+    - **Recommendation:** yes. Author No. 284's footprint with its lane face 2 m forward and a short chamfer at the photographed corner, keeping its party wall with No. 286 and its rear line. Leave Nos. 286–290 on their source outlines.
+    - **Unlocks:** the corner house at its true width, its five-foot way and awning at their photographed depth on the lane, and the corner board on its photographed corner.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

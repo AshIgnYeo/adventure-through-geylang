@@ -178,3 +178,18 @@ test('The Amazing Inn is named after its lettering and listing, its corner on th
   assert.ok(Math.abs(frame.width - 6.824) < .01 && frame.dz > .95);
   assert.equal(place.boards.length, 1);
 });
+
+test('the east corner block names its four signed tenants, Valu$ running on to No. 292', () => {
+  const named = { '454254175': 'little-charcoal-stove', '454254174': 'sea-mu-to', '454254173': 'em-salon-spa', '454254172': 'valu' };
+  for (const [id, place] of Object.entries(named)) assert.equal(landmarkFor(id).id, place, id);
+  // Listing points: Sea Mu To and both No. 288 tenants inside their ways, Valu$ inside No. 292's, Little Charcoal Stove
+  // just west of No. 284's source outline.
+  assert.equal(pointInPolygon(project([103.8790479, 1.312413], map.origin), outline('454254174')), true);
+  for (const p of [[103.8790838, 1.3124835], [103.8790906, 1.3125083]]) assert.equal(pointInPolygon(project(p, map.origin), outline('454254173')), true);
+  assert.equal(pointInPolygon(project([103.8791616, 1.312518], map.origin), outline('454254171')), true);
+  const stove = project([103.8789681, 1.3124911], map.origin), o = outline('454254175');
+  assert.equal(pointInPolygon(stove, o), false);
+  assert.ok(o.some((a, i) => nearestOnSegment(stove, a, o[(i + 1) % o.length]).distance < 1.6));
+  // Every Geylang Road front carries its board on the front beam.
+  for (const place of lorong14.filter(p => ['sea-mu-to', 'em-salon-spa'].includes(p.id))) assert.ok(place.boards[0].h[0] === 3.0);
+});

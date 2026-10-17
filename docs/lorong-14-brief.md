@@ -38,7 +38,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 10 | East | 454274677 | No. 21, ibis budget Singapore Pearl | Done; named (a dated exterior; question 54) |
 | 11 | East | 764372577 | No. 3, Central Imperial | Done; named |
 | 12 | East | 476141643 | No. 1, The Amazing Inn | Done; named |
-| 13–16 | East | 454254175 to 454254172 | Nos. 284–290 Geylang Road, the east corner block | |
+| 13–16 | East | 454254175 to 454254172 | Nos. 284–290 Geylang Road, the east corner block: Little Charcoal Stove, Sea Mu To TCM Wellness, Em Salon Spa and 暹罗指压保健, Valu$ | Done; named; question 55 |
 | 17–25 | Geylang Road | 454254171 to 764372573 | Nos. 292–308, east to Lorong 16 | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
@@ -312,3 +312,48 @@ A three-storey hotel at the corner of the lane and the back lane behind the Geyl
 - De Yue Lou - Wanton Mee, listed at No. 1, is closed.
 
 Use `?review=amazing-inn`.
+
+North of The Amazing Inn the back lane behind the Geylang Road shophouses runs east from the lane.
+
+### 13–16. Ways 454254175, 454254174, 454254173 and 454254172: Nos. 284–290 Geylang Road
+
+Four two-storey shophouses under tiled roofs at the lane's east corner, each in its own colour between cream pilasters with white Corinthian capitals.
+- **Upper floors:** louvred shutters over lattice vent panels.
+- **Ground floor:** shop boards on the five-foot way's front beam.
+- **No. 284's long side on the lane:** a row of seven bays, each painted its own colour, under a yellow Dutch gable, over an eating house with tables under a long red awning carrying Esso LPG and UGS marks.
+
+**Measurement:**
+- **The Geylang Road front** was read on one line along No. 290's front (g west from its east end).
+  - The pilasters between the houses, triangulated from `YBiU…`, `0XmL…` and `PcP8…`, stand **on the source front** (0.1–0.9 m forward) at g = −0.4, 4.71, 9.6 and 14.55, against the source's 0, 5.12, 9.86 and 14.61.
+  - The depth scores (3.5–4.25 m forward, 0.19–0.27) were thrown by the repeating shutters; the triangulated pilasters and boards line up on the source line instead.
+  - No. 284's corner triangulates (`YBiU…` with `PcP8…`) at about g 21.7, 1.8 m west of the source chamfer. So No. 284's Geylang Road front, with its corner bay, is about 7.1 m against the source's 4.07 m plus a 1.62 m chamfer.
+- **No. 284's lane face:** its pilasters, triangulated from `3MIt…` with `r047…` and checked from `x44k…`, stand **2 m in front of** the source edge, towards the lane, at u 0.3, 3.3, 6.7, 10.3, 13.8, 17.2, 20.3 and 24.6 (u south from the source chamfer). On that plane the face runs from the corner, about 0.6 m north of the chamfer's lane end, to the back lane at u 24.9: 25.5 m, against the 25.49 m source edge.
+- **Heights:** the two drives disagree by about 7%, with the eaves at 7.7 m from Geylang Road and 8.3 m from the lane. As at Cheng Yi on Lorong 21, the mean is used (Geylang Road readings ×1.04, lane readings ×0.965):
+  - boards on the front beam at 3.0–3.75 m; lattice vents at 4.35–4.8 m;
+  - windows at 5.15–6.85 m under louvred transoms;
+  - capitals at 6.9–7.45 m; eaves at 7.8–8.05 m;
+  - the Dutch gable to about 9.3 m.
+- **Check:** renders from `YBiU…`, `PcP8…` and `3MIt…`, blended with the photographs, put the Geylang Road fronts, pilasters, shutters, boards and eaves on their photographed places. No. 284's lane face falls 2 m behind its photographed line, as measured.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 13 | 454254175 | **No. 284**, the corner: peach, blue shutters, over a board reading **小炭炉 LITTLE CHARCOAL STOVE 滋补鸡煲 HERBAL CHICKEN CLAYPOT**, repeated over the corner entrance. A vertical sign reading 得月楼 BBQ 烧烤 at the corner. The seven-bay lane face (teal, yellow, blue, cream, ochre, pink and peach) | 7.1 m on Geylang Road; 25.5 m on the lane | **Little Charcoal Stove** |
+| 14 | 454254174 | **No. 286**: pink, green shutters, over a board reading **中醫推拿養生堂** beside a 水木堂 mark, a lightbox reading **SEA MU TO TCM WELLNESS** and a vertical board reading 中醫推拿養生堂 286 | 4.95 m | **Sea Mu To TCM Wellness 水木堂** |
+| 15 | 454254173 | **No. 288**: yellow, white shutters, over a board reading **Em Salon Spa**, with a vertical board reading **暹羅指壓 THAI MASSAGE 288 Since 1992** | 4.89 m | **Em Salon Spa** and **暹罗指压保健** |
+| 16 | 454254172 | **No. 290**: lavender, yellow shutters, over a red board reading **超便宜生活超市** beside the **Valu$** mark, its shop front shuttered and hung with SUPER CHEAP banners | 5.11 m | **Valu$** (with No. 292) |
+
+**Layout:**
+- Each Geylang Road front is laid proportionally on its own source edge (×0.84–0.97). No. 284's corner bay is drawn on the source chamfer (edge 4).
+- No. 284's lane face is the front (for its five-foot way), laid at its own scale on the source edge, with a hipped roof. The Geylang Road houses carry gable roofs with the ridge parallel to the road.
+- No. 284's lane face stands 2 m behind its photographed line, and its corner 1.8 m east of it: [open question 55](open-questions.md).
+
+**Naming:**
+- **Little Charcoal Stove**, a restaurant open until 4 am, is listed at 284 Geylang Rd, Singapore 389331. Its point lies 1.4 m west of the source outline, inside the photographed corner. The address and the boards agree on this house, so it is named (as at Crystal Mansions, question 32).
+  - Han Xuart Eating House, also listed at No. 284, has no photographed sign.
+  - De Yue Lou Chinese BBQ, whose vertical sign remains, is closed, so its sign is blank.
+- **Sea Mu To TCM Wellness 水木堂**, a medical spa, operating, is listed at 286 Geylang Rd, Level 1, with its point inside the way.
+- **Em Salon Spa**, a beauty salon, and **暹罗指压保健**, a foot massage parlour, operating, are both listed at 288 Geylang Rd with their points inside the way. Em Salon Spa's listing carries No. 290's postal code (389337), so it is named under [open question 12](open-questions.md) with the conflict recorded.
+- **Valu$**, a general store open 24 hours, is listed at 290/292 Geylang Rd, with its point inside No. 292's way. Its boards and mark run over both houses, so it is one place over the two, completed at stop 17.
+- All the boards are redrawn in original type.
+
+Use `?review=little-charcoal-stove`, `?review=sea-mu-to`, `?review=em-salon-spa` and `?review=valu`.

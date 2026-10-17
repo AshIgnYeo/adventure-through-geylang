@@ -608,7 +608,185 @@ export const amazingInn = {
   }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn];
+// ---------------------------------------------------------------------------------------------
+// The east corner block on Geylang Road
+
+// 13-16. Ways 454254175, 454254174, 454254173 and 454254172, Nos. 284-290 Geylang Road: two-storey shophouses under
+// tiled roofs, each in its own colour between cream pilasters with white Corinthian capitals, louvred shutters over
+// lattice vent panels, shop boards on the five-foot way's front beam. The Geylang Road front is read on one line along
+// No. 290's front (g west from its east end): the pilasters, triangulated from three June 2024 Geylang Road panoramas
+// (YBiU..., 0XmL..., PcP8...), stand on the source front (0.1-0.9 m forward) at g = -0.4, 4.71, 9.6 and 14.55, against the
+// source's 0, 5.12, 9.86 and 14.61, and the corner of No. 284 at about g 21.7. No. 284's long side on Lorong 14 is a row
+// of seven coloured bays under a Dutch gable, its pilasters triangulated from the lane panoramas (3MIt..., r047...,
+// x44k...) 2 m in front of the source edge (towards the lane), from the corner, about 0.6 m north of the source chamfer's
+// lane end, to the back lane. Each face is laid proportionally on its source edge. The two drives disagree on the heights
+// by about 7% (eaves at 7.7 m from Geylang Road, 8.3 m from the lane); as at Cheng Yi on Lorong 21 the mean is used
+// (Geylang Road readings x1.04, lane readings x0.965).
+const grH = { ceiling: 3.9, board: [3.0, 3.75], beam: [3.75, 4.15], vent: [4.35, 4.8], ledge: [4.95, 5.15], win: [5.15, 6.85], transom: [6.3, 6.85], cap: [6.9, 7.45], eaves: [7.8, 8.05], height: 7.9 };
+const grRoof = { type: 'gable', ridge: 9.6, ridgeDepth: .5, colour: '#a0583e' };
+// The Geylang Road houses' party walls are a degree or two off square to their fronts, so their shells stand in from them.
+const grShell = .12;
+const tan284 = '#d8b484', capital284 = '#f2efe6', dark284 = '#3a3a36';
+// The pieces of one Geylang Road shophouse front between its party walls (in its own frame): pilasters at both ends, the
+// front beam, lattice vents under each window, a dark ledge, louvred transoms, and the eaves.
+const grFront = (W, at, wins, colour, extra = [], frame = '#e8e8e4') => ({
+  windows: wins.map(s => ({ u: at(s), h: grH.win, panes: 4 })),
+  vents: wins.flatMap(s => { const [l, r] = at(s), m = (l + r) / 2; return [{ u: [l + .1, m - .05], h: grH.vent }, { u: [m + .05, r - .1], h: grH.vent }]; }),
+  blocks: [
+    { name: 'colour field', u: [0, W], h: [grH.beam[1], grH.eaves[0]], out: .01, depth: .02, colour },
+    { name: 'front beam', u: [0, W], h: grH.beam, out: .06, depth: .12, colour: dark284 },
+    { name: 'dark ledge', u: [0, W], h: grH.ledge, out: .12, depth: .24, colour: dark284 },
+    ...wins.map(s => ({ name: 'louvred transom', u: at(s), h: grH.transom, out: .04, depth: .03, colour: '#3e3e3a' })),
+    ...wins.flatMap(s => shutters(at(s), grH.win, frame)),
+    { name: 'eaves', u: [0, W], h: grH.eaves, out: .45, depth: .9, colour: '#5a3a30' },
+    ...extra,
+  ],
+});
+const pilaster284 = (u, W = 99) => [
+  { name: 'pilaster', u, h: [grH.beam[1], grH.cap[0]], out: .12, depth: .24, colour: tan284 },
+  { name: 'Corinthian capital', u: [Math.max(0, u[0] - .05), Math.min(W, u[1] + .05)], h: grH.cap, out: .17, depth: .34, colour: capital284 },
+];
+const grNote = ' Nos. 284-290 Geylang Road were read together on one line along No. 290\'s front: the pilasters between the houses, triangulated from three June 2024 Geylang Road panoramas (YBiU..., 0XmL..., PcP8...), stand on the source front, 0.1-0.9 m forward, at 4.71, 9.6 and 14.55 m west of No. 290\'s east party wall, against the source\'s 5.12, 9.86 and 14.61 m; each front is laid proportionally on its own source edge. Heights were read on that line and scaled to the mean of the Geylang Road and lane readings, which disagree by about 7%: boards on the five-foot way\'s front beam at 3.0-3.75 m, lattice vents at 4.35-4.8 m, windows of louvred shutters at 5.15-6.85 m, Corinthian capitals at 6.9-7.45 m and the eaves at 7.8-8.05 m under a tiled roof.';
+const grSources = w => [way(w), pano('YBiUPOlJN5S-q8M8MsdnVA', 175, 10, 100), pano('0XmLfVywkSW7HpPrXmiKPg', 190, 10, 100), pano('PcP8fdxa3FdNxOSFtx1EAA', 150, 10, 100)];
+const grColours = (wall, frame) => ({ wall, trim: '#e8e2d4', frame: '#3a3a36', glass: '#3a3e40', pier: '#c8ccd0', back: '#4a4642', floor: '#b07a5a' });
+// Louvred shutters closing a window: a panel in the shutters' colour crossed by shadowed slats, and a central stile.
+const shutters = (u, h, colour) => {
+  const [l, r] = u, [b, t] = [h[0] + .05, h[1] - .6], n = Math.round((t - b) / .12);
+  return [
+    { name: 'louvred shutters', u: [l + .04, r - .04], h: [b, t], out: .03, depth: .01, colour },
+    ...Array.from({ length: n }, (_, i) => ({ name: 'shutter slat', u: [l + .06, r - .06], h: [+(b + .06 + i * .12).toFixed(3), +(b + .085 + i * .12).toFixed(3)], out: .037, depth: .004, colour: '#4a4a46' })),
+    { name: 'shutter stile', u: [(l + r) / 2 - .025, (l + r) / 2 + .025], h: [b, t], out: .038, depth: .006, colour: '#4a4a46' },
+  ];
+};
+
+// No. 284, the corner: its Geylang Road front (edge 0) from g 14.55 to 19.4, its corner bay on the source chamfer (edge
+// 4), and its long side on the lane (edge 3, the front, u south from the chamfer), its bays photographed from the corner
+// at u -0.6 to the back lane at 24.9.
+const W284 = 25.487, at284 = s => lay(-.6, W284 / 25.5)(s).map(v => Math.min(W284, Math.max(0, v)));
+const at284g = s => lay(14.55 - 14.61, 4.068 / 4.85)(s.map(v => v - 14.61)).map(v => Math.min(4.068, Math.max(0, v)));
+const laneBays284 = [
+  { s: [.33, 3.3], colour: '#5fb4a4', win: [.9, 2.7], frame: '#b8443a' }, { s: [3.3, 6.7], colour: '#e6cc6c', win: [3.9, 5.9], frame: '#ecece6' },
+  { s: [6.7, 10.3], colour: '#8a9ed0', win: [7.4, 9.4], frame: '#b8443a' }, { s: [10.3, 13.8], colour: '#ece4d2', win: [10.9, 13.0], frame: '#e2d4b0' },
+  { s: [13.8, 17.2], colour: '#e8c88c', win: [14.5, 16.6], frame: '#b8443a' }, { s: [17.2, 20.3], colour: '#e6c0b6', win: [17.8, 19.9], frame: '#7ab49a' },
+  { s: [20.3, 24.9], colour: '#e8c8a0', win: [21.3, 23.8], frame: '#8aa4d0' },
+];
+const laneH = { vent: [4.45, 4.85], ledge: [4.9, 5.15], win: [5.2, 6.85], cap: [6.95, 7.5], eaves: [7.85, 8.05] };
+export const littleCharcoalStove = {
+  id: 'little-charcoal-stove', buildingIds: ['454254175'], kind: 'little-charcoal-stove', frontEdge: 3, reviewRoad: 'Lorong 14 Geylang', review: { at: 6, distance: 9, pitch: 18 },
+  name: 'Little Charcoal Stove 小炭炉 (June 2024 exterior)', address: '284 Geylang Road (the Lorong 14 east corner)',
+  height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, roof: { type: 'hip', ridge: 9.4, colour: grRoof.colour }, // hipped at the corner
+  evidence: 'June 2024 Street View shows a two-storey corner shophouse at the Lorong 14 east corner of Geylang Road. On Geylang Road a peach front with blue louvred shutters over a board reading 小炭炉 LITTLE CHARCOAL STOVE 滋补鸡煲 HERBAL CHICKEN CLAYPOT, which is repeated on the corner bay over the corner entrance; a vertical sign reading 得月楼 BBQ 烧烤 hangs at the corner. Along Lorong 14, seven bays between cream pilasters with white Corinthian capitals, each painted its own colour (teal, yellow, blue, cream, ochre, pink and peach) with louvred shutters over lattice vents, under a yellow Dutch gable over the first two, over an eating house with tables under a long red awning carrying Esso LPG and UGS marks. Google Maps lists Little Charcoal Stove, a restaurant open until 4 am, at 284 Geylang Rd, Singapore 389331; its point lies 1.4 m west of the source outline, inside the photographed corner, and the address and the boards agree on this house, so it is named (as at Crystal Mansions, open question 32) and its boards are redrawn in original type. Han Xuart Eating House is listed at No. 284 with no photographed sign, and De Yue Lou Chinese BBQ, whose vertical sign remains, is closed, so that sign is blank. The lane face\'s pilasters, triangulated from three June 2024 lane panoramas (3MIt..., r047..., x44k...), stand about 2 m in front of the source edge, towards the lane, at 3.3-3.5 m centres, from the corner, about 0.6 m north of the source chamfer\'s lane end, to the back lane, 25.5 m along; the corner itself triangulates from YBiU... and PcP8... about 1.8 m west of the source chamfer. The lane face is laid at its own scale on the source edge (open question 55); lane heights are scaled by 0.965 to the mean of the two drives.' + grNote,
+  sources: [...grSources('454254175'), search('Little Charcoal Stove 284 Geylang Road'), pano('3MItIwtzP7_nSfpdmbWoIQ', 100, 15, 100), pano('r047nkQgApMFCeDGNDyLrA', 80, 15, 100), pano('R0licFeVz38dKLAM_gICTg', 135, 10, 60)],
+  colours: grColours('#e8c8a0', '#8aa4d0'),
+  windows: laneBays284.map(b => ({ u: at284(b.win), h: laneH.win, panes: 4 })),
+  vents: laneBays284.flatMap(b => { const [l, r] = at284(b.win), m = (l + r) / 2; return [{ u: [l + .1, m - .05], h: laneH.vent }, { u: [m + .05, r - .1], h: laneH.vent }]; }),
+  blocks: [
+    ...laneBays284.flatMap(b => [
+      { name: 'bay colour', u: at284(b.s), h: [grH.beam[1], laneH.eaves[0]], out: .01, depth: .02, colour: b.colour },
+      ...shutters(at284(b.win), laneH.win, b.frame),
+      { name: 'louvred transom', u: at284(b.win), h: [6.3, 6.85], out: .04, depth: .03, colour: '#3e3e3a' },
+    ]),
+    ...[.33, 3.3, 6.7, 10.3, 13.8, 17.2, 20.3, 24.6].flatMap(c => pilaster284(at284([c - .25, c + .25]), W284)),
+    { name: 'front beam', u: [0, W284], h: grH.beam, out: .06, depth: .12, colour: dark284 },
+    { name: 'dark ledge', u: [0, W284], h: laneH.ledge, out: .12, depth: .24, colour: dark284 },
+    { name: 'eaves', u: [0, W284], h: laneH.eaves, out: .45, depth: .9, colour: '#5a3a30' },
+    // The yellow Dutch gable over the first two bays, and a small pink one over the sixth.
+    { name: 'Dutch gable', u: at284([1.3, 5.2]), h: [8.05, 8.65], out: .05, depth: .2, colour: '#e0c070' },
+    { name: 'Dutch gable', u: at284([2.2, 4.3]), h: [8.65, 9.1], out: .05, depth: .2, colour: '#e0c070' },
+    { name: 'Dutch gable crest', u: at284([2.9, 3.6]), h: [9.1, 9.3], out: .05, depth: .2, colour: '#e0c070' },
+    { name: 'small gable', u: at284([17.6, 19.6]), h: [8.05, 8.5], out: .05, depth: .2, colour: '#e6c0b6' },
+    // The long red awning over the five-foot way.
+    { name: 'red UGS awning', u: at284([.8, 24.8]), h: [2.75, 3.75], out: .75, depth: 1.5, colour: '#a8343a' },
+    { name: 'awning valance', u: at284([.8, 24.8]), h: [2.6, 2.8], out: 1.5, depth: .04, colour: '#a8343a' },
+  ],
+  piers: [.33, 3.3, 6.7, 10.3, 13.8, 17.2, 20.3, 24.6].map(c => at284([c - .25, c + .25])),
+  backFittings: [{ name: 'eating house with tables', u: at284([.7, 24.3]), h: [.1, 3.0], colour: '#4a4440', glow: .06 }],
+  sides: [{
+    edge: 0, // the Geylang Road front, u west from the party wall with No. 286
+    ...grFront(4.068, at284g, [[15.0, 16.5], [17.0, 18.4]], '#e8c8a0', [
+      ...pilaster284(at284g([14.55, 14.85])),
+      ...pilaster284(at284g([19.1, 19.4]), 4.068),
+      { name: 'blank 得月楼 BBQ vertical sign', u: at284g([18.85, 19.1]), h: [5.1, 7.6], out: .35, depth: .12, colour: '#2a2a28' },
+      { name: 'glazed shop front with menu boards', u: at284g([15.0, 19.2]), h: [.1, 2.9], out: .02, depth: .04, colour: '#3a3634', glow: .08 },
+    ], '#8aa4d0'),
+    // The board 小炭炉 LITTLE CHARCOAL STOVE 滋补鸡煲 HERBAL CHICKEN CLAYPOT.
+    boards: [{ u: at284g([14.9, 19.3]), h: grH.board, out: .08 }],
+  }, {
+    edge: 4, // the corner bay on the source chamfer, u from Geylang Road to the lane
+    windows: [{ u: [.3, 1.3], h: grH.win, panes: 2 }],
+    blocks: [
+      { name: 'colour field', u: [0, 1.619], h: [grH.beam[1], grH.eaves[0]], out: .01, depth: .02, colour: '#e8c8a0' },
+      ...pilaster284([1.3, 1.6], 1.619),
+      { name: 'front beam', u: [0, 1.619], h: grH.beam, out: .06, depth: .12, colour: dark284 },
+      { name: 'dark ledge', u: [0, 1.619], h: grH.ledge, out: .12, depth: .24, colour: dark284 },
+      { name: 'eaves', u: [0, 1.619], h: grH.eaves, out: .45, depth: .9, colour: '#5a3a30' },
+      { name: 'corner entrance', u: [.2, 1.4], h: [.1, 2.9], out: .01, depth: .02, colour: '#3a3634' },
+      ...shutters([.3, 1.3], grH.win, '#8aa4d0'),
+    ],
+    // The same board over the corner entrance.
+    boards: [{ u: [.05, 1.57], h: grH.board, out: .08 }],
+  }],
+};
+// No. 286: pink, green shutters.
+const at286 = s => lay(9.6 - 9.86, 4.747 / 4.95)(s.map(v => v - 9.86)).map(v => Math.min(4.747, Math.max(0, v)));
+export const seaMuTo = {
+  id: 'sea-mu-to', buildingIds: ['454254174'], kind: 'sea-mu-to', frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  name: 'Sea Mu To TCM Wellness 水木堂 (June 2024 exterior)', address: '286 Geylang Road',
+  height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, shellInset: grShell, roof: grRoof,
+  evidence: 'June 2024 Street View shows a pink two-storey shophouse with green louvred shutters between No. 284\'s corner and No. 288, over a board reading 中醫推拿養生堂 in gold on black beside a 水木堂 mark, with a lightbox reading SEA MU TO TCM WELLNESS over its glazed shop front and a vertical board reading 中醫推拿養生堂 286 on its east pilaster. Google Maps lists Sea Mu To TCM Wellness 水木堂, a medical spa, operating, at 286 Geylang Rd, Level 1, Singapore 389333, with its point inside this way, so it is named and its boards are redrawn in original type.' + grNote,
+  sources: [...grSources('454254174'), search('Sea Mu To TCM Wellness 286 Geylang Road')],
+  colours: grColours('#e6c4bc', '#6ab08a'),
+  ...grFront(4.747, at286, [[10.2, 11.9], [12.4, 14.1]], '#e6c4bc', [
+    ...pilaster284(at286([9.6, 9.9])),
+    { name: 'blank lightbox frame', u: at286([10.9, 13.5]), h: [2.3, 2.95], out: -1.88, depth: .04, colour: '#2a2a28' },
+  ], '#6ab08a'),
+  // The front board, the SEA MU TO lightbox over the shop front, and the vertical board on the east pilaster.
+  boards: [{ u: at286([10.25, 14.3]), h: grH.board, out: .08 }, { u: at286([11.0, 13.4]), h: [2.35, 2.9], out: -1.85 }, { u: at286([14.1, 14.4]), h: [5.0, 7.4], out: .25 }],
+  piers: [at286([9.6, 10.0])],
+  backFittings: [{ name: 'glazed shop front', u: at286([10.3, 14.2]), h: [.1, 2.3], colour: '#3a3e40', glow: .1 }],
+};
+// No. 288: yellow, white shutters.
+const at288 = s => lay(4.71 - 5.12, 4.736 / 4.89)(s.map(v => v - 5.12)).map(v => Math.min(4.736, Math.max(0, v)));
+export const emSalonSpa = {
+  id: 'em-salon-spa', buildingIds: ['454254173'], kind: 'em-salon-spa', frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  name: 'Em Salon Spa and 暹罗指压保健 (June 2024 exterior)', address: '288 Geylang Road',
+  height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, shellInset: grShell, roof: grRoof,
+  evidence: 'June 2024 Street View shows a yellow two-storey shophouse with white louvred shutters between Nos. 286 and 290, over a board reading Em Salon Spa in gold script on black, and a vertical board on its east pilaster reading 暹羅指壓 THAI MASSAGE, 288, Since 1992. Google Maps lists Em Salon Spa, a beauty salon, at 288 Geylang Rd, with its point inside this way, though with No. 290\'s postal code (389337), and 暹罗指压保健, a foot massage parlour, operating, at 288 Geylang Rd, Singapore 389335, with its point inside this way. Both are signed on this house, so it is named after both, the postal code conflict recorded under open question 12, and their boards are redrawn in original type.' + grNote,
+  sources: [...grSources('454254173'), search('Em Salon Spa 288 Geylang Road'), search('暹罗指压保健 288 Geylang Road')],
+  colours: grColours('#e8d898', '#ecece6'),
+  ...grFront(4.736, at288, [[5.3, 6.8], [7.4, 9.1]], '#e8d898', [...pilaster284(at288([4.71, 5.0]))], '#ecece6'),
+  // The Em Salon Spa board, and the vertical 暹羅指壓 board.
+  boards: [{ u: at288([5.4, 9.3]), h: grH.board, out: .08 }, { u: at288([5.0, 5.35]), h: [4.9, 7.6], out: .3 }],
+  piers: [at288([4.71, 5.1])],
+  backFittings: [{ name: 'glazed salon front', u: at288([5.3, 9.3]), h: [.1, 2.6], colour: '#3e3a3a', glow: .1 }],
+};
+// No. 290: lavender, yellow shutters. Valu$, a 24-hour store over Nos. 290 and 292.
+const at290 = s => lay(-.4, 5.122 / 5.11)(s).map(v => Math.min(5.122, Math.max(0, v)));
+const valuNote = ' Google Maps lists Valu$, a general store open 24 hours, at 290/292 Geylang Rd, Singapore 389339, with its point inside No. 292\'s way; its boards, carrying its mark, run over both houses, so both are named after it and the boards are redrawn in original type.';
+export const valu = {
+  id: 'valu', buildingIds: ['454254172'], kind: 'valu', reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  name: 'Valu$ (June 2024 exterior)', address: '290 and 292 Geylang Road', height: grH.height,
+  evidence: 'June 2024 Street View shows Valu$ over two two-storey shophouses east of No. 288.' + valuNote,
+  sources: [way('454254172'), search('Valu$ 290 Geylang Road'), pano('0XmLfVywkSW7HpPrXmiKPg', 190, 10, 100)],
+  parts: {
+    '454254172': {
+      frontEdge: 0, height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, shellInset: grShell, roof: grRoof,
+      evidence: 'June 2024 Street View shows a lavender two-storey shophouse with yellow louvred shutters between No. 288 and No. 292, over a red board reading 超便宜生活超市 beside the Valu$ mark, its shop front shuttered and hung with SUPER CHEAP banners.' + valuNote + grNote,
+      sources: [...grSources('454254172'), search('Valu$ 290 Geylang Road')],
+      colours: grColours('#d8ccd8', '#e8c040'),
+      ...grFront(5.122, at290, [[.2, 1.9], [2.5, 4.3]], '#d8ccd8', [
+        ...pilaster284(at290([-.4, -.1])),
+        { name: 'SUPER CHEAP banners', u: at290([.6, 4.4]), h: [.3, 2.1], out: -1.88, depth: .04, colour: '#e8603a' },
+      ], '#e8c040'),
+      // The red board with the Valu$ mark and 超便宜生活超市.
+      boards: [{ u: at290([.2, 4.5]), h: grH.board, out: .08 }],
+      piers: [at290([-.4, 0])],
+      backFittings: [{ name: 'roller shutters', u: at290([.1, 4.5]), h: [.1, 2.7], colour: '#a8aaa8' }],
+    },
+  },
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;
