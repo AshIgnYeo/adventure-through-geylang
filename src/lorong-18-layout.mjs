@@ -782,5 +782,58 @@ export const diamondHotel = {
   }],
 };
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star, diamondHotel];
+// ---------------------------------------------------------------------------------------------
+// 23. Way 1470917582, No. 1, the Dabu Hakka Building: in June 2024 a building site, its new block wrapped in grey
+// sheeting on scaffolding behind white hoarding along the lane, with a tower crane and an open concrete frame behind. Its
+// lane face runs over three source edges (6, 4 and 2, u south from the back lane), which step up to 1.8 m; one elevation
+// is laid across them. The sheeting lines up between the lane panoramas about 1 m in front of edges 6 and 2, and the
+// hoarding, followed between three panoramas by its black name board, 3 m in front of edge 6.
+const sheet1 = '#a4a6a4', concrete1 = '#b4b2aa';
+const hoardingOut1 = { 6: 3.0, 4: 1.2, 2: 2.55 };
+const ledgers1 = (u, from, to) => Array.from({ length: Math.floor((to - from) / 2) + 1 }, (_, i) => ({ name: 'scaffold ledger', u, h: [+(from + i * 2).toFixed(2), +(from + i * 2 + .08).toFixed(2)], out: .95, depth: .06, colour: '#5a5c5a' }));
+const dabu1 = across({
+  blocks: [
+    { name: 'white hoarding', u: [.1, 57.37], h: [0, 4.2], hoard: 0, depth: .06, colour: '#e2e4e2' },
+    { name: 'blank contractor banner', u: [4.5, 12.0], h: [1.6, 3.3], hoard: .04, depth: .02, colour: '#f2f2ee' },
+    { name: 'blank leasing hoarding board', u: [15.5, 30.5], h: [.4, 4.0], hoard: .04, depth: .02, colour: '#c8b8a0' },
+    { name: 'site gate', u: [44.0, 50.0], h: [0, 4.2], hoard: .03, depth: .06, colour: '#cfd2d0' },
+    ...ledgers1([.1, 57.37], 5, 13),
+  ],
+  boards: [{ u: [33.4, 37.3], h: [1.0, 3.7], out: 0 }],
+  backFittings: [{ name: 'site behind the hoarding', u: [.3, 57.2], h: [.1, 4.0], colour: '#5a5852' }],
+  // The columns under the north end's raised floors.
+  piers: [[.2, .7], [4.6, 5.1], [9.1, 9.6], [14.0, 14.5], [19.0, 19.5], [23.7, 24.2]], ceiling: 5.0, pierColour: '#b8b6ae',
+}, 57.468, [{ edge: 6, w: 24.426 }, { edge: 4, w: 12.833 }, { edge: 2, w: 20.209 }], 6);
+// Each edge's hoarding pieces and board stand at the hoarding's measured line in that edge's own frame.
+const toHoarding1 = edge => b => 'hoard' in b ? { ...b, out: +(hoardingOut1[edge] + b.hoard).toFixed(3) } : b;
+dabu1.blocks = dabu1.blocks.map(toHoarding1(6));
+for (const side of dabu1.sides) {
+  side.blocks = side.blocks.map(toHoarding1(side.edge));
+  side.boards = side.boards?.map(b => ({ ...b, out: hoardingOut1[side.edge] + .05 }));
+}
+export const dabuHakka = {
+  id: 'dabu-hakka', buildingIds: ['1470917582'], kind: 'dabu-hakka', reviewRoad: 'Lorong 18 Geylang', review: { distance: 9, pitch: 24 },
+  name: 'Dabu Hakka Building (June 2024 exterior, rebuilding)', address: '1 Lorong 18 Geylang',
+  height: 13.5, ceiling: 5.0, fiveFootWay: 4.0, shellInset: .2, roof: { type: 'flat', colour: '#8a8a86' },
+  colours: { wall: sheet1, trim: '#d8d8d4', frame: '#3a3c3c', glass: '#3a3c3c', pier: '#b8b6ae', back: '#5a5852', floor: '#8a8a86' },
+  evidence: 'June 2024 Street View shows the Dabu Hakka Building being rebuilt: a new block wrapped in grey sheeting on scaffolding, its north end raised on columns over an open ground floor, rising to about 15.5 m at the north end and 24.5 m at the south end, about 13.5 m between, with an open concrete frame of further floors behind it and a tower crane over the site. Along the lane runs white hoarding hung with a contractor\'s safety banner, a board advertising retail and commercial space for lease, and a black board reading 大埔客... Dabu Hakka Building in white (the rest of its Chinese characters hidden behind a parked lorry). Google Maps lists Dabu Hakka Building, an association, at 1 Lor 18 Geylang, Singapore 398787, its point 0.5 m outside this way, which the source map names Dabu Haka Building; the address and the board agree on this site, so it is named (as Crystal Mansions was under open question 32), and the board is redrawn in original type with the characters that could be read. Victory Life Christian School, listed on its fourth floor, has no photographed sign. The sheeting lines up between the June 2024 lane panoramas (pKnB..., USMH..., ijKd..., m8yM..., Z5Yk..., D46t...) about 1 m in front of the source edges, where the depth scores peak (+0.75 to +1.0 m); the hoarding\'s black board lines up between m8yM..., VqEM... and Z5Yk... 3 m in front of the north edge. The block is laid on its source outline, its elevation across the three source lane edges; the frame behind and the north and south blocks are raised volumes over their parts, their depths estimated. The crane is not modelled.',
+  sources: [way('1470917582'), search('Dabu Hakka Building 1 Lorong 18 Geylang'), pano('VqEMeB2kieus_7vLL6lHQA', 70, 0, 40), pano('ijKdW6tyrOTKZnnSK2iXdg', 80, 10, 90), pano('pKnB8RLBzYUPf0kVCOh0GQ', 95, 10, 90), pano('Z5YkBNIYJLXgklpzRD8c5g', 30, 0, 30)],
+  ...dabu1,
+  upper: [
+    // The north block, raised on columns, to about 15.5 m.
+    { name: 'north block', outline: [[0, 0], [9.5, 0], [9.5, -12], [.21, -12.08]], from: 13.5, to: 15.5, colour: sheet1, roof: '#8a8a86',
+      blocks: ledgers1([.1, 9.4], 14, 15) },
+    // The south block against the Diamond Hotel, to about 24.5 m.
+    { name: 'south block', outline: [[45, .481], [57.70, .45], [57.54, -2.38], [56.80, -15.18], [45, -15]], from: 13.5, to: 24.5, colour: sheet1, roof: '#8a8a86',
+      blocks: ledgers1([45.1, 57.6], 15, 23).map(b => ({ ...b, out: 1.4 })) },
+    // The open concrete frame behind, to about 20 m.
+    { name: 'concrete frame', outline: [[9.5, -9], [44.7, -9], [44.78, -18.72], [38.18, -18.68], [38.30, -20.46], [9.5, -20.707]], from: 13.5, to: 20.0, colour: concrete1, roof: '#9a9890' },
+  ],
+};
+dabuHakka.sides.push(
+  { edge: 7, blocks: ledgers1([.1, 11.98], 5, 13).map(b => ({ ...b, out: .5 })) }, // the north wall on the back lane
+  { edge: 5, blocks: [] }, { edge: 3, blocks: [] },
+);
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star, diamondHotel, dabuHakka];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;

@@ -42,7 +42,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 20 | East | 764372540 | No. 55, the Westerhout Road east corner | Done; unnamed |
 | 21 | East | 121872891 | No. 31, Hotel 81 (Premier) Star | Done; named |
 | 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | Done; named |
-| 23 | East | 1470917582 | No. 1, Dabu Hakka Building | |
+| 23 | East | 1470917582 | No. 1, Dabu Hakka Building | Done; named; rebuilding in June 2024 |
 | 24–26 | East | 764372559, 764372560, 454438314 | Nos. 350, 348 and 346 Geylang Road, the east corner | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
@@ -344,3 +344,35 @@ An eight-storey hotel, yellow on its lower floors and pink above, between the sc
 **Naming:** Google Maps lists **Diamond Hotel** at 25 Lor 18 Geylang, Singapore 398806, with its point inside this way; the source map tags the way Nos. 21 and 25 and names it Diamond Hotel. Its board is photographed, so it is named, and the board and the vertical characters are redrawn in original type.
 
 Use `?review=diamond-hotel`.
+
+### 23. Way 1470917582: No. 1, the Dabu Hakka Building
+
+In June 2024 the Dabu Hakka Building was a building site.
+
+- **The new block:** wrapped in grey sheeting on scaffolding. Its north end is raised on columns over an open ground floor.
+- **Behind it:** an open concrete frame of further floors, and a tower crane over the site.
+- **Along the lane:** white hoarding hung with a contractor's safety banner and a board advertising retail and commercial space for lease. A black board reads **大埔客… Dabu Hakka Building** in white; the rest of its Chinese characters are hidden behind a parked lorry.
+
+**Measurement:**
+- **The sheeting** lines up between `pKnB…`, `USMH…`, `ijKd…`, `m8yM…`, `Z5Yk…` and `D46t…` (June 2024) about **1 m in front of** the source lane edges, where the depth scores peak (+0.75 to +1.0 m). Read on edge 6's line, it stands nearly straight, while the source lane face steps out 1.8 m over edge 4.
+- **The hoarding:** its black board lines up between `m8yM…`, `VqEM…` and `Z5Yk…` **3 m in front of** edge 6 (1.2 m in front of edge 4 and 2.55 m in front of edge 2), at 33.4–37.3 m south of the back lane. Planes 2 m either side split it by 2–4 m.
+- **Heights,** read on the sheeting's plane:
+  - the north block to about 15.5 m, its underside at about 5 m;
+  - the middle to about 13.5 m;
+  - the south block, against the Diamond Hotel, to about 24.5 m;
+  - the frame behind to about 20 m.
+- **Depths:** the blocks' depths are estimates; the frame stands deep in the site.
+
+**Layout:**
+- **Lane face:** one elevation laid across the three source lane edges (6, 4 and 2), with the hoarding and its boards placed at the hoarding's measured line in each edge's frame. Edge 6 is the front; its open ground floor under the north block is drawn as a 4 m recess on columns.
+- **Volumes:** the walls stand on the source outline in sheeting grey. The north block, the south block and the concrete frame are raised volumes over their parts.
+- **Not modelled:** the crane, the scaffolding's detail and the frame's floors.
+
+**Naming:** Google Maps lists **Dabu Hakka Building**, an association, at 1 Lor 18 Geylang, Singapore 398787. Its point lies 0.5 m outside this way, which the source map names Dabu Haka Building.
+- The address and the hoarding board agree on this site, so it is named, as Crystal Mansions was under open question 32.
+- The board is redrawn in original type with the characters that could be read.
+- Victory Life Christian School, listed on its fourth floor, has no photographed sign.
+
+Use `?review=dabu-hakka`.
+
+**Not taken:** ways 121873024 and 454274591, the deep outlines about 51 m east of the lane, stand behind the east side's buildings, across the service road that runs behind them. On the satellite they face Lorong 20's pavement, so they are left for a Lorong 20 pass.

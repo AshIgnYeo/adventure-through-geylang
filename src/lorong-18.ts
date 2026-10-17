@@ -103,6 +103,16 @@ const draws: Draws = {
       [...'鑽石大旅店'].forEach((ch, i) => text(c, ch, w * (i % 2 ? .66 : .34), h * (.1 + i * .2), w * .5, '#6a5a6a', '700', kai));
     }],
   },
+  // The black board on the hoarding: 大埔客 in a white frame (the rest of its characters, hidden, left out) beside
+  // Dabu Hakka Building in white.
+  'dabu-hakka@4': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#3a3e48'; c.fillRect(0, 0, w, h); c.strokeStyle = '#e8e8ec'; c.lineWidth = h * .015; c.strokeRect(w * .04, h * .1, w * .2, h * .85);
+      [...'大埔客'].forEach((ch, i) => text(c, ch, w * .14, h * (.24 + i * .25), h * .18, '#ececf0', '400', hei));
+      text(c, 'Dabu Hakka', w * .62, h * .34, h * .2, '#ececf0', '500', sans, w * .66);
+      text(c, 'Building', w * .52, h * .6, h * .2, '#ececf0', '500', sans, w * .5);
+    }],
+  },
   // The number 340 on the corner's fascia.
   'le-regal@8': {
     boards: [(c, w, h) => { c.fillStyle = '#6a6d70'; c.fillRect(0, 0, w, h); text(c, '340', w * .5, h * .55, h * .78, '#f0f0ec', '700', sans, w * .9); }],
