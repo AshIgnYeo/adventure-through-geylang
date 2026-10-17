@@ -74,6 +74,18 @@ const draws: Draws = {
       text(c, '30 LORONG 16 GEYLANG', w * .5, h * .88, h * .1, '#5a5a56', '600', sans, w * .7);
     }],
   },
+  // The Poh clan's two boards: 新加坡傅氏公會, read from right to left, in red on a yellow-to-red ground between two round emblems, its English name
+  // under it in gold.
+  'poh-clan': {
+    boards: [0, 1].map(() => (c: CanvasRenderingContext2D, w: number, h: number) => {
+      const g = c.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#e8402a'); g.addColorStop(.5, '#f0c040'); g.addColorStop(1, '#e8402a');
+      c.fillStyle = g; c.fillRect(0, 0, w, h);
+      const r = Math.min(h * .38, w * .05); for (const x of [w * .06, w * .94]) { c.fillStyle = '#f4f0e8'; c.beginPath(); c.arc(x, h * .5, r, 0, Math.PI * 2); c.fill(); text(c, '傅', x, h * .52, r, '#c8302a', '700', kai); }
+      // Read from right to left, as photographed.
+      [...'新加坡傅氏公會'].forEach((ch, i) => text(c, ch, w * (.82 - i * .107), h * .4, Math.min(h * .5, w * .095), '#c8302a', '700', kai));
+      text(c, 'Singapore Poh Clan Association', w * .5, h * .82, h * .2, '#c89a2a', '700', 'Georgia, "Times New Roman", serif', w * .72);
+    }),
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {

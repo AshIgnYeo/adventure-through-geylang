@@ -702,7 +702,41 @@ export const no47 = {
   backFittings: [{ name: 'ground floor behind sheeting', u: [.3, 4.7], h: [.1, 4.2], colour: '#4a4846' }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47];
+// The clan houses at Nos. 43 and 45 share a frontage plane with the row: a green tiled roof over an upper board and a
+// band of windows, and a green tiled canopy over the ground floor. Read on No. 45's lane edge (u_g south from its
+// source party point with No. 43), where `rTwd...`, nearly square to them, and 978C... agree on the boards on the source
+// line: No. 43 runs from u_g = -3.7 to 0 and No. 45 from 0 to 5.1, against 4.52 m and 4.64 m.
+const greenTile = '#6e9454';
+const clanBlocks = (W, at, [l, r], wall) => [
+  { name: 'green tiled roof', u: at([l + .1, r - .1]), h: [7.0, 7.6], out: .4, depth: .8, colour: greenTile },
+  { name: 'roof ridge', u: at([l + .1, r - .1]), h: [7.6, 7.75], out: .1, depth: .2, colour: '#b84a3a' },
+  { name: 'green tiled canopy', u: [0, W], h: [3.55, 4.45], out: .75, depth: 1.5, colour: greenTile },
+  { name: 'canopy fascia', u: [0, W], h: [3.45, 3.6], out: 1.48, depth: .04, colour: wall },
+  { name: 'first-floor ledge', u: [0, W], h: [4.6, 4.8], out: .1, depth: .2, colour: wall },
+];
+const at671 = s => lay(0, 4.637 / 5.1)(s).map(v => Math.min(4.636, Math.max(0, v)));
+export const pohClan = {
+  id: 'poh-clan', buildingIds: ['763764671'], kind: 'poh-clan', frontEdge: 9, reviewRoad: 'Lorong 16 Geylang', review: { distance: 12, pitch: 14 },
+  name: 'Singapore Poh Clan Association (June 2024 exterior)', address: '45 Lorong 16 Geylang',
+  height: 7.0, ceiling: 3.45, fiveFootWay: 1.2, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a white two-storey house north of the tower of No. 47: under a green tiled roof with a red ridge, a red-and-yellow board reading 新加坡傅氏公會 Singapore Poh Clan Association between two round emblems over a band of four windows, and over the ground floor a green tiled canopy and a second board with the same lettering, three air-conditioners stacked on its north pier, and a white grille gate of scrolls plated 45. Google Maps lists Singapore Poh Clan Association, an association, at 45 Lorong 16 Geylang, Singapore 398879; its point lies in the parking strip about 8 m in front of the house, but the address and the boards agree on this house, so it is named (as at Crystal Mansions, open question 32), and its boards are redrawn in original type. Two June 2024 lane panoramas (rTwd..., nearly square to it, and 978C...) agree on its boards on the source line, where its front runs about 5.1 m, from its party wall with No. 43 to the side wall of the tower, against 4.64 m; it is laid proportionally (x0.91). Heights were read on that plane: the lower board at 2.4-3.3 m, the canopy at 3.55-4.45 m, the windows at 4.9-5.9 m, the upper board at 5.95-6.55 m and the roof at 7.0-7.6 m.' + eastRowNote,
+  sources: [way('763764671'), search('Singapore Poh Clan Association 45 Lorong 16 Geylang'), pano('rTwd74g8I0xX5Kv269SUPw', 92, 6, 26), pano('978C2KrUtxtel_U9_J90Ow', 60, 10, 50)],
+  colours: rowColours('#ecebe6', { frame: '#e8e8e4', back: '#4a3e3a' }),
+  windows: [[1.4, 2.3], [2.3, 3.2], [3.2, 4.1], [4.1, 5.0]].map(s => ({ u: at671(s), h: [4.9, 5.85], panes: 1 })),
+  blocks: [
+    ...clanBlocks(4.637, at671, [.9, 5.0], '#ecebe6'),
+    ...[[1.3, 1.85, 2.1], [1.3, 1.85, 2.9], [1.3, 1.85, 3.9]].map(([a, b, y]) => ({ name: 'air-conditioner', u: at671([a, b]), h: [y, y + .5], out: .2, depth: .4, colour: '#e8e8e4' })),
+    { name: 'pier with a downpipe', u: at671([.05, .5]), h: [.13, 7.0], out: .08, depth: .16, colour: '#f2f2ee' },
+    ...grille('white grille gate', at671([1.9, 5.0]), [0, 1.3], 1.3, '#f2f2ee', .2, false),
+    { name: 'blank number plate', u: at671([4.4, 4.8]), h: [.9, 1.15], out: 1.33, depth: .02, colour: '#e8e4dc' },
+  ],
+  // The upper board, and the board under the canopy.
+  boards: [{ u: at671([1.4, 5.0]), h: [5.95, 6.55], out: .06 }, { u: at671([1.9, 5.1]), h: [2.4, 3.3], out: .06 }],
+  piers: [[.15, .4], [4.4, 4.62]], shellInset: .2,
+  backFittings: [{ name: 'association hall', u: [.5, 4.4], h: [.1, 3.2], colour: '#5a3e38', glow: .08 }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
