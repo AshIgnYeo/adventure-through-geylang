@@ -36,6 +36,18 @@ const draws: Draws = {
       text(c, 'PEARL', w * .5, h * .55, h * .6, '#2a5ab8', 'italic 800', sans, w * .7);
     }],
   },
+  // The grey name board: a maroon swoosh over CENTRAL in grey capitals and IMPERIAL in maroon, the address under a rule.
+  'central-imperial': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#a8aaaa'; c.beginPath(); c.moveTo(0, h * .12); c.quadraticCurveTo(w * .35, -h * .05, w * .6, h * .2); c.quadraticCurveTo(w * .8, h * .32, w, h * .2);
+      c.lineTo(w, h); c.lineTo(0, h); c.fill();
+      c.strokeStyle = '#7a2a3a'; c.lineWidth = h * .04; c.beginPath(); c.moveTo(w * .12, h * .22); c.quadraticCurveTo(w * .3, h * .16, w * .45, h * .28); c.stroke();
+      text(c, 'CENTRAL', w * .5, h * .45, h * .2, '#d8d8d4', '600', 'Georgia, "Times New Roman", serif', w * .8);
+      text(c, 'IMPERIAL', w * .5, h * .66, h * .2, '#8a2a3e', '700', 'Georgia, "Times New Roman", serif', w * .84);
+      c.fillStyle = '#e8e8e4'; c.fillRect(w * .1, h * .78, w * .8, h * .012);
+      text(c, '3 LORONG 14 GEYLANG', w * .5, h * .87, h * .08, '#e8e8e4', '600', sans, w * .7);
+    }],
+  },
   'le-yuan': {
     boards: [(c, w, h) => {
       c.fillStyle = '#c8282a'; c.fillRect(0, 0, w, h);

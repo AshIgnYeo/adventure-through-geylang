@@ -512,7 +512,55 @@ export const ibisPearl = {
   ],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl];
+// 11. Way 764372577, No. 3, Central Imperial: an eight-storey condominium of wavy glass-railed balconies between curved
+// blue fins, over a ground floor of louvred service doors and the car park's gate, behind a fence of white angled
+// slabs. Its front (edge 4, u south from the north end) is read on the louvred doors of the ground floor, which line up
+// between three June 2024 lane panoramas 0.25-0.5 m in front of the source edge (depth scores 0.18-0.27), so it stands on
+// its source line, laid at its own scale; the balconies project up to 1.8 m. The name board on its plinth triangulates
+// (xIwN... with l2s1...) 3.65 m in front of the source edge at u 22.3, in line with the fence.
+const W577 = 50.414, white577 = '#eef0f0', blue577 = '#4a7ab0';
+const floors577 = Array.from({ length: 7 }, (_, i) => +(4.6 + i * 3.15).toFixed(2));
+const fins577 = Array.from({ length: 12 }, (_, i) => +(2.5 + i * 4.1).toFixed(2));
+// One wavy balcony slab: segments whose depth follows a wave of about 8.2 m, between two fins.
+const wave577 = (y, i) => Array.from({ length: 50 }, (_, k) => {
+  const l = k * W577 / 50, r = (k + 1) * W577 / 50, out = 1.1 + .7 * Math.sin(((l + r) / 2 / 8.2 + i * .25) * 2 * Math.PI);
+  return [
+    { name: 'wavy balcony slab', u: [+l.toFixed(3), +r.toFixed(3)], h: [y - .25, y], out: +(out / 2).toFixed(3), depth: +out.toFixed(3), colour: white577 },
+    { name: 'glass balcony railing', u: [+l.toFixed(3), +r.toFixed(3)], h: [y, y + 1.05], out: +(out - .05).toFixed(3), depth: .04, colour: '#b4c6cc' },
+  ];
+}).flat();
+export const centralImperial = {
+  id: 'central-imperial', buildingIds: ['764372577'], kind: 'central-imperial', frontEdge: 4, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 30 },
+  name: 'Central Imperial (June 2024 exterior)', address: '3 Lorong 14 Geylang',
+  height: 26.6, ceiling: 4.4, fiveFootWay: .3, roof: { type: 'flat', colour: '#a8aaa8' },
+  evidence: 'June 2024 Street View shows an eight-storey condominium on the east side of Lorong 14 between The Amazing Inn and the ibis budget hotel: seven floors of wavy balconies with glass railings in front of full-height glazing, between curved blue fins, under a wavy white roof canopy at its north end; on the ground floor white louvred service doors, letterboxes and the car park\'s gate under a black-and-yellow height bar, behind a fence of white angled slabs and grey railings. In front of the gate a grey name board on a plinth of white slabs reads CENTRAL IMPERIAL under a swoosh, over 3 LORONG 14 GEYLANG. Google Maps lists Central Imperial, a condominium complex, at 3 Lor 14 Geylang, Singapore 398915, with its point inside this way, and the source map names it Central Imperial, No. 3, eight storeys; the listing, the source and the board agree, so it is named and the board is redrawn in original type. The ground floor\'s louvred doors line up between three June 2024 lane panoramas 0.25-0.5 m in front of the source edge (depth scores 0.18-0.27; the balconies\' scores run to the cameras), so the front stands on its source line and is laid at its own scale; the balconies project up to 1.8 m. The name board triangulates from xIwN... and l2s1... 3.65 m in front of the source edge, in line with the fence, its foot 0.55 m up. Heights were read on that plane: the ground floor to 4.4 m, floors every 3.15 m from 4.6 m, and the roof at 26.6 m, its canopy to about 27.6 m.',
+  sources: [way('764372577'), search('Central Imperial 3 Lorong 14 Geylang'), pano('xIwNU-5fHvuJFuzG0DzJlQ', 90, 20, 90), pano('l2s1UBsDL_nRFM318o35og', 75, 20, 90), pano('xIwNU-5fHvuJFuzG0DzJlQ', 111, -5, 30)],
+  colours: { wall: white577, trim: '#e2e4e4', frame: '#d8dcdc', glass: '#5a7a88', pier: white577, back: '#d8dada', floor: '#a8a8a4' },
+  windows: floors577.flatMap(y => fins577.slice(0, -1).map(c => ({ u: [c + .35, c + 3.75], h: [y + .1, y + 2.8], panes: 4 }))),
+  blocks: [
+    ...floors577.flatMap(wave577),
+    ...fins577.map(c => ({ name: 'curved blue fin', u: [c - .25, c + .25], h: [4.4, 26.6], out: .75, depth: 1.5, colour: blue577 })),
+    { name: 'wavy roof canopy', u: [0, 17.0], h: [26.6, 27.6], out: .6, depth: 1.2, colour: white577 },
+    { name: 'parapet', u: [0, W577], h: [26.3, 26.6], out: .05, depth: .1, colour: '#e2e4e4' },
+    { name: 'height bar', u: [18.8, 27.2], h: [3.4, 3.6], out: .1, depth: .1, colour: '#e8c020' },
+    // The fence of white angled slabs and grey railings along the pavement, 3.65 m out, broken by the car park's gate.
+    ...[[0, 18.8], [27.2, W577]].flatMap(u => [
+      ...grille('grey fence railing', u, [0, 1.6], 3.65, '#8a8e90', .15, false),
+      ...Array.from({ length: Math.round((u[1] - u[0]) / 2.6) }, (_, k) => u[0] + 1.3 + k * 2.6).filter(c => c < u[1] - .4).map(c => ({ name: 'white angled slab', u: [+(c - .35).toFixed(2), +(c + .35).toFixed(2)], h: [0, 2.3], out: 3.65, depth: .3, colour: '#f2f2f0' })),
+    ]),
+    ...grille('grey sliding gate', [18.8, 27.2], [0, 1.6], 3.9, '#8a8e90', .15, false),
+    { name: 'white slab plinth', u: [20.8, 24.2], h: [0, 2.6], out: 3.45, depth: .3, colour: '#f2f2f0' },
+    { name: 'grey name board body', u: [21.1, 23.7], h: [.55, 2.25], out: 3.55, depth: .1, colour: '#9a9c9c' },
+  ],
+  // The name board facing the lane.
+  boards: [{ u: [21.1, 23.7], h: [.55, 2.25], out: 3.62 }],
+  backFittings: [
+    ...[[3.0, 5.0], [8.0, 10.0], [11.3, 13.3], [14.5, 16.5], [29.0, 31.0], [33.0, 35.0], [40.0, 42.0]].map(u => ({ name: 'white louvred door', u, h: [.1, 3.0], colour: '#e4e6e6' })),
+    { name: 'car park', u: [18.8, 27.2], h: [.1, 3.4], colour: '#3a3c3c' },
+  ],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

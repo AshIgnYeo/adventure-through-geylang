@@ -157,3 +157,14 @@ test('the ibis budget hotel is named after its sign and listing, its later name 
   const f = lorong14Frame(outline('454274677'), place), b = place.boards[0], p = f.point((b.u[0] + b.u[1]) / 2, b.out);
   assert.ok(Math.hypot(p[0] - 214.5, p[1] - 176.4) < 1, `${p}`);
 });
+
+test('Central Imperial is named after its name board and listing, the board at the fence line', () => {
+  const place = lorong14.find(p => p.id === 'central-imperial');
+  assert.equal(landmarkFor('764372577').id, place.id);
+  assert.equal(building('764372577').number, '3');
+  assert.equal(pointInPolygon(project([103.8791573, 1.3119207], map.origin), outline('764372577')), true);
+  const f = lorong14Frame(outline('764372577'), place), b = place.boards[0], p = f.point((b.u[0] + b.u[1]) / 2, b.out);
+  assert.ok(Math.hypot(p[0] - 200.7, p[1] - 126.8) < 1, `${p}`);
+  // Seven floors of balconies over the ground floor.
+  assert.equal(new Set(place.blocks.filter(x => x.name === 'wavy balcony slab').map(x => x.h[1])).size, 7);
+});

@@ -36,7 +36,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 8 | East | 764372579 | No. 27 | Done; unnamed; question 53 |
 | 9 | East | 764372578 | No. 25 | Done; unnamed; question 53 |
 | 10 | East | 454274677 | No. 21, ibis budget Singapore Pearl | Done; named (a dated exterior; question 54) |
-| 11 | East | 764372577 | No. 3, Central Imperial | |
+| 11 | East | 764372577 | No. 3, Central Imperial | Done; named |
 | 12 | East | 476141643 | No. 1, The Amazing Inn | |
 | 13–16 | East | 454254175 to 454254172 | Nos. 284–290 Geylang Road, the east corner block | |
 | 17–25 | Geylang Road | 454254171 to 764372573 | Nos. 292–308, east to Lorong 16 | |
@@ -261,3 +261,29 @@ An eight-storey hotel between Central Imperial and No. 25.
 - Whether to keep the photographed name or take the listing's is [open question 54](open-questions.md).
 
 Use `?review=ibis-budget-pearl`.
+
+### 11. Way 764372577: No. 3, Central Imperial
+
+An eight-storey condominium between The Amazing Inn and the ibis budget hotel.
+
+- **Upper floors:** seven floors of wavy balconies with glass railings in front of full-height glazing, between curved blue fins, under a wavy white roof canopy at the north end.
+- **Ground floor:** white louvred service doors, letterboxes and the car park's gate under a black-and-yellow height bar.
+- **At the pavement:** a fence of white angled slabs and grey railings. In front of the gate a grey name board on a plinth of white slabs reads **CENTRAL IMPERIAL** under a swoosh, over **3 LORONG 14 GEYLANG**.
+
+**Measurement:**
+- **Depth:** the balconies' depth scores climb all the way to the cameras, and say nothing. The ground floor's louvred doors line up between `owb1…`, `xIwN…` and `l2s1…` **0.25–0.5 m in front of** the source edge (0.18–0.27), at u 11.3–13.3 in all three. So the front stands on its source line; the balconies project up to 1.8 m.
+- **Extent:** the whole 50.4 m source edge.
+- **The name board:** triangulates from `xIwN…` (bearing 111.0°) and `l2s1…` (59.8°) at (200.7, 126.8): **3.65 m in front of** the source edge, at u 22.3, in line with the fence. Its foot's elevation in both views puts it 0.55 m up.
+- **Heights:** the ground floor to 4.4 m; floors every 3.15 m from 4.6 m; the roof at 26.6 m, its canopy to about 27.6 m.
+- **Check:** renders from `xIwN…`, `l2s1…` and `kLBG…`, blended with the photographs, put the balcony rows, the roofline, the gate, the fence and the board on their photographed places.
+
+**Layout:**
+- Laid at its own scale on the source edge. Each floor's balcony is drawn as a wave about 8.2 m long, slab and glass railing, 0.4–1.8 m deep.
+- **Estimates:** the blue fins are drawn straight, at their photographed rhythm of about 4.1 m, not each at its own place, and the louvred doors are spaced by estimate beyond the three measured.
+- The fence, the gate and the board on its plinth stand at their triangulated line, 3.65 m out.
+
+**Naming:** Google Maps lists **Central Imperial**, a condominium complex, at 3 Lor 14 Geylang, Singapore 398915, with its point inside this way. The source map names it Central Imperial, No. 3, eight storeys.
+- The listing, the source and the board agree, so it is named, and the board is redrawn in original type.
+- KSP General Contractors and Catch Cheaters are listed at units inside it; they have no photographed signs.
+
+Use `?review=central-imperial`.
