@@ -1,5 +1,6 @@
 import type { World, Point } from './world';
-import { lorong16, geylangRow16, westerhout16 } from './lorong-16-layout.mjs';
+import * as pc from 'playcanvas';
+import { lorong16, geylangRow16, westerhout16, sites16 } from './lorong-16-layout.mjs';
 import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
 
 // Named places only: original lettering after the photographed boards.
@@ -134,6 +135,13 @@ const draws: Draws = {
 /** Lorong 16 from Geylang Road to the edge of the extract, with its west corner on Geylang Road; named only where a
  * listing and a photographed sign agree. */
 export function buildLorong16(world: World, id: string, poly: Point[]) {
+  // A hoarded site: its hoarding round the outline, and no building.
+  const site = sites16.find(p => p.buildingIds.includes(id));
+  if (site) {
+    const m = world.mat(site.hoarding.colour); m.cull = pc.CULLFACE_NONE; m.update();
+    for (let i = 0; i < poly.length; i++) world.panel(poly[i], poly[(i + 1) % poly.length], 0, site.hoarding.height, m);
+    return true;
+  }
   const place = [...lorong16, ...geylangRow16, ...westerhout16].find(p => p.buildingIds.includes(id)) as any;
   if (!place) return false;
   buildLaneHouse(world, place.parts ? { ...place, ...place.parts[id] } : place, poly, draws);

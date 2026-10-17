@@ -126,6 +126,15 @@ Started: 10 October 2026.
       Nos. 45 and 47 stay on their source outlines.
     - **Unlocks:** Lodge 41's tower and No. 43's front at their true positions and widths.
 
+68. **Lorong 16, Nos. 9–19 (ways 763764682 to 763764678): drop No. 19's way, and re-cut the terrace onto its four photographed houses?**
+    - **Evidence:** read from the June 2024 lane drive ([Lorong 16 brief](lorong-16-brief.md), stops 24–28).
+      - The terrace is four two-storey houses, Nos. 9, 11, 15 and 17 (plated NO 11, 15 and 17), about 19 m long, on the source line.
+      - The source map has five ways over 24 m. Measured along No. 15's lane edge from its north end, the photographed party walls stand at −8.4, −3.85, 0.96, 5.84 and 10.6 m, against the source's −9.56, −4.32, 0, 5.59, 9.55 and 14.47.
+      - The fifth way, No. 19 (763764678), lies in the cleared site behind grey hoarding that runs to Hotel 81 Palace. The site already stood empty in March 2021.
+    - **What happens now:** each house is laid proportionally on its own source edge (×0.83 to ×1.15). No. 19's way is drawn as a 2.4 m hoarding round its outline, with no building.
+    - **Recommendation:** yes. Author four footprints at the photographed party walls on the source front and rear lines, with No. 17's south wall at 10.6 m. Drop way 763764678, and draw the hoarding along the pavement in front of the site from No. 17 to Hotel 81 Palace.
+    - **Unlocks:** true house widths, and the cleared site open behind its hoarding.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

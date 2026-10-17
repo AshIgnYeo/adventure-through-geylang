@@ -900,7 +900,76 @@ export const hotel81Palace = {
   }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37, hotel81Palace];
+// ---------------------------------------------------------------------------------------------
+// 24-28. Ways 763764678, 763764679, 763764680, 763764681 and 763764682: the two-storey terrace north of the hoarded site
+// of No. 23. Read on one plane along No. 15's lane edge (u_c south from its north end): four June 2024 panoramas
+// (o1zP..., o1jX..., GYT7..., 3ZQq...) agree on the fronts on the source line (depth score 0.22 at -0.5 m), where the
+// photographed party walls stand at u_c = -8.4, -3.85, 0.96, 5.84 and 10.6. The terrace has four houses, Nos. 9, 11, 15
+// and 17, plated 11, 15 and 17; the source map's fifth, No. 19 (u_c 9.55-14.47), lies in the hoarded site and is
+// drawn as its hoarding (open question 68). Each house is laid proportionally on its own source edge.
+const terraceNote = ' The two-storey terrace north of the hoarded site of No. 23 was read on one plane along No. 15\'s lane edge: four June 2024 lane panoramas (o1zP..., o1jX..., GYT7..., 3ZQq...) agree on the fronts on the source line (the depth scores peak at -0.5 m, 0.22), where the terrace runs about 19 m in four houses, Nos. 9, 11, 15 and 17, of 4.55-4.9 m, against the source map\'s five ways and 24 m; the fifth, No. 19, lies in the hoarded site (open question 68). Each house is laid proportionally on its own source edge. Heights were read from the nearest panoramas: a ledge over the five-foot way at 2.8-3.05 m, panels under the windows at about 3.1-3.9 m, windows at about 3.7-5.5 m, small breeze-block vents above them, eaves at about 6.2 m and the grey tiled roofs to about 7.0 m.' + eastRowNote;
+const terraceAt = (start, k) => s => s.map(v => +((v - start) * k).toFixed(3));
+const terraceHouse = (no, wayId, frontEdge, edgeWidth, [p0, p1], colour, extra) => {
+  const W = +(edgeWidth - .003).toFixed(3);
+  const at = s => terraceAt(p0, W / (p1 - p0))(s).map(v => Math.min(W - .001, Math.max(0, v)));
+  return {
+    id: `l16-${no}`, buildingIds: [wayId], kind: 'unnamed', unnamed: true, frontEdge, reviewRoad: 'Lorong 16 Geylang', review: { distance: 10, pitch: 14 },
+    name: `No. ${no} Lorong 16 (June 2024 exterior, occupants not identified)`, address: `${no} Lorong 16 Geylang`,
+    height: 6.2, ceiling: 2.8, fiveFootWay: 1.5, roof: { type: 'hip', ridge: 7.0, colour: '#7a726a' },
+    colours: rowColours(colour, { frame: '#e8e8e4', back: '#3e3a36' }),
+    piers: [[.15, .4], [+(W - .4).toFixed(3), +(W - .15).toFixed(3)]], shellInset: .2,
+    sources: [way(wayId), search(`${no} Lorong 16 Geylang Singapore`), pano('GYT7KOn6QA512aDNwGBvAA', 85, 10, 90), pano('o1jXgQxOmY0JXJ7F1mnoEg', 85, 10, 90), pano('3ZQqgioQm3wQleRlKAjrrQ', 70, 10, 90)],
+    ...extra(at, W),
+  };
+};
+const ledge = W => ({ name: 'ledge over the five-foot way', u: [0, W], h: [2.8, 3.05], out: .15, depth: .3, colour: '#d8d6d0' });
+const breezeVent = (u, h) => ({ name: 'breeze-block vent', u, h, out: .02, depth: .03, colour: '#c8c4bc' });
+export const no17 = terraceHouse(17, '763764679', 9, 3.951, [5.84, 10.6], '#ece6d6', (at, W) => ({
+  evidence: 'June 2024 Street View shows a cream two-storey house at the south end of the terrace, beside the hoarded site of No. 23: two dark-framed windows on its upper floor with an air-conditioner between them, over the red corrugated canopy it shares with No. 15 and a front of plants and shelving, plated 17 on its gate. Chrysalis Spa, listed at No. 17, is closed, so no name is given. Its photographed front runs about 4.8 m, against the 3.95 m source edge.' + terraceNote,
+  windows: [[6.3, 7.5], [8.6, 9.76]].map(s => ({ u: at(s), h: [3.7, 5.25], panes: 2 })),
+  blocks: [ledge(W), { name: 'air-conditioner', u: at([7.8, 8.6]), h: [3.7, 4.1], out: .2, depth: .4, colour: '#e8e8e4' },
+    { name: 'red corrugated canopy', u: [0, W], h: [2.9, 3.4], out: 1.2, depth: 2.4, colour: '#b4544a' },
+    { name: 'blank number plate', u: at([8.9, 9.4]), h: [1.3, 1.6], out: .05, depth: .02, colour: '#c8302a' }],
+  backFittings: [{ name: 'front of plants and shelving', u: [.4, +(W - .4).toFixed(2)], h: [.1, 2.6], colour: '#3e3a36' }],
+}));
+export const no15 = terraceHouse(15, '763764680', 5, 5.594, [.96, 5.84], '#dccae0', (at, W) => ({
+  evidence: 'June 2024 Street View shows a lilac two-storey house: two dark-framed windows on its upper floor over red breeze-block panels, a red vent between them, and over its ground floor a red corrugated canopy sheltering a shopfront hung with posters of dancers, plated 15 in red on its gate. Rachel K Cosmetics, listed at No. 15, is closed, and the closed 将计就计 has its point here, so no name is given. Its photographed front runs about 4.9 m, against the 5.59 m source edge.' + terraceNote,
+  windows: [[1.9, 2.8], [4.16, 5.04]].map(s => ({ u: at(s), h: [4.1, 5.5], panes: 2 })),
+  blocks: [ledge(W),
+    ...[[1.9, 2.8], [4.16, 5.04]].map(s => ({ name: 'red breeze-block panel', u: at(s), h: [3.35, 3.9], out: .03, depth: .03, colour: '#c84a5a' })),
+    { name: 'red breeze-block vent', u: at([2.95, 4.0]), h: [5.6, 5.85], out: .03, depth: .03, colour: '#c84a5a' },
+    { name: 'red corrugated canopy', u: [0, W], h: [2.9, 3.4], out: 1.2, depth: 2.4, colour: '#b4544a' },
+    { name: 'blank red number plate', u: at([3.1, 3.9]), h: [.5, 1.0], out: .05, depth: .02, colour: '#f2f0ea' }],
+  backFittings: [{ name: 'shopfront with posters', u: [.4, +(W - .4).toFixed(2)], h: [.1, 2.6], colour: '#4a2e34', glow: .06 }],
+}));
+export const no11 = terraceHouse(11, '763764681', 0, 4.324, [-3.85, .96], '#e8e6e2', (at, W) => ({
+  evidence: 'June 2024 Street View shows a white two-storey house: two windows with grilled lower panes on its upper floor under small breeze-block vents, over an open five-foot way of ladders and goods, with a plate reading NO 11. Google Maps lists the Singapore Hardware & Tools Association at 11 Lorong 16, but its point lies at the lane\'s Geylang Road end and no sign for it was photographed, so no name is given. Its photographed front runs about 4.8 m, against the 4.32 m source edge.' + terraceNote,
+  windows: [[-2.95, -2.0], [-.7, .25]].map(s => ({ u: at(s), h: [3.85, 5.3], panes: 2 })),
+  blocks: [ledge(W),
+    ...[[-2.95, -2.0], [-.7, .25]].map(s => ({ name: 'window grille', u: at(s), h: [3.85, 4.4], out: .04, depth: .02, colour: '#6a6c6a' })),
+    ...[[-3.0, -2.3], [-1.7, -1.0], [-.5, .2]].map(s => breezeVent(at(s), [5.5, 5.75])),
+    { name: 'blank number plate', u: at([-.5, 0]), h: [2.3, 2.5], out: .05, depth: .02, colour: '#e8e8e4' }],
+  backFittings: [{ name: 'five-foot way of ladders and goods', u: [.4, +(W - .4).toFixed(2)], h: [.1, 2.6], colour: '#5a5048', glow: .04 }],
+}));
+export const no9 = terraceHouse(9, '763764682', 5, 5.239, [-8.4, -3.85], '#a2a6a8', (at, W) => ({
+  evidence: 'June 2024 Street View shows a grey two-storey house at the north end of the terrace, beside the walk-ups on the back lane: two windows with open shutters on its upper floor over breeze-block panels, a breeze-block vent between them, over a five-foot way of dark openings. No business is listed at the address and no sign was photographed. Its photographed front runs about 4.55 m, against the 5.24 m source edge.' + terraceNote,
+  windows: [[-7.65, -6.75], [-5.5, -4.6]].map(s => ({ u: at(s), h: [3.85, 5.3], panes: 2, shutters: true })),
+  blocks: [ledge(W),
+    ...[[-7.65, -6.6], [-5.5, -4.5]].map(s => breezeVent(at(s), [3.1, 3.7])),
+    breezeVent(at([-6.5, -5.7]), [5.45, 5.7])],
+  backFittings: [{ name: 'dark openings', u: [.4, +(W - .4).toFixed(2)], h: [.1, 2.6], colour: '#2e2c2a' }],
+}));
+// No. 19's source way lies in the hoarded site: drawn as its grey corrugated hoarding, with no building.
+export const no19Site = {
+  id: 'l16-19-site', buildingIds: ['763764678'], kind: 'hoarded-site', unnamed: true, hoarding: { height: 2.4, colour: '#a8aaa6' },
+  name: 'The site of No. 19 Lorong 16 (June 2024, hoarded)', address: '19 Lorong 16 Geylang',
+  evidence: 'June 2024 Street View shows no building on source way 763764678, tagged No. 19: south of the cream No. 17, the end of the terrace, a cleared site runs to Hotel 81 Palace behind grey corrugated hoarding along the pavement, the hoarding that also closes No. 23, which the source map marks as "no building here". The site already stood empty behind hoarding in March 2021, March 2022 and December 2022. Google Maps gives only a geocoded address for 19 Lorong 16. So the way is drawn as its hoarding, 2.4 m high, with no building (open question 68).' + terraceNote,
+  sources: [way('763764678'), search('19 Lorong 16 Geylang Singapore'), pano('3ZQqgioQm3wQleRlKAjrrQ', 110, 10, 90), pano('EUihB-GBrXccUSAKjWM_2g', 80, 8, 90)],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41, no39, no37, hotel81Palace, no17, no15, no11, no9];
+// The hoarded site of No. 19 has no building.
+export const sites16 = [no19Site];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.

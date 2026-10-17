@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
-import { lorong16, geylangRow16, westerhout16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
+import { lorong16, geylangRow16, westerhout16, sites16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
@@ -130,5 +130,16 @@ test('the terrace on Westerhout Road faces Westerhout Road, its west gable on th
     assert.equal(place.noReview, true);
     assert.equal(landmarkFor(id), undefined);
     assert.equal(place.boards, undefined);
+  }
+});
+
+test('the terrace north of No. 23 has four houses, and the site of No. 19 is drawn as its hoarding', () => {
+  for (const id of ['763764682', '763764681', '763764680', '763764679']) assert.ok(lorong16.some(p => p.buildingIds.includes(id)), id);
+  assert.deepEqual(sites16.map(p => p.buildingIds[0]), ['763764678']);
+  for (const site of sites16) {
+    assert.ok(site.hoarding.height < 3);
+    assert.equal(landmarkFor(site.buildingIds[0]), undefined);
+    assert.match(site.evidence, /June 2024/);
+    assert.ok(site.sources.some(s => s.includes(`way/${site.buildingIds[0]}`)));
   }
 });

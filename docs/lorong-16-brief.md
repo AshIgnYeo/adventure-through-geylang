@@ -41,7 +41,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 21 | East | 763764674 | No. 39 | Done; unnamed |
 | 22 | East | 763764675 | No. 37 | Done; unnamed |
 | 23 | East | 121872890 | No. 25, Hotel 81 Palace | Done; named |
-| 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | Nos. 19, 17, 15, 11 and 9 | |
+| 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | The site of No. 19, and the terrace of Nos. 17, 15, 11 and 9 | Done; unnamed; No. 19 hoarded (question 68) |
 | 29–32 | East | 763764686, 763764685, 763764684, 763764683 | Nos. 7, 5, 3 and 1, on the back lane | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
@@ -317,3 +317,26 @@ A lilac seven-storey hotel over a car park, between the hoarded sites of No. 35 
 Use `?review=hotel-81-palace`.
 
 North of the hotel, No. 23 (an area the source map marks "no building here") is another hoarded site, closed by grey hoarding along the pavement. It has no footprint.
+
+### 24–28. Ways 763764678 to 763764682: the site of No. 19, and Nos. 17, 15, 11 and 9
+
+North of No. 23's hoarded site, a two-storey terrace under grey tiled roofs runs north to the walk-ups on the back lane behind Geylang Road. The houses' upper floors carry breeze-block vents and panels, over five-foot ways and, at Nos. 15 and 17, a shared red corrugated canopy over the forecourt.
+
+**Measurement:**
+- **The plane:** one plane along No. 15's lane edge (u_c south from its north end). The depth scores peak at −0.5 m (0.22), and on the source line the windows line up between `o1zP…`, `o1jX…`, `GYT7…` and `3ZQq…`.
+- **Party walls:** at u_c = −8.4, −3.85, 0.96, 5.84 and 10.6. The terrace is about **19 m** long, in **four houses** of 4.55–4.9 m: Nos. 9, 11, 15 and 17, plated NO 11, 15 and 17.
+- **Against the source:** the source map has five ways over 24 m (u_c −9.56 to 14.47), widths 5.24, 4.32, 5.59, 3.95 and 4.92 m. The four houses stand on their own ways within 0.5–1.2 m (drifting south, as at Nos. 37–41), but No. 17 runs 1 m into the fifth way.
+- **The fifth way, No. 19:** it lies in the cleared site behind grey corrugated hoarding that runs to Hotel 81 Palace. The site already stood empty behind hoarding in March 2021, March 2022 and December 2022.
+- **Heights,** from the nearest panoramas (`GYT7…`, `3ZQq…`): a ledge over the five-foot way at 2.8–3.05 m; panels under the windows at about 3.1–3.9 m; windows at about 3.7–5.5 m; small vents above them; eaves at about 6.2 m; roofs to about 7.0 m.
+
+**Layout:** each house is laid proportionally on its own source edge (No. 9 ×1.15, No. 11 ×0.90, No. 15 ×1.15, No. 17 ×0.83). The site of No. 19 is drawn as its hoarding, 2.4 m high round the outline, with no building. Dropping the way, or re-cutting the terrace onto its four photographed houses, is [open question 68](open-questions.md).
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 24 | 763764678 | **The site of No. 19** | No building: a cleared site behind grey corrugated hoarding, continuing No. 23's | No: only a geocoded address |
+| 25 | 763764679 | **No. 17** | Cream; two dark-framed windows with an air-conditioner between them, over the shared red canopy and a front of plants and shelving, plated 17 | No: Chrysalis Spa, listed here, is closed |
+| 26 | 763764680 | **No. 15** | Lilac; two dark-framed windows over red breeze-block panels, a red vent between them, over the red canopy and a shopfront hung with posters of dancers, plated 15 | No: Rachel K Cosmetics is closed, and the closed 将计就计 has its point here |
+| 27 | 763764681 | **No. 11** | White; two windows with grilled lower panes under small vents, over an open five-foot way of ladders and goods, with a plate reading NO 11 | No: the Singapore Hardware & Tools Association is listed at No. 11, but its point lies at the lane's Geylang Road end and no sign was photographed |
+| 28 | 763764682 | **No. 9** | Grey; two windows with open shutters over breeze-block panels, a vent between them, over a five-foot way of dark openings | No: nothing is listed |
+
+Use `?review=l16-17`, `?review=l16-15`, `?review=l16-11` and `?review=l16-9`.
