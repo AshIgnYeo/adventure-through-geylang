@@ -28,8 +28,8 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 5 | West | 764372567 | No. 18 | Done; unnamed; question 73 |
 | 6 | West | 764372566 | No. 20, Club 20 | Done; named; question 73 |
 | 7–8 | West | 764372565, 454274634 | Nos. 24 and 22, GoFit X Gym Geylang | Done; named; question 73 |
-| 9 | West | 454274635 | No. 26 | |
-| 10 | West | 454274637 | No. 28 | |
+| 9 | West | 454274635 | No. 26 | Done; unnamed; question 73 |
+| 10 | West | 454274637 | No. 28 | Done; unnamed; question 73 |
 | 11 | West | 454274639 | No. 30 | |
 | 12 | West | 454274640 | No. 32 | |
 | 13 | West | 764372564 | No. 34 | |
@@ -173,3 +173,26 @@ One six-storey building stands over both source ways.
 - Alpha Omega Wellness & Recovery, listed on the fifth floor, and the Singapore Hock Chew Kong Kien Phor Tor have no photographed signs.
 
 Use `?review=gofit`.
+
+### 9–10. Ways 454274635 and 454274637: Nos. 26 and 28
+
+A single-storey pair of cream houses under red tiled hipped roofs.
+
+- **In front:** a long tiled porch roof on slim posts across both houses.
+- **Forecourt:** a dark timber gate lettered **28 26**.
+- **No. 28** (south): a dark timber door beside its number.
+- **No. 26** (north): a frosted glass front beside its number, against GoFit's south wall.
+
+**Measurement:** read on No. 30's front line.
+- **Depth:** the gate's lettering lines up between `anNq…`, `FA-o…` and `zOAB…` (June 2024) about **1 m behind** that line. The porch roof's eaves stand between the lettering and the line, on the houses' projecting source edges. The depth scores peak on the porch roof (+0.5 m).
+- **Party walls:** No. 28's south wall meets No. 30 on the source party wall. The pair ends at GoFit's south wall, about 1 m inside No. 26's source outline. No sign of the line between the two houses was found, so it is taken at the source party line: No. 28 about 5.8 m, No. 26 about 4.5 m.
+- **Heights:** porch eaves at 3.3 m rising to 4.4 m; hipped roofs to about 6.0 m.
+
+**Layout:**
+- Each elevation is laid proportionally across its house's two source front edges, which step about 2.5 m.
+- The porch roof is drawn as a tiled slab 1.2 m deep along the front.
+- The porch and gate stand at their photographed depth, near the source line: part of [open question 73](open-questions.md).
+
+**Naming:** none. Nothing is listed at either address, and no sign was photographed.
+
+Use `?review=l18-26` and `?review=l18-28`.

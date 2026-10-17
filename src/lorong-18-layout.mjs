@@ -358,5 +358,52 @@ export const gofit = {
   },
 };
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit];
+// ---------------------------------------------------------------------------------------------
+// 9-10. Ways 454274635 and 454274637, Nos. 26 and 28: a single-storey pair under red tiled hipped roofs, behind a long
+// tiled porch roof on slim posts, cream walls, and a dark timber gate lettered 28 26 across their forecourt. Read on No.
+// 30's front line: the gate's lettering lines up between three June 2024 lane panoramas about 1 m behind that line, and
+// the porch roof's eaves between it and the line, on the houses' projecting source edges. The pair runs from No. 30's
+// party wall (s = 8.0, on the source one) to GoFit's south wall (18.3), and is shared at the source party line (13.8).
+const pair26Note = ' Nos. 26 and 28 are a single-storey pair under red tiled hipped roofs, read together on No. 30\'s front line: three June 2024 lane panoramas (anNq..., FA-o..., zOAB...) agree on the lettering of their gate about 1 m behind that line, and the eaves of their long porch roof between it and the line, on the houses\' projecting source edges. The pair runs from No. 30\'s party wall, on the source one, to GoFit\'s south wall, about 1 m inside No. 26\'s source outline, and is shared at the source party line. Each elevation is laid proportionally across its house\'s two source front edges, which step about 2.5 m. Heights were read on that plane: the porch roof\'s eaves at 3.3 m rising to 4.4 m, and the hipped roofs to about 6.0 m.';
+const p26 = colour => ({
+  reviewRoad: 'Lorong 18 Geylang', review: { distance: 6, pitch: 14 },
+  height: 3.4, ceiling: 3.0, fiveFootWay: 1.5, shellInset: .15, roof: { type: 'hip', ridge: 6.0, colour: '#b4553d' },
+  colours: { wall: colour, trim: '#e8e2d0', frame: '#3a3c3c', glass: '#46504e', pier: '#efeee8', back: '#e8e2d0', floor: '#b0a898' },
+  kind: 'unnamed', unnamed: true,
+});
+const porch26 = Wp => [
+  { name: 'tiled porch roof', u: [0, Wp], h: [3.3, 4.4], out: .6, depth: 1.2, colour: '#c8603e' },
+  { name: 'porch roof gutter', u: [0, Wp], h: [3.25, 3.35], out: 1.2, depth: .1, colour: '#e8e6e0' },
+];
+export const no28 = {
+  ...p26('#ece4cc'), id: 'l18-28', buildingIds: ['454274637'],
+  name: 'No. 28 Lorong 18 (June 2024 exterior, occupants not identified)', address: '28 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the south house of a single-storey pair, cream, under a red tiled hipped roof behind a long tiled porch roof on slim posts: a dark timber door beside the number 28, and the south half of a dark timber gate lettered 28 26 across the forecourt. No business is listed at the address and no sign was photographed.' + pair26Note,
+  sources: [way('454274637'), search('28 Lorong 18 Geylang'), pano('FA-o7CNNp9nWc64Y24bQSg', 268, 10, 65), pano('zOABkuSTa8EV0waK82wcQg', 235, 10, 60)],
+  ...across({
+    blocks: [
+      ...porch26(5.8),
+      { name: 'slim porch post', u: [.25, .4], h: [0, 3.3], out: 1.1, depth: .15, colour: '#e8e6e0' },
+      { name: 'dark timber gate', u: [3.8, 5.8], h: [0, 1.95], out: 1.4, depth: .08, colour: '#3a2e28' },
+      { name: 'low grey wall', u: [.4, 3.8], h: [0, 1.0], out: 1.4, depth: .2, colour: '#b8b8b2' },
+    ],
+    backFittings: [{ name: 'dark timber door', u: [2.6, 3.7], h: [.1, 2.3], colour: '#4a3226' }, { name: 'number 28 plate', u: [2.2, 2.5], h: [1.9, 2.25], colour: '#1e1e1e' }],
+  }, 5.8, [{ edge: 3, w: 2.904 }, { edge: 1, w: 2.578 }], 3),
+};
+export const no26 = {
+  ...p26('#ece4cc'), id: 'l18-26', buildingIds: ['454274635'],
+  name: 'No. 26 Lorong 18 (June 2024 exterior, occupants not identified)', address: '26 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the north house of the pair, like No. 28: a frosted glass front beside the number 26, behind the north half of the timber gate, under the same porch roof, against the south wall of the GoFit building. No business is listed at the address and no sign was photographed.' + pair26Note,
+  sources: [way('454274635'), search('26 Lorong 18 Geylang'), pano('FA-o7CNNp9nWc64Y24bQSg', 285, 10, 65), pano('zOABkuSTa8EV0waK82wcQg', 240, 10, 60)],
+  ...across({
+    blocks: [
+      ...porch26(4.5),
+      { name: 'dark timber gate', u: [0, 1.6], h: [0, 1.95], out: 1.4, depth: .08, colour: '#3a2e28' },
+      { name: 'slim porch post', u: [4.25, 4.4], h: [0, 3.3], out: 1.1, depth: .15, colour: '#e8e6e0' },
+    ],
+    backFittings: [{ name: 'frosted glass front', u: [2.0, 3.9], h: [.3, 2.6], colour: '#b8ccc8', glow: .04 }, { name: 'number 26 plate', u: [3.95, 4.25], h: [1.9, 2.25], colour: '#1e1e1e' }],
+  }, 4.5, [{ edge: 4, w: 3.699 }, { edge: 2, w: 2.59 }], 4),
+};
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;
