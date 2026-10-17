@@ -1,6 +1,6 @@
 import type { World, Point } from './world';
 import { lorong18 } from './lorong-18-layout.mjs';
-import { buildLaneHouse, text, sans, type Draws } from './lane-house';
+import { buildLaneHouse, text, sans, hei, type Draws } from './lane-house';
 import type { Draw } from './simple-house';
 
 // A perforated grey screen with dark triangular openings and coloured strips laid across it, all in fractions of the
@@ -52,6 +52,17 @@ const draws: Draws = {
     }, (c, w, h) => {
       c.fillStyle = '#d8403a'; c.fillRect(0, 0, w, h);
       ['o', 'y', 'o'].forEach((ch, i) => text(c, ch, w * .5, h * (.2 + i * .3), w * .7, '#f8f4f0', '800', sans));
+    }],
+  },
+  // CYGON in spaced dark capitals on the canopy's grey fascia.
+  'cygon': {
+    boards: [(c, w, h) => { text(c, 'C Y G O N', w * .5, h * .55, h * .78, '#2e3236', '800', sans, w * .96); }],
+  },
+  // A white lightbox lettered 20公館 in green.
+  'club-20@7': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#eef4f0'; c.fillRect(0, 0, w, h); c.strokeStyle = '#9ab8a8'; c.lineWidth = h * .06; c.strokeRect(0, 0, w, h);
+      text(c, '20公館', w * .5, h * .55, h * .62, '#2e8a6a', '700', hei, w * .9);
     }],
   },
   // The number 340 on the corner's fascia.

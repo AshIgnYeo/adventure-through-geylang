@@ -23,10 +23,10 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | --- | --- | --- | --- | --- |
 | 1 | Geylang Road | 541941365 | Le Regal, 340 Geylang Road: the west corner, back to Lorong 16 | Done; named |
 | 2 | West | 454274650 | No. 10, OYO 102 Budgetone Hotel | Done; named |
-| 3 | West | 454274632 | No. 14, Cygon | |
-| 4 | West | 764372568 | No. 16 | |
-| 5 | West | 764372567 | No. 18 | |
-| 6 | West | 764372566 | No. 20, Club 20 | |
+| 3 | West | 454274632 | No. 14, Cygon | Done; named; west row question 73 |
+| 4 | West | 764372568 | No. 16 | Done; unnamed; question 73 |
+| 5 | West | 764372567 | No. 18 | Done; unnamed; question 73 |
+| 6 | West | 764372566 | No. 20, Club 20 | Done; named; question 73 |
 | 7 | West | 454274634 | No. 22 | |
 | 8 | West | 764372565 | No. 24 | |
 | 9 | West | 454274635 | No. 26 | |
@@ -116,3 +116,33 @@ A seven-storey hotel south of the back lane behind Le Regal.
 **Naming:** Google Maps lists **OYO 102 Budgetone Hotel**, a hotel, at 10 Lor 18 Geylang, Singapore 398793, with its point inside this way. Its lettering and the OYO board are photographed, so it is named, and both are redrawn in original type.
 
 Use `?review=budgetone-hotel`.
+
+### 3–6. Ways 454274632, 764372568, 764372567 and 764372566: Nos. 14 to 20
+
+A two-storey terrace under one red tiled roof, its houses painted grey, blue, orange and cream, each with a porch or car porch in front of its upper floor.
+
+**Measurement:** the four fronts were read together on one plane along No. 30's front (s north from its south corner), which serves the whole west row.
+- **Depth:** the blue house's edge and its window line up between `Z5Yk…`, `VqEM…`, `m8yM…` and `ijKd…` (June 2024) on a plane **7.5 m behind** that line. That is about 2 m behind the houses' recessed source edges and 4.5 m behind their projecting ones. The depth scores agree (−6.5 to −7 m, 0.35).
+- **The porches:** their fronts, such as the CYGON canopy at No. 14, line up about **3 m behind** No. 30's line, on the houses' projecting source edges.
+- **The source outlines:** each house's lane end is two parallel edges about 2 m apart, the projecting one about 3–4 m wide. They pair up, Nos. 14 and 16 meeting at their projecting edges, as Nos. 18 and 20 do.
+- **Party walls on the upper façades' plane:** at s = 29.7, 38.1, 46.2, 55.9 and 62.5, against the source's 31.7, 38.9, 46.8, 54.5 and 62.5. No. 14's north wall meets No. 10's.
+- **Heights:** porch roofs and canopies at 3.0–4.0 m, balcony rails to about 5.1 m, eaves at 7.1 m and the roof to about 8.7 m.
+
+**Layout:**
+- Each house's elevation is laid proportionally across its two source front edges. The longer edge, or at No. 14 the projecting one with the canopy, is the front; the other is a side face.
+- Each house carries a tiled eaves line and a roof band in front of a hipped roof.
+- The fronts stand 2–4.5 m in front of their photographed line: part of [open question 73](open-questions.md).
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 3 | 454274632 | **No. 14**: grey. A white-framed door onto a terrace with a white railing, over a canopy on two columns whose fascia is lettered **CYGON**; a grey concrete-textured front with a dark door and the number 14 under it, between low white walls | 6.6 m | **Cygon** |
+| 4 | 764372568 | **No. 16**: blue. A small grilled window in a white frame over a balcony with a pink railing on pink posts; a blue front with a red banner, the number 16 in red, and potted plants | 9.7 m | No |
+| 5 | 764372567 | **No. 18**: orange. Its upper floor faced with orange timber shutters behind a balcony with a dark railing, over an open shed between orange posts | 8.1 m | No |
+| 6 | 764372566 | **No. 20**: cream. Two dark doors behind a balcony with a white railing, on the slab of a car porch across the whole front, hung with red lanterns; a lightbox lettered **20公館** on a post at its north side | 8.4 m | **Club 20** |
+
+**Naming:**
+- **Cygon:** listed, an adult entertainment club open 24 hours, at 14 Lor 18 Geylang, Singapore 398797, with its point inside this way. Its lettering is redrawn in original type.
+- **Club 20:** listed, a night club, at 20 Lor 18 Geylang, Singapore 398803, with its point in No. 18 next door. The address and the lightbox, which gives the club's name, agree on this house, so it is named, as the Nyingma Kathok Buddhist Centre was on Lorong 21. The lightbox is redrawn in original type.
+- **Not named:** Adult Secret, listed at No. 18, is permanently closed. SG山水庄园, listed at No. 20, has no photographed sign. Nothing is listed at No. 16.
+
+Use `?review=cygon`, `?review=l18-16`, `?review=l18-18` and `?review=club-20`.

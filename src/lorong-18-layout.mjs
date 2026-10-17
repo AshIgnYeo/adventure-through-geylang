@@ -4,6 +4,31 @@
 // a listing and a photographed sign agree. See docs/lorong-18-brief.md.
 import { pano, way, search, lay, sliceSpec, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 
+// A house's elevation, measured in photographed metres from its south party wall, laid proportionally across its stepped
+// front: the source outline's lane end is two parallel edges, a projecting one and a recessed one about 2 m apart. Each
+// edge takes its share of the elevation, scaled to the two edges' combined width. The front edge carries the five-foot
+// way and the review start; the other is a side face, its back-wall fittings and piers drawn on its wall.
+const scaleSpan = k => x => ({ ...x, u: [+(x.u[0] * k).toFixed(3), +(x.u[1] * k).toFixed(3)] });
+function across(elev, Wp, parts, front) {
+  const total = parts.reduce((s, p) => s + p.w, 0), k = total / Wp, sc = scaleSpan(k);
+  const scaled = { windows: elev.windows?.map(sc), vents: elev.vents?.map(sc), blocks: elev.blocks?.map(sc), backFittings: elev.backFittings?.map(sc), piers: elev.piers?.map(([a, b]) => [+(a * k).toFixed(3), +(b * k).toFixed(3)]) };
+  let t = 0;
+  // Each edge keeps a hair's margin of its width; windows cut at a slice are inset by their sills, and back-wall
+  // fittings by 0.12 m, since the source party walls and steps are not quite square to the front.
+  const inset = (xs, w, m) => xs?.flatMap(x => { const l = Math.max(x.u[0], m), r = Math.min(x.u[1], w - m); return r - l > .25 ? [{ ...x, u: [+l.toFixed(3), +r.toFixed(3)] }] : []; });
+  const cut = parts.map(p => {
+    const w = p.w - .002, piece = sliceSpec(scaled, t, t + w); t += p.w;
+    const behind = (piece.blocks ?? []).filter(b => (b.out ?? 0) + (b.depth ?? .1) / 2 <= 0), proud = (piece.blocks ?? []).filter(b => !behind.includes(b));
+    return { edge: p.edge, ...piece, windows: inset(piece.windows, w, .09), backFittings: inset(piece.backFittings, w, .12), blocks: [...proud, ...inset(behind, w, .15)] };
+  });
+  const main = cut.find(c => c.edge === front);
+  const sides = cut.filter(c => c.edge !== front).map(c => ({
+    edge: c.edge, windows: c.windows, vents: c.vents,
+    blocks: [...(c.blocks ?? []), ...(c.backFittings ?? []).map(f => ({ ...f, out: .02, depth: .04 })), ...(c.piers ?? []).map(u => ({ name: 'pier', u, h: [0, elev.ceiling ?? 3], out: .15, depth: .3, colour: elev.pierColour ?? '#e8e6e0' }))],
+  }));
+  return { frontEdge: front, windows: main.windows, vents: main.vents, blocks: main.blocks, backFittings: main.backFittings, piers: main.piers, sides };
+}
+
 // ---------------------------------------------------------------------------------------------
 // 1. Way 541941365, Le Regal, 340 Geylang Road: the Lorong 18 west corner, back to Lorong 16. A white five-storey
 // condominium over a shopping arcade, its upper floors in bands of grey slab edges and glass balcony rails, crossed by
@@ -175,5 +200,100 @@ export const budgetone = {
   }],
 };
 
-export const lorong18 = [leRegal, budgetone];
+// ---------------------------------------------------------------------------------------------
+// 3-6. Ways 454274632, 764372568, 764372567 and 764372566, Nos. 14, 16, 18 and 20: a two-storey terrace under one red
+// tiled roof, its houses painted grey, blue, orange and cream, each with a porch or car porch in front of its upper
+// floor. Read on one plane along No. 30's front (s north from its south corner), where the blue house's edge and window
+// line up between four June 2024 lane panoramas 7.5 m behind that line: about 2 m behind the houses' recessed source
+// edges and 4.5 m behind their projecting ones. The porches' fronts (the CYGON canopy at No. 14) line up about 3 m behind
+// it, on the projecting edges. On the upper façades' plane the party walls stand at s = 29.7, 38.1, 46.2, 55.9 and 62.5,
+// against the source's 31.7, 38.9, 46.8, 54.5 and 62.5.
+const terrace14Note = ' Nos. 14 to 20 are a two-storey terrace under one red tiled roof, read together on one plane along No. 30\'s front: four June 2024 lane panoramas (Z5Yk..., VqEM..., m8yM..., ijKd...) agree on the blue house\'s edge and its window 7.5 m behind that line, which is about 2 m behind the houses\' recessed source edges and 4.5 m behind their projecting ones; the porches\' fronts, such as the CYGON canopy, line up about 3 m behind it, on the projecting edges. On the upper façades\' plane the party walls stand within 1.5 m of the source ones. Each house\'s elevation is laid proportionally across its two source front edges, which step about 2 m. Heights were read on that plane: porch roofs and canopies at 3.0-4.0 m, balcony rails to about 5.1 m, eaves at 7.1 m and the roof to about 8.7 m.';
+const t14 = (colour, extra = {}) => ({
+  reviewRoad: 'Lorong 18 Geylang', review: { distance: 7, pitch: 16 },
+  height: 7.1, ceiling: 3.0, fiveFootWay: 1.2, shellInset: .15, roof: { type: 'hip', ridge: 8.7, colour: '#b4553d' },
+  colours: { wall: colour, trim: '#e4e2dc', frame: '#3a3c3c', glass: '#46504e', pier: '#e8e6e0', back: '#4a4642', floor: '#a8a296' },
+  ...extra,
+});
+const eaves14 = Wp => [{ name: 'tiled eaves', u: [0, Wp], h: [6.95, 7.25], out: .35, depth: .7, colour: '#b4553d' }, { name: 'tiled roof', u: [0, Wp], h: [7.1, 8.1], out: -.7, depth: 1.4, colour: '#b4553d' }];
+export const cygon = {
+  ...t14('#9fa4a7'), id: 'cygon', buildingIds: ['454274632'], kind: 'cygon',
+  name: 'Cygon (June 2024 exterior)', address: '14 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the north house of the terrace, grey: its upper floor a plain wall with a white-framed door onto a terrace with a white railing, over a canopy whose fascia is lettered CYGON, on two columns; under it a grey concrete-textured front with a dark door and the number 14, between low white walls. Google Maps lists Cygon, an adult entertainment club open 24 hours, at 14 Lor 18 Geylang, Singapore 398797, with its point inside this way, so the house is named after it, and the lettering is redrawn in original type.' + terrace14Note,
+  sources: [way('454274632'), search('Cygon 14 Lorong 18 Geylang'), pano('m8yMJuQIYmZU0SXX8yBJQA', 262, 10, 60), pano('ijKdW6tyrOTKZnnSK2iXdg', 225, 10, 50), pano('VqEMeB2kieus_7vLL6lHQA', 300, 10, 60)],
+  ...across({
+    windows: [{ u: [3.7, 4.5], h: [4.8, 6.8], panes: 1 }],
+    blocks: [
+      ...eaves14(6.6),
+      { name: 'white terrace railing', u: [.1, 5.6], h: [4.15, 5.0], out: .5, depth: .04, colour: '#e8e8e4' },
+      { name: 'air-conditioner', u: [2.9, 3.6], h: [4.2, 4.85], out: .3, depth: .5, colour: '#e8e8e4' },
+      { name: 'CYGON canopy fascia', u: [0, 6.6], h: [3.0, 3.6], out: .6, depth: .2, colour: '#c8ccce' },
+      { name: 'canopy roof', u: [0, 6.6], h: [3.55, 3.65], out: .1, depth: .1, colour: '#9a9c98' },
+      ...[[.1, .4], [6.2, 6.5]].map(u => ({ name: 'low white wall', u, h: [0, 2.0], out: .4, depth: .3, colour: '#ecebe6' })),
+    ],
+    backFittings: [{ name: 'grey concrete-textured front', u: [.4, 6.2], h: [.1, 2.9], colour: '#8e9294' }, { name: 'dark door', u: [2.3, 3.4], h: [.1, 2.4], colour: '#2e3032' }],
+    piers: [[.4, .7], [5.9, 6.2]], pierColour: '#c8ccce', ceiling: 3.0,
+  }, 6.6, [{ edge: 0, w: 4.027 }, { edge: 6, w: 3.993 }], 0),
+  // The CYGON lettering on the canopy's fascia, on the projecting edge.
+  boards: [{ u: [1.2, 3.9], h: [3.08, 3.52], out: .72 }],
+};
+export const no16 = {
+  ...t14('#3a68c4'), id: 'l18-16', buildingIds: ['764372568'], kind: 'unnamed', unnamed: true,
+  name: 'No. 16 Lorong 18 (June 2024 exterior, occupants not identified)', address: '16 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the second house of the terrace, painted blue: a small grilled window in a white frame on its upper floor, over a balcony with a pink railing on pink posts, and a blue front below with a red banner, the number 16 in red and a forecourt of potted plants. No business is listed at the address and no sign was photographed.' + terrace14Note,
+  sources: [way('764372568'), search('16 Lorong 18 Geylang'), pano('m8yMJuQIYmZU0SXX8yBJQA', 245, 10, 60), pano('VqEMeB2kieus_7vLL6lHQA', 270, 10, 60)],
+  ...across({
+    windows: [{ u: [3.8, 4.8], h: [5.3, 6.6], panes: 2 }],
+    blocks: [
+      ...eaves14(9.7),
+      { name: 'grille', u: [3.85, 4.75], h: [5.35, 6.55], out: .04, depth: .02, colour: '#e8e8e4' },
+      { name: 'balcony slab', u: [1.2, 6.9], h: [3.95, 4.2], out: .5, depth: 1.0, colour: '#e4c8cc' },
+      { name: 'pink balcony railing', u: [1.3, 6.8], h: [4.2, 5.1], out: .95, depth: .04, colour: '#e89aa8' },
+      ...[[2.0, 2.6], [3.0, 3.6]].map(u => ({ name: 'air-conditioner', u, h: [4.25, 4.9], out: .5, depth: .5, colour: '#e8e8e4' })),
+      ...[[1.3, 1.5], [6.6, 6.8]].map(u => ({ name: 'pink post', u, h: [0, 3.95], out: .9, depth: .2, colour: '#e89aa8' })),
+      { name: 'potted plants', u: [.4, 6.4], h: [0, 1.0], out: 1.6, depth: .8, colour: '#5a7a42' },
+    ],
+    backFittings: [{ name: 'blue front', u: [.3, 9.4], h: [.1, 2.9], colour: '#2e58b4' }, { name: 'blank red banner', u: [3.0, 6.0], h: [2.5, 2.9], colour: '#c8302a' }, { name: 'doorway', u: [6.9, 8.2], h: [.1, 2.4], colour: '#2a2e3a' }],
+  }, 9.7, [{ edge: 5, w: 4.497 }, { edge: 7, w: 3.022 }], 5),
+};
+export const no18 = {
+  ...t14('#e0893a'), id: 'l18-18', buildingIds: ['764372567'], kind: 'unnamed', unnamed: true,
+  name: 'No. 18 Lorong 18 (June 2024 exterior, occupants not identified)', address: '18 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the third house of the terrace, painted orange: its upper floor faced with orange timber shutters behind a balcony with a dark railing, over an open shed between orange posts, where a lorry is parked beside a white partition. Google Maps lists Adult Secret, a 24-hour adult store, at 18 Lor 18 Geylang, but marks it permanently closed, and no sign for it was photographed, so no name is given.' + terrace14Note,
+  sources: [way('764372567'), search('18 Lorong 18 Geylang'), pano('VqEMeB2kieus_7vLL6lHQA', 245, 10, 60), pano('Z5YkBNIYJLXgklpzRD8c5g', 290, 10, 60)],
+  ...across({
+    blocks: [
+      ...eaves14(8.1),
+      ...[.4, 1.8, 3.2, 4.6, 6.0].map(l => ({ name: 'orange timber shutter', u: [l, l + 1.35], h: [4.8, 7.0], out: .03, depth: .06, colour: '#d8823a' })),
+      { name: 'balcony slab', u: [.3, 6.4], h: [4.0, 4.3], out: .5, depth: 1.0, colour: '#c8c4bc' },
+      { name: 'dark balcony railing', u: [.4, 6.2], h: [4.3, 5.2], out: .95, depth: .04, colour: '#3a3836' },
+      ...[[1.0, 1.7], [2.2, 2.9]].map(u => ({ name: 'air-conditioner', u, h: [4.35, 4.95], out: .5, depth: .5, colour: '#e8e8e4' })),
+      ...[[.35, .6], [3.4, 3.65]].map(u => ({ name: 'orange post', u, h: [0, 4.0], out: .9, depth: .25, colour: '#d8823a' })),
+      { name: 'white partition', u: [4.6, 6.4], h: [0, 2.3], out: .6, depth: .1, colour: '#ecebe6' },
+    ],
+    backFittings: [{ name: 'open shed', u: [.6, 7.8], h: [.1, 3.3], colour: '#4a4440', glow: .04 }],
+  }, 8.1, [{ edge: 5, w: 4.936 }, { edge: 7, w: 3.342 }], 5),
+};
+export const club20 = {
+  ...t14('#e8dcc0'), id: 'club-20', buildingIds: ['764372566'], kind: 'club-20',
+  name: 'Club 20 (June 2024 exterior)', address: '20 Lorong 18 Geylang',
+  evidence: 'June 2024 Street View shows the south house of the terrace, cream: two dark doors on its upper floor behind a balcony with a white railing, on the slab of a car porch across the whole front, hung with red lanterns, under which two cars are parked before a dark lobby; a low cream wall at its south side, and on a post at its north side a lightbox lettered 20公館. Google Maps lists Club 20, a night club opening at noon, at 20 Lor 18 Geylang, Singapore 398803, with its point in the house next door; the address and the lightbox, which gives the club\'s name, agree on this house, so it is named (as the Nyingma Kathok Buddhist Centre was on Lorong 21), and the lightbox is redrawn in original type. SG山水庄园, also listed at No. 20, has no photographed sign.' + terrace14Note,
+  sources: [way('764372566'), search('Club 20 20 Lorong 18 Geylang'), pano('Z5YkBNIYJLXgklpzRD8c5g', 262, 10, 60), pano('VqEMeB2kieus_7vLL6lHQA', 228, 10, 60)],
+  ...across({
+    windows: [[2.8, 3.8], [4.4, 5.4]].map(u => ({ u, h: [4.9, 6.9], panes: 1 })),
+    blocks: [
+      ...eaves14(8.4),
+      { name: 'car porch slab', u: [0, 8.0], h: [3.4, 3.95], out: .6, depth: 1.2, colour: '#e8dcc0' },
+      { name: 'white balcony railing', u: [2.0, 7.3], h: [3.95, 5.1], out: 1.1, depth: .04, colour: '#ecebe6' },
+      ...[1.2, 2.4, 3.6, 4.8, 6.0].map(l => ({ name: 'red lantern', u: [l, l + .35], h: [2.6, 3.05], out: .6, depth: .35, colour: '#c8302a', glow: .2 })),
+      { name: 'low cream wall', u: [0, 1.0], h: [0, 1.8], out: 1.1, depth: .3, colour: '#e8dcc0' },
+      { name: 'lightbox post', u: [7.6, 7.75], h: [0, 2.0], out: 1.0, depth: .15, colour: '#d8d8d4' },
+    ],
+    backFittings: [{ name: 'dark lobby', u: [1.4, 7.0], h: [.1, 3.2], colour: '#3a3634', glow: .06 }],
+  }, 8.4, [{ edge: 5, w: 3.938 }, { edge: 7, w: 2.997 }], 5),
+};
+// The 20公館 lightbox on its post at the north side, on the projecting edge.
+club20.sides[0].boards = [{ u: [1.85, 2.95], h: [2.0, 2.8], out: 1.08 }];
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;
