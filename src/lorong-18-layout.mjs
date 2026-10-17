@@ -627,5 +627,53 @@ no44b.sides.push({
   ],
 }, { edge: 2, blocks: [{ name: 'deep eaves', u: [0, 1.37], h: [6.6, 6.9], out: .2, depth: .4, colour: '#b4553d' }] });
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b];
+// ---------------------------------------------------------------------------------------------
+// East side
+
+// 20. Way 764372540, No. 55, the Lorong 18 east corner at Westerhout Road: a weathered blue three-storey block of
+// roughcast walls between cream floor bands, its corner splayed, with a breeze-block stair tower on Westerhout Road; in
+// June 2024 it stood empty behind blue hoarding, its windows broken. Its lane face (edge 3, u south from its north end)
+// lines up between the two nearest June 2024 lane panoramas on a plaster patch on the source plane; its Westerhout Road
+// front (edge 0, u east from the splay) is read on its source plane from the corner's June 2024 panorama. Each face is
+// laid on its source edge.
+const blue55 = '#3a8aa8', cream55 = '#e0d4a8';
+const bands55 = w => [[3.6, 4.1], [7.1, 7.6], [10.3, 10.75]].map(h => ({ name: 'cream floor band', u: [0, w], h, out: .3, depth: .6, colour: cream55 }));
+const hoarding55 = (u, out = 1.2) => ({ name: 'blue hoarding', u, h: [0, 2.6], out, depth: .06, colour: '#5a86a8' });
+export const no55 = {
+  id: 'l18-55', buildingIds: ['764372540'], kind: 'unnamed', unnamed: true, frontEdge: 3, reviewRoad: 'Lorong 18 Geylang', review: { distance: 7, pitch: 24 },
+  name: 'No. 55 Lorong 18 (June 2024 exterior, occupants not identified)', address: '55 Lorong 18 Geylang (the Westerhout Road corner)',
+  height: 12.2, ceiling: 3.6, fiveFootWay: 1.8, shellInset: .25, roof: { type: 'flat', colour: '#8f8c86' },
+  colours: { wall: blue55, trim: cream55, frame: '#3a4a52', glass: '#2e3a40', pier: blue55, back: '#2e3436', floor: '#a8a296' },
+  evidence: 'June 2024 Street View shows a weathered blue three-storey block at the Lorong 18 corner of Westerhout Road: roughcast walls between cream bands at each floor and under the parapet, wide windows on the two upper floors, some of them broken and one bay patched with white plaster, a splayed corner carrying the Westerhout Rd street sign, and on Westerhout Road a stair tower faced with breeze blocks rising above the roof. The ground floor stood empty behind blue corrugated hoarding and a blue gate screened in green. In February 2022 it was occupied, with air-conditioners on its walls. Google Maps lists Kip Inn, a hotel, at 61 Westerhout Road with its point inside this way, and the closed Golden Dragon Hotel and RedDoorz at the same address, but none of their signs is on this block, which is tagged No. 55, and it was empty in 2024, so no name is given. The two nearest June 2024 lane panoramas (Crjq..., RvUa...) agree on the plaster patch on the lane face\'s source plane, and the corner\'s June 2024 panorama (Sen0...) reads the Westerhout Road front on its source plane, so each face is laid on its source edge. Heights were read on those planes: cream bands at 3.6-4.1, 7.1-7.6 and 10.3-10.75 m, windows at 4.8-6.6 and 8.4-10.1 m, the parapet at about 12.2 m and the stair tower to about 13.2 m.',
+  sources: [way('764372540'), search('55 Lorong 18 Geylang'), pano('RvUaS2tCvcg1XuXtad5xcg', 85, 15, 75), pano('Sen0U2YhMqlMOvyy54kfpQ', 40, 15, 75), pano('GNek5w3F44WsZnRCjqyOhA', 70, 15, 75), pano('L4MeWEHY46jZa7IHGHfY6w', 330, 15, 75)],
+  windows: [[4.8, 6.6], [8.4, 10.1]].flatMap(h => [[.5, 2.3], [3.0, 5.2], [6.7, 8.8], [9.3, 10.4]].map(u => ({ u, h, panes: 3 }))),
+  blocks: [
+    ...bands55(10.732),
+    { name: 'parapet coping', u: [0, 10.732], h: [11.9, 12.2], out: .1, depth: .2, colour: cream55 },
+    { name: 'white plaster patch', u: [5.3, 6.6], h: [4.4, 8.2], out: .02, depth: .04, colour: '#d8dcd8' },
+    hoarding55([.1, 1.4]), hoarding55([8.3, 10.6]),
+    { name: 'blue gate', u: [1.4, 8.3], h: [0, 2.2], out: 1.2, depth: .08, colour: '#4a7aa8' },
+    { name: 'green screen on the gate', u: [1.5, 8.2], h: [.2, 1.9], out: 1.25, depth: .02, colour: '#2e6a5a' },
+  ],
+  backFittings: [{ name: 'empty ground floor', u: [.3, 10.4], h: [.1, 3.4], colour: '#5a5a54', glow: .03 }],
+  sides: [{
+    edge: 2, // the splay, u from the lane towards Westerhout Road
+    windows: [[4.8, 6.6], [8.4, 10.1]].map(h => ({ u: [.8, 3.2], h, panes: 2 })),
+    blocks: [...bands55(3.99), { name: 'parapet coping', u: [0, 3.99], h: [11.9, 12.2], out: .1, depth: .2, colour: cream55 }, hoarding55([.1, 3.9]), { name: 'blank street sign', u: [2.6, 3.8], h: [2.9, 3.2], out: .1, depth: .04, colour: '#2e7a4a' }],
+  }, {
+    edge: 0, // the Westerhout Road front, u east from the splay: the breeze-block stair tower about a third of the way along
+    windows: [[4.8, 6.6], [8.4, 10.1]].flatMap(h => [[.4, 3.6], [6.2, 8.4], [8.9, 11.0]].map(u => ({ u, h, panes: 3 }))),
+    blocks: [
+      ...bands55(11.286).map(b => ({ ...b, u: [0, 4.2] })), ...bands55(11.285).map(b => ({ ...b, u: [5.8, 11.285] })),
+      { name: 'parapet coping', u: [0, 11.285], h: [11.9, 12.2], out: .1, depth: .2, colour: cream55 },
+      { name: 'breeze-block stair tower', u: [4.2, 5.8], h: [.1, 13.2], out: .3, depth: .6, colour: '#4a90a8' },
+      ...Array.from({ length: 30 }, (_, i) => ({ name: 'breeze-block opening', u: [4.4 + (i % 3) * .5, 4.7 + (i % 3) * .5], h: [+(3.8 + Math.floor(i / 3) * .9).toFixed(2), +(4.1 + Math.floor(i / 3) * .9).toFixed(2)], out: .61, depth: .02, colour: '#1e3a44' })),
+      hoarding55([.1, 11.2], 1.5),
+    ],
+  }, {
+    edge: 1, blocks: [{ name: 'parapet coping', u: [0, 1.19], h: [11.9, 12.2], out: .1, depth: .2, colour: cream55 }],
+  }],
+};
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;

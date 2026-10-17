@@ -39,7 +39,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 17 | West | 454274643 | No. 42 | Done; unnamed; question 73 |
 | 18 | West | 764372561 | No. 44 | Done; unnamed; question 73 |
 | 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | Done; unnamed; question 73 |
-| 20 | East | 764372540 | No. 55, the Westerhout Road east corner | |
+| 20 | East | 764372540 | No. 55, the Westerhout Road east corner | Done; unnamed |
 | 21 | East | 121872891 | No. 31, Hotel 81 Star | |
 | 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | |
 | 23 | East | 1470917582 | No. 1, Dabu Hakka Building | |
@@ -274,3 +274,27 @@ A two-storey corner house under a red tiled hipped roof with deep eaves, ochre i
 Use `?review=l18-44b`.
 
 **West side complete.** Every building from Le Regal on Geylang Road to No. 44B at Westerhout Road now has its Lorong 18 front.
+
+## East side
+
+### 20. Way 764372540: No. 55, the Lorong 18 east corner at Westerhout Road
+
+A weathered blue three-storey block at the corner.
+
+- **Walls:** roughcast between cream bands at each floor and under the parapet, with wide windows on the two upper floors. Some are broken, and one bay is patched with white plaster.
+- **Corner:** splayed, carrying the Westerhout Rd street sign.
+- **On Westerhout Road:** a stair tower faced with breeze blocks, rising above the roof.
+- **Ground floor:** in June 2024 it stood empty behind blue corrugated hoarding and a blue gate screened in green. In February 2022 it was occupied, with air-conditioners on its walls.
+
+**Measurement:**
+- **Lane face (edge 3):** the plaster patch lines up between the two nearest lane panoramas, `Crjq…` and `RvUa…` (June 2024), on the **source plane**. The depth scores were weak (under 0.1).
+- **Westerhout Road front (edge 0):** read on its source plane from the corner's June 2024 panorama, `Sen0…`. The February 2022 Westerhout Road panoramas disagree with it and with each other by 1–4 m on the stair tower, so they are used only for the front's arrangement.
+- **Heights:** cream bands at 3.6–4.1, 7.1–7.6 and 10.3–10.75 m; windows at 4.8–6.6 and 8.4–10.1 m; parapet at about 12.2 m; stair tower to about 13.2 m.
+
+**Layout:** the lane face is the front, with the splay (edge 2) and the Westerhout Road front as side faces. All are laid on their source edges, with the hoarding and gate in front.
+
+**Naming:** none.
+- Google Maps lists Kip Inn, a hotel, at 61 Westerhout Road with its point inside this way, and the closed Golden Dragon Hotel and RedDoorz at the same address.
+- None of their signs is on this block, which is tagged No. 55 and stood empty in 2024. No. 61 is the next outline east on Westerhout Road (way 454438307), which waits for a later pass ([question 72](open-questions.md)).
+
+Use `?review=l18-55`.
