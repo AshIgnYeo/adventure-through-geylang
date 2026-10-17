@@ -2,7 +2,7 @@
 
 An evolving, browser-based 3D reconstruction of Geylang, Singapore.
 
-The project documents the character of the neighbourhood through a walkable streetscape: its shophouses, places of worship, clan associations, eating houses, back lanes and the small architectural details that make each stretch recognisable. The current study centres on Lorong 11 and its connections to Geylang Road, Sims Avenue, Lorong 9, Lorong 13, Lorong 15, Lorong 17, Lorong 19 and Lorong 21.
+The project documents the character of the neighbourhood through a walkable streetscape: its shophouses, places of worship, clan associations, eating houses, back lanes and the small architectural details that make each stretch recognisable. The current study centres on Lorong 11 and its connections to Geylang Road, Sims Avenue, Lorong 9, Lorong 13, Lorong 14, Lorong 15, Lorong 16, Lorong 17, Lorong 18, Lorong 19 and Lorong 21.
 
 This is now primarily an environment and rendering project. The walking controls are an inspection tool for exploring the model at street level. The repository is intended to be a useful base for visualisations, interactive documentaries, education, architectural studies, installations, games and other creative work.
 
@@ -11,12 +11,12 @@ This is now primarily an environment and rendering project. The walking controls
 - A metre-scale street layout derived from retained OpenStreetMap data.
 - A first-person desktop and mobile viewer built with PlayCanvas, TypeScript and Vite.
 - Daylight, blue-hour and night lighting modes.
-- Reference-led models of 137 named buildings and landmarks, and photograph-led unnamed exteriors across the study area.
+- Reference-led models of 170 named buildings and landmarks, and photograph-led unnamed exteriors across the study area.
 - A mapped pedestrian back lane between Lorong 9 and Lorong 11.
 - Source notes, modelling decisions and uncertainty records for reviewed places.
 - Automated checks for map scale, footprint assignment, walkable clearance and selected model geometry.
 
-The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Nanyang Dentist and Shaxian Eatery (dated exteriors), Rozel Furniture, JH Hotel, the Nanyang Fan Clan General Association, Ya Ju Hotel, Sheng Siong Supermarket and Anytime Fitness Geylang Central at No. 301 Geylang Road, on Lorong 17 Feng Shang Hair Salon, the General Board of True Jesus Mission, the Yang Clan General Association, the Gyaltsap Tashi Ling Buddhist Society, Bright Star Hotel, the Singapore Chinaware Merchants Association and the Singapore Rattan Industry Association, on Lorong 19 Eminent Frog Porridge & Seafood, The Primero, the Nanyang Chee Clan Association, Chee Hoe Hong, Lei Zang Si, Starlon and Tektron Pacific, He Ping Claypot Rice Restaurant, Kang Ha Pheng Sim Kok, Bougainvilla Apartments, Sims Point and, at its Geylang Road corner, Straits Laundry, Nanyang Hardware and Romance Adult Shop, between Lorong 17 and Lorong 19 Mary Hair Salon and Scarlett Supermarket @ Geylang on Geylang Road and Lefon Sewing Machine & Machinery, the Guangxi and Gaozhou Association with Bali Nasi Lemak, Bikemart SG and Vietsea II on Sims Avenue, on Lorong 21 Cheng Yi Coffee Shop at its Geylang Road corner, the Nyingma Kathok Buddhist Centre, Bei Chen Gong, Tan Ser Seng Herbal Soup and HCSA Community Services, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Ming Li's Eating House, Lian Seng Weighing Scale Co., Tian Tian Minimart, TakeToys, ChongQingXiaoMian, Monster Ink, Shadow Tattoo (a dated exterior), the Nanyang Lian Clan Association building, Sin Chew Tan's Clan Association, the Teck Keow Association, Hong Sheng Koon, the Singapore Ship-Chandlers Association, the AhlulBayt Educational & Cultural Centre, Hotel 81 Spring, ibis budget Singapore Gold, Red Flag Store (Davco), the Yi Xiu Factory Building, Shi Cheng Temple, the Public Free Clinic Society headquarters, YWAM Singapore, Kim Court, The Diamond, Cico Flooring, Gems Ville, Thirteen BBQ Bar, BUILDERSmart, Teck Hoe Airconditioning Parts, Wunderfolks, Instyle Hair Salon and Yap Sun Hardware (dated exteriors), Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
+The current named places include Shan Yuan Tang, Masjid Haji Mohd Salleh, Leong Kee (Klang) Bak Kut Teh, Mongkok Dim Sum, Nanyang Dentist and Shaxian Eatery (dated exteriors), Rozel Furniture, JH Hotel, the Nanyang Fan Clan General Association, Ya Ju Hotel, Sheng Siong Supermarket and Anytime Fitness Geylang Central at No. 301 Geylang Road, on Lorong 17 Feng Shang Hair Salon, the General Board of True Jesus Mission, the Yang Clan General Association, the Gyaltsap Tashi Ling Buddhist Society, Bright Star Hotel, the Singapore Chinaware Merchants Association and the Singapore Rattan Industry Association, on Lorong 19 Eminent Frog Porridge & Seafood, The Primero, the Nanyang Chee Clan Association, Chee Hoe Hong, Lei Zang Si, Starlon and Tektron Pacific, He Ping Claypot Rice Restaurant, Kang Ha Pheng Sim Kok, Bougainvilla Apartments, Sims Point and, at its Geylang Road corner, Straits Laundry, Nanyang Hardware and Romance Adult Shop, between Lorong 17 and Lorong 19 Mary Hair Salon and Scarlett Supermarket @ Geylang on Geylang Road and Lefon Sewing Machine & Machinery, the Guangxi and Gaozhou Association with Bali Nasi Lemak, Bikemart SG and Vietsea II on Sims Avenue, on Lorong 21 Cheng Yi Coffee Shop at its Geylang Road corner, the Nyingma Kathok Buddhist Centre, Bei Chen Gong, Tan Ser Seng Herbal Soup and HCSA Community Services, on Lorong 14 Wing Fong Court, Wing Fong Mansions, 樂緣 (HAPPY 31), ibis budget Singapore Pearl (a dated exterior), Central Imperial and The Amazing Inn, at its Geylang Road corner and east to Lorong 16 Little Charcoal Stove, Sea Mu To TCM Wellness, Em Salon Spa with 暹罗指压保健, Valu$, The Green Essential, 傅兴记 with B&S Food Corner, and B&S hardware, on Lorong 16 Chang Jiang G1 Claypot Frog Porridge and B & S Mini Mart at its Geylang Road corner, Hotel 81 Geylang, Then Shen Temple, Crystal Lodge, the Singapore Poh Clan Association, the Singapore Soon Clan Association, Lodge 41, Hotel 81 Palace and 善缘古佛社, on Lorong 18 Le Regal at its Geylang Road corner back to Lorong 16, OYO 102 Budgetone Hotel, Cygon, Club 20, GoFit X Gym Geylang, Hotel 81 (Premier) Star, the Diamond Hotel, the Dabu Hakka Building (rebuilding in 2024) and, at its east corner, Hin Sheng Coffee House and T1 Trading, Fok Wai Kee Hardware, QianJing Crystal, Golden Jade Restaurant, 277 KTV, Eros, RR Motor, the Buddhist Art Centre, Eat First, the Sik Wai Sin frontage, K Hotel 1515, the Lam Clan Association, the Hainan Lim Clan Association building, the Sui Yuan Ju Buddhist Society, the Singapore Chong Min Association, Foo Hui Ging Xiu Centre, Hong Ye Chen Interior Design, K Group, Plus Mobile, Lanna Thai Traditional Massage, JiangSu Jiu Jia, Liu Da Ma BBQ, the Muhammadiyah Islamic College, FSL EW LED Lighting, Bar @ Lorong 13, Chen Hing Trading, the AiSecurityReady shop at No. 2 Lorong 11, Mister Contracts, Eng Lee Huat Hardware, Goodwood Garments, the Tibetan Buddhist Studies Society, Zheng Li Hearty Kitchen, Ting Yu Xuan, Ke Lai Shun Restaurant, Mobile Time, Shi Hao Hotpot BBQ, Geylang Lor 9 Beef Kway Teow, Wat Dhammasatis, Red Dot Running Company, the Guan Keat coffeeshop at No. 38 Lorong 11, Ming Li's Eating House, Lian Seng Weighing Scale Co., Tian Tian Minimart, TakeToys, ChongQingXiaoMian, Monster Ink, Shadow Tattoo (a dated exterior), the Nanyang Lian Clan Association building, Sin Chew Tan's Clan Association, the Teck Keow Association, Hong Sheng Koon, the Singapore Ship-Chandlers Association, the AhlulBayt Educational & Cultural Centre, Hotel 81 Spring, ibis budget Singapore Gold, Red Flag Store (Davco), the Yi Xiu Factory Building, Shi Cheng Temple, the Public Free Clinic Society headquarters, YWAM Singapore, Kim Court, The Diamond, Cico Flooring, Gems Ville, Thirteen BBQ Bar, BUILDERSmart, Teck Hoe Airconditioning Parts, Wunderfolks, Instyle Hair Salon and Yap Sun Hardware (dated exteriors), Hotel 81 Joy and several Lorong 11 associations and community premises. The [reference notes](docs/lorong-11-references.md) and [building queue](docs/lorong-11-building-queue.md) record the full set.
 
 ## Run locally
 
@@ -216,6 +216,47 @@ Review URLs can open directly opposite a model. For example:
 /?review=sims-178
 /?review=hcsa-community-services
 /?review=sims-164-168
+/?review=wing-fong-court
+/?review=wing-fong-mansions
+/?review=l14-35
+/?review=le-yuan
+/?review=l14-27
+/?review=ibis-budget-pearl
+/?review=central-imperial
+/?review=amazing-inn
+/?review=little-charcoal-stove
+/?review=sea-mu-to
+/?review=valu
+/?review=green-essential
+/?review=gr-298
+/?review=fu-xing-ji
+/?review=bs-hardware-lorong-16
+/?review=chang-jiang-g1
+/?review=bs-mini-mart
+/?review=l16-6
+/?review=hotel-81-geylang
+/?review=then-shen-temple
+/?review=crystal-lodge
+/?review=l16-54
+/?review=l16-westerhout-15
+/?review=poh-clan
+/?review=soon-clan
+/?review=lodge-41
+/?review=hotel-81-palace
+/?review=l16-15
+/?review=shan-yuan-gu-fo-she
+/?review=le-regal
+/?review=budgetone-hotel
+/?review=cygon
+/?review=gofit
+/?review=l18-30
+/?review=l18-44b
+/?review=l18-55
+/?review=hotel-81-star
+/?review=diamond-hotel
+/?review=dabu-hakka
+/?review=hin-sheng
+/?review=t1-trading
 ```
 
 These are inspection starts, rather than navigation or tracking features.
@@ -224,7 +265,7 @@ These are inspection starts, rather than navigation or tracking features.
 
 The original OpenStreetMap extract is retained at `public/osm-source.osm`. The preparation script produces `public/map.json`, preserving geographic coordinates, way identifiers, one-way tags and source building footprints. Projection and rendering use metres, without compressing the streets. The metre conversion is tested against an independent haversine calculation.
 
-The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 119 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026, Lorong 17 with its Geylang Road and Sims Avenue links on 12 October, Lorong 19 with its links back to Lorong 17 and Lorong Bachok's mouth the same day, and Lorong 21 with its links back to Lorong 19 and Lorong Bachok's east mouth on 13 October), 264 building outlines, two alley or footway ways and one Lorong 9 access-context way. The study bounds were widened on 10 October (open question 26), to 103.87597–103.87859 E and 1.31150–1.31425 N, to take in the boundary blocks. Lorong 17 (open question 35) is taken by its own ways rather than by widening the rectangle again: its eleven new buildings and its road ways are listed by id, and the lane and its two junctions are walkable corridors (`corridors` in `map.json`). Lorong 19 (open question 42) is taken the same way: its fifteen buildings and the Geylang Road and Sims Avenue houses back to Lorong 17 (open question 43), with the lane and the Geylang Road and Sims Avenue links from Lorong 17's junctions as corridors. Under open questions 44–46 its buildings stand on authored footprints on their photographed positions. Lorong 21 (open question 47) is taken the same way: its buildings with the corners at both ends, and the Sims Avenue houses back to Lorong 19, with the lane and the Geylang Road and Sims Avenue links from Lorong 19's junctions as corridors. Its buildings stand on their source footprints for now; moving them onto their photographed positions is open questions 48–50.
+The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 150 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026, Lorong 17 with its Geylang Road and Sims Avenue links on 12 October, Lorong 19 with its links back to Lorong 17 and Lorong Bachok's mouth the same day, Lorong 21 with its links back to Lorong 19 and Lorong Bachok's east mouth on 13 October, and Lorong 14 with Talma Road's east mouth, Lorong 16 and Lorong 18 with Westerhout Road's mouth and a Geylang Road link on 17 October), 347 building outlines, two alley or footway ways and one Lorong 9 access-context way. The study bounds were widened on 10 October (open question 26), to 103.87597–103.87859 E and 1.31150–1.31425 N, to take in the boundary blocks. Lorong 17 (open question 35) is taken by its own ways rather than by widening the rectangle again: its eleven new buildings and its road ways are listed by id, and the lane and its two junctions are walkable corridors (`corridors` in `map.json`). Lorong 19 (open question 42) is taken the same way: its fifteen buildings and the Geylang Road and Sims Avenue houses back to Lorong 17 (open question 43), with the lane and the Geylang Road and Sims Avenue links from Lorong 17's junctions as corridors. Under open questions 44–46 its buildings stand on authored footprints on their photographed positions. Lorong 21 (open question 47) is taken the same way: its buildings with the corners at both ends, and the Sims Avenue houses back to Lorong 19, with the lane and the Geylang Road and Sims Avenue links from Lorong 19's junctions as corridors. Its buildings stand on their source footprints for now; moving them onto their photographed positions is open questions 48–50. Lorong 14 (open question 51) is taken the same way, south from Geylang Road to the extract's edge, with its east corner block and the Geylang Road row east to Lorong 16 (Nos. 284–308); the lane is a corridor (its mouth is inside the Geylang Road corridors), and so is the forecourt of Nos. 302–308, which stand back beyond the Geylang Road corridor. Its buildings stand on their source footprints for now; the lane runs on past the extract to Guillemard Road (open question 52), and moving buildings onto their photographed positions is open questions 53 and 55–57. Lorong 16 (open question 61) is taken the same way, from Geylang Road to the extract's southern edge: its buildings with the west corner on Geylang Road (Nos. 310–314) and the terrace at the head of Westerhout Road, with the lane as a corridor whose junction lies on the Geylang Road corridor from Lorong 19 to Lorong 21. Its buildings also stand on their source footprints; the footprint and extract questions are open questions 62–68. Lorong 18 (open question 71), south of Geylang Road, is taken the same way: its buildings from Geylang Road to Westerhout Road with the corners at both ends, and the Geylang Road block back to Lorong 16 (Le Regal), with the lane from the Geylang Road centreline to the Westerhout Road centreline as a corridor and Geylang Road carried on from the Lorong 21 link to about 18 m past Lorong 18's junction. Westerhout Road's mouth and the stub south of it are road surface outside the corridor. Its buildings stand on their source footprints; moving the west side onto its photographed line is open question 73.
 
 This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 
@@ -294,6 +335,9 @@ Detailed provenance is available in:
 - [Lorong 17 brief](docs/lorong-17-brief.md)
 - [Lorong 19 brief](docs/lorong-19-brief.md)
 - [Lorong 21 brief](docs/lorong-21-brief.md)
+- [Lorong 14 brief](docs/lorong-14-brief.md)
+- [Lorong 16 brief](docs/lorong-16-brief.md)
+- [Lorong 18 brief](docs/lorong-18-brief.md)
 
 ## Project structure
 

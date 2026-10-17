@@ -54,7 +54,251 @@ Started: 10 October 2026.
       The listing points run about 5 m east of the photographed fronts, as the address points do, so the houses are matched by number.
     - **Unlocks:** fourteen fronts at their true widths and depth, and six more named places. If the answer is no, the row stays sliced across its source ways, unnamed.
 
+52. **Lorong 14 south of the extract: extend the source extract to the lane's south end at Guillemard Road?**
+    - **Evidence:** recorded during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md)).
+      - The retained extract's south edge is 1.3110 N. Its last Lorong 14 way (762862447) ends at about 1.3108 N, where the lane is about 190 m from Geylang Road.
+      - The June 2024 drive runs on south for about 100 m more, to Guillemard Road at about 1.3100 N (`GUtb…`, at 113 Guillemard Road).
+      - Beyond No. 37 the east side carries on behind a corrugated hoarding, with single-storey houses under tiled roofs and a temple compound whose gate reads 鳳山寺. None of them is in the extract.
+      - Wing Fong Mansions (way 764372595) is in the extract only because some of its nodes are inside it. Its lane face runs about 122 m, about 85 m past the extract's last way.
+    - **What happens now:**
+      - The walk stops at No. 37 on the east side and at Wing Fong Mansions on the west, which is modelled over its whole source outline.
+      - The lane's corridor ends at the extract's last way, so the south part of Wing Fong Mansions' face can be seen but not walked to.
+    - **Recommendation:** yes. Retrieve a new extract reaching about 1.3095 N, so that Lorong 14 runs to Guillemard Road. Then finish the east side south of No. 37 and the lane's south end in a later pass, as Lorong 14 was walked.
+    - **Unlocks:** the whole of Lorong 14, the rest of its east side and its Guillemard Road corners.
+
+53. **Lorong 14 east side, Nos. 25–33: re-author the terrace on its photographed line?**
+    - **Evidence:** each house was measured from June 2024 lane panoramas during the walk ([Lorong 14 brief](lorong-14-brief.md), stops 5–9). Along s, measured south along No. 25's source front from its north end, the source party walls stand at 0, 6.12, 12.95, 19.41, 26.28 and 32.35 m.
+
+      | House | Way | Photographed against the source outline |
+      | --- | --- | --- |
+      | No. 25 | 764372578 | Upper floors 2.5 m back; s 0.67–5.1, 4.4 m against 6.05 m; gate about 3.4 m forward |
+      | No. 27 | 764372579 | Upper floors about 1.9 m back; s 5.1–11.45, 6.35 m against 6.68 m; gate about 5.8 m forward |
+      | No. 29 | 454274608 | Upper floors about 1.3 m back; s 11.45–20.6, 9.2 m against 6.3 m; gate about 6.3 m forward |
+      | No. 31, 樂緣 | 454274611 | Front 1.5 m forward; 1.2–7.6 m along its source edge, against 0–6.86; canopy front and board about 6 m forward |
+      | No. 33 | 454274614 | Upper floors 2.25 m forward; 1.0–6.7 m along its source edge, against 0–6.07; gates about 6 m forward |
+
+    - **What happens now:** each elevation is laid proportionally on its source edge, so fronts stand up to 2.5 m from their photographed lines, and features up to about a metre from their photographed places. The gates and No. 31's canopy front are drawn at their triangulated lines.
+    - **Recommendation:** yes. Author one footprint group for the five houses, as for the Lorong 19 west side (question 46):
+      - fronts on the photographed lines;
+      - party walls at the measured positions;
+      - rear lines kept.
+
+      No. 35 (on its source line) and No. 37 stay as they are.
+    - **Unlocks:** true widths along the terrace (No. 29 is half as wide again as its way), porches at their true depth, and No. 31's board on its own house.
+
+54. **No. 21 Lorong 14: keep the photographed name ibis budget Singapore Pearl, or take the listing's ibis budget Singapore Vanda?**
+    - **Evidence:** recorded during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stop 10).
+      - The June 2024 photographs show a blue ibis budget sign on a plinth lettered PEARL. The source map names the building Ibis budget Singapore Pearl.
+      - Google Maps now lists the hotel at the same address (21 Lor 14 Geylang, Singapore 398961), with its point inside the way, as ibis budget Singapore Vanda.
+    - **What happens now:** the hotel is named ibis budget Singapore Pearl, as a dated exterior, with its photographed sign and the later listing recorded in the evidence.
+    - **Recommendation:** keep the photographed name. The model shows the June 2024 exterior, and its sign reads PEARL; the brand agrees with the listing. If newer imagery shows a Vanda sign, rename it then.
+    - **Unlocks:** settles how a renamed business with a dated sign is named. The ibis budget Singapore Gold model on Sims Avenue may need the same check.
+
+55. **No. 284 Geylang Road, the Lorong 14 east corner: move its lane face onto its photographed line?**
+    - **Evidence:** measured during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stops 13–16).
+      - The lane face's pilasters, triangulated from June 2024 lane panoramas (`3MIt…` with `r047…`, checked from `x44k…`), stand **2 m in front of** the source edge, towards the lane. The face runs about 25.5 m from the corner to the back lane, the source edge's length.
+      - The corner triangulates from two Geylang Road panoramas about 1.8 m west of the source chamfer. So the Geylang Road front, with its corner bay, is about 7.1 m against the source's 4.07 m plus a 1.62 m chamfer.
+      - The Geylang Road fronts of Nos. 286–290 stand on their source line, their party walls within 0.4 m of the source ones.
+    - **What happens now:** the lane face is laid on its source edge, so it stands 2 m behind its photographed line, and its corner bay stands on the source chamfer. The source edge is 5.9 m from the lane's centreline; on the photographed line the face would be about 3.9 m from it, 0.65 m clear of the estimated carriageway.
+    - **Recommendation:** yes. Author No. 284's footprint with its lane face 2 m forward and a short chamfer at the photographed corner, keeping its party wall with No. 286 and its rear line. Leave Nos. 286–290 on their source outlines.
+    - **Unlocks:** the corner house at its true width, its five-foot way and awning at their photographed depth on the lane, and the corner board on its photographed corner.
+
+56. **Geylang Road Nos. 296–300: re-space the Paramount building and its neighbour onto their photographed party walls?**
+    - **Evidence:** measured during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stops 19–21). Along g, measured west from No. 290's east party wall (negative eastward), the pilasters triangulated from three June 2024 Geylang Road panoramas stand on the source front:
+
+      | House | Way | Photographed | Source |
+      | --- | --- | --- | --- |
+      | No. 296, The Green Essential | 454254169 | g −10.0 to −14.84 (4.84 m) | −9.87 to −13.85 (3.98 m) |
+      | No. 298, the Paramount building | 764372576 | −14.84 to −19.75 (4.9 m) | −13.85 to −18.59 (4.74 m) |
+      | No. 300, its single-storey extension | 475173286 | −19.75 to about −25.3 (5.55 m) | −18.59 to −24.89 (6.3 m) |
+
+    - **What happens now:** each front is laid proportionally on its source edge, so No. 298's two-storey front stands about a metre west of its photographed place and No. 300's extension is stretched.
+    - **Recommendation:** yes. Re-space the three ways on their source front and rear lines, cut at the photographed party walls, as question 45 did for Nos. 313–321.
+    - **Unlocks:** the Paramount building at its true place, and No. 296 at its true width.
+
+57. **Geylang Road Nos. 302–308: move the block's front 2.25 m forward and re-space it on its photographed party walls?**
+    - **Evidence:** measured during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stops 22–25).
+      - The windows and air-conditioners of the four fronts line up between three June 2024 Geylang Road panoramas 2.25 m in front of the source front.
+      - On that plane the divisions stand at 6.57, 0.11, −5.88, −11.55 and about −17.35 m along No. 302's front (west positive), against the source's 6.59, 0, −5.45, −11.46 and −16.91 m. The fronts are 6.46, 6.0, 5.67 and 5.8 m wide, against ways of 6.59, 5.45, 6.02 and 5.45 m.
+      - No. 308's east wall stands about 0.45 m inside No. 310's source way, which belongs to the Lorong 16 walk.
+    - **What happens now:** each front is laid proportionally on its source edge, 2.25 m behind its photographed line. The forecourt corridor (`Geylang Road, the forecourt of Nos. 302-308`) covers both lines.
+    - **Recommendation:** yes. Author four footprints with their fronts 2.25 m forward, cut at the photographed divisions, keeping the source rear lines. Settle No. 308's east wall with the Lorong 16 walk's No. 310.
+    - **Unlocks:** the block at its true depth and widths, and its awnings over the forecourt at their photographed depth.
+
+62. **Extend the extract south to take in the rest of Lorong 16, to Guillemard Road?**
+    - **Evidence:** the retained extract's southern edge (1.3110 N) cuts Lorong 16 about 190 m from Geylang Road ([Lorong 16 brief](lorong-16-brief.md)).
+      - The lane's last way in the extract (632249196) ends at the edge, but its two footways (874953095 and 874953096) run on to about 1.3101 N.
+      - The June 2024 drive continues about 95 m further south to Guillemard Road, past Canberlin Apartments (listed at 60 Lorong 16) and the Association Building (68 Lorong 16) on the west side, and the houses at the corner of Westerhout Road on the east.
+      - None of their outlines, nor the lane's ways south of the edge, are in the extract.
+    - **What happens now:** the walk stops at the last buildings the extract holds: No. 54 on the west side, whose outline crosses the edge, and the terrace at the head of Westerhout Road on the east. The corridor ends at the end of way 632249196.
+    - **Recommendation:** yes, as a later pass. Retrieve a dated extract of the strip south of the edge to Guillemard Road (about 1.3095–1.3110 N, 103.8785–103.8810 E), keep `public/osm-source.osm` as retained, take the lane's southern ways and buildings in by id, and walk them as a continuation of the Lorong 16 brief.
+    - **Unlocks:** the whole of Lorong 16, with its junction on Guillemard Road, and the corridor carried to it.
+
+63. **Lorong 16 west corner, Nos. 310–314 Geylang Road (ways 764372570, 764372571 and 764372569): move the row onto its photographed line, and carry No. 314 back to the back lane?**
+    - **Evidence:** measured from the June 2024 Geylang Road and Lorong 16 drives ([Lorong 16 brief](lorong-16-brief.md), stops 1–3).
+
+      | Building | Photographed against the source outline |
+      | --- | --- |
+      | Nos. 310 and 312 | Fronts 2.5 m in front (north) of the source front; party walls within 1 m of the source ones (No. 312 about 5.6 m wide, No. 310 about 5.6 m) |
+      | No. 314, the corner | Geylang Road front 2.5 m north and about 5.2 m wide against 3.02 m; a splay of about 3.6 m; lane face 1.75 m east of the source edge, running about 27 m from the splay to the back lane against 16.18 m |
+
+    - **Satellite:** it also puts the corner's roof about 3 m north of the source outline.
+    - **What happens now:** each front is laid proportionally on its own source edge, except No. 314's lane face, which is laid at its own scale from the splay. Its southern 11 m, with the back doors and the LPG store, is not drawn, and No. 314's Geylang Road front is squeezed to 0.58 of its width.
+    - **Recommendation:** yes. Author three footprints:
+      - **Nos. 310 and 312:** fronts 2.5 m north, cut at the photographed party walls, with their source rear lines kept;
+      - **No. 314:** its Geylang Road front 2.5 m north, its splay, and its lane face 1.75 m east, carried south to the back lane, with its west wall on No. 312's.
+    - **Unlocks:** the corner's whole lane face at its true length, its Geylang Road front at its true width, and awnings at their photographed depth.
+
+64. **Lorong 16, Nos. 6–18 (way 763764689): re-author the walk-up's east face on its photographed line, without the steps?**
+    - **Evidence:** read from the June 2024 lane panoramas ([Lorong 16 brief](lorong-16-brief.md), stop 4).
+      - The source outline's east face steps back about 1 m four times. The photographed façade is flat, under a straight eave, with eight window columns and two stair bays.
+      - The façade lines up between four panoramas about 2.6 m in front of (east of) the outline's longest step, and runs about 30.3 m against the 31.3 m source face.
+      - The registered satellite shows its roof 4–6 m east of the outline, with deep eaves, about 14.5 m deep; the outline's jagged west side lies under lower roofs.
+    - **What happens now:** one elevation is laid along the source face and sliced across its nine east edges, so windows near the steps are cut in two and the eave steps with the outline.
+    - **Recommendation:** yes. Author one footprint: a straight east face 2.6 m east of the longest step, from the source face's south end to its north end, keeping the source north, south and west sides.
+    - **Unlocks:** a flat front at its true line, whole windows and a straight eave.
+
+65. **Lorong 16 west side, No. 20 to No. 54: re-author four outlines on their photographed positions?**
+    - **Evidence:** measured from the June 2024 lane drive, and for the temple the December 2022 drive ([Lorong 16 brief](lorong-16-brief.md), stops 5–9). Crystal Lodge (stop 7) stands on its source edge and needs no change.
+
+      | Building | Way | Photographed against the source outline |
+      | --- | --- | --- |
+      | No. 20, Hotel 81 Geylang | 763764687 | East face 12.4 m long against 10.06 m: from 0.4 m south of the source face to 2.3 m north of it, its stair tower about 1 m forward, beyond the outline's north-east corner |
+      | No. 24, Then Shen Temple | 763764688 | Front 1.5 m forward; corner piers 14.8 m apart against the 16.04 m edge; its boundary wall about 7 m forward |
+      | No. 50 | 764372580 | Not measurable from the lane (19–23 m behind hoarding). The satellite shows its dark roof 3–5 m east of the outline |
+      | Nos. 54–58 | 763764654 | North-east corner about 1 m west and 1.8 m south of the source corner, from three panoramas; the satellite shows the roof slab 3–4 m east instead |
+
+    - **What happens now:** each building is laid on its source edges: the hotel's face is squeezed to 0.81 of its length, and the temple's front stands 1.5 m behind its photographed line.
+    - **Recommendation:**
+      - **Hotel 81 Geylang:** yes. Extend the east face 0.4 m south and 2.3 m north, with the tower 1 m forward on its north end.
+      - **Then Shen Temple:** yes. Move the front 1.5 m forward at its photographed width, keeping the rear line.
+      - **Nos. 50 and 54–58:** not yet. The panoramas and the satellite disagree by about 5 m, so keep the source outlines until a closer capture or a survey settles them.
+    - **Unlocks:** the hotel's tower and face at their true size, and the temple's verandah at its true depth.
+
+66. **Westerhout Road Nos. 15–19 (ways 763764668, 763764667 and 763764666): move the fronts back from the porch line to the upper floors?**
+    - **Evidence:** read from the December 2022 Westerhout Road drive ([Lorong 16 brief](lorong-16-brief.md), stops 10–12).
+      - The houses' upper floors line up between four panoramas on one plane with Nos. 43 and 45's fronts.
+      - The outlines' south edges step: the porch edges stand 2.1–3.1 m in front of that plane, at the gate line, and the recessed edges 0.2–2.1 m behind it.
+    - **What happens now:** each house's elevation is drawn on its porch-line edges, so the upper floors and walls rise at the gate line, about 2–3 m in front of their photographed position, and the stepped outlines show as steps in the façade.
+    - **Recommendation:** yes, as a later pass with Westerhout Road (question 62). Author three footprints whose fronts follow the upper floors' plane, with the porches and gates drawn in front as open structures.
+    - **Unlocks:** flat fronts on their true line, and open porches.
+
+67. **Lorong 16 east side, Nos. 41–45: move Lodge 41 onto its photographed tower, and re-cut its party line with No. 43?**
+    - **Evidence:** read from the June 2024 lane drive ([Lorong 16 brief](lorong-16-brief.md), stops 18–20).
+      - **Lodge 41 (way 763764673):** a narrow four-storey tower. Three panoramas spread over 20 m of the lane agree on its front within 0.3 m about 4.5 m in front of its neighbours' fronts, about x = 299 in scene metres. That is **8.5 m in front of** its source edge, which stands 4 m behind its neighbours'. The tower is about 4.5 m wide, from about 1.5 m south of the source edge's north end to 1.4 m beyond its south end. Its blank side walls run back to the neighbours' fronts.
+      - **No. 43, Singapore Soon Clan Association (way 763764672):** its front runs about 3.7 m, from the tower's south wall to No. 45, against its 4.52 m source edge. The source party line with Lodge 41 stands about 0.8 m north of the tower's south wall.
+      - **No. 45, Singapore Poh Clan Association (way 763764671):** its front runs about 5.1 m, from No. 43 to the side wall of No. 47's tower, against 4.64 m.
+      - **No. 47 (way 763764670):** its tower stands on its source edge, about 6 m in front of its neighbours, as the source outline already draws it.
+    - **What happens now:** each front is laid on its source edge. Lodge 41's tower stands 8.5 m behind its photographed line, recessed 4 m behind Nos. 39 and 43 where it really stands 4.5 m in front of them. No. 43 is stretched to 1.22 times its photographed width.
+    - **Recommendation:** yes. Author two footprints:
+      - **Lodge 41:** its tower front at the photographed line, 4.5 m wide, with its side walls run back to the neighbours' fronts and the source rear kept;
+      - **No. 43:** its north party line moved to the tower's south wall.
+
+      Nos. 45 and 47 stay on their source outlines.
+    - **Unlocks:** Lodge 41's tower and No. 43's front at their true positions and widths.
+
+68. **Lorong 16, Nos. 9–19 (ways 763764682 to 763764678): drop No. 19's way, and re-cut the terrace onto its four photographed houses?**
+    - **Evidence:** read from the June 2024 lane drive ([Lorong 16 brief](lorong-16-brief.md), stops 24–28).
+      - The terrace is four two-storey houses, Nos. 9, 11, 15 and 17 (plated NO 11, 15 and 17), about 19 m long, on the source line.
+      - The source map has five ways over 24 m. Measured along No. 15's lane edge from its north end, the photographed party walls stand at −8.4, −3.85, 0.96, 5.84 and 10.6 m, against the source's −9.56, −4.32, 0, 5.59, 9.55 and 14.47.
+      - The fifth way, No. 19 (763764678), lies in the cleared site behind grey hoarding that runs to Hotel 81 Palace. The site already stood empty in March 2021.
+    - **What happens now:** each house is laid proportionally on its own source edge (×0.83 to ×1.15). No. 19's way is drawn as a 2.4 m hoarding round its outline, with no building.
+    - **Recommendation:** yes. Author four footprints at the photographed party walls on the source front and rear lines, with No. 17's south wall at 10.6 m. Drop way 763764678, and draw the hoarding along the pavement in front of the site from No. 17 to Hotel 81 Palace.
+    - **Unlocks:** true house widths, and the cleared site open behind its hoarding.
+
+72. **Lorong 18: leave the stub south of Westerhout Road and the Westerhout Road row for a later pass?**
+    - **Why it comes up:** question 71 stops Lorong 18 at Westerhout Road. The lane's carriageway carries on south of the junction about 58 m to the edge of the extract (way 632503609), and is drawn there as road surface, outside the walkable corridor. Westerhout Road's mouth either side of the lane is drawn the same way.
+    - **What the extract holds there:**
+      - **Westerhout Road's north side,** east of No. 55: No. 61 (way 454438307), listed as the address of Kip Inn, and No. 69 (way 764372539).
+      - **Its south side and the stub:** No. 54 (way 764372525) and No. 56 (way 454274544), east of the stub. The extract's southern edge, 1.3110 N, runs just south of Westerhout Road, so the stub's west side and the rest of Westerhout Road's south side have no outlines.
+      - **The head of Westerhout Road,** west of No. 44B, is the Lorong 16 walk's.
+    - **Recommendation:** yes. Leave them for a Westerhout Road pass. Taking in the stub's west side would need the extract extended south, which is a separate decision.
+    - **Unlocks:** nothing now; it records where the lane stops.
+
+73. **Lorong 18 west side, No. 14 to No. 44B: re-author the outlines on their photographed line?**
+    - **Evidence:** measured from June 2024 lane panoramas during the walk ([Lorong 18 brief](lorong-18-brief.md), stops 3–19). The houses were read on one plane along No. 30's front, s metres north from its south corner.
+
+      | Building | Way(s) | Photographed against the source outline |
+      | --- | --- | --- |
+      | Nos. 14–20, a terrace | 454274632, 764372568, 764372567, 764372566 | Each source front is two edges stepping about 2 m; the projecting ones follow the porches. Upper façades 2 m behind the recessed edges and 4.5 m behind the projecting ones. Party walls at s = 29.7, 38.1, 46.2, 55.9 and 62.5, against 31.7, 38.9, 46.8, 54.5 and 62.5 |
+      | Nos. 22–24, GoFit X Gym Geylang | 454274634, 764372565 | One building over both ways. Front 2–2.5 m in front of the projecting edges and 5 m in front of the recessed ones. 13.5 m long (s = 18.3 to 31.8) against 12.2 m |
+      | Nos. 26–28, a single-storey pair | 454274635, 454274637 | Porch on the projecting edges. GoFit's south wall stands about 1 m inside No. 26's outline |
+      | Nos. 30–36, a terrace | 454274639, 454274640, 764372564, 764372563 | Upper façades 3.25 m behind the source fronts of Nos. 30–34, which follow the porch roofs, and 0.85 m behind No. 36's. Party walls at s = 6.95, −0.8, −8.7, −17.0 and −23.0, against 7.97, 0, −7.83, −14.88 and −22.15 |
+      | Nos. 38–44, a terrace | 454274642, 764372562, 454274643, 764372561 | Fronts 0.25 m in front; party walls within 0.8 m of the source ones |
+      | No. 44B, the Westerhout Road corner | 454274645 | Lane face about 1 m behind, its south corner 1.4 m south of the source corner; Westerhout Road front about 1 m behind (December 2022) |
+
+    - **What happens now:** each elevation is laid on its source edges, proportionally across a stepped front. Fronts stand up to 4.5 m from their photographed lines, and the porches and car porches are drawn as fittings on them.
+    - **Also recorded, no change proposed:** Le Regal's Geylang Road front stands about 1 m behind its source edge, and No. 10's 0.5 m behind.
+    - **Recommendation:** yes, for Nos. 14–36 and No. 44B. Author one footprint group for the west side, as the Lorong 19 west side was (question 46):
+      - each house's front on its photographed upper-façade line, its party walls at the measured lines, and its rear line kept;
+      - the porches drawn in front at their photographed depth, as single-storey parts where they are roofed;
+      - GoFit as one footprint over both ways, at its photographed length;
+      - No. 44B's lane face moved back to its photographed corner.
+
+      Nos. 38–44 stand within 0.8 m of their outlines and stay on them.
+    - **Unlocks:** true positions and widths along the west side, porches at their photographed depth, and render-and-compare from the photographs.
+
+74. **Lorong 18, No. 34 (way 764372564): name 浯鄉陳氏公會 from its lettering, when its listing gives No. 40?**
+    - **Evidence:** in June 2024 raised black lettering along the parapet of No. 34 reads 浯鄉陳氏公會. A yellow board with the association's emblem, reading 浯鄉陳氏公會 CHEN'S ASSOCIATION, hangs over a grille gate to the stair at the house's north end. The number 34 is on the house's marble front ([Lorong 18 brief](lorong-18-brief.md), stop 13).
+    - **Listing:** Google Maps lists 浯乡陈氏公会, an association, at **40** Lor 18 Geylang, Singapore 398819, with its point inside No. 34's way. No. 40, three houses south, has no sign for it.
+    - **Current rule:** both listing and signage must agree on the address, so No. 34 is modelled unnamed, with its lettering and board blank.
+    - **Recommendation:** yes. Open question 12 allows a clearly signed occupant when published addresses disagree, and the listing point and both signs agree on this house. Name the association as the occupant of No. 34's upper floor, after its lettering, recording the No. 40 address, as the Singapore Rattan Industry Association was named under question 37.
+    - **Unlocks:** one named association, with its lettering and board redrawn.
+
+75. **Lorong 18, No. 346 Geylang Road (way 454438314): name Petopia as an upper-floor occupant from its signs, when its listing gives No. 348A?**
+    - **Evidence:** in June 2024 a teal board reading Petopia hangs on the top floor of No. 346's splayed corner, over Hin Sheng Coffee House, with a round Petopia blade sign at the corner ([Lorong 18 brief](lorong-18-brief.md), stops 24–26). No. 348 next door has no Petopia sign.
+    - **Listing:** Google Maps lists Petopia, a pet care service, operating, at **348A** Geylang Road, Level 2, Singapore 389369, with its point inside No. 346's way.
+    - **Current rule:** both listing and signage must agree on the address, so Petopia's signs are drawn blank. No. 346 is named after Hin Sheng Coffee House.
+    - **Recommendation:** yes. The listing point and both signs agree on this house; 348A is probably the unit number of the upper floors. Under open question 12, name Petopia as the occupant of No. 346's upper floors beside Hin Sheng Coffee House, recording the 348A address, as the associations over Lorong 12 shops were named under question 31.
+    - **Unlocks:** one more named place, with its board and blade redrawn.
+
 ## Settled
+
+### Twelfth batch, 17 October 2026
+
+The project owner asked for three lanes south of Geylang Road to be mapped at the same time, each in full without stopping until it is finished: Lorong 14, Lorong 16 and Lorong 18. Each lane was walked on its own branch with its own block of question numbers (51–60, 61–70 and 71–80), so the numbers in this log skip between the lanes. Questions 51, 61 and 71 are recorded as answered by that instruction, on question 47's terms, with the block faces shared out between the lanes. The Geylang Road row between Lorong 14 and Lorong 16 (Nos. 292–308) is walked with Lorong 14, since Lorong 14's faces back to Lorong 12 are already in the map, to balance the work, and the Geylang Road block between Lorong 16 and Lorong 18 (way 541941365) with Lorong 18.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 51 | **Yes.** Model Lorong 14 from Geylang Road to the edge of the extract, one building at a time in street order, with the east corner block and the Geylang Road row east to Lorong 16 | The lane, its buildings, Talma Road's east mouth and a forecourt corridor for Nos. 302–308 join the map; the walk is recorded in the [Lorong 14 brief](lorong-14-brief.md) |
+| 61 | **Yes.** Model Lorong 16 from Geylang Road to the edge of the extract, one building at a time in street order, with the west corner on Geylang Road (Nos. 310–314) | The lane, its buildings and its junction join the map; the walk is recorded in the [Lorong 16 brief](lorong-16-brief.md) |
+| 71 | **Yes.** Model Lorong 18 between Geylang Road and Westerhout Road, one building at a time in street order, with the Geylang Road block back to Lorong 16 | The lane, its buildings, its Geylang Road junction, Westerhout Road's mouth and a Geylang Road link on from the Lorong 21 link join the map; the walk is recorded in the [Lorong 18 brief](lorong-18-brief.md) |
+
+Question 51 in full:
+
+51. **Lorong 14, Geylang Road to the edge of the extract: build it as Lorong 21 was built?**
+    - **Order:** start at the Geylang Road end, go south down the west side, then come back north up the east side to Geylang Road, then east along Geylang Road from No. 292 to No. 308. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** Lorong 14 runs south from Geylang Road, past Talma Road's east end, to the south edge of the retained extract at about 1.3108 N. Take in the corners at both ends of both sides and at Talma Road. Talma Road's east mouth is kept as road surface, as Lorong Bachok's mouth was; the Talma Road row waits for a later pass. If the lane runs on past the extract, stop at the last building the extract holds and log a question on extending it.
+    - **Block faces:** the Geylang Road faces back to Lorong 12 are already in the map. To balance the three lanes' work, take the Geylang Road row east to Lorong 16 instead: Nos. 292–308, between the east corner block (Nos. 284–290) and Lorong 16's west corner. No. 310 and the Lorong 16 corner belong to the Lorong 16 walk.
+    - **The west corner on Geylang Road:** no unmodelled source outline stands there, so check what does, and record it.
+    - **Map:** add the lane's buildings and road ways by id, as for Lorong 21. The lane becomes a walkable corridor. Its mouth is already inside the Geylang Road corridors; extend them only where a Geylang Road face is not.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-14` branch, each written up in the Lorong 14 brief. Footprint changes are measured during the walk and logged here for approval, as before.
+
+Question 61 in full:
+
+61. **Lorong 16, Geylang Road to its south end: build it as Lorong 21 was built?**
+    - **Order:** start at the Geylang Road end, go south down the west side, then come back north up the east side to Geylang Road. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** Lorong 16 from Geylang Road to its south end, with the corner buildings at both ends of both sides. If the lane runs on past the retained extract, stop at the last building the extract holds and ask about extending it (question 62).
+    - **Block faces:** shared out between the three lanes. On Geylang Road this lane takes only its west corner, Nos. 310–314 (ways 764372570, 764372571 and 764372569). The row back to Lorong 14 (Nos. 292–308) is walked with Lorong 14, and the block east of the lane (way 541941365), with its Lorong 16 face, with Lorong 18. At the south end the terrace at the head of Westerhout Road (ways 763764664, 763764665 and 763764666) is taken in.
+    - **Map:** add the lane's buildings and road ways by id, as for Lorong 21. The lane becomes a walkable corridor. Its junction lies on the Geylang Road corridor from Lorong 19 to Lorong 21, about 52 m west of Lorong 21's junction, so the west corner is reached from it without a new Geylang Road link.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-16` branch, each written up in the Lorong 16 brief. Footprint changes are measured during the walk and logged here for approval, as before.
+
+Question 71 in full:
+
+71. **Lorong 18, Geylang Road to Westerhout Road: build it as Lorong 21 was built?**
+    - **Order:** start with the Geylang Road block at the west corner, then go south down the west side to Westerhout Road, then come back north up the east side to Geylang Road. Each stop is one photographed building, measured before the next is started; a uniform row may be one stop. Doubts go into this log and the walk continues.
+    - **Scope:** stop at Westerhout Road, and keep its mouth as road surface. The stub of Lorong 18 south of Westerhout Road and the Westerhout Road row wait for a later pass (question 72). Geylang Road east of No. 350 (Nos. 352–364) waits for Lorong 20.
+    - **Corners:** take in the corner buildings at both ends of both sides.
+    - **Block faces:** on Geylang Road the west corner block (way 541941365) is the only source outline on the face back to Lorong 16, and it is also Lorong 16's east corner. All of its faces are modelled with Lorong 18, including the one on Lorong 16; the Lorong 16 walk leaves it alone.
+    - **Map:** add the lane's own buildings and road ways by id, as for Lorong 21. The lane becomes a walkable corridor. A Geylang Road link carries the Lorong 21 link on from 17 m east of Lorong 21's junction to about 18 m past Lorong 18's, to take in the east corner. The Lorong 16 walk needed no Geylang Road link of its own, since its junction lies on the link from Lorong 19 to Lorong 21.
+    - **North side of Geylang Road:** east of Lorong 21 it is in nobody's walk, so its pavement has no buildings beside it for now.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-18` branch, each written up in the Lorong 18 brief. Footprint changes are measured during the walk and logged here for approval, as before.
 
 ### Eleventh batch, 13 October 2026
 

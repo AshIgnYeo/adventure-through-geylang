@@ -52,6 +52,52 @@ const lorong21 = {
   simsAvenue: ['632842878', '632842876', '632842880'],
   bachok: ['666807847'],
 };
+// Lorong 14 from Geylang Road to the south edge of the extract (open question 51, 17 October 2026), taken as Lorong 21
+// was: the lane's buildings, with the east corner block on Geylang Road and the Geylang Road row east to Lorong 16 (No.
+// 292 to No. 308). The west corner on Geylang Road is a green with no building. Talma Road's east mouth is kept as road;
+// the Talma Road row waits. The lane runs on south beyond the extract (open question 52).
+const lorong14 = {
+  buildings: [
+    '121872892', '764372595',
+    '454274618', '454274615', '454274614', '454274611', '454274608', '764372579', '764372578', '454274677', '764372577', '476141643',
+    '454254175', '454254174', '454254173', '454254172',
+    '454254171', '454254170', '454254169', '764372576', '475173286', '764372575', '764372574', '764372572', '764372573',
+  ],
+  // The lane's ways run south, from Geylang Road to the extract's edge.
+  lane: ['23513328', '632264920', '666824710', '666824711', '666824717', '666824709', '666824712', '666824713', '666824714', '666824715', '666824716', '666037192', '762862447'],
+  talma: ['644896804'],
+};
+// Lorong 16 from Geylang Road to the south end of the extract (open question 61, 17 October 2026), taken as Lorong 21 was:
+// the lane's buildings, with the west corner on Geylang Road (Nos. 310-314) and the south-east corner at the head of
+// Westerhout Road. Its junction lies on the Geylang Road link from Lorong 19 to Lorong 21, so no new link is needed.
+const lorong16 = {
+  buildings: [
+    '764372570', '764372571', '764372569', '763764689', '763764687', '763764688', '763764676', '764372580', '763764654',
+    '763764666', '763764665', '763764664', '763764667', '763764668', '454274647', '763764669', '763764670', '763764671',
+    '763764673', '763764672', '763764674', '763764675', '121872890', '763764678', '763764679', '763764680', '763764681',
+    '763764682', '763764686', '763764685', '763764684', '763764683',
+  ],
+  // The lane's ways run north, so they are listed from the south end to Geylang Road; the corridor reverses them.
+  lane: ['632249196', '666011790', '666011791', '776937485', '23513325'],
+};
+// Lorong 18 between Geylang Road and Westerhout Road (open question 71, 17 October 2026), taken as Lorong 21 was: the
+// lane's buildings with the corners at both ends of both sides. On Geylang Road the west corner block (way 541941365)
+// runs back to Lorong 16's east corner and is taken whole. Westerhout Road's mouth is kept as road; the stub south of it,
+// the Westerhout Road row and Geylang Road east of No. 350 wait.
+const lorong18 = {
+  buildings: [
+    '541941365',
+    '454274650', '454274632', '764372568', '764372567', '764372566', '454274634', '764372565', '454274635', '454274637',
+    '454274639', '454274640', '764372564', '764372563', '454274642', '764372562', '454274643', '764372561', '454274645',
+    '454438314', '764372560', '764372559', '1470917582', '764372541', '121872891', '764372540',
+  ],
+  // The lane's ways run north, so they are listed from the edge of the extract, south of Westerhout Road, to Geylang Road;
+  // the corridor reverses them.
+  lane: ['632503609', '23513324', '644899356', '666034824', '666034825', '776909653', '644898814', '639994433'],
+  // Geylang Road runs west: on from 17 m east of Lorong 21's junction, past Lorong 18's.
+  geylangRoad: ['660071186', '666816964'],
+  westerhout: ['23513327', '644902167'],
+};
 const wayCoordinates = new Map();
 const roads=[], buildings=[], paths=[], contextRoads=[];
 for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
@@ -60,9 +106,9 @@ for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
   const coordinates=[...text.matchAll(/<nd ref="(\d+)"/g)].map(m=>nodes.get(m[1]));
   if (coordinates.some(c=>!c)) continue;
   wayCoordinates.set(id, coordinates);
-  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat()].includes(id);
+  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
-  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
+  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
   if (['695010162', '1223458240'].includes(id)) paths.push({id,highway:tags.highway,service:tags.service??null,coordinates});
@@ -82,6 +128,13 @@ const along = (coordinates, metres) => {
   }
   return coordinates.at(-1);
 };
+// The line through two points moved `metres` to its left (looking from the first to the second), in degrees scaled to
+// local metres.
+const shifted = (a, b, metres) => {
+  const k = Math.cos(a[1] * Math.PI / 180), dx = (b[0] - a[0]) * k, dz = b[1] - a[1], length = Math.hypot(dx, dz);
+  const o = [-dz / length * metres / k, dx / length * metres].map(v => v / 111320);
+  return [a, b].map(p => [p[0] + o[0], p[1] + o[1]]);
+};
 const corridors = [
   { name: 'Lorong 17 Geylang', halfWidth: 13, path: chain(lorong17.lane) },
   { name: 'Geylang Road to Lorong 17', halfWidth: 13, path: [...chain(['632255677']).reverse(), wayCoordinates.get('660070909')[0]] },
@@ -96,6 +149,17 @@ const corridors = [
   { name: 'Lorong 21 Geylang', halfWidth: 13, path: chain(lorong21.lane) },
   { name: 'Geylang Road, Lorong 19 to Lorong 21', halfWidth: 13, path: chain(lorong21.geylangRoad) },
   { name: 'Sims Avenue, Lorong 19 to Lorong 21', halfWidth: 12, path: [...chain(['632842878', '632842876']), along(wayCoordinates.get('632842880'), 18)] },
+  // Lorong 14, from the Geylang Road centreline (its mouth is inside the Geylang Road corridors) to the extract's edge.
+  // Nos. 302-308 Geylang Road stand about 7 m back from No. 300, beyond the Geylang Road corridor, so their forecourt
+  // is a corridor of its own, 3 m in front of their faces.
+  { name: 'Lorong 14 Geylang', halfWidth: 13, path: chain(lorong14.lane) },
+  { name: 'Geylang Road, the forecourt of Nos. 302-308', halfWidth: 6, path: shifted(wayCoordinates.get('764372575')[0], wayCoordinates.get('764372573')[1], 3) },
+  // Lorong 16, from the Geylang Road centreline to the end of its last way in the extract.
+  { name: 'Lorong 16 Geylang', halfWidth: 13, path: chain(lorong16.lane).reverse() },
+  // Lorong 18 from the Geylang Road centreline to the Westerhout Road centreline, and Geylang Road on from the Lorong 21
+  // link, carried about 18 m past Lorong 18's junction to take in the east corner.
+  { name: 'Lorong 18 Geylang', halfWidth: 13, path: chain(lorong18.lane.slice(1)).reverse() },
+  { name: 'Geylang Road, Lorong 21 to Lorong 18', halfWidth: 13, path: [along([...wayCoordinates.get('660071186')].reverse(), 18), ...chain(['666816964'])] },
 ];
 const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',licence:'ODbL-1.0',roads,buildings,paths,contextRoads};
 fs.writeFileSync(new URL('../public/map.json',import.meta.url),JSON.stringify(map));

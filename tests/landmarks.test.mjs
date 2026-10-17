@@ -195,10 +195,17 @@ test('real landmark identities have unique, existing street-study footprints and
       assert.equal(ids.has(id), false, `${id} assigned twice`);
       ids.add(id);
       const building = map.buildings.find(b => b.id === id);
-      if (['leong-kee', 'buddhist-art-centre', 'eat-first', 'sik-wai-sin', 'rr-motor', 'golden-jade', 'ktv-277', 'eros', 'rozel-furniture', 'jh-hotel', 'nanyang-fan-clan', 'vintage-and-vine', 'dnova-hotel', 'jxin-hotel', 'bright-star-hotel', 'cheng-yi', 'tan-ser-seng', 'hcsa-community-services'].includes(place.id)) assert.equal(building?.street, null);
+      if (['leong-kee', 'buddhist-art-centre', 'eat-first', 'sik-wai-sin', 'rr-motor', 'golden-jade', 'ktv-277', 'eros', 'rozel-furniture', 'jh-hotel', 'nanyang-fan-clan', 'vintage-and-vine', 'dnova-hotel', 'jxin-hotel', 'bright-star-hotel', 'cheng-yi', 'tan-ser-seng', 'hcsa-community-services', 'le-regal', 'budgetone-hotel', 'cygon', 'club-20', 'gofit', 't1-trading'].includes(place.id)) assert.equal(building?.street, null);
       else if (['feng-shang', 'true-jesus-mission', 'yang-clan', 'gyaltsap-tashi-ling', 'rattan-association', 'chinaware-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 17 Geylang');
       else if (['nanyang-chee', 'chee-hoe-hong', 'kang-ha-pheng', 'bougainvilla', 'sims-point', 'the-primero', 'lei-zang-si', 'starlon-tektron'].includes(place.id)) assert.equal(building?.street, 'Lorong 19 Geylang');
       else if (['nyingma-kathok', 'bei-chen-gong'].includes(place.id)) assert.equal(building?.street, 'Lorong 21 Geylang');
+      else if (['little-charcoal-stove', 'sea-mu-to', 'em-salon-spa', 'green-essential', 'fu-xing-ji', 'bs-hardware-lorong-16'].includes(place.id)) assert.equal(building?.street, null);
+      // Valu$ runs over No. 290, tagged Geylang Road, and No. 292, untagged.
+      else if (['valu'].includes(place.id)) assert.ok([null, 'Geylang Road'].includes(building?.street));
+      else if (['wing-fong-court', 'wing-fong-mansions', 'le-yuan', 'ibis-budget-pearl', 'central-imperial', 'amazing-inn'].includes(place.id)) assert.equal(building?.street, 'Lorong 14 Geylang');
+      else if (['chang-jiang-g1', 'bs-mini-mart', 'hotel-81-geylang', 'then-shen-temple', 'crystal-lodge', 'poh-clan', 'soon-clan', 'lodge-41'].includes(place.id)) assert.equal(building?.street, null);
+      else if (['hotel-81-palace', 'shan-yuan-gu-fo-she'].includes(place.id)) assert.equal(building?.street, 'Lorong 16 Geylang');
+      else if (['hotel-81-star', 'diamond-hotel', 'dabu-hakka'].includes(place.id)) assert.equal(building?.street, 'Lorong 18 Geylang');
       else if (['yaju-hotel', 'summer-view', 'hotel-81-cherry', 'master-tailors', 'chinese-eating-house-owners'].includes(place.id)) assert.equal(building?.street, 'Lorong 12 Geylang');
       else if (['lex-hotel', 'engineering-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 8 Geylang');
       else if (['crystal-mansions'].includes(place.id)) assert.equal(building?.street, 'Lorong 6 Geylang');
@@ -206,7 +213,7 @@ test('real landmark identities have unique, existing street-study footprints and
       else if (['amrise-hotel', 'thye-seng', 'normal-stainless', 'qianjing', 'fok-wai-kee', 'fsl-led-lighting', 'red-dot-running', 'ming-li', 'yap-sun', 'buildersmart-sims', 'ibis-budget-gold', 'red-flag-davco', 'yi-xiu-factory-building', 'shi-cheng-temple', 'bamboo-lounge', 'he-ping', 'lefon-sewing', 'guangxi-gaozhou', 'bike-mart', 'vietsea-ii'].includes(place.id)) assert.equal(building?.street, 'Sims Avenue');
       else if (['k-hotel-1515', 'lam-clan', 'hotel-81-spring', 'sin-chew-tan', 'teck-keow', 'hong-sheng-koon', 'ship-chandlers', 'aecc-jmas', 'bengal-kitchen'].includes(place.id)) assert.equal(building?.street, 'Lorong 15 Geylang');
       else if (['public-free-clinic-society', 'ywam-singapore', 'kim-court', 'the-diamond'].includes(place.id)) assert.equal(building?.street, 'Lorong 9 Geylang');
-      else if (['gong-he-guan', 'haji-mohd-salleh-mosque', 'lor-9-frog-porridge', 'chen-hing', 'ting-yu-xuan', 'ke-lai-shun', 'instyle', 'mobile-time', 'shi-hao', 'lor-9-beef-kway-teow', 'wat-dhammasatis', 'lian-seng', 'monster-ink', 'shadow-tattoo', 'nanyang-lian', 'tian-tian', 'taketoys', 'chongqing-xiaomian', 'sheng-siong-301', 'eminent-frog-porridge', 'straits-laundry-331', 'mary-hair-salon', 'scarlett-supermarket'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
+      else if (['gong-he-guan', 'haji-mohd-salleh-mosque', 'lor-9-frog-porridge', 'chen-hing', 'ting-yu-xuan', 'ke-lai-shun', 'instyle', 'mobile-time', 'shi-hao', 'lor-9-beef-kway-teow', 'wat-dhammasatis', 'lian-seng', 'monster-ink', 'shadow-tattoo', 'nanyang-lian', 'tian-tian', 'taketoys', 'chongqing-xiaomian', 'sheng-siong-301', 'eminent-frog-porridge', 'straits-laundry-331', 'mary-hair-salon', 'scarlett-supermarket', 'hin-sheng'].includes(place.id)) assert.equal(building?.street, 'Geylang Road');
       else assert.equal(building?.street, 'Lorong 11 Geylang');
       assert.equal(landmarkFor(id), place);
     }
