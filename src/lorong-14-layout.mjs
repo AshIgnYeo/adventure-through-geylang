@@ -273,7 +273,40 @@ export const no37 = {
   backFittings: [{ name: 'folding grilles', u: [.5, 7.0], h: [.1, 2.8], colour: '#6a4a34' }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37];
+// 4. Way 454274615, No. 35: a white three-storey house with a car porch under its first floor, gold characters reading
+// 慈懷蓮社 between its first-floor windows. Its front (edge 1, u south from the north end) is read on the source plane,
+// where the characters line up at u 4.7-5.1 between bPco..., 2NQa... and 6y54... (at 1.5 m forward they drift 1.1 m
+// apart). On that plane the façade runs from 0.5 m to the source edge's south end, and is laid at its own scale.
+const W615 = 8.223, white615 = '#efefeb';
+export const no35 = {
+  id: 'l14-35', buildingIds: ['454274615'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 14 Geylang', review: { distance: 9, pitch: 22 },
+  name: 'No. 35 Lorong 14 (June 2024 exterior, occupants not identified)', address: '35 Lorong 14 Geylang',
+  height: 10.7, ceiling: 3.75, fiveFootWay: 3.0, shellInset: .5, roof: { type: 'flat', colour: '#8f8c86' }, // the porch starts where the façade does
+  evidence: 'June 2024 Street View shows a white three-storey house standing forward of its neighbours: a car porch under the first floor behind a white pier, a black arched gate and a letterbox pier plated 35; a band of nine white-framed windows on each of the first and second floors, louvred in one bay, and between the first-floor windows four gold characters reading 慈懷蓮社 down the wall, under a zinc eave. No business is listed at No. 35, and a search for the characters finds no listing, so no name is given and the lettering is drawn blank. On the source plane the characters line up at u 4.7-5.1 between three June 2024 lane panoramas (bPco..., 2NQa..., 6y54...), while at 1.5 m forward they drift 1.1 m apart; so the front stands on its source edge, where it runs from 0.5 m to the edge\'s south end, and is laid at its own scale. Heights were read on that plane: the porch to 3.75 m under a slab to 4.0 m, first-floor windows at 5.1-6.65 m, second-floor windows at 8.3-9.85 m and the eave at 10.7-11.0 m.',
+  sources: [way('454274615'), search('35 Lorong 14 Geylang'), pano('2NQaljbY-ry-_7uNSyFjJg', 105, 15, 60), pano('bPcoR5AOs4FXgQbHv6fiew', 120, 12, 50), pano('6y54g-HyIiVDYdF_FQeKBQ', 70, 15, 50)],
+  colours: { wall: white615, trim: '#e2e2de', frame: '#e8e8e4', glass: '#2e3436', pier: white615, back: '#8a6a50', floor: '#a8a296' },
+  windows: [
+    ...[[1.6, 4.5], [5.35, 8.1]].map(u => ({ u, h: [5.1, 6.65], panes: 4 })),
+    { u: [1.55, 5.25], h: [8.3, 9.85], panes: 5 }, { u: [5.25, 8.05], h: [8.3, 9.85], panes: 4 },
+  ],
+  vents: [{ u: [5.4, 6.0], h: [8.45, 9.7] }],
+  blocks: [
+    { name: 'first-floor slab', u: [.5, W615], h: [3.75, 4.05], out: .1, depth: .2, colour: '#e2e2de' },
+    { name: 'blank gold lettering', u: [4.72, 5.1], h: [4.6, 7.2], out: .03, depth: .03, colour: '#c8a050' },
+    { name: 'zinc eave', u: [.5, W615], h: [10.7, 11.0], out: .3, depth: .6, colour: '#a8aaa6' },
+    { name: 'white pier wall', u: [2.0, 3.5], h: [0, 1.9], out: .1, depth: .3, colour: white615 },
+    ...grille('black arched gate', [3.5, 7.6], [0, 2.3], .1, '#2a2a2a', .2, false),
+    { name: 'letterbox pier', u: [7.65, W615], h: [0, 1.9], out: .1, depth: .4, colour: white615 },
+    { name: 'house plate', u: [7.8, 8.1], h: [1.5, 1.7], out: .32, depth: .02, colour: '#2a2a2a' },
+  ],
+  piers: [[1.6, 2.0], [7.9, W615]],
+  backFittings: [
+    { name: 'brown doors', u: [2.8, 4.6], h: [.1, 2.4], colour: '#7a4a30' },
+    { name: 'brown door', u: [5.2, 6.2], h: [.1, 2.4], colour: '#7a4a30' },
+  ],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

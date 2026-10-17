@@ -29,7 +29,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 1 | West | 121872892 | No. 10, Wing Fong Court | Done; named (address conflict recorded) |
 | 2 | West | 764372595 | No. 12, Wing Fong Mansions, south of Talma Road | Done; named; runs on past the extract (question 52) |
 | 3 | East | 454274618 | No. 37 | Done; unnamed |
-| 4 | East | 454274615 | No. 35 | |
+| 4 | East | 454274615 | No. 35 | Done; unnamed |
 | 5 | East | 454274614 | No. 33 (no number in the source) | |
 | 6 | East | 454274611 | No. 31 | |
 | 7 | East | 454274608 | No. 29 | |
@@ -138,3 +138,24 @@ A mint-green three-storey house set back behind No. 35's front.
 **Naming:** none. Nothing is listed at No. 37 and no sign was photographed.
 
 Use `?review=l14-37`.
+
+### 4. Way 454274615: No. 35
+
+A white three-storey house standing forward of its neighbours.
+
+- **Ground floor:** a car porch under the first floor, behind a white pier, a black arched gate and a letterbox pier plated 35.
+- **Upper floors:** a band of white-framed windows on each floor, one bay louvred on the second.
+- **Between the first-floor windows:** four gold characters down the wall, reading **慈懷蓮社**.
+- **Roof:** a zinc eave.
+
+**Measurement:**
+- **Depth:** the depth scores peak 6 m forward on the trees and gates (0.10–0.14). On the **source plane**, though, the characters line up at u 4.7–5.1 between `bPco…`, `2NQa…` and `6y54…`; at 1.5 m forward they drift 1.1 m apart. So the front stands on its source edge.
+- **Extent:** from 0.5 m south of the source edge's north end to its south end, 7.7 m of the 8.22 m edge.
+- **Heights:** the porch to 3.75 m under a slab to 4.0 m; first-floor windows at 5.1–6.65 m; second-floor windows at 8.3–9.85 m; the eave at 10.7–11.0 m.
+- **Check:** renders from `2NQa…` and `bPco…`, blended with the photographs, put the window bands, the characters, the gate and the eave on their photographed lines.
+
+**Layout:** laid at its own scale on the source edge, the porch as a 3 m five-foot way.
+
+**Naming:** none. Nothing is listed at No. 35, and a search for 慈懷蓮社 finds no listing, so the characters are drawn as a blank gold strip.
+
+Use `?review=l14-35`.
