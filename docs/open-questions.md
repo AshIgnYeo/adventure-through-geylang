@@ -54,7 +54,39 @@ Started: 10 October 2026.
       The listing points run about 5 m east of the photographed fronts, as the address points do, so the houses are matched by number.
     - **Unlocks:** fourteen fronts at their true widths and depth, and six more named places. If the answer is no, the row stays sliced across its source ways, unnamed.
 
+52. **Lorong 14 south of the extract: extend the source extract to the lane's south end at Guillemard Road?**
+    - **Evidence:** recorded during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md)).
+      - The retained extract's south edge is 1.3110 N. Its last Lorong 14 way (762862447) ends at about 1.3108 N, where the lane is about 190 m from Geylang Road.
+      - The June 2024 drive runs on south for about 100 m more, to Guillemard Road at about 1.3100 N (`GUtb…`, at 113 Guillemard Road).
+      - Beyond No. 37 the east side carries on behind a corrugated hoarding, with single-storey houses under tiled roofs and a temple compound whose gate reads 鳳山寺. None of them is in the extract.
+      - Wing Fong Mansions (way 764372595) is in the extract only because some of its nodes are inside it. Its lane face runs about 122 m, about 85 m past the extract's last way.
+    - **What happens now:**
+      - The walk stops at No. 37 on the east side and at Wing Fong Mansions on the west, which is modelled over its whole source outline.
+      - The lane's corridor ends at the extract's last way, so the south part of Wing Fong Mansions' face can be seen but not walked to.
+    - **Recommendation:** yes. Retrieve a new extract reaching about 1.3095 N, so that Lorong 14 runs to Guillemard Road. Then finish the east side south of No. 37 and the lane's south end in a later pass, as Lorong 14 was walked.
+    - **Unlocks:** the whole of Lorong 14, the rest of its east side and its Guillemard Road corners.
+
 ## Settled
+
+### Twelfth batch, 17 October 2026
+
+The project owner asked for Lorong 14 to be mapped in full, without stopping until the lane is finished, while Lorong 16 and Lorong 18 are mapped at the same time. So question 51 is recorded as answered by that instruction, on question 47's terms. The Geylang Road row is taken east to Lorong 16, not back to Lorong 12, to balance the three lanes' work.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 51 | **Yes.** Model Lorong 14 from Geylang Road to the edge of the extract, one building at a time in street order, with the east corner block and the Geylang Road row east to Lorong 16 | The lane, its buildings, Talma Road's east mouth and a forecourt corridor for Nos. 302–308 join the map; the walk is recorded in the [Lorong 14 brief](lorong-14-brief.md) |
+
+Question 51 in full:
+
+51. **Lorong 14, Geylang Road to the edge of the extract: build it as Lorong 21 was built?**
+    - **Order:** start at the Geylang Road end, go south down the west side, then come back north up the east side to Geylang Road, then east along Geylang Road from No. 292 to No. 308. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** Lorong 14 runs south from Geylang Road, past Talma Road's east end, to the south edge of the retained extract at about 1.3108 N. Take in the corners at both ends of both sides and at Talma Road. Talma Road's east mouth is kept as road surface, as Lorong Bachok's mouth was; the Talma Road row waits for a later pass. If the lane runs on past the extract, stop at the last building the extract holds and log a question on extending it.
+    - **Block faces:** the Geylang Road faces back to Lorong 12 are already in the map. To balance the three lanes' work, take the Geylang Road row east to Lorong 16 instead: Nos. 292–308, between the east corner block (Nos. 284–290) and Lorong 16's west corner. No. 310 and the Lorong 16 corner belong to the Lorong 16 walk.
+    - **The west corner on Geylang Road:** no unmodelled source outline stands there, so check what does, and record it.
+    - **Map:** add the lane's buildings and road ways by id, as for Lorong 21. The lane becomes a walkable corridor. Its mouth is already inside the Geylang Road corridors; extend them only where a Geylang Road face is not.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-14` branch, each written up in the Lorong 14 brief. Footprint changes are measured during the walk and logged here for approval, as before.
 
 ### Eleventh batch, 13 October 2026
 
