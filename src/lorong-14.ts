@@ -1,6 +1,7 @@
 import type { World, Point } from './world';
 import { lorong14, lorong14Frame, lorong14Reviews } from './lorong-14-layout.mjs';
 import { buildLaneHouse, text, sans, kai, type Draws } from './lane-house';
+import type { Draw } from './simple-house';
 
 // Named places only: original lettering after the photographed boards.
 // A granite panel set in a boundary wall: Chinese in bronze down its left, the English name in script beside it.
@@ -12,6 +13,14 @@ const granitePanel = (chinese: string, english: string, ground: string) => (c: C
   [...chinese].forEach((ch, i) => text(c, ch, x0 + pw * .1, y0 + ph * (.2 + i * .3), ph * .24, '#6a5434', '700', kai));
   text(c, english, x0 + pw * .58, y0 + ph * .45, ph * .26, '#6a5434', 'italic 600', 'Georgia, "Times New Roman", serif', pw * .76);
 };
+// The ibis budget sign: a blue cushion with white lowercase lettering.
+const ibisSign: Draw = (c, w, h) => {
+  c.fillStyle = '#2a6ac8'; c.beginPath(); c.moveTo(0, 0); c.quadraticCurveTo(w / 2, h * .08, w, 0); c.quadraticCurveTo(w * .92, h / 2, w, h);
+  c.quadraticCurveTo(w / 2, h * .92, 0, h); c.quadraticCurveTo(w * .08, h / 2, 0, 0); c.fill();
+  text(c, 'ibis', w * .5, h * .34, h * .3, '#ffffff', '700', sans, w * .6);
+  text(c, 'budget', w * .5, h * .58, h * .2, '#ffffff', '400', sans, w * .8);
+  text(c, 'HOTELS', w * .5, h * .76, h * .07, '#ffffff', '600', sans, w * .4);
+};
 const draws: Draws = {
   // The granite panel on the boundary wall at the Talma Road corner: 永豐閣 in bronze down its left, Wing Fong Court in
   // script beside it.
@@ -21,6 +30,12 @@ const draws: Draws = {
   // The same on Wing Fong Mansions' corner wall: 永豐樓 Wing Fong Mansions.
   'wing-fong-mansions@74': { boards: [granitePanel('永豐樓', 'Wing Fong Mansions', '#f0e8d6')] },
   // The red board across the forecourt canopy: HAPPY in white, 31 in red on a cream panel, 乐缘 in white.
+  'ibis-budget-pearl': {
+    boards: [ibisSign, (c, w, h) => {
+      c.fillStyle = '#ece2bc'; c.fillRect(0, 0, w, h);
+      text(c, 'PEARL', w * .5, h * .55, h * .6, '#2a5ab8', 'italic 800', sans, w * .7);
+    }],
+  },
   'le-yuan': {
     boards: [(c, w, h) => {
       c.fillStyle = '#c8282a'; c.fillRect(0, 0, w, h);

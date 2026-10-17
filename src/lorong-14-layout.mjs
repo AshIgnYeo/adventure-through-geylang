@@ -469,7 +469,50 @@ export const no29 = {
   backFittings: [{ name: 'porch and shop front', u: at29([11.8, 20.2]), h: [.1, 2.9], colour: '#4a4440', glow: .04 }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25];
+// 10. Way 454274677, No. 21, ibis budget Singapore Pearl: an eight-storey hotel of cream panels in a grey grid, a pair
+// of windows in each panel, over a ground floor of a car porch, the glazed lobby and planters behind wavy railings, with
+// a blue ibis budget sign on a plinth lettered PEARL in front. Its front (edge 3, u south from the north end) repeats too
+// regularly for the depth scores; the corners, triangulated from three pairs of lane panoramas each, stand 0.5-2 m
+// behind the source edge and within about 1 m of its ends, so the face is read on a plane 1 m behind it, where the
+// panoramas' views join cleanly, from u 0.2 to 35.8. It is laid at its own scale on the source edge. The sign
+// triangulates (0W5F... with Pm_y3..., and iXFF... with Pm_y3...) 2.9 m in front of the source edge, at u 23.3.
+const W677 = 35.451, at677 = s => lay(.2, W677 / 35.6)(s).map(v => Math.min(W677, Math.max(0, v)));
+const cream677 = '#efe5c0', grey677 = '#7a8284';
+const rows677 = Array.from({ length: 7 }, (_, i) => [+(6.2 + i * 3.35).toFixed(2), +(7.6 + i * 3.35).toFixed(2)]);
+const piers677 = [.4, 3.6, 6.8, 10.0, 13.2, 16.4, 19.6, 22.8, 26.0, 29.2, 32.4, 35.6];
+export const ibisPearl = {
+  id: 'ibis-budget-pearl', buildingIds: ['454274677'], kind: 'ibis-pearl', frontEdge: 3, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 30 },
+  name: 'ibis budget Singapore Pearl (June 2024 exterior)', address: '21 Lorong 14 Geylang',
+  height: 29.6, ceiling: 4.6, fiveFootWay: 2.0, shellInset: .08, roof: { type: 'flat', colour: '#9a9a96' }, // the front is 1-2 degrees off its end walls
+  evidence: 'June 2024 Street View shows an eight-storey hotel on the east side of Lorong 14 between Central Imperial and No. 25: seven floors of cream panels in a grey grid of piers and spandrels, a pair of windows in each panel, over a cream ground floor with a car porch at its north end, a glazed lobby with a pier plated 21, and planters of trees behind grey wavy railings; in front of the lobby stands a blue cushion-shaped sign reading ibis budget HOTELS on a cream plinth lettered PEARL in blue. Google Maps lists the hotel at 21 Lor 14 Geylang, Singapore 398961, with its point inside this way, now as ibis budget Singapore Vanda, a 2-star hotel; the source map names it Ibis budget Singapore Pearl, eight storeys. The brand on the photographed sign agrees with the listing at this address, so the hotel is named, as a dated exterior under the name its sign and the source carry in 2024 (open question 54), and the sign is redrawn in original type. The face repeats too regularly for the depth scores (their peaks wander from 1 m behind to 6 m in front); its corners, triangulated from three pairs of June 2024 lane panoramas each, stand 0.5-2 m behind the source edge and within about 1 m of its ends, so it is read on a plane 1 m behind the source edge, where the panoramas\' views join cleanly, from u 0.2 to 35.8, and laid at its own scale on the source edge. The sign triangulates from two pairs 2.9 m in front of the source edge. Heights were read on that plane: the ground floor to 4.6 m under a grey band to 5.4 m, window rows every 3.35 m from 6.2 m, and the parapet at 29.6 m.',
+  sources: [way('454274677'), search('ibis budget Singapore Vanda 21 Lorong 14 Geylang'), pano('BMFJQJlmtfdvat-L3dcNig', 100, 20, 90), pano('0W5FoVfgJUTpsOTPyVtxMQ', 70, 20, 90), pano('Pm_y3b0YxCtt8zWXmMbgzQ', 35, 0, 40)],
+  colours: { wall: cream677, trim: '#e6dcb8', frame: '#e8e8e4', glass: '#3a4448', pier: cream677, back: '#4a4842', floor: '#a8a49c' },
+  windows: piers677.slice(0, -1).flatMap((l, i) => rows677.flatMap(h => [[l + .55, l + 1.4], [l + 1.8, l + 2.65]].map(u => ({ u: at677(u), h, panes: 2 })))),
+  blocks: [
+    { name: 'grey base band', u: [0, W677], h: [4.6, 5.4], out: .08, depth: .16, colour: grey677 },
+    ...rows677.map(([, t]) => ({ name: 'grey spandrel', u: [0, W677], h: [t + .4, t + .95], out: .08, depth: .16, colour: grey677 })),
+    ...piers677.map(c => ({ name: 'grey pier', u: at677([c - .25, c + .25]), h: [5.4, 29.6], out: .1, depth: .2, colour: grey677 })),
+    { name: 'parapet', u: [0, W677], h: [29.3, 29.6], out: .1, depth: .2, colour: grey677 },
+    { name: 'dark fascia', u: at677([.2, 26.0]), h: [4.15, 4.6], out: .05, depth: .1, colour: '#3a3c3c' },
+    // Planters of trees behind grey wavy railings along the south part, and the sign on its plinth before the lobby.
+    { name: 'cream planter wall', u: at677([25.6, 35.6]), h: [0, .9], out: 1.4, depth: .4, colour: '#ece2bc' },
+    ...grille('grey wavy railing', at677([25.6, 35.6]), [.9, 1.8], 1.4, '#6a6e70', .4, false),
+    ...[27.0, 29.5, 32.0, 34.5].map(c => ({ name: 'planter tree', u: at677([c - .8, c + .8]), h: [1.2, 3.6], out: 1.0, depth: 1.2, colour: '#4e7a3a' })),
+    { name: 'sign plinth', u: [22.0, 24.6], h: [0, .9], out: 2.9, depth: .5, colour: '#ece2bc' },
+    { name: 'blue sign body', u: [22.3, 24.3], h: [.9, 3.1], out: 2.75, depth: .25, colour: '#2a6ac8' },
+  ],
+  // The sign facing the lane, and the plinth's lettering.
+  boards: [{ u: [22.3, 24.3], h: [.9, 3.1], out: 2.89 }, { u: [22.4, 24.2], h: [.3, .85], out: 3.16 }],
+  piers: [[6.3, 6.7], [13.4, 13.8], [15.7, 16.2]].map(at677),
+  backFittings: [
+    { name: 'foyer', u: at677([.6, 6.3]), h: [.1, 3.4], colour: '#5a5048', glow: .05 },
+    { name: 'car porch', u: at677([6.7, 13.4]), h: [.1, 4.2], colour: '#3a3a38' },
+    { name: 'house plate', u: at677([15.8, 16.1]), h: [2.6, 2.9], out: .25, colour: '#3a3a38' },
+    { name: 'glazed lobby', u: at677([16.2, 25.6]), h: [.1, 3.6], colour: '#2e3a40', glow: .1 },
+  ],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

@@ -35,7 +35,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 7 | East | 454274608 | No. 29 | Done; unnamed; question 53 |
 | 8 | East | 764372579 | No. 27 | Done; unnamed; question 53 |
 | 9 | East | 764372578 | No. 25 | Done; unnamed; question 53 |
-| 10 | East | 454274677 | No. 21, the ibis budget hotel | |
+| 10 | East | 454274677 | No. 21, ibis budget Singapore Pearl | Done; named (a dated exterior; question 54) |
 | 11 | East | 764372577 | No. 3, Central Imperial | |
 | 12 | East | 476141643 | No. 1, The Amazing Inn | |
 | 13–16 | East | 454254175 to 454254172 | Nos. 284–290 Geylang Road, the east corner block | |
@@ -235,3 +235,29 @@ Three white three-storey houses over car porches, between No. 31 and the ibis bu
 - Nothing is listed at Nos. 25 and 29.
 
 Use `?review=l14-29`, `?review=l14-27` and `?review=l14-25`.
+
+### 10. Way 454274677: No. 21, ibis budget Singapore Pearl
+
+An eight-storey hotel between Central Imperial and No. 25.
+
+- **Upper floors:** seven floors of cream panels in a grey grid of piers and spandrels, a pair of windows in each panel.
+- **Ground floor:** cream, with a car porch at the north end, a glazed lobby with a pier plated 21, and planters of trees behind grey wavy railings.
+- **In front of the lobby:** a blue cushion-shaped sign reading **ibis budget HOTELS**, on a cream plinth lettered **PEARL** in blue.
+
+**Measurement:**
+- **Depth:** the face repeats too regularly for the depth scores, whose peaks wander from 1 m behind to 6 m in front. So the corners were triangulated instead, from three pairs of lane panoramas each:
+  - the south corner: 0.5–1.5 m behind the source edge, within 0.7 m of the source end;
+  - the north corner: 0.6–2.1 m behind, 1–2.5 m north of the source end, where it meets Central Imperial.
+- **On a plane 1 m behind** the source edge the panoramas' views join cleanly in a mosaic. There the face runs from u 0.2 to 35.8, against the 35.45 m source edge.
+- **Grid:** twelve piers about every 3.2 m, from u 0.4 to 35.6; window rows every 3.35 m from 6.2 m.
+- **Heights:** the ground floor to 4.6 m under a grey band to 5.4 m; the parapet at 29.6 m.
+- **The sign:** triangulates from `0W5F…` with `Pm_y3…`, and from `iXFF…` with `Pm_y3…`, at (214.5, 176.4): **2.9 m in front of** the source edge, at u 23.3.
+- **Check:** renders from `BMFJ…`, `0W5F…` and `Y-F5…`, blended with the photographs, put the grid, the window rows, the base band and the sign on their photographed places.
+
+**Layout:** laid at its own scale on the source edge (the 1 m is recorded but not acted on). The sign stands on its plinth where it triangulates, facing the lane.
+
+**Naming:** Google Maps lists the hotel at 21 Lor 14 Geylang, Singapore 398961, with its point inside this way, now under the name **ibis budget Singapore Vanda**, a 2-star hotel. The source map names it Ibis budget Singapore Pearl.
+- The brand on the photographed sign agrees with the listing at this address, so the hotel is named. It is named as a dated exterior, under the name its sign and the source carry in June 2024, and the sign is redrawn in original type.
+- Whether to keep the photographed name or take the listing's is [open question 54](open-questions.md).
+
+Use `?review=ibis-budget-pearl`.

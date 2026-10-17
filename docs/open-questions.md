@@ -82,9 +82,17 @@ Started: 10 October 2026.
       - fronts on the photographed lines;
       - party walls at the measured positions;
       - rear lines kept.
-      
+
       No. 35 (on its source line) and No. 37 stay as they are.
     - **Unlocks:** true widths along the terrace (No. 29 is half as wide again as its way), porches at their true depth, and No. 31's board on its own house.
+
+54. **No. 21 Lorong 14: keep the photographed name ibis budget Singapore Pearl, or take the listing's ibis budget Singapore Vanda?**
+    - **Evidence:** recorded during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stop 10).
+      - The June 2024 photographs show a blue ibis budget sign on a plinth lettered PEARL. The source map names the building Ibis budget Singapore Pearl.
+      - Google Maps now lists the hotel at the same address (21 Lor 14 Geylang, Singapore 398961), with its point inside the way, as ibis budget Singapore Vanda.
+    - **What happens now:** the hotel is named ibis budget Singapore Pearl, as a dated exterior, with its photographed sign and the later listing recorded in the evidence.
+    - **Recommendation:** keep the photographed name. The model shows the June 2024 exterior, and its sign reads PEARL; the brand agrees with the listing. If newer imagery shows a Vanda sign, rename it then.
+    - **Unlocks:** settles how a renamed business with a dated sign is named. The ibis budget Singapore Gold model on Sims Avenue may need the same check.
 
 ## Settled
 

@@ -143,3 +143,17 @@ test('樂緣 is named after its board, its listing point inside No. 31 and its p
   assert.ok(Math.abs(place.boards[0].out - 6.05) < .01);
   assert.ok(place.boards[0].u[0] >= 0 && place.boards[0].u[1] <= 6.862);
 });
+
+test('the ibis budget hotel is named after its sign and listing, its later name recorded', () => {
+  const place = lorong14.find(p => p.id === 'ibis-budget-pearl');
+  assert.equal(landmarkFor('454274677').id, place.id);
+  assert.equal(building('454274677').number, '21');
+  assert.equal(pointInPolygon(project([103.8792824, 1.3116125], map.origin), outline('454274677')), true);
+  assert.match(place.evidence, /Vanda/);
+  // Eight storeys: seven rows of windows over the ground floor, to a 29.6 m parapet.
+  assert.equal(new Set(place.windows.map(w => w.h[0])).size, 7);
+  assert.equal(place.height, 29.6);
+  // The sign stands where it triangulates, about (214.5, 176.4).
+  const f = lorong14Frame(outline('454274677'), place), b = place.boards[0], p = f.point((b.u[0] + b.u[1]) / 2, b.out);
+  assert.ok(Math.hypot(p[0] - 214.5, p[1] - 176.4) < 1, `${p}`);
+});
