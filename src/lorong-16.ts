@@ -39,6 +39,25 @@ const draws: Draws = {
       text(c, '长江1号', w * .5, h * .92, w * .26, '#f0e0a0', '800', kai, w * .9);
     }],
   },
+  // The white board over the car park: HOTEL 81 in teal capitals, the 81 in a darker block.
+  'hotel-81-geylang': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#f2f4f2'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8ccd0'; c.fillRect(0, h * .88, w, h * .12);
+      text(c, 'HOTEL', w * .38, h * .48, h * .62, '#1e8a8a', '900', sans, w * .5);
+      c.fillStyle = '#1e8a8a'; c.fillRect(w * .68, h * .1, w * .22, h * .74);
+      text(c, '81', w * .79, h * .48, h * .66, '#f2f4f2', '900', sans, w * .2);
+    }],
+  },
+  // The blade between the middle bay and the tower: HOTEL 81 read downwards in white on teal, GEYLANG under it.
+  'hotel-81-geylang@19': {
+    blades: [(c, w, h) => {
+      c.fillStyle = '#e8eef0'; c.fillRect(0, 0, w, h); c.fillStyle = '#1e8a8a'; c.fillRect(w * .1, w * .1, w * .8, h * .86);
+      [...'HOTEL'].forEach((ch, i) => text(c, ch, w * .5, h * (.07 + i * .1), w * .62, '#f2f4f2', '900', sans));
+      text(c, '81', w * .5, h * .66, w * .7, '#f2f4f2', '900', sans, w * .76);
+      c.fillStyle = '#2a4aa8'; c.fillRect(w * .12, h * .82, w * .76, h * .1);
+      text(c, 'GEYLANG', w * .5, h * .87, w * .17, '#f2f4f2', '800', sans, w * .72);
+    }],
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {

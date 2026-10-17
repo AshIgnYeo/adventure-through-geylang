@@ -105,3 +105,14 @@ test('Chang Jiang G1 Claypot Frog Porridge is named on the corner and B & S Mini
   for (const side of corner.sides) for (const b of side.boards) assert.ok(b.u[0] >= 0 && b.u[1] <= lorong16Frame(outline('764372569'), { frontEdge: side.edge }).width, `${b.u}`);
   assert.equal(no310.boards.length, 1);
 });
+
+test('Hotel 81 Geylang is named on No. 20, its listing point inside, its blade between the middle bay and the stair tower', () => {
+  const place = lorong16.find(p => p.id === 'hotel-81-geylang');
+  assert.equal(landmarkFor('763764687').id, place.id);
+  assert.equal(pointInPolygon(project([103.8797191, 1.3117788], map.origin), outline('763764687')), true);
+  // The face is laid across its two collinear source edges, the blade on the northern one.
+  assert.equal(place.frontEdge, 20);
+  assert.deepEqual(place.sides.map(s => s.edge), [19]);
+  const blade = place.sides[0].blades[0];
+  assert.ok(blade.u > 0 && blade.u < 5.029 && blade.out[1] < 2);
+});

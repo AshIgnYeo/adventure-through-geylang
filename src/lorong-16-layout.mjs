@@ -213,7 +213,61 @@ export const no6 = {
   })),
 };
 
-export const lorong16 = [changJiang, no6];
+// ---------------------------------------------------------------------------------------------
+// 5. Way 763764687, No. 20, Hotel 81 Geylang: a lavender hotel of four floors over a car park, its narrow east face on
+// the lane in three steps: the main block, a middle bay and a stair tower crowned in steps, which rises highest and
+// stands about 1 m forward; white ledges band the windows, a white board reading HOTEL 81 hangs over the car park, and a
+// blade reading HOTEL 81 GEYLANG stands out between the middle bay and the tower. The face was read along its two
+// collinear source edges (20 and 19, u_ph north from the south-east corner): four June 2024 lane panoramas agree on its
+// south corner on the source line and on the tower about 1 m forward, where the face runs from u_ph = -0.4 to 12.0,
+// 12.4 m against the 10.06 m source face. It is laid proportionally (x0.81) and sliced across the two edges.
+const lilac687 = '#9ca8dc', ledge687 = '#eef0f4';
+const at687 = s => lay(-.4, 10.06 / 12.4)(s).map(v => Math.min(10.058, Math.max(0, v)));
+const rows687 = [[5.1, 6.6], [8.15, 9.7], [11.3, 12.8], [14.4, 16.0]];
+const towerRows687 = [[3.8, 5.4], [7.2, 8.6], [10.3, 11.9], [13.5, 15.1], [16.9, 18.5]];
+const whole687 = {
+  windows: [
+    ...[[.1, .85], [1.7, 3.5], [4.7, 6.0], [7.0, 8.8]].flatMap(c => rows687.map(h => ({ u: at687(c), h, panes: c[1] - c[0] < 1 ? 1 : 3, surround: true }))),
+    ...towerRows687.map(h => ({ u: at687([10.3, 11.7]), h, panes: 2, surround: true, out: 1.02 })),
+  ],
+  blocks: [
+    ...rows687.flatMap(([b, t]) => [{ name: 'white ledge', u: at687([-.4, 9.2]), h: [b - .2, b - .08], out: .1, depth: .2, colour: ledge687 }, { name: 'white ledge', u: at687([.9, 9.2]), h: [t + .1, t + .22], out: .1, depth: .2, colour: ledge687 }]),
+    { name: 'parapet ledge', u: at687([-.4, 6.1]), h: [17.4, 17.6], out: .12, depth: .24, colour: ledge687 },
+    { name: 'middle bay', u: at687([6.1, 9.2]), h: [3.4, 18.5], out: .15, depth: .3, colour: lilac687 },
+    { name: 'stair tower', u: at687([9.2, 12.0]), h: [.13, 20.6], out: .5, depth: 1.0, colour: lilac687 },
+    { name: 'stepped crown of the stair tower', u: at687([9.5, 11.7]), h: [20.6, 21.0], out: .5, depth: .8, colour: lilac687 },
+    { name: 'car park beam', u: [0, 10.058], h: [3.3, 3.45], out: .05, depth: .1, colour: lilac687 },
+    { name: 'blank number plate', u: at687([7.3, 7.9]), h: [3.45, 3.9], out: .17, depth: .02, colour: '#e8e8e4' },
+  ],
+  piers: [[-.4, .1], [5.1, 5.6], [8.9, 9.3]].map(at687),
+  backFittings: [{ name: 'car park under the hotel', u: at687([.1, 11.6]), h: [.1, 3.2], colour: '#2e3032' }],
+  // The white board over the car park, and the blade between the middle bay and the tower.
+  boards: [{ u: at687([.9, 4.6]), h: [3.6, 4.3], out: .1 }],
+  blades: [{ u: +at687([9.2, 9.2])[0].toFixed(2), out: [.15, 1.45], h: [10.4, 17.5] }],
+};
+const part687 = (edge, s0, s1) => {
+  const keep = ([a, b]) => { const l = Math.max(a, s0), r = Math.min(b, s1); return r - l > .05 ? [+(l - s0).toFixed(3), +(r - s0).toFixed(3)] : null; };
+  const cut = xs => xs.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
+  const W = s1 - s0, fit = w => { const [l, r] = [Math.max(w.u[0], .11), Math.min(w.u[1], W - .11)]; return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)] }]; };
+  return { edge, windows: cut(whole687.windows).flatMap(fit), blocks: cut(whole687.blocks), piers: whole687.piers.map(keep).filter(Boolean), backFittings: cut(whole687.backFittings) };
+};
+const south687 = part687(20, 0, 5.03), north687 = part687(19, 5.03, 10.058);
+export const hotel81Geylang = {
+  id: 'hotel-81-geylang', buildingIds: ['763764687'], kind: 'hotel-81-geylang', frontEdge: 20, reviewRoad: 'Lorong 16 Geylang', review: { distance: 9, pitch: 26 },
+  name: 'Hotel 81 Geylang (June 2024 exterior)', address: '20 Lorong 16 Geylang',
+  height: 18.0, ceiling: 3.3, fiveFootWay: 3.0, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a lavender hotel on the west side of Lorong 16, four floors of rooms over a car park, its narrow east face on the lane in three steps: the main block, with a narrow window and two wide ones on each floor between white ledges; a middle bay; and a stair tower, its windows at the landings, rising to about 20.6 m under a stepped crown and standing about 1 m forward. A white board reading HOTEL 81 in teal hangs over the car park beside a plate numbered 20, and a blade reading HOTEL 81 GEYLANG stands out between the middle bay and the tower; the long north and south walls are almost blank. Google Maps lists Hotel 81 Geylang at 20 Lorong 16 Geylang, Singapore 398863, with its point inside this way, and the source map names it, so it is named and its two signs are redrawn in original type. Four June 2024 lane panoramas (2YRD..., fiAm..., DIeq..., 3ZQq...) agree on the face\'s south corner on the source line and on the tower about 1 m forward, where the face runs about 12.4 m, from 0.4 m south of the source face to 2.3 m north of it, against 10.06 m; it is laid proportionally across the two source edges. Heights were read on that plane: the car park to 3.3 m, windows at 5.1-6.6, 8.15-9.7, 11.3-12.8 and 14.4-16.0 m, the main block\'s parapet at about 18 m and the middle bay\'s at 18.5 m.',
+  sources: [way('763764687'), search('Hotel 81 Geylang 20 Lorong 16 Geylang'), pano('fiAmbtGnWtFj4iJB-TZ-6A', 260, 20, 80), pano('DIeq9U72OHmVQomR0vXobQ', 265, 20, 80), pano('2YRDXiSJdEBL2CpWbqIedQ', 300, 20, 80), pano('3ZQqgioQm3wQleRlKAjrrQ', 225, 20, 80)],
+  colours: { wall: lilac687, trim: ledge687, frame: '#3a3c40', glass: '#46505a', pier: lilac687, back: '#2e3032', floor: '#8a5a4a' },
+  windows: south687.windows, blocks: south687.blocks, piers: south687.piers, backFittings: south687.backFittings,
+  boards: whole687.boards,
+  sides: [{ edge: 19, windows: north687.windows, blocks: [
+    { name: 'car park under the hotel', u: [.05, 4.98], h: [.13, 3.2], out: .01, depth: .02, colour: '#2e3032' },
+    ...north687.piers.map(u => ({ name: 'car park column', u, h: [.13, 3.3], out: .1, depth: .2, colour: lilac687 })), ...north687.blocks,
+  ], blades: whole687.blades.map(b => ({ ...b, u: +(b.u - 5.03).toFixed(2) })) }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

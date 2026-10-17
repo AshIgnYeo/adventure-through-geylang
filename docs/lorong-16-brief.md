@@ -23,7 +23,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | --- | --- | --- | --- | --- |
 | 1–3 | West | 764372569, 764372571, 764372570 | Nos. 314, 312 and 310 Geylang Road, the west corner: Chang Jiang G1 Claypot Frog Porridge (314), B & S Mini Mart (310) | Done; two named; question 63 |
 | 4 | West | 763764689 | Nos. 6–18, the pink walk-up behind the car park | Done; unnamed; question 64 |
-| 5 | West | 763764687 | No. 20, Hotel 81 Geylang | |
+| 5 | West | 763764687 | No. 20, Hotel 81 Geylang | Done; named; question 65 |
 | 6 | West | 763764688 | No. 24, Then Shen Temple | |
 | 7 | West | 763764676 | No. 30, Crystal Lodge | |
 | 8 | West | 764372580 | No. 50 | |
@@ -114,3 +114,27 @@ A salmon-pink four-storey walk-up behind the car park, under a low zinc roof wit
 **Naming:** none. Google Maps gives geocoded addresses for Nos. 6, 8, 10, 12, 14 and 18 Lorong 16 on this block and lists no business there, and no name board was photographed.
 
 Use `?review=l16-6`.
+
+### 5. Way 763764687: No. 20, Hotel 81 Geylang
+
+A lavender hotel of four floors of rooms over a car park, south of the walk-up's car park. Its narrow east face on the lane is in three steps:
+
+- **the main block:** a narrow window and two wide ones on each floor, between white ledges;
+- **a middle bay**, standing slightly forward;
+- **a stair tower** at the north corner, its windows at the landings, rising to about 20.6 m under a stepped crown and standing about 1 m forward.
+
+A white board reading **HOTEL 81** in teal hangs over the car park beside a plate numbered 20, and a blade reading **HOTEL 81 GEYLANG** stands out between the middle bay and the tower. The long north and south walls are almost blank.
+
+**Measurement:**
+- **Depth:** read along the two collinear source edges of the east face (20 and 19). `2YRD…`, `fiAm…`, `DIeq…` and `3ZQq…` (June 2024) agree on the south corner **on the source line**, and on the stair tower's edges and windows on a plane **1 m in front**.
+- **Extent:** the face runs from 0.4 m south of the source face to 2.3 m north of it: about **12.4 m**, against 10.06 m. The tower stands beyond the outline's north-east corner.
+- **Heights:** the car park to 3.3 m; windows at 5.1–6.6, 8.15–9.7, 11.3–12.8 and 14.4–16.0 m; the main block's parapet at about 18 m, the middle bay's at 18.5 m and the tower's crown at 20.6–21 m.
+
+**Layout:**
+- **The face:** laid proportionally (×0.81) across its two source edges, edge 20 the front with the car park as its five-foot way and edge 19 a side face.
+- **The tower:** a projecting volume 1 m deep, its windows on its face. The blade stands at its south side, on edge 19.
+- **Footprint:** the face's true length, with the tower beyond the corner, is part of [open question 65](open-questions.md).
+
+**Naming:** Google Maps lists **Hotel 81 Geylang** at 20 Lorong 16 Geylang, Singapore 398863, with its point inside this way, and the source map names it. Both signs are photographed, so it is named, and they are redrawn in original type.
+
+Use `?review=hotel-81-geylang`.
