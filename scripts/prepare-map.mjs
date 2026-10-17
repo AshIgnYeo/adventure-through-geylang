@@ -52,6 +52,19 @@ const lorong21 = {
   simsAvenue: ['632842878', '632842876', '632842880'],
   bachok: ['666807847'],
 };
+// Lorong 16 from Geylang Road to the south end of the extract (open question 61, 17 October 2026), taken as Lorong 21 was:
+// the lane's buildings, with the west corner on Geylang Road (Nos. 310-314) and the south-east corner at the head of
+// Westerhout Road. Its junction lies on the Geylang Road link from Lorong 19 to Lorong 21, so no new link is needed.
+const lorong16 = {
+  buildings: [
+    '764372570', '764372571', '764372569', '763764689', '763764687', '763764688', '763764676', '764372580', '763764654',
+    '763764666', '763764665', '763764664', '763764667', '763764668', '454274647', '763764669', '763764670', '763764671',
+    '763764673', '763764672', '763764674', '763764675', '121872890', '763764678', '763764679', '763764680', '763764681',
+    '763764682', '763764686', '763764685', '763764684', '763764683',
+  ],
+  // The lane's ways run north, so they are listed from the south end to Geylang Road; the corridor reverses them.
+  lane: ['632249196', '666011790', '666011791', '776937485', '23513325'],
+};
 const wayCoordinates = new Map();
 const roads=[], buildings=[], paths=[], contextRoads=[];
 for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
@@ -60,9 +73,9 @@ for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
   const coordinates=[...text.matchAll(/<nd ref="(\d+)"/g)].map(m=>nodes.get(m[1]));
   if (coordinates.some(c=>!c)) continue;
   wayCoordinates.set(id, coordinates);
-  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat()].includes(id);
+  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong16).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
-  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
+  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong16.lane].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
   if (['695010162', '1223458240'].includes(id)) paths.push({id,highway:tags.highway,service:tags.service??null,coordinates});
@@ -96,6 +109,8 @@ const corridors = [
   { name: 'Lorong 21 Geylang', halfWidth: 13, path: chain(lorong21.lane) },
   { name: 'Geylang Road, Lorong 19 to Lorong 21', halfWidth: 13, path: chain(lorong21.geylangRoad) },
   { name: 'Sims Avenue, Lorong 19 to Lorong 21', halfWidth: 12, path: [...chain(['632842878', '632842876']), along(wayCoordinates.get('632842880'), 18)] },
+  // Lorong 16, from the Geylang Road centreline to the end of its last way in the extract.
+  { name: 'Lorong 16 Geylang', halfWidth: 13, path: chain(lorong16.lane).reverse() },
 ];
 const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',licence:'ODbL-1.0',roads,buildings,paths,contextRoads};
 fs.writeFileSync(new URL('../public/map.json',import.meta.url),JSON.stringify(map));

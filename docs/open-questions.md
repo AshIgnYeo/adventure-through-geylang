@@ -54,7 +54,35 @@ Started: 10 October 2026.
       The listing points run about 5 m east of the photographed fronts, as the address points do, so the houses are matched by number.
     - **Unlocks:** fourteen fronts at their true widths and depth, and six more named places. If the answer is no, the row stays sliced across its source ways, unnamed.
 
+62. **Extend the extract south to take in the rest of Lorong 16, to Guillemard Road?**
+    - **Evidence:** the retained extract's southern edge (1.3110 N) cuts Lorong 16 about 190 m from Geylang Road ([Lorong 16 brief](lorong-16-brief.md)).
+      - The lane's last way in the extract (632249196) ends at the edge, but its two footways (874953095 and 874953096) run on to about 1.3101 N.
+      - The June 2024 drive continues about 95 m further south to Guillemard Road, past Canberlin Apartments (listed at 60 Lorong 16) and the Association Building (68 Lorong 16) on the west side, and the houses at the corner of Westerhout Road on the east.
+      - None of their outlines, nor the lane's ways south of the edge, are in the extract.
+    - **What happens now:** the walk stops at the last buildings the extract holds: No. 54 on the west side, whose outline crosses the edge, and the terrace at the head of Westerhout Road on the east. The corridor ends at the end of way 632249196.
+    - **Recommendation:** yes, as a later pass. Retrieve a dated extract of the strip south of the edge to Guillemard Road (about 1.3095–1.3110 N, 103.8785–103.8810 E), keep `public/osm-source.osm` as retained, take the lane's southern ways and buildings in by id, and walk them as a continuation of the Lorong 16 brief.
+    - **Unlocks:** the whole of Lorong 16, with its junction on Guillemard Road, and the corridor carried to it.
+
 ## Settled
+
+### Twelfth batch, 17 October 2026
+
+The project owner asked for Lorong 16 to be mapped in full, without stopping until the whole lane is finished, while Lorong 14 and Lorong 18 are walked alongside it. So question 61 is recorded as answered by that instruction, on question 47's terms, with the block faces shared out between the three lanes.
+
+| # | Decision | What follows |
+| --- | --- | --- |
+| 61 | **Yes.** Model Lorong 16 from Geylang Road to the edge of the extract, one building at a time in street order, with the west corner on Geylang Road (Nos. 310–314) | The lane, its buildings and its junction join the map; the walk is recorded in the [Lorong 16 brief](lorong-16-brief.md) |
+
+Question 61 in full:
+
+61. **Lorong 16, Geylang Road to its south end: build it as Lorong 21 was built?**
+    - **Order:** start at the Geylang Road end, go south down the west side, then come back north up the east side to Geylang Road. Each stop is one photographed building, measured before the next is started. Doubts go into this log and the walk continues.
+    - **Scope:** Lorong 16 from Geylang Road to its south end, with the corner buildings at both ends of both sides. If the lane runs on past the retained extract, stop at the last building the extract holds and ask about extending it (question 62).
+    - **Block faces:** shared out between the three lanes. On Geylang Road this lane takes only its west corner, Nos. 310–314 (ways 764372570, 764372571 and 764372569). The row back to Lorong 14 (Nos. 292–308) is walked with Lorong 14, and the block east of the lane (way 541941365), with its Lorong 16 face, with Lorong 18. At the south end the terrace at the head of Westerhout Road (ways 763764664, 763764665 and 763764666) is taken in.
+    - **Map:** add the lane's buildings and road ways by id, as for Lorong 21. The lane becomes a walkable corridor. Its junction lies on the Geylang Road corridor from Lorong 19 to Lorong 21, about 52 m west of Lorong 21's junction, so the west corner is reached from it without a new Geylang Road link.
+    - **Unnamed buildings:** labelled by address and modelled from the photographed façade, with signboards drawn and their lettering left blank.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Working:** one commit per building on the `feature/lorong-16` branch, each written up in the Lorong 16 brief. Footprint changes are measured during the walk and logged here for approval, as before.
 
 ### Eleventh batch, 13 October 2026
 
