@@ -141,7 +141,79 @@ export const bsMiniMart = {
   backFittings: [{ name: 'minimart with goods', u: [.3, 5.55], h: [.1, 2.9], colour: '#6a5a3a', glow: .08 }],
 };
 
-export const lorong16 = [changJiang];
+// ---------------------------------------------------------------------------------------------
+// 4. Way 763764689, Nos. 6-18: a salmon-pink four-storey walk-up behind an open car park, under a low zinc roof with
+// deep eaves. Teal-framed windows in raised surrounds, narrow and wide in turn, with two stair bays of grid glazing; on
+// the ground floor, covered parking, a lounge under an orange tiled canopy, a blue-tiled car porch and two timber
+// pavilions over the entrance plated 6A. The source outline's east face steps back about 1 m four times; the photographed
+// façade is flat. It was read on one plane along edge 22 (u_ph north from its south end): four June 2024 lane panoramas
+// (o1zP..., o1jX..., GYT7..., 3ZQq...), 25-28 m away, line up on a plane 2.6 m in front of (east of) that edge, where the
+// façade runs from u_ph = -12.2 to 18.1, 30.3 m against the 31.3 m of the source face. It is laid proportionally along
+// the source face (s north from its south-east corner) and sliced across its nine east edges, the four recessed ones
+// included.
+const pink689 = '#e6c6bc', teal689 = '#3e8a86', surround689 = '#86b6ae';
+// East edges of the outline: [edge, s0, s1] along the face from its south-east corner.
+const east689 = [[14, 0, 4.562], [16, 4.554, 6.801], [18, 6.80, 10.155], [20, 10.15, 12.397], [22, 12.41, 19.432], [24, 19.43, 21.788], [26, 21.78, 24.509], [28, 24.52, 27.428], [30, 27.42, 31.255]];
+const at689 = s => lay(.2, 31.255 / 30.3)(s.map(u => u + 12.41)).map(v => Math.min(31.255, Math.max(0, v)));
+const cols689 = [[-11.7, -10.08], [-8.9, -6.8], [-3.25, -1.25], [.25, 1.95], [3.6, 5.25], [6.75, 8.9], [12.25, 14.45], [15.5, 17.2]];
+const stairs689 = [[-5.75, -4.05], [9.45, 11.3]];
+const whole689 = {
+  windows: cols689.flatMap(c => [[5.65, 7.45], [9.05, 10.85], [12.45, 14.25]].map(h => ({ u: at689(c), h, panes: 2, surround: true }))),
+  blocks: [
+    ...cols689.flatMap(c => [7.45, 10.85, 14.25].map(t => ({ name: 'transom vent', u: at689(c), h: [t - .45, t - .3], out: .03, depth: .02, colour: '#d8dcd6' }))),
+    ...stairs689.flatMap(c => [[4.9, 5.8], [6.8, 8.6], [10.4, 12.2], [13.5, 14.4]].map(h => ({ name: 'stair bay grid glazing', u: at689(c), h, out: .02, depth: .04, colour: '#7a8486' }))),
+    ...stairs689.flatMap(c => [6.8, 7.4, 8.0, 10.4, 11.0, 11.6].map(y => ({ name: 'grid glazing bar', u: at689(c), h: [y, y + .05], out: .05, depth: .02, colour: '#c8ccc8' }))),
+    { name: 'deep eaves', u: [0, 31.255], h: [14.85, 15.1], out: .5, depth: 1.0, colour: '#8a8680' },
+    // The ground floor's canopies, from the south: a zinc car porch, the lounge's orange tiles, a blue-tiled car porch,
+    // the two timber pavilions over the 6A entrance and a tiled lean-to.
+    { name: 'zinc car porch', u: at689([-12.2, -6.1]), h: [4.4, 4.75], out: 1.2, depth: 2.4, colour: '#7a6a5a' },
+    { name: 'orange tiled canopy', u: at689([-5.55, 3.0]), h: [3.9, 4.9], out: 1.2, depth: 2.4, colour: '#e08a50' },
+    { name: 'gate pillar with an orange cap', u: at689([-5.75, -4.9]), h: [0, 2.2], out: 1.6, depth: .6, colour: '#e0884a' },
+    { name: 'blue-tiled car porch', u: at689([3.0, 8.1]), h: [4.6, 5.1], out: 1.2, depth: 2.4, colour: '#3a5a9a' },
+    ...[[9.0, 12.4], [12.4, 15.9]].flatMap(u => [
+      { name: 'timber pavilion roof', u: at689(u), h: [4.7, 5.15], out: 1.4, depth: 2.8, colour: '#5a5c5a' },
+      { name: 'timber pavilion ridge', u: at689([u[0] + .8, u[1] - .8]), h: [5.15, 5.6], out: 1.4, depth: 1.6, colour: '#5a5c5a' },
+      ...[u[0] + .2, u[1] - .3].map(p => ({ name: 'timber pavilion post', u: at689([p, p + .15]), h: [0, 4.7], out: 2.6, depth: .15, colour: '#3a3430' })),
+    ]),
+    { name: 'blank blue 6A plate', u: at689([9.8, 10.9]), h: [4.85, 5.2], out: 2.82, depth: .03, colour: '#4a8ac8' },
+    { name: 'tiled lean-to', u: at689([15.9, 18.1]), h: [4.6, 4.9], out: 1.0, depth: 2.0, colour: '#6a6c6a' },
+    ...[[-1.0, -.3], [.2, 1.0], [1.4, 2.1], [4.0, 4.8], [5.2, 5.9], [8.2, 8.9], [14.6, 15.2]].map(u => ({ name: 'air-conditioner', u: at689(u), h: [5.0, 5.5], out: .2, depth: .4, colour: '#e8e8e4' })),
+  ],
+  backFittings: [
+    { name: 'shop with red lanterns', u: at689([-11.0, -6.4]), h: [.1, 3.2], colour: '#6a3a32', glow: .1 },
+    { name: 'lounge doors under neon', u: at689([-4.6, 2.6]), h: [.1, 3.4], colour: '#3a2e2e', glow: .15 },
+    { name: 'car porch', u: at689([3.0, 8.4]), h: [.1, 3.6], colour: '#4a4a46' },
+    { name: 'pavilion entrance and rock garden', u: at689([9.2, 17.8]), h: [.1, 3.6], colour: '#4a4438', glow: .05 },
+  ],
+};
+// The part of the elevation on one east edge, re-based at its s0.
+const part689 = ([edge, s0, s1]) => {
+  const keep = ([a, b]) => { const l = Math.max(a, s0), r = Math.min(b, s1 - .003); return r - l > .05 ? [+(l - s0).toFixed(3), +(r - s0).toFixed(3)] : null; };
+  const cut = xs => xs.flatMap(x => { const u = keep(x.u); return u ? [{ ...x, u }] : []; });
+  // A window cut at an edge's end keeps its surround inside the edge, and is dropped when less than 0.3 m remains.
+  const W = s1 - s0 - .001, fit = w => { const [l, r] = [Math.max(w.u[0], .11), Math.min(w.u[1], W - .11)]; return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)] }]; };
+  return { edge, windows: cut(whole689.windows).flatMap(fit), blocks: cut(whole689.blocks), backFittings: cut(whole689.backFittings) };
+};
+const front689 = part689(east689[4]);
+export const no6 = {
+  id: 'l16-6', buildingIds: ['763764689'], kind: 'unnamed', unnamed: true, frontEdge: 22, reviewRoad: 'Lorong 16 Geylang', review: { distance: 22, pitch: 18 },
+  name: 'Nos. 6-18 Lorong 16 (June 2024 exterior, occupants not identified)', address: '6-18 Lorong 16 Geylang',
+  height: 15.0, ceiling: 3.8, fiveFootWay: 2.0, roof: { type: 'hip', ridge: 16.4, colour: '#8a5a48' },
+  evidence: 'June 2024 Street View shows a salmon-pink four-storey walk-up behind an open car park on the west side of Lorong 16, under a low zinc roof with deep eaves: teal-framed windows in raised surrounds, narrow and wide in turn, eight columns on each upper floor, with two stair bays of grid glazing whose panes step by half a floor; on the ground floor, from the south, covered parking in front of a shop hung with red lanterns, a lounge under an orange tiled canopy with a lit welcome sign, an OPEN sign and a plate numbered 10, a blue-tiled car porch, two timber pavilions over the entrance plated 6A beside a rock garden, and a tiled lean-to. Google Maps gives geocoded addresses for Nos. 6, 8, 10, 12, 14 and 18 Lorong 16 on this block, and lists no business here; no name board was photographed, so no name is given. The source outline\'s east face steps back about 1 m four times, where the photographed façade is flat: four June 2024 lane panoramas (o1zP..., o1jX..., GYT7..., 3ZQq...), 25-28 m away, line up on a plane about 2.6 m in front of (east of) its longest step (the depth scores, weak at this range, peak at 2.25-2.75 m), where the façade runs about 30.3 m against the 31.3 m source face; the registered satellite puts its roof 4-6 m east of the outline, with deep eaves. It is laid proportionally along the source face and sliced across its nine east edges, the recessed ones included, pending open question 64. Heights were read on that plane: canopies at 3.9-5.1 m, windows with their surrounds at 5.5-7.6, 8.9-11.0 and 12.3-14.4 m, and the eaves at about 15 m, the roof rising to about 16.4 m.',
+  sources: [way('763764689'), search('6 Lorong 16 Geylang Singapore'), pano('GYT7KOn6QA512aDNwGBvAA', 262, 8, 75), pano('o1jXgQxOmY0JXJ7F1mnoEg', 255, 8, 75), pano('3ZQqgioQm3wQleRlKAjrrQ', 285, 8, 75), pano('o1zPdNWSWM89tQnp0aWb0A', 245, 8, 75)],
+  colours: { wall: pink689, trim: surround689, frame: teal689, glass: '#3e4a4c', pier: pink689, back: '#4a4642', floor: '#a8a296' },
+  windows: front689.windows, blocks: front689.blocks, backFittings: front689.backFittings,
+  piers: [[0, .3], [6.72, 7.022]],
+  // Side faces have no five-foot way, so their open ground floor is drawn as a dark field with its fittings over it.
+  sides: east689.filter(([e]) => e !== 22).map(part689).map(({ backFittings, ...side }) => ({
+    ...side, blocks: [
+      { name: 'open ground floor', u: [.02, +(east689.find(([e]) => e === side.edge)[2] - east689.find(([e]) => e === side.edge)[1] - .03).toFixed(3)], h: [.1, 3.8], out: .01, depth: .02, colour: '#3e3a36' },
+      ...backFittings.map(f => ({ ...f, out: .03, depth: .02 })), ...side.blocks,
+    ],
+  })),
+};
+
+export const lorong16 = [changJiang, no6];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

@@ -22,7 +22,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
 | 1–3 | West | 764372569, 764372571, 764372570 | Nos. 314, 312 and 310 Geylang Road, the west corner: Chang Jiang G1 Claypot Frog Porridge (314), B & S Mini Mart (310) | Done; two named; question 63 |
-| 4 | West | 763764689 | The pink walk-up behind the car park | |
+| 4 | West | 763764689 | Nos. 6–18, the pink walk-up behind the car park | Done; unnamed; question 64 |
 | 5 | West | 763764687 | No. 20, Hotel 81 Geylang | |
 | 6 | West | 763764688 | No. 24, Then Shen Temple | |
 | 7 | West | 763764676 | No. 30, Crystal Lodge | |
@@ -81,3 +81,36 @@ A row of three-storey shophouses at the Lorong 16 west corner of Geylang Road, u
 - **No. 312:** unnamed. Hwa Seng Furniture, operating, and four other businesses are listed there, but no sign for any of them was photographed. No Chang Jiang Fisheries Farm Supermarket is listed, so its board is blank.
 
 Use `?review=chang-jiang-g1`, `?review=l16-geylang-312` and `?review=bs-mini-mart`.
+
+South of No. 314 a back lane runs west, and beyond it the west side opens onto a car park, fenced along the pavement with grey hoarding. It has no footprint.
+
+### 4. Way 763764689: Nos. 6–18
+
+A salmon-pink four-storey walk-up behind the car park, under a low zinc roof with deep eaves.
+
+- **Upper floors:** teal-framed windows in raised surrounds, eight columns on each floor, narrow and wide in turn, under transom vents. Two stair bays of grid glazing, whose panes step by half a floor.
+- **Ground floor,** from the south:
+  - covered parking in front of a shop hung with red lanterns;
+  - a lounge under an orange tiled canopy, with a lit welcome sign, an OPEN sign and a plate numbered 10;
+  - a blue-tiled car porch;
+  - two timber pavilions over the entrance, plated **6A**, beside a rock garden;
+  - a tiled lean-to.
+
+**Measurement:**
+- **The outline:** its east face steps back about 1 m four times, in segments of 2.2–7.0 m. The photographed façade is flat, under a straight eave.
+- **Depth:** read on a plane along the longest segment (edge 22).
+  - The four lane panoramas facing it (`o1zP…`, `o1jX…`, `GYT7…`, `3ZQq…`) stand 25–28 m away, where the depth scores are weak (under 0.13); they peak at 2.25–2.75 m in front.
+  - Rectified at 0, 2.5, 2.75 and 3.5 m, the north stair bay's edges cross over between the widest pair (`o1zP…` and `3ZQq…`) at about **2.6 m in front of** (east of) the segment.
+- **Extent:** on that plane the façade runs from 12.2 m south to 18.1 m north of the segment's south end: about **30.3 m**, against the 31.3 m of the source face.
+- **Satellite:** it shows the walk-up's rusty pitched roof 4–6 m east of the outline's east face, including deep eaves, and about 14.5 m deep.
+- **Heights:** canopies at 3.9–5.1 m; windows with their surrounds at 5.5–7.6, 8.9–11.0 and 12.3–14.4 m; eaves at about 15 m, the roof to about 16.4 m.
+
+**Layout:**
+- **One elevation,** laid proportionally along the source face (×1.03) and sliced across its nine east edges, the four recessed ones included, as the HCSA block's lane face was on Lorong 21. Windows cut at a step keep their surrounds within their edge.
+- **The open ground floor:** the longest segment is the front, with its five-foot way. On the side faces it is drawn as a dark field with its fittings over it.
+- **Roof:** a low hipped roof to 16.4 m.
+- **Footprint:** moving the face onto its photographed line, without the steps, is [open question 64](open-questions.md).
+
+**Naming:** none. Google Maps gives geocoded addresses for Nos. 6, 8, 10, 12, 14 and 18 Lorong 16 on this block and lists no business there, and no name board was photographed.
+
+Use `?review=l16-6`.

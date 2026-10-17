@@ -78,6 +78,15 @@ Started: 10 October 2026.
       - **No. 314:** its Geylang Road front 2.5 m north, its splay, and its lane face 1.75 m east, carried south to the back lane, with its west wall on No. 312's.
     - **Unlocks:** the corner's whole lane face at its true length, its Geylang Road front at its true width, and awnings at their photographed depth.
 
+64. **Lorong 16, Nos. 6–18 (way 763764689): re-author the walk-up's east face on its photographed line, without the steps?**
+    - **Evidence:** read from the June 2024 lane panoramas ([Lorong 16 brief](lorong-16-brief.md), stop 4).
+      - The source outline's east face steps back about 1 m four times. The photographed façade is flat, under a straight eave, with eight window columns and two stair bays.
+      - The façade lines up between four panoramas about 2.6 m in front of (east of) the outline's longest step, and runs about 30.3 m against the 31.3 m source face.
+      - The registered satellite shows its roof 4–6 m east of the outline, with deep eaves, about 14.5 m deep; the outline's jagged west side lies under lower roofs.
+    - **What happens now:** one elevation is laid along the source face and sliced across its nine east edges, so windows near the steps are cut in two and the eave steps with the outline.
+    - **Recommendation:** yes. Author one footprint: a straight east face 2.6 m east of the longest step, from the source face's south end to its north end, keeping the source north, south and west sides.
+    - **Unlocks:** a flat front at its true line, whole windows and a straight eave.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
