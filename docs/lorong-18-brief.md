@@ -40,7 +40,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 18 | West | 764372561 | No. 44 | Done; unnamed; question 73 |
 | 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | Done; unnamed; question 73 |
 | 20 | East | 764372540 | No. 55, the Westerhout Road east corner | Done; unnamed |
-| 21 | East | 121872891 | No. 31, Hotel 81 Star | |
+| 21 | East | 121872891 | No. 31, Hotel 81 (Premier) Star | Done; named |
 | 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | |
 | 23 | East | 1470917582 | No. 1, Dabu Hakka Building | |
 | 24–26 | East | 764372559, 764372560, 454438314 | Nos. 350, 348 and 346 Geylang Road, the east corner | |
@@ -298,3 +298,25 @@ A weathered blue three-storey block at the corner.
 - None of their signs is on this block, which is tagged No. 55 and stood empty in 2024. No. 61 is the next outline east on Westerhout Road (way 454438307), which waits for a later pass ([question 72](open-questions.md)).
 
 Use `?review=l18-55`.
+
+### 21. Way 121872891: No. 31, Hotel 81 (Premier) Star
+
+A pale blue nine-storey hotel in a neoclassical dress of white mouldings.
+
+- **The two long wings:** on each upper floor, pairs of windows in recessed reveals and narrow single windows under hoods. A rosette over each pair, and ornate cartouches under the first-floor pairs.
+- **Ground floor:** car-park openings under arches, behind a dark granite wall along the pavement.
+- **The entrance bay:** grey, projecting 3.4 m between the wings, flanked by white pilasters rising the full height to a crest. An oval medallion and swags over a portico, where a board reads **HOTEL 81 PREMIER** over the glazed lobby and the number 31.
+- **North corner:** a vertical lightbox, seen only edge-on.
+
+**Measurement:**
+- **Depth:** the wings' windows line up between `zOAB…`, `FA-o…`, `OGxs…` and `Qxql…` (June 2024) on the **source plane**; planes 1.5 m either side split them. The depth scores agree on the south wing (+0.25 to +0.75 m).
+- **Bays:** about 5 m each, a pair and a single window to a bay.
+- **Heights:** ground floor to 4.6 m under a cornice; window rows every 3.0 m from 5.9 m; top cornice at 28.4–29.0 m; the bay's crest to about 30.5 m. The render-and-compare from `zOAB…` puts the roofline on the photographed one.
+
+**Layout:**
+- **Faces:** the entrance bay (edge 4) is the front. The wings (edges 6 and 2), the bay's returns and the ends are side faces, all on their source edges.
+- **The vertical lightbox** is drawn as a blank teal box, since its lettering could not be read.
+
+**Naming:** Google Maps lists **Hotel 81 (Premier) Star**, a hotel, at 31 Lor 18 Geylang, Singapore 398828, with its point inside this way. Its board is photographed, so it is named, and the board is redrawn in original type. TMHK, also listed at No. 31, has no photographed sign.
+
+Use `?review=hotel-81-star`.

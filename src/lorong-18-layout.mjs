@@ -675,5 +675,69 @@ export const no55 = {
   }],
 };
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55];
+// ---------------------------------------------------------------------------------------------
+// 21. Way 121872891, No. 31, Hotel 81 (Premier) Star: a pale blue nine-storey hotel in a neoclassical dress of white
+// mouldings, its two long wings either side of a grey entrance bay that projects 3.4 m, lettered HOTEL 81 PREMIER over
+// the door. Its wings' windows line up between the nearest June 2024 lane panoramas on the source plane, and each face
+// is laid on its source edge: the entrance bay (edge 4) is the front, the wings (edges 6 and 2, u south from their north
+// ends), the bay's returns and the ends are side faces.
+const blue31 = '#b4c8e8', white31 = '#f2f2f0', grey31 = '#7a7e82';
+const rows31 = Array.from({ length: 8 }, (_, k) => [+(5.9 + 3 * k).toFixed(2), +(7.4 + 3 * k).toFixed(2)]);
+// A wing: window pairs in recessed reveals and narrow single windows under hoods, rosettes over the pairs, cartouches
+// under the first-floor pairs, white pilasters by the entrance bay, and car-park arches on the ground floor.
+const wing31 = (w, pairs, slits, pilasters, arches) => ({
+  windows: rows31.flatMap(h => [...pairs.map(u => ({ u, h, panes: 2, out: .03 })), ...slits.map(u => ({ u, h, panes: 1 }))]),
+  blocks: [
+    { name: 'cornice over the ground floor', u: [0, w], h: [4.6, 5.1], out: .2, depth: .4, colour: white31 },
+    { name: 'top cornice', u: [0, w], h: [28.4, 29.0], out: .25, depth: .5, colour: white31 },
+    ...rows31.slice(0, -1).flatMap(([b, t]) => pairs.map(([l, r]) => ({ name: 'rosette', u: [(l + r) / 2 - .3, (l + r) / 2 + .3], h: [t + .55, t + 1.15], out: .04, depth: .06, colour: white31 }))),
+    ...rows31.flatMap(([b, t]) => [...pairs, ...slits].map(([l, r]) => ({ name: 'window sill', u: [l - .15, r + .15], h: [b - .15, b], out: .1, depth: .2, colour: white31 }))),
+    ...pairs.map(([l, r]) => ({ name: 'ornate cartouche', u: [l - .2, r + .2], h: [7.6, 8.7], out: .12, depth: .2, colour: white31 })),
+    ...pilasters.map(u => ({ name: 'white pilaster', u, h: [5.1, 28.4], out: .2, depth: .4, colour: white31 })),
+    ...arches.map(([l, r]) => ({ name: 'arch spandrel', u: [l, r], h: [3.7, 4.6], out: .05, depth: .1, colour: white31 })),
+    { name: 'dark granite wall', u: [.1, w - .1], h: [0, 1.3], out: 2.0, depth: .3, colour: '#3a3c3e' },
+  ],
+  arches,
+});
+const north31 = wing31(22.96, [[4.6, 6.4], [9.6, 11.4], [14.6, 16.4]], [[1.6, 2.0], [7.6, 8.0], [12.6, 13.0], [19.8, 20.2]], [[18.6, 19.4], [20.6, 21.4]], [[1.0, 4.4], [5.6, 9.0], [10.2, 13.6], [14.8, 18.2]]);
+const south31 = wing31(23.193, [[6.6, 8.4], [11.6, 13.4], [16.6, 18.4]], [[2.8, 3.2], [9.8, 10.2], [14.8, 15.2], [20.8, 21.2]], [[1.6, 2.4], [3.6, 4.4]], [[5.0, 8.4], [9.6, 13.0], [14.2, 17.6], [18.8, 22.2]]);
+const sideOf31 = (edge, wing) => ({ edge, windows: wing.windows, blocks: [...wing.blocks, ...wing.arches.map(u => ({ name: 'car-park arch', u, h: [.1, 3.7], out: .02, depth: .04, colour: '#3a3e44' }))] });
+export const hotel81Star = {
+  id: 'hotel-81-star', buildingIds: ['121872891'], kind: 'hotel-81-star', frontEdge: 4, reviewRoad: 'Lorong 18 Geylang', review: { distance: 9, pitch: 30 },
+  name: 'Hotel 81 (Premier) Star (June 2024 exterior)', address: '31 Lorong 18 Geylang',
+  height: 29.0, ceiling: 4.6, fiveFootWay: 1.6, shellInset: .2, roof: { type: 'flat', colour: '#9b9a95' },
+  colours: { wall: blue31, trim: white31, frame: '#3a4a5a', glass: '#3a4a5a', pier: grey31, back: '#2e3238', floor: '#8a8c8a' },
+  evidence: 'June 2024 Street View shows a pale blue nine-storey hotel in a neoclassical dress of white mouldings: on each upper floor of its two long wings, pairs of windows in recessed reveals and narrow single windows under hoods, with a rosette over each pair and ornate cartouches under the first-floor pairs; car-park openings under arches on the ground floor, behind a dark granite wall along the pavement. Between the wings a grey entrance bay projects, flanked by white pilasters rising the full height to a crest, with an oval medallion and swags over a portico, where a board reads HOTEL 81 PREMIER over the glazed lobby and the number 31; a vertical lightbox at the north corner is seen only edge-on. Google Maps lists Hotel 81 (Premier) Star, a hotel, at 31 Lor 18 Geylang, Singapore 398828, with its point inside this way, so it is named after its board, which is redrawn in original type; TMHK, also listed at No. 31, has no photographed sign. The wings\' windows line up between the nearest June 2024 lane panoramas (zOAB..., FA-o..., OGxs..., Qxql...) on the source plane, and planes 1.5 m either side split them, so each face is laid on its source edge. Heights were read on that plane: the ground floor to 4.6 m under a cornice, window rows every 3.0 m from 5.9 m, and the top cornice at 28.4-29.0 m, the bay\'s crest to about 30.5 m.',
+  sources: [way('121872891'), search('Hotel 81 Premier Star 31 Lorong 18 Geylang'), pano('qTnZ94l3dPCM46GK7zcMyA', 80, 12, 30), pano('anNqdM9awCzYw2w5CkdyoA', 90, 20, 90), pano('zOABkuSTa8EV0waK82wcQg', 110, 20, 90), pano('OGxsF3fQsZ9otpM_qqvc3Q', 60, 20, 90)],
+  windows: rows31.slice(1).map(h => ({ u: [2.4, 4.4], h, panes: 2, out: .03 })),
+  blocks: [
+    ...[[0, .7], [6.17, 6.868]].map(u => ({ name: 'white pilaster', u, h: [4.6, 29.6], out: .25, depth: .5, colour: white31 })),
+    { name: 'grey band', u: [.7, 6.17], h: [4.6, 8.6], out: .03, depth: .06, colour: grey31 },
+    { name: 'oval medallion', u: [2.6, 4.3], h: [5.6, 8.0], out: .12, depth: .2, colour: white31 },
+    { name: 'portico cornice', u: [0, 6.868], h: [4.2, 4.7], out: .5, depth: 1.0, colour: white31 },
+    { name: 'top cornice', u: [0, 6.868], h: [28.4, 29.0], out: .3, depth: .6, colour: white31 },
+    { name: 'crest', u: [1.4, 5.5], h: [29.0, 30.5], out: .1, depth: .3, colour: white31 },
+    ...rows31.slice(1).map(([b]) => ({ name: 'window sill', u: [2.25, 4.55], h: [b - .15, b], out: .1, depth: .2, colour: white31 })),
+  ],
+  piers: [[.1, .5], [6.35, 6.75]],
+  backFittings: [{ name: 'glazed lobby', u: [1.0, 5.9], h: [.1, 3.2], colour: '#2e3a44', glow: .12 }, { name: 'number 31', u: [.6, 1.0], h: [2.4, 2.9], colour: '#5a6a5a' }],
+  // HOTEL 81 PREMIER over the lobby.
+  boards: [{ u: [1.7, 5.2], h: [3.3, 4.1], out: .3 }],
+  sides: [
+    sideOf31(6, north31), sideOf31(2, south31),
+    ...[[5, 3.305], [3, 3.685]].map(([edge, w]) => ({ edge, blocks: [
+      { name: 'white pilaster', u: [0, .6], h: [4.6, 29.0], out: .2, depth: .4, colour: white31 },
+      { name: 'grey portico return', u: [0, w], h: [.1, 4.6], out: .02, depth: .04, colour: grey31 },
+      { name: 'top cornice', u: [0, w], h: [28.4, 29.0], out: .25, depth: .5, colour: white31 },
+    ] })),
+    ...[[7, 12.643], [1, 12.083]].map(([edge, w]) => ({ edge, windows: rows31.map(h => ({ u: [w / 2 - .7, w / 2 + .7], h, panes: 2 })), blocks: [
+      { name: 'top cornice', u: [0, w], h: [28.4, 29.0], out: .25, depth: .5, colour: white31 },
+      { name: 'cornice over the ground floor', u: [0, w], h: [4.6, 5.1], out: .2, depth: .4, colour: white31 },
+    ] })),
+  ],
+};
+// The vertical lightbox at the north corner, seen only edge-on: drawn as a blank teal box.
+hotel81Star.sides[0].blocks.push({ name: 'blank teal vertical lightbox', u: [.3, .5], h: [12.0, 18.0], out: .8, depth: 1.2, colour: '#2e8a8a' });
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;

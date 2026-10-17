@@ -85,6 +85,15 @@ const draws: Draws = {
   'gofit@5': { boards: [gofitBanner(1), gofitLetter('G')] },
   'gofit-22': { boards: [gofitLetter('O'), gofitLetter('F'), gofitLetter('I')] },
   'gofit-22@1': { boards: [gofitLetter('T')] },
+  // HOTEL 81 in teal on white, over PREMIER on a teal band.
+  'hotel-81-star': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#f4f6f4'; c.fillRect(0, 0, w, h); c.strokeStyle = '#2e8a8a'; c.lineWidth = h * .04; c.strokeRect(0, 0, w, h);
+      text(c, 'HOTEL 81', w * .5, h * .38, h * .5, '#1e8a8e', '800', sans, w * .9);
+      c.fillStyle = '#1e6a6e'; c.fillRect(w * .05, h * .7, w * .9, h * .22);
+      text(c, 'PREMIER', w * .5, h * .81, h * .17, '#f4f6f4', '700', 'Georgia, "Times New Roman", serif', w * .6);
+    }],
+  },
   // The number 340 on the corner's fascia.
   'le-regal@8': {
     boards: [(c, w, h) => { c.fillStyle = '#6a6d70'; c.fillRect(0, 0, w, h); text(c, '340', w * .5, h * .55, h * .78, '#f0f0ec', '700', sans, w * .9); }],
