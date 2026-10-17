@@ -24,7 +24,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 1–3 | West | 764372569, 764372571, 764372570 | Nos. 314, 312 and 310 Geylang Road, the west corner: Chang Jiang G1 Claypot Frog Porridge (314), B & S Mini Mart (310) | Done; two named; question 63 |
 | 4 | West | 763764689 | Nos. 6–18, the pink walk-up behind the car park | Done; unnamed; question 64 |
 | 5 | West | 763764687 | No. 20, Hotel 81 Geylang | Done; named; question 65 |
-| 6 | West | 763764688 | No. 24, Then Shen Temple | |
+| 6 | West | 763764688 | No. 24, Then Shen Temple | Done; named; question 65 |
 | 7 | West | 763764676 | No. 30, Crystal Lodge | |
 | 8 | West | 764372580 | No. 50 | |
 | 9 | West | 763764654 | No. 54 | |
@@ -138,3 +138,26 @@ A white board reading **HOTEL 81** in teal hangs over the car park beside a plat
 **Naming:** Google Maps lists **Hotel 81 Geylang** at 20 Lorong 16 Geylang, Singapore 398863, with its point inside this way, and the source map names it. Both signs are photographed, so it is named, and they are redrawn in original type.
 
 Use `?review=hotel-81-geylang`.
+
+### 6. Way 763764688: No. 24, Then Shen Temple
+
+A single-storey temple south of the hotel, behind a red-brick boundary wall with a green glazed balustrade and coping.
+
+- **June 2024:** the temple had been re-roofed in blue glazed tiles, and its roof and north half were wrapped in blue netting on scaffolding. The netting is temporary and is not modelled.
+  - A zinc verandah on poles, hung with red lanterns, runs across its east front, over a black board lettered in gold **天善** and a grille door between two windows.
+  - **The boundary wall:** a gold grille gate at the south end and a white one plated 24 at the north, their red pillars topped with green lions, and a red and yellow octagonal furnace inside the north gate.
+- **December 2022:** the same temple stood unwrapped under red tiles, with dragons on its ridge: cream walls between white corner piers with red brackets, a frieze of chevrons in yellow, green and red, and a cream board reading **天善堂**.
+
+**Measurement:**
+- **The front (edge 3):** read from the December 2022 drive, when it was unwrapped. `Fwgu…`, `ckR5…` and `tDR0…` agree on its south corner pier about **1.5 m in front of** the source edge; the corner piers stand about **14.8 m** apart, against the 16.04 m edge. The verandah reaches about 3.5 m further.
+- **The boundary wall:** the June 2024 panoramas' depth scores peak 6–7 m in front of the source edge (0.08–0.11), on the wall. Rectified there, its gate pillars still drift, so it is drawn at **7 m**. Its gates stand beyond both ends of the source edge.
+- **Heights:** windows at 1.2–3.0 m, the frieze at 4.0–4.4 m, the verandah at about 4.6 m, the eaves at about 5 m and the ridge at about 7.6 m.
+
+**Layout:**
+- **The front:** laid proportionally on the source edge (×1.08), its hall behind a shallow recess. The roof is hipped, in the 2024 blue.
+- **The verandah, the boundary wall and the furnace:** drawn at their measured depths. The white north gate falls beyond the outline and is not drawn.
+- **Footprint:** part of [open question 65](open-questions.md).
+
+**Naming:** Google Maps lists **Then Shen Temple**, a place of worship, at 24 Lorong 16 Geylang, Singapore 398866, with its point inside this way. Its board is photographed, so it is named. The board is redrawn in original type as photographed in 2024, gold on black; its third character, hidden by a lantern in June 2024, is taken from the 2022 board.
+
+Use `?review=then-shen-temple`.

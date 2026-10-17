@@ -267,7 +267,60 @@ export const hotel81Geylang = {
   ], blades: whole687.blades.map(b => ({ ...b, u: +(b.u - 5.03).toFixed(2) })) }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang];
+// ---------------------------------------------------------------------------------------------
+// 6. Way 763764688, No. 24, Then Shen Temple 天善堂: a cream single-storey temple under a hipped roof, re-roofed in blue
+// glazed tiles and wrapped in blue scaffold netting in June 2024, behind a red-brick boundary wall with a green glazed
+// balustrade. Its east front (edge 3, u_ph north from the south corner) was read from the December 2022 drive, when it
+// stood unwrapped: three panoramas agree on its corner piers about 1.5 m in front of the source edge, 14.8 m apart against
+// the 16.04 m edge, under a zinc verandah about 3.5 m deep; the June 2024 drive puts the boundary wall about 7 m in
+// front. It is laid proportionally (x1.08).
+const cream688 = '#e8dcc0', red688 = '#b8302a', green688 = '#2e7a52';
+const at688 = s => lay(0, 16.04 / 14.8)(s).map(v => Math.min(16.038, Math.max(0, v)));
+// The boundary wall: red brick under a green glazed balustrade and a green tiled coping.
+const wall688 = ([l, r]) => [
+  { name: 'red brick boundary wall', u: [l, r], h: [0, 1.15], out: 7.0, depth: .3, colour: '#a8503e' },
+  ...Array.from({ length: Math.round((r - l) / .28) }, (_, i) => ({ name: 'green glazed baluster', u: [+(l + .07 + i * .28).toFixed(3), +(l + .21 + i * .28).toFixed(3)].map(v => Math.min(r, v)), h: [1.15, 1.85], out: 7.0, depth: .14, colour: green688 })),
+  ...Array.from({ length: Math.floor((r - l) / 3.2) + 1 }, (_, i) => ({ name: 'brick pier', u: [+Math.min(r - .4, l + i * 3.2).toFixed(3), +Math.min(r, l + i * 3.2 + .4).toFixed(3)], h: [0, 1.95], out: 7.0, depth: .36, colour: '#a8503e' })),
+  { name: 'green tiled coping', u: [l, r], h: [1.85, 2.15], out: 7.0, depth: .4, colour: '#2a6a46' },
+];
+export const thenShen = {
+  id: 'then-shen-temple', buildingIds: ['763764688'], kind: 'then-shen-temple', frontEdge: 3, reviewRoad: 'Lorong 16 Geylang', review: { distance: 14, pitch: 8 },
+  name: 'Then Shen Temple (June 2024 exterior)', address: '24 Lorong 16 Geylang',
+  height: 5.0, ceiling: 3.9, fiveFootWay: .3, roof: { type: 'hip', ridge: 7.6, colour: '#3a4a8a' },
+  evidence: 'June 2024 Street View shows a single-storey temple on the west side of Lorong 16 under a hipped roof of new blue glazed tiles, its roof and north half wrapped in blue netting on scaffolding, which is not modelled: a zinc verandah on poles hung with red lanterns runs across its east front, over a black board lettered in gold 天善 and a grille door between two windows, behind a red-brick boundary wall with a green glazed balustrade and coping, a gold grille gate at the south end and a white one plated 24 at the north, their red pillars topped with green lions, and a red and yellow octagonal furnace inside the north gate. In December 2022 the same temple stood unwrapped under red tiles with dragons on its ridge: cream walls between white corner piers with red brackets, a chevron frieze in yellow, green and red, and a cream board reading 天善堂, from which the board\'s third character is taken. Google Maps lists Then Shen Temple, a place of worship, at 24 Lorong 16 Geylang, Singapore 398866, with its point inside this way, so it is named and its board is redrawn in original type. Three December 2022 lane panoramas (Fwgu..., ckR5..., tDR0...) agree on the corner piers about 1.5 m in front of the source edge, 14.8 m apart against the 16.04 m edge, and the verandah reaches about 3.5 m further; four June 2024 panoramas put the boundary wall about 7 m in front of the source edge. The front is laid proportionally on the edge. Heights were read on that plane: windows at 1.2-3.0 m, the frieze at 4.0-4.4 m, the verandah at about 4.6 m, the eaves at about 5 m and the ridge at about 7.6 m.',
+  sources: [way('763764688'), search('Then Shen Temple 24 Lorong 16 Geylang'), pano('2YRDXiSJdEBL2CpWbqIedQ', 262, 5, 75), pano('Z8Z-ljVYEyMx7D21fBKcjQ', 265, 5, 75), pano('ckR5_la_6WbBbljHVwiIqg', 262, 6, 80), pano('FwgunrIkHngGPVr97s9cXw', 245, 6, 80)],
+  colours: { wall: cream688, trim: '#f2ece0', frame: '#6a3a26', glass: '#3a3430', pier: '#f2f0ea', back: '#4a2e26', floor: '#a89a88' },
+  windows: [[2.4, 4.4], [10.6, 12.6]].map(at688).map(u => ({ u, h: [1.2, 3.0], panes: 3 })),
+  blocks: [
+    ...[[2.4, 4.4], [10.6, 12.6]].map(at688).flatMap(u => [{ name: 'window grille', u, h: [1.2, 3.0], out: .04, depth: .02, colour: '#8a6a40' }]),
+    { name: 'grille door', u: at688([5.6, 9.4]), h: [.1, 3.3], out: .02, depth: .04, colour: '#4a4440' },
+    ...[[0, .6], [14.2, 14.8]].map(at688).flatMap(u => [
+      { name: 'white corner pier', u, h: [.1, 4.9], out: .15, depth: .3, colour: '#f2f0ea' },
+      { name: 'red bracket', u, h: [4.2, 4.9], out: .3, depth: .3, colour: red688 },
+    ]),
+    { name: 'chevron frieze', u: at688([.6, 14.2]), h: [4.0, 4.4], out: .03, depth: .04, colour: '#c8a840' },
+    { name: 'red fascia under the eaves', u: [0, 16.038], h: [4.85, 5.05], out: .6, depth: 1.2, colour: '#7a2a2a' },
+    // The zinc verandah on poles, hung with red lanterns.
+    { name: 'zinc verandah', u: at688([1.0, 13.8]), h: [4.45, 4.7], out: 2.25, depth: 4.5, colour: '#b8bcb8' },
+    ...[1.2, 5.4, 9.6, 13.6].map(p => ({ name: 'verandah pole', u: at688([p - .05, p + .05]), h: [0, 4.45], out: 4.3, depth: .1, colour: '#d8d8d4' })),
+    ...Array.from({ length: 8 }, (_, i) => ({ name: 'red lantern', u: at688([1.8 + i * 1.55, 2.3 + i * 1.55]), h: [3.5, 4.15], out: 3.9, depth: .5, colour: '#c8282a', glow: .15 })),
+    // The boundary wall, its gold south gate and white north gate between red pillars with green lions, and the furnace.
+    ...grille('gold grille gate', at688([0, 1.5]), [0, 2.0], 7.0, '#c8a03a', .15, false),
+    ...wall688([at688([2.1, 2.1])[0], 15.45]),
+    // The white north gate stands beyond the outline's north end; its south pillar closes the wall.
+    ...[at688([1.5, 2.1]), [15.45, 16.03]].flatMap(u => [
+      { name: 'red gate pillar', u, h: [0, 2.4], out: 7.0, depth: .5, colour: red688 },
+      { name: 'green lion', u: [+(u[0] + .1).toFixed(2), +(u[1] - .1).toFixed(2)], h: [2.4, 2.9], out: 7.0, depth: .3, colour: green688 },
+    ]),
+    { name: 'octagonal furnace', u: at688([13.6, 14.5]), h: [0, 2.6], out: 5.6, depth: .9, colour: '#e8b830' },
+    { name: 'furnace roof', u: at688([13.5, 14.6]), h: [2.6, 3.4], out: 5.6, depth: 1.0, colour: red688 },
+  ],
+  // The board under the verandah, black with gold characters.
+  boards: [{ u: at688([5.5, 9.5]), h: [3.85, 4.45], out: .06 }],
+  backFittings: [{ name: 'temple hall', u: [.7, 15.3], h: [.1, 3.8], colour: '#4a2e26', glow: .08 }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

@@ -58,6 +58,13 @@ const draws: Draws = {
       text(c, 'GEYLANG', w * .5, h * .87, w * .17, '#f2f4f2', '800', sans, w * .72);
     }],
   },
+  // The temple's board: 天善堂 in gold on black, read from right to left.
+  'then-shen-temple': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#1e1a18'; c.fillRect(0, 0, w, h); c.strokeStyle = '#a8803a'; c.lineWidth = h * .06; c.strokeRect(h * .05, h * .05, w - h * .1, h - h * .1);
+      [...'天善堂'].forEach((ch, i) => text(c, ch, w * (.78 - i * .28), h * .54, h * .62, '#d8a848', '700', kai));
+    }],
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {
