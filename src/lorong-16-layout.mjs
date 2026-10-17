@@ -648,7 +648,31 @@ export const no51 = {
   backFittings: [{ name: 'carport', u: [.4, 4.5], h: [.1, 2.9], colour: '#3a3836' }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51];
+// 16. No. 49 (way 763764669): a brown two-storey house under a zinc roof, a louvred timber window and two
+// air-conditioners on its upper floor, over a pink tiled canopy and a red awning. On its source edge, as No. 51.
+export const no49 = {
+  id: 'l16-49', buildingIds: ['763764669'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 16 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 49 Lorong 16 (June 2024 exterior, occupants not identified)', address: '49 Lorong 16 Geylang',
+  height: 7.2, ceiling: 3.5, fiveFootWay: 1.5, roof: { type: 'hip', ridge: 8.1, colour: '#a9a49c' },
+  evidence: 'June 2024 Street View shows a brown two-storey house between the narrow tower of No. 47 and the orange No. 51, under a weathered zinc roof with a pink gutter: a louvred timber window under a vent and two air-conditioners on its upper floor, over a pink tiled canopy, and below it a red awning over a pink shopfront lit by purple strip lights. No business is listed at the address and no sign names it. Two June 2024 lane panoramas (978C..., gUrd...) agree on its upper floor on the source edge, where it runs about 4 m, against 3.84 m. Heights were read on that plane: the awning at 1.9-2.7 m, the canopy at 3.5-4.2 m, the window at 4.7-6.6 m and the eaves at about 7.2 m.' + eastRowNote,
+  sources: [way('763764669'), search('49 Lorong 16 Geylang Singapore'), pano('978C2KrUtxtel_U9_J90Ow', 92, 12, 50), pano('gUrdY-azKFUqo5xT_-hfnA', 62, 12, 40)],
+  colours: rowColours('#a06a54', { back: '#d8b8c0' }),
+  blocks: [
+    { name: 'louvred timber window', u: [1.95, 2.95], h: [4.7, 6.55], out: .03, depth: .04, colour: '#8a5a46' },
+    ...Array.from({ length: 12 }, (_, i) => ({ name: 'louvre', u: [2.0, 2.9], h: [+(4.8 + i * .15).toFixed(2), +(4.83 + i * .15).toFixed(2)], out: .06, depth: .02, colour: '#6a4434' })),
+    { name: 'vent', u: [1.95, 2.95], h: [6.6, 6.95], out: .03, depth: .04, colour: '#5a3e32' },
+    ...[[1.1, 1.8, 4.3], [1.1, 1.8, 5.0], [.2, .7, 4.6]].map(([a, b, y]) => ({ name: 'air-conditioner', u: [a, b], h: [y, y + .5], out: .2, depth: .4, colour: '#e8e8e4' })),
+    ...[[0, .25], [3.55, 3.8]].map(u => ({ name: 'pilaster', u, h: [3.5, 7.2], out: .05, depth: .1, colour: '#8a5a48' })),
+    { name: 'pink gutter', u: [0, 3.84], h: [7.15, 7.3], out: .3, depth: .2, colour: '#d8b8c0' },
+    { name: 'pink tiled canopy', u: [0, 3.84], h: [3.5, 4.2], out: .6, depth: 1.2, colour: '#e6d0d6' },
+    { name: 'red awning', u: [.1, 3.84], h: [1.9, 2.7], out: 1.0, depth: 2.0, colour: '#a8343e' },
+    { name: 'purple light strip', u: [.3, .4], h: [.3, 2.6], out: .03, depth: .02, colour: '#8a3ac8', glow: .5 },
+  ],
+  piers: [[.2, .4], [3.4, 3.6]], shellInset: .25,
+  backFittings: [{ name: 'pink shopfront', u: [.4, 3.4], h: [.1, 2.8], colour: '#c89aa8', glow: .08 }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.

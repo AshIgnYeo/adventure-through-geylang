@@ -33,7 +33,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 12 | East | 763764666 | No. 19 Westerhout Road | Done; unnamed; question 66 |
 | 13–14 | East | 763764665, 763764664 | Nos. 43 and 45 Westerhout Road, a pink pair | Done; unnamed |
 | 15 | East | 454274647 | No. 51 | Done; unnamed |
-| 16 | East | 763764669 | No. 49 | |
+| 16 | East | 763764669 | No. 49 | Done; unnamed |
 | 17 | East | 763764670 | No. 47, a narrow tower | |
 | 18 | East | 763764671 | No. 45 | |
 | 19 | East | 763764672 | No. 43, Soon Clan Association | |
@@ -280,3 +280,4 @@ North of the grassed verge, a row of narrow houses about 30 m deep, set back beh
 | Stop | Way | House | Photographed | Named |
 | --- | --- | --- | --- | --- |
 | 15 | 454274647 | **No. 51** | Orange, two storeys under a red tiled roof: raised panels and a white casement window under three dark vent slots, over a dark corrugated carport canopy that runs on south over the verge, hung with a round plate numbered 51 and a gold board lettered 泰. Two panoramas (`978C…`, `PBc3…`) agree on its window on the source edge; about 4.7 m against 4.9 m. Canopy 3.0–3.5 m, window 5.4–6.6 m, eaves 7.0 m, roof to 8.3 m | No: nothing is listed at No. 51 and the board names no business |
+| 16 | 763764669 | **No. 49** | Brown, two storeys under a weathered zinc roof with a pink gutter: a louvred timber window under a vent and two air-conditioners, over a pink tiled canopy and a red awning before a pink shopfront lit by purple strips. `978C…` and `gUrd…` agree on its upper floor on the source edge; about 4 m against 3.84 m. Awning 1.9–2.7 m, canopy 3.5–4.2 m, window 4.7–6.6 m, eaves 7.2 m | No: nothing is listed and no sign names it |
