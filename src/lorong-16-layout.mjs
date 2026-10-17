@@ -566,6 +566,8 @@ const westerhout = (() => {
 // The part of the elevation on one south edge, whose start lies at u_p = up0.
 const westerhoutEdge = (edge, up0, width) => {
   const sl = sliceSpec(westerhout, up0, +(up0 + width - .003).toFixed(3)), W = width - .003;
+  // Slivers of a neighbour's pieces under 0.2 m wide, where source spans overlap, are dropped.
+  for (const k of ['blocks', 'backFittings']) sl[k] = sl[k].filter(x => x.u[1] - x.u[0] >= .2);
   // Windows cut at an edge's end keep their sills inside it.
   const fit = w => { const [l, r] = [Math.max(w.u[0], .08), Math.min(w.u[1], W - .08)]; return r - l < .3 ? [] : [{ ...w, u: [+l.toFixed(3), +r.toFixed(3)] }]; };
   return { edge, windows: sl.windows.flatMap(fit), blocks: sl.blocks, backFittings: sl.backFittings };
@@ -606,10 +608,20 @@ export const westerhout17 = westerhoutHouse(17, '763764667', 3, [3, -12.71, 3.05
 export const westerhout19 = westerhoutHouse(19, '763764666', 8, [8, -6.54, 3.915], [6, -3.05, 3.408], 9.6, {
   evidence: 'December 2022 Street View from Westerhout Road shows No. 19, between No. 17 and the pink pair: a white upper floor with two small windows and a weathered grey side wall where it rises above No. 43, over a dark flat canopy plated 19 and a black railing gate in front of a car porch. Its photographed front runs about 6.7 m, against the source span\'s 6.9 m.' + westerhoutNote,
 });
+// Nos. 43 and 45: a pink pair under one tiled roof, on their source fronts.
+const pinkNote = ' Nos. 43 and 45 are a pink two-storey pair under one hipped tiled roof with deep eaves: glazed bands of dark panes on the upper floor over pink spandrels, and grey flat canopies on thin white posts over the ground floor. The December 2022 panoramas agree on their fronts on the source line, the pair about 15.7 m wide against 15.5 m, and each is laid on its source front.';
+export const westerhout43 = westerhoutHouse(43, '763764665', 1, [1, 0, 7.47], null, 6.8, {
+  shellInset: .15, roof: { type: 'hip', ridge: 8.6, colour: '#b4553d' },
+  evidence: 'December 2022 Street View from Westerhout Road shows No. 43, the west half of the pink pair: under its canopy a dark front with two purple light strips, a door under a lit gold outline, and red raised numbers reading 43, with a plate numbered 43 on its gate pier.' + pinkNote + westerhoutNote,
+});
+export const westerhout45 = westerhoutHouse(45, '763764664', 0, [0, 7.47, 8.024], null, 6.8, {
+  roof: { type: 'hip', ridge: 8.6, colour: '#b4553d' },
+  evidence: 'December 2022 Street View from Westerhout Road shows No. 45, the east half of the pink pair: under its canopy a door in a mosaic surround with a round plate numbered 45, an air-conditioner under the eaves, a white gate, and a small red shrine on the forecourt.' + pinkNote + westerhoutNote,
+});
 
 export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
-export const westerhout16 = [westerhout17, westerhout19];
+export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

@@ -31,7 +31,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 10 | East | 763764668 | No. 15 Westerhout Road, the south-east corner: the terrace's west gable | Done; unnamed; question 66 |
 | 11 | East | 763764667 | No. 17 Westerhout Road | Done; unnamed; question 66 |
 | 12 | East | 763764666 | No. 19 Westerhout Road | Done; unnamed; question 66 |
-| 13–14 | East | 763764665, 763764664 | Nos. 43 and 45 Westerhout Road, a pink pair | |
+| 13–14 | East | 763764665, 763764664 | Nos. 43 and 45 Westerhout Road, a pink pair | Done; unnamed |
 | 15–22 | East | 454274647, 763764669, 763764670, 763764671, 763764672, 763764673, 763764674, 763764675 | The row south of Hotel 81 Palace: Lodge 41 (41), Soon Clan Association (43) | |
 | 23 | East | 121872890 | No. 25, Hotel 81 Palace | |
 | 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | Nos. 19, 17, 15, 11 and 9 | |
@@ -255,7 +255,13 @@ At the lane's south-east corner a tall blank beige gable stands on a grassed ver
 | 10 | 763764668 | **No. 15**, the corner | The blank beige west gable on the lane. On Westerhout Road: a cream upper floor with a grey balcony and louvres under a deep roof slab, over a red tiled porch, a white gate and a red number plate |
 | 11 | 763764667 | **No. 17** | An orange upper floor of louvred grilles over a white band, under a deep roof slab, over a maroon tiled porch and a white gate of rings plated 17; about 6.2 m between its party walls, against the source span's 5.7 m |
 | 12 | 763764666 | **No. 19** | A white upper floor with two small windows, and a weathered grey side wall where it rises above No. 43, over a dark flat canopy plated 19 and a black railing gate before a car porch; about 6.7 m against 6.9 m |
+| 13 | 763764665 | **No. 43** | The west half of a pink two-storey pair under one hipped tiled roof: a glazed band of dark panes over a pink spandrel, a grey flat canopy on white posts, and under it a dark front with two purple light strips, a lit gold outline over the door and red raised numbers 43 |
+| 14 | 763764664 | **No. 45** | The east half: the same front, a door in a mosaic surround with a round plate numbered 45, an air-conditioner, a white gate and a small red shrine |
 
 **Stop 10, No. 15:** the gable (edge 3) is the front, facing the lane, and its two south edges are side faces. Two June 2024 lane panoramas (`5TUz…`, `PBc3…`) agree on the gable within about 1 m of its source edge. Its top is drawn at about 9.4 m, where the Westerhout Road panoramas read the roof slab. Use `?review=l16-westerhout-15`.
 
 **Stops 11–14, Nos. 17–45:** they face Westerhout Road, beyond the corridor's end. Review starts there would fall outside the study area, so they have none; they are seen from the lane's south end. Each house is laid on its south edges: its porch-line edge is the front, and its recessed edge a side face. Their gates photograph about 11 m from the road's panoramas, against about 15 m in the model, so the porches may reach further forward than the outlines.
+
+**Stops 13–14, Nos. 43 and 45:** the December 2022 panoramas agree on the pair's fronts on the source line, about 15.7 m wide against 15.5 m. Each half is laid on its source front, under a hipped tiled roof to about 8.6 m. Use the lane's south end to see them; they have no review start.
+
+**East side, Westerhout Road corner complete.**
