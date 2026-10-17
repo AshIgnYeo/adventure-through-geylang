@@ -315,7 +315,7 @@ export const no35 = {
 const W614 = 6.069, at614 = s => lay(1.0, W614 / 5.7)(s).map(v => Math.min(W614, Math.max(0, v)));
 const white614 = '#e6e2d8', timber614 = '#b08a5a';
 export const no33 = {
-  id: 'l14-33', buildingIds: ['454274614'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 9, pitch: 20 },
+  id: 'l14-33', buildingIds: ['454274614'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 16 },
   name: 'No. 33 Lorong 14 (June 2024 exterior, occupants not identified)', address: '33 Lorong 14 Geylang (unnumbered in the source)',
   height: 9.9, ceiling: 3.3, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
   evidence: 'June 2024 Street View shows a three-storey house between the brown slatted front of No. 31 and the white front of No. 35: on the second floor two windows between timber blinds under a dark metal canopy; on the first floor two windows between timber blinds and two air-conditioners, under a red tiled pent roof; a balcony screened in bamboo, running on across No. 31, over a maroon awning; and brown slatted gates with a letterbox at the pavement. The source way has no number; Google Maps geocodes 33 Lor 14 Geylang beside it, and no business is listed there or signed, so no name is given. The depth scores of its upper floors peak 2.0-2.25 m in front of the source edge (bPco... with 2NQa..., 0.33), as do the whole house\'s between three pairs of lane panoramas (0.24-0.33). On a plane 2.25 m forward, read square-on from 2NQa..., the party walls stand 1.0 m and 6.7 m along the source edge, against its 0 and 6.07 m; the elevation is laid proportionally on the source edge (open question 53). The gates triangulate, from the elevation of their foot in 2NQa..., about 6 m in front of the source edge. Heights were read on that plane: the awning at 2.1-3.25 m, the bamboo screen at 3.95-4.45 m, first-floor windows at 4.6-6.0 m, the pent roof at 6.1-6.9 m, second-floor windows at 7.0-8.4 m under a canopy to 8.9 m, and the parapet at 9.9 m.',
@@ -349,7 +349,7 @@ export const no33 = {
 const W611 = 6.861, at611 = s => lay(1.2, W611 / 6.4)(s).map(v => Math.min(W611, Math.max(0, v)));
 const slat611 = '#6e5e56';
 export const leYuan = {
-  id: 'le-yuan', buildingIds: ['454274611'], kind: 'le-yuan', frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 10, pitch: 18 },
+  id: 'le-yuan', buildingIds: ['454274611'], kind: 'le-yuan', frontEdge: 0, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 16 },
   name: '樂緣 HAPPY 31 (June 2024 exterior)', address: '31 Lorong 14 Geylang (Google Maps gives Lor 14 Geylang, Singapore 398933)',
   height: 10.25, ceiling: 3.6, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
   evidence: 'June 2024 Street View shows a three-storey house between No. 29 and No. 33 faced from 4.75 m to its parapet in brown horizontal slats, over a forecourt under a canopy whose front carries a red board reading HAPPY 31 乐缘, with red awnings under it and a glazed shop front behind lettered Happy Men; a red letterbox plated 31 and a welcome board stand on the forecourt. Google Maps lists 樂緣, open until midnight, with no category, at Lor 14 Geylang, Singapore 398933, with its point inside this way. The board carries the same name, in simplified characters, with the house number; the listing gives no house number and its postal code differs from No. 31\'s (398940), so the house is named under open question 12 (a clearly signed occupant may be modelled when published addresses disagree, the conflict recorded), and the board is redrawn in original type. SBL Engineering, also listed at No. 31, is closed. The slats\' north edge and No. 29\'s windows put the front 1.5 m in front of the source edge (three pairs of June 2024 lane panoramas, 0.38-0.47), where it runs from 1.2 m to 7.6 m along the source edge, against 0 to 6.86 m; the elevation is laid proportionally on the source edge (open question 53). The board lines up between jrMz... and bPco... on a plane about 6 m forward, where No. 33\'s gates also triangulate, at the front of the canopy; its height was read on that plane (3.5-4.05 m), the slats\' on the 1.5 m plane (4.75-10.25 m).',
@@ -373,7 +373,103 @@ export const leYuan = {
   ],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan];
+// 7-9. Ways 454274608, 764372579 and 764372578, Nos. 29, 27 and 25: three-storey houses over car porches, read
+// together on one plane along No. 25's front (s south from its north end), where the upper floors of all three line up
+// 2.5 m behind it (their own fronts' depth scores give 1.5, 1.75-2.0 and 2.5-2.75 m behind, each consistent with that
+// plane). On that plane No. 25 runs from s = 0.67 to 5.1, No. 27, with its brown slatted stair tower, to 11.45, and No.
+// 29 to 20.6, against the source party walls' 0, 6.12, 12.95 and 19.41; each house is laid proportionally on its own
+// source edge. The gates stand at the pavement: No. 27's plate pillar triangulates (Pm_y3... with bPco...) 5.2 m in
+// front of No. 25's line, No. 29's 6.3 m in front of its own front, and No. 25's gate, from the elevation of its foot,
+// about 3.4 m in front.
+const terraceNote = ' Nos. 25, 27 and 29 were read together on one plane along No. 25\'s front: the upper floors of all three line up about 2.5 m behind it, where June 2024 lane panoramas (0W5F..., Pm_y3..., jrMz..., bPco...) agree on their windows; the depth scores of each front give 2.5-2.75 m, 1.75-2.0 m and 1.5 m behind its own source edge, each consistent with that plane, as the source fronts step back southward. On that plane the party walls stand 0.67, 5.1, 11.45 and 20.6 m along No. 25\'s front, against the source\'s 0, 6.12, 12.95 and 19.41 m, so No. 29 photographs about 9.2 m wide on a 6.3 m way; each elevation is laid proportionally on its own source edge (open question 53). The gates stand at the pavement: No. 27\'s plate pillar triangulates (Pm_y3... with bPco...) about 5.2 m in front of No. 25\'s line, No. 29\'s plate pillar (jrMz... with bPco...) about 6.3 m in front of its own source edge, and No. 25\'s gate, from the elevation of its foot in Pm_y3..., about 3.4 m in front of its own.';
+const terraceSources = w => [way(w), pano('Pm_y3b0YxCtt8zWXmMbgzQ', 100, 15, 70), pano('jrMzKbxEkHu-lNNinj-HiA', 90, 15, 70), pano('bPcoR5AOs4FXgQbHv6fiew', 60, 15, 70)];
+const terraceColours = (wall, frame = '#e8e8e4') => ({ wall, trim: '#dcdad4', frame, glass: '#3a4244', pier: wall, back: '#4a4642', floor: '#a8a296' });
+const W578 = 6.045, at25 = s => lay(.67, W578 / 4.43)(s).map(v => Math.min(W578, Math.max(0, v)));
+export const no25 = {
+  id: 'l14-25', buildingIds: ['764372578'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 25 Lorong 14 (June 2024 exterior, occupants not identified)', address: '25 Lorong 14 Geylang',
+  height: 10.05, ceiling: 3.95, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a white three-storey house south of the ibis budget hotel: a window on each upper floor at its north end, and at its south end a dark timber-clad panel carrying six air-conditioners, over a porch under a white corrugated canopy with a floodlight; behind the porch a feature wall of red and grey stone, and at the pavement a grey railing gate between white pillars with red tiled caps, one plated 25. No business is listed at No. 25 and no sign was photographed.' + terraceNote,
+  sources: [...terraceSources('764372578'), search('25 Lorong 14 Geylang')],
+  colours: terraceColours('#ecebe6', '#e0e0dc'),
+  windows: [{ u: at25([.9, 2.45]), h: [8.2, 9.55], panes: 2 }, { u: at25([.9, 2.33]), h: [5.17, 6.57], panes: 2 }],
+  vents: [[8.95, 9.2], [5.95, 6.2]].map(h => ({ u: at25([2.65, 2.95]), h })),
+  blocks: [
+    { name: 'dark timber-clad panel', u: at25([3.1, 5.1]), h: [5.3, 9.9], out: .03, depth: .06, colour: '#6a5242' },
+    ...[[3.2, 4.05], [4.15, 5.0]].flatMap(s => [[4.85, 5.4], [5.6, 6.15], [6.35, 6.9]].map(h => ({ name: 'air-conditioner', u: at25(s), h, out: .3, depth: .5, colour: '#e8e8e4' }))),
+    { name: 'parapet', u: [0, W578], h: [9.8, 10.05], out: .05, depth: .1, colour: '#dcdad4' },
+    { name: 'white corrugated canopy', u: at25([.73, 5.1]), h: [3.95, 4.6], out: .75, depth: 1.5, colour: '#e4e2dc' },
+    { name: 'floodlight', u: at25([1.6, 1.9]), h: [4.6, 4.9], out: .3, depth: .2, colour: '#2a2a2a' },
+    // The gate at the pavement, about 3.4 m out: white pillars with red tiled caps either side of a grey railing.
+    ...[[.5, 1.1], [4.6, 5.1]].flatMap(s => [
+      { name: 'white gate pillar', u: at25(s), h: [0, 1.95], out: 3.4, depth: .5, colour: '#ecebe6' },
+      { name: 'red tiled pillar cap', u: at25(s), h: [1.95, 2.2], out: 3.4, depth: .55, colour: '#c06058' },
+    ]),
+    ...grille('grey railing gate', at25([1.1, 4.6]), [0, 1.6], 3.4, '#4a4c4c', .15, false),
+  ],
+  backFittings: [
+    { name: 'red and grey stone feature wall', u: at25([1.0, 3.6]), h: [.1, 3.3], colour: '#8a4a48' },
+    { name: 'glazed door', u: at25([3.6, 4.9]), h: [.1, 2.6], colour: '#3a4244', glow: .06 },
+  ],
+};
+const W579 = 6.681, at27 = s => lay(5.1, W579 / 6.35)(s).map(v => Math.min(W579, Math.max(0, v)));
+export const no27 = {
+  id: 'l14-27', buildingIds: ['764372579'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 27 Lorong 14 (June 2024 exterior, occupants not identified)', address: '27 Lorong 14 Geylang',
+  height: 9.9, ceiling: 3.4, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a white three-storey house with two windows on each upper floor, some of them open casements, and at its south end a stair tower clad in maroon slats rising the full height; over its porch a red tiled arched awning, which runs on across the north part of No. 29, and a dark board; at the pavement a black granite wall with a band of green glass, a black pillar plated 27 and a black railing gate. Google Maps lists RS Cycles, a bicycle shop, at 27 Lor 14 Geylang, with its point inside this way, but no sign for it was photographed, so no name is given.' + terraceNote,
+  sources: [...terraceSources('764372579'), search('27 Lorong 14 Geylang'), pano('Pm_y3b0YxCtt8zWXmMbgzQ', 122, 0, 30)],
+  colours: terraceColours('#eeede8'),
+  windows: [
+    ...[[5.2, 7.0], [7.67, 9.27]].map(s => ({ u: at27(s), h: [7.7, 9.1], panes: 3 })),
+    ...[[5.4, 6.8], [7.73, 9.33]].map(s => ({ u: at27(s), h: [4.72, 6.06], panes: 3 })),
+  ],
+  blocks: [
+    { name: 'maroon slatted stair tower', u: at27([9.35, 11.45]), h: [4.05, 10.0], out: .2, depth: .4, colour: '#7a3a36' },
+    ...Array.from({ length: 23 }, (_, i) => +(4.15 + i * .25).toFixed(2)).map(y => ({ name: 'slat shadow', u: at27([9.4, 11.4]), h: [y, +(y + .05).toFixed(2)], out: .41, depth: .02, colour: '#4e2826' })),
+    { name: 'parapet', u: [0, W579], h: [9.65, 9.9], out: .05, depth: .1, colour: '#dcdad4' },
+    { name: 'blank dark board', u: at27([9.0, 11.45]), h: [4.17, 4.95], out: .45, depth: .1, colour: '#3a3634' },
+    { name: 'white canopy', u: at27([5.1, 5.9]), h: [3.4, 4.05], out: .6, depth: 1.2, colour: '#e4e2dc' },
+    { name: 'red tiled arched awning', u: at27([5.9, 11.45]), h: [3.25, 4.3], out: 1.0, depth: 2.0, colour: '#c0624a' },
+    // The gate at the pavement, about 5.8 m out: a black granite wall with a band of green glass, the plate pillar and a
+    // black railing gate.
+    { name: 'black granite wall', u: at27([5.4, 10.0]), h: [0, 2.0], out: 5.8, depth: .3, colour: '#2a2a2c' },
+    { name: 'green glass band', u: at27([5.5, 9.9]), h: [.9, 1.85], out: 5.97, depth: .02, colour: '#5a9a88' },
+    { name: 'black plate pillar', u: at27([10.0, 10.6]), h: [0, 2.4], out: 5.8, depth: .4, colour: '#1e1e20' },
+    { name: 'house plate', u: at27([10.1, 10.5]), h: [1.85, 2.15], out: 6.01, depth: .02, colour: '#e8e8e4' },
+    ...grille('black railing gate', at27([10.6, 11.45]), [0, 2.0], 5.8, '#1e1e20', .15, false),
+  ],
+  backFittings: [{ name: 'porch with racks', u: at27([5.5, 11.0]), h: [.1, 2.8], colour: '#3a3a38', glow: .04 }],
+};
+const W608 = 6.299, at29 = s => lay(11.45, W608 / 9.15)(s).map(v => Math.min(W608, Math.max(0, v)));
+export const no29 = {
+  id: 'l14-29', buildingIds: ['454274608'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 14 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 29 Lorong 14 (June 2024 exterior, occupants not identified)', address: '29 Lorong 14 Geylang',
+  height: 10.0, ceiling: 3.25, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a broad white three-storey house between No. 27\'s stair tower and No. 31\'s slats, three windows on each upper floor and an air-conditioner, over a porch partly under No. 27\'s red tiled awning and a dark board, partly under a cream corrugated canopy; at the pavement a black railing gate and a white pillar with a lamp, plated 29. No business is listed at No. 29 and no sign was photographed.' + terraceNote,
+  sources: [...terraceSources('454274608'), search('29 Lorong 14 Geylang'), pano('bPcoR5AOs4FXgQbHv6fiew', 62, 0, 30)],
+  colours: terraceColours('#eeede8'),
+  windows: [
+    { u: at29([11.6, 13.4]), h: [7.8, 9.15], panes: 3 }, { u: at29([14.5, 16.1]), h: [7.9, 9.2], panes: 2 }, { u: at29([19.1, 20.3]), h: [8.05, 9.4], panes: 2 },
+    { u: at29([11.6, 13.45]), h: [5.0, 6.17], panes: 3 }, { u: at29([14.5, 16.1]), h: [5.0, 6.2], panes: 2 }, { u: at29([19.1, 20.3]), h: [5.05, 6.4], panes: 2 },
+  ],
+  blocks: [
+    { name: 'air-conditioner', u: at29([18.8, 19.8]), h: [7.5, 8.17], out: .25, depth: .5, colour: '#e8e8e4' },
+    { name: 'parapet', u: [0, W608], h: [9.75, 10.0], out: .05, depth: .1, colour: '#dcdad4' },
+    { name: 'blank dark board', u: at29([11.45, 14.7]), h: [4.17, 4.95], out: .45, depth: .1, colour: '#3a3634' },
+    { name: 'red tiled arched awning', u: at29([11.45, 15.2]), h: [3.25, 4.3], out: 1.0, depth: 2.0, colour: '#c0624a' },
+    { name: 'cream corrugated canopy', u: at29([15.2, 20.1]), h: [3.95, 4.83], out: .75, depth: 1.5, colour: '#e2dccc' },
+    // The gate at the pavement, about 6.3 m out: a black railing gate, the white plate pillar with its lamp, and a railing.
+    ...grille('black railing gate', at29([11.45, 17.3]), [0, 2.0], 6.3, '#1e1e20', .15, false),
+    { name: 'white plate pillar', u: at29([17.3, 17.8]), h: [0, 2.0], out: 6.3, depth: .45, colour: '#ecebe6' },
+    { name: 'pillar lamp', u: at29([17.45, 17.65]), h: [2.0, 2.4], out: 6.3, depth: .2, colour: '#f4f0e0', glow: .2 },
+    ...grille('black railing', at29([17.8, 20.6]), [.5, 1.5], 6.3, '#1e1e20', .15, false),
+    { name: 'low white wall', u: at29([17.8, 20.6]), h: [0, .5], out: 6.3, depth: .25, colour: '#ecebe6' },
+  ],
+  backFittings: [{ name: 'porch and shop front', u: at29([11.8, 20.2]), h: [.1, 2.9], colour: '#4a4440', glow: .04 }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

@@ -32,9 +32,9 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 4 | East | 454274615 | No. 35 | Done; unnamed |
 | 5 | East | 454274614 | No. 33 (no number in the source) | Done; unnamed; question 53 |
 | 6 | East | 454274611 | No. 31, 樂緣 (HAPPY 31) | Done; named (address conflict recorded); question 53 |
-| 7 | East | 454274608 | No. 29 | |
-| 8 | East | 764372579 | No. 27 | |
-| 9 | East | 764372578 | No. 25 | |
+| 7 | East | 454274608 | No. 29 | Done; unnamed; question 53 |
+| 8 | East | 764372579 | No. 27 | Done; unnamed; question 53 |
+| 9 | East | 764372578 | No. 25 | Done; unnamed; question 53 |
 | 10 | East | 454274677 | No. 21, the ibis budget hotel | |
 | 11 | East | 764372577 | No. 3, Central Imperial | |
 | 12 | East | 476141643 | No. 1, The Amazing Inn | |
@@ -205,3 +205,33 @@ A three-storey house faced from its first floor to its parapet in brown horizont
 - SBL Engineering, also listed at No. 31, is closed.
 
 Use `?review=le-yuan`.
+
+### 7–9. Ways 454274608, 764372579 and 764372578: Nos. 29, 27 and 25
+
+Three white three-storey houses over car porches, between No. 31 and the ibis budget hotel, their gates at the pavement.
+
+**Measurement:** the three fronts were read together on one plane along No. 25's front (s south from its north end).
+- **Depth:** the upper floors of all three line up about **2.5 m behind** No. 25's source front, between `0W5F…`, `Pm_y3…`, `jrMz…` and `bPco…`. The depth scores of each front on its own source edge agree: 2.5–2.75 m behind (No. 25), 1.75–2.0 m (No. 27) and 1.5 m (No. 29), as the source fronts step back southward. The scores are weak (0.10–0.22) over the porches and gates, so the plane was confirmed by rectifying the windows on it.
+- **Party walls on that plane:** at s = 0.67, 5.1, 11.45 and 20.6, against the source's 0, 6.12, 12.95 and 19.41. So No. 25 photographs 4.4 m wide on a 6.05 m way, No. 27 6.35 m on 6.68 m, and No. 29 about 9.2 m on 6.3 m.
+  - The 27/29 wall was placed where No. 27's stair tower ends; a window at s 14.5–16.1 rules out the change of canopy at s 15.2.
+  - The plate pillars agree: No. 27's at s 10.3, near its south end; No. 29's at about s 17.5, near the middle of its wide front.
+- **The gates:** No. 27's plate pillar triangulates (`Pm_y3…` with `bPco…`) at (216.8, 198.7), about **5.2 m in front of** No. 25's line; No. 29's (`jrMz…` with `bPco…`) about **6.3 m in front of** its own source edge. No. 25's gate, from the elevation of its foot in `Pm_y3…`, stands about **3.4 m in front of** its own, to within about 1.5 m.
+- **Heights:** porches to 3.25–3.95 m under their canopies; first-floor windows at about 4.7–6.4 m; second-floor windows at about 7.7–9.5 m; parapets at 9.9–10.05 m.
+- **Check:** renders from `Pm_y3…`, `jrMz…` and `bPco…`, blended with the photographs, put the gates, the plate pillars, the canopies and the window rows on their photographed places. The upper floors fall about a metre south of their photographed places, as the proportional layout predicts.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 7 | 454274608 | **No. 29**: broad and white, three windows on each upper floor and an air-conditioner. Its porch is partly under No. 27's red tiled awning and a dark board, partly under a cream corrugated canopy. At the pavement a black railing gate and a white pillar with a lamp, plated 29 | 9.15 m | No |
+| 8 | 764372579 | **No. 27**: white, two windows on each upper floor and a stair tower clad in maroon slats at its south end. A red tiled arched awning over its porch. At the pavement a black granite wall with a band of green glass, a black pillar plated 27 and a black railing gate | 6.35 m | No |
+| 9 | 764372578 | **No. 25**: white, a window on each upper floor at its north end, and a dark timber-clad panel carrying six air-conditioners at its south end. A white corrugated canopy with a floodlight over a porch with a red and grey stone feature wall. At the pavement a grey railing gate between white pillars with red tiled caps, plated 25 | 4.43 m | No |
+
+**Layout:**
+- Each house is laid proportionally on its own source edge: No. 29 ×0.69, No. 27 ×1.05, No. 25 ×1.36.
+- The gates are drawn at their triangulated lines: 6.3 m, 5.8 m and 3.4 m out from each source edge.
+- The fronts' photographed line and the party walls are part of [open question 53](open-questions.md).
+
+**Naming:** none.
+- Google Maps lists RS Cycles, a bicycle shop, at 27 Lor 14 Geylang, with its point inside No. 27's way, but no sign for it was photographed.
+- Nothing is listed at Nos. 25 and 29.
+
+Use `?review=l14-29`, `?review=l14-27` and `?review=l14-25`.
