@@ -131,6 +131,31 @@ const draws: Draws = {
       text(c, 'beauty', w * .72, h * .8, h * .14, '#3a9a4a', 'italic 500', 'Georgia, serif');
     }],
   },
+  // 傅興記 in dark brush characters on the yellow valance.
+  'fu-xing-ji:764372575': {
+    boards: [(c, w, h) => { c.fillStyle = '#e8dc80'; c.fillRect(0, 0, w, h); [...'傅興記'].forEach((ch, i) => text(c, ch, w * (.17 + i * .33), h * .52, h * .82, '#2a2a28', '700', kai)); }],
+  },
+  // The blue board: B&S Food Corner in Bengali over the English, beside a grid of dish photographs drawn as colour.
+  'fu-xing-ji:764372574': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#2a5ab8'; c.fillRect(0, 0, w, h); c.strokeStyle = '#e8e8e4'; c.lineWidth = h * .04; c.strokeRect(0, 0, w, h);
+      text(c, 'বি এন্ড এস ফুড কর্নার', w * .17, h * .38, h * .2, '#f2f2ee', '700', '"Bangla Sangam MN", "Kohinoor Bangla", sans-serif', w * .3);
+      text(c, 'B&S Food Corner', w * .17, h * .66, h * .17, '#f2e04a', '700', sans, w * .3);
+      const dish = ['#c8803a', '#a8602a', '#d8a050', '#8a4a2a', '#c86a3a', '#b89050'];
+      for (let r = 0; r < 2; r++) for (let k = 0; k < 6; k++) { c.fillStyle = dish[(k + r * 3) % 6]; c.beginPath(); c.ellipse(w * (.38 + k * .105), h * (.3 + r * .42), w * .045, h * .17, 0, 0, Math.PI * 2); c.fill(); }
+    }],
+  },
+  // The orange board, the paint brand's mark left out: B&S (2017) PTE LTD on a yellow ground, 310 in its corner.
+  'bs-hardware-lorong-16': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#e8782a'; c.fillRect(0, 0, w, h);
+      const g = c.createLinearGradient(w * .45, 0, w, 0); g.addColorStop(0, '#f2a83a'); g.addColorStop(1, '#f2d050');
+      c.fillStyle = g; c.beginPath(); c.moveTo(w * .42, h * .82); c.quadraticCurveTo(w * .5, h * .2, w * .62, h * .2); c.lineTo(w, h * .2); c.lineTo(w, h * .82); c.fill();
+      c.fillStyle = '#9a9c9e'; c.fillRect(w * .4, h * .18, w * .6, h * .03); c.fillRect(0, h * .82, w * .6, h * .03);
+      text(c, 'B&S (2017) PTE LTD', w * .72, h * .52, h * .3, '#2a2a28', '700', sans, w * .5);
+      text(c, '310', w * .96, h * .1, h * .12, '#c83a2a', '700', sans);
+    }],
+  },
   'le-yuan': {
     boards: [(c, w, h) => {
       c.fillStyle = '#c8282a'; c.fillRect(0, 0, w, h);

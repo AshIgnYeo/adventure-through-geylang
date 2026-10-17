@@ -902,7 +902,112 @@ export const no300 = {
   }],
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu, no294, greenEssential, no298, no300];
+// 22-25. Ways 764372575, 764372574, 764372572 and 764372573, Nos. 302-308: a block of three storeys under a roof
+// terrace, standing back behind a forecourt from No. 300 to Lorong 16's corner. Read on one plane along No. 302's front
+// (v west from its east end): the windows and air-conditioners line up between three June 2024 Geylang Road panoramas
+// (sH6..., YYHF..., rxHH...) 2.25 m in front of the source front (depth scores 0.14-0.16; at 1.0 and 3.5 m they drift up
+// to 0.7 m apart), where the divisions, triangulated from YYHF... with rxHH..., stand at v = 6.57, 0.11, -5.88, -11.55 and
+// about -17.35, against the source's 6.59, 0, -5.45, -11.46 and -16.91 (open question 57). Each front is laid
+// proportionally on its own source edge. Heights were read on that plane and scaled as for Nos. 284-290 (x1.04).
+const blockNote = ' Nos. 302-308 are a block of three storeys under a roof terrace, standing back behind a forecourt between No. 300 and Lorong 16\'s corner. They were read on one plane along No. 302\'s front: the windows and air-conditioners line up between three June 2024 Geylang Road panoramas (sH6..., YYHF..., rxHH...) 2.25 m in front of the source front, and on that plane the divisions between the fronts, triangulated from two of them, stand 6.57 m west and 0.11, 5.88, 11.55 and about 17.35 m east of No. 302\'s source east end, against the source\'s 6.59, 0, 5.45, 11.46 and 16.91 m (open question 57). Each front is laid proportionally on its own source edge. Heights were read on that plane and scaled as for Nos. 284-290 (x1.04): awnings at about 1.6-3.1 m, boards above them, first-floor windows at 4.15-5.5 m under vents at 5.8-6.05 m, second-floor windows at 7.8-9.05 m under vents at 9.35-9.6 m, and parapets at about 11.0 m.';
+const blockSources = w => [way(w), pano('YYHFimb1eboxjLahzKL00A', 190, 10, 100), pano('rxHH3aE6uvw225UPp98KpA', 190, 10, 100), pano('sH6CfyvyQsxgdBweKtGXhg', 180, 10, 100)];
+const blockH = { ceiling: 3.6, win1: [4.15, 5.5], vent1: [5.8, 6.05], ledge: [6.4, 6.6], win2: [7.8, 9.05], vent2: [9.35, 9.6], height: 11.0 };
+const blockColours = wall => ({ wall, trim: '#e4e6e6', frame: '#3a3c3e', glass: '#3e4648', pier: '#d8dada', back: '#4a4642', floor: '#a8a49c' });
+// One front's upper floors: windows on both floors with vent strips over them, a ledge, a parapet, and air-conditioners.
+const blockFloors = (W, at, wins, acs = []) => ({
+  windows: wins.flatMap(s => [blockH.win1, blockH.win2].map(h => ({ u: at(s), h, panes: 2 }))),
+  vents: wins.flatMap(s => [blockH.vent1, blockH.vent2].map(h => ({ u: at(s), h }))),
+  blocks: [
+    { name: 'floor ledge', u: [0, W], h: blockH.ledge, out: .08, depth: .16, colour: '#e4e6e6' },
+    { name: 'parapet', u: [0, W], h: [blockH.height - .3, blockH.height], out: .06, depth: .12, colour: '#e4e6e6' },
+    ...acs.map(([v, y]) => ({ name: 'air-conditioner', u: at([v - .4, v + .4]), h: [y, y + .55], out: .25, depth: .45, colour: '#e8e8e4' })),
+  ],
+});
+const at302 = s => lay(.11, 6.594 / 6.46)(s).map(v => Math.min(6.594, Math.max(0, v)));
+const at304 = s => lay(-5.88, 5.449 / 5.99)(s).map(v => Math.min(5.449, Math.max(0, v)));
+const at306 = s => lay(-11.55, 6.015 / 5.67)(s).map(v => Math.min(6.015, Math.max(0, v)));
+const at308 = s => lay(-17.35, 5.447 / 5.8)(s).map(v => Math.min(5.447, Math.max(0, v)));
+const fuXingJiNote = ' Google Maps lists 傅兴记, a restaurant open until 11 pm, at 302 Geylang Rd, Singapore 389345, with its point inside No. 302\'s way, and B&S Food Corner, a restaurant, at the same address, with its point on the forecourt in front of the party wall between Nos. 302 and 304. The awning\'s valance carries the characters 傅興記 over No. 302, and the blue board reading বি এন্ড এস ফুড কর্নার B&S Food Corner hangs over No. 304, on the same eating house under the same awning, so the two houses of the one building are named after both, and the lettering is redrawn in original type, the dish photographs drawn as plain colour. Ke Chuan Shao Kao She and Mostafa Food Corner, also listed at No. 302, have no photographed signs.';
+export const fuXingJi = {
+  id: 'fu-xing-ji', buildingIds: ['764372575', '764372574'], kind: 'fu-xing-ji', reviewRoad: 'Geylang Road', review: { distance: 10, pitch: 20 },
+  name: '傅兴记 and B&S Food Corner (June 2024 exterior)', address: '302 Geylang Road (over Nos. 302 and 304)', height: blockH.height,
+  evidence: 'June 2024 Street View shows an eating house under a blue Union Gas awning across Nos. 302 and 304, the white western half of the block.' + fuXingJiNote,
+  sources: [way('764372575'), way('764372574'), search('傅兴记 302 Geylang Road'), search('B&S Food Corner 302 Geylang Road'), pano('YYHFimb1eboxjLahzKL00A', 196, -3, 20)],
+  parts: {
+    '764372575': {
+      frontEdge: 0, height: blockH.height, ceiling: blockH.ceiling, fiveFootWay: 2.5, shellInset: .3, roof: { type: 'flat', colour: '#9a9c9a' }, // party walls slant
+      evidence: 'June 2024 Street View shows the western house of a white three-storey building, four narrow windows on each upper floor under louvred vents and air-conditioners, over an eating house under a blue awning lettered UNION GAS HOLDINGS LIMITED, whose yellow valance of beer marks carries the characters 傅興記, under a board of dish photographs; a roof terrace behind a wire fence.' + fuXingJiNote + blockNote,
+      sources: [...blockSources('764372575'), search('傅兴记 302 Geylang Road')],
+      colours: blockColours('#eceeee'),
+      ...blockFloors(6.594, at302, [[.27, 1.27], [1.9, 2.9], [3.5, 4.4], [5.0, 5.9]], [[2.1, 6.75], [3.0, 6.75], [4.7, 6.75]]),
+      blocks: [
+        ...blockFloors(6.594, at302, [[.27, 1.27], [1.9, 2.9], [3.5, 4.4], [5.0, 5.9]], [[2.1, 6.75], [3.0, 6.75], [4.7, 6.75]]).blocks,
+        { name: 'blank dish photograph board', u: at302([.3, 6.45]), h: [3.4, 4.3], out: .08, depth: .06, colour: '#e8dcd0' },
+        { name: 'blue Union Gas awning', u: [0, 6.594], h: [1.75, 3.15], out: .9, depth: 1.8, colour: '#2a4a9a' },
+        { name: 'yellow valance of beer marks', u: [0, 6.594], h: [1.35, 1.75], out: 1.8, depth: .04, colour: '#e8dc80' },
+        // The roof terrace's wire fence, at the parapet.
+        ...grille('roof terrace fence', [.1, 6.5], [11.0, 12.6], -.2, '#d8dad8', .3, false),
+      ],
+      // The valance characters 傅興記.
+      boards: [{ u: at302([.82, 1.69]), h: [1.37, 1.73], out: 1.83 }],
+      backFittings: [{ name: 'eating house with tables and stalls', u: [.4, 6.2], h: [.1, 3.3], colour: '#4a4440', glow: .08 }],
+    },
+    '764372574': {
+      frontEdge: 0, noReview: true, height: blockH.height, ceiling: blockH.ceiling, fiveFootWay: 2.5, shellInset: .3, roof: { type: 'flat', colour: '#9a9c9a' }, // party walls slant
+      evidence: 'June 2024 Street View shows the eastern house of the same white building, two wide windows on each upper floor under louvred vents, over the same eating house under the blue Union Gas awning, with a blue board reading বি এন্ড এস ফুড কর্নার B&S Food Corner beside dish photographs.' + fuXingJiNote + blockNote,
+      sources: [...blockSources('764372574'), search('B&S Food Corner 302 Geylang Road')],
+      colours: blockColours('#eceeee'),
+      ...blockFloors(5.449, at304, [[-5.5, -3.8], [-2.8, -.9]]),
+      blocks: [
+        ...blockFloors(5.449, at304, [[-5.5, -3.8], [-2.8, -.9]], [[-4.5, 6.75], [-3.4, 6.75]]).blocks,
+        { name: 'blue Union Gas awning', u: [0, 5.449], h: [1.75, 3.15], out: .9, depth: 1.8, colour: '#2a4a9a' },
+        { name: 'yellow valance of beer marks', u: [0, 5.449], h: [1.35, 1.75], out: 1.8, depth: .04, colour: '#e8dc80' },
+        ...grille('roof terrace fence', [.1, 5.35], [11.0, 12.6], -.2, '#d8dad8', .3, false),
+      ],
+      // The blue B&S Food Corner board.
+      boards: [{ u: at304([-3.8, -.2]), h: [3.4, 4.3], out: .08 }],
+      backFittings: [{ name: 'eating house with tables and stalls', u: [.4, 5.05], h: [.1, 3.3], colour: '#4a4440', glow: .08 }],
+    },
+  },
+};
+export const no306 = {
+  id: 'gr-306', buildingIds: ['764372572'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 10, pitch: 20 },
+  name: 'No. 306 Geylang Road (June 2024 exterior, occupants not identified)', address: '306 Geylang Road',
+  height: 10.2, ceiling: blockH.ceiling, fiveFootWay: 2.5, shellInset: .3, roof: { type: 'flat', colour: '#9a9c9a' }, // its east party wall slants 5 degrees
+  evidence: 'June 2024 Street View shows the middle house of the block, pale grey, two windows on each upper floor under louvred vents, with an air-conditioner, its roof edge lower than its neighbours\' and a shed set back on its roof; over its eating house a brown awning lettered UGS under a board reading 金山嶺 美食中心 KIM SAN LENG FOOD CENTER between Tiger and beer marks, and a tall vertical board of coloured bands at its east end, its lettering not legible. Kim San Leng Food Center is listed at 308 Geylang Rd and marked permanently closed; 16 Geylang Eating House and Geylang Bilal Restaurant are listed at No. 306 and operating, but neither sign was photographed legibly. So no name is given and the boards are blank.' + blockNote,
+  sources: [...blockSources('764372572'), search('306 Geylang Road'), pano('YYHFimb1eboxjLahzKL00A', 151, 2, 14)],
+  colours: blockColours('#e2e4e6'),
+  ...blockFloors(6.015, at306, [[-11.3, -9.5], [-8.7, -6.8]]),
+  blocks: [
+    ...blockFloors(6.015, at306, [[-11.3, -9.5], [-8.7, -6.8]], [[-8.0, 6.75]]).blocks.map(b => b.name === 'parapet' ? { ...b, h: [9.9, 10.2] } : b),
+    { name: 'rooftop shed', u: at306([-11.0, -6.4]), h: [10.2, 11.2], out: -2.0, depth: 3.0, colour: '#d8dada' },
+    { name: 'blank Kim San Leng board', u: at306([-11.2, -6.2]), h: [3.05, 3.65], out: .08, depth: .06, colour: '#2a3a6a' },
+    { name: 'brown UGS awning', u: [0, 6.015], h: [1.75, 3.0], out: .9, depth: 1.8, colour: '#6a4038' },
+    { name: 'blank vertical board', u: at306([-11.55, -11.2]), h: [1.6, 6.2], out: .25, depth: .1, colour: '#3a8a4a' },
+  ],
+  backFittings: [{ name: 'eating house with tables', u: [.4, 5.7], h: [.1, 3.3], colour: '#4a4440', glow: .08 }],
+};
+export const bsHardware = {
+  id: 'bs-hardware-lorong-16', buildingIds: ['764372573'], kind: 'bs-hardware', frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 10, pitch: 20 },
+  name: 'B&S (2017) hardware, Lorong 16 (June 2024 exterior)', address: '308 Geylang Road (the board is plated 310)',
+  height: blockH.height, ceiling: blockH.ceiling, fiveFootWay: 2.5, shellInset: .3, roof: { type: 'flat', colour: '#9a9c9a' }, // its party walls slant
+  evidence: 'June 2024 Street View shows the eastern house of the block, white, two windows on each upper floor under louvred vents and a tall orange strip at its east end, over a hardware shop under a blue awning lettered SELLEYS, with paint tins and goods on the forecourt, under an orange board reading NIPPON PAINT and B&S (2017) PTE LTD, plated 310. Google Maps lists B&S hardware lorong 16, a hardware store, operating, at 308 Geylang Road, with its point inside this way. The board names the same firm, as at The Primero on Lorong 19, but carries No. 310, so it is named under open question 12 (a clearly signed occupant may be modelled when published addresses disagree, the conflict recorded), and the board is redrawn in original type without the paint brand\'s mark; the SELLEYS awning is a brand\'s and stays plain. Kim San Leng Food Center, listed here, is closed, and B & S Mini Mart is listed at No. 310, the grey building to the east.' + blockNote,
+  sources: [...blockSources('764372573'), search('B&S hardware lorong 16 308 Geylang Road'), pano('rxHH3aE6uvw225UPp98KpA', 178, 4, 22)],
+  colours: blockColours('#eeefef'),
+  ...blockFloors(5.447, at308, [[-16.9, -15.3], [-14.3, -12.4]]),
+  blocks: [
+    ...blockFloors(5.447, at308, [[-16.9, -15.3], [-14.3, -12.4]], [[-15.9, 6.75]]).blocks,
+    { name: 'orange strip', u: at308([-17.35, -17.1]), h: [3.8, 9.6], out: .08, depth: .06, colour: '#e8782a' },
+    { name: 'orange board ground', u: at308([-17.2, -11.75]), h: [2.75, 3.85], out: .06, depth: .06, colour: '#e8782a' },
+    { name: 'blue SELLEYS awning', u: [0, 5.447], h: [1.6, 2.75], out: .9, depth: 1.8, colour: '#2a3a7a' },
+    { name: 'paint tins and goods', u: at308([-16.8, -12.4]), h: [0, .9], out: 1.6, depth: 1.2, colour: '#d8d0c0' },
+  ],
+  // The B&S (2017) PTE LTD board, without the paint brand's mark.
+  boards: [{ u: at308([-17.2, -11.75]), h: [2.75, 3.85], out: .1 }],
+  backFittings: [{ name: 'hardware shop', u: [.4, 5.05], h: [.1, 3.0], colour: '#4a4846', glow: .06 }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu, no294, greenEssential, no298, no300, fuXingJi, no306, bsHardware];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

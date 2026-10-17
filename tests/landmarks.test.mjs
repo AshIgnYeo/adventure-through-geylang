@@ -199,7 +199,7 @@ test('real landmark identities have unique, existing street-study footprints and
       else if (['feng-shang', 'true-jesus-mission', 'yang-clan', 'gyaltsap-tashi-ling', 'rattan-association', 'chinaware-merchants'].includes(place.id)) assert.equal(building?.street, 'Lorong 17 Geylang');
       else if (['nanyang-chee', 'chee-hoe-hong', 'kang-ha-pheng', 'bougainvilla', 'sims-point', 'the-primero', 'lei-zang-si', 'starlon-tektron'].includes(place.id)) assert.equal(building?.street, 'Lorong 19 Geylang');
       else if (['nyingma-kathok', 'bei-chen-gong'].includes(place.id)) assert.equal(building?.street, 'Lorong 21 Geylang');
-      else if (['little-charcoal-stove', 'sea-mu-to', 'em-salon-spa', 'green-essential'].includes(place.id)) assert.equal(building?.street, null);
+      else if (['little-charcoal-stove', 'sea-mu-to', 'em-salon-spa', 'green-essential', 'fu-xing-ji', 'bs-hardware-lorong-16'].includes(place.id)) assert.equal(building?.street, null);
       // Valu$ runs over No. 290, tagged Geylang Road, and No. 292, untagged.
       else if (['valu'].includes(place.id)) assert.ok([null, 'Geylang Road'].includes(building?.street));
       else if (['wing-fong-court', 'wing-fong-mansions', 'le-yuan', 'ibis-budget-pearl', 'central-imperial', 'amazing-inn'].includes(place.id)) assert.equal(building?.street, 'Lorong 14 Geylang');

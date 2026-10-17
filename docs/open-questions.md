@@ -116,6 +116,15 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Re-space the three ways on their source front and rear lines, cut at the photographed party walls, as question 45 did for Nos. 313–321.
     - **Unlocks:** the Paramount building at its true place, and No. 296 at its true width.
 
+57. **Geylang Road Nos. 302–308: move the block's front 2.25 m forward and re-space it on its photographed party walls?**
+    - **Evidence:** measured during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stops 22–25).
+      - The windows and air-conditioners of the four fronts line up between three June 2024 Geylang Road panoramas 2.25 m in front of the source front.
+      - On that plane the divisions stand at 6.57, 0.11, −5.88, −11.55 and about −17.35 m along No. 302's front (west positive), against the source's 6.59, 0, −5.45, −11.46 and −16.91 m. The fronts are 6.46, 6.0, 5.67 and 5.8 m wide, against ways of 6.59, 5.45, 6.02 and 5.45 m.
+      - No. 308's east wall stands about 0.45 m inside No. 310's source way, which belongs to the Lorong 16 walk.
+    - **What happens now:** each front is laid proportionally on its source edge, 2.25 m behind its photographed line. The forecourt corridor (`Geylang Road, the forecourt of Nos. 302-308`) covers both lines.
+    - **Recommendation:** yes. Author four footprints with their fronts 2.25 m forward, cut at the photographed divisions, keeping the source rear lines. Settle No. 308's east wall with the Lorong 16 walk's No. 310.
+    - **Unlocks:** the block at its true depth and widths, and its awnings over the forecourt at their photographed depth.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

@@ -193,3 +193,18 @@ test('the east corner block names its four signed tenants, Valu$ running on to N
   // Every Geylang Road front carries its board on the front beam.
   for (const place of lorong14.filter(p => ['sea-mu-to', 'em-salon-spa'].includes(p.id))) assert.ok(place.boards[0].h[0] === 3.0);
 });
+
+test('the Geylang Road row east to Lorong 16 is modelled to No. 308, and leaves No. 310 to the Lorong 16 walk', () => {
+  for (const id of geylangRow) assert.ok(lorong14.some(p => p.buildingIds.includes(id)), id);
+  assert.equal(lorong14.some(p => p.buildingIds.includes('764372570')), false);
+  // Named where a listing and a sign agree: Valu$ over Nos. 290-292, The Green Essential, 傅兴记 and B&S Food Corner
+  // over the two houses of No. 302's building, and B&S hardware at No. 308.
+  assert.equal(landmarkFor('454254171').id, 'valu');
+  assert.equal(landmarkFor('454254169').id, 'green-essential');
+  for (const id of ['764372575', '764372574']) assert.equal(landmarkFor(id).id, 'fu-xing-ji');
+  assert.equal(landmarkFor('764372573').id, 'bs-hardware-lorong-16');
+  for (const id of ['454254170', '764372576', '475173286', '764372572']) assert.equal(landmarkFor(id), undefined, id);
+  // 傅兴记's listing point inside No. 302, and B&S hardware's inside No. 308.
+  assert.equal(pointInPolygon(project([103.87943, 1.3124278], map.origin), outline('764372575')), true);
+  assert.equal(pointInPolygon(project([103.8795678, 1.3124297], map.origin), outline('764372573')), true);
+});

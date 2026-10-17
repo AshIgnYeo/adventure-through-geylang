@@ -44,7 +44,9 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 19 | Geylang Road | 454254169 | No. 296, The Green Essential | Done; named (address conflict recorded); question 56 |
 | 20 | Geylang Road | 764372576 | No. 298, the Paramount building | Done; unnamed; question 56 |
 | 21 | Geylang Road | 475173286 | No. 300, the Paramount building's extension | Done; unnamed; question 56 |
-| 22–25 | Geylang Road | 764372575 to 764372573 | Nos. 302–308, east to Lorong 16 | |
+| 22–23 | Geylang Road | 764372575, 764372574 | Nos. 302 and 304: 傅兴记 and B&S Food Corner | Done; named; question 57 |
+| 24 | Geylang Road | 764372572 | No. 306 | Done; unnamed; question 57 |
+| 25 | Geylang Road | 764372573 | No. 308, B&S hardware | Done; named (address conflict recorded); question 57 |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
 
@@ -414,3 +416,38 @@ A yellow two-storey shophouse and its single-storey extension to the east, both 
 **Naming:** none. Google Maps lists Paramount Music Lounge, a karaoke bar, at 298 Geylang Rd, but marks it permanently closed, so every board is blank.
 
 Use `?review=gr-298` and `?review=gr-300`.
+
+### 22–25. Ways 764372575, 764372574, 764372572 and 764372573: Nos. 302–308
+
+A block of three storeys under a roof terrace, standing back behind a forecourt between No. 300 and Lorong 16's corner (No. 310, the grey building beyond, belongs to the Lorong 16 walk).
+
+**Measurement:** the four fronts were read on one plane along No. 302's front (v west from its source east end, negative eastward).
+- **Depth:** the windows and air-conditioners line up between `sH6…`, `YYHF…` and `rxHH…` **2.25 m in front of** the source front (depth scores 0.14–0.16). At 1.0 m and 3.5 m forward they drift up to 0.7 m apart.
+- **Divisions on that plane:** triangulated from `YYHF…` with `rxHH…`, at v = 6.57, 0.11, −5.88, −11.55 and about −17.35, against the source's 6.59, 0, −5.45, −11.46 and −16.91. So Nos. 302–308 photograph 6.46, 6.0, 5.67 and 5.8 m wide on ways of 6.59, 5.45, 6.02 and 5.45 m. No. 308's east wall stands about 0.45 m inside No. 310's source way.
+- **Heights** (scaled as for Nos. 284–290, ×1.04): awnings at about 1.6–3.1 m with boards above; first-floor windows at 4.15–5.5 m under vents at 5.8–6.05 m; second-floor windows at 7.8–9.05 m under vents at 9.35–9.6 m; parapets at about 11.0 m (No. 306's at 10.2 m, with a shed set back on its roof); the roof terrace's wire fence to about 12.6 m.
+- **Check:** renders from `YYHF…` and `rxHH…`, blended with the photographs, put the floors, the awnings and the boards on their photographed places, the fronts 2.25 m behind their photographed line.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 22 | 764372575 | **No. 302**: the western half of a white building, four narrow windows on each upper floor. An eating house under a blue awning lettered UNION GAS HOLDINGS LIMITED, whose yellow valance carries the characters **傅興記**, under a board of dish photographs | 6.46 m | **傅兴记** (with B&S Food Corner) |
+| 23 | 764372574 | **No. 304**: the eastern half of the same building, two wide windows on each upper floor, over the same eating house and awning, with a blue board reading **বি এন্ড এস ফুড কর্নার B&S Food Corner** | 6.0 m | **B&S Food Corner** (with 傅兴记) |
+| 24 | 764372572 | **No. 306**: pale grey, two windows on each upper floor, its roof lower. An eating house under a brown UGS awning, a board reading 金山嶺 美食中心 KIM SAN LENG FOOD CENTER, and a tall vertical board at its east end, not legible | 5.67 m | No |
+| 25 | 764372573 | **No. 308**: white, two windows on each upper floor and a tall orange strip. A hardware shop under a blue SELLEYS awning, under an orange board reading NIPPON PAINT and **B&S (2017) PTE LTD**, plated 310 | 5.8 m | **B&S hardware** |
+
+**Layout:**
+- Each front is laid proportionally on its own source edge. Nos. 302 and 304 are one place over two ways, as Valu$ is.
+- The source party walls slant up to 5° off the fronts, so the shells stand 0.3 m inside them.
+- Moving the fronts 2.25 m forward and re-spacing them is [open question 57](open-questions.md).
+
+**Naming:**
+- **傅兴记**, a restaurant open until 11 pm, is listed at 302 Geylang Rd, with its point inside No. 302's way. **B&S Food Corner**, a restaurant, is listed at the same address, with its point on the forecourt in front of the party wall between Nos. 302 and 304.
+  - The valance carries 傅興記 over No. 302, and the B&S Food Corner board hangs over No. 304, on the same eating house under the same awning. So the building's two houses are named after both.
+  - Ke Chuan Shao Kao She and Mostafa Food Corner, also listed at No. 302, have no photographed signs.
+- **No. 306:** Kim San Leng Food Center is listed at No. 308 and marked permanently closed. 16 Geylang Eating House and Geylang Bilal Restaurant are listed at No. 306, but neither sign was photographed legibly. So it is unnamed and its boards are blank.
+- **B&S hardware lorong 16**, a hardware store, operating, is listed at 308 Geylang Road, with its point inside No. 308's way. The board names the same firm, as at The Primero on Lorong 19, but is plated 310. So it is named under [open question 12](open-questions.md), with the conflict recorded, and the board is redrawn without the paint brand's mark. The SELLEYS awning is a brand's and stays plain.
+  - B & S Mini Mart is listed at No. 310, the grey building to the east.
+- The lettering is redrawn in original type, the dish photographs as plain colour.
+
+Use `?review=fu-xing-ji`, `?review=gr-306` and `?review=bs-hardware-lorong-16`.
+
+**Geylang Road complete.** Every building from the Lorong 14 corner to No. 308 now has its Geylang Road front.
