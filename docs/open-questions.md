@@ -93,6 +93,13 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Open question 12 allows a clearly signed occupant when published addresses disagree, and the listing point and both signs agree on this house. Name the association as the occupant of No. 34's upper floor, after its lettering, recording the No. 40 address, as the Singapore Rattan Industry Association was named under question 37.
     - **Unlocks:** one named association, with its lettering and board redrawn.
 
+75. **Lorong 18, No. 346 Geylang Road (way 454438314): name Petopia as an upper-floor occupant from its signs, when its listing gives No. 348A?**
+    - **Evidence:** in June 2024 a teal board reading Petopia hangs on the top floor of No. 346's splayed corner, over Hin Sheng Coffee House, with a round Petopia blade sign at the corner ([Lorong 18 brief](lorong-18-brief.md), stops 24–26). No. 348 next door has no Petopia sign.
+    - **Listing:** Google Maps lists Petopia, a pet care service, operating, at **348A** Geylang Road, Level 2, Singapore 389369, with its point inside No. 346's way.
+    - **Current rule:** both listing and signage must agree on the address, so Petopia's signs are drawn blank. No. 346 is named after Hin Sheng Coffee House.
+    - **Recommendation:** yes. The listing point and both signs agree on this house; 348A is probably the unit number of the upper floors. Under open question 12, name Petopia as the occupant of No. 346's upper floors beside Hin Sheng Coffee House, recording the 348A address, as the associations over Lorong 12 shops were named under question 31.
+    - **Unlocks:** one more named place, with its board and blade redrawn.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

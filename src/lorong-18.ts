@@ -18,6 +18,15 @@ const screen = (holes: number[][][], strips: Strip[]): Draw => (c, w, h) => {
 };
 const Y = '#e4d27a', P = '#d27aa8';
 
+const hinShengBoard: Draw = (c, w, h) => {
+  c.fillStyle = '#1e3e9a'; c.fillRect(0, 0, w, h); c.strokeStyle = '#e8e8f0'; c.lineWidth = h * .04; c.strokeRect(0, 0, w, h);
+  c.fillStyle = '#2a56b8'; c.fillRect(h * .1, h * .1, w * .17, h * .8);
+  text(c, 'Tiger', w * .1, h * .5, h * .3, '#f0f0f4', '800', 'Georgia, "Times New Roman", serif', w * .15);
+  text(c, '興勝咖啡屋', w * .6, h * .37, h * .48, '#f4f4f8', '700', hei, w * .7);
+  text(c, 'HIN SHENG COFFEE HOUSE', w * .6, h * .78, h * .2, '#f4f4f8', '800', sans, w * .72);
+  text(c, '346', w * .95, h * .9, h * .1, '#f4f4f8', '600', sans);
+};
+
 // GoFit's floor directory, top to bottom, drawn whole and cut into its left (0) or right (1) half.
 const gofitFloors: [string, string, string][] = [['6', 'ROOFTOP GARDEN & CHILL ZONE', '#e8e4d8'], ['5', 'MY GOFIT VIRTUAL PT', '#f0e8d0'], ['4', 'CARDIO', '#e8a0b0'], ['3', 'FITNESS MACHINES & SUPER CIRCUIT', '#d8e8e0'], ['2', 'FREE WEIGHTS', '#5a8ac8'], ['1P', 'CAR PARK', '#f0ecd8']];
 const gofitBanner = (half: number): Draw => (c, w, h) => {
@@ -111,6 +120,18 @@ const draws: Draws = {
       [...'大埔客'].forEach((ch, i) => text(c, ch, w * .14, h * (.24 + i * .25), h * .18, '#ececf0', '400', hei));
       text(c, 'Dabu Hakka', w * .62, h * .34, h * .2, '#ececf0', '500', sans, w * .66);
       text(c, 'Building', w * .52, h * .6, h * .2, '#ececf0', '500', sans, w * .5);
+    }],
+  },
+  // 興勝咖啡屋 HIN SHENG COFFEE HOUSE in white on blue, beside a Tiger mark, with the number 346.
+  'hin-sheng@1': { boards: [hinShengBoard] },
+  'hin-sheng@0': { boards: [hinShengBoard] },
+  // T1 in white on orange, beside a white panel lettered SIM.
+  't1-trading': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#e8a070'; c.fillRect(0, 0, w, h);
+      text(c, 'T1', w * .14, h * .55, h * .5, '#f8f4f0', '800', sans, w * .2);
+      c.fillStyle = '#f8f6f2'; c.fillRect(w * .36, h * .18, w * .42, h * .64);
+      text(c, 'SIM', w * .57, h * .52, h * .42, '#3a3a3a', '800', sans, w * .36);
     }],
   },
   // The number 340 on the corner's fascia.

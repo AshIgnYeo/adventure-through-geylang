@@ -43,7 +43,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 21 | East | 121872891 | No. 31, Hotel 81 (Premier) Star | Done; named |
 | 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | Done; named |
 | 23 | East | 1470917582 | No. 1, Dabu Hakka Building | Done; named; rebuilding in June 2024 |
-| 24–26 | East | 764372559, 764372560, 454438314 | Nos. 350, 348 and 346 Geylang Road, the east corner | |
+| 24–26 | East | 764372559, 764372560, 454438314 | Nos. 350, 348 and 346 Geylang Road, the east corner: T1 Trading and Hin Sheng Coffee House | Done; two named; question 75 |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
 
@@ -376,3 +376,47 @@ In June 2024 the Dabu Hakka Building was a building site.
 Use `?review=dabu-hakka`.
 
 **Not taken:** ways 121873024 and 454274591, the deep outlines about 51 m east of the lane, stand behind the east side's buildings, across the service road that runs behind them. On the satellite they face Lorong 20's pavement, so they are left for a Lorong 20 pass.
+
+### 24–26. Ways 764372559, 764372560 and 454438314: Nos. 350, 348 and 346 Geylang Road, the east corner
+
+A white three-storey row of shophouses at the Lorong 18 east corner, with brown timber louvred shutters under louvred vents on the upper floors, over five-foot ways. Geylang Road east of No. 350 waits for Lorong 20.
+
+**Measurement:**
+- **Geylang Road fronts:** read on No. 346's front line, u west from its party wall with No. 348. The T1 board and the coffeehouse board line up between `b2Zt…`, `Uxv1…` and `nSXJ…` (June 2024) on a plane **0.75 m behind** the source front. On that plane the party walls stand at u = −11.7, −5.5 and −0.1, against the source's −11.36, −5.49 and 0.
+- **No. 346's corner:** its splay is real.
+  - Its tiled pier triangulates from `Qy81…`, `b2Zt…`, `_VF3…` and `RYcv…` at (374.9, 43.3), 0.9 m from the source splay's Geylang Road end.
+  - The far end of the coffeehouse's board on the splay triangulates from `RYcv…` and `b2Zt…` at (371.9, 46.2), on the splay's lane end.
+  - So the lane face stands on its source edge.
+- **Doubts set aside:**
+  - The lane panoramas' depth scores peak about 4 m behind the lane edge, on the awnings.
+  - The registered satellite puts the roof about 4 m east of the lane edge, with the blue awnings filling the strip between. It leans here, as it does at Le Regal across the lane.
+  - Both disagree with the triangulated corner, which is followed.
+- **Heights,** read on the Geylang Road plane:
+  - five-foot ways to 3.5 m, under boards at 3.9–5.0 m;
+  - windows at 5.6–7.1 and 9.4–11.1 m, under vents;
+  - a ledge at 8.0–8.4 m, and the parapet at 12.9 m.
+
+**Layout:**
+- **No. 346:** its lane face (edge 4) is the front, with its Geylang Road front (edge 1) and splay (edge 0) as side faces.
+- **Nos. 348 and 350:** each front faces Geylang Road.
+- Every face is laid on its source edge.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 24 | 764372559 | **No. 350**: aluminium windows over air-conditioners, an orange board reading **T1** beside a SIM card shop's mark, and a blue vivo blade sign, over a mobile-phone shop | 6.2 m | **T1 Trading** |
+| 25 | 764372560 | **No. 348**: brown shuttered windows; a Thai grocery's glazed front hung with neon and notices | 5.4 m | No |
+| 26 | 454438314 | **No. 346**: a coffeeshop open to the lane and Geylang Road under blue scalloped awnings. Two boards reading **興勝咖啡屋 HIN SHENG COFFEE HOUSE** 346 beside a Tiger mark, one on Geylang Road and one on the broad splayed corner. A green LORONG 18 sign on the awning; Petopia's teal board on the splay's top floor and its round blade at the corner | 5.6 m on Geylang Road, a 4.5 m splay, and 21.9 m on the lane | **Hin Sheng Coffee House** |
+
+**Naming:**
+- **Hin Sheng Coffee House:** listed, a coffee store open 24 hours, at 346 Geylang Road, Singapore 389367, with its point inside No. 346's way. Its boards are redrawn in original type.
+  - Lorong 18 Chicken Rice and Hock Prawn Mee, stalls also listed at No. 346, have no separate photographed signs.
+  - Shing KTV and Shuang Shun Chicken Rice are closed.
+- **T1 Trading:** listed, T1 Trading Pte Ltd, an electronics store, at 350 Geylang Road, Singapore 389371, its point 0.1 m outside No. 350's way. Its board is photographed, so it is named, as Crystal Mansions was under open question 32, and the board is redrawn in original type.
+  - The vivo blade advertises a brand and is blank.
+  - Simpang Tiga Cellular, also listed at No. 350, is closed.
+- **Petopia:** listed at **348A** Geylang Road, Level 2, with its point inside No. 346's way. Its signs are on No. 346, so naming it is [open question 75](open-questions.md); its signs are blank.
+- **No. 348:** Somjainneuk, a convenience store listed at No. 348, has its point three houses east, and no sign with its name was photographed.
+
+Use `?review=t1-trading`, `?review=l18-348` and `?review=hin-sheng`.
+
+**East side complete.** Every building from No. 55 at Westerhout Road to the Geylang Road corner now has its Lorong 18 front.

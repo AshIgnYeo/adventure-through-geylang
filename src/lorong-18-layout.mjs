@@ -835,5 +835,104 @@ dabuHakka.sides.push(
   { edge: 5, blocks: [] }, { edge: 3, blocks: [] },
 );
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star, diamondHotel, dabuHakka];
+// ---------------------------------------------------------------------------------------------
+// 24-26. Ways 454438314, 764372560 and 764372559, Nos. 346, 348 and 350 Geylang Road, the Lorong 18 east corner: a white
+// three-storey row of shophouses with brown timber louvred shutters under louvred vents, over five-foot ways. On Geylang
+// Road (read on No. 346's front line, u west from its party wall with No. 348) the fronts line up between three June 2024
+// panoramas 0.75 m behind the source front, where the T1 board and the coffeehouse board agree, and the party walls
+// stand at u = -11.7, -5.5 and -0.1, on the source ones (-11.36, -5.49, 0). No. 346's splayed corner is real: its tiled
+// pier triangulates from four panoramas at (374.9, 43.3) and the far end of its board from two at (371.9, 46.2), within
+// 0.8 m of the source splay's ends, so its lane face stands on its source edge. Each face is laid on its source edge.
+const white346 = '#ecebe4', shutter346 = '#a86a3a';
+const rows346 = [[5.6, 7.1], [9.4, 11.1]];
+const floors346 = w => [
+  { name: 'first-floor slab', u: [0, w], h: [3.5, 3.9], out: .1, depth: .2, colour: '#e0ded6' },
+  { name: 'floor ledge', u: [0, w], h: [8.0, 8.4], out: .15, depth: .3, colour: '#e0ded6' },
+  { name: 'parapet cornice', u: [0, w], h: [12.5, 12.9], out: .15, depth: .3, colour: '#e0ded6' },
+];
+// Brown louvred shutters (two leaves a side, folded open) with a louvred vent over each window.
+const shuttered346 = spans => ({
+  windows: rows346.flatMap(h => spans.map(u => ({ u, h, panes: 4 }))),
+  vents: rows346.flatMap(([, t]) => spans.map(u => ({ u, h: [t + .1, t + .5] }))),
+});
+const shutterLeaves346 = spans => rows346.flatMap(h => spans.flatMap(([l, r]) => [[l, l + (r - l) / 4], [r - (r - l) / 4, r]].map(u => ({ name: 'brown louvred shutter', u, h, out: .04, depth: .04, colour: shutter346 }))));
+const row346Note = ' Nos. 346, 348 and 350 are a white three-storey row of shophouses at the Lorong 18 east corner of Geylang Road, with brown timber louvred shutters under louvred vents on the upper floors over five-foot ways. On Geylang Road three June 2024 panoramas (b2Zt..., Uxv1..., nSXJ...) agree on the fronts 0.75 m behind the source front, where the T1 board and the coffeehouse board line up, and the party walls stand within 0.35 m of the source ones; each front is laid on its source edge. No. 346\'s splayed corner is real: its tiled pier triangulates from four panoramas (Qy81..., b2Zt..., _VF3..., RYcv...) at the Geylang Road end of the source splay, and the far end of the board on the splay from two at its lane end, both within 0.8 m of the source corners, so the lane face stands on its source edge; the registered satellite, which puts the roof about 4 m east of it, leans here as at Le Regal. Heights were read on the Geylang Road plane: the five-foot ways to 3.5 m under boards at 3.9-5.0 m, windows at 5.6-7.1 and 9.4-11.1 m under vents, a ledge at 8.0-8.4 m and the parapet at 12.9 m.';
+const blue346 = '#2a4aa0';
+export const hinSheng = {
+  id: 'hin-sheng', buildingIds: ['454438314'], kind: 'hin-sheng', frontEdge: 4, reviewRoad: 'Lorong 18 Geylang', review: { distance: 8, pitch: 20 },
+  name: 'Hin Sheng Coffee House (June 2024 exterior)', address: '346 Geylang Road (the Lorong 18 east corner)',
+  height: 12.9, ceiling: 3.5, fiveFootWay: 2.6, shellInset: .2, roof: { type: 'flat', colour: '#8f8c86' },
+  colours: { wall: white346, trim: '#e0ded6', frame: shutter346, glass: '#4a5450', pier: '#d8d6ce', back: '#5a4a40', floor: '#a8a296' },
+  evidence: 'June 2024 Street View shows the corner house of the row: a coffeeshop open to Lorong 18 and Geylang Road under blue scalloped awnings, its tiled corner pier carrying a no-pedestrian sign, under two blue boards reading 興勝咖啡屋 HIN SHENG COFFEE HOUSE 346 beside a Tiger mark, one on Geylang Road and one on the broad splayed corner, and a green LORONG 18 street sign on the awning\'s fascia on the lane; on the splay\'s top floor a teal board and at its lane end a round blade sign for Petopia. Google Maps lists Hin Sheng Coffee House, a coffee store open 24 hours, at 346 Geylang Road, Singapore 389367, with its point inside this way, so the house is named after its boards, which are redrawn in original type; Lorong 18 Chicken Rice and Hock Prawn Mee, stalls also listed at No. 346, have no separate photographed signs, and Shing KTV and Shuang Shun Chicken Rice are closed. Petopia is listed at 348A Geylang Road, Level 2, with its point inside this way; its signs are on this house, so naming it is open question 75 and its signs are blank.' + row346Note,
+  sources: [way('454438314'), search('Hin Sheng Coffee House 346 Geylang Road'), pano('Qy81lI2vV4_AzDy0f_u7Mw', 125, 5, 50), pano('b2ZtftH02s1brnLY74fzNw', 185, 5, 60), pano('oew0MziHDkoQJ37-k6pxAw', 95, 10, 80), pano('_VF3fNUF78eoVCqMo-J46A', 120, 10, 80)],
+  ...shuttered346([[2.4, 5.0], [8.4, 10.8], [11.2, 13.6], [17.3, 19.3], [19.9, 21.3]]),
+  blocks: [
+    ...floors346(21.859),
+    ...shutterLeaves346([[2.4, 5.0], [8.4, 10.8], [11.2, 13.6], [17.3, 19.3], [19.9, 21.3]]),
+    { name: 'blue scalloped awning', u: [.1, 17.0], h: [3.4, 4.3], out: .6, depth: 1.2, colour: blue346 },
+    { name: 'blank green street sign', u: [.4, 2.2], h: [3.5, 3.8], out: 1.22, depth: .04, colour: '#2e6a4a' },
+    { name: 'blank round Petopia blade', u: [.2, .3], h: [10.0, 11.0], out: .6, depth: .9, colour: '#2e8a8a' },
+  ],
+  piers: [[.1, .6], [5.8, 6.3], [11.4, 11.9], [17.0, 17.5]],
+  backFittings: [
+    { name: 'coffeeshop stalls and tables', u: [.6, 16.9], h: [.1, 3.3], colour: '#5a4a40', glow: .12 },
+    { name: 'back door', u: [18.0, 19.4], h: [.1, 2.4], colour: '#3a3634' },
+  ],
+  sides: [{
+    edge: 1, // the Geylang Road front, u west from the party wall with No. 348 to the corner
+    ...shuttered346([[.3, 2.4], [2.9, 5.0]]),
+    blocks: [
+      ...floors346(5.734), ...shutterLeaves346([[.3, 2.4], [2.9, 5.0]]),
+      { name: 'blue scalloped awning', u: [.1, 5.6], h: [2.9, 3.7], out: .6, depth: 1.2, colour: blue346 },
+      { name: 'coffeeshop', u: [.2, 5.5], h: [.1, 3.3], out: .02, depth: .04, colour: '#5a4a40', glow: .12 },
+    ],
+    boards: [{ u: [.15, 5.45], h: [3.95, 5.0], out: .15 }],
+  }, {
+    edge: 0, // the broad splayed corner, u from Geylang Road towards the lane: the tiled corner pier, a window on each
+    // upper floor, the second coffeehouse board and Petopia's board on the top floor
+    ...shuttered346([[1.0, 3.5]]),
+    blocks: [
+      ...floors346(4.489), ...shutterLeaves346([[1.0, 3.5]]),
+      { name: 'tiled corner pier', u: [.1, .7], h: [0, 3.5], out: .3, depth: .6, colour: '#d8d8d0' },
+      { name: 'no-pedestrian sign', u: [.9, 1.5], h: [2.0, 2.7], out: .5, depth: .04, colour: '#e8e8e4' },
+      { name: 'blank teal Petopia board', u: [1.0, 3.5], h: [11.65, 12.35], out: .06, depth: .04, colour: '#2e8a8a' },
+      { name: 'blue scalloped awning', u: [.7, 4.4], h: [3.2, 4.0], out: .6, depth: 1.2, colour: blue346 },
+      { name: 'coffeeshop', u: [.7, 4.4], h: [.1, 3.3], out: .02, depth: .04, colour: '#5a4a40', glow: .12 },
+    ],
+    boards: [{ u: [.3, 4.4], h: [4.1, 5.2], out: .15 }],
+  }, { edge: 3, blocks: [{ name: 'parapet cornice', u: [0, 7.72], h: [12.5, 12.9], out: .15, depth: .3, colour: '#e0ded6' }] }],
+};
+// The two mid-row houses face Geylang Road (u west from each one's east party wall).
+const geylang346 = (w, colour) => ({
+  frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 7, pitch: 20 },
+  height: 12.9, ceiling: 3.5, fiveFootWay: 2.0, shellInset: .2, roof: { type: 'flat', colour: '#8f8c86' },
+  colours: { wall: colour, trim: '#e0ded6', frame: shutter346, glass: '#4a5450', pier: '#d8d6ce', back: '#4a4642', floor: '#a8a296' },
+  piers: [[.05, .4], [w - .4, w - .05]],
+});
+export const no348 = {
+  ...geylang346(5.492, white346), id: 'l18-348', buildingIds: ['764372560'], kind: 'unnamed', unnamed: true,
+  name: 'No. 348 Geylang Road (June 2024 exterior, occupants not identified)', address: '348 Geylang Road',
+  evidence: 'June 2024 Street View shows the middle house of the row: two windows with brown louvred shutters on each upper floor, and in the five-foot way a Thai grocery\'s glazed front hung with neon and notices. Google Maps lists Somjainneuk, a convenience store, at 348 Geylang Road, but its point lies three houses east and no sign with its name was photographed, so no name is given.' + row346Note,
+  sources: [way('764372560'), search('348 Geylang Road Singapore'), pano('b2ZtftH02s1brnLY74fzNw', 160, 10, 60), pano('Uxv1cQSS0mENCovzngni-g', 215, 10, 60)],
+  ...shuttered346([[.3, 2.3], [2.9, 4.9]]),
+  blocks: [...floors346(5.492), ...shutterLeaves346([[.3, 2.3], [2.9, 4.9]])],
+  backFittings: [{ name: 'glazed grocery front with neon', u: [.5, 5.0], h: [.1, 2.8], colour: '#4a3a4a', glow: .15 }, { name: 'blank Thai notices', u: [1.2, 3.6], h: [1.2, 2.4], colour: '#c84a4a', glow: .2 }],
+};
+export const t1Trading = {
+  ...geylang346(5.867, '#e8e7e0'), id: 't1-trading', buildingIds: ['764372559'], kind: 't1-trading',
+  name: 'T1 Trading (June 2024 exterior)', address: '350 Geylang Road',
+  evidence: 'June 2024 Street View shows the east house of the row: aluminium windows over air-conditioners on its upper floors, and over its five-foot way an orange board reading T1 beside a SIM card shop\'s mark, with a blue vivo blade sign at its west end, over a mobile-phone shop. Google Maps lists T1 Trading Pte Ltd, an electronics store, at 350 Geylang Road, Singapore 389371, its point 0.1 m outside this way, so the house is named after its board, which is redrawn in original type (as Crystal Mansions was under open question 32); the vivo blade advertises a brand and is blank, and Simpang Tiga Cellular, also listed at No. 350, is closed.' + row346Note,
+  sources: [way('764372559'), search('T1 Trading 350 Geylang Road'), pano('Uxv1cQSS0mENCovzngni-g', 200, 10, 60), pano('b2ZtftH02s1brnLY74fzNw', 140, 10, 60)],
+  windows: rows346.flatMap(h => [[.8, 2.4], [3.0, 4.6]].map(u => ({ u, h, panes: 2 }))),
+  blocks: [
+    ...floors346(5.867),
+    ...rows346.flatMap(([b]) => [[1.2, 1.8], [3.4, 4.0]].map(u => ({ name: 'air-conditioner', u, h: [b - .5, b - .05], out: .25, depth: .5, colour: '#e8e8e4' }))),
+    { name: 'blank blue vivo blade', u: [5.1, 5.2], h: [3.6, 5.6], out: .5, depth: .8, colour: '#2a5ab8' },
+  ],
+  backFittings: [{ name: 'mobile-phone shop', u: [.5, 5.4], h: [.1, 2.9], colour: '#4a3a3a', glow: .15 }],
+  // The orange T1 board.
+  boards: [{ u: [.35, 4.85], h: [3.9, 4.95], out: .12 }],
+};
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b, no55, hotel81Star, diamondHotel, dabuHakka, t1Trading, no348, hinSheng];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;
