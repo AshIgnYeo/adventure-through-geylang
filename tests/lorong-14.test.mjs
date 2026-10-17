@@ -1,10 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { project, studyArea } from '../src/geo.mjs';
-import { sourceMap, outline } from './helpers.mjs';
+import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
+import { lorong14, lorong14Frame, lorong14Layout, lorong14Reviews, lorong14Sides, lorong14Upper } from '../src/lorong-14-layout.mjs';
+import { landmarkFor } from '../src/landmarks.mjs';
+import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
 const corridor = name => sourceMap.corridors.find(c => c.name === name);
 const lane = corridor('Lorong 14 Geylang');
+const lanePath = lane.path.map(p => project(p, sourceMap.origin)), laneSegments = lanePath.slice(1).map((b, i) => [lanePath[i], b]);
+const roadPath = name => sourceMap.roads.filter(r => r.name === name).flatMap(r => r.coordinates.slice(1).map((p, i) => [project(r.coordinates[i], sourceMap.origin), project(p, sourceMap.origin)]));
 // Every metre along a path keeps the 3 m walking margin.
 const walkable = (path, inStudy) => {
   for (let i = 1; i < path.length; i++) {
@@ -46,4 +50,57 @@ test('Lorong 14 is walkable from the Geylang Road centreline to the edge of the 
   for (const p of [[245, 150], [240, 212], [150, 140], [165, 262], [240, 95]]) assert.equal(inStudy(p, 0), false, `${p}`);
   // The lane's last way ends at the extract's edge, about 1.3108 N; the lane runs on south beyond it (question 52).
   assert.ok(Math.abs(lane.path.at(-1)[1] - 1.3108) < .0002);
+});
+
+test('the Lorong 14 exteriors fit their outlines, face their streets and keep their review starts clear', () => {
+  // Each building, with a place over several buildings built from its parts.
+  const houses = lorong14.flatMap(place => place.buildingIds.map(id => ({ id, place, spec: place.parts ? { ...place, ...place.parts[id] } : place })));
+  for (const { id, place, spec } of houses) {
+    const poly = outline(id), frame = lorong14Frame(poly, spec);
+    assertFittings(frame, poly, lorong14Layout(spec, frame.width).boxes);
+    for (const side of lorong14Sides(spec, poly)) assertFittings(side.frame, poly, side.boxes);
+    if (!spec.noReview) assertReviews(frame, lorong14Reviews(spec, frame));
+    assert.match(spec.evidence, /June 2024/);
+    const ways = [id, ...(building(id).replaces ?? [])];
+    assert.ok(spec.sources.some(s => ways.some(w => s.includes(`way/${w}`))), id);
+    // Every front looks across its street: its outward normal points at the nearest point of the street's centreline.
+    const segments = spec.reviewRoad === 'Lorong 14 Geylang' ? laneSegments : roadPath(spec.reviewRoad);
+    const centre = frame.point(frame.width / 2, 0), streetPoint = segments.map(([a, b]) => nearestOnSegment(centre, a, b)).sort((x, y) => x.distance - y.distance)[0].point;
+    assert.ok((streetPoint[0] - centre[0]) * frame.nx + (streetPoint[1] - centre[1]) * frame.nz > 0, id);
+    // Street-level pieces stay clear of the modelled carriageways, or within 0.25 m of a face flagged heldFlat.
+    const faces = [{ frame, blocks: spec.blocks ?? [], heldFlat: spec.heldFlat }, ...lorong14Sides(spec, poly).map((side, i) => ({ frame: side.frame, blocks: spec.sides[i].blocks ?? [], heldFlat: spec.sides[i].heldFlat ?? spec.heldFlat }))];
+    for (const { frame: f, blocks, heldFlat } of faces) {
+      const out = blocks.filter(b => b.out > 0 && b.h[0] < 5);
+      if (heldFlat) { for (const b of out) assert.ok(b.out + b.depth / 2 <= .25, b.name); continue; }
+      assertClearOfCarriageway(out.flatMap(b => [f.point(b.u[0], b.out + b.depth / 2), f.point(b.u[1], b.out + b.depth / 2)]));
+    }
+    // Upper volumes stand inside the footprint.
+    for (const up of lorong14Upper(spec, frame)) for (const p of up.points) assert.ok(pointInPolygon(p, poly) || poly.some((a, i) => nearestOnSegment(p, a, poly[(i + 1) % poly.length]).distance < .05), id);
+    if (place.unnamed) {
+      assert.equal(landmarkFor(id), undefined);
+      assert.equal(spec.boards, undefined); assert.equal(spec.blades, undefined);
+      for (const side of spec.sides ?? []) { assert.equal(side.boards, undefined); assert.equal(side.blades, undefined); }
+    } else assert.equal(landmarkFor(id).id, place.id);
+  }
+  for (const place of lorong14.filter(p => p.parts)) assert.equal(place.buildingIds.filter(id => !place.parts[id].noReview).length, 1, place.id);
+});
+
+test('Wing Fong Court is named after the lettering on its corner wall, its listing at No. 12 recorded', () => {
+  const place = lorong14.find(p => p.id === 'wing-fong-court');
+  assert.equal(landmarkFor('121872892').id, place.id);
+  assert.equal(building('121872892').number, '10');
+  // Google Maps puts its listing (12 Lor 14 Geylang) inside Wing Fong Mansions, and geocodes No. 10 inside this outline.
+  assert.equal(pointInPolygon(project([103.8790562, 1.3106506], map.origin), outline('764372595')), true);
+  assert.equal(pointInPolygon(project([103.8788274, 1.3118668], map.origin), outline('121872892')), true);
+  assert.match(place.address, /12 Lorong 14/);
+  // The lane face runs north from the Talma Road end; six bays rise to dormers at about 27.3 m over a 24.8 m wall.
+  const frame = lorong14Frame(outline('121872892'), place);
+  assert.ok(frame.dz < -.95 && Math.abs(frame.width - 85.574) < .01);
+  assert.equal(place.height, 24.8);
+  assert.equal(place.blocks.filter(b => b.name === 'dormer apex').length, 11);
+  // The corner panel hangs on the boundary wall on Talma Road, where it triangulates.
+  const talma = place.sides.find(s => s.edge === 1), f = lorong14Frame(outline('121872892'), { frontEdge: 1 });
+  assert.equal(talma.boards.length, 1);
+  const p = f.point((talma.boards[0].u[0] + talma.boards[0].u[1]) / 2, talma.boards[0].out);
+  assert.ok(Math.hypot(p[0] - 189.2, p[1] - 190.3) < 1.5, `${p}`);
 });

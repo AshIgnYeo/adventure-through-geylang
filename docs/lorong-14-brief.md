@@ -26,7 +26,7 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
-| 1 | West | 121872892 | No. 10, Wing Fong Court | |
+| 1 | West | 121872892 | No. 10, Wing Fong Court | Done; named (address conflict recorded) |
 | 2 | West | 764372595 | No. 12, Wing Fong Mansions, south of Talma Road | |
 | 3 | East | 454274618 | No. 37 | |
 | 4 | East | 454274615 | No. 35 | |
@@ -42,3 +42,41 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 17–25 | Geylang Road | 454254171 to 764372573 | Nos. 292–308, east to Lorong 16 | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
+
+## West side
+
+The west side opens at Geylang Road with the lawn under rain trees at the corner, which has no building. A back lane runs west from the lane behind it, along Wing Fong Court's north wall.
+
+### 1. Way 121872892: No. 10, Wing Fong Court
+
+An eight-storey block from the back lane to Talma Road, behind a garden of palms and a white boundary wall with teal posts, teal planters and black railings.
+
+- **The lane face:** a run of six projecting bays.
+  - Each bay rises under a teal cornice to a pair of gabled dormers over teal bay windows (one dormer on the north end bay).
+  - Rounded teal balconies on the fifth and sixth floors; teal hoods over the second-floor windows.
+  - A grey base of three storeys, with arches drawn in relief.
+- **Between the bays:** recessed white walls with pairs of Greek-key strips under teal half-round lattices, and small porches of teal lattice under tiled gables at their feet. A drive-through portal opens into the courtyard.
+- **The ends:** grey service doors and glass-block vents on the back lane; a curved boundary wall at the Talma Road corner with a granite panel lettered **永豐閣 Wing Fong Court**. A teal canopy on Talma Road reads Wing Fong Court.
+
+**Measurement:**
+- **Depth:** the depth scores between neighbouring lane panoramas peak 1.5–2.25 m in front of the source edge on the dormers, and at 4–6 m on the lower floors, where the palms stand. Neither held up:
+  - Rectified on a plane **0.75 m in front of** the source edge, the dormer apexes line up between `0W5F…`, `BMFJ…` and `Y-F5…` (and `iXFF…`, whose pose runs about 1.5 m off). At 2.0 m they drift 3 m across the same panoramas.
+  - So the bays stand about 0.75 m in front of the source edge and the main wall about on it. The face is on its source line.
+- **Extent:** on that plane the face runs the source edge's whole 85.6 m, from the rounded Talma Road corner to the north end.
+- **Bays** (u north from the Talma Road end): 5.0–16.0, 19.8–30.6, 34.8–46.0, 49.8–59.4, 64.6–75.4 and 79.6–85.4, with the portal under the third at 37.0–44.5.
+- **Heights:** floors every 3.0 m; the grey base to 10.1 m; the main wall to 24.8 m under a teal cornice to 25.9 m; dormer apexes at 27.1–27.3 m.
+- **The boundary wall:** from the elevation of its foot in three panoramas, about **5 m in front of** the source edge. The corner panel triangulates from `QGGj…` and `jrMz…` at about (189.2, 190.3), 3.6 m south of the Talma Road wall.
+- **Check:** a render from `x44k…` at the Geylang Road end, blended with the photograph, puts the north-east corner and the north wall on their photographed lines.
+
+**Layout:**
+- **Faces:** the elevation is laid at its own scale on the source edge, the bays projecting half a metre. The Talma Road end (edge 1) and the north wall (edge 21) are side faces with windows, hoods and the grey base.
+- **The boundary wall** is drawn 5 m in front of the face, with its posts, planters, railings and the black gate at the portal. On Talma Road it runs 3.6 m in front of the end wall, and the curved corner with its panel stands where it triangulates.
+- **Roof:** the satellite shows tiled hips over each bay; it is drawn flat in tile colour.
+- **Not modelled:** the palms, the garden and the arches in relief on the grey base.
+
+**Naming:** the source map names this way **Wing Fong Court**, No. 10, eight storeys, and its lettering is photographed on the corner wall.
+- Google Maps lists Wing Fong Court, an apartment complex, at **12** Lor 14 Geylang, Singapore 398924, with its point inside Wing Fong Mansions south of Talma Road. Meanwhile 10 Lor 14 Geylang geocodes inside this outline.
+- The lettering and the source agree on this building, so it is named under [open question 12](open-questions.md) (a clearly signed occupant may be modelled when published addresses disagree, with the conflict recorded). The panel is redrawn in original type.
+- Reliable Paint SG and General Heating & Cooling, listed at No. 10, have no photographed signs.
+
+Use `?review=wing-fong-court`.

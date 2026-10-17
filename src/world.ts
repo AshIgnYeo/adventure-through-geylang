@@ -9,6 +9,7 @@ import { buildRingEast } from './ring-east';
 import { buildLorong17 } from './lorong-17';
 import { buildLorong19 } from './lorong-19';
 import { buildLorong21 } from './lorong-21';
+import { buildLorong14 } from './lorong-14';
 import { buildRingWest } from './ring-west';
 import { buildRingC } from './ring-c';
 import { buildRingA } from './ring-a';
@@ -192,6 +193,7 @@ export class World {
       if(buildLorong17(this,b.id,poly))continue;
       if(buildLorong19(this,b.id,poly))continue;
       if(buildLorong21(this,b.id,poly))continue;
+      if(buildLorong14(this,b.id,poly))continue;
       if(buildRingEast(this,b.id,poly))continue;
       if(buildRingWest(this,b.id,poly))continue;
       if(buildRingC(this,b.id,poly))continue;
