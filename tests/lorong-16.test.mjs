@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { project, studyArea, pointInPolygon, nearestOnSegment } from '../src/geo.mjs';
-import { lorong16, geylangRow16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
+import { lorong16, geylangRow16, westerhout16, lorong16Frame, lorong16Layout, lorong16Reviews, lorong16Sides, lorong16Upper } from '../src/lorong-16-layout.mjs';
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, map, building } from './helpers.mjs';
 
@@ -115,4 +115,20 @@ test('Hotel 81 Geylang is named on No. 20, its listing point inside, its blade b
   assert.deepEqual(place.sides.map(s => s.edge), [19]);
   const blade = place.sides[0].blades[0];
   assert.ok(blade.u > 0 && blade.u < 5.029 && blade.out[1] < 2);
+});
+
+test('the terrace on Westerhout Road faces Westerhout Road, its west gable on the lane', () => {
+  assert.equal(lorong16.find(p => p.id === 'l16-westerhout-15').frontEdge, 3);
+  for (const place of westerhout16) {
+    const id = place.buildingIds[0], poly = outline(id), frame = lorong16Frame(poly, place);
+    assertFittings(frame, poly, lorong16Layout(place, frame.width).boxes);
+    for (const side of lorong16Sides(place, poly)) assertFittings(side.frame, poly, side.boxes);
+    assert.ok(frame.nz > .95, place.id);
+    assert.match(place.evidence, /December 2022/);
+    assert.ok(place.sources.some(s => s.includes(`way/${id}`)), id);
+    // Beyond the corridor's end: no review start, and unnamed.
+    assert.equal(place.noReview, true);
+    assert.equal(landmarkFor(id), undefined);
+    assert.equal(place.boards, undefined);
+  }
 });

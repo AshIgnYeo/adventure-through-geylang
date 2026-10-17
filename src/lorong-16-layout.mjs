@@ -586,7 +586,27 @@ export const westerhout15 = {
   sides: westerhoutSides([2, -19.80, 3.677], [0, -15.74, 3.046]),
 };
 
+// Nos. 17-45 face Westerhout Road, beyond the corridor's end; their review starts would fall outside the study area, so
+// they have none, and they are seen from the lane's south end.
+const westerhoutHouse = (no, wayId, frontEdge, front, side, height, extra) => {
+  const [edge, up0, width] = front, f = westerhoutEdge(edge, up0, width);
+  return {
+    id: `l16-westerhout-${no}`, buildingIds: [wayId], kind: 'unnamed', unnamed: true, frontEdge, noReview: true, reviewRoad: 'Westerhout Road',
+    name: `No. ${no} Westerhout Road (December 2022 exterior, occupants not identified)`, address: `${no} Westerhout Road`,
+    height, ceiling: 3.6, fiveFootWay: .3, roof: { type: 'flat', colour: '#8f8c86' }, colours: westerhoutColours,
+    sources: [way(wayId), search(`${no} Westerhout Road Singapore`), pano('xJWUlc-jGGpw21p8RSZOpw', 0, 12, 90), pano('kfiArdRsIxI2GnsARiBwSw', 355, 12, 90), pano('FATWSwwGn6cUCAdZuoUnlw', 75, 6, 80)],
+    windows: f.windows, blocks: f.blocks, backFittings: f.backFittings,
+    sides: side ? westerhoutSides(side) : [],
+    ...extra,
+  };
+};
+export const westerhout17 = westerhoutHouse(17, '763764667', 3, [3, -12.71, 3.055], [1, -10.08, 3.07], 9.5, {
+  evidence: 'December 2022 Street View from Westerhout Road shows No. 17, between No. 15 and No. 19: an orange upper floor of louvred grilles over a white band, under a deep roof slab, over a maroon tiled porch and a white gate of rings plated 17. Its photographed front runs about 6.2 m between the party walls, against the source span\'s 5.7 m.' + westerhoutNote,
+});
+
 export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15];
+// The terrace on Westerhout Road faces Westerhout Road, not the lane.
+export const westerhout16 = [westerhout17];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;
