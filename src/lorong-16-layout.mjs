@@ -762,7 +762,40 @@ export const soonClan = {
   ],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan];
+// 20. No. 41 (way 763764673), Lodge 41: a narrow cream four-storey tower crowned by a glazed gable, standing like No.
+// 47 about 4.5 m in front of its neighbours. Its front lines up between three June 2024 panoramas (YJ5N..., rTwd...,
+// 978C...) on a plane 4.5 m in front of No. 43's lane edge, about 8.5 m in front of its own source edge (which stands
+// 4 m behind its neighbours'), where it runs about 4.5 m, from u_g = -3.5 to 1.0 along No. 43's edge; laid
+// proportionally on the source edge (x1.05).
+const at673 = s => lay(-3.5, 4.706 / 4.5)(s).map(v => Math.min(4.705, Math.max(0, v)));
+const rows673 = [[5.4, 6.8], [8.3, 9.7], [11.3, 12.7]];
+export const lodge41 = {
+  id: 'lodge-41', buildingIds: ['763764673'], kind: 'lodge-41', frontEdge: 0, reviewRoad: 'Lorong 16 Geylang', review: { distance: 14, pitch: 30 },
+  name: 'Lodge 41 (June 2024 exterior)', address: '41 Lorong 16 Geylang',
+  height: 14.9, ceiling: 4.3, fiveFootWay: 1.5, roof: { type: 'flat', colour: '#8f8c86' },
+  evidence: 'June 2024 Street View shows a narrow cream four-storey tower between No. 39 and the Soon Clan Association, standing about 4.5 m in front of both, with blank side walls: two columns of three-pane windows on each upper floor either side of a projecting pier, air-conditioners under them, a deep parapet band and a gable glazed as a skylight; over its ground floor a fascia lettered LODGE over a yellow swoosh, white curved louvres and a glazed entrance, and from its north corner a vertical sign reading LODGE over 41. Google Maps lists Lodge 41, a hotel, at 41 Lorong 16 Geylang, Singapore 398877; its point lies in the forecourt about 2 m in front of the tower, and the address and signs agree, so it is named (as at Crystal Mansions, open question 32), and its signs are redrawn in original type. ZEN Hostel Aljunied is listed as located in it, without a sign; Chic Inn and RedDoorz Hostel, also listed at No. 41, are closed. Three June 2024 lane panoramas (YJ5N..., rTwd..., 978C...), spread over 20 m of the lane, agree on the tower\'s front within 0.3 m on a plane about 4.5 m in front of No. 43\'s lane edge, where it runs about 4.5 m; that is about 8.5 m in front of its own source edge, which stands 4 m behind its neighbours\' (open question 67). It is laid proportionally on the source edge. Heights were read on that plane from elevation angles, and carry about 0.6 m: the ground floor to about 4.3 m, windows at 5.4-6.8, 8.3-9.7 and 11.3-12.7 m, the parapet band at 13.6-14.9 m and the gable to about 16 m.' + eastRowNote,
+  sources: [way('763764673'), search('Lodge 41 Lorong 16 Geylang'), pano('rTwd74g8I0xX5Kv269SUPw', 55, 25, 60), pano('YJ5NrMKa3ziNs3OkKvpTGA', 96, 10, 60), pano('978C2KrUtxtel_U9_J90Ow', 40, 25, 60)],
+  colours: rowColours('#e8e0cc', { frame: '#e8e8e4', glass: '#3e4a50', back: '#2e3436' }),
+  windows: [[-3.17, -1.33], [-1.0, .83]].flatMap(s => rows673.map(h => ({ u: at673(s), h, panes: 3 }))),
+  blocks: [
+    { name: 'projecting pier', u: at673([-1.33, -1.0]), h: [4.3, 13.6], out: .2, depth: .4, colour: '#ece6d4' },
+    ...[[-3.5, -3.25], [.85, 1.0]].map(s => ({ name: 'corner pier', u: at673(s), h: [4.3, 13.6], out: .1, depth: .2, colour: '#ece6d4' })),
+    ...[4.6, 7.6, 10.6].flatMap(y => [[-2.9, -2.2], [-.6, .1]].map(s => ({ name: 'air-conditioner', u: at673(s), h: [y, y + .5], out: .2, depth: .4, colour: '#e8e8e4' }))),
+    ...[7.4, 10.4].map(y => ({ name: 'floor band', u: [0, 4.705], h: [y, y + .25], out: .08, depth: .16, colour: '#ece6d4' })),
+    { name: 'parapet band', u: [0, 4.705], h: [13.6, 14.9], out: .15, depth: .3, colour: '#ece6d4' },
+    { name: 'glazed gable', u: at673([-2.5, 0]), h: [14.9, 15.5], out: .02, depth: .1, colour: '#a8c8d0' },
+    { name: 'gable point', u: at673([-1.7, -.8]), h: [15.5, 16.0], out: .02, depth: .1, colour: '#e8e0cc' },
+    { name: 'yellow swoosh', u: at673([-3.2, .7]), h: [3.6, 3.8], out: .08, depth: .02, colour: '#e8c040' },
+    ...[2.7, 2.95, 3.2, 3.45].map(y => ({ name: 'white curved louvre', u: at673([-3.3, .8]), h: [y, y + .1], out: .5, depth: 1.0, colour: '#f0f0ec' })),
+  ],
+  // The fascia lettered LODGE, and the vertical sign at the north corner.
+  boards: [{ u: at673([-3.0, .4]), h: [3.75, 4.25], out: .07 }],
+  blades: [{ u: .12, out: [.2, 1.25], h: [8.6, 13.2] }],
+  piers: [[.15, .4], [4.3, 4.55]], shellInset: .2,
+  backFittings: [{ name: 'glazed entrance', u: [.5, 4.2], h: [.1, 2.6], colour: '#2e3436', glow: .1 }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51, no49, no47, pohClan, soonClan, lodge41];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.

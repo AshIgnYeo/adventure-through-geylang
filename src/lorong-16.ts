@@ -94,6 +94,21 @@ const draws: Draws = {
       text(c, 'SINGAPORE SOON CLAN ASSOCIATION', w * .5, h * .8, h * .17, '#d8b058', '700', sans, w * .86);
     }],
   },
+  // Lodge 41's fascia, LODGE in dark capitals over a yellow swoosh, and its vertical sign, LODGE over 41.
+  'lodge-41': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#efe8d6'; c.fillRect(0, 0, w, h);
+      c.strokeStyle = '#e8c040'; c.lineWidth = h * .12; c.beginPath(); c.moveTo(w * .02, h * .9); c.quadraticCurveTo(w * .3, h * .05, w * .98, h * .2); c.stroke();
+      text(c, 'LODGE', w * .5, h * .6, h * .7, '#1e2a4a', '900', 'Georgia, "Times New Roman", serif', w * .5);
+    }],
+    blades: [(c, w, h) => {
+      c.fillStyle = '#f2f0ea'; c.fillRect(0, 0, w, h);
+      [...'LODGE'].forEach((ch, i) => text(c, ch, w * .5, h * (.09 + i * .14), w * .7, '#1e2a4a', '900', 'Georgia, "Times New Roman", serif'));
+      c.fillStyle = '#7a4a2a'; c.fillRect(w * .2, h * .76, w * .6, h * .1);
+      text(c, '41', w * .5, h * .81, w * .4, '#f2f0ea', '800', sans);
+      c.strokeStyle = '#e8c040'; c.lineWidth = w * .08; c.beginPath(); c.moveTo(w * .2, h * .96); c.lineTo(w * .8, h * .9); c.stroke();
+    }],
+  },
   // The red board: B & S MINIMART PRIVATE LTD. over a plain band for its Bengali line and the address.
   'bs-mini-mart': {
     boards: [(c, w, h) => {

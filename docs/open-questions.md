@@ -112,6 +112,20 @@ Started: 10 October 2026.
     - **Recommendation:** yes, as a later pass with Westerhout Road (question 62). Author three footprints whose fronts follow the upper floors' plane, with the porches and gates drawn in front as open structures.
     - **Unlocks:** flat fronts on their true line, and open porches.
 
+67. **Lorong 16 east side, Nos. 41–45: move Lodge 41 onto its photographed tower, and re-cut its party line with No. 43?**
+    - **Evidence:** read from the June 2024 lane drive ([Lorong 16 brief](lorong-16-brief.md), stops 18–20).
+      - **Lodge 41 (way 763764673):** a narrow four-storey tower. Three panoramas spread over 20 m of the lane agree on its front within 0.3 m about 4.5 m in front of its neighbours' fronts, about x = 299 in scene metres. That is **8.5 m in front of** its source edge, which stands 4 m behind its neighbours'. The tower is about 4.5 m wide, from about 1.5 m south of the source edge's north end to 1.4 m beyond its south end. Its blank side walls run back to the neighbours' fronts.
+      - **No. 43, Singapore Soon Clan Association (way 763764672):** its front runs about 3.7 m, from the tower's south wall to No. 45, against its 4.52 m source edge. The source party line with Lodge 41 stands about 0.8 m north of the tower's south wall.
+      - **No. 45, Singapore Poh Clan Association (way 763764671):** its front runs about 5.1 m, from No. 43 to the side wall of No. 47's tower, against 4.64 m.
+      - **No. 47 (way 763764670):** its tower stands on its source edge, about 6 m in front of its neighbours, as the source outline already draws it.
+    - **What happens now:** each front is laid on its source edge. Lodge 41's tower stands 8.5 m behind its photographed line, recessed 4 m behind Nos. 39 and 43 where it really stands 4.5 m in front of them. No. 43 is stretched to 1.22 times its photographed width.
+    - **Recommendation:** yes. Author two footprints:
+      - **Lodge 41:** its tower front at the photographed line, 4.5 m wide, with its side walls run back to the neighbours' fronts and the source rear kept;
+      - **No. 43:** its north party line moved to the tower's south wall.
+
+      Nos. 45 and 47 stay on their source outlines.
+    - **Unlocks:** Lodge 41's tower and No. 43's front at their true positions and widths.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
