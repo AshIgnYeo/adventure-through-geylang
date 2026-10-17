@@ -637,7 +637,7 @@ const grFront = (W, at, wins, colour, extra = [], frame = '#e8e8e4') => ({
     { name: 'front beam', u: [0, W], h: grH.beam, out: .06, depth: .12, colour: dark284 },
     { name: 'dark ledge', u: [0, W], h: grH.ledge, out: .12, depth: .24, colour: dark284 },
     ...wins.map(s => ({ name: 'louvred transom', u: at(s), h: grH.transom, out: .04, depth: .03, colour: '#3e3e3a' })),
-    ...wins.flatMap(s => shutters(at(s), grH.win, frame)),
+    ...(frame ? wins.flatMap(s => shutters(at(s), grH.win, frame)) : []),
     { name: 'eaves', u: [0, W], h: grH.eaves, out: .45, depth: .9, colour: '#5a3a30' },
     ...extra,
   ],
@@ -762,9 +762,10 @@ export const emSalonSpa = {
 };
 // No. 290: lavender, yellow shutters. Valu$, a 24-hour store over Nos. 290 and 292.
 const at290 = s => lay(-.4, 5.122 / 5.11)(s).map(v => Math.min(5.122, Math.max(0, v)));
+const at292 = s => lay(-.1, 4.902 / 4.8)(s.map(v => v + 4.9)).map(v => Math.min(4.902, Math.max(0, v)));
 const valuNote = ' Google Maps lists Valu$, a general store open 24 hours, at 290/292 Geylang Rd, Singapore 389339, with its point inside No. 292\'s way; its boards, carrying its mark, run over both houses, so both are named after it and the boards are redrawn in original type.';
 export const valu = {
-  id: 'valu', buildingIds: ['454254172'], kind: 'valu', reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  id: 'valu', buildingIds: ['454254172', '454254171'], kind: 'valu', reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
   name: 'Valu$ (June 2024 exterior)', address: '290 and 292 Geylang Road', height: grH.height,
   evidence: 'June 2024 Street View shows Valu$ over two two-storey shophouses east of No. 288.' + valuNote,
   sources: [way('454254172'), search('Valu$ 290 Geylang Road'), pano('0XmLfVywkSW7HpPrXmiKPg', 190, 10, 100)],
@@ -783,10 +784,66 @@ export const valu = {
       piers: [at290([-.4, 0])],
       backFittings: [{ name: 'roller shutters', u: at290([.1, 4.5]), h: [.1, 2.7], colour: '#a8aaa8' }],
     },
+    // 17. No. 292: blue, white-framed casements, over a red board carrying two Valu$ marks. Its pilasters triangulate
+    // (H9pO..., u07..., 0XmL...) at g -0.2 and -5.0, against the source's 0 and -4.9 (g west from No. 290's east end;
+    // the house's own u = g + 4.9).
+    '454254171': {
+      frontEdge: 0, noReview: true, height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, shellInset: grShell, roof: grRoof,
+      evidence: 'June 2024 Street View shows a blue two-storey shophouse with white-framed casement windows between No. 290 and No. 294, over a red board carrying two Valu$ marks, its shop front behind grey roller shutters. Its pilasters, triangulated from three June 2024 Geylang Road panoramas (H9pO..., u07..., 0XmL...), stand on the source front at 0.2 m and 5.0 m east of No. 290\'s east party wall, against the source\'s 0 and 4.9 m; it is laid proportionally on its source edge.' + valuNote + grNote,
+      sources: [...grSources('454254171'), pano('H9pOadTVwBJU8Ex7cmpLWQ', 195, 10, 100), search('Valu$ 292 Geylang Road')],
+      colours: { ...grColours('#8aa0cc', '#e8e8e4'), glass: '#4a5458' },
+      ...grFront(4.902, at292, [[-4.55, -2.85], [-2.45, -.75]], '#8aa0cc', [], null),
+      // The red board with two Valu$ marks.
+      boards: [{ u: at292([-4.8, -.4]), h: grH.board, out: .08 }],
+      piers: [at292([-4.9, -4.55])],
+      backFittings: [{ name: 'grey roller shutters', u: at292([-4.7, -.4]), h: [.1, 2.7], colour: '#a0a2a0' }],
+    },
   },
 };
 
-export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu];
+// ---------------------------------------------------------------------------------------------
+// Geylang Road, east to Lorong 16
+
+// 18. Way 454254170, No. 294: cream, white-framed casements, a WANTED poster board on its east pilaster; its ground floor
+// is hidden behind a coach in every June 2024 view. Pilasters at g -5.0 and -10.0, against the source's -4.9 and -9.87.
+const at294 = s => lay(-.13, 4.969 / 5.0)(s.map(v => v + 9.87)).map(v => Math.min(4.969, Math.max(0, v)));
+export const no294 = {
+  id: 'gr-294', buildingIds: ['454254170'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  name: 'No. 294 Geylang Road (June 2024 exterior, occupants not identified)', address: '294 Geylang Road',
+  height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, shellInset: grShell, roof: grRoof,
+  evidence: 'June 2024 Street View shows a cream two-storey shophouse with white-framed casement windows between No. 292 and No. 296, with a dark poster board headed WANTED on its east pilaster; its ground floor is hidden behind a parked coach in every June 2024 view, so it is drawn shuttered, by estimate. Google Maps lists Secret Affair at 294 Geylang Rd but marks it permanently closed, so the board is blank and no name is given. Its pilasters, triangulated from H9pO... and u07..., stand on the source front at 5.0 m and 10.0 m east of No. 290\'s east party wall, against the source\'s 4.9 and 9.87 m; it is laid proportionally on its source edge.' + grNote,
+  sources: [...grSources('454254170'), search('294 Geylang Road'), pano('H9pOadTVwBJU8Ex7cmpLWQ', 170, 10, 100), pano('u07Yl1k8nX72_c24lJZ5hg', 210, 10, 100)],
+  colours: { ...grColours('#e8dca8', '#e8e8e4'), glass: '#4a5458' },
+  ...grFront(4.969, at294, [[-9.8, -7.8], [-7.3, -5.4]], '#e8dca8', [
+    ...pilaster284(at294([-5.3, -5.0]), 4.969),
+    { name: 'blank WANTED poster board', u: at294([-9.95, -9.6]), h: [5.1, 6.6], out: .3, depth: .12, colour: '#2a2422' },
+  ], null),
+  piers: [at294([-5.35, -5.0])],
+  backFittings: [{ name: 'shuttered shop front, by estimate', u: at294([-9.7, -5.2]), h: [.1, 2.7], colour: '#9a9c9a' }],
+};
+// 19. Way 454254169, No. 296, The Green Essential: teal, cream louvred shutters, over a white board reading The Green
+// Essential. Pilasters at g -10.0 and -14.84, against the source's -9.87 and -13.85: it photographs 4.84 m wide on its
+// 3.98 m way, and No. 298's whole front stands about a metre east of its source position.
+const at296 = s => lay(-.99, 3.978 / 4.84)(s.map(v => v + 13.85)).map(v => Math.min(3.978, Math.max(0, v)));
+export const greenEssential = {
+  id: 'green-essential', buildingIds: ['454254169'], kind: 'green-essential', frontEdge: 0, reviewRoad: 'Geylang Road', review: { distance: 8, pitch: 16 },
+  name: 'The Green Essential (June 2024 exterior)', address: '296 Geylang Road',
+  height: grH.height, ceiling: grH.ceiling, fiveFootWay: 2.0, shellInset: grShell, roof: grRoof,
+  evidence: 'June 2024 Street View shows a teal two-storey shophouse with cream louvred shutters between No. 294 and the Paramount building, over a white board reading The Green Essential, beauty, in green, its glazed shop front behind it. Google Maps lists The Green Essential, a beauty salon open until 1 am, at 296 Geylang Rd, though with No. 298\'s postal code (389342) and with its point in No. 298\'s way; the address and the board agree on this house, so it is named (as at Crystal Mansions, open question 32, the conflict recorded under open question 12) and the board is redrawn in original type. Its pilasters, triangulated from H9pO..., u07... and sH6..., stand on the source front at 10.0 m and 14.84 m east of No. 290\'s east party wall, against the source\'s 9.87 and 13.85 m, so it photographs 4.84 m wide on its 3.98 m way (open question 56); it is laid proportionally on its source edge.' + grNote,
+  sources: [...grSources('454254169'), search('The Green Essential 296 Geylang Road'), pano('u07Yl1k8nX72_c24lJZ5hg', 195, 10, 100), pano('sH6CfyvyQsxgdBweKtGXhg', 230, 10, 80)],
+  colours: grColours('#4ab0a0', '#ece4c8'),
+  ...grFront(3.978, at296, [[-14.6, -13.0], [-12.6, -10.6]], '#4ab0a0', [
+    ...pilaster284(at296([-10.3, -10.0]), 3.978),
+    ...pilaster284(at296([-14.84, -14.54]), 3.978),
+    { name: 'white board ground', u: at296([-14.5, -10.4]), h: grH.board, out: .06, depth: .04, colour: '#f2f2ee' },
+  ], '#ece4c8'),
+  // The Green Essential's board.
+  boards: [{ u: at296([-14.5, -10.4]), h: grH.board, out: .09 }],
+  piers: [at296([-10.35, -10.0])],
+  backFittings: [{ name: 'glazed salon front with shelves', u: at296([-14.4, -10.5]), h: [.1, 2.7], colour: '#3a4442', glow: .1 }],
+};
+
+export const lorong14 = [wingFongCourt, wingFongMansions, no37, no35, no33, leYuan, no29, no27, no25, ibisPearl, centralImperial, amazingInn, littleCharcoalStove, seaMuTo, emSalonSpa, valu, no294, greenEssential];
 // A review start opposite a point along the front (`review.at`), for a face that runs on past the walkable corridor.
 export const lorong14Reviews = (place, frame) => {
   const at = place.review?.at;

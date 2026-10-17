@@ -39,7 +39,10 @@ Research and implementation from **17 October 2026**, under open question 51. Th
 | 11 | East | 764372577 | No. 3, Central Imperial | Done; named |
 | 12 | East | 476141643 | No. 1, The Amazing Inn | Done; named |
 | 13–16 | East | 454254175 to 454254172 | Nos. 284–290 Geylang Road, the east corner block: Little Charcoal Stove, Sea Mu To TCM Wellness, Em Salon Spa and 暹罗指压保健, Valu$ | Done; named; question 55 |
-| 17–25 | Geylang Road | 454254171 to 764372573 | Nos. 292–308, east to Lorong 16 | |
+| 17 | Geylang Road | 454254171 | No. 292, Valu$ (with No. 290) | Done; named |
+| 18 | Geylang Road | 454254170 | No. 294 | Done; unnamed |
+| 19 | Geylang Road | 454254169 | No. 296, The Green Essential | Done; named (address conflict recorded); question 56 |
+| 20–25 | Geylang Road | 764372576 to 764372573 | Nos. 298–308, east to Lorong 16 | |
 
 The names in the table are those Google Maps gives for each address, or the source map's house numbers where no listing gives one. Whether a building is named in the model is decided at its stop.
 
@@ -357,3 +360,33 @@ Four two-storey shophouses under tiled roofs at the lane's east corner, each in 
 - All the boards are redrawn in original type.
 
 Use `?review=little-charcoal-stove`, `?review=sea-mu-to`, `?review=em-salon-spa` and `?review=valu`.
+
+**East side complete.** Every building from the extract's edge to Geylang Road on the east side now has its Lorong 14 face.
+
+## Geylang Road, Lorong 14 to Lorong 16
+
+East of No. 290 the row of two-storey shophouses runs on to the Paramount building (Nos. 298 and 300). Beyond it a three-storey block (Nos. 302–308) stands back behind a forecourt, up to Lorong 16's west corner.
+
+The fronts were read on the same line as Nos. 284–290, along No. 290's front (g west from its east end, negative eastward), and at the same heights.
+
+### 17–19. Ways 454254171, 454254170 and 454254169: Nos. 292, 294 and 296
+
+**Measurement:**
+- **Pilasters:** triangulated from `H9pO…`, `u07…` and `0XmL…` (and `sH6…` for the last), they stand **on the source front** at g = −0.2, −5.0, −10.0 and −14.84, against the source's 0, −4.9, −9.87 and −13.85.
+- So Nos. 292 and 294 agree with their source ways within 0.15 m. No. 296 photographs **4.84 m** wide on its 3.98 m way, and the party wall with No. 298 stands about a metre east of the source one: part of [open question 56](open-questions.md).
+- **Check:** renders from `H9pO…` and `u07…`, blended with the photographs, put the pilasters, windows, eaves and boards on their photographed places.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 17 | 454254171 | **No. 292**: blue, white-framed casements, over a red board carrying two **Valu$** marks; its shop front behind grey roller shutters | 4.8 m | **Valu$** (with No. 290) |
+| 18 | 454254170 | **No. 294**: cream, white-framed casements, with a dark poster board headed WANTED on its east pilaster. Its ground floor is hidden behind a parked coach in every June 2024 view, so it is drawn shuttered, by estimate | 5.0 m | No |
+| 19 | 454254169 | **No. 296**: teal, cream louvred shutters, over a white board reading **The Green Essential** *beauty* | 4.84 m | **The Green Essential** |
+
+**Layout:** each front is laid proportionally on its own source edge, at the heights of Nos. 284–290.
+
+**Naming:**
+- **Valu$** now covers both its houses (stop 16).
+- **No. 294:** Secret Affair is listed there but marked permanently closed, so the poster board is blank.
+- **The Green Essential**, a beauty salon open until 1 am, is listed at 296 Geylang Rd, but with No. 298's postal code (389342) and its point in No. 298's way. The address and the board agree on this house, so it is named (as at Crystal Mansions, question 32), with the conflict recorded under [question 12](open-questions.md). Its board is redrawn in original type.
+
+Use `?review=valu`, `?review=gr-294` and `?review=green-essential`.

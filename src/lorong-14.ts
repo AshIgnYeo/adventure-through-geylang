@@ -120,6 +120,17 @@ const draws: Draws = {
   },
   // Valu$: a red board with the blue Valu$ mark and 超便宜生活超市 in white.
   'valu': { boards: [valuBoard(1)] },
+  'valu:454254171': { boards: [valuBoard(2)] },
+  // The Green Essential in green on white, beauty under it.
+  'green-essential': {
+    boards: [(c, w, h) => {
+      c.fillStyle = '#f4f4f0'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8d8c0'; c.fillRect(0, h * .9, w, h * .1);
+      text(c, 'The', w * .14, h * .5, h * .34, '#6a7a6a', '600', sans);
+      text(c, 'Green', w * .38, h * .48, h * .56, '#3a9a4a', '700', sans, w * .3);
+      text(c, 'Essential', w * .72, h * .48, h * .34, '#6a7a6a', '600', sans, w * .36);
+      text(c, 'beauty', w * .72, h * .8, h * .14, '#3a9a4a', 'italic 500', 'Georgia, serif');
+    }],
+  },
   'le-yuan': {
     boards: [(c, w, h) => {
       c.fillStyle = '#c8282a'; c.fillRect(0, 0, w, h);

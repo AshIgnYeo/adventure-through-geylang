@@ -103,6 +103,19 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Author No. 284's footprint with its lane face 2 m forward and a short chamfer at the photographed corner, keeping its party wall with No. 286 and its rear line. Leave Nos. 286–290 on their source outlines.
     - **Unlocks:** the corner house at its true width, its five-foot way and awning at their photographed depth on the lane, and the corner board on its photographed corner.
 
+56. **Geylang Road Nos. 296–300: re-space the Paramount building and its neighbour onto their photographed party walls?**
+    - **Evidence:** measured during the Lorong 14 walk ([Lorong 14 brief](lorong-14-brief.md), stops 19–21). Along g, measured west from No. 290's east party wall (negative eastward), the pilasters triangulated from three June 2024 Geylang Road panoramas stand on the source front:
+
+      | House | Way | Photographed | Source |
+      | --- | --- | --- | --- |
+      | No. 296, The Green Essential | 454254169 | g −10.0 to −14.84 (4.84 m) | −9.87 to −13.85 (3.98 m) |
+      | No. 298, the Paramount building | 764372576 | −14.84 to −19.75 (4.9 m) | −13.85 to −18.59 (4.74 m) |
+      | No. 300, its single-storey extension | 475173286 | −19.75 to about −25.0 (5.25 m) | −18.59 to −24.89 (6.3 m) |
+
+    - **What happens now:** each front is laid proportionally on its source edge, so No. 298's two-storey front stands about a metre west of its photographed place and No. 300's extension is stretched.
+    - **Recommendation:** yes. Re-space the three ways on their source front and rear lines, cut at the photographed party walls, as question 45 did for Nos. 313–321.
+    - **Unlocks:** the Paramount building at its true place, and No. 296 at its true width.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
