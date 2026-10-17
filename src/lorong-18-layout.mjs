@@ -576,5 +576,56 @@ export const no44 = {
   backFittings: [{ name: 'dark front', u: at44([-52.3, -45.7]), h: [.1, 2.9], colour: '#3a3a3e' }, { name: 'blank dark script board', u: at44([-50.6, -47.4]), h: [2.3, 2.75], colour: '#2a2a2c' }],
 };
 
-export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44];
+// ---------------------------------------------------------------------------------------------
+// 19. Way 454274645, No. 44B, the Lorong 18 west corner at Westerhout Road: a two-storey corner house under a red tiled
+// hipped roof, ochre in June 2024 (lavender in December 2022), a recessed balcony with a yellow railing hung with Thai
+// gilt ornaments along the lane, over a curved red awning and a Thai massage parlour's neon signs. Its lane face is read
+// where three June 2024 lane panoramas agree on its south corner and balcony, about 1 m behind the source edges (edges 3
+// and 1, which step 1.4 m), running about 13 m from the corner, 1.4 m south of the source corner, to No. 44. Its
+// Westerhout Road front (edge 4) was read from the December 2022 Westerhout Road drive about 1 m behind its source edge,
+// which follows the brick boundary wall; it is laid on the edge, its street-level pieces held flat.
+const ochre44b = '#c89a62';
+export const no44b = {
+  id: 'l18-44b', buildingIds: ['454274645'], kind: 'unnamed', unnamed: true, reviewRoad: 'Lorong 18 Geylang', review: { distance: 8, pitch: 18 },
+  name: 'No. 44B Lorong 18 (June 2024 exterior, occupants not identified)', address: '44B Lorong 18 Geylang (the Westerhout Road corner)',
+  height: 6.8, ceiling: 3.4, fiveFootWay: 2.0, shellInset: .3, roof: { type: 'hip', ridge: 8.6, colour: '#b4553d' },
+  colours: { wall: ochre44b, trim: '#d8b078', frame: '#4a3a2a', glass: '#3a3634', pier: '#c89a62', back: '#3a2e2a', floor: '#a8a296' },
+  evidence: 'June 2024 Street View shows a two-storey corner house at Lorong 18 and Westerhout Road under a red tiled hipped roof with deep eaves, painted ochre: on the lane, a recessed balcony along its upper floor with a yellow railing, hung with Thai gilt ornaments and strings of beads, and at its south end a window under a red hood; on the ground floor a curved red awning wrapping the corner, over a massage parlour\'s neon signs (one reading SAW..., another OPEN within hearts, a red one with a welcome in Chinese) and the number 44B, behind a brown timber gate and potted topiary. Along Westerhout Road two windows under hoods on its upper floor, over a car porch behind a brick boundary wall with grey panels. In December 2022 the house was lavender. No business is listed at 44B and the neon names none, so its signs are blank. Three June 2024 lane panoramas (GNek..., RvUa..., Sen0...) agree on its south corner and balcony about 1 m behind the source edges, where the lane face runs about 13 m from the corner, 1.4 m south of the source corner, to No. 44; it is laid proportionally across the two source edges, which step 1.4 m. The December 2022 Westerhout Road drive puts the Westerhout Road front about 1 m behind its source edge, which follows the boundary wall and stands about 0.6 m from Westerhout Road\'s estimated carriageway, so that front\'s street-level pieces are held flat. Heights were read on the lane face: the awning at 3.5-4.4 m, the balcony railing at 4.5-5.5 m, eaves at 6.8 m and the roof to about 8.6 m.',
+  sources: [way('454274645'), search('44B Lorong 18 Geylang'), pano('GNek5w3F44WsZnRCjqyOhA', 262, 10, 70), pano('Sen0U2YhMqlMOvyy54kfpQ', 300, 10, 70), pano('RvUaS2tCvcg1XuXtad5xcg', 240, 10, 60), pano('0w-KvtXof37AXb1R9DUTcw', 20, 10, 70)],
+  ...across({
+    windows: [{ u: [.6, 2.2], h: [4.8, 6.0], panes: 2 }],
+    blocks: [
+      { name: 'red window hood', u: [.4, 2.4], h: [6.0, 6.4], out: .3, depth: .6, colour: '#c8503e' },
+      { name: 'balcony recess', u: [2.6, 12.8], h: [4.4, 6.6], out: -.02, depth: .04, colour: '#5a4632' },
+      { name: 'yellow balcony railing', u: [2.6, 12.8], h: [4.5, 5.5], out: .1, depth: .06, colour: '#e8c050' },
+      ...[3.6, 5.6, 7.6, 9.6, 11.6].map(l => ({ name: 'Thai gilt ornament', u: [l, l + .4], h: [5.4, 6.2], out: .05, depth: .06, colour: '#d8b048', glow: .12 })),
+      { name: 'deep eaves', u: [0, 13.0], h: [6.6, 6.9], out: .5, depth: 1.0, colour: '#b4553d' },
+      { name: 'curved red awning', u: [0, 13.0], h: [3.5, 4.4], out: .9, depth: 1.8, colour: '#c8503e' },
+      { name: 'brown timber gate', u: [2.0, 5.6], h: [0, 2.0], out: 2.4, depth: .1, colour: '#7a4a38' },
+      { name: 'potted topiary', u: [.2, 1.8], h: [0, 1.8], out: 2.2, depth: .8, colour: '#3e6a3a' },
+    ],
+    backFittings: [
+      { name: 'massage parlour front', u: [.4, 12.6], h: [.1, 3.2], colour: '#4a2e2a', glow: .1 },
+      { name: 'blank red neon', u: [3.6, 6.2], h: [2.0, 2.8], colour: '#e8303a', glow: .4 },
+      { name: 'blank red neon', u: [6.6, 8.2], h: [2.4, 2.9], colour: '#e8303a', glow: .4 },
+      { name: 'blank purple neon panel', u: [10.0, 12.0], h: [1.5, 2.8], colour: '#5a3a9a', glow: .3 },
+    ],
+  }, 13.0, [{ edge: 3, w: 8.321 }, { edge: 1, w: 3.305 }], 3),
+};
+// The Westerhout Road front (edge 4, u east from the west end to the corner), held flat against the carriageway, and
+// the short step between the lane edges.
+no44b.sides.push({
+  edge: 4, heldFlat: true,
+  windows: [[2.5, 4.3], [6.0, 7.8]].map(u => ({ u, h: [4.8, 6.0], panes: 3 })),
+  blocks: [
+    ...[[2.3, 4.5], [5.8, 8.0]].map(u => ({ name: 'window hood', u, h: [6.0, 6.35], out: .15, depth: .3, colour: '#c8503e' })),
+    { name: 'deep eaves', u: [0, 13.32], h: [6.6, 6.9], out: .2, depth: .4, colour: '#b4553d' },
+    { name: 'brick boundary wall', u: [0, 9.8], h: [0, .6], out: .1, depth: .2, colour: '#7a5a5a' },
+    ...[[.6, 3.0], [3.6, 6.0], [6.6, 9.4]].map(u => ({ name: 'grey wall panel', u, h: [.6, 1.6], out: .1, depth: .2, colour: '#a8aaa8' })),
+    { name: 'curved red awning', u: [9.8, 13.32], h: [3.5, 4.4], out: .1, depth: .2, colour: '#c8503e' },
+    { name: 'car porch', u: [.3, 9.6], h: [.1, 3.0], out: .02, depth: .04, colour: '#4a4440' },
+  ],
+}, { edge: 2, blocks: [{ name: 'deep eaves', u: [0, 1.37], h: [6.6, 6.9], out: .2, depth: .4, colour: '#b4553d' }] });
+
+export const lorong18 = [leRegal, budgetone, cygon, no16, no18, club20, gofit, no26, no28, no30, no32, no34, no36, no38, no40, no42, no44, no44b];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;

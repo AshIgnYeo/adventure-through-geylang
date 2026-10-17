@@ -38,7 +38,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | 16 | West | 764372562 | No. 40 | Done; unnamed; question 73 |
 | 17 | West | 454274643 | No. 42 | Done; unnamed; question 73 |
 | 18 | West | 764372561 | No. 44 | Done; unnamed; question 73 |
-| 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | |
+| 19 | West | 454274645 | No. 44B, the Westerhout Road west corner | Done; unnamed; question 73 |
 | 20 | East | 764372540 | No. 55, the Westerhout Road east corner | |
 | 21 | East | 121872891 | No. 31, Hotel 81 Star | |
 | 22 | East | 764372541 | Nos. 21 and 25, Diamond Hotel | |
@@ -248,3 +248,29 @@ A two-storey terrace behind one zinc porch roof on slim posts.
 - Nothing else is listed at these addresses.
 
 Use `?review=l18-38`, `?review=l18-40`, `?review=l18-42` and `?review=l18-44`.
+
+### 19. Way 454274645: No. 44B, the Lorong 18 west corner at Westerhout Road
+
+A two-storey corner house under a red tiled hipped roof with deep eaves, ochre in June 2024; it was lavender in December 2022.
+
+- **On the lane:** a recessed balcony along the upper floor, with a yellow railing hung with Thai gilt ornaments and strings of beads, and a window under a red hood at its south end.
+- **Ground floor:** a curved red awning wrapping the corner, over a massage parlour's neon signs: one reading SAW…, another OPEN within hearts, a red one with a welcome in Chinese. The number 44B, behind a brown timber gate and potted topiary.
+- **On Westerhout Road:** two windows under hoods, over a car porch behind a brick boundary wall with grey panels.
+
+**Measurement:**
+- **Lane face (edges 3 and 1, which step 1.4 m):** `GNek…`, `RvUa…` and `Sen0…` (June 2024) agree on its south corner and balcony about **1 m behind** the source edges. The depth scores peak on the awning and gate, 5–6 m in front.
+  - On that plane the face runs about **13 m**, from its corner, 1.4 m south of the source corner, to No. 44.
+- **Westerhout Road front (edge 4):** only the December 2022 Westerhout Road drive sees it square-on. It reads about **1 m behind** its source edge, though its three panoramas agree less well than the lane's.
+  - The source edge follows the boundary wall and stands about 0.6 m from Westerhout Road's estimated carriageway.
+- **Heights,** on the lane face: awning at 3.5–4.4 m, balcony railing at 4.5–5.5 m, eaves at 6.8 m, roof to about 8.6 m.
+
+**Layout:**
+- **Lane face:** laid proportionally across the two source lane edges.
+- **Westerhout Road front:** a side face, its street-level pieces held flat within 0.25 m, with the boundary wall drawn on it.
+- Moving the lane face onto its photographed line is part of [open question 73](open-questions.md).
+
+**Naming:** none. Nothing is listed at 44B, and the neon names no listed business. SaWaDee Spa is listed in Le Regal, not here.
+
+Use `?review=l18-44b`.
+
+**West side complete.** Every building from Le Regal on Geylang Road to No. 44B at Westerhout Road now has its Lorong 18 front.

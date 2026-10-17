@@ -63,6 +63,29 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Leave them for a Westerhout Road pass. Taking in the stub's west side would need the extract extended south, which is a separate decision.
     - **Unlocks:** nothing now; it records where the lane stops.
 
+73. **Lorong 18 west side, No. 14 to No. 44B: re-author the outlines on their photographed line?**
+    - **Evidence:** measured from June 2024 lane panoramas during the walk ([Lorong 18 brief](lorong-18-brief.md), stops 3–19). The houses were read on one plane along No. 30's front, s metres north from its south corner.
+
+      | Building | Way(s) | Photographed against the source outline |
+      | --- | --- | --- |
+      | Nos. 14–20, a terrace | 454274632, 764372568, 764372567, 764372566 | Each source front is two edges stepping about 2 m; the projecting ones follow the porches. Upper façades 2 m behind the recessed edges and 4.5 m behind the projecting ones. Party walls at s = 29.7, 38.1, 46.2, 55.9 and 62.5, against 31.7, 38.9, 46.8, 54.5 and 62.5 |
+      | Nos. 22–24, GoFit X Gym Geylang | 454274634, 764372565 | One building over both ways. Front 2–2.5 m in front of the projecting edges and 5 m in front of the recessed ones. 13.5 m long (s = 18.3 to 31.8) against 12.2 m |
+      | Nos. 26–28, a single-storey pair | 454274635, 454274637 | Porch on the projecting edges. GoFit's south wall stands about 1 m inside No. 26's outline |
+      | Nos. 30–36, a terrace | 454274639, 454274640, 764372564, 764372563 | Upper façades 3.25 m behind the source fronts of Nos. 30–34, which follow the porch roofs, and 0.85 m behind No. 36's. Party walls at s = 6.95, −0.8, −8.7, −17.0 and −23.0, against 7.97, 0, −7.83, −14.88 and −22.15 |
+      | Nos. 38–44, a terrace | 454274642, 764372562, 454274643, 764372561 | Fronts 0.25 m in front; party walls within 0.8 m of the source ones |
+      | No. 44B, the Westerhout Road corner | 454274645 | Lane face about 1 m behind, its south corner 1.4 m south of the source corner; Westerhout Road front about 1 m behind (December 2022) |
+
+    - **What happens now:** each elevation is laid on its source edges, proportionally across a stepped front. Fronts stand up to 4.5 m from their photographed lines, and the porches and car porches are drawn as fittings on them.
+    - **Also recorded, no change proposed:** Le Regal's Geylang Road front stands about 1 m behind its source edge, and No. 10's 0.5 m behind.
+    - **Recommendation:** yes, for Nos. 14–36 and No. 44B. Author one footprint group for the west side, as the Lorong 19 west side was (question 46):
+      - each house's front on its photographed upper-façade line, its party walls at the measured lines, and its rear line kept;
+      - the porches drawn in front at their photographed depth, as single-storey parts where they are roofed;
+      - GoFit as one footprint over both ways, at its photographed length;
+      - No. 44B's lane face moved back to its photographed corner.
+
+      Nos. 38–44 stand within 0.8 m of their outlines and stay on them.
+    - **Unlocks:** true positions and widths along the west side, porches at their photographed depth, and render-and-compare from the photographs.
+
 74. **Lorong 18, No. 34 (way 764372564): name 浯鄉陳氏公會 from its lettering, when its listing gives No. 40?**
     - **Evidence:** in June 2024 raised black lettering along the parapet of No. 34 reads 浯鄉陳氏公會. A yellow board with the association's emblem, reading 浯鄉陳氏公會 CHEN'S ASSOCIATION, hangs over a grille gate to the stair at the house's north end. The number 34 is on the house's marble front ([Lorong 18 brief](lorong-18-brief.md), stop 13).
     - **Listing:** Google Maps lists 浯乡陈氏公会, an association, at **40** Lor 18 Geylang, Singapore 398819, with its point inside No. 34's way. No. 40, three houses south, has no sign for it.
