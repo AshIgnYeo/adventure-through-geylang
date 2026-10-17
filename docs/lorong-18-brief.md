@@ -22,7 +22,7 @@ Research and implementation from **17 October 2026**, under open question 71. Th
 | Stop | Side | Source way | Building | Status |
 | --- | --- | --- | --- | --- |
 | 1 | Geylang Road | 541941365 | Le Regal, 340 Geylang Road: the west corner, back to Lorong 16 | Done; named |
-| 2 | West | 454274650 | No. 10, OYO 102 Budgetone Hotel | |
+| 2 | West | 454274650 | No. 10, OYO 102 Budgetone Hotel | Done; named |
 | 3 | West | 454274632 | No. 14, Cygon | |
 | 4 | West | 764372568 | No. 16 | |
 | 5 | West | 764372567 | No. 18 | |
@@ -88,3 +88,31 @@ The whole Geylang Road block from Lorong 16 to Lorong 18 is one building: a whit
 - No claim is made about the arcade's tenants, whose boards are blank. Many are listed at 340 Geylang Road, among them G Salon, SIA Money Exchange, Mobile X and Botanique Beauty Spa.
 
 Use `?review=le-regal`.
+
+## West side
+
+### 2. Way 454274650: No. 10, OYO 102 Budgetone Hotel
+
+A seven-storey hotel south of the back lane behind Le Regal.
+
+- **South end:** a glazed stair strip of green glass beside a plain beige panel, crowned by a red board lettered **oyo**.
+- **The rooms' front:** white, its windows in projecting white surrounds between grey panels, under a row of grey fins on the top floor and a slatted roof canopy.
+- **Lettering:** **BudgetOne Hotel**, blue with an orange O and a pink Hotel, between the first two floors of rooms, over a band of painted waves above the lobby.
+- **In front:** a low garden wall with potted plants, and a gate plated 10.
+- **North wall,** on the back lane: plain white.
+
+**Measurement:**
+- **Depth:** the lettering lines up between `pKnB…`, `USMH…`, `ijKd…` and `m8yM…` (June 2024) on a plane **0.5 m behind** the source edge. The depth scores agree (−0.25 to −0.75 m).
+- **Extent:** on that plane the front runs the source edge's 14.2 m: the stair strip and panel to 4.9 m from the party wall with No. 14, the rooms beyond.
+- **Heights,** read on that plane from `ijKd…`:
+  - lobby to 3.6 m, under the waves to 4.3 m;
+  - windows at 4.7–6.4, 7.8–9.5, 11.2–12.8, 14.5–16.2 and 17.8–19.5 m;
+  - lettering at 6.65–7.55 m;
+  - fins to 21.3 m, and the stair strip to about 22 m.
+  - `pKnB…`, 25 m north, reads about 1.3 m higher, so the nearest panoramas are used.
+
+**Layout:** laid on the source edge at its photographed positions, with a 1 m lobby recess and the garden wall 1.6 m in front. The north wall is a side face, its few small windows placed by estimate.
+
+**Naming:** Google Maps lists **OYO 102 Budgetone Hotel**, a hotel, at 10 Lor 18 Geylang, Singapore 398793, with its point inside this way. Its lettering and the OYO board are photographed, so it is named, and both are redrawn in original type.
+
+Use `?review=budgetone-hotel`.

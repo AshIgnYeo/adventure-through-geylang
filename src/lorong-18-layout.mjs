@@ -122,5 +122,58 @@ export const leRegal = {
   }],
 };
 
-export const lorong18 = [leRegal];
+// ---------------------------------------------------------------------------------------------
+// West side
+
+// 2. Way 454274650, No. 10, OYO 102 Budgetone Hotel: a seven-storey hotel south of the back lane behind Le Regal. Its
+// front (edge 1, u north from its party wall with No. 14) is read where four June 2024 lane panoramas agree on its
+// lettering, 0.5 m behind the source edge, where it runs the edge's length: a glazed stair strip and a beige panel at
+// the south end, then the rooms' white front, its windows in projecting white surrounds between grey panels, under a
+// slatted roof canopy and a row of grey fins on the top floor.
+const W650 = 14.158, white650 = '#ecebe6';
+const rows650 = [[4.7, 6.4], [7.8, 9.5], [11.2, 12.8], [14.5, 16.2], [17.8, 19.5]];
+const cols650 = [[5.3, 7.2], [8.3, 10.1], [11.4, 13.5]];
+export const budgetone = {
+  id: 'budgetone-hotel', buildingIds: ['454274650'], kind: 'budgetone-hotel', frontEdge: 1, reviewRoad: 'Lorong 18 Geylang', review: { distance: 8, pitch: 28 },
+  name: 'OYO 102 Budgetone Hotel (June 2024 exterior)', address: '10 Lorong 18 Geylang',
+  height: 21.3, ceiling: 3.6, fiveFootWay: 1.0, roof: { type: 'flat', colour: '#9b9a95' },
+  evidence: 'June 2024 Street View shows a seven-storey hotel south of the back lane behind Le Regal: at its south end a glazed stair strip of green glass and a plain beige panel, crowned by a red board lettered oyo; then the rooms\' white front, its windows in projecting white surrounds between grey panels, under a row of grey fins on the top floor and a slatted roof canopy. Between the first and second floors of rooms runs the lettering BudgetOne Hotel, blue with an orange O and a pink Hotel, over a band of painted waves above the lobby; a low garden wall with a gate plated 10 stands in front. Its north wall on the back lane is plain white. Google Maps lists OYO 102 Budgetone Hotel at 10 Lor 18 Geylang, Singapore 398793, with its point inside this way, so the hotel is named after it, and its lettering and the OYO board are redrawn in original type. Four June 2024 lane panoramas (pKnB..., USMH..., ijKd..., m8yM...) agree on the lettering 0.5 m behind the source edge, where the front runs the edge\'s length, so it is laid on the edge at its photographed positions. Heights were read on that plane from ijKd...: the lobby to 3.6 m under a band of waves to 4.3 m, windows at 4.7-6.4, 7.8-9.5, 11.2-12.8, 14.5-16.2 and 17.8-19.5 m, the lettering at 6.65-7.55 m, the fins to 21.3 m and the stair strip to about 22 m.',
+  sources: [way('454274650'), search('OYO 102 Budgetone Hotel 10 Lorong 18 Geylang'), pano('ijKdW6tyrOTKZnnSK2iXdg', 262, 15, 75), pano('m8yMJuQIYmZU0SXX8yBJQA', 250, 15, 75), pano('USMHl-GTkar2AgGO1c8zGA', 235, 15, 70), pano('VqEMeB2kieus_7vLL6lHQA', 318, 20, 20)],
+  colours: { wall: white650, trim: '#f2f2ee', frame: '#5a6064', glass: '#4a5a60', pier: white650, back: '#3a3c3e', floor: '#a8a296' },
+  windows: rows650.flatMap(h => cols650.map(u => ({ u, h, panes: 2, out: .32 }))),
+  blocks: [
+    // The glazed stair strip and the beige panel at the south end, full height.
+    { name: 'green glazed stair strip', u: [.05, 2.0], h: [.1, 22.0], out: .1, depth: .2, colour: '#5c7a72' },
+    ...Array.from({ length: 7 }, (_, i) => ({ name: 'stair glazing mullion', u: [.05, 2.0], h: [3.3 + i * 3.3, 3.45 + i * 3.3], out: .22, depth: .04, colour: '#c8ccc8' })),
+    { name: 'beige panel', u: [2.0, 4.9], h: [.1, 22.0], out: .05, depth: .1, colour: '#cdb98e' },
+    // The rooms' windows in projecting white surrounds, with grey panels between them.
+    ...rows650.flatMap(([b, t]) => [
+      ...cols650.map(([l, r]) => ({ name: 'projecting window surround', u: [l - .2, r + .2], h: [b - .25, t + .25], out: .15, depth: .3, colour: '#f4f4f0' })),
+      ...[[7.4, 8.1], [10.3, 11.2]].map(u => ({ name: 'grey panel', u, h: [b, t], out: .02, depth: .04, colour: '#a9adb0' })),
+    ]),
+    ...[3.6, 7.0, 10.4, 13.7, 17.0].map(y => ({ name: 'floor band', u: [4.9, W650], h: [y - .12, y + .12], out: .04, depth: .08, colour: '#d8d8d4' })),
+    { name: 'band of painted waves', u: [4.9, W650], h: [3.6, 4.3], out: .03, depth: .06, colour: '#cfe0ea' },
+    // The top floor's grey fins and the slatted roof canopy.
+    ...Array.from({ length: 13 }, (_, i) => ({ name: 'grey fin', u: [+(5.1 + i * .7).toFixed(2), +(5.25 + i * .7).toFixed(2)], h: [19.8, 21.3], out: .45, depth: .5, colour: '#a6a9aa' })),
+    { name: 'slatted roof canopy', u: [4.9, W650], h: [21.3, 21.6], out: .6, depth: 1.2, colour: '#b8bab8' },
+    // The garden wall and gate in front, plated 10.
+    { name: 'garden wall', u: [.3, 10.2], h: [0, 1.0], out: 1.6, depth: .2, colour: '#ecebe6' },
+    { name: 'gate pillar plated 10', u: [10.2, 10.8], h: [0, 1.4], out: 1.6, depth: .4, colour: '#ecebe6' },
+    { name: 'garden of potted plants', u: [.6, 10.0], h: [0, 1.6], out: .9, depth: 1.2, colour: '#4e7a3a' },
+  ],
+  piers: [[4.9, 5.3], [13.7, 14.1]],
+  backFittings: [
+    { name: 'lobby glazing', u: [5.6, 10.6], h: [.1, 3.0], colour: '#3e4a4c', glow: .1 },
+    { name: 'white wall', u: [10.6, 13.6], h: [.1, 3.5], colour: '#ecebe6' },
+  ],
+  // The lettering between the first two floors of rooms, and the oyo board over the stair strip.
+  boards: [{ u: [5.6, 13.3], h: [6.65, 7.55], out: .08 }, { u: [2.5, 4.5], h: [19.8, 22.0], out: .12 }],
+  sides: [{
+    edge: 0, // the north wall on the back lane, u west from the front
+    windows: [4.7, 8.1, 11.5, 14.8, 18.1].map(b => ({ u: [9.6, 10.2], h: [b, b + .6], panes: 1 })),
+    blocks: [{ name: 'slatted roof canopy', u: [0, 1.2], h: [21.3, 21.6], out: .6, depth: 1.2, colour: '#b8bab8' }],
+  }],
+};
+
+export const lorong18 = [leRegal, budgetone];
 export const lorong18Frame = laneFrame, lorong18Layout = laneLayout, lorong18Upper = laneUpper, lorong18Reviews = laneReviews, lorong18Sides = laneSides;

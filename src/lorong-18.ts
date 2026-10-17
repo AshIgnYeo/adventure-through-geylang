@@ -40,6 +40,20 @@ const draws: Draws = {
       },
     ],
   },
+  // BudgetOne Hotel in blue with an orange O and a pink Hotel, and the red oyo board over the stair strip.
+  'budgetone-hotel': {
+    boards: [(c, w, h) => {
+      c.font = `italic 800 ${Math.round(h * .8)}px ${sans}`; c.textBaseline = 'middle'; c.textAlign = 'left';
+      const parts: [string, string][] = [['Budget', '#2a3a9a'], ['O', '#e8782a'], ['ne ', '#2a3a9a'], ['Hotel', '#d8506a']];
+      const total = parts.reduce((s, [t]) => s + c.measureText(t).width, 0), k = Math.min(1, w * .96 / total);
+      c.setTransform(k, 0, 0, 1, w * .02, 0); let x = 0;
+      for (const [t, colour] of parts) { c.fillStyle = colour; c.fillText(t, x, h * .55); x += c.measureText(t).width; }
+      c.setTransform(1, 0, 0, 1, 0, 0);
+    }, (c, w, h) => {
+      c.fillStyle = '#d8403a'; c.fillRect(0, 0, w, h);
+      ['o', 'y', 'o'].forEach((ch, i) => text(c, ch, w * .5, h * (.2 + i * .3), w * .7, '#f8f4f0', '800', sans));
+    }],
+  },
   // The number 340 on the corner's fascia.
   'le-regal@8': {
     boards: [(c, w, h) => { c.fillStyle = '#6a6d70'; c.fillRect(0, 0, w, h); text(c, '340', w * .5, h * .55, h * .78, '#f0f0ec', '700', sans, w * .9); }],
