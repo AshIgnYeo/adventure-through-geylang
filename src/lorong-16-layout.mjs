@@ -373,7 +373,47 @@ export const crystalLodge = {
   }],
 };
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge];
+// ---------------------------------------------------------------------------------------------
+// 8. Way 764372580, No. 50: an old timber house raised on low stilts, under a hipped roof of dark corrugated sheets with
+// a scalloped fascia, in a garden behind rust-red corrugated hoarding along the lane and a grey wall on the car park
+// aisle; the lane gate, plated 50, stands under a zinc-roofed gatehouse with a timber window grid. Its east face (edge
+// 1, u north from the south-east corner) is read only over the hoarding: the June 2024 panoramas stand 19-23 m away and
+// see its walls through the garden, so it is laid on its source edge, with heights read on that plane and carried as
+// estimates. The gate's plate triangulates on a line about 12.5 m in front, where the hoarding stands.
+const timber580 = '#8a6a4a', hoard580 = 12.5;
+export const no50 = {
+  id: 'l16-50', buildingIds: ['764372580'], kind: 'unnamed', unnamed: true, frontEdge: 1, reviewRoad: 'Lorong 16 Geylang', review: { distance: 17, pitch: 14 },
+  name: 'No. 50 Lorong 16 (June 2024 exterior, occupants not identified)', address: '50 Lorong 16 Geylang',
+  height: 6.0, ceiling: 1.4, fiveFootWay: .3, roof: { type: 'hip', ridge: 8.8, colour: '#4e4c48' },
+  evidence: 'June 2024 Street View shows an old timber house on the west side of Lorong 16, north of the car park aisle, raised on low stilts under a hipped roof of dark corrugated sheets with a scalloped fascia: walls of brown timber boards, a band of timber louvres under the eaves and a row of wide windows of small panes, in a garden of palms and shrubs. Along the lane it is closed by rust-red corrugated hoarding, with a brown metal gate plated 50 under a zinc-roofed gatehouse whose upper part is a white grid of timber windows and a CCTV notice, and along the aisle by a grey wall. No sign names the house and no business is listed at the address, so no name is given. The June 2024 lane panoramas stand 19-23 m from its east face and see it only over the hoarding, through the garden, so it is laid on its source edge; the registered satellite shows its dark roof reaching 3-5 m east of the source outline, which may be its eaves or an extension (open question 65). Heights were read on the source plane from 5TUz... (June 2024) and carry about 0.6 m: the floor about 1.4 m up, windows at 3.4-5.0 m, the louvre band at 5.1-5.8 m, the eaves at about 6.0 m and the ridge at about 8.8 m. The gate\'s plate, followed from PBc3..., puts the hoarding about 12.5 m in front of the source edge.',
+  sources: [way('764372580'), search('50 Lorong 16 Geylang Singapore'), pano('5TUzhfcSfz2IBlfs_sQnhA', 290, 6, 60), pano('PBc3mXjx_CkswYrrBoTUIQ', 262, 4, 60), pano('gUrdY-azKFUqo5xT_-hfnA', 250, 12, 60)],
+  colours: { wall: timber580, trim: '#6a4e36', frame: '#5a4030', glass: '#3a3a34', pier: '#5a4a3a', back: '#3a3430', floor: '#6a5a48' },
+  windows: [[.8, 3.6], [4.2, 7.0], [7.6, 10.4]].map(u => ({ u, h: [3.4, 5.0], panes: 6 })),
+  blocks: [
+    { name: 'stilts and storage under the house', u: [.1, 11.8], h: [.13, 1.4], out: .01, depth: .02, colour: '#3e3832' },
+    ...Array.from({ length: 12 }, (_, i) => ({ name: 'timber louvre', u: [.1, 11.8], h: [+(5.1 + i * .06).toFixed(2), +(5.13 + i * .06).toFixed(2)], out: .03, depth: .04, colour: '#6a4e36' })),
+    { name: 'scalloped fascia', u: [0, 11.899], h: [5.8, 6.05], out: .7, depth: .1, colour: '#6a4a32' },
+    // The rust-red hoarding along the lane, and the gatehouse over the gate plated 50.
+    { name: 'rust-red corrugated hoarding', u: [0, 3.0], h: [0, 2.6], out: hoard580, depth: .06, colour: '#b4553e' },
+    { name: 'rust-red corrugated hoarding', u: [7.5, 11.899], h: [0, 2.6], out: hoard580, depth: .06, colour: '#b4553e' },
+    { name: 'brown metal gate', u: [3.0, 7.5], h: [0, 1.75], out: hoard580, depth: .08, colour: '#a87a56' },
+    ...grille('timber window grid', [3.1, 7.4], [1.75, 3.0], hoard580, '#e8e6e0', .55, false),
+    ...[3.0, 7.4].map(p => ({ name: 'gatehouse post', u: [p, +(p + .12).toFixed(2)], h: [0, 3.6], out: hoard580 - .1, depth: .12, colour: '#8a8c8a' })),
+    { name: 'zinc gatehouse roof', u: [2.6, 7.9], h: [3.6, 3.85], out: hoard580 - .9, depth: 2.4, colour: '#9a9c98' },
+    { name: 'blank CCTV notice', u: [3.3, 3.9], h: [1.0, 1.6], out: hoard580 + .06, depth: .02, colour: '#e8d83a' },
+  ],
+  sides: [{
+    edge: 0, // the south face on the car park aisle, behind a grey wall
+    windows: [[2.0, 4.8], [6.0, 8.8], [10.0, 12.8]].map(u => ({ u, h: [3.4, 5.0], panes: 6 })),
+    blocks: [
+      { name: 'stilts and storage under the house', u: [.1, 20.1], h: [.13, 1.4], out: .01, depth: .02, colour: '#3e3832' },
+      { name: 'scalloped fascia', u: [0, 20.221], h: [5.8, 6.05], out: .7, depth: .1, colour: '#6a4a32' },
+      { name: 'grey wall on the aisle', u: [.5, 20.2], h: [0, 2.3], out: 1.4, depth: .2, colour: '#b4b6b2' },
+    ],
+  }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.
 export const geylangRow16 = [no312, bsMiniMart];
 export const lorong16Frame = laneFrame, lorong16Layout = laneLayout, lorong16Upper = laneUpper, lorong16Reviews = laneReviews, lorong16Sides = laneSides;

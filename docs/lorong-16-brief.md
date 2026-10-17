@@ -26,7 +26,7 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 5 | West | 763764687 | No. 20, Hotel 81 Geylang | Done; named; question 65 |
 | 6 | West | 763764688 | No. 24, Then Shen Temple | Done; named; question 65 |
 | 7 | West | 763764676 | No. 30, Crystal Lodge | Done; named |
-| 8 | West | 764372580 | No. 50 | |
+| 8 | West | 764372580 | No. 50, a timber house behind hoarding | Done; unnamed; question 65 |
 | 9 | West | 763764654 | No. 54 | |
 | 10–12 | East | 763764664, 763764665, 763764666 | The terrace at the head of Westerhout Road | |
 | 13–14 | East | 763764667, 763764668 | The terrace's west end, on the grassed verge | |
@@ -183,3 +183,26 @@ On the top floor are open roof terraces under a deep parapet. A white boundary w
 **Naming:** Google Maps lists **Crystal Lodge**, an apartment building, at 30 Lorong 16 Geylang, Singapore 398870, with its point inside this way, and the source map names it. Its lettering is photographed, so it is named, and the lettering is redrawn as photographed, without the lost L. The businesses listed in it (a shutter repairer, a landscape firm and a helper agency) have no photographed signs.
 
 Use `?review=crystal-lodge`.
+
+South of Crystal Lodge, rust-red corrugated hoarding runs along the pavement to the car park aisle.
+
+### 8. Way 764372580: No. 50
+
+An old timber house behind the hoarding, raised on low stilts under a hipped roof of dark corrugated sheets with a scalloped fascia.
+
+- **Walls:** brown timber boards, a band of timber louvres under the eaves, and a row of wide windows of small panes.
+- **Garden:** palms and shrubs between the house and the hoarding.
+- **On the lane:** a brown metal gate plated **50** under a zinc-roofed gatehouse, its upper part a white grid of timber windows, with a CCTV notice.
+- **On the aisle:** a grey wall.
+
+**Measurement:**
+- **Depth:** the June 2024 lane panoramas stand 19–23 m from its east face and see it only over the hoarding, through the garden, so no plane could be fixed. It is laid on its source edge.
+- **Satellite:** it shows the dark roof reaching 3–5 m east of the source outline. That may be its eaves, or an extension.
+- **The hoarding:** the gate's plate, followed from `PBc3…`, puts it about **12.5 m in front of** the source edge.
+- **Heights,** read on the source plane from `5TUz…` and carried as estimates (about ±0.6 m): the floor about 1.4 m up; windows at 3.4–5.0 m; the louvre band at 5.1–5.8 m; eaves at about 6.0 m; the ridge at about 8.8 m.
+
+**Layout:** the east face (edge 1) is the front, the south face (edge 0) a side face with its wall on the aisle. The hoarding and the gatehouse are drawn on the front at 12.5 m. The hoarding's northern stretch, from the outline's north end to Crystal Lodge, lies beyond the edge and is not drawn.
+
+**Naming:** none. No sign names the house and no business is listed at the address.
+
+Use `?review=l16-50`.
