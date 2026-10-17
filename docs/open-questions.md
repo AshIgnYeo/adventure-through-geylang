@@ -66,6 +66,26 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Retrieve a new extract reaching about 1.3095 N, so that Lorong 14 runs to Guillemard Road. Then finish the east side south of No. 37 and the lane's south end in a later pass, as Lorong 14 was walked.
     - **Unlocks:** the whole of Lorong 14, the rest of its east side and its Guillemard Road corners.
 
+53. **Lorong 14 east side, Nos. 25–33: re-author the terrace on its photographed line?**
+    - **Evidence:** each house was measured from June 2024 lane panoramas during the walk ([Lorong 14 brief](lorong-14-brief.md), stops 5–9). Along s, measured south along No. 25's source front from its north end, the source party walls stand at 0, 6.12, 12.95, 19.41, 26.28 and 32.35 m.
+
+      | House | Way | Photographed against the source outline |
+      | --- | --- | --- |
+      | No. 25 | 764372578 | Upper floors 2.5 m back; s 0.67–5.1, 4.4 m against 6.05 m; gate about 3.4 m forward |
+      | No. 27 | 764372579 | Upper floors about 1.9 m back; s 5.1–11.45, 6.35 m against 6.68 m; gate about 5.8 m forward |
+      | No. 29 | 454274608 | Upper floors about 1.3 m back; s 11.45–20.6, 9.2 m against 6.3 m; gate about 6.3 m forward |
+      | No. 31, 樂緣 | 454274611 | Front 1.5 m forward; 1.2–7.6 m along its source edge, against 0–6.86; canopy front and board about 6 m forward |
+      | No. 33 | 454274614 | Upper floors 2.25 m forward; 1.0–6.7 m along its source edge, against 0–6.07; gates about 6 m forward |
+
+    - **What happens now:** each elevation is laid proportionally on its source edge, so fronts stand up to 2.5 m from their photographed lines, and features up to about a metre from their photographed places. The gates and No. 31's canopy front are drawn at their triangulated lines.
+    - **Recommendation:** yes. Author one footprint group for the five houses, as for the Lorong 19 west side (question 46):
+      - fronts on the photographed lines;
+      - party walls at the measured positions;
+      - rear lines kept.
+      
+      No. 35 (on its source line) and No. 37 stay as they are.
+    - **Unlocks:** true widths along the terrace (No. 29 is half as wide again as its way), porches at their true depth, and No. 31's board on its own house.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
