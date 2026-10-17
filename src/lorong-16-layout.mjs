@@ -619,7 +619,36 @@ export const westerhout45 = westerhoutHouse(45, '763764664', 0, [0, 7.47, 8.024]
   evidence: 'December 2022 Street View from Westerhout Road shows No. 45, the east half of the pink pair: under its canopy a door in a mosaic surround with a round plate numbered 45, an air-conditioner under the eaves, a white gate, and a small red shrine on the forecourt.' + pinkNote + westerhoutNote,
 });
 
-export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15];
+// ---------------------------------------------------------------------------------------------
+// 15-22. Ways 454274647, 763764669, 763764670, 763764671, 763764672, 763764673, 763764674 and 763764675, Nos. 51 to 37:
+// narrow houses about 30 m deep between the grassed verge and the hoarded site of No. 35, set back behind a strip of
+// parking. Each is read from the June 2024 lane drive on its own lane edge (u south), and laid on it.
+const rowColours = (wall, extra = {}) => ({ wall, trim: '#d8d2c6', frame: '#3a3c3c', glass: '#3e4648', pier: wall, back: '#3e3a36', floor: '#a8a296', ...extra });
+const eastRowNote = ' The houses from No. 37 to No. 51 stand behind a strip of parking about 10 m wide, on narrow outlines about 30 m deep; the June 2024 lane panoramas stand 15-19 m from their fronts.';
+
+// 15. No. 51 (way 454274647): an orange two-storey house under a red tiled roof, with a dark corrugated carport canopy
+// running south over the verge. Two June 2024 panoramas (978C..., PBc3...) agree on its window on the source edge.
+export const no51 = {
+  id: 'l16-51', buildingIds: ['454274647'], kind: 'unnamed', unnamed: true, frontEdge: 0, reviewRoad: 'Lorong 16 Geylang', review: { distance: 12, pitch: 16 },
+  name: 'No. 51 Lorong 16 (June 2024 exterior, occupants not identified)', address: '51 Lorong 16 Geylang',
+  height: 7.0, ceiling: 3.4, fiveFootWay: 1.2, roof: { type: 'hip', ridge: 8.3, colour: '#b4604a' },
+  evidence: 'June 2024 Street View shows an orange two-storey house at the south end of the east-side row, north of the grassed verge: raised panels and a white casement window on its upper floor under three dark vent slots, a red tiled roof with a gutter, and over its ground floor a dark corrugated carport canopy that runs on south over the verge, hung with a round plate numbered 51 and a gold board lettered 泰. No business is listed at the address and the board names none, so no name is given and it is blank. Two June 2024 lane panoramas (978C..., PBc3...) agree on its window on the source edge, where the front runs about 4.7 m, against 4.9 m. Heights were read on that plane: the canopy at about 3.0-3.5 m, the window at 5.4-6.6 m, the eaves at about 7.0 m and the roof to about 8.3 m.' + eastRowNote,
+  sources: [way('454274647'), search('51 Lorong 16 Geylang Singapore'), pano('978C2KrUtxtel_U9_J90Ow', 92, 12, 50), pano('PBc3mXjx_CkswYrrBoTUIQ', 70, 10, 60), pano('gUrdY-azKFUqo5xT_-hfnA', 62, 12, 40)],
+  colours: rowColours('#e0a060', { frame: '#e8e8e4' }),
+  windows: [{ u: [3.2, 4.4], h: [5.4, 6.6], panes: 2 }],
+  blocks: [
+    ...[[.5, 2.6], [3.0, 4.6]].map(u => ({ name: 'raised panel', u, h: [4.3, 6.8], out: .03, depth: .04, colour: '#e6aa6a' })),
+    ...[[.5, 1.5], [2.0, 2.6], [3.2, 4.4]].map(u => ({ name: 'dark vent slot', u, h: [6.85, 7.0], out: .04, depth: .02, colour: '#2a3040' })),
+    { name: 'gutter', u: [0, 4.9], h: [7.0, 7.15], out: .3, depth: .2, colour: '#d08848' },
+    { name: 'dark corrugated carport canopy', u: [0, 4.9], h: [3.0, 3.5], out: .9, depth: 1.8, colour: '#2a2c30' },
+    { name: 'blank round number plate', u: [3.3, 3.8], h: [2.4, 2.9], out: 1.8, depth: .02, colour: '#f0f0ec' },
+    { name: 'blank gold board', u: [1.0, 2.6], h: [2.2, 2.9], out: .05, depth: .02, colour: '#c8a050' },
+  ],
+  piers: [[.2, .4], [4.5, 4.7]], shellInset: .25,
+  backFittings: [{ name: 'carport', u: [.4, 4.5], h: [.1, 2.9], colour: '#3a3836' }],
+};
+
+export const lorong16 = [changJiang, no6, hotel81Geylang, thenShen, crystalLodge, no50, no54, westerhout15, no51];
 // The terrace on Westerhout Road faces Westerhout Road, not the lane.
 export const westerhout16 = [westerhout17, westerhout19, westerhout43, westerhout45];
 // The Geylang Road houses at the corner face Geylang Road, not the lane.

@@ -32,7 +32,14 @@ Research and implementation from **17 October 2026**, under open question 61. Th
 | 11 | East | 763764667 | No. 17 Westerhout Road | Done; unnamed; question 66 |
 | 12 | East | 763764666 | No. 19 Westerhout Road | Done; unnamed; question 66 |
 | 13–14 | East | 763764665, 763764664 | Nos. 43 and 45 Westerhout Road, a pink pair | Done; unnamed |
-| 15–22 | East | 454274647, 763764669, 763764670, 763764671, 763764672, 763764673, 763764674, 763764675 | The row south of Hotel 81 Palace: Lodge 41 (41), Soon Clan Association (43) | |
+| 15 | East | 454274647 | No. 51 | Done; unnamed |
+| 16 | East | 763764669 | No. 49 | |
+| 17 | East | 763764670 | No. 47, a narrow tower | |
+| 18 | East | 763764671 | No. 45 | |
+| 19 | East | 763764672 | No. 43, Soon Clan Association | |
+| 20 | East | 763764673 | No. 41, Lodge 41 | |
+| 21 | East | 763764674 | No. 39 | |
+| 22 | East | 763764675 | No. 37 | |
 | 23 | East | 121872890 | No. 25, Hotel 81 Palace | |
 | 24–28 | East | 763764678, 763764679, 763764680, 763764681, 763764682 | Nos. 19, 17, 15, 11 and 9 | |
 | 29–32 | East | 763764686, 763764685, 763764684, 763764683 | Nos. 7, 5, 3 and 1, on the back lane | |
@@ -265,3 +272,11 @@ At the lane's south-east corner a tall blank beige gable stands on a grassed ver
 **Stops 13–14, Nos. 43 and 45:** the December 2022 panoramas agree on the pair's fronts on the source line, about 15.7 m wide against 15.5 m. Each half is laid on its source front, under a hipped tiled roof to about 8.6 m. Use the lane's south end to see them; they have no review start.
 
 **East side, Westerhout Road corner complete.**
+
+### 15–22. Ways 454274647 to 763764675: Nos. 51 to 37
+
+North of the grassed verge, a row of narrow houses about 30 m deep, set back behind a strip of parking about 10 m wide, runs north to the hoarded site of No. 35. The June 2024 lane panoramas stand 15–19 m from their fronts. Each house is read on its own lane edge (u south) and laid on it. The numbers follow the row from No. 35's site: the eight outlines hold Nos. 37 to 51, and the plates photographed at 39, 41 (Lodge), 43 and 51 agree.
+
+| Stop | Way | House | Photographed | Named |
+| --- | --- | --- | --- | --- |
+| 15 | 454274647 | **No. 51** | Orange, two storeys under a red tiled roof: raised panels and a white casement window under three dark vent slots, over a dark corrugated carport canopy that runs on south over the verge, hung with a round plate numbered 51 and a gold board lettered 泰. Two panoramas (`978C…`, `PBc3…`) agree on its window on the source edge; about 4.7 m against 4.9 m. Canopy 3.0–3.5 m, window 5.4–6.6 m, eaves 7.0 m, roof to 8.3 m | No: nothing is listed at No. 51 and the board names no business |
