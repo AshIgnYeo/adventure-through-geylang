@@ -16,7 +16,7 @@ Lorong 9 is outside the derived road set, so the frames face west onto open grou
 
 Heights carry about ±1 m: the near frames are oblique, and the grey building's top is out of frame (estimated at eight storeys, 25 m).
 
-Use `?review=l9-12`, `?review=l9-6-8` and `?review=ywam-singapore`.
+Use `?review=l9-12`, `?review=l9-6-8` and `?review=ywam-singapore`. Since 12 November 2026 the grey building's start stands 11 m from its front, looking up at 30°: at the shared 14 m it stood inside the block across the lane, where the walker could not move.
 
 ## The west side
 
