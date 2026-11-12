@@ -60,6 +60,7 @@ Started: 10 October 2026.
       - The June 2024 drive runs on south for about 100 m more, to Guillemard Road at about 1.3100 N (`GUtb…`, at 113 Guillemard Road).
       - Beyond No. 37 the east side carries on behind a corrugated hoarding, with single-storey houses under tiled roofs and a temple compound whose gate reads 鳳山寺. None of them is in the extract.
       - Wing Fong Mansions (way 764372595) is in the extract only because some of its nodes are inside it. Its lane face runs about 122 m, about 85 m past the extract's last way.
+      - **Extract check, 12 November 2026:** a dated OpenStreetMap download of the strip south of the edge (103.8758–103.8812 E, 1.3093–1.3110 N) holds Lorong 14's seven ways down to Guillemard Road at about 1.3100 N, and 102 building outlines that are not in the retained extract, ten of them addressed to Lorong 14. The download was a check only and is not kept in the repository.
     - **What happens now:**
       - The walk stops at No. 37 on the east side and at Wing Fong Mansions on the west, which is modelled over its whole source outline.
       - The lane's corridor ends at the extract's last way, so the south part of Wing Fong Mansions' face can be seen but not walked to.
@@ -130,6 +131,7 @@ Started: 10 October 2026.
       - The lane's last way in the extract (632249196) ends at the edge, but its two footways (874953095 and 874953096) run on to about 1.3101 N.
       - The June 2024 drive continues about 95 m further south to Guillemard Road, past Canberlin Apartments (listed at 60 Lorong 16) and the Association Building (68 Lorong 16) on the west side, and the houses at the corner of Westerhout Road on the east.
       - None of their outlines, nor the lane's ways south of the edge, are in the extract.
+      - **Extract check, 12 November 2026:** in the same download as question 52's, Lorong 16's four ways run on to about 1.3101 N, and about 25 outlines that are not in the retained extract stand between Lorong 14's east side and Lorong 16 south of the edge.
     - **What happens now:** the walk stops at the last buildings the extract holds: No. 54 on the west side, whose outline crosses the edge, and the terrace at the head of Westerhout Road on the east. The corridor ends at the end of way 632249196.
     - **Recommendation:** yes, as a later pass. Retrieve a dated extract of the strip south of the edge to Guillemard Road (about 1.3095–1.3110 N, 103.8785–103.8810 E), keep `public/osm-source.osm` as retained, take the lane's southern ways and buildings in by id, and walk them as a continuation of the Lorong 16 brief.
     - **Unlocks:** the whole of Lorong 16, with its junction on Guillemard Road, and the corridor carried to it.
@@ -251,6 +253,15 @@ Started: 10 October 2026.
     - **Current rule:** both listing and signage must agree on the address, so Petopia's signs are drawn blank. No. 346 is named after Hin Sheng Coffee House.
     - **Recommendation:** yes. The listing point and both signs agree on this house; 348A is probably the unit number of the upper floors. Under open question 12, name Petopia as the occupant of No. 346's upper floors beside Hin Sheng Coffee House, recording the 348A address, as the associations over Lorong 12 shops were named under question 31.
     - **Unlocks:** one more named place, with its board and blade redrawn.
+
+81. **Lorong 20: extend the extract east to take in the lane, and walk it as Lorong 21 was walked?**
+    - **Evidence:** from a dated OpenStreetMap download of 103.8812–103.8832 E, 1.3100–1.3155 N on 12 November 2026, a check only that is not kept in the repository.
+      - The retained extract's east edge is 103.8812 E. Lorong 20's thirteen ways run between 103.8812 and 103.8814 E, from Geylang Road at about 1.3129 N to Guillemard Road at about 1.3104 N, so the lane itself lies just outside the extract. Only two address points on it are inside.
+      - **West side:** the deep outlines behind Lorong 18's east side (ways 121873024 and 454274591) are already in the extract and face Lorong 20 ([Lorong 18 brief](lorong-18-brief.md)).
+      - **East side:** the block between Lorong 20 and Lorong 22 holds 23 outlines with their centres within about 70 m of Lorong 20, none of them in the extract. Four are addressed to Lorong 22, so the block's depth is shared between the two lanes.
+      - **Geylang Road:** Nos. 352–364, east of Lorong 18's east corner, were left for Lorong 20 under question 71.
+    - **Recommendation:** yes, together with questions 52 and 62. Retrieve one dated extract reaching about 103.8822 E and 1.3095 N, keep `public/osm-source.osm` as the retained source, and take each lane's ways and buildings in by id. Then walk Lorong 20 from Geylang Road to Guillemard Road, with Nos. 352–364 Geylang Road and the corners at both ends, on its own branch and brief.
+    - **Unlocks:** the next lane east, and Geylang Road's south side carried on from Lorong 18.
 
 ## Settled
 
