@@ -1,5 +1,5 @@
 import * as pc from 'playcanvas';
-import {project, nearestOnSegment, roadWidth, pointInPolygon, studyArea} from './geo.mjs';
+import {project, roadWidth, studyArea} from './geo.mjs';
 import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
@@ -7,6 +7,7 @@ import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
 import { thyeSengRoofTriangles } from './thye-seng-layout.mjs';
 import { builderModule, loadBuilder, type Builder } from './builder-registry';
+import { FootprintGrid, SegmentGrid } from './spatial-grid.mjs';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
@@ -24,6 +25,8 @@ export class World {
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
   private tiles=new Map<string,pc.Entity>();private merging=false;
+  // Collision and road lookups test only nearby footprints and segments, so they stay flat as the map grows.
+  private walkGrid=new FootprintGrid(.28);private roadGrid:SegmentGrid;
   reviewSpawns = new Map<string, {p: Point; yaw: number; pitch?: number}>();
   constructor(app:pc.AppBase,data:MapData,camera:pc.Entity){
     this.app=app;this.data=data;this.camera=camera;
@@ -37,6 +40,7 @@ export class World {
       const len=Math.hypot(b[0]-a[0],b[1]-a[1]);if(len<.1)continue;
       this.segments.push({a,b,width:roadWidth(r),name:r.name,oneway:r.oneway,length:len,dx:(b[0]-a[0])/len,dz:(b[1]-a[1])/len});
     }
+    this.roadGrid=new SegmentGrid(this.segments);
   }
   mat(hex:string,glow=0){const key=hex+glow;if(this.materials.has(key))return this.materials.get(key)!;const m=new pc.StandardMaterial();m.diffuse=color(hex);m.useMetalness=true;m.metalness=.04;m.gloss=glow?.45:.2;if(glow){m.emissive=color(hex);m.emissiveIntensity=glow;this.emissives.push(m);}m.update();this.materials.set(key,m);return m;}
   // Merged parts draw only through their tile's batches, so they stay out of the layers.
@@ -158,8 +162,9 @@ export class World {
     }
     this.merging=false;this.mergeTiles();this.setLight('day');
   }
-  nearest(p:Point){let distance=Infinity,segment=this.segments[0],point:Point=[0,0];for(const s of this.segments){const n=nearestOnSegment(p,s.a,s.b);if(n.distance<distance){distance=n.distance;segment=s;point=n.point as Point;}}return{distance,segment,point};}
-  canWalk(p:Point){if(!this.inStudy(p,3))return false;for(const poly of this.footprints){if(pointInPolygon(p,poly))return false;for(let i=0;i<poly.length;i++)if(nearestOnSegment(p,poly[i],poly[(i+1)%poly.length]).distance<.28)return false;}return true;}
+  nearest(p:Point){const n=this.roadGrid.nearest(p);return{distance:n.distance,segment:this.segments[n.index],point:n.point as Point};}
+  // Footprints are only ever appended, during build and by the authored sites, so new ones are filed on the next query.
+  canWalk(p:Point){if(!this.inStudy(p,3))return false;while(this.walkGrid.count<this.footprints.length)this.walkGrid.add(this.footprints[this.walkGrid.count]);return !this.walkGrid.blocked(p);}
   spawn(){const s=this.segments.find(s=>s.name==='Lorong 11 Geylang'&&s.length>30)!;const p:Point=[s.b[0]-s.dx*16+s.dz*2.1,s.b[1]-s.dz*16-s.dx*2.1];return{p,yaw:Math.atan2(-s.dx,-s.dz)*180/Math.PI+180};}
   lamp(x:number,z:number){this.box('lamp post',x,3.9,z,.1,7.8,.1,this.mat('#6c7976'));this.box('lamp arm',x+.75,7.75,z,1.6,.09,.09,this.mat('#6c7976'));this.box('lamp head',x+1.45,7.69,z,.6,.12,.32,this.mat('#ffdfaa',2));if(this.lamps.length<12){const e=new pc.Entity('street light');e.addComponent('light',{type:'omni',color:color('#ffd393'),intensity:.7,range:13,castShadows:false});e.setPosition(x+1.45,6.8,z);this.app.root.addChild(e);this.lamps.push(e);}}
   planter(x:number,z:number){
