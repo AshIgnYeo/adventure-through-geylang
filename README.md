@@ -355,7 +355,7 @@ Most landmark detail is built from code-native geometry so it can be adjusted wi
 
 A useful addition begins with evidence, rather than geometry. Confirm the place name and address, match it to a source footprint where possible, inspect dated exterior references, and record uncertainty before modelling. Preserve the geographic scale and source coordinates. Keep inferred details conservative, especially when a building contains several premises or the available photograph does not show the full elevation.
 
-New work should include its provenance notes and the narrowest useful geometry checks. Run `npm test` and `npm run build`, then inspect the model from street level before committing it.
+New work should include its provenance notes and the narrowest useful geometry checks. A new builder module is listed in `src/builder-owners.mjs`, from which `npm run registry` writes the building lookup the viewer uses. Run `npm test` and `npm run build`, then inspect the model from street level before committing it.
 
 ## Reuse and licensing
 

@@ -50,12 +50,22 @@ For builders, nothing changes. Keep calling `world.box`, `panel`, `mesh` and `cy
 | # | Step | Why | Effort | Status |
 |---|---|---|---|---|
 | 1 | WebP atlases, loaded in parallel. Later, one atlas per district, loaded with its tiles | Cut texture download time by about 90% | Small | Done |
-| 2 | Builder registry: replace the `if (buildX(...)) continue` chain in `world.ts` with a lookup from building ID to builder, loaded with dynamic `import()` | Each layout module already owns its building IDs. The chain grows with every building and blocks code splitting | Small–medium | Proposed, do first |
+| 2 | Builder registry: replace the `if (buildX(...)) continue` chain in `world.ts` with a lookup from building ID to builder, loaded with dynamic `import()` | Each layout module already owns its building IDs. The chain grows with every building and blocks code splitting | Small–medium | Done (see below) |
 | 3 | Spatial grid for `canWalk` and `nearest` | Keeps collision and road lookups flat as the map grows | Small | Proposed |
 | 4 | `scripts/prepare-map.mjs` writes tiled map data, plus plain massing for every building | Foundation for streaming. Massing keeps the skyline and avoids pop-in | Medium | Proposed |
 | 5 | Tile loader: build detail within about 150 m, one ring ahead and a few buildings per frame. Unload tiles behind the player. Massing out to the fog distance | The core of streaming. At walking speed (3.3–6 m/s) a 100 m tile takes 17–30 s to cross, enough to build the next ring in the background | Large | Proposed |
 | 6 | Fewer materials: remove exact duplicates, and put the 300+ canvas sign textures into a shared atlas | The scene has about 1,700 materials and 3,000+ draw calls. Every tile pays this cost | Medium | Proposed, alongside 5 |
 | 7 | Bake tiles at build time into compressed geometry files | Fastest loading, but every model change needs a bake step | Large | Not yet. Keep the tile format compatible |
+
+### Builder registry (step 2, done 12 November 2026)
+
+`src/builder-owners.mjs` lists each builder module, the function it exports and the building IDs it accepts, read from its layouts. `npm run registry` turns that list into `src/builder-registry.ts`: a map from building ID to module, and a dynamic `import()` for each module. `world.ts` loads only the modules the map's buildings need, alongside the atlases, then looks each building up by ID instead of trying 62 builders in turn.
+
+- **Adding a building to an existing module:** add it to the layout as before. `npm run dev` and `npm run build` regenerate the registry first, and `npm test` fails if the committed registry is stale.
+- **Adding a builder module:** add one line to `src/builder-owners.mjs`. The registry test fails for a module with a per-building builder that is not listed, for a building claimed by two modules, and for a claimed ID missing from the map.
+- **Still in `world.ts`:** the Mongkok corner split, the temple lane's low neighbour, the coffeeshop's rear neighbour and the generic landmark path. They are part of the Lorong 11 core.
+
+Each builder is now its own chunk, and the main chunk fell from 2,343 kB to 2,135 kB. Most of what remains is PlayCanvas and the layout data. The layouts stay in the main chunk because `src/landmarks.mjs` imports almost every layout for its names and review starts. Moving that landmark metadata out of the layouts (or into the tiled map data of step 4) is what will let layouts load with their builders.
 
 These assume the whole map exists at once and will need rework:
 
