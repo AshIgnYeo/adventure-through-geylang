@@ -87,7 +87,7 @@ These assume the whole map exists at once and will need rework:
 
 - `buildAlleyGround`, `buildShanYuanTang` and `buildAlleyExteriors` run once for the whole map rather than per building.
 - `?review=` spawn points are only known after every building is built.
-- Some builders read neighbouring buildings from `world.data`.
+- Some builders read neighbouring buildings from `world.data`. Audited on 12 November 2026, four do, each to lay one elevation across the ways of its own place: `foo-hui` and `sims-north` (two-bay pairs), `lorong-9` (the grey building over two ways) and `lorong-13` (places over several ways). They read only their own place's ways, so a tile holding the place can hold all of them. The temple lane (`temple-alley`) and the coffeeshop side (`leong-kee-exterior`) read the map's roads and paths, and with Shan Yuan Tang they add footprints of their own.
 
 ## Building on top of the map
 
