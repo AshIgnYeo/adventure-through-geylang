@@ -54,7 +54,7 @@ For builders, nothing changes. Keep calling `world.box`, `panel`, `mesh` and `cy
 | 3 | Spatial grid for `canWalk` and `nearest` | Keeps collision and road lookups flat as the map grows | Small | Done (see below) |
 | 4 | `scripts/prepare-map.mjs` writes tiled map data, plus plain massing for every building | Foundation for streaming. Massing keeps the skyline and avoids pop-in | Medium | Proposed |
 | 5 | Tile loader: build detail within about 150 m, one ring ahead and a few buildings per frame. Unload tiles behind the player. Massing out to the fog distance | The core of streaming. At walking speed (3.3–6 m/s) a 100 m tile takes 17–30 s to cross, enough to build the next ring in the background | Large | Proposed |
-| 6 | Fewer materials: remove exact duplicates, and put the 300+ canvas sign textures into a shared atlas | The scene has about 1,700 materials and 3,000+ draw calls. Every tile pays this cost | Medium | Proposed, alongside 5 |
+| 6 | Fewer materials: let colours share materials, and put the canvas sign textures into a shared atlas | The scene draws about 3,200 materials in about 3,700 draw calls. Every tile pays this cost | Medium | Proposed, alongside 5 (measured below) |
 | 7 | Bake tiles at build time into compressed geometry files | Fastest loading, but every model change needs a bake step | Large | Not yet. Keep the tile format compatible |
 
 ### Builder registry (step 2, done 12 November 2026)
@@ -65,11 +65,17 @@ For builders, nothing changes. Keep calling `world.box`, `panel`, `mesh` and `cy
 - **Adding a builder module:** add one line to `src/builder-owners.mjs`. The registry test fails for a module with a per-building builder that is not listed, for a building claimed by two modules, and for a claimed ID missing from the map.
 - **Still in `world.ts`:** the Mongkok corner split, the temple lane's low neighbour, the coffeeshop's rear neighbour and the generic landmark path. They are part of the Lorong 11 core.
 
-Each builder is now its own chunk, and the main chunk fell from 2,343 kB to 2,135 kB. Most of what remains is PlayCanvas and the layout data. The layouts stay in the main chunk because `src/landmarks.mjs` imports almost every layout for its names and review starts. Moving that landmark metadata out of the layouts (or into the tiled map data of step 4) is what will let layouts load with their builders.
+Each builder is now its own chunk, with its layout. The viewer reads landmarks only from `src/core-landmarks.mjs`: the 13 Lorong 11 core landmarks on the 17 buildings that reach the shared path, because every other landmark's building has a builder module of its own. `src/landmarks.mjs` keeps the full list, in the same order, for the tests and the documentation, and a test checks that both lists give the same landmark for every building without a builder module. The main chunk fell from 2,343 kB (682 kB gzipped) to 1,257 kB (351 kB); most of what remains is PlayCanvas.
+
+All the chunks still load when the page opens, because every building is built then. The split pays off once the tile loader (step 5) loads only nearby builders.
 
 ### Spatial grid (step 3, done 12 November 2026)
 
 `src/spatial-grid.mjs` files footprints in 16 m cells and road segments in 32 m cells. `canWalk` tests only the footprints filed in the walker's cell, and `nearest` searches outward ring by ring until no unsearched cell can hold a closer segment. Both return exactly what the full scans did, including the first segment in order among equal distances: `tests/spatial-grid.test.mjs` compares them with full scans over the map, and a check in the browser over 30,225 points found no difference in either. A batch of 30,225 `canWalk` calls fell from 1,062 ms to 102 ms in software WebGL Chrome. The map is still small, so the gain matters as it grows.
+
+### Materials, measured 12 November 2026 (for step 6)
+
+At the spawn the scene draws 3,211 materials in 3,683 draw calls. No two materials are identical: about 2,750 are plain colours from `world.mat`, each a different colour, and 463 carry textures, 461 of them canvas signs with 402 distinct images. So removing exact duplicates would save almost nothing. Letting different colours share one material, through vertex colours or a small palette texture, is what would cut draw calls, followed by the sign atlas.
 
 These assume the whole map exists at once and will need rework:
 

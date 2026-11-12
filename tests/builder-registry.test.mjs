@@ -39,3 +39,25 @@ test('every per-building builder module is registered, and world.ts loads none o
     assert.doesNotMatch(world, new RegExp(`from '\\./${module}'`), `world.ts imports ${module} directly, which keeps it out of its own chunk`);
   }
 });
+
+test('buildings without a builder module find the same landmark in the viewer\'s core list as in the full list', async () => {
+  const { landmarkFor, landmarks } = await import('../src/landmarks.mjs');
+  const { coreLandmarkFor, coreLandmarks } = await import('../src/core-landmarks.mjs');
+  const map = withAuthoredFootprints(JSON.parse(fs.readFileSync(new URL('../public/map.json', import.meta.url), 'utf8')));
+  const { byId } = builderIndex();
+  const reached = new Set();
+  for (const { id } of map.buildings) {
+    if (byId.has(id)) continue;
+    assert.equal(coreLandmarkFor(id), landmarkFor(id), id);
+    if (coreLandmarkFor(id)) reached.add(coreLandmarkFor(id));
+  }
+  // And each core landmark stands on at least one of those buildings.
+  assert.deepEqual(coreLandmarks.filter(l => !reached.has(l)).map(l => l.id), []);
+  // Every core landmark is in the full list, in the same order.
+  assert.deepEqual(landmarks.filter(l => coreLandmarks.includes(l)), coreLandmarks);
+});
+
+test('the viewer reads landmarks only from the core list, so layouts stay with their builders', () => {
+  for (const file of fs.readdirSync(new URL('../src/', import.meta.url)).filter(f => f.endsWith('.ts')))
+    assert.doesNotMatch(source(file), /from '\.\/landmarks\.mjs'/, `${file} imports the full landmark list`);
+});

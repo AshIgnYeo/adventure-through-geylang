@@ -1,6 +1,6 @@
 import * as pc from 'playcanvas';
 import {project, roadWidth, studyArea} from './geo.mjs';
-import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
+import { coreLandmarkFor as landmarkFor, landmarkReviewPoint } from './core-landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
