@@ -263,6 +263,15 @@ Started: 10 October 2026.
     - **Recommendation:** yes, together with questions 52 and 62. Retrieve one dated extract reaching about 103.8822 E and 1.3095 N, keep `public/osm-source.osm` as the retained source, and take each lane's ways and buildings in by id. Then walk Lorong 20 from Geylang Road to Guillemard Road, with Nos. 352–364 Geylang Road and the corners at both ends, on its own branch and brief.
     - **Unlocks:** the next lane east, and Geylang Road's south side carried on from Lorong 18.
 
+82. **Shan Yuan Tang: model the roof's tile tubes with four sides and no end caps, to halve the heaviest geometry in the scene?**
+    - **Evidence:** measured on 12 November 2026 at the spawn ([loading and streaming plan](loading-and-streaming-plan.md)).
+      - The temple's tiled roofs are 15 meshes holding 371,463 vertices: 21% of the scene's 1,735,768. The next heaviest part, the street surfaces, holds 35,664.
+      - Every tile seam is a six-sided tube with a cap at each end (36 vertices). The eave and ridge tubes are the same.
+      - A trial build drew the tile tubes (radius under 8 cm) with four sides and no caps, and kept six sides and caps on the eave and ridge tubes. The roof fell to 177,103 vertices, and the scene to 1,541,408.
+      - Rendered from the review start and from about 6 m in front of the gate, the two roofs are hard to tell apart; the trial's seams read very slightly flatter. The comparisons were sent with the session's report; the trial is not committed.
+    - **Recommendation:** yes. Every frame draws the roof twice, once for shadows, and phones pay most for it. Keep the six-sided, capped eave and ridge tubes, which carry the silhouette.
+    - **Unlocks:** about 11% fewer vertices across the scene, with no change to the temple's outline or colours.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

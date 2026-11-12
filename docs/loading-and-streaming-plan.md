@@ -77,6 +77,12 @@ All the chunks still load when the page opens, because every building is built t
 
 At the spawn the scene draws 3,211 materials in 3,683 draw calls. No two materials are identical: about 2,750 are plain colours from `world.mat`, each a different colour, and 463 carry textures, 461 of them canvas signs with 402 distinct images. So removing exact duplicates would save almost nothing. Letting different colours share one material, through vertex colours or a small palette texture, is what would cut draw calls, followed by the sign atlas.
 
+### Where `build()` spends its time, profiled 12 November 2026
+
+A CPU profile of the page load in software WebGL Chrome (no GPU) gave `build()` 13.6 s, of which 9.6 s fell in Shan Yuan Tang's last `world.mesh` calls, inside `gl.bufferData`. That is mostly Chrome waiting for the software GPU to work through everything queued before it, so it does not represent a real device. The rest spreads across the shared house builders (about 2.7 s), sign canvases (0.6 s), texture uploads (0.6 s) and tile merging (0.7 s), with no single cheap fix that keeps the output identical.
+
+What it did show is that Shan Yuan Tang's tiled roofs hold 371,463 vertices, 21% of the scene's 1,735,768, in a single 317,139-vertex mesh and 14 smaller ones. Lighter tile tubes would halve that ([open question 82](open-questions.md)).
+
 These assume the whole map exists at once and will need rework:
 
 - `buildAlleyGround`, `buildShanYuanTang` and `buildAlleyExteriors` run once for the whole map rather than per building.
