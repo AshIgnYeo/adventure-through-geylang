@@ -25,7 +25,8 @@ test('Lorong 21 brings in its own buildings, its corners and the Sims Avenue hou
   // The Lorong Bachok row and the block behind the Geylang Road corner wait. The Sims Avenue houses north of the lane's
   // junction came in with the avenue's north side (open question 83), with the lane's mouth there as a 21st way.
   for (const id of ['454254328', '454254242']) assert.equal(ids.has(id), false, id);
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 21 Geylang').length, 21);
+  // And five more north of the avenue (open question 88).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 21 Geylang').length, 26);
 });
 
 test('Lorong 21 is walkable from the Geylang Road centreline to the Sims Avenue centreline, and back to Lorong 19 along both', () => {

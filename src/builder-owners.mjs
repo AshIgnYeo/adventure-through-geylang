@@ -67,6 +67,7 @@ import { simsSouth } from './sims-south-layout.mjs';
 import { simsAvenueNorth } from './sims-avenue-north-layout.mjs';
 import { geylang352 } from './geylang-352-layout.mjs';
 import { lorong17North } from './lorong-17-north-layout.mjs';
+import { lorong1921North } from './lorong-19-21-north-layout.mjs';
 import { suiYuanJu } from './sui-yuan-ju-layout.mjs';
 import { tbss } from './tbss-layout.mjs';
 import { watDhammasatis } from './wat-dhammasatis-layout.mjs';
@@ -141,6 +142,7 @@ export const builderOwners = [
   { module: 'sims-avenue-north', build: 'buildSimsAvenueNorth', ids: of(simsAvenueNorth) },
   { module: 'geylang-352', build: 'buildGeylang352', ids: of(geylang352) },
   { module: 'lorong-17-north', build: 'buildLorong17North', ids: of(lorong17North) },
+  { module: 'lorong-19-21-north', build: 'buildLorong1921North', ids: of(lorong1921North) },
 ];
 
 /** Building id to the first entry that claims it, and every id claimed by more than one module. */

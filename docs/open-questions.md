@@ -315,6 +315,13 @@ Started: 10 October 2026.
     - **Recommendation:** yes, as the first of the lanes north of Sims Avenue; Lorongs 19, 21, 21A and 23 north of the avenue each have one 2023 drive and can follow.
     - **Unlocks:** the first lane north of Sims Avenue, and the industrial blocks seen from the avenue.
 
+88. **Lorongs 19 and 21 north of Sims Avenue: walk them, with the road joining them, to the extract's north edge?**
+    - **Evidence:** north of the avenue Lorong 19 runs north (ways 666807375 to 23513617), and a road (way 23514474) joins it to Lorong 21, which runs on north-west beyond the extract (ways 666807856 to 666807859). Eleven outlines stand along them inside the extract: on Lorong 19, No. 74 (way 682937276), No. 76, Teeni@76 (541941370), No. 72, Prestige Building (541941369), and No. 77, Wing Tip Building (452646019); between the lanes, three small outlines south of the joining road (682937270, 682937272, 682937274) and two north of it (454254367, 541941368); on Lorong 21, No. 51, dMC (454254350), and No. 48, Greatland Building (454254352). KartaView's drive of 16 May 2023 (sequence 8344809) runs down both lanes.
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms. The commits stand apart, so a no takes them out together.
+    - **Footprint:** No. 74's source front (way 682937276) lies about 1.5 m from the joining road's centreline, inside the modelled carriageway, while the May 2023 frames show the house a few metres back behind a fence. It is kept, with its pieces held flat to the wall; moving it back needs a measured frame.
+    - **Recommendation:** yes.
+    - **Unlocks:** the next two lanes north of Sims Avenue, joined to Lorong 17's.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
