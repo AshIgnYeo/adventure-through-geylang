@@ -449,5 +449,144 @@ export const no159 = {
   sides: [{ edge: 1, blocks: [{ name: 'teal fascia', u: [0, 21.3], h: [7.14, 7.43], out: .08, depth: .16, colour: teal }] }],
 };
 
-export const simsAvenueNorth = [no147, no149, no151, no153, no155, no157, no159, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
+// West of Lorong 17: Nos. 135-143 and the corner at No. 145, read in solved frames of the 24 May drive. The road dips by
+// Lorong 17's junction, so these frames' cameras ride about 2.0 m above the five-foot-way floor.
+const westNote = ' Read on the source front in near-frontal frames of the 24 May 2023 drive, whose positions and headings are solved from five party walls (open question 84); those walls stand within 0.3 m of the source ones. Heights are above the five-foot-way floor and carry about ±0.4 m; the five-foot way\'s depth is estimated.';
+const west = (colours, o = {}) => row({ trim: colours.wall, frame: '#2a2c2c', glass: '#2a3034', ...colours }, { height: 8.4, ceiling: 3.6, roof: { type: 'gable', ridge: 9.6, ridgeDepth: .5, overhang: .5, colour: '#c8786a' }, ...o });
+const louvres = (us, h, colour = '#3a3a38') => us.map(u => ({ name: 'vent strip', u, h, out: .02, depth: .04, colour }));
+
+export const no135 = {
+  ...west({ wall: '#3a3c3e', trim: '#2e3032', glass: '#2a2e30', pier: '#3a3c3e', back: '#3a3836' }, { height: 8.6 }),
+  id: 'sa-135', buildingIds: ['439168677'], kind: 'unnamed', unnamed: true,
+  name: 'No. 135 Sims Avenue (May 2023 exterior, occupant not identified)', address: '135 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a charcoal house next to the QianJing pair: dark latticed and louvred windows across its upper floor, a large white board hung out from its east side, and over the five-foot way a black board lettered INTERIOR TIMES in red, over a glass front and a timber panel door. Listings could not be checked (open question 84), so the boards are drawn blank and no name is given. The photographs put its west party wall about 1.3 m east of the source one, as if No. 133 were wider than its outline; its elevation is laid at its photographed positions from the east party wall, with the west strip a plain dark pier.' + westNote,
+  sources: [way('439168677'), kv('8348649', '2742'), kv('8348649', '2743')],
+  windows: [[2.0, 3.0], [3.15, 4.15], [4.3, 5.1]].map(u => ({ u, h: [5.1, 7.65], panes: 3 })),
+  blocks: [
+    { name: 'dark eave fascia', u: [0, 5.51], h: [8.3, 8.6], out: .3, depth: .6, colour: '#2a2c2e' },
+    { name: 'dark ledge', u: [1.3, 5.2], h: [3.9, 4.2], out: .08, depth: .16, colour: '#2a2c2e' },
+    { name: 'blank black board', u: [1.85, 4.85], h: [3.0, 3.75], out: .1, depth: .06, colour: '#1e1e1e' },
+    { name: 'blank white board, held flat', u: [4.5, 5.3], h: [4.0, 6.8], out: .12, depth: .2, colour: '#f0f0ec' },
+  ],
+  piers: [[0, 1.75], [5.21, 5.51]],
+  backFittings: [
+    { name: 'glass front', u: [1.8, 3.05], h: [.2, 2.6], colour: '#3e4448', glow: .04 },
+    { name: 'timber panel door', u: [3.1, 4.75], h: [.2, 2.6], colour: '#b07a4e' },
+    { name: 'dark door', u: [4.75, 5.15], h: [.2, 2.6], colour: '#262626' },
+  ],
+};
+
+export const no137 = {
+  ...west({ wall: '#f0efea', trim: '#f0efea', frame: '#1e1e1e', glass: '#e4e4de', pier: '#f0efea' }, { height: 8.1, ceiling: 3.4 }),
+  id: 'sa-137', buildingIds: ['439168816'], kind: 'unnamed', unnamed: true,
+  name: 'No. 137 Sims Avenue (May 2023 exterior, occupant not identified)', address: '137 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a white house trimmed in black: three windows with closed white louvred shutters under stained-glass fanlights in black frames, vent strips above them and a black balustrade band below, and in the five-foot way a timber door, a black-framed window and white double doors under transom grilles. No board or sign is photographed, so no name is given.' + westNote,
+  sources: [way('439168816'), kv('8348649', '2742')],
+  windows: [[1.0, 2.15], [2.45, 3.65], [3.9, 5.05]].map(u => ({ u, h: [5.0, 6.55], panes: 2 })),
+  blocks: [
+    ...[[1.0, 2.15], [2.45, 3.65], [3.9, 5.05]].map(u => ({ name: 'stained-glass fanlight', u, h: [6.6, 7.15], out: .02, depth: .04, colour: '#7a90a8' })),
+    ...louvres([[1.1, 2.05], [2.55, 3.55], [4.0, 4.95]], [7.33, 7.65]),
+    { name: 'black eave fascia', u: [0, 5.509], h: [7.83, 8.1], out: .3, depth: .6, colour: '#1e1e1e' },
+    { name: 'black balustrade band', u: [.6, 5.2], h: [3.85, 4.2], out: .1, depth: .1, colour: '#1e1e1e' },
+  ],
+  piers: [[0, .55], [5.21, 5.509]],
+  backFittings: [
+    { name: 'timber door', u: [.82, 1.74], h: [.2, 2.8], colour: '#b07a4e' },
+    { name: 'black-framed window', u: [2.0, 3.07], h: [.9, 2.8], colour: '#2a2e30' },
+    { name: 'white double doors', u: [3.12, 4.66], h: [.2, 2.6], colour: '#ecebe6' },
+    ...[[2.0, 3.07], [3.12, 4.66]].map(u => ({ name: 'transom grille', u, h: [2.6, 2.85], out: .01, colour: '#2a2a2a' })),
+  ],
+};
+
+export const no139 = {
+  ...west({ wall: '#ecc8b8', trim: '#e6c0b0', frame: '#1e5a4a', glass: '#2a6a58', pier: '#ecc8b8', back: '#3a3634' }, { height: 8.6 }),
+  id: 'sa-139', buildingIds: ['439168799'], kind: 'unnamed', unnamed: true,
+  name: 'No. 139 Sims Avenue (May 2023 exterior, occupant not identified)', address: '139 Sims Avenue (plate 139)',
+  evidence: 'KartaView panoramas of May 2023 show a pink house: three windows with green louvred shutters under fanlights, vent strips above them, a black board with gold lettering reading 新加坡瓊海同鄉會 QIONGHAI ASSOCIATION (SINGAPORE) below them, a pink dentil band, and over the five-foot way a black board reading MLC MEDIA LIGHTING CONCEPT, Media Aire-con Engineering Pte Ltd, over a glass shopfront hung with lamps and fans, with the plate 139 and a dark board at the east pier. Listings could not be checked (open question 84), so the boards are drawn blank and no name is given.' + westNote,
+  sources: [way('439168799'), kv('8348649', '2742')],
+  windows: [[.73, 1.98], [2.23, 3.48], [3.73, 4.98]].map(u => ({ u, h: [5.0, 6.5], panes: 2, shutters: false })),
+  blocks: [
+    ...[[.73, 1.98], [2.23, 3.48], [3.73, 4.98]].map(u => ({ name: 'fanlight', u, h: [6.55, 7.08], out: .02, depth: .04, colour: '#3a6a5a' })),
+    ...louvres([[.85, 1.9], [2.35, 3.4], [3.85, 4.9]], [7.25, 7.53]),
+    { name: 'pink eave fascia', u: [0, 5.51], h: [8.25, 8.6], out: .3, depth: .6, colour: '#e2b4a2' },
+    { name: 'blank black board', u: [.9, 4.73], h: [4.03, 4.97], out: .08, depth: .06, colour: '#1e1e1e' },
+    { name: 'pink dentil band', u: [0, 5.51], h: [3.75, 4.0], out: .08, depth: .12, colour: '#e2b4a2' },
+    { name: 'blank black board', u: [.31, 5.18], h: [2.75, 3.7], out: .1, depth: .06, colour: '#1e1e1e' },
+    { name: 'blank dark blade sign, held flat', u: [5.39, 5.5], h: [3.8, 6.6], out: .12, depth: .2, colour: '#2a2a2a' },
+  ],
+  piers: [[0, .3], [5.18, 5.51]],
+  backFittings: [
+    { name: 'glass shopfront with lamps and fans', u: [.98, 4.06], h: [.2, 2.4], colour: '#c8c4bc', glow: .1 },
+    { name: 'light timber door', u: [4.06, 5.06], h: [.2, 2.1], colour: '#d8c8a8' },
+  ],
+};
+
+const plain141 = (o = {}) => west({ wall: '#ecebe6', frame: '#3a3c3c', glass: '#2a3034', pier: '#ecebe6' }, { height: 8.3, ceiling: 3.4, ...o });
+export const no141 = {
+  ...plain141(),
+  id: 'sa-141', buildingIds: ['439168674'], kind: 'unnamed', unnamed: true,
+  name: 'No. 141 Sims Avenue (May 2023 exterior, occupant not identified)', address: '141 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a white house, the twin of No. 143: three dark windows under grilled transoms and vent strips, a ledge with a row of small brackets, and in the five-foot way a grey roller shutter and a green door; a white board hangs at the east pier. Listings could not be checked (open question 84), so the board is drawn blank and no name is given.' + westNote,
+  sources: [way('439168674'), kv('8348649', '2742'), kv('8348649', '2743')],
+  windows: [[.67, 1.77], [2.3, 3.32], [3.84, 4.9]].map(u => ({ u, h: [4.75, 6.25], panes: 2 })),
+  blocks: [
+    ...[[.67, 1.77], [2.3, 3.32], [3.84, 4.9]].map(u => ({ name: 'grilled transom', u, h: [6.33, 6.83], out: .02, depth: .04, colour: '#c8c8c2' })),
+    ...louvres([[.7, 1.75], [2.3, 3.3], [3.85, 4.9]], [7.08, 7.37]),
+    { name: 'white eave fascia', u: [0, 5.509], h: [7.75, 8.3], out: .3, depth: .6, colour: '#ecebe6' },
+    { name: 'bracketed ledge', u: [0, 5.509], h: [3.5, 3.83], out: .1, depth: .2, colour: '#e2e1dc' },
+    { name: 'blank white board, held flat', u: [5.33, 5.45], h: [3.67, 6.25], out: .12, depth: .2, colour: '#f0f0ec' },
+  ],
+  piers: [[0, .3], [5.21, 5.509]],
+  backFittings: [
+    { name: 'grey roller shutter', u: [.34, 3.05], h: [.25, 2.25], colour: '#a8aaa8' },
+    { name: 'green door', u: [3.3, 4.14], h: [.25, 1.9], colour: '#3a7a4a' },
+  ],
+};
+
+export const no143 = {
+  ...plain141({ height: 7.9 }),
+  id: 'sa-143', buildingIds: ['439168825'], kind: 'unnamed', unnamed: true,
+  name: 'No. 143 Sims Avenue (May 2023 exterior, occupant not identified)', address: '143 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a white house, the twin of No. 141: three dark windows under stained-glass transoms and vent strips, a ledge with a row of small brackets, and in the five-foot way a grille door and a roller shutter under a red banner hung with lanterns. No board is photographed, so no name is given. Read in a different frame from No. 141, its heights come out about 0.4 m lower than its twin\'s; both are kept as read.' + westNote,
+  sources: [way('439168825'), kv('8348649', '2743'), kv('8348649', '2742')],
+  windows: [[1.04, 1.96], [2.49, 3.38], [3.93, 4.83]].map(u => ({ u, h: [4.42, 5.75], panes: 2 })),
+  blocks: [
+    ...[[1.04, 1.96], [2.49, 3.38], [3.93, 4.83]].map(u => ({ name: 'stained-glass transom', u, h: [5.87, 6.25], out: .02, depth: .04, colour: '#8a9aa8' })),
+    ...louvres([[1.0, 2.0], [2.45, 3.45], [3.9, 4.9]], [6.53, 6.83]),
+    { name: 'white eave fascia', u: [0, 5.51], h: [7.6, 7.9], out: .3, depth: .6, colour: '#ecebe6' },
+    { name: 'bracketed ledge', u: [0, 5.51], h: [3.17, 3.5], out: .1, depth: .2, colour: '#e2e1dc' },
+    { name: 'red banner with lanterns', u: [1.16, 4.66], h: [2.2, 2.5], out: .05, depth: .1, colour: '#c8282a' },
+  ],
+  piers: [[0, .36], [5.04, 5.51]],
+  backFittings: [
+    { name: 'grille door', u: [.96, 1.96], h: [.1, 2.4], colour: '#8a8a86' },
+    { name: 'roller shutter', u: [1.36, 4.86], h: [.1, 2.67], colour: '#c8c8c4' },
+  ],
+};
+
+export const no145 = {
+  ...west({ wall: '#f2f1ec', trim: '#1ea89a', frame: '#1ea89a', glass: '#4a6070', pier: '#1ea89a' }, { height: 7.6, ceiling: 3.1, shellInset: .35 }),
+  id: 'sa-145', buildingIds: ['439168849'], kind: 'unnamed', unnamed: true, frontEdge: 5,
+  name: 'No. 145 Sims Avenue (May 2023 exterior, occupant not identified)', address: '145 Sims Avenue (the Lorong 17 corner, #145 on its blade)',
+  evidence: 'KartaView panoramas of May 2023 show the corner house at Lorong 17, white framed in teal, with three faces: a short front to the avenue, a broad splay and a face down the lane, each with a large teal-framed window under a teal vent strip, teal columns at each turn and a teal band over the five-foot way, and printed DCA power-tool boards covering the ground floor. A red vertical board at the corner reads 南洋五金私人有限公司 NANYANG HARDWARE PTE LTD with #145, and on the splay an orange board reads NIPPON PAINT 南洋 NANYANG HARDWARE PTE LTD. Listings could not be checked (open question 84), so the boards are drawn blank and no name is given. The photographed front runs only about 3.3 m from No. 143\'s party wall before the corner turns, where the source front runs 7.26 m (open question 85); until that is settled the front\'s elevation is laid at its photographed positions and the splay\'s elevation is drawn flat on the rest of the source front.' + westNote,
+  sources: [way('439168849'), kv('8348649', '2743'), kv('8348649', '2744')],
+  windows: [{ u: [.74, 2.31], h: [4.0, 6.25], panes: 1 }, { u: [4.0, 6.6], h: [4.0, 6.25], panes: 2 }],
+  blocks: [
+    { name: 'white eave', u: [0, 7.26], h: [7.25, 7.6], out: .4, depth: .8, colour: '#f2f1ec' },
+    ...[[.8, 2.3], [4.1, 6.5]].map(u => ({ name: 'teal vent strip', u, h: [6.3, 6.75], out: .02, depth: .04, colour: '#1ea89a' })),
+    { name: 'teal band', u: [0, 7.26], h: [3.08, 3.42], out: .1, depth: .2, colour: '#1ea89a' },
+    ...[[0, .27], [2.72, 3.31], [6.95, 7.26]].map(u => ({ name: 'teal column', u, h: [.2, 7.25], out: .06, depth: .12, colour: '#1ea89a' })),
+    { name: 'printed tool board', u: [.19, 2.64], h: [.1, 2.7], out: .03, depth: .04, colour: '#1e8a8a' },
+    { name: 'blank red corner board, held flat', u: [3.24, 3.36], h: [2.33, 5.33], out: .12, depth: .2, colour: '#c8282a' },
+    { name: 'blank orange board', u: [4.0, 6.4], h: [2.3, 3.05], out: .1, depth: .06, colour: '#e87a2a' },
+  ],
+  piers: [[.1, .4], [6.96, 7.26]],
+  backFittings: [{ name: 'hardware shop', u: [3.4, 6.9], h: [.1, 2.9], colour: '#6a5a4a', glow: .06 }],
+  sides: [3, 2].map(edge => ({ edge, blocks: [
+    { name: 'teal band', u: [.1, edge === 3 ? 5.4 : 10.3], h: [3.08, 3.42], out: .08, depth: .16, colour: '#1ea89a' },
+    { name: 'white eave', u: [0, edge === 3 ? 5.5 : 10.4], h: [7.25, 7.6], out: .12, depth: .24, colour: '#f2f1ec' },
+  ] })),
+};
+
+export const simsAvenueNorth = [no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
 export const simsAvenueNorthFrame = laneFrame, simsAvenueNorthLayout = laneLayout, simsAvenueNorthUpper = laneUpper, simsAvenueNorthReviews = laneReviews, simsAvenueNorthSides = laneSides;

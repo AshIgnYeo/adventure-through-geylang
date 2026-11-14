@@ -291,6 +291,17 @@ Started: 10 October 2026.
     - **Recommendation:** yes for this walk, with each model checked against Street View when it can be reached again.
     - **Unlocks:** mapping can carry on without Street View; if the answer is no, the walk's models wait for Street View.
 
+85. **Sims Avenue, No. 145 at the Lorong 17 corner (way 439168849): re-author the corner on its photographed walls?**
+    - **Evidence:** measured during the Sims Avenue north walk ([Sims Avenue north brief](sims-avenue-north-brief.md), stop 25), in KartaView frame 8348649/2743, whose position and heading are solved from five party walls (Nos. 135-145) with residuals under 0.05°.
+      - The building is a three-faced corner: a short front to the avenue, a broad splay and a face down the lane.
+      - The photographed front runs about **3.3 m** from No. 143's party wall before the corner column turns. The source front runs **7.26 m**, and its splay starts there.
+      - Its party wall with No. 143 stands on the source one, so the difference lies at the corner.
+      - Frame 8348649/2744, past the corner, shows the splay carrying the orange NIPPON PAINT board, then the lane face.
+    - **What happens now:** the front's elevation is laid at its photographed positions from the party wall, and the splay's window and board are drawn flat on the rest of the source front. The splay and lane faces keep only the teal band and the eave.
+    - **Also seen:** at the west end of the walk, No. 135's west party wall photographs about 1.3 m east of the source one, as if the QianJing pair at Nos. 131-133 were wider than its outlines. No. 135's elevation is laid from its east party wall, with a plain dark strip at its west end.
+    - **Recommendation:** yes. Measure the splay and the lane face from frames 2744 and 5471, then author a footprint with the front cut at 3.3 m, the photographed splay and the lane face, keeping the source rear. Check No. 133's east wall in the same pass.
+    - **Unlocks:** the corner on its true walls, with its three faces and their boards in place.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

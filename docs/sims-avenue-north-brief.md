@@ -6,7 +6,7 @@ Research and implementation from **14 November 2026**, under open questions 83 a
 
 - **Stretch:** the north side of Sims Avenue from No. 135, next to the modelled pair at Nos. 131-133, to No. 205 at Lorong 21A's west corner: Nos. 135-145 west of Lorong 17, Nos. 147-159 between Lorong 17 and Lorong 19, Nos. 165-177 between Lorong 19 and Lorong 21, and Nos. 183-205 between Lorong 21 and Lorong 21A. The lanes north of the avenue and the Buddhist Congress Center at Lorong 23 wait for a later pass.
 - **Map:** `scripts/prepare-map.mjs` takes the 29 buildings by id and keeps the mouths of Lorongs 17, 19, 21 and 21A as road. The Sims Avenue corridors already ran from Lorong 17 to past Lorong 21; they are carried west past No. 135 and east to Lorong 21A.
-- **Order:** Lorong 21 to Lorong 21A first, where the drives were calibrated, then west from Lorong 21 to No. 135. Each stop is one photographed building, or a uniform row.
+- **Order:** Lorong 21 to Lorong 21A first, where the drives were calibrated, then Lorong 17 to Lorong 19, then west of Lorong 17 to No. 135. Each stop is one photographed building, or a uniform row.
 - **Imagery:** Google Street View cannot be opened from this environment (open question 84), so the walk uses KartaView's three eastbound drives along Sims Avenue, on 16, 24 and 25 May 2023: full panoramas of 13,000 × 6,500 pixels about 10 m apart. Sources link to the frames; no image is copied into the repository.
 - **Naming:** unchanged in principle, but listings cannot be checked from here either, so every building is unnamed for now and its boards are drawn blank. Legible signs and house numbers are recorded below, so the names can follow once listings are checked.
 - **Code:** each place is a measured elevation on one edge of its footprint, built with the lane-house helpers shared with the lane walks (`src/lane-house-layout.mjs`, `src/lane-house.ts`).
@@ -24,7 +24,7 @@ The street fronts stand 6.6-7.3 m from Sims Avenue's centreline, at its estimate
 
 ## Status, 14 November 2026
 
-**In progress; 19 of 29 buildings modelled.** The row from Lorong 21 to Lorong 21A (Nos. 183-205) and the stretch from Lorong 17 to Lorong 19 (Nos. 147-159) are done. Nos. 135-145 come next. The four set-back buildings between Lorong 19 and Lorong 21 (Nos. 165-177) wait: they stand free of party walls, and the first attempt to match their corners to the source outlines failed, since the small hut on No. 169's outline is far narrower than it.
+**In progress; 25 of 29 buildings modelled.** Everything from No. 135 to No. 159 and from No. 183 to No. 205 is done. The four set-back buildings between Lorong 19 and Lorong 21 (Nos. 165-177) wait: they stand free of party walls, and the first attempt to match their corners to the source outlines failed, since the small hut on No. 169's outline is far narrower than it. One question is logged on the walk itself: [85](open-questions.md), No. 145's corner.
 
 ## Lorong 21 to Lorong 21A
 
@@ -159,3 +159,40 @@ The outlines from No. 147 to No. 159 are skewed: each east party wall slants abo
 - **Heights:** eaves 7.86-8.14 m, teal fascia 7.14-7.43 m, windows 4.97-6.17 m, board 3.29-4.11 m.
 
 Use `?review=sa-147`, `?review=sa-149`, `?review=sa-151`, `?review=sa-153`, `?review=sa-155`, `?review=sa-157` and `?review=sa-159`.
+
+## West of Lorong 17
+
+Frames 8348649/2742 and 2743 are solved from five party walls, from No. 135|137 to No. 143|145, with residuals under 0.8° and 0.05°. The road dips by Lorong 17's junction, so these cameras ride about 2.0 m above the five-foot-way floor. Nos. 141 and 143 are twins read in different frames, and No. 143's heights come out about 0.4 m lower than No. 141's; both are kept as read.
+
+### Stop 20: No. 135 (way 439168677)
+
+- **Building:** charcoal, with dark latticed and louvred windows across its upper floor and a large white board hung out from its east side.
+- **Signs:** a black board over the five-foot way lettered INTERIOR TIMES in red, over a glass front and a timber panel door. Drawn blank.
+- **Footprint:** its west party wall photographs about 1.3 m east of the source one ([open question 85](open-questions.md)). The elevation is laid from its east party wall, with a plain dark strip at the west end.
+- **Heights:** eave 8.3-8.6 m, windows 5.1-7.65 m, board 3.0-3.75 m.
+
+### Stop 21: No. 137 (way 439168816)
+
+- **Building:** white trimmed in black: three windows with closed white louvred shutters under stained-glass fanlights, vent strips above, a black balustrade band below; a timber door, a black-framed window and white double doors in the five-foot way.
+- **Signs:** none photographed.
+- **Heights:** eave 7.83-8.1 m, shutters 5.0-6.55 m, fanlights 6.6-7.15 m, balustrade band 3.85-4.2 m.
+
+### Stop 22: No. 139 (way 439168799)
+
+- **Building:** pink: three windows with green louvred shutters under fanlights, vent strips, a pink dentil band, a glass shopfront hung with lamps and fans, and the plate 139.
+- **Signs:** a black board with gold lettering reads 新加坡瓊海同鄉會 QIONGHAI ASSOCIATION (SINGAPORE); over the five-foot way a black board reads MLC MEDIA LIGHTING CONCEPT, Media Aire-con Engineering Pte Ltd; a dark board hangs at the east pier. All drawn blank.
+- **Heights:** eave 8.25-8.6 m, shutters 5.0-6.5 m, association board 4.03-4.97 m, shop board 2.75-3.7 m.
+
+### Stops 23 and 24: Nos. 141 and 143 (ways 439168674 and 439168825)
+
+- **Buildings:** white twins: three dark windows under grilled (No. 141) or stained-glass (No. 143) transoms and vent strips, a ledge with a row of small brackets. No. 141 has a grey roller shutter and a green door, with a white board at its east pier (drawn blank); No. 143 a grille door and a roller shutter under a red banner hung with lanterns.
+- **Heights:** No. 141 eave 7.75-8.3 m, windows 4.75-6.25 m; No. 143 eave 7.6-7.9 m, windows 4.42-5.75 m.
+
+### Stop 25: No. 145, the Lorong 17 corner (way 439168849)
+
+- **Building:** white framed in teal, with three faces: a short front, a broad splay and a face down the lane, each with a large teal-framed window under a teal vent strip, teal columns at each turn, a teal band over the five-foot way, and printed DCA power-tool boards over the ground floor.
+- **Signs:** a red vertical board at the corner reads 南洋五金私人有限公司 NANYANG HARDWARE PTE LTD with #145; on the splay an orange board reads NIPPON PAINT 南洋 NANYANG HARDWARE PTE LTD. Drawn blank.
+- **Footprint:** the photographed front runs about 3.3 m before the corner turns, against the source front's 7.26 m ([open question 85](open-questions.md)). For now the front's elevation is laid at its photographed positions and the splay's window and board are drawn flat on the rest of the source front.
+- **Heights:** eave 7.25-7.6 m, windows 4.0-6.25 m, teal band 3.08-3.42 m.
+
+Use `?review=sa-135`, `?review=sa-137`, `?review=sa-139`, `?review=sa-141`, `?review=sa-143` and `?review=sa-145`.
