@@ -334,6 +334,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the skyline behind the west end of the north side.
 
+91. **Sims Avenue's north side at the Lorong 23 corner (way 541941379): take it in, with the avenue carried east to it?**
+    - **Evidence:** east of Lorong 21A the north side holds one more outline inside the extract, No. 35 Lorong 23 (named Buddhist Congress Center in the source): a white two-storey podium behind a lawn, with the tower at 37 Lorong 23 behind it. On the south side the only outline east of Lorong 21 (way 454254163) is a long block whose front faces Lorong 23, outside the extract, so it is left for question 81's extension.
+    - **Status:** modelled as photographed massing on the owner's instruction to carry on mapping, with Sims Avenue's way past Lorong 21A taken into the road set and the corridor carried to the corner. The tower behind gained its red-framed south face from the same frames.
+    - **Recommendation:** yes.
+    - **Unlocks:** the north side of Sims Avenue complete within the extract.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

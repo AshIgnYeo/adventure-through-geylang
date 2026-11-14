@@ -679,5 +679,19 @@ export const no105 = {
   sides: [{ edge: 2, windows: grid8(25.43, 5, 2.4) }],
 };
 
-export const simsAvenueNorth = [no105, no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no165, no167, no169, no177, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
+// The Lorong 23 corner east of Lorong 21A (open question 91): a white two-storey podium behind a lawn and a boundary wall.
+export const no35l23 = {
+  ...mass({ wall: '#f0efea', trim: '#e8e6e0', frame: '#2e3032', glass: '#3a4a56' }, { frontEdge: 5, review: { distance: 20, pitch: 14 }, height: 8.0, ceiling: .2, fiveFootWay: .02, roof: { type: 'flat', colour: '#9a9c98' } }),
+  id: 'l23-35', buildingIds: ['541941379'], kind: 'unnamed', unnamed: true,
+  name: 'No. 35 Lorong 23 Geylang (May 2023 massing, occupant not identified)', address: '35 Lorong 23 Geylang (the Sims Avenue corner)',
+  evidence: 'KartaView panoramas of May 2023 show, behind a lawn and a white boundary wall on the north side of Sims Avenue east of Lorong 21A, a white two-storey podium with a red block at its west end and a round black-and-white striped canopy at its east end, with the white tower at 37 Lorong 23 rising behind. The source way is named Buddhist Congress Center; no sign could be read and listings could not be checked (open question 84), so no name is given.' + massNote,
+  sources: [way('541941379'), kv('8350297', '5502'), kv('8350297', '5503'), kv('8348649', '2768')],
+  windows: [[2.0, 5.0], [7.5, 10.5]].map(u => ({ u, h: [4.6, 6.4], panes: 3 })),
+  blocks: [
+    { name: 'red block', u: [.1, 2.0], h: [.2, 8.0], out: .1, depth: .2, colour: '#c8302a' },
+    { name: 'striped canopy', u: [10.8, 13.0], h: [2.6, 5.4], out: .1, depth: .2, colour: '#2a2a2a' },
+  ],
+};
+
+export const simsAvenueNorth = [no105, no35l23, no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no165, no167, no169, no177, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
 export const simsAvenueNorthFrame = laneFrame, simsAvenueNorthLayout = laneLayout, simsAvenueNorthUpper = laneUpper, simsAvenueNorthReviews = laneReviews, simsAvenueNorthSides = laneSides;

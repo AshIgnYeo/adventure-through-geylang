@@ -13,15 +13,13 @@ const north = [
   '682928722', '682937224', '454254365', '454254366',
   '454254353', '454254354', '454254355', '454254356', '454254357', '454254358', '454254359', '454254360', '454254361',
   '454254362', '454254363', '454254364',
-  // No. 105, set back behind Nos. 107-133 (open question 90).
-  '439168666',
+  // No. 105, set back behind Nos. 107-133 (open question 90), and the Lorong 23 corner (open question 91).
+  '439168666', '541941379',
 ];
 
 test('the north side of Sims Avenue brings in its 29 buildings and the mouths of the lanes north of it', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));
   for (const id of north) assert.ok(ids.has(id), id);
-  // The Buddhist Congress Center at Lorong 23, beyond Lorong 21A, waits.
-  assert.equal(ids.has('541941379'), false);
   for (const [id, name] of [['708456471', 'Lorong 17 Geylang'], ['666807374', 'Lorong 19 Geylang'], ['666807857', 'Lorong 21 Geylang'], ['666579841', 'Lorong 21A Geylang']])
     assert.equal(sourceMap.roads.find(r => r.id === id)?.name, name, id);
 });

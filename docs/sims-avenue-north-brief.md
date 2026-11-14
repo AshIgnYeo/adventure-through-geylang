@@ -234,3 +234,13 @@ Added on 14 November 2026 under [open question 90](open-questions.md).
 - **Review start:** across the avenue, 58 m from its front, where it rises behind the pagoda building at Nos. 111-117. Closer starts look straight into the row.
 
 Use `?review=sa-105`.
+
+## The Lorong 23 corner: No. 35 Lorong 23 (way 541941379)
+
+Added on 14 November 2026 under [open question 91](open-questions.md), with Sims Avenue's way past Lorong 21A taken into the road set and the corridor carried to the corner.
+
+- **Building:** a white two-storey podium behind a lawn and a white boundary wall, with a red block at its west end and a round black-and-white striped canopy at its east end. The source way is named Buddhist Congress Center; no sign could be read.
+- **Behind it:** the tower at 37 Lorong 23 ([Lorong 21A north brief](lorong-21a-north-brief.md)), whose long south face over the avenue shows rows of windows in red frames; that face is added to its massing from the same frames (8350297/5502-5503).
+- **South side:** the only outline east of Lorong 21 (way 454254163) is a long white block under a red tiled roof whose front faces Lorong 23, outside the extract. It is left for question 81's extension.
+
+Use `?review=l23-35`.

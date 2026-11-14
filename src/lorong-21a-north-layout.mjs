@@ -74,10 +74,12 @@ export const yuLi = {
   ...mass({ wall: '#ecebe6', frame: '#5a6a72', glass: '#3a5a5a' }, { frontEdge: 16, review: { distance: 14, pitch: 32 }, height: 33.0 }),
   id: 'l23-37', buildingIds: ['454254349'], kind: 'unnamed', unnamed: true,
   name: 'No. 37 Lorong 23 Geylang (May 2023 massing, occupant not identified)', address: '37 Lorong 23 Geylang (its Lorong 21A side)',
-  evidence: 'KartaView panoramas of May 2023 show a white tower of about nine storeys with a red vertical band and rows of green-tinted windows, and a stone wall at its gate lettered 有利工業大廈 YU LI INDUSTRIAL BUILDING 37 LORONG 23 GEYLANG, with a yellow 37 on the tower. Listings could not be checked (open question 84), so no name is given, and the lettering is not drawn. It is modelled from its Lorong 21A side; its Lorong 23 front lies at the extract\'s east edge. Its height follows its nine storeys and carries about ±4 m.' + note,
+  evidence: 'KartaView panoramas of May 2023 show a white tower of about nine storeys with a red vertical band and rows of green-tinted windows, and a stone wall at its gate lettered 有利工業大廈 YU LI INDUSTRIAL BUILDING 37 LORONG 23 GEYLANG, with a yellow 37 on the tower. Listings could not be checked (open question 84), so no name is given, and the lettering is not drawn. It is modelled from its Lorong 21A side and its long south face over Sims Avenue, which shows rows of windows in red frames; its Lorong 23 front lies at the extract\'s east edge. Its height follows its nine storeys and carries about ±4 m.' + note,
   sources: src('454254349', '3773', '3741', '3742'),
   windows: grid(spread(6.05, 1, 2.4), floors(8, 4.8, 3.5), 1.6, 3),
   blocks: [{ name: 'red vertical band', u: [.2, 1.6], h: [.2, 33.0], out: .05, depth: .1, colour: '#c8302a' }],
+  // Its long south face over Sims Avenue: rows of windows in red frames, as photographed from the avenue.
+  sides: [{ edge: 11, windows: grid(spread(52.87, 14, 2.6), floors(9, 4.4, 3.2), 1.7, 3), blocks: floors(9, 4.4, 3.2).map(b => ({ name: 'red window frames', u: [.6, 52.2], h: [+(b - .15).toFixed(2), +(b + 1.85).toFixed(2)], out: -.015, depth: .01, colour: '#c8302a' })) }],
 };
 
 export const lorong21aNorth = [no9, no11a, no20, guardhouse, yuLi];

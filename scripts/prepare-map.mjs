@@ -111,7 +111,11 @@ const simsNorth = {
     '454254362', '454254363', '454254364',
     // No. 105, Chancerlodge Complex, set back behind Nos. 107-133 (open question 90).
     '439168666',
+    // The Lorong 23 corner, east of Lorong 21A (open question 91).
+    '541941379',
   ],
+  // Sims Avenue on east of Lorong 21A, past the Lorong 23 corner (open question 91).
+  avenueEast: ['475337630'],
   // Lorong 17, Lorong 19, Lorong 21 and Lorong 21A, each from the Sims Avenue centreline north to its first node.
   mouths: ['708456471', '666807374', '666807857', '666579841'],
 };
@@ -155,7 +159,7 @@ for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
   wayCoordinates.set(id, coordinates);
   const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat(), ...Object.values(geylang352).flat(), ...Object.values(lorong17North).flat(), ...Object.values(lorong1921North).flat(), ...Object.values(lorong21aNorth).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
-  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...geylang352.geylangRoad, ...lorong17North.lane, ...lorong1921North.lorong19, ...lorong1921North.joining, ...lorong1921North.lorong21, ...lorong21aNorth.lane].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
+  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...simsNorth.avenueEast, ...geylang352.geylangRoad, ...lorong17North.lane, ...lorong1921North.lorong19, ...lorong1921North.joining, ...lorong1921North.lorong21, ...lorong21aNorth.lane].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
   if (['695010162', '1223458240'].includes(id)) paths.push({id,highway:tags.highway,service:tags.service??null,coordinates});
@@ -221,7 +225,8 @@ const corridors = [
   { name: 'Lorong 21 Geylang, north of Sims Avenue', halfWidth: 13, path: [...chain(['666807857', ...lorong1921North.lorong21.slice(0, -1)]), along(wayCoordinates.get('666807859'), 30)] },
   // Lorong 21A from Sims Avenue's centreline to about 12 m past the extract's north edge, to take in its plots' fronts.
   { name: 'Lorong 21A Geylang, north of Sims Avenue', halfWidth: 13, path: [...chain(['666579841', '465490349', '666579842']), along(wayCoordinates.get('666579843'), 38)] },
-  { name: 'Sims Avenue, Lorong 21 to Lorong 21A', halfWidth: 12, path: [along(wayCoordinates.get('632842880'), 10), wayCoordinates.get('632842880')[1], along(wayCoordinates.get('632842880'), 80)] },
+  // Carried on past Lorong 21A to the Lorong 23 corner, about 25 m along the next way (open question 91).
+  { name: 'Sims Avenue, Lorong 21 to Lorong 21A', halfWidth: 12, path: [along(wayCoordinates.get('632842880'), 10), ...wayCoordinates.get('632842880').slice(1), along(wayCoordinates.get('475337630'), 25)] },
 ];
 const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',licence:'ODbL-1.0',roads,buildings,paths,contextRoads};
 fs.writeFileSync(new URL('../public/map.json',import.meta.url),JSON.stringify(map));
