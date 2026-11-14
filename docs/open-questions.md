@@ -340,6 +340,13 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the north side of Sims Avenue complete within the extract.
 
+92. **Lorongs 6, 8, 10 and 12 south of the study rectangle: walk them to the extract's south edge, with the service road between Lorongs 4 and 6?**
+    - **Evidence:** south of the study rectangle (1.3115 N) the four lanes run on to the extract's south edge (1.3110 N), and a service road (ways 782605023, 111737898 and 927016604) runs south from between Lorongs 4 and 6. Twenty outlines stand along them inside the extract, among them Hotel 81 Orchid (19A Lorong 8), ibis budget Singapore Emerald (20 Lorong 6), Royce Residences, Wang Lodge and Fern Lodge. KartaView's drives of 16 and 19 May and 9 June 2023 run up all four lanes and the service road.
+    - **Roads:** Lorongs 6 and 8 were never in the derived road set, so their ways are taken in whole, from Geylang Road's back lane to the extract's edge, and the lanes gain road surface where the ring-south exteriors already stand. The service road's ways have no name in the source; they are taken in as "Service road".
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms, as photographed massing. The commits stand apart, so a no takes them out together.
+    - **Recommendation:** yes.
+    - **Unlocks:** the south-west corner of the extract, and road surface down Lorongs 6 and 8.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

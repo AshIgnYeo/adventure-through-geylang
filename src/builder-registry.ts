@@ -72,6 +72,7 @@ const entries: [string, () => Promise<Builder>, string[]][] = [
   ['lorong-17-north', () => import('./lorong-17-north').then(m => m.buildLorong17North), ["439168851","439168795","454254369","454254368"]],
   ['lorong-19-21-north', () => import('./lorong-19-21-north').then(m => m.buildLorong1921North), ["682937276","541941370","541941369","452646019","454254367","541941368","682937270","682937272","682937274","454254350","454254352"]],
   ['lorong-21a-north', () => import('./lorong-21a-north').then(m => m.buildLorong21aNorth), ["541941378","541941377","454254347","682937220","454254349"]],
+  ['lorong-6-12-south', () => import('./lorong-6-12-south').then(m => m.buildLorong612South), ["454274481","454254191","1223129486","454254199","454254198","1236158086","454274470","454274479","454274473","454274475","454274477","454274466","1223401724","454438336","121873782","454438333","454438325","454438324","454438322","454438317"]],
 ];
 
 /** Building id to its builder module, and each module's loader. Modules load only when a building needs them. */
