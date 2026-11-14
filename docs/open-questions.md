@@ -272,6 +272,25 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Every frame draws the roof twice, once for shadows, and phones pay most for it. Keep the six-sided, capped eave and ridge tubes, which carry the silhouette.
     - **Unlocks:** about 11% fewer vertices across the scene, with no change to the temple's outline or colours.
 
+83. **Sims Avenue north side, No. 135 to No. 205: walk it as Lorong 21 was walked?**
+    - **Order:** west to east, from No. 135, next to the modelled pair at Nos. 131-133, to No. 205 at Lorong 21A's west corner. Each stop is one photographed building, measured before the next is started; a uniform row may be one stop. Doubts go into this log and the walk continues.
+    - **Scope:** the 29 source outlines along the north side (Nos. 135-145 west of Lorong 17, Nos. 147-159 between Lorong 17 and Lorong 19, Nos. 165-177 between Lorong 19 and Lorong 21, and Nos. 183-205 between Lorong 21 and Lorong 21A). They lie inside the retained extract, north of the study rectangle. The lanes north of Sims Avenue, and the Buddhist Congress Center at Lorong 23, wait for a later pass.
+    - **Map:** the buildings are taken in by id, as for Lorong 21. The Sims Avenue corridors already run from Lorong 17 to past Lorong 21; they are carried west to No. 135 and east to Lorong 21A.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Status:** started on 14 November 2026, under the instruction to carry on mapping and log questions for settling later. The walk's commits stand apart from the rest, so a no takes them out together.
+    - **Unlocks:** the north side of Sims Avenue from Lorong 15 to Lorong 21A, facing the rows already modelled across the road.
+
+84. **Imagery for the Sims Avenue north walk: accept KartaView's May 2023 panoramas while Google Street View cannot be reached?**
+    - **Evidence:**
+      - From this environment Google returns 403 for the Maps scripts, so Street View cannot be opened. Nothing was done to get round that.
+      - KartaView (open imagery, CC BY-SA 4.0) holds three eastbound drives along Sims Avenue, on 16, 24 and 25 May 2023: 109 full panoramas of 13,000 × 6,500 pixels, about 10 m apart, from Lorong 15 to past Lorong 21A.
+      - Their GPS positions lag: the first one checked sat 11.5 m west of where it was taken. Each panorama's position and heading are therefore solved from the bearings of party walls matched to source footprint corners, using house numbers on signs to anchor the match; the first fit left residuals under 0.7°.
+      - Each façade is then rectified onto its front line, and checked from a second panorama, as the Street View walks were.
+    - **What changes:** the photographs are a year older than the June 2024 drives the other walks used, so a shopfront that changed in between shows its 2023 state. Sources link to the KartaView frames; no image is copied into the repository.
+    - **Naming:** listings cannot be checked from here either, so every building is unnamed for now, with its boards drawn blank. Legible sign texts and house numbers are recorded in the brief, so the names can follow once listings are checked.
+    - **Recommendation:** yes for this walk, with each model checked against Street View when it can be reached again.
+    - **Unlocks:** mapping can carry on without Street View; if the answer is no, the walk's models wait for Street View.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

@@ -25,7 +25,8 @@ test('Lorong 19 brings in its own buildings, its corners and the Geylang Road ho
   // Sims Avenue Nos. 136-144 came in with open question 43; the Lorong Bachok row waits for a later pass.
   for (const id of ['682928736', '682928738', '682928739', '682928741', '682928744']) assert.ok(ids.has(id), id);
   for (const id of ['454254315', '454254245']) assert.equal(ids.has(id), false, id);
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 19 Geylang').length, 7);
+  // The lane's seven ways, and its mouth north of Sims Avenue (open question 83).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 19 Geylang').length, 8);
   // Lorong Bachok's west mouth; its east mouth came in with Lorong 21 (open question 47).
   assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong Bachok').map(r => r.id), ['23513607', '666807847']);
 });

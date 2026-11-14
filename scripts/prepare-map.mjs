@@ -98,6 +98,21 @@ const lorong18 = {
   geylangRoad: ['660071186', '666816964'],
   westerhout: ['23513327', '644902167'],
 };
+// The north side of Sims Avenue from No. 135 to No. 205 (open question 83, 14 November 2026), taken as Lorong 21 was: its
+// 29 buildings by id, west of Lorong 17 (Nos. 135-145), between Lorong 17 and Lorong 19 (Nos. 147-159), between Lorong
+// 19 and Lorong 21 (Nos. 165-177) and between Lorong 21 and Lorong 21A (Nos. 183-205). The mouths of the four lanes
+// north of the avenue are kept as road; the lanes themselves and the Buddhist Congress Center at Lorong 23 wait.
+const simsNorth = {
+  buildings: [
+    '439168677', '439168816', '439168799', '439168674', '439168825', '439168849',
+    '475918110', '475918111', '682928772', '682928771', '682928770', '682928769', '682928768',
+    '682928722', '682937224', '454254365', '454254366',
+    '454254353', '454254354', '454254355', '454254356', '454254357', '454254358', '454254359', '454254360', '454254361',
+    '454254362', '454254363', '454254364',
+  ],
+  // Lorong 17, Lorong 19, Lorong 21 and Lorong 21A, each from the Sims Avenue centreline north to its first node.
+  mouths: ['708456471', '666807374', '666807857', '666579841'],
+};
 const wayCoordinates = new Map();
 const roads=[], buildings=[], paths=[], contextRoads=[];
 for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
@@ -106,9 +121,9 @@ for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
   const coordinates=[...text.matchAll(/<nd ref="(\d+)"/g)].map(m=>nodes.get(m[1]));
   if (coordinates.some(c=>!c)) continue;
   wayCoordinates.set(id, coordinates);
-  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat()].includes(id);
+  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
-  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
+  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
   if (['695010162', '1223458240'].includes(id)) paths.push({id,highway:tags.highway,service:tags.service??null,coordinates});
@@ -160,6 +175,10 @@ const corridors = [
   // link, carried about 18 m past Lorong 18's junction to take in the east corner.
   { name: 'Lorong 18 Geylang', halfWidth: 13, path: chain(lorong18.lane.slice(1)).reverse() },
   { name: 'Geylang Road, Lorong 21 to Lorong 18', halfWidth: 13, path: [along([...wayCoordinates.get('660071186')].reverse(), 18), ...chain(['666816964'])] },
+  // The north side of Sims Avenue: west from Lorong 17's junction past No. 135, and east from the Lorong 21 link to Lorong
+  // 21A's junction, about 80 m along the way past Lorong 21.
+  { name: 'Sims Avenue, No. 135 to Lorong 17', halfWidth: 12, path: chain(['649794626', '666804804', '475336751', '727628958']) },
+  { name: 'Sims Avenue, Lorong 21 to Lorong 21A', halfWidth: 12, path: [along(wayCoordinates.get('632842880'), 10), wayCoordinates.get('632842880')[1], along(wayCoordinates.get('632842880'), 80)] },
 ];
 const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',licence:'ODbL-1.0',roads,buildings,paths,contextRoads};
 fs.writeFileSync(new URL('../public/map.json',import.meta.url),JSON.stringify(map));
