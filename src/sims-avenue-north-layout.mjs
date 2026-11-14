@@ -588,5 +588,76 @@ export const no145 = {
   ] })),
 };
 
-export const simsAvenueNorth = [no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
+// Lorong 19 to Lorong 21: four buildings standing free of party walls, set back behind gardens and a forecourt. No frame's
+// position could be solved from walls here, and two frames 13 m apart are too close to triangulate their corners, so they
+// are photographed massing on their source outlines: colours, storeys, roofs, the colonnade and the verandah as seen in
+// oblique frames, with heights carrying about ±1.5 m (±4 m for No. 165).
+const massNote = ' Seen only obliquely in the May 2023 frames (open question 84), so it is modelled as photographed massing on its source outline: colours, storeys and roof as photographed, details approximate.';
+const mass = (colours, o) => ({ reviewRoad: 'Sims Avenue', heldFlat: true, shellInset: .3, colours: { trim: colours.wall, frame: '#2e3032', glass: '#3a4a56', back: '#3a3836', floor: '#a8a296', pier: colours.wall, ...colours }, ...o });
+
+export const no165 = {
+  ...mass({ wall: '#dcdedc' }, { frontEdge: 4, review: { distance: 18, pitch: 28 }, height: 30.0, ceiling: .2, fiveFootWay: .02, roof: { type: 'flat', colour: '#9a9c9a' } }),
+  id: 'sa-165', buildingIds: ['682928722'], kind: 'unnamed', unnamed: true,
+  name: 'No. 165 Sims Avenue (May 2023 massing, occupant not identified)', address: '165 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a tall block standing about 23 m back from the avenue, behind the bungalow at No. 167: grey lower storeys, a broad red band above them and white upper storeys, with balconies stacked at its east end, about nine storeys and 30 m high. The source way is named Harvest Care Centre, but no sign could be read and listings could not be checked (open question 84), so no name is given. Its height rests on an estimated distance and carries about ±4 m.' + massNote,
+  sources: [way('682928722'), kv('8348649', '2752'), kv('8348649', '2751')],
+  windows: [3, 6.3, 9.6, 12.9, 16.2, 19.5, 22.8, 26.1].flatMap(b => [[2.0, 4.0], [6.5, 8.5], [11.0, 13.0]].map(u => ({ u, h: [b + .8, b + 2.2], panes: 2 }))),
+  blocks: [
+    { name: 'grey lower storeys', u: [0, 16.97], h: [.2, 10.0], out: .02, depth: .04, colour: '#a8acac' },
+    { name: 'red band', u: [0, 16.97], h: [10.0, 20.5], out: .02, depth: .04, colour: '#c8615a' },
+    ...[6.3, 9.6, 12.9, 16.2, 19.5, 22.8].map(b => ({ name: 'balcony railing', u: [14.2, 16.4], h: [b + .3, b + 1.3], out: .3, depth: .6, colour: '#e8e8e4' })),
+  ],
+};
+
+export const no167 = {
+  ...mass({ wall: '#e8a84e', trim: '#f0efea', frame: '#f0efea', glass: '#e8e6de', back: '#e2a24a', pier: '#f0efea' }, { frontEdge: 1, review: { distance: 9, pitch: 14 }, height: 4.3, ceiling: 3.5, fiveFootWay: 2.2, roof: { type: 'hip', ridge: 7.6, colour: '#b4553d' } }),
+  id: 'sa-167', buildingIds: ['682937224'], kind: 'unnamed', unnamed: true,
+  name: 'No. 167 Sims Avenue (May 2023 massing, occupant not identified)', address: '167 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a single-storey ochre bungalow behind a garden fence and a tree: a red tiled hipped roof with a gable to the avenue, white louvred shutters along its side, an arched window, white columns and a white balustrade along a verandah. A white board at its gate could not be read, and listings could not be checked (open question 84), so no name is given.' + massNote,
+  sources: [way('682937224'), kv('8348649', '2752'), kv('8348649', '2751')],
+  windows: [{ u: [1.6, 2.6], h: [1.3, 3.0], panes: 2, arched: true, shutters: true }, { u: [8.5, 9.5], h: [1.3, 3.0], panes: 2, arched: true, shutters: true }],
+  blocks: [
+    { name: 'white balustrade', u: [.3, 10.86], h: [.3, 1.1], out: .05, depth: .1, colour: '#f0efea' },
+    { name: 'white verandah beam', u: [0, 11.16], h: [3.3, 3.6], out: .05, depth: .1, colour: '#f0efea' },
+  ],
+  piers: [[.3, .6], [3.8, 4.1], [7.1, 7.4], [10.56, 10.86]],
+};
+
+export const no169 = {
+  ...mass({ wall: '#ecebe6', trim: '#ecebe6', back: '#e8e6e0' }, { frontEdge: 2, review: { distance: 9, pitch: 10 }, height: 3.3, ceiling: .2, fiveFootWay: .02, roof: { type: 'gable', ridge: 5.0, ridgeDepth: .3, overhang: .4, colour: '#2e3a46' } }),
+  id: 'sa-169', buildingIds: ['454254365'], kind: 'unnamed', unnamed: true,
+  name: 'No. 169 Sims Avenue (May 2023 massing, occupant not identified)', address: '169 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a small white hut under a dark gabled roof on this site, its lower walls faced in blue tiles, with glass doors and a white board reading 藤原 豆腐 炸店 above them and Japanese notices in its windows; behind it a car park runs back from the avenue. Listings could not be checked (open question 84), so the board is drawn blank and no name is given. The hut is narrower than the source outline, which also takes in part of the car park; it is modelled over the whole outline.' + massNote,
+  sources: [way('454254365'), kv('8348649', '2752')],
+  windows: [{ u: [.6, 2.0], h: [1.1, 2.4], panes: 2 }, { u: [5.6, 7.0], h: [1.1, 2.4], panes: 2 }],
+  blocks: [
+    { name: 'blue tile dado', u: [0, 7.58], h: [.2, 1.0], out: .02, depth: .04, colour: '#8ab0c8' },
+    { name: 'glass doors', u: [2.9, 4.7], h: [.2, 2.4], out: .02, depth: .04, colour: '#5a6a72' },
+    { name: 'blank white board', u: [2.3, 5.3], h: [2.55, 3.1], out: .05, depth: .06, colour: '#f4f2ec' },
+  ],
+};
+
+export const no177 = {
+  ...mass({ wall: '#e2c6b4', trim: '#ece6dc', frame: '#e8e6e0', glass: '#2e6a8a', back: '#ecebe6', pier: '#f0efea' }, { frontEdge: 3, review: { distance: 10, pitch: 26 }, height: 16.0, ceiling: 4.5, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#9a9c9a' } }),
+  id: 'sa-177', buildingIds: ['454254366'], kind: 'unnamed', unnamed: true,
+  name: 'No. 177 Sims Avenue (May 2023 massing, occupant not identified)', address: '177 Sims Avenue (the Lorong 21 corner, plate 177)',
+  evidence: 'KartaView panoramas of May 2023 show a four-storey corner building at Lorong 21 behind a clipped garden: a white colonnade on its ground floor, beige-pink upper storeys with rows of small windows, a glazed blue stair tower and a cream top storey lettered 日蓮正宗佛教會(新加坡) NICHIREN SHOSHU BUDDHIST ASSOCIATION (SINGAPORE), with a pergola on the roof and the plate 177 at the corner. Listings could not be checked (open question 84), so the lettering is drawn as a blank band and no name is given. Its photographed corner stands about 7° west of the source corner as seen from frame 8348649/2755, so the outline may run long at the corner; it is kept until it can be measured.' + massNote,
+  sources: [way('454254366'), kv('8348649', '2755'), kv('8348649', '2756'), kv('8348649', '2753')],
+  windows: [5.6, 8.9, 12.2].flatMap(b => [2.5, 5.0, 7.5, 10.0, 12.5, 15.0, 17.5, 20.0, 22.5].map(u => ({ u: [u, u + .7], h: [b, b + 1.6], panes: 1 }))),
+  blocks: [
+    { name: 'cream top storey', u: [0, 24.63], h: [12.0, 16.0], out: .02, depth: .04, colour: '#ece6dc' },
+    { name: 'blank lettering band', u: [3.0, 21.0], h: [14.4, 15.4], out: .04, depth: .04, colour: '#e4ded2' },
+    { name: 'glazed stair tower', u: [.6, 2.0], h: [4.6, 15.6], out: .1, depth: .2, colour: '#2e6a8a' },
+    { name: 'white colonnade fascia', u: [0, 24.63], h: [4.0, 4.6], out: .05, depth: .1, colour: '#f0efea' },
+    { name: 'rooftop pergola', u: [6.0, 16.0], h: [16.0, 17.2], out: -2.0, depth: 3.0, colour: '#8ac0c8' },
+  ],
+  piers: [[0, .4], [4.0, 4.4], [8.0, 8.4], [12.1, 12.5], [16.2, 16.6], [20.2, 20.6], [24.23, 24.63]],
+  backFittings: [{ name: 'glazed ground floor', u: [.5, 24.1], h: [.2, 3.6], colour: '#c8ccd0', glow: .04 }],
+  sides: [{ edge: 2, blocks: [
+    { name: 'cream top storey', u: [0, 10.14], h: [12.0, 16.0], out: .02, depth: .04, colour: '#ece6dc' },
+    { name: 'white ground storey', u: [0, 10.14], h: [.2, 4.6], out: .02, depth: .04, colour: '#f0efea' },
+  ], windows: [5.6, 8.9].map(b => ({ u: [3.5, 4.6], h: [b, b + 1.8], panes: 2 })) }],
+};
+
+export const simsAvenueNorth = [no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no165, no167, no169, no177, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
 export const simsAvenueNorthFrame = laneFrame, simsAvenueNorthLayout = laneLayout, simsAvenueNorthUpper = laneUpper, simsAvenueNorthReviews = laneReviews, simsAvenueNorthSides = laneSides;

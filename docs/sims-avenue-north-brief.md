@@ -24,7 +24,7 @@ The street fronts stand 6.6-7.3 m from Sims Avenue's centreline, at its estimate
 
 ## Status, 14 November 2026
 
-**In progress; 25 of 29 buildings modelled.** Everything from No. 135 to No. 159 and from No. 183 to No. 205 is done. The four set-back buildings between Lorong 19 and Lorong 21 (Nos. 165-177) wait: they stand free of party walls, and the first attempt to match their corners to the source outlines failed, since the small hut on No. 169's outline is far narrower than it. One question is logged on the walk itself: [85](open-questions.md), No. 145's corner.
+**Complete; one question waits for the owner besides 83 and 84.** All 29 buildings are modelled: 25 as measured elevations, and the four set-back buildings between Lorong 19 and Lorong 21 (Nos. 165-177) as photographed massing on their source outlines. The question on the walk itself is [85](open-questions.md), No. 145's corner.
 
 ## Lorong 21 to Lorong 21A
 
@@ -196,3 +196,31 @@ Frames 8348649/2742 and 2743 are solved from five party walls, from No. 135|137 
 - **Heights:** eave 7.25-7.6 m, windows 4.0-6.25 m, teal band 3.08-3.42 m.
 
 Use `?review=sa-135`, `?review=sa-137`, `?review=sa-139`, `?review=sa-141`, `?review=sa-143` and `?review=sa-145`.
+
+## Lorong 19 to Lorong 21
+
+The four buildings here stand free of party walls, behind gardens, a forecourt and a car park. No frame's position could be solved from walls: the nearest walls are 40-65 m away and too oblique to tell apart. Triangulating their corners from frames 2755 and 2756, whose positions are solved, also failed, since they stand only 13 m apart and the same corner could not be matched with confidence in both. So the four are modelled as **photographed massing** on their source outlines, as the east ring's massing was: colours, storeys, roofs, the colonnade and the verandah as photographed, with details placed by estimate. Heights carry about ±1.5 m, and ±4 m for No. 165.
+
+### Stop 26: No. 165 (way 682928722)
+
+- **Building:** a tall block about 23 m back from the avenue, behind No. 167: grey lower storeys, a broad red band and white upper storeys, with balconies stacked at its east end. About nine storeys and 30 m high.
+- **Naming:** the source way is named Harvest Care Centre, but no sign could be read and listings could not be checked, so no name is given.
+- **Review start:** 18 m in front of it, on the avenue's pavement, looking up at 28°.
+
+### Stop 27: No. 167 (way 682937224)
+
+- **Building:** a single-storey ochre bungalow behind a garden fence: a red tiled hipped roof with a gable to the avenue, white louvred shutters, an arched window, white columns and a white balustrade along a verandah (modelled as a 2.2 m verandah).
+- **Signs:** a white board at its gate could not be read.
+
+### Stop 28: No. 169 (way 454254365)
+
+- **Building:** a small white hut under a dark gabled roof, its lower walls faced in blue tiles, with glass doors under a white board reading 藤原 豆腐 炸店 and Japanese notices in its windows. A car park runs back behind it.
+- **Footprint:** the hut is narrower than the source outline, which also takes in part of the car park. It is modelled over the whole outline.
+
+### Stop 29: No. 177, the Lorong 21 corner (way 454254366)
+
+- **Building:** four storeys behind a clipped garden: a white colonnade on the ground floor, beige-pink upper storeys with rows of small windows, a glazed blue stair tower near the west end, and a cream top storey lettered 日蓮正宗佛教會(新加坡) NICHIREN SHOSHU BUDDHIST ASSOCIATION (SINGAPORE), with a pergola on the roof and the plate 177 at the corner. The lettering is drawn as a blank band.
+- **Footprint:** from frame 2755 its corner photographs about 7° west of the source corner, so the outline may run long at the corner. It is kept until the corner can be measured.
+- **Heights:** about 16 m to the parapet, the colonnade to about 4.5 m.
+
+Use `?review=sa-165`, `?review=sa-167`, `?review=sa-169` and `?review=sa-177`.
