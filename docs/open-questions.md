@@ -302,6 +302,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Measure the splay and the lane face from frames 2744 and 5471, then author a footprint with the front cut at 3.3 m, the photographed splay and the lane face, keeping the source rear. Check No. 133's east wall in the same pass.
     - **Unlocks:** the corner on its true walls, with its three faces and their boards in place.
 
+86. **Geylang Road, south side, Nos. 352-364: model them now, ahead of a Lorong 20 walk?**
+    - **Evidence:** the seven houses east of Lorong 18's east corner (ways 764372558 to 764372552, No. 352 to No. 364) are inside the retained extract. Question 71 left them for a Lorong 20 walk, but Lorong 20 itself lies just outside the extract (question 81). KartaView holds three westbound drives of 2023 past them (16 and 19 May, 9 June), from which they can be measured as the Sims Avenue north side was (question 84).
+    - **Status:** started on the owner's instruction to carry on mapping, on question 71's terms: one stop per house, named only where a listing and a photographed sign agree (so unnamed for now, as on Sims Avenue), with Geylang Road's corridor carried on from Lorong 18's junction to No. 364. No. 364 appears to be Lorong 20's west corner; its Lorong 20 face is left for the Lorong 20 walk. The commits stand apart, so a no takes them out together.
+    - **Recommendation:** yes. It closes the gap between Lorong 18 and Lorong 20 on Geylang Road's south side, and a Lorong 20 walk would start from it.
+    - **Unlocks:** Geylang Road's south side continuous from Lorong 14 to Lorong 20.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
