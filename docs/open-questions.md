@@ -347,6 +347,13 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the south-west corner of the extract, and road surface down Lorongs 6 and 8.
 
+93. **Lorong Bachok between Lorongs 19 and 21: walk it, with its row and the two blocks behind Lorong 19's east side?**
+    - **Evidence:** the middle of Lorong Bachok (ways 666807846 and 762269508) joins the two mouths already taken with Lorongs 19 and 21. Along its north side the source has twelve outlines (ways 454254315 to 454254328), and south of it two blocks behind Lorong 19's east side: the rear of Bougainvilla Apartments (way 454254245), whose listing point lies in it, and the block behind the Lorong 21 corner (454254242). KartaView's drive of 16 May 2023 (sequence 8344809, frames 3147-3172) runs along Lorong Bachok. Its frames show eleven houses on the twelve outlines, which squares with Tan Ser Seng's face standing 3.25 m beyond its outline.
+    - **Status:** done on the owner's instruction to carry on mapping. The row is measured from four solved frames and laid as eleven equal houses of 6.37 m over the twelve outlines, each outline taking its slice of the one elevation; every house is unnamed and its boards drawn blank. The two blocks south of the lane stand 35-75 m back behind a car park and trees, too far to measure from this drive, and are left out. See `docs/lorong-bachok-brief.md`. The commits stand apart.
+    - **For the owner:** should the twelve outlines be redrawn as the eleven photographed houses (an authored footprint, as for Lorong 19's east side), so the party walls, roofs and five-foot way joins fall where the houses do? And should the two blocks south of the lane wait for a walk along the service roads behind them?
+    - **Recommendation:** yes.
+    - **Unlocks:** the last unmodelled row between Geylang Road and Sims Avenue inside the extract.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

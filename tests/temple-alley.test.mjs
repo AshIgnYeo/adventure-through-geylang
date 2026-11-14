@@ -25,7 +25,7 @@ test('alley import keeps source geometry and the overlooked Lorong 11 footway', 
   // Protect every previously retained footprint, not just the adjacent buildings.
   for (const b of map.buildings) assert.deepEqual(b.coordinates, coordinates(b.id), b.id);
   // 154 before the open question 26 widening, 206 before Lorong 17 (open question 35), 217 before Lorong 19 (open question 42), 237 before Sims Avenue Nos. 136-144 (open question 43), 242 before Lorong 21 (open question 47), 264 before Lorong 14 (open question 51), 289 before Lorong 16 (open question 61), 321 before Lorong 18 (open question 71).
-  assert.equal(map.buildings.length, 425); // 403 before No. 105 Sims Avenue (open question 90), 404 before the Lorong 23 corner (open question 91), 405 before Lorongs 6-12 south (open question 92) // 347 before the north side of Sims Avenue (open question 83), 376 before Geylang Road Nos. 352-364 (open question 86), 383 before Lorong 17 north of Sims Avenue (open question 87), 387 before Lorongs 19 and 21 north of it (open question 88), 398 before Lorong 21A north of it (open question 89)
+  assert.equal(map.buildings.length, 437); // 425 before Lorong Bachok (open question 93), 403 before No. 105 Sims Avenue (open question 90), 404 before the Lorong 23 corner (open question 91), 405 before Lorongs 6-12 south (open question 92) // 347 before the north side of Sims Avenue (open question 83), 376 before Geylang Road Nos. 352-364 (open question 86), 383 before Lorong 17 north of Sims Avenue (open question 87), 387 before Lorongs 19 and 21 north of it (open question 88), 398 before Lorong 21A north of it (open question 89)
   // 34 road ways, plus the seven Lorong 15 ways added under open question 10.
   // 41 roads before Lorongs 9, 10 and 12 joined the derived set (open question 24); the access way is now one of them.
   // 63 before Lorong 17's seven lane ways and its four Geylang Road and Sims Avenue links (open question 35), and 74
@@ -38,7 +38,7 @@ test('alley import keeps source geometry and the overlooked Lorong 11 footway', 
   // Sims Avenue (open question 87), and 160 before twelve ways of Lorongs 19 and 21 north of it (open question 88), and 172 before Lorong
   // 21A's three (open question 89), and 175 before Sims Avenue's way past Lorong 21A (open question 91), and 176 before
   // Lorongs 6, 8 and 12 and the service road south of the rectangle (open question 92).
-  assert.equal(map.roads.length, 190, 'the derived road set is unchanged apart from the approved additions and the widened bounds');
+  assert.equal(map.roads.length, 192, 'the derived road set is unchanged apart from the approved additions and the widened bounds');
   assert.ok(map.roads.some(r => r.id === templeAlley.accessId), 'the Lorong 9 access way is now a derived road');
   const [service, footway] = alleyRoutes(map);
   assert.deepEqual(service.b, footway.a);
