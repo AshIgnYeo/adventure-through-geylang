@@ -349,7 +349,7 @@ Started: 10 October 2026.
 
 93. **Lorong Bachok between Lorongs 19 and 21: walk it, with its row and the two blocks behind Lorong 19's east side?**
     - **Evidence:** the middle of Lorong Bachok (ways 666807846 and 762269508) joins the two mouths already taken with Lorongs 19 and 21. Along its north side the source has twelve outlines (ways 454254315 to 454254328), and south of it two blocks behind Lorong 19's east side: the rear of Bougainvilla Apartments (way 454254245), whose listing point lies in it, and the block behind the Lorong 21 corner (454254242). KartaView's drive of 16 May 2023 (sequence 8344809, frames 3147-3172) runs along Lorong Bachok. Its frames show eleven houses on the twelve outlines, which squares with Tan Ser Seng's face standing 3.25 m beyond its outline.
-    - **Status:** done on the owner's instruction to carry on mapping. The row is measured from four solved frames and laid as eleven equal houses of 6.37 m over the twelve outlines, each outline taking its slice of the one elevation; every house is unnamed and its boards drawn blank. The two blocks south of the lane stand 35-75 m back behind a car park and trees, too far to measure from this drive, and are left out. See `docs/lorong-bachok-brief.md`. The commits stand apart.
+    - **Status:** done on the owner's instruction to carry on mapping. The row is measured from four solved frames and laid as eleven equal houses of 6.37 m over the twelve outlines, each outline taking its slice of the one elevation; every house is unnamed and its boards drawn blank. The two blocks south of the lane stand 35-75 m back behind a car park and trees, too far to measure from this drive, and are left out. The same drive's loop through the car park west of Lorong 21 (frames 2983-2986) shows a tall blank grey wall where the first stands, but not where it parts from Bougainvilla's front block; the second is hidden behind Lorong 21's west row and Geylang Road's north side. See `docs/lorong-bachok-brief.md`. The commits stand apart.
     - **For the owner:** should the twelve outlines be redrawn as the eleven photographed houses (an authored footprint, as for Lorong 19's east side), so the party walls, roofs and five-foot way joins fall where the houses do? And should the two blocks south of the lane wait for a walk along the service roads behind them?
     - **Recommendation:** yes.
     - **Unlocks:** the last unmodelled row between Geylang Road and Sims Avenue inside the extract.
@@ -359,6 +359,12 @@ Started: 10 October 2026.
     - **Status:** done on the owner's instruction to carry on mapping, on question 87's terms, as photographed massing; every building unnamed (question 84). The source's lane stops about 50 m short of Sims Avenue, so its corridor runs on 36 m along its line to reach Winsome Apartments' front. See `docs/lorong-7-brief.md`. The commits stand apart.
     - **Recommendation:** yes.
     - **Unlocks:** the extract's west edge between Geylang Road and Sims Avenue.
+
+95. **The service road between Lorongs 21 and 23 (way 533012566): leave the Singapore Badminton Hall and the shed east of it until there is imagery from the road itself?**
+    - **Evidence:** the hall (way 452646021, about 76 by 40 m) and a long shed (way 454254161) stand mid-block between Geylang Road and Sims Avenue, on a service road from Lorong 21 to Lorong 23 that no KartaView drive of 2023 runs along. From Lorong 21 (sequence 8344809, frames 2980 and 2991) and from Lorong 23 (frame 3029) the hall shows only as a grey metal roof and blue-grey cladding behind other buildings, so its walls and height cannot be read; the shed shows as a long single-storey building under a corrugated metal roof. They are the last outlines inside the extract that are neither modelled nor waiting on question 81's extension, apart from the two blocks south of Lorong Bachok (question 93).
+    - **Status:** not modelled.
+    - **Recommendation:** wait for imagery taken on the service road (a site visit, or Street View if its tiles can be used), rather than model the hall from glimpses; its height alone could be off by 10 m.
+    - **Unlocks:** the hall, a landmark of the area, and the block's interior.
 
 ## Settled
 
