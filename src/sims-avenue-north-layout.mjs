@@ -172,5 +172,136 @@ export const no193 = {
   }],
 };
 
-export const simsAvenueNorth = [no183, no185, no187, no189, no191, no193];
+// Nos. 197-205 are plainer two-storey houses: rectangular windows under round vents and a flat eave. Read in frames from
+// the 24 May drive (No. 195 and No. 197) and the 25 May drive (Nos. 199-205), whose positions are solved the same way.
+const modern = (colours, o = {}) => row({ trim: colours.wall, frame: '#2e3032', glass: '#262e32', ...colours }, { roof: { type: 'flat', colour: '#8f9396' }, ...o });
+const vents = (us, h) => us.map(u => ({ name: 'round vent', u: [+(u - .08).toFixed(3), +(u + .08).toFixed(3)], h: [h - .08, h + .08], out: .01, depth: .02, colour: '#3a3836' }));
+const eave = (W, h, colour = '#9a9c9a', depth = .7) => ({ name: 'flat eave', u: [0, W], h, out: depth / 2, depth, colour });
+const modernNote = ' Read on the source front in a near-frontal frame whose position and heading are solved from the party walls (open question 84). Heights are above the five-foot-way floor and carry about ±0.4 m; the five-foot way\'s depth is estimated.';
+
+export const no195 = {
+  ...row({ wall: '#e8d24a', trim: '#e2cb44', frame: '#2a2c2c', glass: '#2a3236', pier: '#e8d24a', back: '#3a3632' }, { height: 7.8, ceiling: 3.9 }),
+  id: 'sa-195', buildingIds: ['454254359'], kind: 'unnamed', unnamed: true,
+  name: 'No. 195 Sims Avenue (May 2023 exterior, occupant not identified)', address: '195 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a yellow Late-style house, a little lower than its neighbours: three dark windows under yellow arches between pilasters with green and white strips, the middle one over a small iron balcony grille, tile panels under the others, a yellow frieze under a grey gutter, and a thick moulded beam on bulging yellow piers over the five-foot way, behind which a brown door and a roller shutter. A blue blade sign reading 天下 hangs at the east pier; listings could not be checked (open question 84), so it is drawn blank and no name is given.' + lateNote,
+  sources: [way('454254359'), kv('8348649', '2758'), kv('8350297', '5492')],
+  windows: arched([[1.24, 2.13], [2.64, 3.53], [4.03, 4.91]], [5.19, 6.3], [5.19, 6.3]),
+  pilasters: [[.7, 1.1, 4.4, 6.9], [2.13, 2.53, 4.4, 6.9], [3.57, 3.96, 4.4, 6.9], [4.96, 5.3, 4.4, 6.9]],
+  ...(({ blocks, ...rest }) => ({ ...rest, blocks: [
+    ...blocks.filter(b => b.name !== 'eaves fascia'), ...whiteDetail([[.7, 1.1, 4.4, 6.9], [2.13, 2.53, 4.4, 6.9], [3.57, 3.96, 4.4, 6.9], [4.96, 5.3, 4.4, 6.9]], [6.94, 7.6], 5.314, '#e4efe6'),
+    eave(5.314, [7.73, 7.94], '#8a8c8a', .5),
+    { name: 'iron balcony grille', u: [2.68, 3.49], h: [4.33, 5.13], out: .12, depth: .04, colour: '#2e2a26' },
+    { name: 'moulded beam', u: [.15, 5.15], h: [3.9, 4.3], out: .1, depth: .2, colour: '#e2cb44' },
+    { name: 'blank blue blade sign, held flat', u: [5.0, 5.12], h: [4.9, 6.5], out: .12, depth: .2, colour: '#3a7ac8' },
+  ] }))(lateParts(5.314, { frieze: [6.94, 7.6], eaves: [7.73, 7.94], ledge: [4.3, 4.4], panels: [[1.24, 2.13], [4.03, 4.91]], pierW: .45 })),
+  backFittings: [
+    { name: 'brown door', u: [1.8, 2.5], h: [.3, 2.3], colour: '#5a3a2a' },
+    { name: 'roller shutter', u: [2.6, 4.9], h: [.3, 2.6], colour: '#c8c8c4' },
+  ],
+};
+
+export const no197 = {
+  ...modern({ wall: '#e4dccb', frame: '#3a2e28', glass: '#4a4642', pier: '#e4dccb' }, { height: 7.95, ceiling: 3.2 }),
+  id: 'sa-197', buildingIds: ['454254360'], kind: 'unnamed', unnamed: true,
+  name: 'No. 197 Sims Avenue (May 2023 exterior, occupant not identified)', address: '197 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a cream house with a flat eave: three brown-framed windows with curtains under three round vents, an air-conditioner under the east one, and over the five-foot way a white board painted with parrots reading AIK GUAN PETT TRADING, EXPORTER & IMPORTRTER OF BIRDS, since 1978, over a red door and a shop of birdcages. Listings could not be checked (open question 84), so the board is drawn blank and no name is given.' + modernNote,
+  sources: [way('454254360'), kv('8348649', '2758'), kv('8350297', '5492')],
+  windows: [[.82, 1.89], [2.31, 3.35], [3.75, 4.78]].map(u => ({ u, h: [5.23, 6.97], panes: 2 })),
+  blocks: [
+    eave(5.323, [7.94, 8.16]), ...vents([.71, 2.07, 3.49], 7.23),
+    { name: 'air-conditioner, held flat', u: [4.18, 5.07], h: [4.51, 5.13], out: .12, depth: .24, colour: '#e8e8e4' },
+    { name: 'blank white board', u: [.38, 5.21], h: [3.23, 4.09], out: .1, depth: .06, colour: '#f0efe8' },
+  ],
+  piers: [[0, .3], [5.023, 5.323]],
+  backFittings: [
+    { name: 'red door', u: [.78, 1.57], h: [.2, 2.5], colour: '#8a2a24' },
+    { name: 'birdcage shop', u: [1.92, 5.0], h: [.2, 2.8], colour: '#4a2a26', glow: .06 },
+  ],
+};
+
+export const no199 = {
+  ...modern({ wall: '#ecc8d6', frame: '#3a3a3c', glass: '#3c4e5c', pier: '#ecc8d6', back: '#e8c4d2' }, { height: 8.0, ceiling: 3.25 }),
+  id: 'sa-199', buildingIds: ['454254361'], kind: 'unnamed', unnamed: true,
+  name: 'No. 199 Sims Avenue (May 2023 exterior, occupant not identified)', address: '199 Sims Avenue (plate 199)',
+  evidence: 'KartaView panoramas of May 2023 show a pink house with a flat eave: three windows under round vents, the name Temptations with EST 1985 lettered on the wall and the plate 199 below it, and the five-foot way entered through a wide arch, behind which a pink glass shopfront with a tiled counter. Listings could not be checked (open question 84), so the lettering is drawn as a blank panel and no name is given.' + modernNote,
+  sources: [way('454254361'), kv('8350297', '5492'), kv('8348649', '2758')],
+  windows: [[.89, 1.86], [2.25, 3.25], [3.6, 4.63]].map(u => ({ u, h: [4.8, 6.61], panes: 2 })),
+  blocks: [
+    eave(5.314, [7.94, 8.23]), ...vents([2.07, 3.43, 4.79], 6.91),
+    { name: 'blank lettering panel', u: [1.53, 3.89], h: [3.66, 4.59], out: .02, depth: .04, colour: '#e2b8ca' },
+    ...[[.55, 1.1], [4.2, 4.8]].map(u => ({ name: 'arch haunch', u, h: [2.59, 3.25], out: -.03, depth: .06, colour: '#ecc8d6' })),
+  ],
+  piers: [[0, .6], [4.82, 5.314]],
+  backFittings: [
+    { name: 'dark grey door', u: [.82, 1.6], h: [.3, 2.7], colour: '#3a3e42' },
+    { name: 'pink glass shopfront', u: [1.67, 4.32], h: [.3, 2.6], colour: '#e8a8bc', glow: .08 },
+  ],
+};
+
+export const no201 = {
+  ...modern({ wall: '#ecebe6', frame: '#2e3032', glass: '#222a2e', pier: '#ecebe6' }, { height: 8.2, ceiling: 3.2 }),
+  id: 'sa-201', buildingIds: ['454254362'], kind: 'unnamed', unnamed: true,
+  name: 'No. 201 Sims Avenue (May 2023 exterior, occupant not identified)', address: '201 Sims Avenue (plate 201)',
+  evidence: 'KartaView panoramas of May 2023 show a white house with a flat eave: three large dark windows under round vents, over the five-foot way a red board reading 新科昱 燕窩貿易私人有限公司 S.K.Y. Birdnest Trading Pte Ltd, a white blade sign with a black swift at the east pier, the plate 201 on that pier, and a dark glass shopfront. Listings could not be checked (open question 84), so the board and the blade are drawn blank and no name is given.' + modernNote,
+  sources: [way('454254362'), kv('8350297', '5492'), kv('8350297', '5494')],
+  windows: [[.6, 1.85], [2.17, 3.45], [3.83, 5.14]].map(u => ({ u, h: [4.9, 6.83], panes: 3 })),
+  blocks: [
+    eave(5.314, [8.16, 8.44]), ...vents([1.97, 3.64], 7.23),
+    { name: 'blank red board', u: [.28, 5.27], h: [3.23, 4.13], out: .1, depth: .06, colour: '#c8282a' },
+    { name: 'blank white blade sign, held flat', u: [5.15, 5.27], h: [4.37, 5.73], out: .12, depth: .2, colour: '#f0f0ec' },
+  ],
+  piers: [[0, .3], [4.71, 5.314]],
+  backFittings: [
+    { name: 'dark glass shopfront', u: [.3, 3.28], h: [.3, 3.0], colour: '#2a3236', glow: .05 },
+    { name: 'stacked water bottles', u: [3.71, 4.65], h: [.1, 1.6], colour: '#8ab0c8' },
+  ],
+};
+
+export const no203 = {
+  ...modern({ wall: '#d4d6d6', frame: '#2e3032', glass: '#2a3034', pier: '#d4d6d6' }, { height: 8.3, ceiling: 3.4 }),
+  id: 'sa-203', buildingIds: ['454254363'], kind: 'unnamed', unnamed: true,
+  name: 'No. 203 Sims Avenue (May 2023 exterior, occupant not identified)', address: '203 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a pale grey house under a deep flat eave: three windows under round vents, and over the five-foot way a dark board reading DIVIN WINE over a glass front stacked with bottled water and crates. Listings could not be checked (open question 84), so the board is drawn blank and no name is given.' + modernNote,
+  sources: [way('454254363'), kv('8350297', '5494'), kv('8348649', '2759')],
+  windows: [[.6, 1.62], [2.37, 3.47], [3.86, 4.9]].map(u => ({ u, h: [5.19, 7.04], panes: 2 })),
+  blocks: [
+    { ...eave(5.325, [8.3, 8.6], '#9a9c9a', .9) }, ...vents([2.19, 3.33, 4.83], 7.3),
+    { name: 'blank dark board', u: [.2, 4.26], h: [3.7, 4.41], out: .1, depth: .06, colour: '#3a3436' },
+  ],
+  piers: [[0, .3], [5.025, 5.325]],
+  backFittings: [{ name: 'glass front with bottled water', u: [.3, 5.0], h: [.4, 3.3], colour: '#6a7c88', glow: .05 }],
+};
+
+export const no205 = {
+  ...modern({ wall: '#e8e6dc', frame: '#3a3a36', glass: '#2e3436', pier: '#ecebe4', back: '#e8e6de' }, { height: 8.4, ceiling: 3.75 }),
+  id: 'sa-205', buildingIds: ['454254364'], kind: 'unnamed', unnamed: true,
+  name: 'No. 205 Sims Avenue (May 2023 exterior, occupant not identified)', address: '205 Sims Avenue (the Lorong 21A corner)',
+  evidence: 'KartaView panoramas of May 2023 show the corner coffeeshop at Lorong 21A: a white two-storey house under a deep eave with a timber soffit, four windows, two of them under small metal hoods and one over an air-conditioner, square piers banded in brown and round columns at the splayed corner, maroon awnings over the five-foot way, and the tables of the coffeeshop behind. Its stalls\' signs are a yellow board reading 阿顺(火炭)炒福建虾面 over the east bay, a red blade reading 黃氏雲吞麵 WONG\'S WAN TAN MEE at the west pier, a red vertical board at the corner and a green blade marked KS 21. Listings could not be checked (open question 84), so all are drawn blank and no name is given. The Lorong 21A face is not covered by a usable frame, so it is left plain.' + modernNote,
+  sources: [way('454254364'), kv('8350297', '5494'), kv('8350297', '5495'), kv('8348649', '2760')],
+  windows: [
+    { u: [1.48, 2.87], h: [4.87, 6.66], panes: 2 }, { u: [3.34, 4.65], h: [4.87, 6.66], panes: 2 },
+    { u: [6.25, 7.34], h: [4.8, 7.09], panes: 2 }, { u: [7.87, 9.05], h: [4.8, 7.09], panes: 2 },
+  ],
+  blocks: [
+    eave(9.513, [8.37, 8.7], '#d8d4c8', 1.2), ...vents([1.01, 2.44, 2.94, 6.08, 7.65], 7.58),
+    ...[[1.48, 2.87], [3.34, 4.65]].map(u => ({ name: 'window hood', u, h: [6.75, 6.95], out: .3, depth: .6, colour: '#8a8c88' })),
+    { name: 'air-conditioner, held flat', u: [3.3, 4.48], h: [4.16, 5.09], out: .12, depth: .24, colour: '#e8e8e4' },
+    { name: 'first-floor slab', u: [0, 9.513], h: [3.73, 4.0], out: .1, depth: .2, colour: '#e8e6dc' },
+    { name: 'maroon awning, held flat', u: [.37, 5.58], h: [2.73, 3.23], out: .12, depth: .2, colour: '#6a2a2a' },
+    { name: 'maroon awning, held flat', u: [5.68, 9.45], h: [2.73, 3.23], out: .12, depth: .2, colour: '#6a2a2a' },
+    { name: 'blank yellow board', u: [6.01, 9.3], h: [2.99, 3.76], out: .1, depth: .06, colour: '#e8de7a' },
+    { name: 'blank red blade sign, held flat', u: [.05, .17], h: [4.16, 7.37], out: .12, depth: .2, colour: '#d23a2a' },
+    { name: 'blank red corner board, held flat', u: [9.35, 9.47], h: [4.0, 7.0], out: .12, depth: .2, colour: '#b8322a' },
+    ...[[7.94, 8.37], [9.05, 9.5]].map(u => ({ name: 'round column', u, h: [0, 3.73], out: -.25, depth: .45, colour: '#f0efe8' })),
+    ...[[.22, 1.44], [5.37, 6.01], [7.94, 8.37], [9.05, 9.5]].map(u => ({ name: 'brown band', u, h: [1.35, 1.6], out: .01, depth: .02, colour: '#7a4a32' })),
+  ],
+  piers: [[.22, 1.44], [5.37, 6.01]],
+  backFittings: [
+    { name: 'grille gate', u: [2.22, 3.58], h: [.2, 2.6], colour: '#8a8a86' },
+    { name: 'white-tiled stall front', u: [3.58, 5.37], h: [.1, 1.5], colour: '#ecebe6' },
+    { name: 'coffeeshop with tables', u: [6.01, 9.3], h: [.1, 2.7], colour: '#d8d2c4', glow: .06 },
+  ],
+};
+
+export const simsAvenueNorth = [no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
 export const simsAvenueNorthFrame = laneFrame, simsAvenueNorthLayout = laneLayout, simsAvenueNorthUpper = laneUpper, simsAvenueNorthReviews = laneReviews, simsAvenueNorthSides = laneSides;

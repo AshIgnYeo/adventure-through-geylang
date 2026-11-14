@@ -17,14 +17,14 @@ The frames' GPS positions lag along the drive and their recorded headings drift 
 
 1. **Pose:** in each frame used, the party walls are read at the five-foot-way piers, or at the upper storey where vehicles hide the piers, and matched to the source footprint corners, with house numbers on signs anchoring the match. The frame's position and heading offset are then solved by least squares. On 24 May the positions sat 11.9-13.9 m east and 1.2-2.5 m south of their GPS fixes, and the heading offsets ranged from −0.7° to −5.9°; the fits leave residuals of 0.08-0.8°.
 2. **Plane:** each façade is rectified onto its source front from two frames. With the poses solved, the frames agree on the source front within about 0.3 m along the row and 0.2 m in height, so the elevations are read there, as the Street View walks read theirs where the panoramas agreed.
-3. **Heights:** the cameras ride about 2.9 m above the five-foot-way floor. Heights are read above that floor in each frame, which also takes out each frame's small tilt; they carry about ±0.4 m.
+3. **Heights:** the 24 May camera rides about 2.9 m above the five-foot-way floor, the 25 May one, nearer the kerb, about 2.3 m. Heights are read above that floor in each frame, which also takes out each frame's small tilt; they carry about ±0.4 m.
 4. **Near-frontal reading:** each building is read in a mosaic that takes every column from the frame most nearly opposite it.
 
 The street fronts stand 6.6-7.3 m from Sims Avenue's centreline, at its estimated carriageway's edge, so awnings, low blade signs and air-conditioners are held within 0.25 m of the walls (`heldFlat`), as on the Geylang Road row east of Lorong 17.
 
 ## Status, 14 November 2026
 
-**In progress; six of 29 buildings modelled.** Nos. 183-193 are done. Nos. 195-205 come next, from the 25 May drive, since trucks parked on 24 May hide their five-foot ways.
+**In progress; 12 of 29 buildings modelled.** The row from Lorong 21 to Lorong 21A, Nos. 183-205, is done. The walk continues west from Lorong 21.
 
 ## Lorong 21 to Lorong 21A
 
@@ -69,4 +69,44 @@ The street fronts stand 6.6-7.3 m from Sims Avenue's centreline, at its estimate
 - **Signs:** a pale blue board reads POLAR ICE 永晟白钢厨具, One stop commercial kitchen equipment supplies, with a narrower dark blue board below; a tall POLAR ICE blade at the east pier is numbered 193. All drawn blank.
 - **Heights:** eaves 8.43-8.57 m, windows 5.5-6.79 m, boards 2.71-4.21 m, blade 4.57-8.0 m.
 
-Use `?review=sa-183`, `?review=sa-185`, `?review=sa-187`, `?review=sa-189`, `?review=sa-191` and `?review=sa-193`.
+### Stop 7: No. 195 (way 454254359)
+
+- **Building:** yellow Late-style, a little lower than its neighbours: three dark windows under yellow arches between pilasters with green and white strips, the middle one over a small iron balcony grille, tile panels under the others, a yellow frieze under a grey gutter. A thick moulded beam on bulging yellow piers spans the five-foot way, behind which a brown door and a roller shutter.
+- **Signs:** a blue blade at the east pier reads 天下. Drawn blank.
+- **Heights:** eaves 7.73-7.94 m, frieze 6.94-7.6 m, windows 5.19-6.3 m, beam 3.9-4.3 m.
+- **Frames:** 8348649/2758 (24 May), with 8350297/5492.
+
+### Stop 8: No. 197 (way 454254360)
+
+- **Building:** a plainer cream house with a flat eave: three brown-framed windows with curtains under three round vents, an air-conditioner under the east one.
+- **Signs:** a white board painted with parrots reads AIK GUAN PETT TRADING, EXPORTER & IMPORTRTER OF BIRDS, since 1978 (the board's spellings). Drawn blank.
+- **Heights:** eave 7.94-8.16 m, windows 5.23-6.97 m, board 3.23-4.09 m.
+
+### Stop 9: No. 199 (way 454254361)
+
+- **Building:** pink, with a flat eave: three windows under round vents, the five-foot way entered through a wide arch (drawn as piers with haunches), and behind it a pink glass shopfront with a tiled counter.
+- **Signs:** Temptations, with EST 1985, lettered on the wall, and the plate 199. Drawn as a blank panel.
+- **Heights:** eave 7.94-8.23 m, windows 4.8-6.61 m, lettering 3.66-4.59 m, arch to 3.25 m.
+- **Frames:** 8350297/5492 (25 May), with 8348649/2758.
+
+### Stop 10: No. 201 (way 454254362)
+
+- **Building:** white, with a flat eave: three large dark windows under round vents, a dark glass shopfront, the plate 201 on the east pier.
+- **Signs:** a red board reads 新科昱 燕窩貿易私人有限公司, S.K.Y. Birdnest Trading Pte Ltd; a white blade at the east pier carries a black swift. Both drawn blank.
+- **Heights:** eave 8.16-8.44 m, windows 4.9-6.83 m, board 3.23-4.13 m.
+
+### Stop 11: No. 203 (way 454254363)
+
+- **Building:** pale grey, under a deep flat eave: three windows under round vents, and a glass front stacked with bottled water and crates.
+- **Signs:** a dark board reads DIVIN WINE. Drawn blank.
+- **Heights:** eave 8.3-8.6 m, windows 5.19-7.04 m, board 3.7-4.41 m.
+- **Frames:** 8350297/5494 (25 May), with 8348649/2759, whose camera was tilted.
+
+### Stop 12: No. 205, the Lorong 21A corner (way 454254364)
+
+- **Building:** the corner coffeeshop: white, two storeys, under a deep eave with a timber soffit; four windows, two under small metal hoods and one over an air-conditioner; square piers banded in brown, round columns at the splayed corner, maroon awnings over the five-foot way and the coffeeshop's tables behind.
+- **Signs:** a yellow board over the east bay reads 阿顺(火炭)炒福建虾面 with its dishes; a red blade at the west pier reads 黃氏雲吞麵 WONG'S WAN TAN MEE; a red vertical board hangs at the corner and a green blade is marked KS 21. All drawn blank.
+- **Lorong 21A face:** not covered by a usable frame, so it is left plain for now.
+- **Heights:** eave 8.37-8.7 m, windows 4.8-7.09 m, first-floor slab 3.73-4.0 m, awnings 2.73-3.23 m.
+
+Use `?review=sa-183`, `?review=sa-185`, `?review=sa-187`, `?review=sa-189`, `?review=sa-191`, `?review=sa-193`, `?review=sa-195`, `?review=sa-197`, `?review=sa-199`, `?review=sa-201`, `?review=sa-203` and `?review=sa-205`.
