@@ -259,7 +259,8 @@ Started: 10 October 2026.
       - The retained extract's east edge is 103.8812 E. Lorong 20's thirteen ways run between 103.8812 and 103.8814 E, from Geylang Road at about 1.3129 N to Guillemard Road at about 1.3104 N, so the lane itself lies just outside the extract. Only two address points on it are inside.
       - **West side:** the deep outlines behind Lorong 18's east side (ways 121873024 and 454274591) are already in the extract and face Lorong 20 ([Lorong 18 brief](lorong-18-brief.md)).
       - **East side:** the block between Lorong 20 and Lorong 22 holds 23 outlines with their centres within about 70 m of Lorong 20, none of them in the extract. Four are addressed to Lorong 22, so the block's depth is shared between the two lanes.
-      - **Geylang Road:** Nos. 352–364, east of Lorong 18's east corner, were left for Lorong 20 under question 71.
+      - **Geylang Road:** Nos. 352–364, east of Lorong 18's east corner, were left for Lorong 20 under question 71. Since 14 November they are modelled on their own (question 86).
+      - **Geylang Road, north side at Lorong 23:** the two outlines opposite No. 364 (ways 454254143 and 454254140) straddle the extract's east edge. KartaView's May 2023 frames show an open-sided food centre under a blue roof behind a fence, and a pink four-storey block at the Lorong 23 corner; the food centre's outline does not match what is photographed. They are left for the same extension.
     - **Recommendation:** yes, together with questions 52 and 62. Retrieve one dated extract reaching about 103.8822 E and 1.3095 N, keep `public/osm-source.osm` as the retained source, and take each lane's ways and buildings in by id. Then walk Lorong 20 from Geylang Road to Guillemard Road, with Nos. 352–364 Geylang Road and the corners at both ends, on its own branch and brief.
     - **Unlocks:** the next lane east, and Geylang Road's south side carried on from Lorong 18.
 
