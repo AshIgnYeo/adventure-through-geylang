@@ -354,6 +354,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the last unmodelled row between Geylang Road and Sims Avenue inside the extract.
 
+94. **Lorong 7 at the extract's west edge: walk it, with the plots on both sides not yet in the map and the two west of the modelled Sims Avenue north side?**
+    - **Evidence:** Lorong 7's three ways in the source (666812086, 634186084 and 666812085) run from Geylang Road's back lane north to about 50 m short of Sims Avenue, on the extract's west edge. Its east side is already in the map (Centra Residence and the blocks south of it); not yet in it are the Shan Fook Tong Temple (No. 5, way 453797931) and the plot south of it (453797933) on the west side, Winsome Apartments (No. 18, way 1223603462) at the Sims Avenue end, and two plots north of Sims Avenue west of the modelled side (ways 1223603463 and 439168657). KartaView's drives of 16, 17 and 19 May 2023 run down the lane (sequences 8344809, 8344873 and 8344969), and four drives pass along Sims Avenue. JCUS Block C (way 304613525) at the extract's north edge is left out: no lane in the map reaches it.
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms, as photographed massing; every building unnamed (question 84). The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the extract's west edge between Geylang Road and Sims Avenue.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
