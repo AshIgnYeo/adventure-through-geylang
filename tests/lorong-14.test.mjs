@@ -27,7 +27,8 @@ test('Lorong 14 brings in its own buildings, its east corner block and the Geyla
   // Lorong 16's corner (Nos. 310-314) and its west side are walked with Lorong 16, not here; the Talma Road row waits.
   const claimed = new Set(lorong14.flatMap(p => p.buildingIds));
   for (const id of ['764372570', '764372571', '764372569', '763764689', '763764687']) assert.equal(claimed.has(id), false, id);
-  for (const id of ['454438325', '454438317']) assert.equal(ids.has(id), false, id);
+  // Nos. 454438325 and 454438317, west of the lane on Lorongs 10 and 12, came in later with question 92.
+  for (const id of ['454438325', '454438317']) assert.equal(ids.has(id), true, id);
   assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 14 Geylang').length, 13);
   // Talma Road's east mouth is kept as road.
   assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Talma Road').map(r => r.id), ['644896804']);

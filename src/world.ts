@@ -1,73 +1,13 @@
 import * as pc from 'playcanvas';
-import {project, nearestOnSegment, roadWidth, pointInPolygon, studyArea} from './geo.mjs';
-import { landmarkFor, landmarkReviewPoint } from './landmarks.mjs';
+import {project, roadWidth, studyArea} from './geo.mjs';
+import { coreLandmarkFor as landmarkFor, landmarkReviewPoint } from './core-landmarks.mjs';
 import { buildLandmark } from './landmark-models';
 import { buildShanYuanTang } from './shan-yuan-tang';
 import { buildLeongKeeRearContext } from './leong-kee-exterior';
 import { buildMongkokCorner } from './mongkok';
-import { buildRingEast } from './ring-east';
-import { buildLorong17 } from './lorong-17';
-import { buildLorong19 } from './lorong-19';
-import { buildLorong21 } from './lorong-21';
-import { buildLorong14 } from './lorong-14';
-import { buildLorong16 } from './lorong-16';
-import { buildLorong18 } from './lorong-18';
-import { buildRingWest } from './ring-west';
-import { buildRingC } from './ring-c';
-import { buildRingA } from './ring-a';
-import { buildRingB } from './ring-b';
-import { buildFrogPorridge } from './frog-porridge';
-import { buildBuddhistArtCentre } from './buddhist-art-centre';
-import { buildEatFirst } from './eat-first';
-import { buildKHotel } from './k-hotel';
-import { buildSikWaiSin } from './sik-wai-sin';
-import { buildRrMotor } from './rr-motor';
-import { buildGoldenJade } from './golden-jade';
-import { buildKtv277 } from './ktv-277';
-import { buildEros } from './eros';
-import { buildPlusMobile } from './plus-mobile';
-import { buildLannaThai } from './lanna-thai';
-import { buildJiangsu } from './jiangsu';
-import { buildLiuDaMa } from './liu-da-ma';
-import { buildMuhammadiyah } from './muhammadiyah';
-import { buildFsl } from './fsl';
-import { buildBarLorong13 } from './bar-lorong-13';
-import { buildChenHing } from './chen-hing';
-import { buildAiSecurity } from './aisecurity';
-import { buildMisterContracts } from './mister-contracts';
-import { buildEngLeeHuat } from './eng-lee-huat';
-import { buildGoodwood } from './goodwood';
-import { buildTbss } from './tbss';
-import { buildZhengLi } from './zheng-li';
-import { buildGeylangRow } from './geylang-row';
-import { buildBeefKwayTeow } from './beef-kway-teow';
-import { buildWatDhammasatis } from './wat-dhammasatis';
-import { buildRedDot } from './red-dot';
-import { buildGuanKeat } from './guan-keat';
-import { buildMingLi } from './ming-li';
-import { buildHotel81Spring } from './hotel-81-spring';
-import { buildPfcs } from './pfcs';
-import { buildCico } from './cico';
-import { buildGemsVille } from './gems-ville';
-import { buildLorong13 } from './lorong-13';
-import { buildLorong11 } from './lorong-11';
-import { buildSimsSouth } from './sims-south';
-import { buildGeylangNorth } from './geylang-north';
-import { buildGeylangSouth } from './geylang-south';
-import { buildLorong15 } from './lorong-15';
-import { buildIbisGold } from './ibis-gold';
-import { buildSimsNorthRow } from './sims-north-row';
-import { buildLorong9 } from './lorong-9';
-import { buildLamClan } from './lam-clan';
-import { buildHainanLim } from './hainan-lim';
-import { buildSuiYuanJu } from './sui-yuan-ju';
-import { buildChongMin } from './chong-min';
-import { buildFooHuiSiawLim } from './foo-hui';
-import { buildSimsNorthPair } from './sims-north';
-import { buildFokWaiKee } from './fok-wai-kee';
-import { buildHongYeChen } from './hong-ye-chen';
-import { buildKGroup } from './k-group';
 import { thyeSengRoofTriangles } from './thye-seng-layout.mjs';
+import { builderModule, loadBuilder, type Builder } from './builder-registry';
+import { FootprintGrid, SegmentGrid } from './spatial-grid.mjs';
 import { buildAlleyGround, buildAlleyExteriors, buildAlleyLowContext } from './temple-alley';
 export type Point = [number,number];
 type Road = {id:string;name:string;oneway:string;lanes:number;coordinates:Point[]};
@@ -85,6 +25,8 @@ export class World {
   sun:pc.Entity; camera:pc.Entity; ground:pc.StandardMaterial;
   private materials=new Map<string,pc.StandardMaterial>();
   private tiles=new Map<string,pc.Entity>();private merging=false;
+  // Collision and road lookups test only nearby footprints and segments, so they stay flat as the map grows.
+  private walkGrid=new FootprintGrid(.28);private roadGrid:SegmentGrid;
   reviewSpawns = new Map<string, {p: Point; yaw: number; pitch?: number}>();
   constructor(app:pc.AppBase,data:MapData,camera:pc.Entity){
     this.app=app;this.data=data;this.camera=camera;
@@ -98,6 +40,7 @@ export class World {
       const len=Math.hypot(b[0]-a[0],b[1]-a[1]);if(len<.1)continue;
       this.segments.push({a,b,width:roadWidth(r),name:r.name,oneway:r.oneway,length:len,dx:(b[0]-a[0])/len,dz:(b[1]-a[1])/len});
     }
+    this.roadGrid=new SegmentGrid(this.segments);
   }
   mat(hex:string,glow=0){const key=hex+glow;if(this.materials.has(key))return this.materials.get(key)!;const m=new pc.StandardMaterial();m.diffuse=color(hex);m.useMetalness=true;m.metalness=.04;m.gloss=glow?.45:.2;if(glow){m.emissive=color(hex);m.emissiveIntensity=glow;this.emissives.push(m);}m.update();this.materials.set(key,m);return m;}
   // Merged parts draw only through their tile's batches, so they stay out of the layers.
@@ -127,7 +70,10 @@ export class World {
   }
   async build(){
     this.merging=true;
-    const [atlas,heritageTexture]=await Promise.all([this.loadTexture('Shophouse textures','/shophouse-atlas.webp'),this.loadTexture('Lorong 11 reference-led heritage','/lorong-11-heritage-atlas.webp')]);atlas.anisotropy=4;heritageTexture.anisotropy=4;
+    // Only the builder modules this map's buildings need are loaded, alongside the atlases.
+    const modules=[...new Set(this.data.buildings.map(b=>builderModule.get(b.id)).filter((m):m is string=>!!m))];
+    const [atlas,heritageTexture,loaded]=await Promise.all([this.loadTexture('Shophouse textures','/shophouse-atlas.webp'),this.loadTexture('Lorong 11 reference-led heritage','/lorong-11-heritage-atlas.webp'),Promise.all(modules.map(async m=>[m,await loadBuilder.get(m)!()] as [string,Builder]))]);atlas.anisotropy=4;heritageTexture.anisotropy=4;
+    const builders=new Map(loaded);
     const facade=new pc.StandardMaterial();facade.diffuseMap=atlas;facade.diffuse=new pc.Color(.94,.94,.94);facade.cull=pc.CULLFACE_NONE;facade.gloss=.12;facade.update();
     const heritage=new pc.StandardMaterial();heritage.diffuseMap=heritageTexture;heritage.cull=pc.CULLFACE_NONE;heritage.gloss=.12;heritage.update();
     // Texture colour variation and aggregate are generated deterministically at load time.
@@ -150,68 +96,8 @@ export class World {
     for(let index=0;index<this.data.buildings.length;index++){
       const b=this.data.buildings[index];let poly=b.coordinates.map(p=>project(p,this.data.origin) as Point);if(poly.length>1&&Math.hypot(poly[0][0]-poly.at(-1)![0],poly[0][1]-poly.at(-1)![1])<.1)poly.pop();if(poly.length<3)continue;
       this.footprints.push(poly);
-      if(buildFrogPorridge(this,b.id,poly))continue;
-      if(buildBuddhistArtCentre(this,b.id,poly))continue;
-      if(buildEatFirst(this,b.id,poly))continue;
-      if(buildKHotel(this,b.id,poly))continue;
-      if(buildSikWaiSin(this,b.id,poly))continue;
-      if(buildRrMotor(this,b.id,poly))continue;
-      if(buildGoldenJade(this,b.id,poly))continue;
-      if(buildKtv277(this,b.id,poly))continue;
-      if(buildEros(this,b.id,poly))continue;
-      if(buildPlusMobile(this,b.id,poly))continue;
-      if(buildLannaThai(this,b.id,poly))continue;
-      if(buildJiangsu(this,b.id,poly))continue;
-      if(buildLiuDaMa(this,b.id,poly))continue;
-      if(buildMuhammadiyah(this,b.id,poly))continue;
-      if(buildFsl(this,b.id,poly))continue;
-      if(buildBarLorong13(this,b.id,poly))continue;
-      if(buildChenHing(this,b.id,poly))continue;
-      if(buildAiSecurity(this,b.id,poly))continue;
-      if(buildMisterContracts(this,b.id,poly))continue;
-      if(buildEngLeeHuat(this,b.id,poly))continue;
-      if(buildGoodwood(this,b.id,poly))continue;
-      if(buildTbss(this,b.id,poly))continue;
-      if(buildZhengLi(this,b.id,poly))continue;
-      if(buildGeylangRow(this,b.id,poly))continue;
-      if(buildBeefKwayTeow(this,b.id,poly))continue;
-      if(buildWatDhammasatis(this,b.id,poly))continue;
-      if(buildRedDot(this,b.id,poly))continue;
-      if(buildGuanKeat(this,b.id,poly))continue;
-      if(buildMingLi(this,b.id,poly))continue;
-      if(buildHotel81Spring(this,b.id,poly))continue;
-      if(buildPfcs(this,b.id,poly))continue;
-      if(buildCico(this,b.id,poly))continue;
-      if(buildGemsVille(this,b.id,poly))continue;
-      if(buildLorong13(this,b.id,poly))continue;
-      if(buildLorong11(this,b.id,poly))continue;
-      if(buildSimsSouth(this,b.id,poly))continue;
-      if(buildGeylangNorth(this,b.id,poly))continue;
-      if(buildGeylangSouth(this,b.id,poly))continue;
-      if(buildLorong15(this,b.id,poly))continue;
-      if(buildIbisGold(this,b.id,poly))continue;
-      if(buildSimsNorthRow(this,b.id,poly))continue;
-      if(buildLorong9(this,b.id,poly))continue;
-      if(buildLorong17(this,b.id,poly))continue;
-      if(buildLorong19(this,b.id,poly))continue;
-      if(buildLorong21(this,b.id,poly))continue;
-      if(buildLorong14(this,b.id,poly))continue;
-      if(buildLorong16(this,b.id,poly))continue;
-      if(buildLorong18(this,b.id,poly))continue;
-      if(buildRingEast(this,b.id,poly))continue;
-      if(buildRingWest(this,b.id,poly))continue;
-      if(buildRingC(this,b.id,poly))continue;
-      if(buildRingA(this,b.id,poly))continue;
-      if(buildRingB(this,b.id,poly))continue;
-      if(buildLamClan(this,b.id,poly))continue;
-      if(buildHainanLim(this,b.id,poly))continue;
-      if(buildSuiYuanJu(this,b.id,poly))continue;
-      if(buildChongMin(this,b.id,poly))continue;
-      if(buildFooHuiSiawLim(this,b.id,poly))continue;
-      if(buildSimsNorthPair(this,b.id,poly))continue;
-      if(buildFokWaiKee(this,b.id,poly))continue;
-      if(buildHongYeChen(this,b.id,poly))continue;
-      if(buildKGroup(this,b.id,poly))continue;
+      // Buildings with their own modules, looked up by id. A builder that declines falls through to the shared paths below.
+      const module=builderModule.get(b.id);if(module&&builders.get(module)!(this,b.id,poly))continue;
       // Split only the rendered corner. Source outline and collision stay intact.
       const mongkokRemainder=buildMongkokCorner(this,b.id,poly);if(mongkokRemainder)poly=mongkokRemainder;
       if(buildAlleyLowContext(this,b.id,poly))continue;
@@ -276,8 +162,9 @@ export class World {
     }
     this.merging=false;this.mergeTiles();this.setLight('day');
   }
-  nearest(p:Point){let distance=Infinity,segment=this.segments[0],point:Point=[0,0];for(const s of this.segments){const n=nearestOnSegment(p,s.a,s.b);if(n.distance<distance){distance=n.distance;segment=s;point=n.point as Point;}}return{distance,segment,point};}
-  canWalk(p:Point){if(!this.inStudy(p,3))return false;for(const poly of this.footprints){if(pointInPolygon(p,poly))return false;for(let i=0;i<poly.length;i++)if(nearestOnSegment(p,poly[i],poly[(i+1)%poly.length]).distance<.28)return false;}return true;}
+  nearest(p:Point){const n=this.roadGrid.nearest(p);return{distance:n.distance,segment:this.segments[n.index],point:n.point as Point};}
+  // Footprints are only ever appended, during build and by the authored sites, so new ones are filed on the next query.
+  canWalk(p:Point){if(!this.inStudy(p,3))return false;while(this.walkGrid.count<this.footprints.length)this.walkGrid.add(this.footprints[this.walkGrid.count]);return !this.walkGrid.blocked(p);}
   spawn(){const s=this.segments.find(s=>s.name==='Lorong 11 Geylang'&&s.length>30)!;const p:Point=[s.b[0]-s.dx*16+s.dz*2.1,s.b[1]-s.dz*16-s.dx*2.1];return{p,yaw:Math.atan2(-s.dx,-s.dz)*180/Math.PI+180};}
   lamp(x:number,z:number){this.box('lamp post',x,3.9,z,.1,7.8,.1,this.mat('#6c7976'));this.box('lamp arm',x+.75,7.75,z,1.6,.09,.09,this.mat('#6c7976'));this.box('lamp head',x+1.45,7.69,z,.6,.12,.32,this.mat('#ffdfaa',2));if(this.lamps.length<12){const e=new pc.Entity('street light');e.addComponent('light',{type:'omni',color:color('#ffd393'),intensity:.7,range:13,castShadows:false});e.setPosition(x+1.45,6.8,z);this.app.root.addChild(e);this.lamps.push(e);}}
   planter(x:number,z:number){

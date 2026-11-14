@@ -22,9 +22,12 @@ test('Lorong 21 brings in its own buildings, its corners and the Sims Avenue hou
   const east = ['454254164', '454254165', '454254160', '454254144'];
   const sims = ['454254331', '454254332', '454254333', '454254334', '454254335', '454254336', '454254337', '454254338'];
   for (const id of [...west, ...east, ...sims]) assert.ok(ids.has(id), id);
-  // The Lorong Bachok row, the block behind the Geylang Road corner and the part north of Sims Avenue wait.
-  for (const id of ['454254328', '454254242', '454254353', '454254366']) assert.equal(ids.has(id), false, id);
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 21 Geylang').length, 20);
+  // The Lorong Bachok row and the block behind the Geylang Road corner wait. The Sims Avenue houses north of the lane's
+  // junction came in with the avenue's north side (open question 83), with the lane's mouth there as a 21st way.
+  // Lorong Bachok's row came in with its own walk (open question 93); the block south of it still waits.
+  assert.equal(ids.has('454254328'), true); assert.equal(ids.has('454254242'), false);
+  // And five more north of the avenue (open question 88).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 21 Geylang').length, 26);
 });
 
 test('Lorong 21 is walkable from the Geylang Road centreline to the Sims Avenue centreline, and back to Lorong 19 along both', () => {

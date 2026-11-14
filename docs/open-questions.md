@@ -60,6 +60,7 @@ Started: 10 October 2026.
       - The June 2024 drive runs on south for about 100 m more, to Guillemard Road at about 1.3100 N (`GUtb…`, at 113 Guillemard Road).
       - Beyond No. 37 the east side carries on behind a corrugated hoarding, with single-storey houses under tiled roofs and a temple compound whose gate reads 鳳山寺. None of them is in the extract.
       - Wing Fong Mansions (way 764372595) is in the extract only because some of its nodes are inside it. Its lane face runs about 122 m, about 85 m past the extract's last way.
+      - **Extract check, 12 November 2026:** a dated OpenStreetMap download of the strip south of the edge (103.8758–103.8812 E, 1.3093–1.3110 N) holds Lorong 14's seven ways down to Guillemard Road at about 1.3100 N, and 102 building outlines that are not in the retained extract, ten of them addressed to Lorong 14. The download was a check only and is not kept in the repository.
     - **What happens now:**
       - The walk stops at No. 37 on the east side and at Wing Fong Mansions on the west, which is modelled over its whole source outline.
       - The lane's corridor ends at the extract's last way, so the south part of Wing Fong Mansions' face can be seen but not walked to.
@@ -130,6 +131,7 @@ Started: 10 October 2026.
       - The lane's last way in the extract (632249196) ends at the edge, but its two footways (874953095 and 874953096) run on to about 1.3101 N.
       - The June 2024 drive continues about 95 m further south to Guillemard Road, past Canberlin Apartments (listed at 60 Lorong 16) and the Association Building (68 Lorong 16) on the west side, and the houses at the corner of Westerhout Road on the east.
       - None of their outlines, nor the lane's ways south of the edge, are in the extract.
+      - **Extract check, 12 November 2026:** in the same download as question 52's, Lorong 16's four ways run on to about 1.3101 N, and about 25 outlines that are not in the retained extract stand between Lorong 14's east side and Lorong 16 south of the edge.
     - **What happens now:** the walk stops at the last buildings the extract holds: No. 54 on the west side, whose outline crosses the edge, and the terrace at the head of Westerhout Road on the east. The corridor ends at the end of way 632249196.
     - **Recommendation:** yes, as a later pass. Retrieve a dated extract of the strip south of the edge to Guillemard Road (about 1.3095–1.3110 N, 103.8785–103.8810 E), keep `public/osm-source.osm` as retained, take the lane's southern ways and buildings in by id, and walk them as a continuation of the Lorong 16 brief.
     - **Unlocks:** the whole of Lorong 16, with its junction on Guillemard Road, and the corridor carried to it.
@@ -251,6 +253,118 @@ Started: 10 October 2026.
     - **Current rule:** both listing and signage must agree on the address, so Petopia's signs are drawn blank. No. 346 is named after Hin Sheng Coffee House.
     - **Recommendation:** yes. The listing point and both signs agree on this house; 348A is probably the unit number of the upper floors. Under open question 12, name Petopia as the occupant of No. 346's upper floors beside Hin Sheng Coffee House, recording the 348A address, as the associations over Lorong 12 shops were named under question 31.
     - **Unlocks:** one more named place, with its board and blade redrawn.
+
+81. **Lorong 20: extend the extract east to take in the lane, and walk it as Lorong 21 was walked?**
+    - **Evidence:** from a dated OpenStreetMap download of 103.8812–103.8832 E, 1.3100–1.3155 N on 12 November 2026, a check only that is not kept in the repository.
+      - The retained extract's east edge is 103.8812 E. Lorong 20's thirteen ways run between 103.8812 and 103.8814 E, from Geylang Road at about 1.3129 N to Guillemard Road at about 1.3104 N, so the lane itself lies just outside the extract. Only two address points on it are inside.
+      - **West side:** the deep outlines behind Lorong 18's east side (ways 121873024 and 454274591) are already in the extract and face Lorong 20 ([Lorong 18 brief](lorong-18-brief.md)).
+      - **East side:** the block between Lorong 20 and Lorong 22 holds 23 outlines with their centres within about 70 m of Lorong 20, none of them in the extract. Four are addressed to Lorong 22, so the block's depth is shared between the two lanes.
+      - **Geylang Road:** Nos. 352–364, east of Lorong 18's east corner, were left for Lorong 20 under question 71. Since 14 November they are modelled on their own (question 86).
+      - **Geylang Road, north side at Lorong 23:** the two outlines opposite No. 364 (ways 454254143 and 454254140) straddle the extract's east edge. KartaView's May 2023 frames show an open-sided food centre under a blue roof behind a fence, and a pink four-storey block at the Lorong 23 corner; the food centre's outline does not match what is photographed. They are left for the same extension.
+    - **Recommendation:** yes, together with questions 52 and 62. Retrieve one dated extract reaching about 103.8822 E and 1.3095 N, keep `public/osm-source.osm` as the retained source, and take each lane's ways and buildings in by id. Then walk Lorong 20 from Geylang Road to Guillemard Road, with Nos. 352–364 Geylang Road and the corners at both ends, on its own branch and brief.
+    - **Unlocks:** the next lane east, and Geylang Road's south side carried on from Lorong 18.
+
+82. **Shan Yuan Tang: model the roof's tile tubes with four sides and no end caps, to halve the heaviest geometry in the scene?**
+    - **Evidence:** measured on 12 November 2026 at the spawn ([loading and streaming plan](loading-and-streaming-plan.md)).
+      - The temple's tiled roofs are 15 meshes holding 371,463 vertices: 21% of the scene's 1,735,768. The next heaviest part, the street surfaces, holds 35,664.
+      - Every tile seam is a six-sided tube with a cap at each end (36 vertices). The eave and ridge tubes are the same.
+      - A trial build drew the tile tubes (radius under 8 cm) with four sides and no caps, and kept six sides and caps on the eave and ridge tubes. The roof fell to 177,103 vertices, and the scene to 1,541,408.
+      - Rendered from the review start and from about 6 m in front of the gate, the two roofs are hard to tell apart; the trial's seams read very slightly flatter. The comparisons were sent with the session's report; the trial is not committed.
+    - **Recommendation:** yes. Every frame draws the roof twice, once for shadows, and phones pay most for it. Keep the six-sided, capped eave and ridge tubes, which carry the silhouette.
+    - **Unlocks:** about 11% fewer vertices across the scene, with no change to the temple's outline or colours.
+
+83. **Sims Avenue north side, No. 135 to No. 205: walk it as Lorong 21 was walked?**
+    - **Order:** Lorong 21 to Lorong 21A first (Nos. 183-205), where the drives were calibrated, then west from Lorong 21 to No. 135, next to the modelled pair at Nos. 131-133. Each stop is one photographed building, measured before the next is started; a uniform row may be one stop. Doubts go into this log and the walk continues.
+    - **Scope:** the 29 source outlines along the north side (Nos. 135-145 west of Lorong 17, Nos. 147-159 between Lorong 17 and Lorong 19, Nos. 165-177 between Lorong 19 and Lorong 21, and Nos. 183-205 between Lorong 21 and Lorong 21A). They lie inside the retained extract, north of the study rectangle. The lanes north of Sims Avenue, and the Buddhist Congress Center at Lorong 23, wait for a later pass.
+    - **Map:** the buildings are taken in by id, as for Lorong 21. The Sims Avenue corridors already run from Lorong 17 to past Lorong 21; they are carried west to No. 135 and east to Lorong 21A.
+    - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
+    - **Status:** started on 14 November 2026, under the instruction to carry on mapping and log questions for settling later. The walk's commits stand apart from the rest, so a no takes them out together.
+    - **Unlocks:** the north side of Sims Avenue from Lorong 15 to Lorong 21A, facing the rows already modelled across the road.
+
+84. **Imagery for the Sims Avenue north walk: accept KartaView's May 2023 panoramas while Google Street View cannot be reached?**
+    - **Evidence:**
+      - From this environment Google returns 403 for the Maps scripts, so Street View cannot be opened. Nothing was done to get round that.
+      - KartaView (open imagery, CC BY-SA 4.0) holds three eastbound drives along Sims Avenue, on 16, 24 and 25 May 2023: 109 full panoramas of 13,000 × 6,500 pixels, about 10 m apart, from Lorong 15 to past Lorong 21A.
+      - Their GPS positions lag: the first one checked sat 11.5 m west of where it was taken. Each panorama's position and heading are therefore solved from the bearings of party walls matched to source footprint corners, using house numbers on signs to anchor the match; the first fit left residuals under 0.7°.
+      - Each façade is then rectified onto its front line, and checked from a second panorama, as the Street View walks were.
+    - **What changes:** the photographs are a year older than the June 2024 drives the other walks used, so a shopfront that changed in between shows its 2023 state. Sources link to the KartaView frames; no image is copied into the repository.
+    - **Naming:** listings cannot be checked from here either, so every building is unnamed for now, with its boards drawn blank. Legible sign texts and house numbers are recorded in the brief, so the names can follow once listings are checked.
+    - **Recommendation:** yes for this walk, with each model checked against Street View when it can be reached again.
+    - **Unlocks:** mapping can carry on without Street View; if the answer is no, the walk's models wait for Street View.
+
+85. **Sims Avenue, No. 145 at the Lorong 17 corner (way 439168849): re-author the corner on its photographed walls?**
+    - **Evidence:** measured during the Sims Avenue north walk ([Sims Avenue north brief](sims-avenue-north-brief.md), stop 25), in KartaView frame 8348649/2743, whose position and heading are solved from five party walls (Nos. 135-145) with residuals under 0.05°.
+      - The building is a three-faced corner: a short front to the avenue, a broad splay and a face down the lane.
+      - The photographed front runs about **3.3 m** from No. 143's party wall before the corner column turns. The source front runs **7.26 m**, and its splay starts there.
+      - Its party wall with No. 143 stands on the source one, so the difference lies at the corner.
+      - Frame 8348649/2744, past the corner, shows the splay carrying the orange NIPPON PAINT board, then the lane face.
+    - **What happens now:** the front's elevation is laid at its photographed positions from the party wall, and the splay's window and board are drawn flat on the rest of the source front. The splay and lane faces keep only the teal band and the eave.
+    - **Also seen:** at the west end of the walk, No. 135's west party wall photographs about 1.3 m east of the source one, as if the QianJing pair at Nos. 131-133 were wider than its outlines. No. 135's elevation is laid from its east party wall, with a plain dark strip at its west end.
+    - **Recommendation:** yes. Measure the splay and the lane face from frames 2744 and 5471, then author a footprint with the front cut at 3.3 m, the photographed splay and the lane face, keeping the source rear. Check No. 133's east wall in the same pass.
+    - **Unlocks:** the corner on its true walls, with its three faces and their boards in place.
+
+86. **Geylang Road, south side, Nos. 352-364: model them now, ahead of a Lorong 20 walk?**
+    - **Evidence:** the seven houses east of Lorong 18's east corner (ways 764372558 to 764372552, No. 352 to No. 364) are inside the retained extract. Question 71 left them for a Lorong 20 walk, but Lorong 20 itself lies just outside the extract (question 81). KartaView holds three westbound drives of 2023 past them (16 and 19 May, 9 June), from which they can be measured as the Sims Avenue north side was (question 84).
+    - **Status:** started on the owner's instruction to carry on mapping, on question 71's terms: one stop per house, named only where a listing and a photographed sign agree (so unnamed for now, as on Sims Avenue), with Geylang Road's corridor carried on from Lorong 18's junction to No. 364. No. 364 appears to be Lorong 20's west corner; its Lorong 20 face is left for the Lorong 20 walk. The commits stand apart, so a no takes them out together.
+    - **Recommendation:** yes. It closes the gap between Lorong 18 and Lorong 20 on Geylang Road's south side, and a Lorong 20 walk would start from it.
+    - **Unlocks:** Geylang Road's south side continuous from Lorong 14 to Lorong 20.
+
+87. **Lorong 17 north of Sims Avenue: walk it from Sims Avenue to the extract's north edge?**
+    - **Evidence:** the lane runs north from Sims Avenue (way 708456470, then 632832138 and 475948499) to past the extract's north edge (1.3155 N). Four buildings stand along it inside the extract, all set back 15-23 m from the lane's centreline behind car parks: No. 43 (way 439168851) and No. 51, Superior Industrial Building (way 439168795), on the west side; No. 46, Enterprise Industrial Building (way 454254369), and No. 50 (way 454254368) on the east. KartaView's drive of 16 May 2023 (sequence 8344809) runs south down the lane.
+    - **Status:** started on the owner's instruction to carry on mapping, on the terms of the lane walks: one stop per building, named only where a listing and a photographed sign agree (unnamed for now, open question 84), with the lane as a walkable corridor from the Sims Avenue centreline to the extract's edge. The commits stand apart, so a no takes them out together.
+    - **Recommendation:** yes, as the first of the lanes north of Sims Avenue; Lorongs 19, 21, 21A and 23 north of the avenue each have one 2023 drive and can follow.
+    - **Unlocks:** the first lane north of Sims Avenue, and the industrial blocks seen from the avenue.
+
+88. **Lorongs 19 and 21 north of Sims Avenue: walk them, with the road joining them, to the extract's north edge?**
+    - **Evidence:** north of the avenue Lorong 19 runs north (ways 666807375 to 23513617), and a road (way 23514474) joins it to Lorong 21, which runs on north-west beyond the extract (ways 666807856 to 666807859). Eleven outlines stand along them inside the extract: on Lorong 19, No. 74 (way 682937276), No. 76, Teeni@76 (541941370), No. 72, Prestige Building (541941369), and No. 77, Wing Tip Building (452646019); between the lanes, three small outlines south of the joining road (682937270, 682937272, 682937274) and two north of it (454254367, 541941368); on Lorong 21, No. 51, dMC (454254350), and No. 48, Greatland Building (454254352). KartaView's drive of 16 May 2023 (sequence 8344809) runs down both lanes.
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms. The commits stand apart, so a no takes them out together.
+    - **Footprint:** No. 74's source front (way 682937276) lies about 1.5 m from the joining road's centreline, inside the modelled carriageway, while the May 2023 frames show the house a few metres back behind a fence. It is kept, with its pieces held flat to the wall; moving it back needs a measured frame.
+    - **Recommendation:** yes.
+    - **Unlocks:** the next two lanes north of Sims Avenue, joined to Lorong 17's.
+
+89. **Lorong 21A north of Sims Avenue: walk it to the extract's north edge?**
+    - **Evidence:** the lane runs north-west from Sims Avenue (ways 465490349, 666579842 and 666579843 beyond the mouth already taken). Five outlines stand along it inside the extract: No. 9, Union Food Industrial Centre (way 541941378), and No. 11A, Lam Thong Building (541941377), on the west side; No. 20, Datacom Enterprise Building (454254347), a single-storey outline (682937220) and the west side of No. 37 Lorong 23, Yu Li Industrial Building (454254349), on the east. KartaView's drive of 16 May 2023 runs up and down the lane.
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms. The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the last lane north of Sims Avenue inside the extract.
+
+90. **No. 105 Sims Avenue (way 439168666): model it as massing with the north side's walk?**
+    - **Evidence:** a cream block of about nine storeys set back 30-60 m behind the modelled row of Nos. 107-133, its parapet lettered CHANCERLODGE COMPLEX, which is also the source way's name. Only its upper storeys show from the avenue, over the row, in KartaView's May 2023 frames.
+    - **Status:** modelled on the owner's instruction to carry on mapping, as photographed massing with the north side's walk (question 83), its height about 32 m from solved frame 8348649/2742. Unnamed until listings can be checked (question 84).
+    - **Recommendation:** yes.
+    - **Unlocks:** the skyline behind the west end of the north side.
+
+91. **Sims Avenue's north side at the Lorong 23 corner (way 541941379): take it in, with the avenue carried east to it?**
+    - **Evidence:** east of Lorong 21A the north side holds one more outline inside the extract, No. 35 Lorong 23 (named Buddhist Congress Center in the source): a white two-storey podium behind a lawn, with the tower at 37 Lorong 23 behind it. On the south side the only outline east of Lorong 21 (way 454254163) is a long block whose front faces Lorong 23, outside the extract, so it is left for question 81's extension.
+    - **Status:** modelled as photographed massing on the owner's instruction to carry on mapping, with Sims Avenue's way past Lorong 21A taken into the road set and the corridor carried to the corner. The tower behind gained its red-framed south face from the same frames.
+    - **Recommendation:** yes.
+    - **Unlocks:** the north side of Sims Avenue complete within the extract.
+
+92. **Lorongs 6, 8, 10 and 12 south of the study rectangle: walk them to the extract's south edge, with the service road between Lorongs 4 and 6?**
+    - **Evidence:** south of the study rectangle (1.3115 N) the four lanes run on to the extract's south edge (1.3110 N), and a service road (ways 782605023, 111737898 and 927016604) runs south from between Lorongs 4 and 6. Twenty outlines stand along them inside the extract, among them Hotel 81 Orchid (19A Lorong 8), ibis budget Singapore Emerald (20 Lorong 6), Royce Residences, Wang Lodge and Fern Lodge. KartaView's drives of 16 and 19 May and 9 June 2023 run up all four lanes and the service road.
+    - **Roads:** Lorongs 6 and 8 were never in the derived road set, so their ways are taken in whole, from Geylang Road's back lane to the extract's edge, and the lanes gain road surface where the ring-south exteriors already stand. The service road's ways have no name in the source; they are taken in as "Service road".
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms, as photographed massing. The commits stand apart, so a no takes them out together.
+    - **Recommendation:** yes.
+    - **Unlocks:** the south-west corner of the extract, and road surface down Lorongs 6 and 8.
+
+93. **Lorong Bachok between Lorongs 19 and 21: walk it, with its row and the two blocks behind Lorong 19's east side?**
+    - **Evidence:** the middle of Lorong Bachok (ways 666807846 and 762269508) joins the two mouths already taken with Lorongs 19 and 21. Along its north side the source has twelve outlines (ways 454254315 to 454254328), and south of it two blocks behind Lorong 19's east side: the rear of Bougainvilla Apartments (way 454254245), whose listing point lies in it, and the block behind the Lorong 21 corner (454254242). KartaView's drive of 16 May 2023 (sequence 8344809, frames 3147-3172) runs along Lorong Bachok. Its frames show eleven houses on the twelve outlines, which squares with Tan Ser Seng's face standing 3.25 m beyond its outline.
+    - **Status:** done on the owner's instruction to carry on mapping. The row is measured from four solved frames and laid as eleven equal houses of 6.37 m over the twelve outlines, each outline taking its slice of the one elevation; every house is unnamed and its boards drawn blank. The two blocks south of the lane stand 35-75 m back behind a car park and trees, too far to measure from this drive, and are left out. The same drive's loop through the car park west of Lorong 21 (frames 2983-2986) shows a tall blank grey wall where the first stands, but not where it parts from Bougainvilla's front block; the second is hidden behind Lorong 21's west row and Geylang Road's north side. See `docs/lorong-bachok-brief.md`. The commits stand apart.
+    - **For the owner:** should the twelve outlines be redrawn as the eleven photographed houses (an authored footprint, as for Lorong 19's east side), so the party walls, roofs and five-foot way joins fall where the houses do? And should the two blocks south of the lane wait for a walk along the service roads behind them?
+    - **Recommendation:** yes.
+    - **Unlocks:** the last unmodelled row between Geylang Road and Sims Avenue inside the extract.
+
+94. **Lorong 7 at the extract's west edge: walk it, with the plots on both sides not yet in the map and the two west of the modelled Sims Avenue north side?**
+    - **Evidence:** Lorong 7's three ways in the source (666812086, 634186084 and 666812085) run from Geylang Road's back lane north to about 50 m short of Sims Avenue, on the extract's west edge. Its east side is already in the map (Centra Residence and the blocks south of it); not yet in it are the Shan Fook Tong Temple (No. 5, way 453797931) and the plot south of it (453797933) on the west side, Winsome Apartments (No. 18, way 1223603462) at the Sims Avenue end, and two plots north of Sims Avenue west of the modelled side (ways 1223603463 and 439168657). KartaView's drives of 16, 17 and 19 May 2023 run down the lane (sequences 8344809, 8344873 and 8344969), and four drives pass along Sims Avenue. JCUS Block C (way 304613525) at the extract's north edge is left out: no lane in the map reaches it.
+    - **Status:** done on the owner's instruction to carry on mapping, on question 87's terms, as photographed massing; every building unnamed (question 84). The source's lane stops about 50 m short of Sims Avenue, so its corridor runs on 36 m along its line to reach Winsome Apartments' front. See `docs/lorong-7-brief.md`. The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the extract's west edge between Geylang Road and Sims Avenue.
+
+95. **The service road between Lorongs 21 and 23 (way 533012566): leave the Singapore Badminton Hall and the shed east of it until there is imagery from the road itself?**
+    - **Evidence:** the hall (way 452646021, about 76 by 40 m) and a long shed (way 454254161) stand mid-block between Geylang Road and Sims Avenue, on a service road from Lorong 21 to Lorong 23 that no KartaView drive of 2023 runs along. From Lorong 21 (sequence 8344809, frames 2980 and 2991) and from Lorong 23 (frame 3029) the hall shows only as a grey metal roof and blue-grey cladding behind other buildings, so its walls and height cannot be read; the shed shows as a long single-storey building under a corrugated metal roof. They are the last outlines inside the extract that are neither modelled nor waiting on question 81's extension, apart from the two blocks south of Lorong Bachok (question 93).
+    - **Status:** not modelled.
+    - **Recommendation:** wait for imagery taken on the service road (a site visit, or Street View if its tiles can be used), rather than model the hall from glimpses; its height alone could be off by 10 m.
+    - **Unlocks:** the hall, a landmark of the area, and the block's interior.
 
 ## Settled
 

@@ -32,6 +32,7 @@ export const no12 = {
 // spanning both ways, u from the No. 10 party line.
 export const greyBuilding = {
   id: 'l9-6-8', buildingIds: ['1223603458', '1223603457'], kind: 'unnamed', unnamed: true, frontEdge: 2, reviewRoad: 'Lorong 9 Geylang',
+  reviewDistance: 11, reviewPitch: 30,
   name: 'Grey building at Nos. 6-8 Lorong 9 Geylang (June 2024 exterior, occupant not identified)', address: '6-8 Lorong 9 Geylang',
   height: 25.0, ceiling: 4.3, fiveFootWay: 2.0, roof: { type: 'flat', colour: '#8f9396' },
   evidence: 'A recent eight-storey building in grey concrete panels with glazed bays under black louvre hoods and a tall slit stair window, behind a garden fence, spans source ways No. 8 and No. 6 between the PFCS tower and the yellow YWAM building; triangulation puts its party lines on the source lines at s 25.6 and 35.7 m. Youth With A Mission is listed at No. 8, but its own plaque hangs on the yellow building next door and reads No. 4, so no name is given here. ' + depth + ' The ways are assigned together as one exterior, without asserting legal extent.',
@@ -80,7 +81,8 @@ export const lorong9 = [no12, greyBuilding, ywam];
 // The west-side places are appended below their definitions.
 export const lorong9Frame = (poly, place) => frontageFrame(poly, place.frontEdge);
 export const lorong9Layout = (place, width) => place.id === 'l9-6-8' ? greyBuildingLayout(width) : simpleHouseLayout(width, place);
-export const lorong9Reviews = (place, frame) => facing(frame, place.id, 14, 24);
+// 14 m back across the lane; the grey building's start stands nearer, since 14 m from its front is inside the block opposite.
+export const lorong9Reviews = (place, frame) => facing(frame, place.id, place.reviewDistance ?? 14, place.reviewPitch ?? 24);
 
 // The west side of Lorong 9 (frames face east, u running north from each south corner). Lorong 9 is outside
 // the derived road set; these ways straddle the study's west edge.

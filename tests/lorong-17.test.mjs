@@ -12,7 +12,8 @@ test('Lorong 17 brings in its own buildings and road ways', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));
   for (const id of ['454254236', '454254237', '454254238', '454254240', '454254249', '454254250', '454254251', '454254252', '454254253', '454254307', '454254308']) assert.ok(ids.has(id), id);
   // Lorong 19's west side and the Geylang Road houses east of the corner came in later with Lorong 19 (open question 42).
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 17 Geylang').length, 7);
+  // The lane's seven ways, its mouth north of Sims Avenue (open question 83) and its four ways beyond (open question 87).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 17 Geylang').length, 12);
 });
 
 test('the lane is walkable from the Geylang Road centreline to the Sims Avenue centreline', () => {
