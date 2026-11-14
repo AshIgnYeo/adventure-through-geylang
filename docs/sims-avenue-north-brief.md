@@ -24,7 +24,7 @@ The street fronts stand 6.6-7.3 m from Sims Avenue's centreline, at its estimate
 
 ## Status, 14 November 2026
 
-**In progress; 12 of 29 buildings modelled.** The row from Lorong 21 to Lorong 21A, Nos. 183-205, is done. The walk continues west from Lorong 21.
+**In progress; 19 of 29 buildings modelled.** The row from Lorong 21 to Lorong 21A (Nos. 183-205) and the stretch from Lorong 17 to Lorong 19 (Nos. 147-159) are done. Nos. 135-145 come next. The four set-back buildings between Lorong 19 and Lorong 21 (Nos. 165-177) wait: they stand free of party walls, and the first attempt to match their corners to the source outlines failed, since the small hut on No. 169's outline is far narrower than it.
 
 ## Lorong 21 to Lorong 21A
 
@@ -110,3 +110,52 @@ The street fronts stand 6.6-7.3 m from Sims Avenue's centreline, at its estimate
 - **Heights:** eave 8.37-8.7 m, windows 4.8-7.09 m, first-floor slab 3.73-4.0 m, awnings 2.73-3.23 m.
 
 Use `?review=sa-183`, `?review=sa-185`, `?review=sa-187`, `?review=sa-189`, `?review=sa-191`, `?review=sa-193`, `?review=sa-195`, `?review=sa-197`, `?review=sa-199`, `?review=sa-201`, `?review=sa-203` and `?review=sa-205`.
+
+## Lorong 17 to Lorong 19
+
+The outlines from No. 147 to No. 159 are skewed: each east party wall slants about 0.18 m inward for every metre back from the front. So the piers, the five-foot way's shell and the shopfronts at the east end of each house stand further in than elsewhere on the walk. Frame 8348649/2748 was tilted (its road lines curve), so Nos. 149-155 are read from 2747 and Nos. 157-159 from 2749.
+
+### Stop 13: No. 147 (way 475918110)
+
+- **Building:** a single-storey eating place set back about 13 m from the avenue's centreline, under a blue corrugated hipped roof. Broad dark canvas awnings slope forward over a forecourt of round tables, with plastic crates stacked at the east end and a white board on the roof.
+- **Signs:** a red banner reading 旺德 hangs inside. No sign could be matched to a listing.
+- **Modelling:** the front stands well clear of the carriageway, so the awnings are drawn sloping, 3.5 m deep, from 4.3 m at the wall to 2.75 m at their edge. The awnings' depth and the roof's ridge are estimated from oblique frames.
+
+### Stop 14: No. 149 (way 475918111)
+
+- **Building:** the west house of the row, cream under tiled eaves: three brown casement windows with small lights between plain pilasters, a plain frieze.
+- **Signs:** a white board on the upper floor reads 謙利企業私人有限公司, KINDLY ENTERPRISES PTE. LTD., 149; a dark red board over the five-foot way repeats the name. Both drawn blank.
+- **Heights:** eaves 7.86-8.0 m, windows 5.31-6.89 m, upper board 4.46-5.24 m, ledge 4.07-4.36 m.
+
+### Stop 15: No. 151 (way 682928772)
+
+- **Building:** white under tiled eaves with a room on the roof behind them: three aluminium windows over two air-conditioners, a grey glass shopfront with the plate 151.
+- **Signs:** a small dark board reads 天禧 TIENXI. Drawn blank.
+- **Heights:** eaves 7.79-7.93 m, windows 5.11-6.71 m.
+
+### Stop 16: No. 153 (way 682928771)
+
+- **Building:** grey-cream under tiled eaves: three aluminium windows between capped pilasters, brown steel grilles in the five-foot way.
+- **Signs:** a white board reads 郭德明帆布私人有限公司, QUEK TECK BENG CANVAS PTE LTD, 153 Sims Avenue; a tall white blade of the same firm hangs at the east pier, and a smaller board over the five-foot way repeats the name. All drawn blank.
+- **Heights:** eaves 7.5-7.86 m, windows 5.03-6.61 m, upper board 4.26-4.89 m.
+
+### Stop 17: No. 155 (way 682928770)
+
+- **Building:** pale, under tiled eaves: three small windows under panels of pierced vent blocks.
+- **Signs:** a white board reads UNISTEEL 友联白钢; a tall UNISTEEL blade hangs at the east pier; a larger white and blue UNISTEEL board over the five-foot way offers new and used kitchen equipment; the plate 155 is on the west pier. All drawn blank.
+- **Heights:** eaves 7.43-7.79 m, vent panels 6.21-6.5 m, windows 4.86-5.97 m.
+
+### Stop 18: No. 157 (way 682928769)
+
+- **Building:** white under a deep eave: three windows with a row of transoms above them, a glass shopfront, the plate 157 on the east pier.
+- **Signs:** a black board across the upper floor reads FENG DESIGN PTE LTD, with a black FENG DESIGN blade at the east pier. Both drawn blank.
+- **Heights:** eave 7.5-8.0 m, windows 5.07-6.26 m, transoms 6.54-6.83 m, board 3.57-5.0 m.
+
+### Stop 19: No. 159, the Lorong 19 corner (way 682928768)
+
+- **Building:** ochre picked out in teal under tiled eaves: two windows either side of an air-conditioner, teal capitals and fascia, a string of prayer flags over the five-foot way and a pink display board on a stand in front.
+- **Signs:** a white board lettered SIMS LIGHTING CENTRE in red; a tall dark banner at the corner; the plate 159. Drawn blank.
+- **Lorong 19 face:** plain, with the teal fascia carried round.
+- **Heights:** eaves 7.86-8.14 m, teal fascia 7.14-7.43 m, windows 4.97-6.17 m, board 3.29-4.11 m.
+
+Use `?review=sa-147`, `?review=sa-149`, `?review=sa-151`, `?review=sa-153`, `?review=sa-155`, `?review=sa-157` and `?review=sa-159`.

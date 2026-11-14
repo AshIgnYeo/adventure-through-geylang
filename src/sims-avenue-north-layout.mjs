@@ -303,5 +303,151 @@ export const no205 = {
   ],
 };
 
-export const simsAvenueNorth = [no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
+// Lorong 17 to Lorong 19: No. 147, a single-storey eating place set back behind a covered forecourt, and the two-storey row
+// from No. 149 to No. 159, the Lorong 19 corner, read in solved frames from the 24 May drive.
+const rowNote = ' Read on the source front in a near-frontal frame of the 24 May 2023 drive, whose position and heading are solved from the party walls (open question 84); the photographed party walls stand within 0.3 m of the source ones. Heights are above the five-foot-way floor and carry about ±0.4 m; the five-foot way\'s depth is estimated.';
+// These outlines are skewed: each east party wall slants about 0.18 m inward per metre back, so the shell stands 0.4 m in.
+const shop = (colours, o = {}) => row({ trim: colours.wall, frame: '#3a3c3c', glass: '#3a4044', ...colours }, { shellInset: .4, roof: { type: 'gable', ridge: 9.3, ridgeDepth: .5, overhang: .4, colour: tile }, ...o });
+const beam = (W, h, colour) => ({ name: 'five-foot-way beam', u: [.1, +(W - .1).toFixed(3)], h, out: .05, depth: .1, ...(colour && { colour }) });
+
+export const no147 = {
+  frontEdge: 3, reviewRoad: 'Sims Avenue', review: { distance: 8, pitch: 12 },
+  height: 4.3, ceiling: 3.3, fiveFootWay: 3.0, shellInset: .65, roof: { type: 'hip', ridge: 8.3, colour: '#2b5d7c' },
+  colours: { wall: '#d8d4ca', trim: '#c8c4ba', frame: '#3a3c3c', glass: '#3a4044', back: '#4a3e36', floor: '#a8a296', pier: '#d8d4ca' },
+  id: 'sa-147', buildingIds: ['475918110'], kind: 'unnamed', unnamed: true,
+  name: 'No. 147 Sims Avenue (May 2023 exterior, occupant not identified)', address: '147 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a single-storey eating place set back from the avenue under a blue corrugated hipped roof, with broad dark canvas awnings sloping forward over a forecourt of round tables, and plastic crates stacked at its east end; a red banner reading 旺德 hangs inside and a white board stands on the roof. No sign of it could be matched to a listing (open question 84), so no name is given. Its front stands about 13 m from the avenue\'s centreline, so its awnings reach forward without crossing the carriageway; their depth and the roof\'s ridge are estimated from the oblique frames.' + rowNote,
+  sources: [way('475918110'), kv('8348649', '2746'), kv('8348649', '2747')],
+  awning: { from: .2, to: 13.3, depth: 3.5, wall: 4.3, front: 2.75 },
+  blocks: [{ name: 'stacked crates', u: [9.5, 13.3], h: [0, 1.6], out: .5, depth: 1.0, colour: '#2e3236' }],
+  piers: [[0, .3], [6.6, 6.9], [12.9, 13.2]],
+  backFittings: [{ name: 'eating place with round tables', u: [.7, 12.6], h: [.1, 3.0], colour: '#5a4a40', glow: .08 }],
+};
+
+export const no149 = {
+  ...shop({ wall: '#e8dfc4', trim: '#ece4cc', frame: '#8a4a32', pier: '#ece4cc', back: '#3a3430' }, { height: 7.9, ceiling: 3.6, roof: { type: 'gable', ridge: 9.4, ridgeDepth: .5, overhang: .4, colour: tile } }),
+  id: 'sa-149', buildingIds: ['475918111'], kind: 'unnamed', unnamed: true,
+  name: 'No. 149 Sims Avenue (May 2023 exterior, occupant not identified)', address: '149 Sims Avenue (149 on its board)',
+  evidence: 'KartaView panoramas of May 2023 show the west house of the row, cream, under tiled eaves: three brown casement windows with small lights between plain pilasters, a white board reading 謙利企業私人有限公司 KINDLY ENTERPRISES PTE. LTD. and 149 below them, and over the five-foot way a dark red board with the same name, over a shop stacked with boxes. Listings could not be checked (open question 84), so the boards are drawn blank and no name is given.' + rowNote,
+  sources: [way('475918111'), kv('8348649', '2747'), kv('8348649', '2746')],
+  windows: [[.9, 2.04], [2.43, 3.53], [3.9, 4.93]].map(u => ({ u, h: [5.31, 6.89], panes: 3 })),
+  pilasters: [[.21, .79, 4.4, 7.7], [4.95, 5.2, 4.4, 7.7]],
+  bands: [[4.07, 4.36, .2]],
+  blocks: [
+    { name: 'plain frieze', u: [.05, 5.186], h: [6.93, 7.71], out: .05, depth: .1 },
+    { name: 'blank white board', u: [.64, 5.1], h: [4.46, 5.24], out: .1, depth: .06, colour: '#f0eee8' },
+    beam(5.236, [3.64, 4.07]),
+    { name: 'blank dark red board', u: [1.0, 5.0], h: [2.93, 3.5], out: .1, depth: .06, colour: '#7a2a28' },
+  ],
+  piers: [[.05, .35], [4.84, 5.14]],
+  backFittings: [{ name: 'shop stacked with boxes', u: [.45, 4.75], h: [.3, 2.9], colour: '#4a3a30', glow: .06 }],
+};
+
+export const no151 = {
+  ...shop({ wall: '#e4e4e0', frame: '#c8c8c4', pier: '#e4e4e0' }, { height: 7.85, ceiling: 3.2 }),
+  id: 'sa-151', buildingIds: ['682928772'], kind: 'unnamed', unnamed: true,
+  name: 'No. 151 Sims Avenue (May 2023 exterior, occupant not identified)', address: '151 Sims Avenue (plate 151)',
+  evidence: 'KartaView panoramas of May 2023 show a white house under tiled eaves with a room on the roof behind them: three aluminium windows over two air-conditioners, a plain frieze, and in the five-foot way a small dark board reading 天禧 TIENXI over a grey glass front with the plate 151. Listings could not be checked (open question 84), so the board is drawn blank and no name is given. The rooftop room\'s depth is estimated.' + rowNote,
+  sources: [way('682928772'), kv('8348649', '2747')],
+  windows: [[.83, 1.86], [2.26, 3.29], [3.72, 4.76]].map(u => ({ u, h: [5.11, 6.71], panes: 2 })),
+  bands: [[4.03, 4.29, .2]],
+  blocks: [
+    { name: 'plain frieze', u: [.05, 5.175], h: [6.79, 7.57], out: .05, depth: .1 },
+    { name: 'air-conditioner, held flat', u: [.79, 1.76], h: [4.4, 5.14], out: .12, depth: .24, colour: '#e8e8e4' },
+    { name: 'air-conditioner, held flat', u: [2.57, 3.55], h: [4.29, 5.0], out: .12, depth: .24, colour: '#e8e8e4' },
+    beam(5.225, [3.14, 3.5]),
+    { name: 'blank dark board', u: [2.95, 3.97], h: [2.86, 3.31], out: .1, depth: .06, colour: '#3a3230' },
+  ],
+  piers: [[0, .3], [4.825, 5.125]],
+  backFittings: [{ name: 'grey glass shopfront', u: [.45, 4.4], h: [.3, 3.1], colour: '#4a5054', glow: .04 }],
+  upper: [{ outline: [[.2, -1.0], [5.0, -1.0], [5.0, -5.0], [.2, -5.0]], from: 7.85, to: 8.6, colour: '#9a9c98', roof: '#8a8c88' }],
+};
+
+export const no153 = {
+  ...shop({ wall: '#d8d4c8', frame: '#b8b8b4', glass: '#3e4448', pier: '#e2ded2' }, { height: 7.7, ceiling: 3.4, roof: { type: 'gable', ridge: 9.2, ridgeDepth: .5, overhang: .4, colour: tile } }),
+  id: 'sa-153', buildingIds: ['682928771'], kind: 'unnamed', unnamed: true,
+  name: 'No. 153 Sims Avenue (May 2023 exterior, occupant not identified)', address: '153 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show a grey-cream house under tiled eaves: three aluminium windows between capped pilasters, a white board reading 郭德明帆布私人有限公司 QUEK TECK BENG CANVAS PTE LTD with 153 Sims Avenue below them, a tall white blade sign of the same firm at the east pier, and over the five-foot way a smaller board with the same name, over brown steel grilles. Listings could not be checked (open question 84), so the boards and the blade are drawn blank and no name is given.' + rowNote,
+  sources: [way('682928771'), kv('8348649', '2747'), kv('8348649', '2748')],
+  windows: [[.75, 1.75], [2.18, 3.14], [3.57, 4.51]].map(u => ({ u, h: [5.03, 6.61], panes: 2 })),
+  pilasters: [[.05, .35, 4.2, 7.3], [4.85, 5.15, 4.2, 7.3]],
+  bands: [[3.93, 4.21, .2]],
+  blocks: [
+    { name: 'plain frieze', u: [.05, 5.164], h: [6.64, 7.36], out: .05, depth: .1 },
+    { name: 'blank white board', u: [.61, 4.83], h: [4.26, 4.89], out: .1, depth: .06, colour: '#f0eee8' },
+    { name: 'blank white blade sign, held flat', u: [5.08, 5.2], h: [4.43, 6.43], out: .12, depth: .2, colour: '#f0eee8' },
+    beam(5.214, [3.14, 3.5]),
+    { name: 'blank white board', u: [.47, 3.4], h: [2.57, 3.07], out: .1, depth: .06, colour: '#f0eee8' },
+  ],
+  piers: [[0, .3], [4.814, 5.114]],
+  backFittings: [
+    { name: 'dark door', u: [.5, 1.8], h: [.3, 2.6], colour: '#2e2e2e' },
+    { name: 'brown steel grille', u: [1.83, 3.68], h: [.4, 2.4], colour: '#6a4a3a' },
+    { name: 'steel grille', u: [3.83, 4.5], h: [.4, 2.4], colour: '#5a5a58' },
+  ],
+};
+
+export const no155 = {
+  ...shop({ wall: '#e6e2d8', frame: '#3a3a3a', glass: '#2a3034', pier: '#ece8de' }, { height: 7.6, ceiling: 3.9, roof: { type: 'gable', ridge: 9.2, ridgeDepth: .5, overhang: .4, colour: tile } }),
+  id: 'sa-155', buildingIds: ['682928770'], kind: 'unnamed', unnamed: true,
+  name: 'No. 155 Sims Avenue (May 2023 exterior, occupant not identified)', address: '155 Sims Avenue (plate 155)',
+  evidence: 'KartaView panoramas of May 2023 show a pale house under tiled eaves: three small windows under panels of pierced vent blocks, a white board reading UNISTEEL 友联白钢 below them, a tall UNISTEEL blade sign at the east pier, and over the five-foot way a larger white and blue UNISTEEL board for new and used kitchen equipment, with the plate 155 on the west pier. Listings could not be checked (open question 84), so the boards and the blade are drawn blank and no name is given.' + rowNote,
+  sources: [way('682928770'), kv('8348649', '2747'), kv('8348649', '2749')],
+  windows: [[.62, 1.47], [1.97, 2.76], [3.33, 4.19]].map(u => ({ u, h: [4.86, 5.97], panes: 2 })),
+  blocks: [
+    ...[[.62, 1.47], [1.97, 2.76], [3.33, 4.19]].map(u => ({ name: 'pierced vent blocks', u, h: [6.21, 6.5], out: .02, depth: .04, colour: '#c8c4b8' })),
+    { name: 'blank white board', u: [.4, 4.33], h: [4.07, 4.79], out: .1, depth: .06, colour: '#f0f0ec' },
+    { name: 'blank white blade sign, held flat', u: [5.0, 5.12], h: [4.14, 7.71], out: .12, depth: .2, colour: '#f0f4f8' },
+    { name: 'blank white and blue board', u: [.62, 4.33], h: [2.79, 3.83], out: .1, depth: .06, colour: '#e8eef4' },
+  ],
+  piers: [[0, .3], [4.812, 5.112]],
+  backFittings: [{ name: 'kitchen-equipment shop', u: [.45, 4.75], h: [.1, 2.9], colour: '#8c8e8c', glow: .05 }],
+};
+
+export const no157 = {
+  ...shop({ wall: '#ecebe6', pier: '#ecebe6' }, { height: 7.6, ceiling: 3.4, roof: { type: 'gable', ridge: 9.0, ridgeDepth: .5, overhang: .4, colour: '#c86a5a' } }),
+  id: 'sa-157', buildingIds: ['682928769'], kind: 'unnamed', unnamed: true,
+  name: 'No. 157 Sims Avenue (May 2023 exterior, occupant not identified)', address: '157 Sims Avenue (plate 157)',
+  evidence: 'KartaView panoramas of May 2023 show a white house under a deep eave: three windows with a row of transoms above them, a black board reading FENG DESIGN PTE LTD across the upper floor, a black FENG DESIGN blade at the east pier, and a glass shopfront in the five-foot way with the plate 157 on the east pier. Listings could not be checked (open question 84), so the board and the blade are drawn blank and no name is given.' + rowNote,
+  sources: [way('682928769'), kv('8348649', '2749'), kv('8348649', '2748')],
+  windows: [
+    ...[[1.0, 2.05], [2.38, 3.43], [3.76, 4.48]].map(u => ({ u, h: [5.07, 6.26], panes: 2 })),
+    ...[[1.0, 2.0], [2.38, 3.35], [3.76, 4.5]].map(u => ({ u, h: [6.54, 6.83], panes: 2 })),
+  ],
+  blocks: [
+    { name: 'deep eave', u: [0, 5.22], h: [7.5, 8.0], out: .4, depth: .8, colour: '#ecebe6' },
+    { name: 'blank black board', u: [.19, 4.48], h: [3.57, 5.0], out: .1, depth: .06, colour: '#1e1e1e' },
+    { name: 'blank black blade sign, held flat', u: [5.02, 5.14], h: [3.5, 7.07], out: .12, depth: .2, colour: '#1e1e1e' },
+    beam(5.225, [3.21, 3.5]),
+  ],
+  piers: [[0, .3], [4.8, 5.125]],
+  backFittings: [
+    { name: 'steel grille', u: [.4, 1.2], h: [.4, 2.4], colour: '#5a5a58' },
+    { name: 'glass shopfront', u: [2.1, 4.4], h: [.4, 3.0], colour: '#d8d8d4', glow: .06 },
+  ],
+};
+
+const teal = '#2a8a8a';
+export const no159 = {
+  ...shop({ wall: '#e6b84a', trim: '#e2b445', pier: '#e6b84a', back: '#3a3430' }, { height: 7.9, ceiling: 3.3, roof: { type: 'gable', ridge: 9.4, ridgeDepth: .5, overhang: .4, colour: tile } }),
+  id: 'sa-159', buildingIds: ['682928768'], kind: 'unnamed', unnamed: true,
+  name: 'No. 159 Sims Avenue (May 2023 exterior, occupant not identified)', address: '159 Sims Avenue (the Lorong 19 corner, plate 159)',
+  evidence: 'KartaView panoramas of May 2023 show the corner house at Lorong 19, ochre picked out in teal under tiled eaves: two windows either side of an air-conditioner, teal capitals and fascia, and over the five-foot way a white board lettered SIMS LIGHTING CENTRE in red, a string of prayer flags, a tall dark banner at the corner and a pink display board on a stand in front. Listings could not be checked (open question 84), so the board and the banner are drawn blank and no name is given. Its Lorong 19 face is plain, with the teal fascia carried round.' + rowNote,
+  sources: [way('682928768'), kv('8348649', '2749'), kv('8348649', '2748')],
+  windows: [[.82, 1.78], [3.78, 4.82]].map(u => ({ u, h: [4.97, 6.17], panes: 2 })),
+  blocks: [
+    { name: 'teal fascia', u: [0, 5.21], h: [7.14, 7.43], out: .08, depth: .16, colour: teal },
+    ...[[0, .4], [4.8, 5.21]].flatMap(u => [{ name: 'teal capital', u, h: [6.9, 7.45], out: .1, depth: .2, colour: teal }, { name: 'teal pier capital', u, h: [4.14, 4.43], out: .1, depth: .2, colour: teal }]),
+    { name: 'air-conditioner', u: [2.15, 3.0], h: [5.64, 6.26], out: .2, depth: .4, colour: '#e8e8e4' },
+    { name: 'blank white board', u: [.18, 4.75], h: [3.29, 4.11], out: .1, depth: .06, colour: '#f2ece0' },
+    { name: 'prayer flags, held flat', u: [0, 4.9], h: [2.86, 3.29], out: .1, depth: .02, colour: '#d86a8a' },
+    { name: 'blank dark banner, held flat', u: [4.95, 5.18], h: [3.29, 6.93], out: .12, depth: .2, colour: '#7a3a3a' },
+    { name: 'pink display board, held flat', u: [.05, 1.6], h: [.9, 2.7], out: .1, depth: .1, colour: '#e8b8c8' },
+  ],
+  piers: [[0, .35], [4.762, 5.112]],
+  backFittings: [{ name: 'lighting shop', u: [.6, 4.75], h: [.3, 3.0], colour: '#5a4038', glow: .1 }],
+  sides: [{ edge: 1, blocks: [{ name: 'teal fascia', u: [0, 21.3], h: [7.14, 7.43], out: .08, depth: .16, colour: teal }] }],
+};
+
+export const simsAvenueNorth = [no147, no149, no151, no153, no155, no157, no159, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
 export const simsAvenueNorthFrame = laneFrame, simsAvenueNorthLayout = laneLayout, simsAvenueNorthUpper = laneUpper, simsAvenueNorthReviews = laneReviews, simsAvenueNorthSides = laneSides;
