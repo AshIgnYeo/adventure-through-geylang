@@ -13,6 +13,8 @@ const north = [
   '682928722', '682937224', '454254365', '454254366',
   '454254353', '454254354', '454254355', '454254356', '454254357', '454254358', '454254359', '454254360', '454254361',
   '454254362', '454254363', '454254364',
+  // No. 105, set back behind Nos. 107-133 (open question 90).
+  '439168666',
 ];
 
 test('the north side of Sims Avenue brings in its 29 buildings and the mouths of the lanes north of it', () => {
@@ -32,7 +34,7 @@ test('the north pavement is walkable from No. 135 to Lorong 21A, in front of eve
   }
   // 8 m in front of each front's midpoint, where the review starts stand.
   const sims = roadSegments.filter(s => s.road.name === 'Sims Avenue');
-  for (const id of north.filter(id => id !== '682928722')) {
+  for (const id of north.filter(id => !['682928722', '439168666'].includes(id))) {
     const o = outline(id);
     const fronts = o.map((a, i) => ({ a, b: o[(i + 1) % o.length] })).filter(e => Math.hypot(e.b[0] - e.a[0], e.b[1] - e.a[1]) > 2);
     const near = e => Math.min(...sims.map(s => nearestOnSegment([(e.a[0] + e.b[0]) / 2, (e.a[1] + e.b[1]) / 2], s.a, s.b).distance));

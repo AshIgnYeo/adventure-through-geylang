@@ -224,3 +224,13 @@ The four buildings here stand free of party walls, behind gardens, a forecourt a
 - **Heights:** about 16 m to the parapet, the colonnade to about 4.5 m.
 
 Use `?review=sa-165`, `?review=sa-167`, `?review=sa-169` and `?review=sa-177`.
+
+## Behind the row: No. 105 (way 439168666)
+
+Added on 14 November 2026 under [open question 90](open-questions.md).
+
+- **Building:** a cream block of about nine storeys with rows of dark windows and pale yellow upper floors, its parapet lettered CHANCERLODGE COMPLEX (the source way's name), set back 30-60 m behind the modelled row of Nos. 107-133. Only its upper storeys show from the avenue, over the row. The lettering is drawn as a blank band.
+- **Height:** about 32 m, from its parapet in solved frame 8348649/2742, about 65 m away; it carries about ±3 m.
+- **Review start:** across the avenue, 58 m from its front, where it rises behind the pagoda building at Nos. 111-117. Closer starts look straight into the row.
+
+Use `?review=sa-105`.

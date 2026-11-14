@@ -328,6 +328,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the last lane north of Sims Avenue inside the extract.
 
+90. **No. 105 Sims Avenue (way 439168666): model it as massing with the north side's walk?**
+    - **Evidence:** a cream block of about nine storeys set back 30-60 m behind the modelled row of Nos. 107-133, its parapet lettered CHANCERLODGE COMPLEX, which is also the source way's name. Only its upper storeys show from the avenue, over the row, in KartaView's May 2023 frames.
+    - **Status:** modelled on the owner's instruction to carry on mapping, as photographed massing with the north side's walk (question 83), its height about 32 m from solved frame 8348649/2742. Unnamed until listings can be checked (question 84).
+    - **Recommendation:** yes.
+    - **Unlocks:** the skyline behind the west end of the north side.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

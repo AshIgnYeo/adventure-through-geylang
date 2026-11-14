@@ -25,7 +25,7 @@ test('authored groups replace existing source ways, keep them for provenance and
   }
   for (const b of authored) assert.equal(sourceIds.has(b.id), false, b.id);
   assert.equal(new Set(map.buildings.map(b => b.id)).size, map.buildings.length);
-  assert.equal(source.buildings.length, 403, 'map.json itself is unchanged (206 since the open question 26 widening, 217 with Lorong 17, 242 with Lorong 19, 264 with Lorong 21, 289 with Lorong 14, 321 with Lorong 16, 347 with Lorong 18, 376 with the north side of Sims Avenue, 383 with Geylang Road Nos. 352-364, 387 with Lorong 17 north of Sims Avenue, 398 with Lorongs 19 and 21 north of it, 403 with Lorong 21A north of it)');
+  assert.equal(source.buildings.length, 404, 'map.json itself is unchanged (206 since the open question 26 widening, 217 with Lorong 17, 242 with Lorong 19, 264 with Lorong 21, 289 with Lorong 14, 321 with Lorong 16, 347 with Lorong 18, 376 with the north side of Sims Avenue, 383 with Geylang Road Nos. 352-364, 387 with Lorong 17 north of Sims Avenue, 398 with Lorongs 19 and 21 north of it, 403 with Lorong 21A north of it, 404 with No. 105 Sims Avenue)');
 });
 
 test('authored outlines stay off the roads and clear of the buildings they do not replace', () => {

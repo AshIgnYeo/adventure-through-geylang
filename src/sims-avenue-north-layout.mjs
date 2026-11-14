@@ -592,6 +592,11 @@ export const no145 = {
 // position could be solved from walls here, and two frames 13 m apart are too close to triangulate their corners, so they
 // are photographed massing on their source outlines: colours, storeys, roofs, the colonnade and the verandah as seen in
 // oblique frames, with heights carrying about ±1.5 m (±4 m for No. 165).
+/** Window rows for a block of about nine storeys: n windows of width w across a face of width W. */
+const grid8 = (W, n, w) => [4.6, 7.9, 11.2, 14.5, 17.8, 21.1, 24.4, 27.7].flatMap(b => Array.from({ length: n }, (_, i) => {
+  const c = .8 + w / 2 + (W - 1.6 - w) * i / (n - 1);
+  return { u: [+(c - w / 2).toFixed(2), +(c + w / 2).toFixed(2)], h: [b, +(b + 1.6).toFixed(2)], panes: 2 };
+}));
 const massNote = ' Seen only obliquely in the May 2023 frames (open question 84), so it is modelled as photographed massing on its source outline: colours, storeys and roof as photographed, details approximate.';
 const mass = (colours, o) => ({ reviewRoad: 'Sims Avenue', heldFlat: true, shellInset: .3, colours: { trim: colours.wall, frame: '#2e3032', glass: '#3a4a56', back: '#3a3836', floor: '#a8a296', pier: colours.wall, ...colours }, ...o });
 
@@ -659,5 +664,20 @@ export const no177 = {
   ], windows: [5.6, 8.9].map(b => ({ u: [3.5, 4.6], h: [b, b + 1.8], panes: 2 })) }],
 };
 
-export const simsAvenueNorth = [no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no165, no167, no169, no177, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
+// No. 105, set back 30-60 m behind the row of Nos. 107-133 (open question 90): only its upper storeys show over the row.
+export const no105 = {
+  ...mass({ wall: '#ece2c8', trim: '#e2d6b4', frame: '#4a4440', glass: '#2e3438' }, { frontEdge: 3, review: { distance: 58, pitch: 24 }, height: 32.0, ceiling: .2, fiveFootWay: .02, roof: { type: 'flat', colour: '#9a9c98' } }),
+  id: 'sa-105', buildingIds: ['439168666'], kind: 'unnamed', unnamed: true,
+  name: 'No. 105 Sims Avenue (May 2023 massing, occupant not identified)', address: '105 Sims Avenue',
+  evidence: 'KartaView panoramas of May 2023 show, over the row of Nos. 107-133, the upper storeys of a cream block of about nine storeys with rows of dark windows and pale yellow upper floors, its parapet lettered CHANCERLODGE COMPLEX. The source way carries the same name; listings could not be checked (open question 84), so no name is given, and the lettering is drawn as a blank band. Its height, about 32 m, comes from its parapet in solved frame 8348649/2742, about 65 m away, and carries about ±3 m.' + massNote,
+  sources: [way('439168666'), kv('8348649', '2742'), kv('8344809', '3605')],
+  windows: grid8(84.53, 16, 2.4),
+  blocks: [
+    { name: 'pale yellow upper floors', u: [.03, 84.47], h: [21.0, 30.5], out: .02, depth: .04, colour: '#e8d49a' },
+    { name: 'blank lettering band', u: [30.0, 60.0], h: [30.6, 31.8], out: .04, depth: .04, colour: '#ecebe6' },
+  ],
+  sides: [{ edge: 2, windows: grid8(25.43, 5, 2.4) }],
+};
+
+export const simsAvenueNorth = [no105, no135, no137, no139, no141, no143, no145, no147, no149, no151, no153, no155, no157, no159, no165, no167, no169, no177, no183, no185, no187, no189, no191, no193, no195, no197, no199, no201, no203, no205];
 export const simsAvenueNorthFrame = laneFrame, simsAvenueNorthLayout = laneLayout, simsAvenueNorthUpper = laneUpper, simsAvenueNorthReviews = laneReviews, simsAvenueNorthSides = laneSides;

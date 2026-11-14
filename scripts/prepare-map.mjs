@@ -109,6 +109,8 @@ const simsNorth = {
     '682928722', '682937224', '454254365', '454254366',
     '454254353', '454254354', '454254355', '454254356', '454254357', '454254358', '454254359', '454254360', '454254361',
     '454254362', '454254363', '454254364',
+    // No. 105, Chancerlodge Complex, set back behind Nos. 107-133 (open question 90).
+    '439168666',
   ],
   // Lorong 17, Lorong 19, Lorong 21 and Lorong 21A, each from the Sims Avenue centreline north to its first node.
   mouths: ['708456471', '666807374', '666807857', '666579841'],
