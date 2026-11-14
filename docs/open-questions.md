@@ -322,6 +322,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the next two lanes north of Sims Avenue, joined to Lorong 17's.
 
+89. **Lorong 21A north of Sims Avenue: walk it to the extract's north edge?**
+    - **Evidence:** the lane runs north-west from Sims Avenue (ways 465490349, 666579842 and 666579843 beyond the mouth already taken). Five outlines stand along it inside the extract: No. 9, Union Food Industrial Centre (way 541941378), and No. 11A, Lam Thong Building (541941377), on the west side; No. 20, Datacom Enterprise Building (454254347), a single-storey outline (682937220) and the west side of No. 37 Lorong 23, Yu Li Industrial Building (454254349), on the east. KartaView's drive of 16 May 2023 runs up and down the lane.
+    - **Status:** started on the owner's instruction to carry on mapping, on question 87's terms. The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the last lane north of Sims Avenue inside the extract.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
