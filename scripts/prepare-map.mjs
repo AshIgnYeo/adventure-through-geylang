@@ -121,6 +121,13 @@ const geylang352 = {
   // Geylang Road runs west: from Lorong 20's junction to Lorong 18's.
   geylangRoad: ['632265797', '660071185'],
 };
+// Lorong 17 north of Sims Avenue (open question 87, 14 November 2026): its four set-back industrial plots and the lane's
+// ways, from the mouth already taken with the avenue's north side to past the extract's north edge.
+const lorong17North = {
+  buildings: ['439168851', '439168795', '454254369', '454254368'],
+  // The lane's ways run south, from beyond the extract's north edge to the avenue; 708456472 is the southbound twin of 708456470.
+  lane: ['475948499', '632832138', '708456470', '708456472'],
+};
 const wayCoordinates = new Map();
 const roads=[], buildings=[], paths=[], contextRoads=[];
 for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
@@ -129,9 +136,9 @@ for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
   const coordinates=[...text.matchAll(/<nd ref="(\d+)"/g)].map(m=>nodes.get(m[1]));
   if (coordinates.some(c=>!c)) continue;
   wayCoordinates.set(id, coordinates);
-  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat(), ...Object.values(geylang352).flat()].includes(id);
+  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat(), ...Object.values(geylang352).flat(), ...Object.values(lorong17North).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
-  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...geylang352.geylangRoad].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
+  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...geylang352.geylangRoad, ...lorong17North.lane].includes(id))) roads.push({id,name:tags.name,oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
   if (['695010162', '1223458240'].includes(id)) paths.push({id,highway:tags.highway,service:tags.service??null,coordinates});
@@ -188,6 +195,8 @@ const corridors = [
   { name: 'Sims Avenue, No. 135 to Lorong 17', halfWidth: 12, path: chain(['649794626', '666804804', '475336751', '727628958']) },
   // Geylang Road on from the Lorong 18 link, east past No. 364 to about 4 m short of the extract's last Geylang Road node.
   { name: 'Geylang Road, Lorong 18 to No. 364', halfWidth: 13, path: [along(wayCoordinates.get('632265797'), 4), ...wayCoordinates.get('632265797').slice(1), ...wayCoordinates.get('660071185').slice(1), along([...wayCoordinates.get('660071186')].reverse(), 18)] },
+  // Lorong 17 north of Sims Avenue, from the extract's north edge to the avenue's centreline.
+  { name: 'Lorong 17 Geylang, north of Sims Avenue', halfWidth: 13, path: [along(wayCoordinates.get('475948499'), 14), ...chain(['475948499', '632832138', '708456470', '708456471']).slice(1)] },
   { name: 'Sims Avenue, Lorong 21 to Lorong 21A', halfWidth: 12, path: [along(wayCoordinates.get('632842880'), 10), wayCoordinates.get('632842880')[1], along(wayCoordinates.get('632842880'), 80)] },
 ];
 const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',licence:'ODbL-1.0',roads,buildings,paths,contextRoads};

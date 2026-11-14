@@ -309,6 +309,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes. It closes the gap between Lorong 18 and Lorong 20 on Geylang Road's south side, and a Lorong 20 walk would start from it.
     - **Unlocks:** Geylang Road's south side continuous from Lorong 14 to Lorong 20.
 
+87. **Lorong 17 north of Sims Avenue: walk it from Sims Avenue to the extract's north edge?**
+    - **Evidence:** the lane runs north from Sims Avenue (way 708456470, then 632832138 and 475948499) to past the extract's north edge (1.3155 N). Four buildings stand along it inside the extract, all set back 15-23 m from the lane's centreline behind car parks: No. 43 (way 439168851) and No. 51, Superior Industrial Building (way 439168795), on the west side; No. 46, Enterprise Industrial Building (way 454254369), and No. 50 (way 454254368) on the east. KartaView's drive of 16 May 2023 (sequence 8344809) runs south down the lane.
+    - **Status:** started on the owner's instruction to carry on mapping, on the terms of the lane walks: one stop per building, named only where a listing and a photographed sign agree (unnamed for now, open question 84), with the lane as a walkable corridor from the Sims Avenue centreline to the extract's edge. The commits stand apart, so a no takes them out together.
+    - **Recommendation:** yes, as the first of the lanes north of Sims Avenue; Lorongs 19, 21, 21A and 23 north of the avenue each have one 2023 drive and can follow.
+    - **Unlocks:** the first lane north of Sims Avenue, and the industrial blocks seen from the avenue.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
