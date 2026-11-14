@@ -67,6 +67,7 @@ const entries: [string, () => Promise<Builder>, string[]][] = [
   ['fok-wai-kee', () => import('./fok-wai-kee').then(m => m.buildFokWaiKee), ["682928754"]],
   ['hong-ye-chen', () => import('./hong-ye-chen').then(m => m.buildHongYeChen), ["1223773755"]],
   ['k-group', () => import('./k-group').then(m => m.buildKGroup), ["1223773754"]],
+  ['sims-avenue-north', () => import('./sims-avenue-north').then(m => m.buildSimsAvenueNorth), ["454254353","454254354","454254355","454254356","454254357","454254358"]],
 ];
 
 /** Building id to its builder module, and each module's loader. Modules load only when a building needs them. */

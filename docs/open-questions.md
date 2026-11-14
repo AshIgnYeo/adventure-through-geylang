@@ -273,7 +273,7 @@ Started: 10 October 2026.
     - **Unlocks:** about 11% fewer vertices across the scene, with no change to the temple's outline or colours.
 
 83. **Sims Avenue north side, No. 135 to No. 205: walk it as Lorong 21 was walked?**
-    - **Order:** west to east, from No. 135, next to the modelled pair at Nos. 131-133, to No. 205 at Lorong 21A's west corner. Each stop is one photographed building, measured before the next is started; a uniform row may be one stop. Doubts go into this log and the walk continues.
+    - **Order:** Lorong 21 to Lorong 21A first (Nos. 183-205), where the drives were calibrated, then west from Lorong 21 to No. 135, next to the modelled pair at Nos. 131-133. Each stop is one photographed building, measured before the next is started; a uniform row may be one stop. Doubts go into this log and the walk continues.
     - **Scope:** the 29 source outlines along the north side (Nos. 135-145 west of Lorong 17, Nos. 147-159 between Lorong 17 and Lorong 19, Nos. 165-177 between Lorong 19 and Lorong 21, and Nos. 183-205 between Lorong 21 and Lorong 21A). They lie inside the retained extract, north of the study rectangle. The lanes north of Sims Avenue, and the Buddhist Congress Center at Lorong 23, wait for a later pass.
     - **Map:** the buildings are taken in by id, as for Lorong 21. The Sims Avenue corridors already run from Lorong 17 to past Lorong 21; they are carried west to No. 135 and east to Lorong 21A.
     - **Naming:** unchanged. A business is named only when Google Maps lists it at that address and its sign shows in the photograph.
