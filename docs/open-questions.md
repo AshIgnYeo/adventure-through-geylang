@@ -376,6 +376,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** Guillemard Road walkable from Lorong 12 to Lorong 16.
 
+97. **Lorong 23 from Geylang Road to Sims Avenue, with Geylang Road's south side east of Lorong 20: walk them from the dated extension?**
+    - **Evidence:** the dated extension (question 81) holds Lorong 23's ways from Geylang Road north to Sims Avenue, which it meets at the avenue's east end. On its east side stand the Geylang Road corner block, a terrace row of narrow houses and three blocks up to a large building at the Sims Avenue end; on its west side, the long block that question 91 found facing Lorong 23 (way 454254163), and the two outlines at the Geylang Road corner that question 81 left for the extension (ways 454254143 and 454254140: an open-sided food centre under a blue roof and a pink four-storey block). Across Geylang Road, the south side east of the Lorong 20 corner holds two plots facing the road (ways 454438312 and 454438311). KartaView's drive of 16 May 2023 runs down Lorong 23 twice (sequence 8344809, frames 3020-3039 and 3204-3219). The plots behind, facing Aljunied Road, and the Singapore Badminton Hall's shed (question 95) are not part of it.
+    - **Status:** done on the owner's instruction to carry on, on question 87's terms: fifteen plots on the lane as photographed massing, every building unnamed (question 84), with corridors along the lane and Geylang Road ([brief](lorong-23-brief.md)). Geylang Road's south side east of the Lorong 20 corner waits for frames along Geylang Road. The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the block east of Lorong 21 between Geylang Road and Sims Avenue, and Sims Avenue joined to Geylang Road by a second lane.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
