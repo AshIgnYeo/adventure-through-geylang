@@ -242,6 +242,14 @@ const lorong22 = {
   west: ['474904365', '454438305', '454438306', '454274583', '454274580', '454274578', '454274575', '454438308', '454438309', '454438310'],
   lane: ['23513304', '476106533', '654854651', '632507412'],
 };
+// Guillemard Road between Lorongs 16 and 20 (open question 100, 22 November 2026), from the dated extension: Nos. 175-181
+// on the north side, Nos. 84-94 on the south side, and both carriageways between the two lanes.
+const guillemard = {
+  north: ['454274537', '764372530', '764372529', '764372528'],
+  south: ['1257881438', '1257881439', '1257881440', '1257881443', '1257881442', '1257881441'],
+  eastbound: ['632463701', '474677983'],
+  westbound: ['474665413', '633039477', '474665414'],
+};
 const wayCoordinates = new Map();
 const roads=[], buildings=[], paths=[], contextRoads=[];
 for (const { text, extension } of [...retainedWays, ...extensionWays]) {
@@ -250,10 +258,10 @@ for (const { text, extension } of [...retainedWays, ...extensionWays]) {
   const coordinates=[...text.matchAll(/<nd ref="(\d+)"/g)].map(m=>nodes.get(m[1]));
   if (coordinates.some(c=>!c)) continue;
   wayCoordinates.set(id, coordinates);
-  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat(), ...Object.values(geylang352).flat(), ...Object.values(lorong17North).flat(), ...Object.values(lorong1921North).flat(), ...Object.values(lorong21aNorth).flat(), ...Object.values(southWest).flat(), ...Object.values(bachok).flat(), ...Object.values(lorong7).flat(), ...Object.values(lorong20).flat(), ...Object.values(westerhout).flat(), ...Object.values(south1416).flat(), ...Object.values(lorong12South).flat(), ...Object.values(lorong23).flat(), ...Object.values(lorong22).flat()].includes(id);
+  const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat(), ...Object.values(geylang352).flat(), ...Object.values(lorong17North).flat(), ...Object.values(lorong1921North).flat(), ...Object.values(lorong21aNorth).flat(), ...Object.values(southWest).flat(), ...Object.values(bachok).flat(), ...Object.values(lorong7).flat(), ...Object.values(lorong20).flat(), ...Object.values(westerhout).flat(), ...Object.values(south1416).flat(), ...Object.values(lorong12South).flat(), ...Object.values(lorong23).flat(), ...Object.values(lorong22).flat(), ...Object.values(guillemard).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
   if (extension && !extra) continue;
-  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...simsNorth.avenueEast, ...geylang352.geylangRoad, ...lorong17North.lane, ...lorong1921North.lorong19, ...lorong1921North.joining, ...lorong1921North.lorong21, ...lorong21aNorth.lane, ...southWest.lorong6, ...southWest.lorong8, ...southWest.lorong12, ...southWest.service, ...bachok.lane, ...lorong7.lane, ...lorong7.sims, ...lorong20.north, ...lorong20.south, ...lorong20.ends, ...westerhout.ways, ...south1416.lorong14Ways, ...south1416.lorong16Ways, ...south1416.guillemard, ...lorong12South.ways, ...lorong12South.guillemard, ...lorong23.lane, ...lorong23.geylangRoad, ...lorong22.lane].includes(id))) roads.push({id,name:tags.name??'Service road',oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
+  if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...simsNorth.avenueEast, ...geylang352.geylangRoad, ...lorong17North.lane, ...lorong1921North.lorong19, ...lorong1921North.joining, ...lorong1921North.lorong21, ...lorong21aNorth.lane, ...southWest.lorong6, ...southWest.lorong8, ...southWest.lorong12, ...southWest.service, ...bachok.lane, ...lorong7.lane, ...lorong7.sims, ...lorong20.north, ...lorong20.south, ...lorong20.ends, ...westerhout.ways, ...south1416.lorong14Ways, ...south1416.lorong16Ways, ...south1416.guillemard, ...lorong12South.ways, ...lorong12South.guillemard, ...lorong23.lane, ...lorong23.geylangRoad, ...lorong22.lane, ...guillemard.eastbound, ...guillemard.westbound].includes(id))) roads.push({id,name:tags.name??'Service road',oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
   if (['695010162', '1223458240'].includes(id)) paths.push({id,highway:tags.highway,service:tags.service??null,coordinates});
@@ -352,6 +360,8 @@ const corridors = [
   { name: 'Lorong 23 Geylang', halfWidth: 10, path: chain(lorong23.lane) },
   // Lorong 22's ways are drawn northward from Guillemard Road.
   { name: 'Lorong 22 Geylang', halfWidth: 10, path: chain(lorong22.lane) },
+  { name: 'Guillemard Road, Lorong 16 to Lorong 20', halfWidth: 12, path: chain(guillemard.eastbound) },
+  { name: 'Guillemard Road, south side, Lorong 20 to Lorong 16', halfWidth: 10, path: chain(guillemard.westbound) },
   { name: 'Geylang Road, Lorong 20 to Lorong 23', halfWidth: 13, path: [...chain(lorong23.geylangRoad.slice(0, 2)).reverse(), ...[...wayCoordinates.get('660071499')].reverse().slice(1)].reverse() },
   { name: 'Sims Avenue, Lorong 21 to Lorong 21A', halfWidth: 12, path: [along(wayCoordinates.get('632842880'), 10), ...wayCoordinates.get('632842880').slice(1), along(wayCoordinates.get('475337630'), 25)] },
 ];

@@ -397,6 +397,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes. Apply the same fix to both, then re-check their review views.
     - **Unlocks:** the colours as measured.
 
+100. **Guillemard Road between Lorongs 16 and 20: walk both sides from the dated extension?**
+    - **Evidence:** the dated extension (question 81) holds Guillemard Road's two carriageways between Lorongs 16 and 20, a row of four houses on the north side west of the Lorong 20 corner (Nos. 175-181), a two-storey house west of them (way 454274623), and six houses on the south side (Nos. 84-94, ways 1257881438 to 1257881443). KartaView's drive of 19 May 2023 runs east along the road past them (sequence 8344969, frames 810-818). Guillemard Road is a main road outside the study's lanes, and its south side is the first time the map reaches across it.
+    - **Status:** done on the owner's instruction to carry on, on question 87's terms: ten plots as photographed massing, every building unnamed (question 84), with both carriageways and corridors along them ([brief](guillemard-road-brief.md)). The house further west (way 454274623) is left out. The commits stand apart.
+    - **Recommendation:** yes, as far as the drive shows them; the rest of Guillemard Road's south side would need a decision on how far south the map should go.
+    - **Unlocks:** the four lanes' southern ends joined along Guillemard Road.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026

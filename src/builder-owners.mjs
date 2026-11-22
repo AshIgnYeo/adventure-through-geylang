@@ -78,6 +78,7 @@ import { lorong1416South } from './lorong-14-16-south-layout.mjs';
 import { lorong12South } from './lorong-12-south-layout.mjs';
 import { lorong23 } from './lorong-23-layout.mjs';
 import { lorong22 } from './lorong-22-layout.mjs';
+import { guillemardRoad } from './guillemard-road-layout.mjs';
 import { suiYuanJu } from './sui-yuan-ju-layout.mjs';
 import { tbss } from './tbss-layout.mjs';
 import { watDhammasatis } from './wat-dhammasatis-layout.mjs';
@@ -163,6 +164,7 @@ export const builderOwners = [
   { module: 'lorong-12-south', build: 'buildLorong12South', ids: of(lorong12South) },
   { module: 'lorong-23', build: 'buildLorong23', ids: of(lorong23) },
   { module: 'lorong-22', build: 'buildLorong22', ids: of(lorong22) },
+  { module: 'guillemard-road', build: 'buildGuillemardRoad', ids: of(guillemardRoad) },
 ];
 
 /** Building id to the first entry that claims it, and every id claimed by more than one module. */
