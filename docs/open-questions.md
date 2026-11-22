@@ -382,6 +382,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the block east of Lorong 21 between Geylang Road and Sims Avenue, and Sims Avenue joined to Geylang Road by a second lane.
 
+98. **Lorong 22's west side, from Guillemard Road to Geylang Road: walk it from the dated extension?**
+    - **Evidence:** the dated extension (question 81) reaches 103.8822 E, which takes in Lorong 22's four ways along its eastern edge but none of its east side. On its west side, the back half of the block shared with Lorong 20 holds about ten outlines set back 15-30 m from the lane, four of them addressed to Lorong 22 (among them Nos. 34 and 36, tagged eight levels) and one named Karma Kagyud Buddhist Centre near Guillemard Road. KartaView's drive of 16 May 2023 runs up the lane (sequence 8344809, frames 1035-1056).
+    - **Status:** done on the owner's instruction to carry on, on question 87's terms: ten plots as photographed massing, every building unnamed (question 84), with a corridor along the lane ([brief](lorong-22-brief.md)). The east side waits for an extract reaching further east. The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the block between Lorongs 20 and 22 complete, and a fourth lane from Geylang Road to Guillemard Road.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
