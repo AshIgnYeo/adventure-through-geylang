@@ -30,7 +30,8 @@ test('Lorong 18 brings in its own buildings, its corners and the Geylang Road bl
   for (const id of ['763764683', '121872890', '763764666']) assert.equal(claimed.has(id), false, id);
   // The lane's eight ways, Westerhout Road's mouths either side of it, and Geylang Road on past the junction.
   assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 18 Geylang').length, 8);
-  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Westerhout Road').map(r => r.id).sort(), ['23513327', '644902167']);
+  // Westerhout Road's east mouth at Lorong 20 came in with Lorong 20 (open question 81).
+  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Westerhout Road').map(r => r.id).sort(), ['23513327', '644902167', '666020389']);
   for (const id of ['660071186', '666816964']) assert.equal(sourceMap.roads.find(r => r.id === id)?.name, 'Geylang Road', id);
 });
 
