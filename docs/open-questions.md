@@ -388,6 +388,15 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the block between Lorongs 20 and 22 complete, and a fourth lane from Geylang Road to Guillemard Road.
 
+99. **Colour fields laid behind the front wall: bring them forward on Sims Avenue Nos. 150-176 (Lorong 21 walk) and the Diamond Hotel (Lorong 18 walk)?**
+    - **Evidence:** found on 22 November 2026 while modelling Geylang Road east of Lorong 20. `buildSimpleHouse` draws the front edge of every outline as a wall at the face (out = 0) from the five-foot way's ceiling to the roof, so any block laid behind the face is hidden, and one whose front sits exactly at the face flickers against it.
+      - `src/lorong-21-layout.mjs`, the row at Sims Avenue Nos. 150-176: each house's colour field sits at out -0.04 (depth 0.06), so the row shows each source way's wall colour rather than each house's own colour where a house spans a way's edge.
+      - `src/lorong-18-layout.mjs`, the Diamond Hotel: its yellow lower floors sit at out -0.03 (depth 0.06), their front exactly at the face.
+      - The same mistake in this session's Lorong Bachok row and the Geylang Road pair east of Lorong 20 is already fixed: the fields stand just in front of the wall (out 0.006, depth 0.01), with the windows brought forward to 0.02.
+    - **Status:** not changed, since those exteriors were reviewed as they render now.
+    - **Recommendation:** yes. Apply the same fix to both, then re-check their review views.
+    - **Unlocks:** the colours as measured.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
