@@ -77,6 +77,10 @@ All the chunks still load when the page opens, because every building is built t
 
 At the spawn the scene draws 3,211 materials in 3,683 draw calls. No two materials are identical: about 2,750 are plain colours from `world.mat`, each a different colour, and 463 carry textures, 461 of them canvas signs with 402 distinct images. So removing exact duplicates would save almost nothing. Letting different colours share one material, through vertex colours or a small palette texture, is what would cut draw calls, followed by the sign atlas.
 
+### Scale after the extension walks, measured 22 November 2026
+
+With the dated extension's lanes walked (questions 72, 81, 92 and 95-100), the map holds 543 source outlines and 268 road ways, built by 77 builder modules. At the spawn the scene draws 3,547 materials (3,211 on 12 November), 462 of them textured, across 10,091 drawn mesh instances; it holds about 90,000 entities, and `build()` takes about 16.6 s in software WebGL Chrome (no GPU), with the page ready in about 17.8 s. The main chunk is unchanged at 1.26 MB, since every new builder loads on demand. The new walks are photographed massing, so they add entities and materials but little geometry; steps 4-6 matter more with each walk.
+
 ### Where `build()` spends its time, profiled 12 November 2026
 
 A CPU profile of the page load in software WebGL Chrome (no GPU) gave `build()` 13.6 s, of which 9.6 s fell in Shan Yuan Tang's last `world.mesh` calls, inside `gl.bufferData`. That is mostly Chrome waiting for the software GPU to work through everything queued before it, so it does not represent a real device. The rest spreads across the shared house builders (about 2.7 s), sign canvases (0.6 s), texture uploads (0.6 s) and tile merging (0.7 s), with no single cheap fix that keeps the output identical.
