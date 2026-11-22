@@ -10,6 +10,7 @@ Research and implementation from **22 November 2026**, under open questions 72 a
 - **Modelling:** photographed massing on the source outlines. The terrace houses' outlines step out at a porch bay; each is laid on the main segment of its front, with the bay as a side face carrying its canopy.
 - **Naming:** every building is unnamed for now (question 84). House numbers are the source ways' tags, and agree with the plates photographed on Nos. 2, 56 and 61.
 - **Correction to Lorong 20:** the frames along the road show the Lorong 20 corner outline (way 764372538, tagged No. 71) holding two buildings. A white three-storey block on red columns stands at the corner, and the turquoise single-storey house modelled with Lorong 20 stands north of it. The Lorong 20 model now carries the corner block as an upper volume and names the outline No. 71 Westerhout Road.
+- **Correction, the same day:** a frame looking east from Lorong 16 shows the corner plot (way 121873029) as the pink three-storey house with the gable, which the frames along Westerhout Road had shown next to the gate with the plate 2. The row's looks therefore sit one house further east than first modelled, and are corrected from No. 2 to No. 12.
 - **Left for later:** Lorong 18's stub south of the road, whose west side now has outlines in the extension (No. 50, way 454274629).
 
 ## Status, 22 November 2026
@@ -20,12 +21,12 @@ Research and implementation from **22 November 2026**, under open questions 72 a
 
 | Plot | Way | As photographed | Height |
 | --- | --- | --- | --- |
-| No. 2, the Lorong 16 corner | 121873029 | White, two storeys, maroon-framed windows, a red tiled porch roof and a black gate with a red plate 2. | Eaves about 7 m |
-| No. 4 | 764372536 | Pink, a gable over its top floor, an orange tiled canopy. | About 10.2 m |
-| No. 6 | 764372535 | White under orange tiled canopies, a balcony garden. | About 10.2 m |
-| No. 8 | 764372533 | White under blue tiled roofs, arched windows framed in blue. | About 10.2 m |
-| No. 10 | 764372534 | Pink with red tiled canopies. | About 10.2 m |
-| No. 12 | 764372531 | Grey-blue with a red tiled canopy and orange-framed windows. | About 10.2 m |
+| No. 2, the Lorong 16 corner | 121873029 | Pink, three storeys under an orange tiled roof with a gable to Lorong 16, windows under small brown hoods, behind a white wall with fan-patterned grilles and a red tiled canopy; a gate on Westerhout Road with a red plate 2. | About 9.6 m |
+| No. 4 | 764372536 | White under orange tiled canopies, a balcony garden. | About 10.2 m |
+| No. 6 | 764372535 | White under blue tiled roofs, arched windows framed in blue. | About 10.2 m |
+| No. 8 | 764372533 | Pink with red tiled canopies. | About 10.2 m |
+| No. 10 | 764372534 | Grey-blue with a red tiled canopy. | About 10.2 m |
+| No. 12 | 764372531 | White with orange-framed windows and a red tiled canopy. | About 10.2 m |
 | No. 14 | 764372532 | White, arched windows under a red tiled roof, a small turret over its porch bay. | About 10.2 m |
 | No. 54, at Lorong 18's stub | 764372527 | Single-storey under an orange tiled hipped roof. | Eaves about 3.4 m |
 | No. 56 | 454274544 | White, single-storey under an orange tiled hipped roof, behind a tiled forecourt, with a red plate 56 and a painted landscape board (drawn blank). | Eaves about 3.4 m |

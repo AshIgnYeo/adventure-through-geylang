@@ -35,25 +35,27 @@ const terrace = ({ id, building, number, front, W, bay, B, wall, roof, canopy, f
 });
 
 export const no2 = {
-  ...mass({ wall: '#efeeea', frame: '#7a2a2a', glass: '#3a4044' }, { frontEdge: 0, review: { distance: 14.5, pitch: 18 }, height: 7.0, roof: { type: 'hip', ridge: 9.0, colour: '#b4553d' } }),
+  ...mass({ wall: '#ecc4bc', frame: '#6a4030', glass: '#3a4044' }, { frontEdge: 0, review: { distance: 14.5, pitch: 22 }, height: 9.6, roof: { type: 'hip', ridge: 12.2, colour: '#c86a3a' } }),
   id: 'wh-2', buildingIds: ['121873029'], kind: 'unnamed', unnamed: true,
   name: 'No. 2 Westerhout Road, the Lorong 16 corner (May 2023 massing, occupant not identified)', address: '2 Westerhout Road (a red plate 2 on its gate pier)',
-  evidence: 'KartaView panoramas of May 2023 show a white two-storey corner house at Lorong 16 and Westerhout Road with maroon-framed windows, a red tiled roof over its porch and a black gate whose pier carries a red plate reading 2. Listings could not be checked (open question 84), so no name is given.' + note,
-  sources: src('121873029', '724', '725', '726'),
-  windows: grid([mid(3.74, 2.2)], [3.9], 1.5, 3),
+  evidence: 'KartaView panoramas of May 2023 show a pink three-storey corner house at Lorong 16 and Westerhout Road under an orange tiled roof with a gable to Lorong 16, its windows under small brown hoods, behind a white wall with fan-patterned grilles and a red tiled canopy, and a gate on Westerhout Road whose pier carries a red plate reading 2. Listings could not be checked (open question 84), so no name is given.' + note,
+  sources: src('121873029', '722', '724', '725', '726'),
+  windows: grid([mid(3.74, 2.2)], [3.9, 6.9], 1.5, 3),
   blocks: [plain('black gate', span(3.74, .2), [.05, 2.2], '#2a2c2e')],
   sides: [
-    { edge: 2, windows: grid([mid(2.93, 1.5)], [3.9], 1.5, 2), blocks: [plain('red tiled porch roof', span(2.93, .1), [2.8, 3.2], '#c8443a', .6, 1.2)] },
-    { edge: 7, windows: grid([[1.5, 3.3], [5.5, 7.3], [9.0, 10.8]], [.9, 3.9], 1.5, 2) },
+    { edge: 2, windows: grid([mid(2.93, 1.5)], [3.9, 6.9], 1.5, 2), blocks: [plain('red tiled canopy', span(2.93, .1), [2.8, 3.2], '#c8443a', .6, 1.2)] },
+    { edge: 7, windows: grid([[1.5, 3.3], [5.5, 7.3], [9.0, 10.8]], [3.9, 6.9], 1.5, 2), blocks: [
+      ...[3.9, 6.9].flatMap(b => [[1.4, 3.4], [5.4, 7.4], [8.9, 10.9]].map(u => plain('brown window hood', u, [b + 1.55, b + 1.8], '#8a5a3a', .15, .3))),
+      plain('white wall', span(12.33, .2), [0, 2.0], '#f0f0ec', 1.5, .2), plain('red tiled canopy', span(12.33, .3), [2.6, 3.0], '#c8443a', .6, 1.2)] },
   ],
 };
 
-export const no4 = terrace({ id: 'wh-4', building: '764372536', number: '4', front: 5, W: 3.68, bay: 2, B: 1.98, wall: '#ecc4bc', roof: '#c86a3a', canopy: '#d8783a', review: 13, look: 'a pink terrace house with a gable over its top floor and an orange tiled canopy' });
-export const no6 = terrace({ id: 'wh-6', building: '764372535', number: '6', front: 3, W: 3.36, bay: 5, B: 2.99, wall: '#efeeea', roof: '#c86a3a', canopy: '#d8783a', review: 13, look: 'a white terrace house under orange tiled canopies, with a balcony garden on its first floor', bayExtra: [plain('balcony planters', [.2, 2.79], [3.3, 3.9], '#4a7a3a', .4, .5)] });
-export const no8 = terrace({ id: 'wh-8', building: '764372533', number: '8', front: 4, W: 3.72, bay: 2, B: 3.46, wall: '#f2f2ee', roof: '#3a6aa8', canopy: '#4a7ab8', frame: '#3a6aa8', review: 13, look: 'a white terrace house under blue tiled roofs, with arched windows framed in blue', extra: [plain('arched heads', mid(3.72, 2.6), [8.5, 8.8], '#3a6aa8', .05, .1)] });
-export const no10 = terrace({ id: 'wh-10', building: '764372534', number: '10', front: 3, W: 3.89, bay: 5, B: 2.65, wall: '#ecc8c4', roof: '#b4553d', canopy: '#c8443a', review: 13, look: 'a pink terrace house with red tiled canopies' });
+export const no4 = terrace({ id: 'wh-4', building: '764372536', number: '4', front: 5, W: 3.68, bay: 2, B: 1.98, wall: '#efeeea', roof: '#c86a3a', canopy: '#d8783a', review: 13, look: 'a white terrace house under orange tiled canopies, with a balcony garden on its first floor', bayExtra: [plain('balcony planters', [.2, 1.78], [3.3, 3.9], '#4a7a3a', .4, .5)] });
+export const no6 = terrace({ id: 'wh-6', building: '764372535', number: '6', front: 3, W: 3.36, bay: 5, B: 2.99, wall: '#f2f2ee', roof: '#3a6aa8', canopy: '#4a7ab8', frame: '#3a6aa8', review: 13, look: 'a white terrace house under blue tiled roofs, with arched windows framed in blue', extra: [plain('arched heads', mid(3.36, 2.4), [8.5, 8.8], '#3a6aa8', .05, .1)] });
+export const no8 = terrace({ id: 'wh-8', building: '764372533', number: '8', front: 4, W: 3.72, bay: 2, B: 3.46, wall: '#ecc8c4', roof: '#b4553d', canopy: '#c8443a', review: 13, look: 'a pink terrace house with red tiled canopies' });
+export const no10 = terrace({ id: 'wh-10', building: '764372534', number: '10', front: 3, W: 3.89, bay: 5, B: 2.65, wall: '#a8b4bc', roof: '#b4553d', canopy: '#c8443a', review: 13, look: 'a grey-blue terrace house with a red tiled canopy' });
 export const no12 = {
-  ...terrace({ id: 'wh-12', building: '764372531', number: '12', front: 2, W: 4.27, bay: 2, B: 4.27, wall: '#a8b4bc', roof: '#b4553d', canopy: '#c8443a', frame: '#d8782a', review: 10, look: 'a grey-blue terrace house with a red tiled canopy and orange-framed windows' }),
+  ...terrace({ id: 'wh-12', building: '764372531', number: '12', front: 2, W: 4.27, bay: 2, B: 4.27, wall: '#f0efea', roof: '#b4553d', canopy: '#c8443a', frame: '#d8782a', review: 10, look: 'a white terrace house with orange-framed windows and a red tiled canopy' }),
   sides: [],
   blocks: [plain('dark gate', span(4.27, .2), [.05, 2.4], '#2a2c2e'), plain('red tiled canopy', span(4.27, .1), [2.8, 3.2], '#c8443a', .5, 1.0)],
 };

@@ -29,7 +29,8 @@ test('Lorong 14 brings in its own buildings, its east corner block and the Geyla
   for (const id of ['764372570', '764372571', '764372569', '763764689', '763764687']) assert.equal(claimed.has(id), false, id);
   // Nos. 454438325 and 454438317, west of the lane on Lorongs 10 and 12, came in later with question 92.
   for (const id of ['454438325', '454438317']) assert.equal(ids.has(id), true, id);
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 14 Geylang').length, 13);
+  // Thirteen ways in the retained extract, and six more to Guillemard Road from the dated extension (open question 52).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 14 Geylang').length, 19);
   // Talma Road's east mouth is kept as road.
   assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Talma Road').map(r => r.id), ['644896804']);
 });

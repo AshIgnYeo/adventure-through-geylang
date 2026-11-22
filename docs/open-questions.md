@@ -64,6 +64,7 @@ Started: 10 October 2026.
     - **What happens now:**
       - The walk stops at No. 37 on the east side and at Wing Fong Mansions on the west, which is modelled over its whole source outline.
       - The lane's corridor ends at the extract's last way, so the south part of Wing Fong Mansions' face can be seen but not walked to.
+    - **Status, 22 November 2026:** done from the dated extension (question 81): Lorong 14's six southern ways and its east side from No. 43 to No. 73, as photographed massing from KartaView's drive of 19 May 2023 ([brief](lorong-14-16-south-brief.md)). Wing Fong Mansions' whole lane face can now be walked. The commits stand apart.
     - **Recommendation:** yes. Retrieve a new extract reaching about 1.3095 N, so that Lorong 14 runs to Guillemard Road. Then finish the east side south of No. 37 and the lane's south end in a later pass, as Lorong 14 was walked.
     - **Unlocks:** the whole of Lorong 14, the rest of its east side and its Guillemard Road corners.
 
@@ -133,6 +134,7 @@ Started: 10 October 2026.
       - None of their outlines, nor the lane's ways south of the edge, are in the extract.
       - **Extract check, 12 November 2026:** in the same download as question 52's, Lorong 16's four ways run on to about 1.3101 N, and about 25 outlines that are not in the retained extract stand between Lorong 14's east side and Lorong 16 south of the edge.
     - **What happens now:** the walk stops at the last buildings the extract holds: No. 54 on the west side, whose outline crosses the edge, and the terrace at the head of Westerhout Road on the east. The corridor ends at the end of way 632249196.
+    - **Status, 22 November 2026:** done from the dated extension (question 81): Lorong 16's three southern ways, No. 60, the Association Building and No. 71 as photographed massing ([brief](lorong-14-16-south-brief.md)). The commits stand apart.
     - **Recommendation:** yes, as a later pass. Retrieve a dated extract of the strip south of the edge to Guillemard Road (about 1.3095–1.3110 N, 103.8785–103.8810 E), keep `public/osm-source.osm` as retained, take the lane's southern ways and buildings in by id, and walk them as a continuation of the Lorong 16 brief.
     - **Unlocks:** the whole of Lorong 16, with its junction on Guillemard Road, and the corridor carried to it.
 
