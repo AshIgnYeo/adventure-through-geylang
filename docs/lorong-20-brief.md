@@ -40,11 +40,11 @@ Research and implementation from **22 November 2026**, under open questions 81 a
 | The blue-grey hotel | 454274591 | Nine storeys, a porch under a board reading HOTEL 81. | About 29 m |
 | The single-storey row | 454274594 | Orange tiles, blue eaves, air-conditioning units and a garden of potted plants. | Eaves about 3.4 m |
 | The white house with arched windows | 454274588 | Four storeys behind trees, arched windows and a dark gated car porch. | About 12.6 m |
-| Nos. 38-40, the Westerhout Road corner | 764372538 | Single-storey, turquoise walls and gate piers with red plates 38 and 40, under a dark tiled roof with a red-edged eave. | Eaves about 3.4 m |
+| No. 71 Westerhout Road, the corner | 764372538 | Two buildings on one outline: at the corner a white block of three storeys on red columns with red grilles and stone lions (the outline's tag is No. 71 Westerhout Road), carried as an upper volume; north of it a single-storey house with turquoise walls and gate piers carrying red plates 38 and 40, under a dark tiled roof with a red-edged eave. | About 10 m and 3.4 m |
 | No. 54, Westerhout Road's south corner | 764372525 | White, four storeys, a red column at the corner. | About 13 m |
 | No. 56 | 454274547 | White, three storeys, a blue awning above and a red tiled porch roof below. | About 9.6 m |
 | No. 58 | 764372526 | Weathered white walk-up flats of three storeys with small balconies. | About 9.8 m |
 | Nos. 60 and 62 | 764372524, 764372523 | A pair of peach two-storey houses under orange tiled roofs. | Eaves about 6.4 m |
 | Nos. 62A and 62C, at Guillemard Road | 764372522, 764372521 | A weathered white two-storey row under a corrugated roof edge, over shop fronts. | About 7 m |
 
-Use `?review=l20-geylang-corner`, `?review=l20-1`, `?review=l20-fretwork`, `?review=l20-hotel-east`, `?review=l20-31`, `?review=l20-33`, `?review=l20-35`, `?review=l20-balconies`, `?review=l20-peach`, `?review=l20-pink-houses`, `?review=l20-flats`, `?review=l20-ibis`, `?review=l20-hotel-west`, `?review=l20-red-roofs`, `?review=l20-arched`, `?review=l20-38`, `?review=l20-54`, `?review=l20-56`, `?review=l20-58`, `?review=l20-60`, `?review=l20-62`, `?review=l20-62a` and `?review=l20-62c`.
+Use `?review=l20-geylang-corner`, `?review=l20-1`, `?review=l20-fretwork`, `?review=l20-hotel-east`, `?review=l20-31`, `?review=l20-33`, `?review=l20-35`, `?review=l20-balconies`, `?review=l20-peach`, `?review=l20-pink-houses`, `?review=l20-flats`, `?review=l20-ibis`, `?review=l20-hotel-west`, `?review=l20-red-roofs`, `?review=l20-arched`, `?review=l20-westerhout-corner`, `?review=l20-54`, `?review=l20-56`, `?review=l20-58`, `?review=l20-60`, `?review=l20-62`, `?review=l20-62a` and `?review=l20-62c`.

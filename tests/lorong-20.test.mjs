@@ -22,8 +22,10 @@ test('Lorong 20 comes in from the dated extension with its plots, its thirteen w
     const path = sourceMap.corridors.find(c => c.name === name).path.map(p => project(p, sourceMap.origin));
     for (let i = 1; i < path.length; i++) for (let k = 0; k <= 20; k++) assert.ok(inStudy([path[i - 1][0] + (path[i][0] - path[i - 1][0]) * k / 20, path[i - 1][1] + (path[i][1] - path[i - 1][1]) * k / 20], 3), name);
   }
-  // The Westerhout Road row west of the lane waits for its own pass (open question 72).
-  for (const id of ['764372539', '454438307', '454274544']) assert.equal(ids.has(id), false, id);
+  // The Westerhout Road row west of the lane came in with its own pass (open question 72), and the Lorong 18 stub's west
+  // side still waits.
+  for (const id of ['764372539', '454438307', '454274544']) assert.equal(ids.has(id), true, id);
+  assert.equal(ids.has('454274629'), false);
 });
 
 test('the Lorong 20 plots fit their outlines, face the lane and keep their review starts clear', () => {

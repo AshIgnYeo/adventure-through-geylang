@@ -223,15 +223,27 @@ export const archedHouse = {
   ],
 };
 
-export const no38 = {
-  ...mass({ wall: '#7ac8c8', frame: '#2e3032', glass: '#3a4044', trim: '#c8443a' }, { frontEdge: 0, heldFlat: true, review: { distance: 6.5, pitch: 10 }, height: 3.4, roof: tiles(5.6, '#5a4a44') }),
-  id: 'l20-38', buildingIds: ['764372538'], kind: 'unnamed', unnamed: true,
-  name: 'Nos. 38-40 Lorong 20 Geylang (May 2023 massing, occupants not identified)', address: '38-40 Lorong 20 Geylang (the Westerhout Road corner; red plates on its gate piers)',
-  evidence: 'KartaView panoramas of May 2023 show a single-storey house under a dark tiled roof with a red-edged eave at the corner of Westerhout Road, its walls and gate piers painted turquoise, the piers carrying red plates reading 38 and 40, behind a tiled forecourt. Listings could not be checked (open question 84), so no name is given.' + note,
-  sources: src('764372538', '747', '746', '745'),
-  windows: [{ u: [3.0, 5.0], h: [.9, 2.4], panes: 3 }, { u: [7.0, 9.0], h: [.9, 2.4], panes: 3 }],
-  blocks: [plain('red-edged eave', span(11.37), [3.2, 3.45], '#c8443a', .1, .2), plain('dark doorway', [5.4, 6.6], [.05, 2.3], '#2a2c2e')],
-  sides: [{ edge: 2, windows: [{ u: [1.6, 3.6], h: [.9, 2.4], panes: 2 }], blocks: [plain('red-edged eave', span(5.65), [3.2, 3.45], '#c8443a', .1, .2)] }],
+// The Westerhout Road corner holds two buildings on one outline: a white three-storey block on red columns at the corner
+// (the outline's tag is No. 71 Westerhout Road), carried by an upper volume, and a turquoise single-storey house north of it.
+const corner71 = 5.5;
+export const no71 = {
+  ...mass({ wall: '#7ac8c8', frame: '#2e3032', glass: '#3a4044', trim: '#c8443a' }, { frontEdge: 0, heldFlat: true, review: { distance: 6.5, pitch: 22 }, height: 3.4, roof: tiles(5.6, '#5a4a44') }),
+  id: 'l20-westerhout-corner', buildingIds: ['764372538'], kind: 'unnamed', unnamed: true,
+  name: 'No. 71 Westerhout Road, the Lorong 20 corner (May 2023 massing, occupants not identified)', address: '71 Westerhout Road (the source tag), at the corner of Lorong 20; red plates 38 and 40 on the house to its north',
+  evidence: 'KartaView panoramas of May 2023 show two buildings on this corner outline. At the corner of Westerhout Road stands a white block of three storeys on red columns, with red grilles over its ground-floor door and windows, stone lions at its step, and a row of glazed windows under a pierced frieze above; the outline carries the tag No. 71, which runs on from Nos. 55, 61 and 69 along Westerhout Road. North of it, facing Lorong 20, a single-storey house under a dark tiled roof with a red-edged eave has turquoise walls and gate piers carrying red plates reading 38 and 40, behind a tiled forecourt. Listings could not be checked (open question 84), so no name is given. The corner block is carried as an upper volume over the outline\'s south end; its height follows its three storeys and carries about ±2 m.' + note,
+  sources: [...src('764372538', '747', '746', '745'), kv('8344969', '742'), kv('8344969', '743')],
+  windows: [{ u: [6.6, 8.4], h: [.9, 2.4], panes: 3 }, { u: [9.2, 10.9], h: [.9, 2.4], panes: 3 }],
+  blocks: [
+    plain('red-edged eave', [corner71, 11.34], [3.2, 3.45], '#c8443a', .1, .2), plain('dark doorway', [8.5, 9.1], [.05, 2.3], '#2a2c2e'),
+    ...[[.15, .55], [4.9, 5.3]].map(u => plain('red column', u, [0, 3.4], '#c8302a', .1, .2)),
+    plain('red grille', [1.0, 4.4], [.3, 2.6], '#c8302a', .02, .02),
+  ],
+  upper: [{
+    outline: [[0, 0], [corner71, 0], [corner71, -6.0], [0, -6.0]], from: 0, to: 10.0, colour: '#f2f0ea', roof: '#a8a8a4',
+    windows: [{ u: [.6, 4.9], h: [7.2, 8.6], panes: 4 }, { u: [.6, 4.9], h: [4.2, 5.6], panes: 4 }],
+    blocks: [plain('pierced frieze', [.3, 5.2], [8.8, 9.2], '#e8e6e0', .03, .04)],
+  }],
+  sides: [{ edge: 2, windows: [{ u: [.8, 4.8], h: [4.2, 5.6], panes: 3 }, { u: [.8, 4.8], h: [7.2, 8.6], panes: 3 }], blocks: [plain('red grille', [1.0, 3.6], [.3, 2.6], '#c8302a', .02, .02)] }],
 };
 
 export const no54 = {
@@ -290,5 +302,5 @@ const cornerRow = (id, frontEdge, W, number, review, extra = {}) => ({
 export const no62a = cornerRow('764372522', 4, 5.94, '62A', 8);
 export const no62c = cornerRow('764372521', 1, 5.53, '62C', 7, { sides: [{ edge: 2, windows: [{ u: [1.0, 9.1], h: [3.9, 5.6], panes: 6 }], blocks: [plain('corrugated roof edge', span(10.15), [6.8, 7.1], '#9a9c98', .3, .6)] }] });
 
-export const lorong20 = [haoCorner, louvredBlock, fretworkHouse, hotelEast, no31, no33, no35, curvedBalconies, peachBlock, pinkHouses, terraceAndFlats, ibis, hotelWest, redRoofRow, archedHouse, no38, no54, no56, walkUp, no60, no62, no62a, no62c];
+export const lorong20 = [haoCorner, louvredBlock, fretworkHouse, hotelEast, no31, no33, no35, curvedBalconies, peachBlock, pinkHouses, terraceAndFlats, ibis, hotelWest, redRoofRow, archedHouse, no71, no54, no56, walkUp, no60, no62, no62a, no62c];
 export const lorong20Frame = laneFrame, lorong20Layout = laneLayout, lorong20Upper = laneUpper, lorong20Reviews = laneReviews, lorong20Sides = laneSides;

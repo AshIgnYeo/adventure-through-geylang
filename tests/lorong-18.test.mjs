@@ -26,14 +26,15 @@ test('Lorong 18 brings in its own buildings, its corners and the Geylang Road bl
   // with Lorong 16, not here.
   // Nos. 352-364 came in later on their own (open question 86).
   // No. 54 Lorong 20 (way 764372525), at Westerhout Road's south corner, came in with Lorong 20 (open question 81).
-  for (const id of ['454438307', '764372539', '454274544']) assert.equal(ids.has(id), false, id);
+  // The Westerhout Road row came in with its own pass (open question 72).
+  for (const id of ['454438307', '764372539', '454274544']) assert.equal(ids.has(id), true, id);
   assert.equal(ids.has('764372525'), true);
   const claimed = new Set(lorong18.flatMap(p => p.buildingIds));
   for (const id of ['763764683', '121872890', '763764666']) assert.equal(claimed.has(id), false, id);
   // The lane's eight ways, Westerhout Road's mouths either side of it, and Geylang Road on past the junction.
   assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 18 Geylang').length, 8);
   // Westerhout Road's east mouth at Lorong 20 came in with Lorong 20 (open question 81).
-  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Westerhout Road').map(r => r.id).sort(), ['23513327', '644902167', '666020389']);
+  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Westerhout Road').map(r => r.id).sort(), ['23513327', '644902167', '644902168', '666020389', '666020390', '784675505']);
   for (const id of ['660071186', '666816964']) assert.equal(sourceMap.roads.find(r => r.id === id)?.name, 'Geylang Road', id);
 });
 
