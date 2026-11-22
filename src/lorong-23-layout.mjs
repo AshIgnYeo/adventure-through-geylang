@@ -152,5 +152,45 @@ export const dumplingPair = {
   ],
 };
 
-export const lorong23 = [coffeeShop, white4, tcm, orangeFrames, yellowTemple, whiteModern, taiWahA, taiWahB, redVents, lightBlue, charoya, pinkCorner, longBlock, shed, foodCentre, ktvPair, dumplingPair];
+// North of Sims Avenue, from the drive's run up the lane (frames 3768-3786).
+const northSrc = (id, ...f) => [way(id), ...f.map(i => kv('8344809', i))];
+export const fansida = {
+  ...mass({ wall: '#a8a8bc', frame: '#e8e8ec', glass: '#3a6a7a' }, { frontEdge: 6, review: { distance: 10, pitch: 26 }, height: 15.0 }),
+  id: 'l23-46', buildingIds: ['454254343'], kind: 'unnamed', unnamed: true,
+  name: 'No. 46 Lorong 23 Geylang (May 2023 massing, occupant not identified)', address: '46 Lorong 23 Geylang (a plate 46 at its gate)',
+  evidence: 'KartaView panoramas of May 2023 show a lavender-grey block of four storeys north of Sims Avenue on the east side of the lane, its floors banded in pale grey with rows of teal windows, a blue sign reading FANSIDA BUILDING, and a seafood restaurant at its ground floor under red boards reading TOTO SEAFOOD 多多海鲜 and red umbrellas behind a black railing. The source way carries the name Fansida and four levels; listings could not be checked (open question 84), so no name is given and the boards are drawn blank.' + note,
+  sources: northSrc('454254343', '3772', '3771', '3773'),
+  windows: grid(spread(18.46, 5, 2.0), [4.6, 7.8, 11.0], 1.8, 3),
+  blocks: [
+    ...[4.2, 7.4, 10.6].map(b => plain('pale grey band', span(18.46), [b, b + .35], '#d8d8e0', .04, .04)),
+    plain('blank red boards', [1.0, 17.4], [3.4, 4.1], '#c8202a', .05, .04),
+    plain('blank blue sign', [.6, 5.6], [2.6, 3.2], '#2a3a8a', .05, .04),
+    plain('red umbrellas', [6.0, 17.0], [2.2, 2.8], '#d84040', 3.0, 2.0),
+    plain('black railing', span(18.46, .3), [0, 1.3], '#2a2c2e', 5.0, .05),
+  ],
+};
+export const freeClinic = {
+  ...mass({ wall: '#2a4a8a', frame: '#e8e8ec', glass: '#2e3438' }, { frontEdge: 0, review: { distance: 15, pitch: 32 }, height: 25.0 }),
+  id: 'l23-48', buildingIds: ['454254342'], kind: 'unnamed', unnamed: true,
+  name: 'No. 48 Lorong 23 Geylang (May 2023 massing, occupant not identified)', address: '48 Lorong 23 Geylang',
+  evidence: 'KartaView panoramas of May 2023 show a block of about seven storeys clad in deep blue panels north of Fansida Building, with a tall gold and black striped panel up one side carrying the characters 佛教施诊所, white lettering reading SINGAPORE BUDDHIST FREE CLINIC under a lotus emblem, small square windows, Buddhist flags at its gate and a stone gate wall carrying the same name. The source way carries the same name; listings could not be checked (open question 84), so no name is given and the lettering is not drawn. Its height follows its storeys and carries about ±4 m.' + note,
+  sources: northSrc('454254342', '3772', '3773', '3774'),
+  windows: grid(spread(18.85, 6, 1.0), [5.0, 8.4, 11.8, 15.2, 18.6], 1.0, 1),
+  blocks: [
+    plain('gold and black striped panel', [13.0, 16.0], [4.0, 25.0], '#c8a040', .3, .4),
+    plain('lotus emblem field', [3.0, 11.0], [20.6, 22.0], '#e8ecf0', .05, .04),
+    plain('stone gate wall', span(18.85, .4), [0, 1.8], '#d8ccb4', 4.0, .3),
+  ],
+};
+export const thaiPore = {
+  ...mass({ wall: '#e8e8e8', frame: '#3a8a8a', glass: '#4a8a8a' }, { frontEdge: 0, review: { distance: 19, pitch: 28 }, height: 19.0 }),
+  id: 'l23-thai-pore', buildingIds: ['454254348'], kind: 'unnamed', unnamed: true,
+  name: 'No. 51 Lorong 23 Geylang (May 2023 massing, occupant not identified)', address: '51 Lorong 23 Geylang',
+  evidence: 'KartaView panoramas of May 2023 show a pale grey industrial block of five storeys on the west side of the lane north of Yu Li Industrial Building, with bands of teal glass, a granite-clad ground floor over a loading bay and a dark stone wall at its gate lettered THAI-PORE ENTERPRISE PTE LTD. The source way is named Thai-Pore Centre; listings could not be checked (open question 84), so no name is given and the lettering is not drawn. Its height follows its storeys and carries about ±2 m.' + note,
+  sources: northSrc('454254348', '3777', '3779', '3776'),
+  windows: grid([[1.6, 8.6], [10.0, 17.0]], [4.8, 8.4, 12.0, 15.6], 1.8, 6),
+  blocks: [plain('granite ground floor', span(18.58), [.05, 3.8], '#6a6a6c', .006, .01), plain('dark stone wall', [2.0, 12.0], [0, 1.9], '#3a3a3c', 6.0, .3)],
+};
+
+export const lorong23 = [coffeeShop, white4, tcm, orangeFrames, yellowTemple, whiteModern, taiWahA, taiWahB, redVents, lightBlue, charoya, pinkCorner, longBlock, shed, foodCentre, ktvPair, dumplingPair, fansida, freeClinic, thaiPore];
 export const lorong23Frame = laneFrame, lorong23Layout = laneLayout, lorong23Upper = laneUpper, lorong23Reviews = laneReviews, lorong23Sides = laneSides;
