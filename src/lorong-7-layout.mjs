@@ -95,7 +95,7 @@ export const winsome = {
   blocks: [
     ...eyebrow([3.2, 8.6], [6.9, 7.4]), ...eyebrow([3.2, 8.6], [10.1, 10.6]),
     { name: 'grey band', u: [.05, 12.68], h: [3.8, 4.4], out: .15, depth: .3, colour: '#8a9498' },
-    { name: 'open ground floor', u: [.4, 12.3], h: [.1, 3.7], out: -1.0, depth: .1, colour: '#3a3836' },
+    { name: 'open ground floor', u: [.4, 12.3], h: [.1, 3.7], out: .006, depth: .01, colour: '#3a3836' },
     ...[[.3, .9], [6.0, 6.6], [11.8, 12.4]].map(u => ({ name: 'column', u, h: [0, 3.8], out: .1, depth: .5, colour: '#f2f2ee' })),
     ...[[5.0, 6.2], [8.2, 9.4]].map(h => ({ name: 'balcony railing', u: [9.4, 12.6], h, out: .7, depth: .05, colour: '#c8ccd0' })),
     ...[4.9, 8.1].map(b => ({ name: 'balcony slab', u: [9.4, 12.6], h: [b, b + .15], out: .4, depth: .8, colour: '#e8e8e4' })),

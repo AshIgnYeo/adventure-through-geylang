@@ -113,8 +113,8 @@ export const foodCentre = {
   name: 'Lorong 23 Geylang, the west corner on Geylang Road (May 2023 massing, occupant not identified)', address: 'Geylang Road at the west corner of Lorong 23',
   evidence: 'KartaView panoramas of May 2023 show an open-sided food centre under a blue roof behind a fence at the west corner of Lorong 23 and Geylang Road, as question 81 recorded from the Geylang Road frames, which also found that the outline does not match all that is photographed. No sign could be read and listings could not be checked (open question 84), so no name is given.' + note,
   sources: src('454254140', '3038', '3039', '3221'),
-  blocks: [plain('open side', [.6, 9.6], [.3, 3.8], '#3a3836', -.6, .1), plain('fence', span(10.26, .2), [0, 1.8], '#2a3a6a', 2.0, .05)],
-  sides: [{ edge: 2, blocks: [plain('open side', [1.0, 21.1], [.3, 3.8], '#3a3836', -.6, .1)] }],
+  blocks: [plain('open side', [.6, 9.6], [.3, 3.8], '#3a3836', .006, .01), plain('fence', span(10.26, .2), [0, 1.8], '#2a3a6a', 2.0, .05)],
+  sides: [{ edge: 2, blocks: [plain('open side', [1.0, 21.1], [.3, 3.8], '#3a3836', .006, .01)] }],
 };
 
 // Geylang Road's south side east of the Lorong 20 corner, from the westbound drives of 16 and 19 May 2023 (sequences

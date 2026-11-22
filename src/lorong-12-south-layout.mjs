@@ -46,7 +46,7 @@ export const no27 = {
   blocks: [
     plain('vertical fin screen', span(22.23, .2), [4.4, 16.0], '#8a8480', .3, .2),
     ...Array.from({ length: 20 }, (_, k) => +(1.0 + k * 1.05).toFixed(2)).map(a => plain('vertical fin', [a, +(a + .12).toFixed(2)], [4.4, 16.0], '#6a6460', .45, .1)),
-    plain('dark ground floor', span(22.23, .6), [.05, 4.2], '#2a2826', -1.0, .1),
+    plain('dark ground floor', span(22.23, .6), [.05, 4.2], '#2a2826', .006, .01),
     ...[[6.0, 6.6], [12.4, 13.0]].map(u => plain('round column', u, [0, 4.4], '#e8e4da', .1, .6)),
     plain('stone wall', span(22.23, .2), [0, 1.8], '#5a5654', 1.8, .3),
     plain('gilded finial', [10.6, 11.6], [16.0, 18.4], '#c8a040', -4.0, 1.0),

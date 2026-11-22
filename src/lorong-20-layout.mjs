@@ -96,7 +96,7 @@ export const no31 = {
   windows: grid(spread(16.39, 4, 1.3), floors(6, 4.4, 3.1), 1.5, 3),
   blocks: [
     plain('red bay', [13.4, 16.1], [3.6, 23.0], '#c8302a', .2, .4),
-    plain('open ground floor', [.6, 12.8], [.05, 3.4], '#3a3836', -1.0, .1),
+    plain('open ground floor', [.6, 12.8], [.05, 3.4], '#3a3836', .006, .01),
     plain('red 31', [14.0, 15.6], [10.6, 12.2], '#d83a2a', .42, .02),
   ],
 };
@@ -134,7 +134,7 @@ export const curvedBalconies = {
   windows: grid(spread(19.1, 4, 1.8), floors(5, 4.4, 3.0), 1.8, 3),
   blocks: [
     ...floors(5, 4.0, 3.0).flatMap(b => [plain('balcony slab', [2.0, 17.1], [+b.toFixed(2), +(b + .2).toFixed(2)], '#e8e8e4', .7, 1.4), plain('grey glass rail', [2.0, 17.1], [+(b + .2).toFixed(2), +(b + 1.2).toFixed(2)], '#9aa6ac', 1.35, .05)]),
-    plain('open car park', [1.0, 18.1], [.05, 3.4], '#3a3836', -1.0, .1),
+    plain('open car park', [1.0, 18.1], [.05, 3.4], '#3a3836', .006, .01),
   ],
 };
 

@@ -107,7 +107,7 @@ export const canberlin = {
   windows: grid(spread(18.27, 5, 1.8), floors(6, 4.2, 3.0), 1.7, 3),
   blocks: [
     ...floors(6, 3.9, 3.0).map(b => plain('grey louvred screen', [1.0, 17.27], [+b.toFixed(2), +(b + 1.2).toFixed(2)], '#9aa4aa', .5, .1)),
-    plain('open car park', [1.0, 17.27], [.05, 3.4], '#3a3836', -1.0, .1),
+    plain('open car park', [1.0, 17.27], [.05, 3.4], '#3a3836', .006, .01),
   ],
 };
 
