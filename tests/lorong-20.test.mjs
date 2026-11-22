@@ -25,7 +25,7 @@ test('Lorong 20 comes in from the dated extension with its plots, its thirteen w
   // The Westerhout Road row west of the lane came in with its own pass (open question 72), and the Lorong 18 stub's west
   // side still waits.
   for (const id of ['764372539', '454438307', '454274544']) assert.equal(ids.has(id), true, id);
-  assert.equal(ids.has('454274629'), false);
+  assert.equal(ids.has('454274629'), true);
 });
 
 test('the Lorong 20 plots fit their outlines, face the lane and keep their review starts clear', () => {

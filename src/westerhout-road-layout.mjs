@@ -106,5 +106,31 @@ export const no69 = {
   blocks: [plain('corrugated roof edge', span(5.14), [2.9, 3.2], '#9a9c98', .1, .2), plain('red vending machine', [3.4, 4.3], [.05, 1.9], '#c8302a', .03, .04), plain('open front', [.4, 3.2], [.05, 2.6], '#3a3836')],
 };
 
-export const westerhoutRoad = [no2, no4, no6, no8, no10, no12, no14, no54, no56, no61, no69];
+// Lorong 18's stub south of Westerhout Road (question 72), from the same drive's run down it (frames 801-808).
+const stubSrc = (id, ...f) => [way(id), ...f.map(i => kv('8344969', i))];
+export const no50 = {
+  ...mass({ wall: '#efe0b8', frame: '#e8e8e4', glass: '#3a5a6a' }, { reviewRoad: 'Lorong 18 Geylang', frontEdge: 5, review: { distance: 12, pitch: 34 }, height: 26.0 }),
+  id: 'l18-50', buildingIds: ['454274629'], kind: 'unnamed', unnamed: true,
+  name: 'No. 50 Lorong 18 Geylang (May 2023 massing, occupant not identified)', address: '50 Lorong 18 Geylang (the source tag)',
+  evidence: 'KartaView panoramas of May 2023 show a cream hotel of about eight storeys on the west side of Lorong 18\'s stub south of Westerhout Road, banded in grey at every floor, with small balconies, a strip of blue glass up its stair, a blue board reading ibis budget at its corner and flagpoles behind a low wall and railing. Listings could not be checked (open question 84), so no name is given and the board is drawn blank. Its height follows its storeys and carries about ±4 m.' + note,
+  sources: stubSrc('454274629', '802', '803', '805'),
+  windows: grid([[2.0, 3.4], [6.0, 7.4], [10.0, 11.4], [19.0, 20.4], [23.0, 24.4], [27.0, 28.4]], [4.4, 7.4, 10.4, 13.4, 16.4, 19.4, 22.4], 1.5, 2),
+  blocks: [
+    ...[3.8, 6.8, 9.8, 12.8, 15.8, 18.8, 21.8, 24.8].map(b => plain('grey band', span(30.74), [b, b + .5], '#8a8c90', .006, .01)),
+    plain('blue glass stair', [14.4, 16.0], [3.8, 24.8], '#4a7ab8', .03, .04),
+    plain('low wall', span(30.74, .3), [0, .9], '#e8dcc0', 2.0, .25),
+  ],
+};
+export const stubHouse = {
+  ...mass({ wall: '#f2f2ee', frame: '#3a3c3e', glass: '#3a4044' }, { reviewRoad: 'Lorong 18 Geylang', frontEdge: 1, review: { distance: 11, pitch: 16 }, height: 6.6, roof: { type: 'hip', ridge: 8.4, colour: '#b4443a' } }),
+  id: 'l18-stub-house', buildingIds: ['454274623'], kind: 'unnamed', unnamed: true,
+  name: 'Lorong 18 Geylang, the stub\'s south-west corner at Guillemard Road (May 2023 massing, occupant not identified)', address: 'West side of Lorong 18 Geylang at Guillemard Road',
+  evidence: 'KartaView panoramas of May 2023 show a white two-storey house with red tiled canopies behind a white wall with pale railings at the south end of Lorong 18\'s stub, beside a low red-roofed annex behind a white corrugated hoarding on Guillemard Road. Listings could not be checked (open question 84), so no name is given.' + note,
+  sources: stubSrc('454274623', '808', '805'),
+  windows: grid([[1.0, 2.4], [3.2, 4.6]], [3.8], 1.5, 2),
+  blocks: [plain('red tiled canopy', span(5.55, .1), [2.8, 3.2], '#c8443a', .5, 1.0), plain('white wall', span(5.55, .1), [0, 1.4], '#f2f2ee', 3.0, .2)],
+  sides: [{ edge: 3, blocks: [plain('white corrugated hoarding', span(5.95, .1), [0, 2.4], '#e8eaec', 2.0, .05)] }],
+};
+
+export const westerhoutRoad = [no2, no4, no6, no8, no10, no12, no14, no54, no56, no61, no69, no50, stubHouse];
 export const westerhoutRoadFrame = laneFrame, westerhoutRoadLayout = laneLayout, westerhoutRoadUpper = laneUpper, westerhoutRoadReviews = laneReviews, westerhoutRoadSides = laneSides;

@@ -216,7 +216,7 @@ Started: 10 October 2026.
       - **Westerhout Road's north side,** east of No. 55: No. 61 (way 454438307), listed as the address of Kip Inn, and No. 69 (way 764372539).
       - **Its south side and the stub:** No. 54 (way 764372525) and No. 56 (way 454274544), east of the stub. The extract's southern edge, 1.3110 N, runs just south of Westerhout Road, so the stub's west side and the rest of Westerhout Road's south side have no outlines.
       - **The head of Westerhout Road,** west of No. 44B, is the Lorong 16 walk's.
-    - **Status, 22 November 2026:** the Westerhout Road pass is done from the dated extension (question 81): the south side's terrace row between Lorongs 16 and 18, Nos. 54 and 56 either side of the stub, and Nos. 61 and 69 on the north side, as photographed massing ([Westerhout Road brief](westerhout-road-brief.md)). The stub's west side now has outlines in the extension (No. 50, way 454274629, a cream block banded in grey), and waits with the stub. The commits stand apart.
+    - **Status, 22 November 2026:** the Westerhout Road pass is done from the dated extension (question 81): the south side's terrace row between Lorongs 16 and 18, Nos. 54 and 56 either side of the stub, and Nos. 61 and 69 on the north side, as photographed massing ([Westerhout Road brief](westerhout-road-brief.md)). The stub itself followed the same day, with No. 50 and the house at its south-west corner, from the drive's run down it to Guillemard Road. The commits stand apart.
     - **Recommendation:** yes. Leave them for a Westerhout Road pass. Taking in the stub's west side would need the extract extended south, which is a separate decision.
     - **Unlocks:** nothing now; it records where the lane stops.
 

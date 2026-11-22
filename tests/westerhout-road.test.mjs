@@ -6,7 +6,7 @@ import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, building, roadSegments } from './helpers.mjs';
 
 // The south side's terrace row west to east, the two houses at Lorong 18's stub, then the north side (open question 72).
-const plots = ['121873029', '764372536', '764372535', '764372533', '764372534', '764372531', '764372532', '764372527', '454274544', '454438307', '764372539'];
+const plots = ['121873029', '764372536', '764372535', '764372533', '764372534', '764372531', '764372532', '764372527', '454274544', '454438307', '764372539', '454274629', '454274623'];
 
 test('Westerhout Road comes in from Lorong 16 to Lorong 20 with its row and a corridor along it', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));

@@ -11,7 +11,7 @@ Research and implementation from **22 November 2026**, under open questions 72 a
 - **Naming:** every building is unnamed for now (question 84). House numbers are the source ways' tags, and agree with the plates photographed on Nos. 2, 56 and 61.
 - **Correction to Lorong 20:** the frames along the road show the Lorong 20 corner outline (way 764372538, tagged No. 71) holding two buildings. A white three-storey block on red columns stands at the corner, and the turquoise single-storey house modelled with Lorong 20 stands north of it. The Lorong 20 model now carries the corner block as an upper volume and names the outline No. 71 Westerhout Road.
 - **Correction, the same day:** a frame looking east from Lorong 16 shows the corner plot (way 121873029) as the pink three-storey house with the gable, which the frames along Westerhout Road had shown next to the gate with the plate 2. The row's looks therefore sit one house further east than first modelled, and are corrected from No. 2 to No. 12.
-- **Left for later:** Lorong 18's stub south of the road, whose west side now has outlines in the extension (No. 50, way 454274629).
+- **Lorong 18's stub:** added the same day from the drive's run down it to Guillemard Road (frames 801-808): No. 50 and the house at its south-west corner, with the stub's southern way and a corridor along it.
 
 ## Status, 22 November 2026
 
@@ -33,4 +33,7 @@ Research and implementation from **22 November 2026**, under open questions 72 a
 | No. 61 | 454438307 | A cream hotel of five storeys with rust-red bands and window hoods, a grey ground floor striped in red, red lettering reading RedDoorz (not drawn) and the plate 61. | About 16.5 m |
 | No. 69 | 764372539 | A single-storey kiosk under a corrugated roof, drink fridges and a red vending machine. | About 3.2 m |
 
-Use `?review=wh-2`, `?review=wh-4`, `?review=wh-6`, `?review=wh-8`, `?review=wh-10`, `?review=wh-12`, `?review=wh-14`, `?review=wh-54`, `?review=wh-56`, `?review=wh-61` and `?review=wh-69`.
+| No. 50 Lorong 18, the stub's west side | 454274629 | A cream hotel of about eight storeys banded in grey, small balconies, a blue glass stair strip and an ibis budget board (drawn blank). | About 26 m |
+| The stub's south-west corner | 454274623 | A white two-storey house with red tiled canopies behind a white wall, beside a red-roofed annex behind a corrugated hoarding. | About 6.6 m |
+
+Use `?review=l18-50`, `?review=l18-stub-house`, `?review=wh-2`, `?review=wh-4`, `?review=wh-6`, `?review=wh-8`, `?review=wh-10`, `?review=wh-12`, `?review=wh-14`, `?review=wh-54`, `?review=wh-56`, `?review=wh-61` and `?review=wh-69`.
