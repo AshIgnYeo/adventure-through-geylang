@@ -25,7 +25,9 @@ test('Lorong 18 brings in its own buildings, its corners and the Geylang Road bl
   // The Westerhout Road row and the stub south of it wait; the Lorong 16 rows are walked
   // with Lorong 16, not here.
   // Nos. 352-364 came in later on their own (open question 86).
-  for (const id of ['454438307', '764372539', '454274544', '764372525']) assert.equal(ids.has(id), false, id);
+  // No. 54 Lorong 20 (way 764372525), at Westerhout Road's south corner, came in with Lorong 20 (open question 81).
+  for (const id of ['454438307', '764372539', '454274544']) assert.equal(ids.has(id), false, id);
+  assert.equal(ids.has('764372525'), true);
   const claimed = new Set(lorong18.flatMap(p => p.buildingIds));
   for (const id of ['763764683', '121872890', '763764666']) assert.equal(claimed.has(id), false, id);
   // The lane's eight ways, Westerhout Road's mouths either side of it, and Geylang Road on past the junction.
