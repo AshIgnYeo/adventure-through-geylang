@@ -9,7 +9,7 @@ Research and implementation from **22 November 2026**, under open questions 84 a
 - **Imagery:** KartaView's drive of 16 May 2023 down the lane twice (sequence 8344809, frames 3018-3039 and 3203-3222). Its fixes trail its true position by about 10 m along its path, so plots are matched to the frames by their order along the lane.
 - **Modelling:** photographed massing on the source outlines, with heights from storey counts carrying about ±2 m. The source draws the lane's centreline within 1-5 m of the east side's fronts, so pieces over the street there are held flat and three review starts stand closer than usual.
 - **Naming:** every building is unnamed for now (question 84); legible boards are recorded below.
-- **Left for later:** the plots behind the east side facing Aljunied Road, the Singapore Badminton Hall's shed (question 95), Geylang Road's south side east of the Lorong 20 corner (ways 454438312 and 454438311, which need frames along Geylang Road), and the lane north of Sims Avenue beyond the Thai-Pore Centre.
+- **Left for later:** the plots behind the east side facing Aljunied Road, the Singapore Badminton Hall's shed (question 95), and the lane north of Sims Avenue beyond the Thai-Pore Centre.
 
 ## Status, 22 November 2026
 
@@ -31,6 +31,15 @@ Research and implementation from **22 November 2026**, under open questions 84 a
 | The restaurant | 454254139 | Cream, two storeys, timber louvres, a blue and yellow striped awning and a green vertical sign. | About 8.4 m |
 | The Geylang Road corner | 454254141 | Pink, four storeys, deep pink window frames, a white spiral stair, coffee shops under green awnings on both streets with a board reading 兰州拉面 Lanzhou Lamian. | About 13.2 m |
 
+## Geylang Road, south side east of the Lorong 20 corner
+
+Added the same day from the westbound drives along Geylang Road (sequences 8344809, frames 4683-4688, and 8344969, frames 1663-1668). Each outline holds two buildings, laid as colour fields on its front.
+
+| Plot | Way | As photographed | Height |
+| --- | --- | --- | --- |
+| The cream and grey blocks | 454438312 | Two five-storey blocks: to the east a cream block framed in red-orange over a shop whose board reads 烧烤屋, to the west a grey block banded in red with a karaoke sign reading IQ. | About 17 m |
+| The two-storey pair | 454438311 | To the east a weathered white pair of bays over a dumpling restaurant under a red awning (東北餃子王), to the west a shophouse under a tiled roof hung with phone-shop boards. | About 8 m |
+
 ## West side
 
 | Plot | Way | As photographed | Height |
@@ -39,4 +48,4 @@ Research and implementation from **22 November 2026**, under open questions 84 a
 | The gabled hall | 454254143 | A white single-storey hall under a dark gabled roof with a blue ventilator cowl, behind a blue hoarding. | Eaves about 4 m |
 | The Geylang Road corner | 454254140 | An open-sided food centre under a blue roof behind a fence (question 81). | Eaves about 4.6 m |
 
-Use `?review=l23-coffee-shop`, `?review=l23-white-block`, `?review=l23-tcm`, `?review=l23-orange-frames`, `?review=l23-yellow-house`, `?review=l23-white-modern`, `?review=l23-tai-wah-a`, `?review=l23-tai-wah-b`, `?review=l23-red-vents`, `?review=l23-light-blue`, `?review=l23-restaurant`, `?review=l23-geylang-corner`, `?review=l23-long-block`, `?review=l23-shed` and `?review=l23-food-centre`.
+Use `?review=l23-coffee-shop`, `?review=l23-white-block`, `?review=l23-tcm`, `?review=l23-orange-frames`, `?review=l23-yellow-house`, `?review=l23-white-modern`, `?review=l23-tai-wah-a`, `?review=l23-tai-wah-b`, `?review=l23-red-vents`, `?review=l23-light-blue`, `?review=l23-restaurant`, `?review=l23-geylang-corner`, `?review=l23-long-block`, `?review=l23-shed` `?review=l23-food-centre`, `?review=l23-gr-ktv` and `?review=l23-gr-dumpling`.

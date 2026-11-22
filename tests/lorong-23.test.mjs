@@ -6,7 +6,7 @@ import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, building, roadSegments } from './helpers.mjs';
 
 // The east side north to south, then the west side (open question 97).
-const plots = ['454254159', '454254157', '454254151', '454254152', '454254145', '454254146', '454254147', '454254148', '454254149', '454254150', '454254139', '454254141', '454254163', '454254143', '454254140'];
+const plots = ['454254159', '454254157', '454254151', '454254152', '454254145', '454254146', '454254147', '454254148', '454254149', '454254150', '454254139', '454254141', '454254163', '454254143', '454254140', '454438312', '454438311'];
 
 test('Lorong 23 comes in from the dated extension with both sides and corridors along it and Geylang Road', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));

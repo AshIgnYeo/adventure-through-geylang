@@ -117,5 +117,40 @@ export const foodCentre = {
   sides: [{ edge: 2, blocks: [plain('open side', [1.0, 21.1], [.3, 3.8], '#3a3836', -.6, .1)] }],
 };
 
-export const lorong23 = [coffeeShop, white4, tcm, orangeFrames, yellowTemple, whiteModern, taiWahA, taiWahB, redVents, lightBlue, charoya, pinkCorner, longBlock, shed, foodCentre];
+// Geylang Road's south side east of the Lorong 20 corner, from the westbound drives of 16 and 19 May 2023 (sequences
+// 8344809, frames 4683-4688, and 8344969, frames 1663-1668). Each outline holds two buildings, laid as fields on its
+// front (u runs west from the outline's east corner).
+const roadNote = ' It is seen in KartaView\'s westbound drives of 16 and 19 May 2023 along Geylang Road (open question 84), which show no party walls to place a frame by, so it is modelled as photographed massing on its source outline, the two buildings laid as fields on its front.';
+export const ktvPair = {
+  ...mass({ wall: '#efe6dc', frame: '#3a3c3e', glass: '#3a4044' }, { reviewRoad: 'Geylang Road', frontEdge: 0, heldFlat: true, review: { distance: 10, pitch: 30 }, height: 17.0 }),
+  id: 'l23-gr-ktv', buildingIds: ['454438312'], kind: 'unnamed', unnamed: true,
+  name: 'Geylang Road, south side east of Lorong 20, the cream and grey blocks (May 2023 massing, occupants not identified)', address: 'South side of Geylang Road, between Lorongs 20 and 22',
+  evidence: 'KartaView panoramas of May 2023 show two five-storey blocks on Geylang Road\'s south side east of the Lorong 20 corner: to the east a cream block framed in red-orange with windows under small hoods over a shop whose dark board reads 烧烤屋, and to the west a grey block banded in red with air-conditioning units at its windows and a large lit sign for a karaoke lounge reading IQ. Listings could not be checked (open question 84), so no name is given and the boards are drawn blank. Its height follows its storeys and carries about ±2 m.' + roadNote,
+  sources: [way('454438312'), kv('8344809', '4687'), kv('8344809', '4688'), kv('8344969', '1667')],
+  // The windows stand forward of the grey field laid over the west half of the front.
+  windows: grid([[2.0, 4.6], [6.4, 9.0], [13.0, 15.6], [17.6, 20.2]], floors(4, 4.4, 3.1), 1.6, 3).map(w => ({ ...w, out: .02 })),
+  blocks: [
+    plain('grey block', [11.2, 23.08], [3.4, 17.0], '#8a8c90', .006, .01),
+    ...[[.1, .8], [10.4, 11.1], [11.3, 12.0], [22.3, 23.0]].map(u => plain('red frame', u, [3.4, 17.0], '#c8503a', .05, .1)),
+    plain('blank dark board', [1.0, 10.0], [2.8, 4.0], '#2a2826', .05, .04),
+    plain('blank lit sign', [13.0, 22.0], [2.8, 4.0], '#3a6ac8', .05, .04),
+  ],
+};
+export const dumplingPair = {
+  ...mass({ wall: '#efeeea', frame: '#3a3c3e', glass: '#3a4044' }, { reviewRoad: 'Geylang Road', frontEdge: 0, heldFlat: true, review: { distance: 10, pitch: 18 }, height: 8.0, roof: { type: 'flat', colour: '#9a9c98' } }),
+  id: 'l23-gr-dumpling', buildingIds: ['454438311'], kind: 'unnamed', unnamed: true,
+  name: 'Geylang Road, south side east of Lorong 20, the two-storey pair (May 2023 massing, occupants not identified)', address: 'South side of Geylang Road, between Lorongs 20 and 22',
+  evidence: 'KartaView panoramas of May 2023 show two two-storey shophouses on Geylang Road\'s south side: to the east a weathered white pair of bays over a dumpling restaurant under a red awning, its brown board reading 東北餃子王, and to the west a shophouse under a tiled roof hung with blue boards for a phone shop and a red awning. Listings could not be checked (open question 84), so no name is given and the boards are drawn blank.' + roadNote,
+  sources: [way('454438311'), kv('8344809', '4684'), kv('8344809', '4685'), kv('8344969', '1665')],
+  windows: grid([[1.0, 3.6], [5.0, 7.6], [9.0, 11.6], [15.4, 17.6], [18.6, 20.8]], [4.4], 1.6, 3),
+  blocks: [
+    plain('red awning', [.4, 13.6], [2.6, 3.2], '#c8302a', .1, .2),
+    plain('blank brown board', [3.0, 12.0], [3.4, 4.2], '#8a4a2a', .05, .04),
+    plain('tiled roof edge', [14.0, 22.9], [7.6, 8.0], '#9a5a44', .1, .2),
+    plain('blank blue boards', [14.4, 22.4], [3.4, 6.2], '#2a6ac8', .05, .04),
+    plain('red awning', [14.0, 22.6], [2.6, 3.2], '#c8302a', .1, .2),
+  ],
+};
+
+export const lorong23 = [coffeeShop, white4, tcm, orangeFrames, yellowTemple, whiteModern, taiWahA, taiWahB, redVents, lightBlue, charoya, pinkCorner, longBlock, shed, foodCentre, ktvPair, dumplingPair];
 export const lorong23Frame = laneFrame, lorong23Layout = laneLayout, lorong23Upper = laneUpper, lorong23Reviews = laneReviews, lorong23Sides = laneSides;

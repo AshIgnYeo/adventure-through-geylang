@@ -22,11 +22,11 @@ const ornate = (k, { wall, accent, tiles, shutters }) => {
     windows: us.map(u => ({ u, h: [6.0, 8.2], panes: 2 })),
     blocks: [
       ...us.map(([a, b]) => ({ name: 'arched head', u: span(a - .08, b + .08), h: [8.2, 8.4], out: .05, depth: .1, colour: '#f2eee4' })),
-      { name: 'painted facade', u: span(B(k) + .01, B(k + 1) - .01), h: [ORNATE.ceiling, ORNATE.top], out: -.02, depth: .01, colour: wall },
-      { name: 'relief frieze', u: span(B(k) + .35, B(k + 1) - .35), h: [3.6, 4.4], out: .01, depth: .02, colour: accent },
+      { name: 'painted facade', u: span(B(k) + .01, B(k + 1) - .01), h: [ORNATE.ceiling, ORNATE.top], out: .006, depth: .01, colour: wall },
+      { name: 'relief frieze', u: span(B(k) + .35, B(k + 1) - .35), h: [3.6, 4.4], out: .025, depth: .02, colour: accent },
       { name: 'moulded cornice', u: span(B(k), B(k + 1)), h: [4.5, 4.85], out: .06, depth: .12, colour: '#f2eee4' },
-      ...us.map(([a, b], i) => ({ name: 'coloured tile panel', u: span(a + .1, b - .1), h: [5.1, 5.6], out: .01, depth: .02, colour: tiles[i % tiles.length] })),
-      ...(shutters ? us.map(([a, b]) => ({ name: 'closed louvred shutters', u: span(a + .03, b - .03), h: [6.03, 8.17], out: .012, depth: .006, colour: shutters })) : []),
+      ...us.map(([a, b], i) => ({ name: 'coloured tile panel', u: span(a + .1, b - .1), h: [5.1, 5.6], out: .025, depth: .02, colour: tiles[i % tiles.length] })),
+      ...(shutters ? us.map(([a, b]) => ({ name: 'closed louvred shutters', u: span(a + .03, b - .03), h: [6.03, 8.17], out: .04, depth: .006, colour: shutters })) : []),
       ...[span(B(k), B(k) + .3), span(B(k + 1) - .3, B(k + 1))].map(u => ({ name: 'pilaster', u, h: [4.85, 9.2], out: .04, depth: .08, colour: '#f2eee4' })),
       ...[-.875, .875].map(d => ({ name: 'window pilaster', u: span(c + d - .09, c + d + .09), h: [5.0, 9.0], out: .03, depth: .06, colour: accent })),
       { name: 'ornate cornice', u: span(B(k), B(k + 1)), h: [9.2, 9.9], out: .15, depth: .3, colour: '#f2eee4' },
@@ -41,7 +41,7 @@ const white = (k, step, w) => {
   return {
     windows: [-step, 0, step].map(d => ({ u: span(c + d - w / 2, c + d + w / 2), h: [4.6, 6.7], panes: 2 })),
     blocks: [
-      { name: 'painted facade', u: span(B(k) + .01, B(k + 1) - .01), h: [WHITE.ceiling, WHITE.height], out: -.02, depth: .01, colour: '#efeeea' },
+      { name: 'painted facade', u: span(B(k) + .01, B(k + 1) - .01), h: [WHITE.ceiling, WHITE.height], out: .006, depth: .01, colour: '#efeeea' },
       { name: 'fascia', u: span(B(k), B(k + 1)), h: [3.4, 3.9], out: .04, depth: .08, colour: '#f4f4f0' },
       ...[span(B(k), B(k) + .3), span(B(k + 1) - .3, B(k + 1))].map(u => ({ name: 'pilaster', u, h: [3.9, 7.6], out: .03, depth: .06, colour: '#f4f4f0' })),
       { name: 'roof slab', u: span(B(k), B(k + 1)), h: [7.6, 7.9], out: .3, depth: .6, colour: '#e8e8e4' },
@@ -53,7 +53,7 @@ const white = (k, step, w) => {
 const GREY = { ceiling: 3.4, height: 9.3 };
 const grey = k => ({
   blocks: [
-    { name: 'stuccoed facade', u: span(B(k) + .01, B(k + 1) - .01), h: [GREY.ceiling, GREY.height], out: -.02, depth: .01, colour: '#a39e94' },
+    { name: 'stuccoed facade', u: span(B(k) + .01, B(k + 1) - .01), h: [GREY.ceiling, GREY.height], out: .006, depth: .01, colour: '#a39e94' },
     { name: 'floor beam', u: span(B(k), B(k + 1)), h: [3.4, 4.0], out: .04, depth: .08, colour: '#a39e94' },
     { name: 'eave slab', u: span(B(k), B(k + 1)), h: [7.9, 8.2], out: .45, depth: .9, colour: '#b0aca2' },
   ],
@@ -106,6 +106,9 @@ export const row = merge(
     ],
   },
 );
+// The windows stand forward of the painted facades, which are laid over the outline walls so each house keeps its colour
+// across the outlines it spans.
+row.windows = row.windows.map(w => ({ ...w, out: .02 }));
 row.piers = Array.from({ length: N + 1 }, (_, k) => span(Math.max(0, B(k) - .3), Math.min(ROW, B(k) + .3)));
 // The five-foot way's returns stand at the photographed party walls, not at the outlines' edges.
 row.blocks.push(...Array.from({ length: N - 1 }, (_, k) => ({ name: 'five-foot way return', u: span(B(k + 1) - .015, B(k + 1) + .015), h: [0, 3.4], out: -1.0, depth: 1.99, colour: '#ece8de' })));
