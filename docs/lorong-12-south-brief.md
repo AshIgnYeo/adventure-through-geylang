@@ -9,7 +9,7 @@ Research and implementation from **22 November 2026**, under open questions 84 a
 - **Imagery:** KartaView's drive of 19 May 2023 up the lane from Guillemard Road (sequence 8344969, frames 528-546).
 - **Modelling:** photographed massing on the source outlines, with heights from storey counts carrying about ±2 m.
 - **Naming:** every building is unnamed for now (question 84); legible signs are recorded below.
-- **Left for later:** the yards behind the east side (ways 454438315, 764372590 and 764372586), the houses facing Guillemard Road west of the lane's mouth (Nos. 45-51), and the lane's west side south of the old edge, which the extension leaves without outlines facing the lane.
+- **Left for later:** the yards behind the east side (ways 454438315, 764372590 and 764372586), and the lane's west side south of the old edge, which the extension leaves without outlines facing the lane.
 
 ## Status, 22 November 2026
 
@@ -25,4 +25,12 @@ Research and implementation from **22 November 2026**, under open questions 84 a
 | Two small houses | 764372589, 764372588 | Salmon-pink single-storey houses under red tiled hipped roofs behind a low red wall. | Eaves about 3 m |
 | No. 37, the Guillemard Road corner | 764372587 | A mint-green block of four storeys banded by grey glass balustrades, a green canopy, Buddhist flags at its gate. | About 13.5 m |
 
-Use `?review=l12-row-1` to `?review=l12-row-3`, `?review=l12-27`, `?review=l12-31`, `?review=l12-small-1`, `?review=l12-small-2` and `?review=l12-37`.
+## Nos. 45-51 Guillemard Road
+
+Added the same day from the drive's run along Guillemard Road before it turned up the lane (frames 523-526), with Guillemard Road's way west of the lane.
+
+| Plot | Way | As photographed | Height |
+| --- | --- | --- | --- |
+| Nos. 45-51, the lane's west corner | 764372584, 764372583, 764372582, 764372581 | Peach shophouses of four storeys with steep gabled fronts and windows in deep brown frames; the corner shop at No. 51 under green boards reading ABC FOOD COURT on both streets, a yellow board reading SINGAPORE TRANSPORT ASSOCIATION on No. 47. | About 11.6 m to the eaves |
+
+Use `?review=gu-45`, `?review=gu-47`, `?review=gu-49`, `?review=gu-51`, `?review=l12-row-1` to `?review=l12-row-3`, `?review=l12-27`, `?review=l12-31`, `?review=l12-small-1`, `?review=l12-small-2` and `?review=l12-37`.

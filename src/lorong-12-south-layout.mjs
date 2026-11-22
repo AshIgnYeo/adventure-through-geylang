@@ -94,5 +94,25 @@ export const no37 = {
   ],
 };
 
-export const lorong12South = [row1, row2, row3, no27, no31, small1, small2, no37];
+// Nos. 45-51 Guillemard Road, the row at the lane's west corner, from the drive's run along Guillemard Road before it
+// turned up the lane (frames 523-526). Four-storey peach shophouses with steep gabled fronts.
+const gabled = (id, number, front, W, review, extra = {}) => ({
+  ...mass({ wall: '#e8b89a', frame: '#6a3a2a', glass: '#3a4044' }, { reviewRoad: 'Guillemard Road', frontEdge: front, review: { distance: review, pitch: 26 }, height: 11.6, roof: { type: 'gable', ridge: 15.0, ridgeDepth: .5, overhang: .3, colour: '#8a5a4a' } }),
+  id: `gu-${number}`, buildingIds: [id], kind: 'unnamed', unnamed: true,
+  name: `No. ${number} Guillemard Road (May 2023 massing, occupant not identified)`, address: `${number} Guillemard Road`,
+  evidence: `KartaView panoramas of May 2023 show a peach shophouse of four storeys with a steep gabled front, windows in deep brown frames with louvred panels and air-conditioning units, over a shop, one of the row at Nos. 45-51 at the west corner of Lorong 12 and Guillemard Road. Listings could not be checked (open question 84), so no name is given and any boards are drawn blank.${note}`,
+  sources: src(id, '523', '524', '525'),
+  windows: grid(spread(W, Math.max(1, Math.round(W / 3)), 1.4, .6), [4.2, 7.2, 10.2], 1.5, 2),
+  blocks: [plain('dark shop front', span(W, .4), [.05, 3.0], '#3a3836'), ...(extra.blocks ?? [])],
+  ...(extra.sides ? { sides: extra.sides } : {}),
+});
+export const gu45 = gabled('764372584', '45', 7, 6.55, 9, { blocks: [plain('blank blue board', [.6, 6.0], [2.8, 3.6], '#2a4a9a', .05, .04)] });
+export const gu47 = gabled('764372583', '47', 0, 5.96, 9, { blocks: [plain('blank yellow board', [.6, 5.4], [8.9, 9.6], '#e8d040', .05, .04)] });
+export const gu49 = gabled('764372582', '49', 0, 6.39, 9, { blocks: [plain('blank green board', [.4, 6.0], [3.2, 4.6], '#2e8a4a', .05, .04)] });
+export const gu51 = gabled('764372581', '51', 4, 8.57, 8, {
+  blocks: [plain('blank green board', [.4, 8.2], [3.2, 4.6], '#2e8a4a', .05, .04)],
+  sides: [{ edge: 3, windows: grid(spread(12.58, 4, 1.4), [4.2, 7.2, 10.2], 1.5, 2), blocks: [plain('grey awning', [1.0, 12.0], [2.6, 3.0], '#8a8c8e', .1, .2), plain('blank green board', [.4, 3.4], [3.2, 4.6], '#2e8a4a', .05, .04)] }],
+});
+
+export const lorong12South = [row1, row2, row3, no27, no31, small1, small2, no37, gu45, gu47, gu49, gu51];
 export const lorong12SouthFrame = laneFrame, lorong12SouthLayout = laneLayout, lorong12SouthUpper = laneUpper, lorong12SouthReviews = laneReviews, lorong12SouthSides = laneSides;

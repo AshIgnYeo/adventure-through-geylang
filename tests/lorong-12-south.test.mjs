@@ -6,7 +6,7 @@ import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, building, roadSegments } from './helpers.mjs';
 
 // The east side south of No. 21, north to south (open question 96).
-const plots = ['454438316', '764372594', '764372593', '764372592', '764372591', '764372589', '764372588', '764372587'];
+const plots = ['454438316', '764372594', '764372593', '764372592', '764372591', '764372589', '764372588', '764372587', '764372584', '764372583', '764372582', '764372581'];
 
 test('Lorong 12 runs on to Guillemard Road from the dated extension, with its east side south of No. 21', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));

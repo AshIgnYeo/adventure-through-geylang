@@ -373,7 +373,7 @@ Started: 10 October 2026.
 
 96. **Lorong 12 south of the old edge: walk its east side to Guillemard Road from the dated extension?**
     - **Evidence:** question 92 stopped Lorong 12 at No. 21, about 12 m past the retained extract's edge. The dated extension (question 81) holds the lane's twelve southern ways to Guillemard Road and the outlines on its east side, and KartaView's drive of 19 May 2023 runs up the lane from Guillemard Road (sequence 8344969, frames 528-546). The extension holds no outlines facing the lane on its west side south of the old edge.
-    - **Status:** done on the owner's instruction to carry on, on question 87's terms: eight plots on the east side as photographed massing, every building unnamed (question 84), with Guillemard Road's way from Lorong 12 to Lorong 14 and corridors along both ([brief](lorong-12-south-brief.md)). The yards behind the east side and the Guillemard Road houses west of the lane's mouth are left out. The commits stand apart.
+    - **Status:** done on the owner's instruction to carry on, on question 87's terms: eight plots on the east side as photographed massing, every building unnamed (question 84), with Guillemard Road's way from Lorong 12 to Lorong 14 and corridors along both ([brief](lorong-12-south-brief.md)). The yards behind the east side are left out; Nos. 45-51 Guillemard Road, at the lane's west corner, came in the same day from the drive's run along Guillemard Road. The commits stand apart.
     - **Recommendation:** yes.
     - **Unlocks:** Guillemard Road walkable from Lorong 12 to Lorong 16.
 
