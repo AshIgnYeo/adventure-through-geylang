@@ -35,6 +35,25 @@ const terrace = (w, front, W, n) => place({
   blocks: [{ name: 'blue gate', u: [.2, +(W - .2).toFixed(2)], h: [.2, 1.6], out: .1, depth: .06, colour: '#3a6aa8' }],
 });
 
+// The service road's south end, from the dated extension (22 November 2026): the cream block behind a raised wall on its
+// west side and the white block behind trees on its east side.
+const srEnd = [
+  place({ id: 'sr-cream-north', way: '454254197', road: SR, front: 3, review: 6.5, height: 22.0, colours: { wall: '#efe4bc', glass: '#3a5a6a' },
+    name: 'Cream block at the service road\'s south end, north part (May 2023 massing, occupant not identified)', address: 'West side of the service road between Lorongs 4 and 6, at its south end',
+    evidence: 'KartaView panoramas of May 2023 show a cream block of about seven storeys with grey vertical bands and small white-framed windows behind a raised cream wall with a black railing at the south end of the service road. No sign is photographed, so no name is given. Its height follows its storeys and carries about ±4 m.',
+    frames: [['8344969', '980'], ['8344969', '979']], windows: rows(12.65, 3, 1.2, 4.0, 3.0, 22.0, 1.2, 1),
+    blocks: [band('grey vertical band', 1.4, [3.6, 22.0], '#8a8c90', .05, .1), { name: 'raised wall', u: [.1, 12.55], h: [0, 1.4], out: .12, depth: .2, colour: '#efe4bc' }] }),
+  place({ id: 'sr-cream-south', way: '454254195', road: SR, front: 3, review: 7, height: 22.0, colours: { wall: '#efe4bc', glass: '#3a5a6a' },
+    name: 'Cream block at the service road\'s south end, south part (May 2023 massing, occupant not identified)', address: 'West side of the service road between Lorongs 4 and 6, at its south end',
+    evidence: 'KartaView panoramas of May 2023 show the south part of the cream block of about seven storeys with grey vertical bands at the south end of the service road. No sign is photographed, so no name is given. Its height follows its storeys and carries about ±4 m.',
+    frames: [['8344969', '980'], ['8344969', '979']], windows: rows(6.76, 2, 1.2, 4.0, 3.0, 22.0, 1.2, 1) }),
+  place({ id: 'sr-white-east', way: '454254192', road: SR, front: 13, review: 6, height: 13.0, colours: { wall: '#f0efea', glass: '#3a4044' },
+    name: 'White block behind trees on the service road\'s east side (May 2023 massing, occupant not identified)', address: 'East side of the service road between Lorongs 4 and 6, at its south end',
+    evidence: 'KartaView panoramas of May 2023 show a white block of about four storeys with small balconies behind trees and a white wall on the east side of the service road at its south end, seen only past the trees. No sign is photographed, so no name is given. Its height follows its storeys and carries about ±2 m.',
+    frames: [['8344969', '980'], ['8344969', '978']], windows: rows(10.74, 3, 1.4, 4.0, 3.0, 13.0),
+    blocks: [{ name: 'white wall', u: [.1, 10.64], h: [0, 1.8], out: .12, depth: .2, colour: '#f0efea' }] }),
+];
+
 export const lorong612South = [
   place({ id: 'l6-5', way: '454274481', road: L6, front: 2, review: 15, height: 26.0, colours: { wall: '#ecc8c4', glass: '#5a8a8a' },
     name: 'No. 5 Lorong 6 Geylang (May 2023 massing, occupant not identified)', address: '5 Lorong 6 Geylang',
@@ -103,5 +122,6 @@ export const lorong612South = [
     evidence: 'KartaView panoramas of May 2023 show a slate-blue block of about four storeys with gold bands under each floor, dark windows and a car park on its ground floor, with a banner reading NOW OPEN, behind a railing. Listings could not be checked (open question 84), so no name is given.',
     frames: [['8344969', '542'], ['8344969', '543']], windows: rows(15.77, 4, 2.0, 4.4, 3.4, 16.0, 1.8, 3),
     blocks: [3.8, 7.2, 10.6, 14.0].map(b => band('gold band', 15.77, [b, +(b + .25).toFixed(2)], '#c8a85a', .05, .1)) }),
+  ...srEnd,
 ];
 export const lorong612SouthFrame = laneFrame, lorong612SouthLayout = laneLayout, lorong612SouthUpper = laneUpper, lorong612SouthReviews = laneReviews, lorong612SouthSides = laneSides;

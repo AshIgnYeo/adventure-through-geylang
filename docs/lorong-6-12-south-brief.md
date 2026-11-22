@@ -34,4 +34,9 @@ Research and implementation from **14 November 2026**, under open questions 84 a
 | Lorong 10, east side | 454438322 | A peach two-storey house under a brown gabled roof. | About 6.5 m to the eaves |
 | No. 21 Lorong 12 | 454438317 | Slate blue, about four storeys, with gold bands, over a car park, with a NOW OPEN banner. | About 16 m |
 
-Use `?review=l6-5`, `?review=l6-20`, `?review=sr-royce`, `?review=sr-5`, `?review=sr-7`, `?review=sr-block`, `?review=l8-terrace-1` to `?review=l8-terrace-5`, `?review=l8-temple`, `?review=l8-19`, `?review=l8-19a`, `?review=l8-19a-hotel`, `?review=l10-14`, `?review=l10-house`, `?review=l10-la-mode`, `?review=l10-peach` and `?review=l12-21`.
+| The service road's south end, west side | 454254197, 454254195 | A cream block of about seven storeys with grey vertical bands behind a raised wall with a black railing (added 22 November 2026 from the dated extension, question 81). | About 22 m |
+| The service road's south end, east side | 454254192 | A white block of about four storeys with small balconies behind trees and a white wall (added the same day). | About 13 m |
+
+The service road's corridor now runs to its south end and 12 m past the source's last node, where the lane carries on between the blocks.
+
+Use `?review=sr-cream-north`, `?review=sr-cream-south`, `?review=sr-white-east`, `?review=l6-5`, `?review=l6-20`, `?review=sr-royce`, `?review=sr-5`, `?review=sr-7`, `?review=sr-block`, `?review=l8-terrace-1` to `?review=l8-terrace-5`, `?review=l8-temple`, `?review=l8-19`, `?review=l8-19a`, `?review=l8-19a-hotel`, `?review=l10-14`, `?review=l10-house`, `?review=l10-la-mode`, `?review=l10-peach` and `?review=l12-21`.

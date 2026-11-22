@@ -166,6 +166,8 @@ const southWest = {
     '454274481', '454254191', '1223129486', '454254199', '454254198', '1236158086',
     '454274470', '454274479', '454274473', '454274475', '454274477', '454274466', '1223401724', '454438336', '121873782',
     '454438333', '454438325', '454438324', '454438322', '454438317',
+    // The service road's south end, from the dated extension (22 November 2026).
+    '454254197', '454254195', '454254192',
   ],
   lorong6: ['666008222', '666007653', '666007652', '666007655', '666007651', '23513334'],
   lorong8: ['666008581', '23513331', '666008556'],
@@ -345,7 +347,9 @@ const corridors = [
   { name: 'Lorong 8 Geylang, south', halfWidth: 12, path: [along(wayCoordinates.get('666008581'), 10), wayCoordinates.get('666008581').at(-1)] },
   { name: 'Lorong 10 Geylang, south', halfWidth: 12, path: chain(['632263018']) },
   { name: 'Lorong 12 Geylang, south', halfWidth: 12, path: [along(wayCoordinates.get('666011234'), 12), ...chain(['666011233', '666010666', '666010667'])] },
-  { name: 'Service road between Lorongs 4 and 6', halfWidth: 9, path: [along(wayCoordinates.get('782605023'), 22), ...wayCoordinates.get('782605023').slice(1), ...[...wayCoordinates.get('111737898')].reverse().slice(1)] },
+  // It ran from 22 m along its first way, at the old extract edge; since 22 November 2026 it runs to the road's south end.
+  // The lane carries on past the source's last node between the blocks at its south end, as photographed, so the corridor runs 12 m further.
+  { name: 'Service road between Lorongs 4 and 6', halfWidth: 9, path: [before(wayCoordinates.get('782605023'), 12), ...wayCoordinates.get('782605023'), ...[...wayCoordinates.get('111737898')].reverse().slice(1)] },
   // Lorong Bachok from Lorong 19's junction to Lorong 21's (open question 93).
   { name: 'Lorong Bachok', halfWidth: 10, path: chain(['23513607', '666807846', '762269508', '666807847']) },
   // Lorong 7 runs on north past the extract's edge to Sims Avenue, as its ways point, to reach Winsome Apartments' front.

@@ -5,7 +5,7 @@ import { lorong612South, lorong612SouthFrame, lorong612SouthLayout, lorong612Sou
 import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, building, roadSegments } from './helpers.mjs';
 
-const plots = ['454274481', '454254191', '1223129486', '454254199', '454254198', '1236158086', '454274470', '454274479', '454274473', '454274475', '454274477', '454274466', '1223401724', '454438336', '121873782', '454438333', '454438325', '454438324', '454438322', '454438317'];
+const plots = ['454274481', '454254191', '1223129486', '454254199', '454254198', '1236158086', '454274470', '454274479', '454274473', '454274475', '454274477', '454274466', '1223401724', '454438336', '121873782', '454438333', '454438325', '454438324', '454438322', '454438317', '454254197', '454254195', '454254192'];
 
 test('Lorongs 6, 8, 10 and 12 south of the rectangle bring in twenty plots, and the lanes and the service road are walkable', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));
