@@ -1,7 +1,16 @@
 import fs from 'node:fs';
 const xml = fs.readFileSync(new URL('../public/osm-source.osm', import.meta.url), 'utf8');
 const attrs = text => Object.fromEntries([...text.matchAll(/([\w:]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
+// The dated extension of 22 November 2026 (open question 81, with 52 and 62): one download reaching 103.8822 E and
+// 1.3095 N, for the lanes east and south of the retained extract. Wherever the retained source holds an element, its
+// version is kept; a way found only in the extension is taken in by id, never by name or by the rectangle.
+const extensionXml = fs.readFileSync(new URL('../public/osm-extension.osm', import.meta.url), 'utf8');
 const nodes = new Map([...xml.matchAll(/<node\b[^>]*>/g)].map(([s]) => { const a=attrs(s); return [a.id, [+a.lon, +a.lat]]; }));
+for (const [s] of extensionXml.matchAll(/<node\b[^>]*>/g)) { const a=attrs(s); if (!nodes.has(a.id)) nodes.set(a.id, [+a.lon, +a.lat]); }
+const wayId = text => attrs(text.slice(0, text.indexOf('>'))).id;
+const retainedWays = [...xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)].map(([text]) => ({ text, extension: false }));
+const retainedIds = new Set(retainedWays.map(w => wayId(w.text)));
+const extensionWays = [...extensionXml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)].map(([text]) => ({ text, extension: true })).filter(w => !retainedIds.has(wayId(w.text)));
 // Lorong 15 was added on 10 October 2026 (open question 10), and Lorongs 9, 10 and 12 the same day (open question 24).
 const names = ['Lorong 9 Geylang', 'Lorong 10 Geylang', 'Lorong 11 Geylang', 'Lorong 12 Geylang', 'Lorong 13 Geylang', 'Lorong 15 Geylang', 'Geylang Road', 'Sims Avenue'];
 // Widened on 10 October 2026 (open question 26) to contain the five boundary blocks west, east and south.
@@ -182,7 +191,7 @@ const lorong7 = {
 };
 const wayCoordinates = new Map();
 const roads=[], buildings=[], paths=[], contextRoads=[];
-for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
+for (const { text, extension } of [...retainedWays, ...extensionWays]) {
   const id=attrs(text.slice(0,text.indexOf('>'))).id;
   const tags=Object.fromEntries([...text.matchAll(/<tag k="([^"]+)" v="([^"]*)"/g)].map(m=>[m[1],m[2].replaceAll('&amp;','&')]));
   const coordinates=[...text.matchAll(/<nd ref="(\d+)"/g)].map(m=>nodes.get(m[1]));
@@ -190,6 +199,7 @@ for (const [text] of xml.matchAll(/<way\b[^>]*>[\s\S]*?<\/way>/g)) {
   wayCoordinates.set(id, coordinates);
   const extra = [...lorong17.buildings, ...lorong17.lane, ...lorong17.links, ...Object.values(lorong19).flat(), ...Object.values(lorong21).flat(), ...Object.values(lorong14).flat(), ...Object.values(lorong16).flat(), ...Object.values(lorong18).flat(), ...Object.values(simsNorth).flat(), ...Object.values(geylang352).flat(), ...Object.values(lorong17North).flat(), ...Object.values(lorong1921North).flat(), ...Object.values(lorong21aNorth).flat(), ...Object.values(southWest).flat(), ...Object.values(bachok).flat(), ...Object.values(lorong7).flat()].includes(id);
   if (!coordinates.some(inside) && !extra) continue;
+  if (extension && !extra) continue;
   if(tags.highway && (names.includes(tags.name) || [...lorong17.lane, ...lorong19.lane, ...lorong19.bachok, ...lorong21.lane, ...lorong21.bachok, ...lorong14.lane, ...lorong14.talma, ...lorong16.lane, ...lorong18.lane, ...lorong18.westerhout, ...simsNorth.mouths, ...simsNorth.avenueEast, ...geylang352.geylangRoad, ...lorong17North.lane, ...lorong1921North.lorong19, ...lorong1921North.joining, ...lorong1921North.lorong21, ...lorong21aNorth.lane, ...southWest.lorong6, ...southWest.lorong8, ...southWest.lorong12, ...southWest.service, ...bachok.lane, ...lorong7.lane, ...lorong7.sims].includes(id))) roads.push({id,name:tags.name??'Service road',oneway:tags.oneway??'unknown',lanes:Number(tags.lanes)||1,coordinates});
   // Q10: retain the alley AND its pedestrian continuation. These do not take
   // part in automatic street-front selection or inherit vehicle lane widths.
@@ -277,6 +287,6 @@ const corridors = [
   { name: 'Sims Avenue, west of the study rectangle', halfWidth: 12, path: chain(lorong7.sims) },
   { name: 'Sims Avenue, Lorong 21 to Lorong 21A', halfWidth: 12, path: [along(wayCoordinates.get('632842880'), 10), ...wayCoordinates.get('632842880').slice(1), along(wayCoordinates.get('475337630'), 25)] },
 ];
-const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',licence:'ODbL-1.0',roads,buildings,paths,contextRoads};
+const map={origin:[103.8773,1.3131],bounds,corridors,source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3110,103.8812,1.3155',retrieved:'2026-09-28',extension:{source:'https://api.openstreetmap.org/api/0.6/map?bbox=103.8758,1.3095,103.8822,1.3155',retrieved:'2026-11-22'},licence:'ODbL-1.0',roads,buildings,paths,contextRoads};
 fs.writeFileSync(new URL('../public/map.json',import.meta.url),JSON.stringify(map));
 console.log(JSON.stringify({roads:roads.length,buildings:buildings.length,lorongs:roads.filter(r=>r.name.startsWith('Lorong')).map(r=>({id:r.id,name:r.name,oneway:r.oneway}))},null,2));
