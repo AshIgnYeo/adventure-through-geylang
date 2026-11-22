@@ -366,7 +366,7 @@ Started: 10 October 2026.
 
 95. **The service road between Lorongs 21 and 23 (way 533012566): leave the Singapore Badminton Hall and the shed east of it until there is imagery from the road itself?**
     - **Evidence:** the hall (way 452646021, about 76 by 40 m) and a long shed (way 454254161) stand mid-block between Geylang Road and Sims Avenue, on a service road from Lorong 21 to Lorong 23 that no KartaView drive of 2023 runs along. From Lorong 21 (sequence 8344809, frames 2980 and 2991) and from Lorong 23 (frame 3029) the hall shows only as a grey metal roof and blue-grey cladding behind other buildings, so its walls and height cannot be read; the shed shows as a long single-storey building under a corrugated metal roof. They are the last outlines inside the extract that are neither modelled nor waiting on question 81's extension, apart from the two blocks south of Lorong Bachok (question 93).
-    - **Status:** not modelled.
+    - **Status:** the hall is not modelled. The shed's east end faces Lorong 23, which came in with question 97 on 22 November 2026, and its south face is seen obliquely from the lane there, so it is modelled as photographed massing with the Lorong 23 walk ([brief](lorong-23-brief.md)).
     - **Recommendation:** wait for imagery taken on the service road (a site visit, or Street View if its tiles can be used), rather than model the hall from glimpses; its height alone could be off by 10 m.
     - **Unlocks:** the hall, a landmark of the area, and the block's interior.
 

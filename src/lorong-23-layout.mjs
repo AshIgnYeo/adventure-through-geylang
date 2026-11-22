@@ -192,5 +192,19 @@ export const thaiPore = {
   blocks: [plain('granite ground floor', span(18.58), [.05, 3.8], '#6a6a6c', .006, .01), plain('dark stone wall', [2.0, 12.0], [0, 1.9], '#3a3a3c', 6.0, .3)],
 };
 
-export const lorong23 = [coffeeShop, white4, tcm, orangeFrames, yellowTemple, whiteModern, taiWahA, taiWahB, redVents, lightBlue, charoya, pinkCorner, longBlock, shed, foodCentre, ktvPair, dumplingPair, fansida, freeClinic, thaiPore];
+// The long shed east of the Singapore Badminton Hall (question 95): its east end faces the lane and its south face is
+// seen obliquely from the lane, 20-40 m away (frames 3035, 3036 and 3215).
+export const hallShed = {
+  ...mass({ wall: '#f0f0ec', frame: '#2a4a8a', glass: '#2a3a5a' }, { frontEdge: 1, review: { distance: 7, pitch: 8 }, height: 3.4, roof: { type: 'hip', ridge: 5.6, colour: '#8a6a52' } }),
+  id: 'l23-hall-shed', buildingIds: ['454254161'], kind: 'unnamed', unnamed: true,
+  name: 'Lorong 23 Geylang, west side, the long shed by the badminton hall (May 2023 massing, occupant not identified)', address: 'West side of Lorong 23 Geylang, east of the Singapore Badminton Hall',
+  evidence: 'KartaView panoramas of May 2023 show a long white single-storey building under a weathered corrugated hipped roof behind a black mesh fence on the west side of the lane, its south face lined with blue doors and windows behind blue grilles, with air-conditioning units between them. It stands east of the Singapore Badminton Hall (question 95), which is seen only behind it. No sign could be read and listings could not be checked (open question 84), so no name is given.' + note,
+  sources: src('454254161', '3035', '3036', '3215'),
+  blocks: [plain('black mesh fence', span(8.71, .2), [0, 1.8], '#2a2c2e', 3.0, .05)],
+  sides: [{ edge: 2,
+    windows: Array.from({ length: 10 }, (_, k) => ({ u: [+(4.0 + k * 6.2).toFixed(2), +(5.4 + k * 6.2).toFixed(2)], h: [1.0, 2.2], panes: 2 })),
+    blocks: Array.from({ length: 10 }, (_, k) => plain('blue door', [+(6.0 + k * 6.2).toFixed(2), +(7.0 + k * 6.2).toFixed(2)], [.05, 2.3], '#2a4a9a')) }],
+};
+
+export const lorong23 = [coffeeShop, white4, tcm, orangeFrames, yellowTemple, whiteModern, taiWahA, taiWahB, redVents, lightBlue, charoya, pinkCorner, longBlock, shed, foodCentre, ktvPair, dumplingPair, fansida, freeClinic, thaiPore, hallShed];
 export const lorong23Frame = laneFrame, lorong23Layout = laneLayout, lorong23Upper = laneUpper, lorong23Reviews = laneReviews, lorong23Sides = laneSides;

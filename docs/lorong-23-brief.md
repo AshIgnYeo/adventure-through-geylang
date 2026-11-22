@@ -9,7 +9,7 @@ Research and implementation from **22 November 2026**, under open questions 84 a
 - **Imagery:** KartaView's drive of 16 May 2023 down the lane twice (sequence 8344809, frames 3018-3039 and 3203-3222). Its fixes trail its true position by about 10 m along its path, so plots are matched to the frames by their order along the lane.
 - **Modelling:** photographed massing on the source outlines, with heights from storey counts carrying about ±2 m. The source draws the lane's centreline within 1-5 m of the east side's fronts, so pieces over the street there are held flat and three review starts stand closer than usual.
 - **Naming:** every building is unnamed for now (question 84); legible boards are recorded below.
-- **Left for later:** the plots behind the east side facing Aljunied Road, the Singapore Badminton Hall's shed (question 95), and the lane north of the Thai-Pore Centre.
+- **Left for later:** the plots behind the east side facing Aljunied Road, the Singapore Badminton Hall itself (question 95), and the lane north of the Thai-Pore Centre.
 
 ## Status, 22 November 2026
 
@@ -56,6 +56,7 @@ Added the same day from the drive's run up the lane (frames 3768-3786), with the
 | --- | --- | --- | --- |
 | The long block | 454254163 | A long white two-storey block behind trees and a fence, under a brown tiled hipped roof, with blue louvred shutters. | Eaves about 7.4 m |
 | The gabled hall | 454254143 | A white single-storey hall under a dark gabled roof with a blue ventilator cowl, behind a blue hoarding. | Eaves about 4 m |
+| The long shed by the badminton hall | 454254161 | A long white single-storey building under a weathered corrugated hipped roof behind a black mesh fence, blue doors and grilled windows along its south face; its east end faces the lane (question 95). | Eaves about 3.4 m |
 | The Geylang Road corner | 454254140 | An open-sided food centre under a blue roof behind a fence (question 81). | Eaves about 4.6 m |
 
-Use `?review=l23-coffee-shop`, `?review=l23-white-block`, `?review=l23-tcm`, `?review=l23-orange-frames`, `?review=l23-yellow-house`, `?review=l23-white-modern`, `?review=l23-tai-wah-a`, `?review=l23-tai-wah-b`, `?review=l23-red-vents`, `?review=l23-light-blue`, `?review=l23-restaurant`, `?review=l23-geylang-corner`, `?review=l23-long-block`, `?review=l23-shed` `?review=l23-food-centre`, `?review=l23-gr-ktv`, `?review=l23-gr-dumpling`, `?review=l23-46`, `?review=l23-48` and `?review=l23-thai-pore`.
+Use `?review=l23-coffee-shop`, `?review=l23-white-block`, `?review=l23-tcm`, `?review=l23-orange-frames`, `?review=l23-yellow-house`, `?review=l23-white-modern`, `?review=l23-tai-wah-a`, `?review=l23-tai-wah-b`, `?review=l23-red-vents`, `?review=l23-light-blue`, `?review=l23-restaurant`, `?review=l23-geylang-corner`, `?review=l23-long-block`, `?review=l23-shed` `?review=l23-food-centre`, `?review=l23-gr-ktv`, `?review=l23-gr-dumpling`, `?review=l23-46`, `?review=l23-48`, `?review=l23-thai-pore` and `?review=l23-hall-shed`.

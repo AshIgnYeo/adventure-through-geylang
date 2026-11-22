@@ -6,7 +6,7 @@ import { landmarkFor } from '../src/landmarks.mjs';
 import { sourceMap, assertFittings, assertReviews, assertClearOfCarriageway, outline, building, roadSegments } from './helpers.mjs';
 
 // The east side north to south, then the west side (open question 97).
-const plots = ['454254159', '454254157', '454254151', '454254152', '454254145', '454254146', '454254147', '454254148', '454254149', '454254150', '454254139', '454254141', '454254163', '454254143', '454254140', '454438312', '454438311', '454254343', '454254342', '454254348'];
+const plots = ['454254159', '454254157', '454254151', '454254152', '454254145', '454254146', '454254147', '454254148', '454254149', '454254150', '454254139', '454254141', '454254163', '454254143', '454254140', '454438312', '454438311', '454254343', '454254342', '454254348', '454254161'];
 
 test('Lorong 23 comes in from the dated extension with both sides and corridors along it and Geylang Road', () => {
   const ids = new Set(sourceMap.buildings.map(b => b.id));
@@ -17,8 +17,8 @@ test('Lorong 23 comes in from the dated extension with both sides and corridors 
     const path = sourceMap.corridors.find(c => c.name === name).path.map(p => project(p, sourceMap.origin));
     for (let i = 1; i < path.length; i++) for (let k = 0; k <= 20; k++) assert.ok(inStudy([path[i - 1][0] + (path[i][0] - path[i - 1][0]) * k / 20, path[i - 1][1] + (path[i][1] - path[i - 1][1]) * k / 20], 3), name);
   }
-  // The badminton hall's shed waits (open question 95).
-  assert.equal(ids.has('454254161'), false);
+  // The badminton hall itself waits (open question 95); its shed is seen from the lane.
+  assert.equal(ids.has('452646021'), false);
 });
 
 test('the Lorong 23 plots fit their outlines, face their streets and keep their review starts clear', () => {
