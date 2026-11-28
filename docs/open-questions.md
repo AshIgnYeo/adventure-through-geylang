@@ -451,6 +451,11 @@ Started: 10 October 2026.
     - **Status:** modelled as matched; the shophouses and the alley block are left out.
     - **Recommendation:** solve the frames' positions against the lane's corners before modelling Lorong 25A in detail, and draw outlines for the missing houses as authored footprints, as done for Lorong 11's west side.
     - **Decision needed:** whether to do that, or leave the lane as photographed massing.
+109. **Lorong 24: draw outlines for the new apartment block and the building site the source lacks?**
+    - **Evidence:** walking Lorong 24 on 28 November 2026 (see [the Lorong 24 brief](lorong-24-brief.md)), the May 2023 frames show a new grey and orange apartment block with a car park podium on the east side between Jalan Suka and the Esso station, and a building site behind hoardings with tower cranes on the west side south of Jalan Molek. The source has no outline for either, so both stretches stand empty in the model. The long east outline north of Jalan Suka (way 394866873) also holds two modern blocks and older houses, modelled with upper volumes.
+    - **Status:** left empty.
+    - **Recommendation:** draw both as authored footprints from the frames once a dated outline can be checked, or take a newer extract when the source is updated. Lorong 24A, with its long terraces, is the next lane east.
+    - **Decision needed:** whether to author the two outlines, and whether to walk Lorong 24A next.
 
 ## Settled
 
