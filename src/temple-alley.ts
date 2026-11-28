@@ -84,7 +84,7 @@ export function buildAlleyLowContext(world: World, id: string, poly: Point[]) {
   // Street View. Its estimated lean-to closes the 6–7 m gap in the first pass.
   const enclosure = alleyEntranceEnclosure(world.data);
   const outline = enclosure.outline as Point[];
-  world.footprints.push(outline);
+  world.addFootprint(outline);
   for (let i = 1; i < outline.length; i++) {
     world.panel(outline[i], outline[(i + 1) % outline.length], .13, enclosure.eaves, wall);
   }
@@ -168,7 +168,7 @@ export function buildAlleyExteriors(world: World) {
     const p = bin.p;
     world.box('alley unbranded bin', p[0], .54, p[1], .57, .84, .53, world.mat('#526d5c'), undefined, bin.angle);
     world.box('alley bin lid', p[0], .99, p[1], .64, .09, .6, world.mat('#778c72'), undefined, bin.angle);
-    world.footprints.push(bin.outline as Point[]);
+    world.addFootprint(bin.outline as Point[]);
   }
   for (const {id, p, yaw} of alleyReviews(world.data)) world.reviewSpawns.set(id, {p: p as Point, yaw});
 }

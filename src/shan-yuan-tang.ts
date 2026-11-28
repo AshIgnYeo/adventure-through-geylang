@@ -91,7 +91,7 @@ export function buildShanYuanTang(world: World) {
     for (const r of [r0, r1]) tube([r[0], r[1], r[2]], [r[0], r[1] + .15, r[2]], .11, '#758b70');
   };
 
-  world.footprints.push(frame.outline as Point[]);
+  world.addFootprint(frame.outline as Point[]);
   // A solid, closed site is intentional: only exterior viewing is supported.
   face(site.outline.map(([u, v]) => [u / across, .12, v] as Vertex), '#978a74');
   for (const review of site.reviews) {

@@ -437,6 +437,11 @@ Started: 10 October 2026.
     - **Status:** not started.
     - **Recommendation:** not yet. Do the loading plan's steps 4 and 5 (tiled map data and a tile loader) first, so the scene builds only what is near the walker, then extend east one or two lanes at a time.
     - **Unlocks:** the rest of Geylang's numbered lanes.
+106. **Streaming: are plain blocks in the distance acceptable, and at what reach?**
+    - **What changed:** the viewer now builds detail within about 180 m of the walker and shows plain massing beyond it, one block per footprint at the height of its model in a single stone colour. Tiles more than 260 m behind are dropped back to massing. Opening a page builds about 90 m of detail before Enter appears, and the rest fills in over the next few seconds.
+    - **Trade-off:** fog starts at 120 m by day, so the change shows most at dusk and on long views down Sims Avenue and Geylang Road. A longer reach costs loading time and memory on phones.
+    - **Status:** done as recorded in the loading plan; the three distances are constants at the top of `src/world.ts`.
+    - **Decision needed:** whether the reach and the massing colour are right, or whether far blocks should carry their buildings' own colours.
 
 ## Settled
 
