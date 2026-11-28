@@ -434,14 +434,18 @@ Started: 10 October 2026.
 
 105. **East of Lorong 22, Lorongs 24 to 27A: extend the study further east?**
     - **Evidence:** a check download of 103.8822-103.8850 E, 1.3095-1.3155 N on 28 November 2026 (not kept) holds about 270 building outlines along Lorongs 24, 24A, 25, 25A, 26, 27 and 27A, Cassia Crescent and Pine Lane, a district as large again as everything walked since question 81. KartaView's 2023 drives reach at least some of it. The scene already holds about 600 outlines and takes about 17 s to build in software rendering (loading plan, 22 November).
-    - **Status:** not started.
-    - **Recommendation:** not yet. Do the loading plan's steps 4 and 5 (tiled map data and a tile loader) first, so the scene builds only what is near the walker, then extend east one or two lanes at a time.
+    - **Status:** started on 28 November 2026, once the loading plan's steps 4 to 6 were in. Lorong 25 is walked from Geylang Road to Sims Avenue from its own narrow extract (`public/osm-extension-lorong-25.osm`), 26 outlines; see [the Lorong 25 brief](lorong-25-brief.md).
+    - **Recommendation:** yes, one or two lanes at a time, each from its own narrow extract, as done for Lorong 25. Lorong 25A is next (question 107).
     - **Unlocks:** the rest of Geylang's numbered lanes.
 106. **Streaming: are plain blocks in the distance acceptable, and at what reach?**
     - **What changed:** the viewer now builds detail within about 180 m of the walker and shows plain massing beyond it, one block per footprint at the height of its model in a single stone colour. Tiles more than 260 m behind are dropped back to massing. Opening a page builds about 90 m of detail before Enter appears, and the rest fills in over the next few seconds.
     - **Trade-off:** fog starts at 120 m by day, so the change shows most at dusk and on long views down Sims Avenue and Geylang Road. A longer reach costs loading time and memory on phones.
     - **Status:** done as recorded in the loading plan; the three distances are constants at the top of `src/world.ts`.
     - **Decision needed:** whether the reach and the massing colour are right, or whether far blocks should carry their buildings' own colours.
+107. **Lorong 25A next: walk it, with the block between it and Lorong 25?**
+    - **Evidence:** the Lorong 25 extract already holds Lorong 25A's west side and part of its east side: Coronation Baptist Church (ways 454254131 and 454254132), the plots between the church and Sims Avenue (454254137, 454254138, 454438289) and the ECM Building at No. 260 Sims Avenue (454254134), with Centra Suites (No. 38 Lorong 25A), the Amitabha Buddhist Centre and Sims Avenue's Sek Lim plot (454254121, 454254120, 454274514) and two more plots opposite. KartaView's drive of 16 May 2023 runs down the lane (sequence 8344809, frames 2069-2091). The east side's outlines run past the extract's east edge at 103.8834 E, so a second narrow extract may be needed for them.
+    - **Status:** not started.
+    - **Recommendation:** yes. It is the next lane east and its imagery is already downloaded.
 
 ## Settled
 
