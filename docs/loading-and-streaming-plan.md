@@ -54,7 +54,7 @@ For builders, little changes. Keep calling `world.box`, `panel`, `mesh` and `cyl
 | 3 | Spatial grid for `canWalk` and `nearest` | Keeps collision and road lookups flat as the map grows | Small | Done (see below) |
 | 4 | A tile index, plus plain massing for every building | Foundation for streaming. Massing keeps the skyline and avoids pop-in | Medium | Done (see below). Written by `scripts/build-tiles.mjs` rather than `prepare-map.mjs`, because it is measured from the builders |
 | 5 | Tile loader: build detail within about 150 m, one ring ahead and a few buildings per frame. Unload tiles behind the player. Massing out to the fog distance | The core of streaming. At walking speed (3.3–6 m/s) a 100 m tile takes 17–30 s to cross, enough to build the next ring in the background | Large | Done (see below), at 180 m |
-| 6 | Fewer materials: let colours share materials, and put the canvas sign textures into a shared atlas | The scene draws about 3,200 materials in about 3,700 draw calls. Every tile pays this cost | Medium | Proposed, alongside 5 (measured below) |
+| 6 | Fewer materials: let colours share materials, and put the canvas sign textures into a shared atlas | The scene draws about 3,200 materials in about 3,700 draw calls. Every tile pays this cost | Medium | Colours done (see below). The sign atlas is not done |
 | 7 | Bake tiles at build time into compressed geometry files | Fastest loading, but every model change needs a bake step | Large | Not yet. Keep the tile format compatible |
 
 ### Builder registry (step 2, done 12 November 2026)
@@ -131,7 +131,17 @@ Software WebGL Chrome (no GPU) in the build container, from opening the page to 
 | Drawn mesh instances at the spawn | 11,115 | 4,194 | 10,299 |
 | Materials drawn at the spawn | 3,598 | 1,793 | 3,598 |
 
-Software WebGL exaggerates GPU waits: of the 9.4 s, about 4.5 s is the first frame compiling shadow shaders behind the queue of buffer uploads, which a real GPU clears far faster. Detail out to 180 m is complete about 16 s after Enter appears in software rendering. Renders at the review views match the previous build.
+Software WebGL exaggerates GPU waits: of the 9.4 s, about 4.5 s is the first frame compiling shadow shaders behind the queue of buffer uploads, which a real GPU clears far faster. Detail out to 180 m is complete about 16 s after Enter appears in software rendering. With every tile built, renders at the 19 standard review views match the previous build to within a few hundred of their 518,400 pixels, and one is identical: the differences are edge pixels where coplanar faces now draw in another order, and faint shadow speckle where batch bounds changed the shadow map.
+
+## Shared colours (step 6, done 28 November 2026)
+
+About 3,100 of the scene's materials were plain colours from `world.mat`, each drawn separately in every tile it appears in. Each merged part now also carries its colour in its vertices, as the same linear float the material passes to the shader, and when a tile merges its plain-colour parts move to one shared material per culling and glow, which multiplies the vertex colour by white. The colour that reaches the screen is the same number as before; the renders differ from step 5's by a few hundred pixels per view, shifts of one or two levels on shadowed faces and edge pixels, from the new batches. A colour material a builder has changed beyond culling, such as the textured road surface, keeps its own material.
+
+With every tile built, the scene at the spawn draws 489 materials in 3,369 mesh instances, against 3,598 and 10,299 before. Streaming from the spawn, it draws 306 materials in 1,666 mesh instances once Enter appears.
+
+The vertical boards drawn by the shared house builders were 1,024 px wide and as tall as their shape demanded, up to 14,662 px. Three were over the 8,192 px some GPUs accept, and drew blank in software rendering, and the eight over 4,096 px took 287 MB of video memory between them before mipmaps. They now take 71 MB. Their canvases now stop at 4,096 px on the long side, keeping their shape.
+
+The sign atlas, putting the canvas signs into shared textures, is left for later: signs are about 460 of the remaining materials.
 
 ## Building on top of the map
 

@@ -64,7 +64,9 @@ export class World {
   private materials=new Map<string,pc.StandardMaterial>();
   private polys=new Map<string,Point[]>();private order=new Map<string,number>();
   private tiles=new Map<string,Tile>();private merging=false;
-  private unit:string|null=null;private unitTile:string|null=null;private unitParts:pc.MeshInstance[]|null=null;private primitives=new Map<string,pc.Mesh>();private tileTextures:pc.Texture[]|null=null;
+  private unit:string|null=null;private unitTile:string|null=null;private unitParts:pc.MeshInstance[]|null=null;private primitives=new Map<string,pc.Mesh>();
+  // Plain colours, keyed by their material, and the few materials they share once merged (loading plan step 6).
+  private colours=new Map<pc.Material,{hex:string;glow:number;linear:number[]}>();private sharedColours=new Map<string,pc.StandardMaterial>();private coloured=new WeakSet<pc.Mesh>();private tileTextures:pc.Texture[]|null=null;
   private builders=new Map<string,Builder>();private loading=new Map<string,Promise<void>>();
   private facade!:pc.StandardMaterial;private heritage!:pc.StandardMaterial;private signMaterials:pc.StandardMaterial[]=[];
   private focus:Point|null=null;private queue:Tile[]=[];private far:Tile[]=[];private warned=false;
@@ -102,7 +104,7 @@ export class World {
   mat(hex:string,glow=0){const key=hex+glow;if(this.materials.has(key))return this.materials.get(key)!;const m=new pc.StandardMaterial();m.diffuse=color(hex);m.useMetalness=true;m.metalness=.04;m.gloss=glow?.45:.2;if(glow){m.emissive=color(hex);m.emissiveIntensity=glow;this.emissives.push(m);}
     // Colours some builder draws two-sided are two-sided from the start, so the result does not depend on build order.
     if(this.culled.has(key))m.cull=pc.CULLFACE_NONE;
-    m.update();this.materials.set(key,m);return m;}
+    m.update();this.materials.set(key,m);const c=new pc.Color().linear(color(hex));this.colours.set(m,{hex,glow,linear:[c.r,c.g,c.b,1]});return m;}
   /** The shared colour materials, by colour and glow. */
   colourMaterials():ReadonlyMap<string,pc.StandardMaterial>{return this.materials;}
   /** Adds collision for an outline a builder draws beyond the map's footprints. A tile index already holds these. */
@@ -117,7 +119,27 @@ export class World {
   // Parts drawn on their own, outside the merge.
   private entity(name:string,data:object,parent?:pc.Entity){const e=new pc.Entity(name);e.addComponent('render',data);(parent??this.app.root).addChild(e);return e;}
   // The engine's own unit box and cylinder, so merged primitives match the render component's exactly.
-  private primitive(type:'box'|'cylinder'){let m=this.primitives.get(type);if(!m){m=pc.Mesh.fromGeometry(this.app.graphicsDevice,type==='box'?new pc.BoxGeometry():new pc.CylinderGeometry({radius:.5,height:1}));m.incRefCount();this.primitives.set(type,m);}return m;}
+  // A plain colour also goes into each part's vertices, as the same linear float the material would pass, so merged parts
+  // can share one material per culling and glow and still draw exactly the same colour.
+  private primitive(type:'box'|'cylinder',mat:pc.Material){
+    const c=this.colours.get(mat),key=c?`${type} ${c.hex}`:type;let m=this.primitives.get(key);if(m)return m;
+    const g=type==='box'?new pc.BoxGeometry():new pc.CylinderGeometry({radius:.5,height:1});
+    if(c){m=new pc.Mesh(this.app.graphicsDevice);m.setPositions(g.positions);m.setNormals(g.normals!);m.setUvs(0,g.uvs!);this.colour(m,g.positions.length/3,c.linear);m.setIndices(g.indices!);m.update();}
+    else m=pc.Mesh.fromGeometry(this.app.graphicsDevice,g);
+    m.incRefCount();this.primitives.set(key,m);return m;
+  }
+  private colour(mesh:pc.Mesh,count:number,linear:number[]){const colours=new Array(count*4);for(let i=0;i<count*4;i++)colours[i]=linear[i%4];mesh.setColors(colours);this.coloured.add(mesh);}
+  // Whether a colour material is still just its colour: builders may make one two-sided, but nothing else.
+  private plain(m:pc.StandardMaterial,c:{hex:string;glow:number}){
+    const d=color(c.hex),e=c.glow?d:new pc.Color(0,0,0),same=(a:pc.Color,b:pc.Color)=>a.r===b.r&&a.g===b.g&&a.b===b.b;
+    return !m.diffuseMap&&!m.emissiveMap&&!m.opacityMap&&!m.normalMap&&m.opacity===1&&m.blendType===pc.BLEND_NONE&&m.alphaTest===0&&m.depthWrite&&m.useMetalness&&m.metalness===.04&&m.gloss===(c.glow?.45:.2)&&m.emissiveIntensity===(c.glow||1)&&same(m.diffuse,d)&&same(m.emissive,e);
+  }
+  private sharedColour(cull:number,glow:number){
+    const key=`${cull} ${glow}`;let m=this.sharedColours.get(key);if(m)return m;
+    m=new pc.StandardMaterial();m.diffuseVertexColor=true;m.useMetalness=true;m.metalness=.04;m.gloss=glow?.45:.2;m.cull=cull;
+    if(glow){m.emissive=new pc.Color(1,1,1);m.emissiveVertexColor=true;m.emissiveIntensity=glow;}
+    m.update();this.sharedColours.set(key,m);return m;
+  }
   private tile(key:string){
     let t=this.tiles.get(key);if(t)return t;
     const [tx,tz]=key.replace('base ','').split(',').map(Number);
@@ -127,6 +149,8 @@ export class World {
   // One merge pass per tile. Engine batch groups would rebatch the whole scene again on the first frame.
   private mergeTile(t:Tile){
     const batcher=this.app.batcher!;
+    // Plain colours merge under a few shared materials. Their culling is final by now, whatever order the tiles built in.
+    for(const mi of t.parts){const c=this.colours.get(mi.material),m=mi.material as pc.StandardMaterial;if(c&&this.coloured.has(mi.mesh)&&this.plain(m,c))mi.material=this.sharedColour(m.cull,c.glow);}
     for(const list of batcher.prepare(t.parts,false,35,false)){const batch=batcher.create(list,false);if(batch){batch.addToLayers(this.app.scene,[pc.LAYERID_WORLD]);t.batches.push(batch);}}
     // Only the merged copies are drawn, so the parts' own meshes are freed. The shared primitives hold a reference of their own.
     for(const mi of t.parts)mi.destroy();t.parts=[];
@@ -150,10 +174,10 @@ export class World {
     }
   }
   private loadTexture(name:string,url:string){const asset=new pc.Asset(name,'texture',{url});this.app.assets.add(asset);return new Promise<pc.Texture>((resolve,reject)=>{asset.ready(()=>resolve(asset.resource as pc.Texture));asset.on('error',reject);this.app.assets.load(asset);});}
-  box(name:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:pc.Material,parent?:pc.Entity,angle=0):pc.GraphNode{const e=!parent&&this.merging?this.part(name,this.primitive('box'),mat,h>.5,x,z):this.entity(name,{type:'box',material:mat,castShadows:h>.5,receiveShadows:true},parent);e.setLocalPosition(x,y,z);e.setLocalScale(w,h,d);e.setLocalEulerAngles(0,angle,0);return e;}
-  cylinder(name:string,x:number,y:number,z:number,diameter:number,h:number,mat:pc.Material,castShadows=false):pc.GraphNode{const e=this.merging?this.part(name,this.primitive('cylinder'),mat,castShadows,x,z):this.entity(name,{type:'cylinder',material:mat,castShadows,receiveShadows:true});e.setLocalPosition(x,y,z);e.setLocalScale(diameter,h,diameter);return e;}
+  box(name:string,x:number,y:number,z:number,w:number,h:number,d:number,mat:pc.Material,parent?:pc.Entity,angle=0):pc.GraphNode{const e=!parent&&this.merging?this.part(name,this.primitive('box',mat),mat,h>.5,x,z):this.entity(name,{type:'box',material:mat,castShadows:h>.5,receiveShadows:true},parent);e.setLocalPosition(x,y,z);e.setLocalScale(w,h,d);e.setLocalEulerAngles(0,angle,0);return e;}
+  cylinder(name:string,x:number,y:number,z:number,diameter:number,h:number,mat:pc.Material,castShadows=false):pc.GraphNode{const e=this.merging?this.part(name,this.primitive('cylinder',mat),mat,castShadows,x,z):this.entity(name,{type:'cylinder',material:mat,castShadows,receiveShadows:true});e.setLocalPosition(x,y,z);e.setLocalScale(diameter,h,diameter);return e;}
   strip(a:Point,b:Point,width:number,y:number,mat:pc.Material){const dx=b[0]-a[0],dz=b[1]-a[1];return this.box('street surface',(a[0]+b[0])/2,y,(a[1]+b[1])/2,width,.045,Math.hypot(dx,dz)+.06,mat,undefined,Math.atan2(dx,dz)*180/Math.PI);}
-  mesh(name:string,positions:number[],uvs:number[],indices:number[],mat:pc.Material){const mesh=new pc.Mesh(this.app.graphicsDevice);mesh.setPositions(positions);mesh.setNormals(pc.calculateNormals(positions,indices));mesh.setUvs(0,uvs);mesh.setIndices(indices);mesh.update();return this.merging?this.part(name,mesh,mat,true,positions[0],positions[2]):this.entity(name,{meshInstances:[new pc.MeshInstance(mesh,mat)],castShadows:true});}
+  mesh(name:string,positions:number[],uvs:number[],indices:number[],mat:pc.Material){const mesh=new pc.Mesh(this.app.graphicsDevice);mesh.setPositions(positions);mesh.setNormals(pc.calculateNormals(positions,indices));mesh.setUvs(0,uvs);const c=this.colours.get(mat);if(c)this.colour(mesh,positions.length/3,c.linear);mesh.setIndices(indices);mesh.update();return this.merging?this.part(name,mesh,mat,true,positions[0],positions[2]):this.entity(name,{meshInstances:[new pc.MeshInstance(mesh,mat)],castShadows:true});}
   panel(a:Point,b:Point,base:number,top:number,mat:pc.Material,uv=[0,0,1,1]){const p=[a[0],base,a[1],b[0],base,b[1],b[0],top,b[1],a[0],top,a[1]];return this.mesh('facade',p,[uv[0],uv[3],uv[2],uv[3],uv[2],uv[1],uv[0],uv[1]],[0,1,2,0,2,3],mat);}
   texture(canvas:HTMLCanvasElement){const t=new pc.Texture(this.app.graphicsDevice,{width:canvas.width,height:canvas.height,mipmaps:true,minFilter:pc.FILTER_LINEAR_MIPMAP_LINEAR,magFilter:pc.FILTER_LINEAR,anisotropy:4});t.setSource(canvas);this.tileTextures?.push(t);return t;}
   textMaterial(text:string,bg:string,fg:string,glow=.3,aspect=1024/192){
