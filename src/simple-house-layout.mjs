@@ -34,7 +34,8 @@ export function simpleHouseLayout(width, spec) {
   const I = S.shellInset ?? .02;
   add('five-foot way floor', width / 2, .04, -D / 2, width - 2 * I, .08, D, C.floor ?? '#9d978c');
   add('five-foot way ceiling', width / 2, S.ceiling + .03, -D / 2, width - 2 * I, .06, D, '#e4e2dc');
-  for (const u of [I + .03, width - I - .03]) add('five-foot way return', u, S.ceiling / 2, -D / 2, .03, S.ceiling, D, C.trim);
+  // `returns: false` leaves them out, where an outline's edges are not the photographed party walls.
+  if (S.returns !== false) for (const u of [I + .03, width - I - .03]) add('five-foot way return', u, S.ceiling / 2, -D / 2, .03, S.ceiling, D, C.trim);
   const back = -D + .04;
   add('back wall', width / 2, S.ceiling / 2, -D, width - 2 * I, S.ceiling, .06, C.back ?? '#2f2c2a');
   for (const f of S.backFittings ?? []) add(f.name, mid(...f.u), mid(...f.h), back + (f.out ?? 0), f.u[1] - f.u[0], f.h[1] - f.h[0], f.depth ?? .03, f.colour, f.glow ?? 0);

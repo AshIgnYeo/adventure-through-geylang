@@ -22,14 +22,20 @@ test('Lorong 18 brings in its own buildings, its corners and the Geylang Road bl
     '454274639', '454274640', '764372564', '764372563', '454274642', '764372562', '454274643', '764372561', '454274645'];
   const east = ['454438314', '764372560', '764372559', '1470917582', '764372541', '121872891', '764372540'];
   for (const id of [...geylang, ...west, ...east]) assert.ok(ids.has(id), id);
-  // Geylang Road east of No. 350, the Westerhout Road row and the stub south of it wait; the Lorong 16 rows are walked
+  // The Westerhout Road row and the stub south of it wait; the Lorong 16 rows are walked
   // with Lorong 16, not here.
-  for (const id of ['764372558', '454438307', '764372539', '454274544', '764372525']) assert.equal(ids.has(id), false, id);
+  // Nos. 352-364 came in later on their own (open question 86).
+  // No. 54 Lorong 20 (way 764372525), at Westerhout Road's south corner, came in with Lorong 20 (open question 81).
+  // The Westerhout Road row came in with its own pass (open question 72).
+  for (const id of ['454438307', '764372539', '454274544']) assert.equal(ids.has(id), true, id);
+  assert.equal(ids.has('764372525'), true);
   const claimed = new Set(lorong18.flatMap(p => p.buildingIds));
   for (const id of ['763764683', '121872890', '763764666']) assert.equal(claimed.has(id), false, id);
   // The lane's eight ways, Westerhout Road's mouths either side of it, and Geylang Road on past the junction.
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 18 Geylang').length, 8);
-  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Westerhout Road').map(r => r.id).sort(), ['23513327', '644902167']);
+  // Eight ways, and the stub's southern way to Guillemard Road from the dated extension (open question 72).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 18 Geylang').length, 9);
+  // Westerhout Road's east mouth at Lorong 20 came in with Lorong 20 (open question 81).
+  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Westerhout Road').map(r => r.id).sort(), ['23513327', '644902167', '644902168', '666020389', '666020390', '784675505']);
   for (const id of ['660071186', '666816964']) assert.equal(sourceMap.roads.find(r => r.id === id)?.name, 'Geylang Road', id);
 });
 
@@ -45,7 +51,8 @@ test('Lorong 18 is walkable from the Geylang Road centreline to the Westerhout R
   assert.deepEqual(link.path.at(-1), corridor('Geylang Road, Lorong 19 to Lorong 21').path[0]);
   // The backs of the blocks either side stay outside: the service lane behind the west row, the back of the Geylang Road
   // block, the service road behind the east side, and the stub south of Westerhout Road.
-  for (const p of [[330, 150], [305, 70], [410, 120], [390, 275]]) assert.equal(inStudy(p, 0), false, `${p}`);
+  // The stub south of Westerhout Road became walkable with its own pass (open question 72), so [390, 275] is no longer outside.
+  for (const p of [[330, 150], [305, 70], [410, 120]]) assert.equal(inStudy(p, 0), false, `${p}`);
 });
 
 test('the Lorong 18 exteriors fit their outlines, face their streets and keep their review starts clear', () => {

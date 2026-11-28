@@ -24,10 +24,14 @@ test('Lorong 19 brings in its own buildings, its corners and the Geylang Road ho
   for (const id of [...west, ...east, ...geylangRoad]) assert.ok(ids.has(id), id);
   // Sims Avenue Nos. 136-144 came in with open question 43; the Lorong Bachok row waits for a later pass.
   for (const id of ['682928736', '682928738', '682928739', '682928741', '682928744']) assert.ok(ids.has(id), id);
-  for (const id of ['454254315', '454254245']) assert.equal(ids.has(id), false, id);
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 19 Geylang').length, 7);
-  // Lorong Bachok's west mouth; its east mouth came in with Lorong 21 (open question 47).
-  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong Bachok').map(r => r.id), ['23513607', '666807847']);
+  // Lorong Bachok's row came in with its own walk (open question 93); the block south of it still waits.
+  assert.equal(ids.has('454254315'), true); assert.equal(ids.has('454254245'), false);
+  // The lane's seven ways, its mouth north of Sims Avenue (open question 83), and its six ways beyond with the road to
+  // Lorong 21 (open question 88).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 19 Geylang').length, 15);
+  // Lorong Bachok's west mouth; its east mouth came in with Lorong 21 (open question 47), its middle with its own walk
+  // (open question 93).
+  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong Bachok').map(r => r.id), ['23513607', '666807846', '666807847', '762269508']);
 });
 
 test('Lorong 19 is walkable from the Geylang Road centreline to the Sims Avenue centreline, and back to Lorong 17 along both', () => {

@@ -257,15 +257,268 @@ Review URLs can open directly opposite a model. For example:
 /?review=dabu-hakka
 /?review=hin-sheng
 /?review=t1-trading
+/?review=sa-183
+/?review=sa-185
+/?review=sa-187
+/?review=sa-189
+/?review=sa-191
+/?review=sa-193
+/?review=sa-195
+/?review=sa-197
+/?review=sa-199
+/?review=sa-201
+/?review=sa-203
+/?review=sa-205
+/?review=sa-147
+/?review=sa-149
+/?review=sa-151
+/?review=sa-153
+/?review=sa-155
+/?review=sa-157
+/?review=sa-159
+/?review=sa-135
+/?review=sa-137
+/?review=sa-139
+/?review=sa-141
+/?review=sa-143
+/?review=sa-145
+/?review=sa-165
+/?review=sa-167
+/?review=sa-169
+/?review=sa-177
+/?review=sa-105
+/?review=l23-35
+/?review=gr-352
+/?review=gr-354
+/?review=gr-356
+/?review=gr-358
+/?review=gr-360
+/?review=gr-362
+/?review=gr-364
+/?review=l17-43
+/?review=l17-51
+/?review=l17-46
+/?review=l17-50
+/?review=l19-74
+/?review=l19-76
+/?review=l19-72
+/?review=l19-77
+/?review=l19-62
+/?review=l19-fish-village
+/?review=shed-682937270
+/?review=shed-682937272
+/?review=shed-682937274
+/?review=l21-51
+/?review=l21-48
+/?review=l21a-9
+/?review=l21a-11a
+/?review=l21a-20
+/?review=l21a-gatehouse
+/?review=l23-37
+/?review=l6-5
+/?review=l6-20
+/?review=sr-royce
+/?review=sr-5
+/?review=sr-7
+/?review=sr-block
+/?review=l8-terrace-1
+/?review=l8-terrace-2
+/?review=l8-terrace-3
+/?review=l8-terrace-4
+/?review=l8-terrace-5
+/?review=l8-temple
+/?review=l8-19
+/?review=l8-19a
+/?review=l8-19a-hotel
+/?review=l10-14
+/?review=l10-house
+/?review=l10-la-mode
+/?review=l10-peach
+/?review=l12-21
+/?review=sr-cream-north
+/?review=sr-cream-south
+/?review=sr-white-east
+/?review=bachok-west
+/?review=bachok-middle
+/?review=bachok-white
+/?review=bachok-east
+/?review=l7-5
+/?review=l7-yellow
+/?review=l7-18
+/?review=sa-pink-hall
+/?review=sa-white-block
+/?review=l20-geylang-corner
+/?review=l20-1
+/?review=l20-fretwork
+/?review=l20-hotel-east
+/?review=l20-31
+/?review=l20-33
+/?review=l20-35
+/?review=l20-balconies
+/?review=l20-peach
+/?review=l20-pink-houses
+/?review=l20-flats
+/?review=l20-ibis
+/?review=l20-hotel-west
+/?review=l20-red-roofs
+/?review=l20-arched
+/?review=l20-westerhout-corner
+/?review=l20-54
+/?review=l20-56
+/?review=l20-58
+/?review=l20-60
+/?review=l20-62
+/?review=l20-62a
+/?review=l20-62c
+/?review=wh-2
+/?review=wh-4
+/?review=wh-6
+/?review=wh-8
+/?review=wh-10
+/?review=wh-12
+/?review=wh-14
+/?review=wh-54
+/?review=wh-56
+/?review=wh-61
+/?review=wh-69
+/?review=l18-50
+/?review=l18-stub-house
+/?review=l14-43
+/?review=l14-49
+/?review=l14-51
+/?review=l14-61
+/?review=l14-63
+/?review=l14-65
+/?review=l14-67
+/?review=l14-69
+/?review=l14-71
+/?review=l14-73
+/?review=l16-60
+/?review=l16-association
+/?review=l16-71
+/?review=l12-row-1
+/?review=l12-row-2
+/?review=l12-row-3
+/?review=l12-27
+/?review=l12-31
+/?review=l12-small-1
+/?review=l12-small-2
+/?review=l12-37
+/?review=gu-45
+/?review=gu-47
+/?review=gu-49
+/?review=gu-51
+/?review=l23-coffee-shop
+/?review=l23-white-block
+/?review=l23-tcm
+/?review=l23-orange-frames
+/?review=l23-yellow-house
+/?review=l23-white-modern
+/?review=l23-tai-wah-a
+/?review=l23-tai-wah-b
+/?review=l23-red-vents
+/?review=l23-light-blue
+/?review=l23-restaurant
+/?review=l23-geylang-corner
+/?review=l23-long-block
+/?review=l23-shed
+/?review=l23-food-centre
+/?review=l23-gr-ktv
+/?review=l23-gr-dumpling
+/?review=l23-46
+/?review=l23-48
+/?review=l23-thai-pore
+/?review=l23-hall-shed
+/?review=l22-karma-kagyud
+/?review=l22-36
+/?review=l22-34
+/?review=l22-grey-shop
+/?review=l22-white-house
+/?review=l22-timber-house
+/?review=l22-peach-block
+/?review=l22-shrine-house
+/?review=l22-grey-tower
+/?review=l22-long-house
+/?review=gu-175
+/?review=gu-177
+/?review=gu-179
+/?review=gu-181
+/?review=gu-84
+/?review=gu-86
+/?review=gu-88
+/?review=gu-90
+/?review=gu-92
+/?review=gu-94
+/?review=l4-white-row
+/?review=l4-green-house
+/?review=l4-teal-block
+/?review=l4-walk-up
+/?review=l4-red-frames
+/?review=l4-south-house
+/?review=l6-gabled-pair
+/?review=l6-44
+/?review=l6-salmon-row
+/?review=l6-white-modern
+/?review=l6-cream-terrace
+/?review=l6-blue-house
+/?review=l6-condo
+/?review=l6-blue-awning
+/?review=l6-cat-cafe
+/?review=l6-torie-ville
+/?review=l6-69
+/?review=l8-green-frames
+/?review=l8-38
+/?review=l8-teo-ann
+/?review=l8-old-row
+/?review=l8-bungalow
+/?review=l8-aston
+/?review=l8-grey-walk-up
+/?review=l8-white-terrace
+/?review=l8-swann
+/?review=l8-louvred-block
+/?review=l8-pastel-houses
+/?review=l8-balcony-house
+/?review=l8-61
+/?review=l8-familie
+/?review=l8-clan-house
+/?review=al-corner
+/?review=al-tiled-house
+/?review=al-blue-awning
+/?review=al-union
+/?review=al-full-wellness
+/?review=al-brown-house
+/?review=al-ornate-pair
+/?review=al-m35
+/?review=al-durian
+/?review=al-kh-plaza
+/?review=al-api
+/?review=al-union-trove
+/?review=l22e-404
+/?review=l22e-1
+/?review=l22e-11
+/?review=l22e-15
+/?review=l22e-19
+/?review=l22e-21
+/?review=l22e-25
+/?review=l22e-27
+/?review=l22e-29
+/?review=l22e-31
+/?review=l22e-33
+/?review=l22e-35
+/?review=l22e-37
+/?review=l22e-39
+/?review=l22e-41
+/?review=l22e-charcoal
+/?review=l22e-213
 ```
 
 These are inspection starts, rather than navigation or tracking features.
 
 ## Geographic and visual fidelity
 
-The original OpenStreetMap extract is retained at `public/osm-source.osm`. The preparation script produces `public/map.json`, preserving geographic coordinates, way identifiers, one-way tags and source building footprints. Projection and rendering use metres, without compressing the streets. The metre conversion is tested against an independent haversine calculation.
+The original OpenStreetMap extract is retained at `public/osm-source.osm`. A dated extension, `public/osm-extension.osm` (`103.8758,1.3095,103.8822,1.3155`, retrieved on 22 November 2026), reaches the lanes east and south of it (open question 81): wherever the retained extract holds an element its version is kept, and ways found only in the extension are taken in by id. A second, narrow extension, `public/osm-extension-east.osm` (`103.8822,1.3095,103.8832,1.3135`, retrieved on 28 November 2026), is read after it for Lorong 22's east side (open question 104). The preparation script produces `public/map.json`, preserving geographic coordinates, way identifiers, one-way tags and source building footprints. Projection and rendering use metres, without compressing the streets. The metre conversion is tested against an independent haversine calculation.
 
-The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 150 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026, Lorong 17 with its Geylang Road and Sims Avenue links on 12 October, Lorong 19 with its links back to Lorong 17 and Lorong Bachok's mouth the same day, Lorong 21 with its links back to Lorong 19 and Lorong Bachok's east mouth on 13 October, and Lorong 14 with Talma Road's east mouth, Lorong 16 and Lorong 18 with Westerhout Road's mouth and a Geylang Road link on 17 October), 347 building outlines, two alley or footway ways and one Lorong 9 access-context way. The study bounds were widened on 10 October (open question 26), to 103.87597–103.87859 E and 1.31150–1.31425 N, to take in the boundary blocks. Lorong 17 (open question 35) is taken by its own ways rather than by widening the rectangle again: its eleven new buildings and its road ways are listed by id, and the lane and its two junctions are walkable corridors (`corridors` in `map.json`). Lorong 19 (open question 42) is taken the same way: its fifteen buildings and the Geylang Road and Sims Avenue houses back to Lorong 17 (open question 43), with the lane and the Geylang Road and Sims Avenue links from Lorong 17's junctions as corridors. Under open questions 44–46 its buildings stand on authored footprints on their photographed positions. Lorong 21 (open question 47) is taken the same way: its buildings with the corners at both ends, and the Sims Avenue houses back to Lorong 19, with the lane and the Geylang Road and Sims Avenue links from Lorong 19's junctions as corridors. Its buildings stand on their source footprints for now; moving them onto their photographed positions is open questions 48–50. Lorong 14 (open question 51) is taken the same way, south from Geylang Road to the extract's edge, with its east corner block and the Geylang Road row east to Lorong 16 (Nos. 284–308); the lane is a corridor (its mouth is inside the Geylang Road corridors), and so is the forecourt of Nos. 302–308, which stand back beyond the Geylang Road corridor. Its buildings stand on their source footprints for now; the lane runs on past the extract to Guillemard Road (open question 52), and moving buildings onto their photographed positions is open questions 53 and 55–57. Lorong 16 (open question 61) is taken the same way, from Geylang Road to the extract's southern edge: its buildings with the west corner on Geylang Road (Nos. 310–314) and the terrace at the head of Westerhout Road, with the lane as a corridor whose junction lies on the Geylang Road corridor from Lorong 19 to Lorong 21. Its buildings also stand on their source footprints; the footprint and extract questions are open questions 62–68. Lorong 18 (open question 71), south of Geylang Road, is taken the same way: its buildings from Geylang Road to Westerhout Road with the corners at both ends, and the Geylang Road block back to Lorong 16 (Le Regal), with the lane from the Geylang Road centreline to the Westerhout Road centreline as a corridor and Geylang Road carried on from the Lorong 21 link to about 18 m past Lorong 18's junction. Westerhout Road's mouth and the stub south of it are road surface outside the corridor. Its buildings stand on their source footprints; moving the west side onto its photographed line is open question 73.
+The source extract covers `103.8758,1.3110,103.8812,1.3155` and was retrieved on 28 September 2026. It contains 295 main road ways (Lorong 15, then Lorongs 9, 10 and 12, were added to the derived road set on 10 October 2026, Lorong 17 with its Geylang Road and Sims Avenue links on 12 October, Lorong 19 with its links back to Lorong 17 and Lorong Bachok's mouth the same day, Lorong 21 with its links back to Lorong 19 and Lorong Bachok's east mouth on 13 October, and Lorong 14 with Talma Road's east mouth, Lorong 16 and Lorong 18 with Westerhout Road's mouth and a Geylang Road link on 17 October, the mouths of Lorongs 17, 19, 21 and 21A north of Sims Avenue on 14 November, Geylang Road's two ways past Nos. 352-364 and Lorong 17's four ways and Lorongs 19 and 21's twelve ways and Lorong 21A's three north of Sims Avenue Sims Avenue's way past Lorong 21A, and the ways of Lorongs 6, 8 and 12 and the service road south of the rectangle the same day, and Lorong Bachok's two middle ways, Lorong 7's three ways and Sims Avenue's way west of the rectangle the same day, and Lorong 20's thirteen ways with the pieces of Geylang Road, Guillemard Road and Westerhout Road at its ends from the extension on 22 November, Westerhout Road's three remaining ways, the south ends of Lorongs 14 and 16 with Guillemard Road between them, Lorong 12's south end with Guillemard Road on to Lorong 14, Lorong 23 with Geylang Road from Lorong 20, Lorong 22's four ways, Lorong 23's four ways north of Sims Avenue, Guillemard Road's five ways between Lorongs 16 and 20, Lorong 18's stub to Guillemard Road, and Guillemard Road's way west of Lorong 12 the same day, the ways of Lorongs 4, 6 and 8 south to Guillemard Road on 28 November, Aljunied Road's four ways, and Lorong 22's east carriageway from a second, narrow extension the same day), 608 building outlines, two alley or footway ways and one Lorong 9 access-context way. The study bounds were widened on 10 October (open question 26), to 103.87597–103.87859 E and 1.31150–1.31425 N, to take in the boundary blocks. Lorong 17 (open question 35) is taken by its own ways rather than by widening the rectangle again: its eleven new buildings and its road ways are listed by id, and the lane and its two junctions are walkable corridors (`corridors` in `map.json`). Lorong 19 (open question 42) is taken the same way: its fifteen buildings and the Geylang Road and Sims Avenue houses back to Lorong 17 (open question 43), with the lane and the Geylang Road and Sims Avenue links from Lorong 17's junctions as corridors. Under open questions 44–46 its buildings stand on authored footprints on their photographed positions. Lorong 21 (open question 47) is taken the same way: its buildings with the corners at both ends, and the Sims Avenue houses back to Lorong 19, with the lane and the Geylang Road and Sims Avenue links from Lorong 19's junctions as corridors. Its buildings stand on their source footprints for now; moving them onto their photographed positions is open questions 48–50. Lorong 14 (open question 51) is taken the same way, south from Geylang Road to the extract's edge, with its east corner block and the Geylang Road row east to Lorong 16 (Nos. 284–308); the lane is a corridor (its mouth is inside the Geylang Road corridors), and so is the forecourt of Nos. 302–308, which stand back beyond the Geylang Road corridor. Its buildings stand on their source footprints for now; the lane runs on past the extract to Guillemard Road (open question 52), and moving buildings onto their photographed positions is open questions 53 and 55–57. Lorong 16 (open question 61) is taken the same way, from Geylang Road to the extract's southern edge: its buildings with the west corner on Geylang Road (Nos. 310–314) and the terrace at the head of Westerhout Road, with the lane as a corridor whose junction lies on the Geylang Road corridor from Lorong 19 to Lorong 21. Its buildings also stand on their source footprints; the footprint and extract questions are open questions 62–68. Lorong 18 (open question 71), south of Geylang Road, is taken the same way: its buildings from Geylang Road to Westerhout Road with the corners at both ends, and the Geylang Road block back to Lorong 16 (Le Regal), with the lane from the Geylang Road centreline to the Westerhout Road centreline as a corridor and Geylang Road carried on from the Lorong 21 link to about 18 m past Lorong 18's junction. Westerhout Road's mouth and the stub south of it are road surface outside the corridor. Its buildings stand on their source footprints; moving the west side onto its photographed line is open question 73. The north side of Sims Avenue from No. 135 to No. 205 (open question 83) is taken the same way, with the mouths of the four lanes north of it kept as road and the Sims Avenue corridors carried west past No. 135 and east to Lorong 21A. It is measured from KartaView's May 2023 panoramas while Street View cannot be reached (open question 84), and its buildings are unnamed until listings can be checked. Geylang Road's south side from No. 352 to No. 364 (open question 86), held for Lorong 20 under question 71, is taken the same way and measured from the same drives, and so is Lorong 17 north of Sims Avenue (open question 87), whose four set-back industrial plots are photographed massing, Lorongs 19 and 21 north of the avenue with the road between them (open question 88), and Lorong 21A north of it (open question 89). South of the rectangle, Lorongs 6, 8, 10 and 12 and the service road between Lorongs 4 and 6 are taken the same way (open question 92), with Lorongs 6 and 8 added to the road set whole. Lorong Bachok's north row between Lorongs 19 and 21 is laid as photographed: eleven houses over its twelve outlines (open question 93). At the extract's west edge, Lorong 7's remaining plots and two north of Sims Avenue beside it are taken as massing (open question 94). From the dated extension, Lorong 20 is walked from Geylang Road to Guillemard Road (open question 81), Westerhout Road from Lorong 16 to Lorong 20 (open question 72), Lorongs 14 and 16 to Guillemard Road (open questions 52 and 62), Lorong 12's east side to Guillemard Road (open question 96), Lorong 23 from Geylang Road to Sims Avenue (open question 97), Lorong 22's west side (open question 98), Guillemard Road between Lorongs 16 and 20 (open question 100), Lorongs 4, 6 and 8 south to Guillemard Road (open question 101), Aljunied Road between Geylang Road and Lorong 23 (open question 102), and Lorong 22's east side (open question 104).
 
 This is a researched reconstruction, rather than a survey-grade digital twin. Footprints usually come from the map data, while heights, road widths, pavements, awnings, furniture and obscured architectural details may be estimated. Shan Yuan Tang uses an explicitly documented authored footprint because it is absent from the retained source map. Mongkok Dim Sum occupies an estimated corner portion of a larger mapped block. Private interiors are not reconstructed.
 
@@ -338,6 +591,24 @@ Detailed provenance is available in:
 - [Lorong 14 brief](docs/lorong-14-brief.md)
 - [Lorong 16 brief](docs/lorong-16-brief.md)
 - [Lorong 18 brief](docs/lorong-18-brief.md)
+- [Sims Avenue north side brief](docs/sims-avenue-north-brief.md)
+- [Geylang Road Nos. 352-364 brief](docs/geylang-352-brief.md)
+- [Lorong 17 north of Sims Avenue brief](docs/lorong-17-north-brief.md)
+- [Lorongs 19 and 21 north of Sims Avenue brief](docs/lorong-19-21-north-brief.md)
+- [Lorong 21A north of Sims Avenue brief](docs/lorong-21a-north-brief.md)
+- [Lorongs 6, 8, 10 and 12 south of the study rectangle brief](docs/lorong-6-12-south-brief.md)
+- [Lorong Bachok brief](docs/lorong-bachok-brief.md)
+- [Lorong 7 brief](docs/lorong-7-brief.md)
+- [Lorong 20 brief](docs/lorong-20-brief.md)
+- [Westerhout Road brief](docs/westerhout-road-brief.md)
+- [Lorongs 14 and 16 south brief](docs/lorong-14-16-south-brief.md)
+- [Lorong 12 south brief](docs/lorong-12-south-brief.md)
+- [Lorong 23 brief](docs/lorong-23-brief.md)
+- [Lorong 22 brief](docs/lorong-22-brief.md)
+- [Guillemard Road brief](docs/guillemard-road-brief.md)
+- [Lorongs 4, 6 and 8 south brief](docs/south-lanes-brief.md)
+- [Aljunied Road brief](docs/aljunied-road-brief.md)
+- [Lorong 22 east side brief](docs/lorong-22-east-brief.md)
 
 ## Project structure
 
@@ -355,7 +626,7 @@ Most landmark detail is built from code-native geometry so it can be adjusted wi
 
 A useful addition begins with evidence, rather than geometry. Confirm the place name and address, match it to a source footprint where possible, inspect dated exterior references, and record uncertainty before modelling. Preserve the geographic scale and source coordinates. Keep inferred details conservative, especially when a building contains several premises or the available photograph does not show the full elevation.
 
-New work should include its provenance notes and the narrowest useful geometry checks. Run `npm test` and `npm run build`, then inspect the model from street level before committing it.
+New work should include its provenance notes and the narrowest useful geometry checks. A new builder module is listed in `src/builder-owners.mjs`, from which `npm run registry` writes the building lookup the viewer uses. `npm run tiles` then writes `public/tiles.json`, the index the viewer streams the map with: it builds every building headlessly in Node and records each one's tile, the review spawns, extra collision outlines and the massing shown for tiles not yet built. `npm run dev` and `npm run build` run both first, and `npm test` fails if either committed file is out of date. A builder that draws an outline the map lacks calls `world.addFootprint` rather than pushing to `world.footprints`. Run `npm test` and `npm run build`, then inspect the model from street level before committing it.
 
 ## Reuse and licensing
 

@@ -1,5 +1,5 @@
 import * as pc from 'playcanvas';
-import {World, type MapData, type Point} from './world';
+import {World, type MapData, type Point, type TileIndex} from './world';
 import { withAuthoredFootprints } from './authored-footprints.mjs';
 import './style.css';
 const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
@@ -14,9 +14,14 @@ async function start(){
   const options=new pc.AppOptions();options.graphicsDevice=device;options.batchManager=pc.BatchManager;options.componentSystems=[pc.RenderComponentSystem,pc.CameraComponentSystem,pc.LightComponentSystem];options.resourceHandlers=[pc.TextureHandler];
   const app=new pc.AppBase(canvas);app.init(options);app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);app.setCanvasResolution(pc.RESOLUTION_AUTO);
   const camera=new pc.Entity('First person');camera.addComponent('camera',{fov:65,nearClip:.08,farClip:600,clearColor:new pc.Color(.25,.35,.4),toneMapping:pc.TONEMAP_ACES});app.root.addChild(camera);
-  const response=await fetch('/map.json');if(!response.ok)throw new Error('Street data could not be loaded');const data=withAuthoredFootprints(await response.json()) as MapData;
-  const world=new World(app,data,camera);await world.build();let pos:Point=[0,0];
-  function reset(){const review=new URLSearchParams(location.search).get('review');const spawn:{p:Point;yaw:number;pitch?:number}=(review&&world.reviewSpawns.get(review))||world.spawn();pos=[...spawn.p];yaw=spawn.yaw;pitch=spawn.pitch??(review?9:-2);camera.setPosition(pos[0],1.68,pos[1]);camera.setEulerAngles(pitch,yaw,0);}
+  // The tile index lets the street open around the walker and stream the rest. Without it, everything builds first.
+  const [response,tiles]=await Promise.all([fetch('/map.json'),fetch('/tiles.json').catch(()=>null)]);if(!response.ok)throw new Error('Street data could not be loaded');const data=withAuthoredFootprints(await response.json()) as MapData;
+  const index=tiles?.ok?await tiles.json() as TileIndex:undefined;
+  const world=new World(app,data,camera,index);let pos:Point=[0,0];
+  const review=new URLSearchParams(location.search).get('review');
+  function spawn():{p:Point;yaw:number;pitch?:number}{return (review&&world.reviewSpawns.get(review))||world.spawn();}
+  await world.start(spawn().p);
+  function reset(){const s=spawn();pos=[...s.p];yaw=s.yaw;pitch=s.pitch??(review?9:-2);camera.setPosition(pos[0],1.68,pos[1]);camera.setEulerAngles(pitch,yaw,0);}
   reset();app.start();
   el('loading').textContent='LORONG 11 · REFERENCE-LED STUDY';enter.disabled=false;enter.innerHTML='Explore the streets <span>↗</span>';
   window.addEventListener('resize',()=>app.resizeCanvas());
@@ -48,7 +53,8 @@ async function start(){
   function moveStick(e:PointerEvent){if(joystick!==e.pointerId)return;const r=stick.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,z=e.clientY-r.top-r.height/2;const len=Math.max(35,Math.hypot(x,z));moveX=x/len;moveZ=-z/len;knob.style.transform=`translate(${moveX*30}px,${-moveZ*30}px)`;}
   stick.addEventListener('pointerdown',e=>{if(paused)return;joystick=e.pointerId;stick.setPointerCapture(e.pointerId);moveStick(e);});stick.addEventListener('pointermove',moveStick);const endStick=()=>{joystick=null;moveX=moveZ=0;knob.style.transform='';};stick.addEventListener('pointerup',endStick);stick.addEventListener('pointercancel',endStick);
   let lastBoundary=0;
-  app.on('update',(elapsed:number)=>{const dt=Math.min(elapsed,.05);if(!active||paused||document.hidden)return;
+  // More of each frame goes to building while nobody is walking.
+  app.on('update',(elapsed:number)=>{world.stream(pos,active&&!paused?4:12);const dt=Math.min(elapsed,.05);if(!active||paused||document.hidden)return;
     if(lookMode==='keyboard'){
       yaw+=((keys.has('ArrowLeft')?1:0)-(keys.has('ArrowRight')?1:0))*72*dt;
       pitch+=((keys.has('ArrowUp')?1:0)-(keys.has('ArrowDown')?1:0))*48*dt;

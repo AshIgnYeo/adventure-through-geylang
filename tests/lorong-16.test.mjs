@@ -31,7 +31,8 @@ test('Lorong 16 brings in its own buildings, its west corner on Geylang Road and
   // (walked with Lorong 18) stay out of this lane's list.
   const claimed = new Set([...lorong16, ...geylangRow16, ...westerhout16, ...sites16, ...backLane16].flatMap(p => p.buildingIds));
   for (const id of ['764372573', '454254171', '541941365', '454274650', '764372561']) assert.equal(claimed.has(id), false, id);
-  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong 16 Geylang').map(r => r.id).sort(), ['23513325', '632249196', '666011790', '666011791', '776937485']);
+  // The lane's three southern ways to Guillemard Road came in from the dated extension (open question 62).
+  assert.deepEqual(sourceMap.roads.filter(r => r.name === 'Lorong 16 Geylang').map(r => r.id).sort(), ['23513325', '632249196', '666011790', '666011791', '666011792', '666011793', '666011794', '776937485']);
 });
 
 test('Lorong 16 is walkable from the Geylang Road centreline to the end of its last way in the extract', () => {

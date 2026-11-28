@@ -4,7 +4,9 @@ import { laneFrame, laneLayout, laneReviews, laneSides, laneUpper } from './lane
 import { buildSimpleHouse, type Draw } from './simple-house';
 
 export const canvasFor = (w: number, h: number, base: number, fn: Draw) => {
-  const canvas = document.createElement('canvas'); canvas.width = base; canvas.height = Math.max(16, Math.round(base * h / w));
+  // As in simple-house: a tall board stops at 4096 px.
+  const tall = Math.max(16, Math.round(base * h / w)), k = Math.min(1, 4096 / tall);
+  const canvas = document.createElement('canvas'); canvas.width = Math.max(1, Math.round(base * k)); canvas.height = Math.round(tall * k);
   fn(canvas.getContext('2d')!, canvas.width, canvas.height); return canvas;
 };
 export const text = (c: CanvasRenderingContext2D, t: string, x: number, y: number, size: number, colour: string, weight: string, family: string, maxWidth?: number) => {

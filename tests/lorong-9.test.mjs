@@ -24,6 +24,10 @@ test('Lorong 9 frames face west and keep their fittings in the frontage', () => 
 test('Lorong 9 review starts stay walkable', () => {
   // West-side blocks straddle the study's west edge, so only east-side review starts are checked here.
   for (const place of lorong9.filter(p => p.buildingIds.length === 1 && ['l9-12', 'ywam-singapore'].includes(p.id))) { const frame = lorong9Frame(outline(place.buildingIds[0]), place); assertReviews(frame, lorong9Reviews(place, frame)); }
+  // The grey building's start is laid on its first way's frame across both ways, as the builder lays it.
+  const [first, second] = greyBuilding.buildingIds.map(id => lorong9Frame(outline(id), greyBuilding));
+  const frame = { ...first, width: first.width + second.width };
+  assertReviews(frame, lorong9Reviews(greyBuilding, frame));
 });
 
 test('Kim Court and The Diamond take the ways whose numbers their listings and plates carry', () => {

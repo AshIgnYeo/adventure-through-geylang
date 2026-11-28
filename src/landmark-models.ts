@@ -1,6 +1,6 @@
 import * as pc from 'playcanvas';
 import type { World, Point } from './world';
-import { landmarkFor } from './landmarks.mjs';
+import { coreLandmarkFor as landmarkFor } from './core-landmarks.mjs';
 import { buildLeongKeeSide, leongKeeTable } from './leong-kee-exterior';
 import { leongKeeExterior } from './leong-kee-layout.mjs';
 import { buildAmrise } from './amrise';

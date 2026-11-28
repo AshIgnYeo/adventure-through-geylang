@@ -54,7 +54,9 @@ export function buildSimpleHouse(world: World, label: string, frame: Frame, poly
     world.box(`${label} ${b.name}`, p[0], b.y, p[1], b.w, b.h, b.depth, world.mat(b.colour, b.glow), undefined, angle);
   }
   const canvasFor = (s: { w: number; h: number }, base = 1024, fn?: Draw) => {
-    const canvas = document.createElement('canvas'); canvas.width = base; canvas.height = Math.max(16, Math.round(base * s.h / s.w));
+    // A tall board keeps its shape but stops at 4096 px, the size every GPU takes; a few vertical boards were over 8192 and drew blank on some.
+    const tall = Math.max(16, Math.round(base * s.h / s.w)), k = Math.min(1, 4096 / tall);
+    const canvas = document.createElement('canvas'); canvas.width = Math.max(1, Math.round(base * k)); canvas.height = Math.round(tall * k);
     fn?.(canvas.getContext('2d')!, canvas.width, canvas.height); return canvas;
   };
   const boards = [layout.board, ...layout.boards].filter(Boolean) as Panel[];
