@@ -410,6 +410,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes.
     - **Unlocks:** the south-west corner of the study between Geylang Road and Guillemard Road complete, except Lorong 4's west side.
 
+102. **Aljunied Road between Geylang Road and the Lorong 23 coffee shop: walk both sides from the dated extension?**
+    - **Evidence:** the dated extension (question 81) holds Aljunied Road's two carriageways north of Geylang Road, a row of nine shophouses and small blocks on its west side behind Lorong 23's east side, and three office blocks on its east side, the northern two at the extension's east edge (named KH Plaza and Elite Building in the source). KartaView's drives of 15 and 16 May 2023 run north along it (sequences 8344585 and 8344809). Aljunied Road is a main road, like Guillemard Road (question 100); its east side beyond these three blocks lies outside the extension.
+    - **Status:** done on the owner's instruction to carry on mapping, on question 87's terms: twelve plots as photographed massing, every building unnamed (question 84), with corridors along both carriageways ([brief](aljunied-road-brief.md)). The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the block between Lorong 23 and Aljunied Road closed on all four sides.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
