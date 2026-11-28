@@ -444,8 +444,13 @@ Started: 10 October 2026.
     - **Decision needed:** whether the reach and the massing colour are right, or whether far blocks should carry their buildings' own colours.
 107. **Lorong 25A next: walk it, with the block between it and Lorong 25?**
     - **Evidence:** the Lorong 25 extract already holds Lorong 25A's west side and part of its east side: Coronation Baptist Church (ways 454254131 and 454254132), the plots between the church and Sims Avenue (454254137, 454254138, 454438289) and the ECM Building at No. 260 Sims Avenue (454254134), with Centra Suites (No. 38 Lorong 25A), the Amitabha Buddhist Centre and Sims Avenue's Sek Lim plot (454254121, 454254120, 454274514) and two more plots opposite. KartaView's drive of 16 May 2023 runs down the lane (sequence 8344809, frames 2069-2091). The east side's outlines run past the extract's east edge at 103.8834 E, so a second narrow extract may be needed for them.
-    - **Status:** not started.
-    - **Recommendation:** yes. It is the next lane east and its imagery is already downloaded.
+    - **Status:** done on 28 November 2026, eleven outlines from the Lorong 25 extract, which turned out to hold the whole lane; see [the Lorong 25A brief](lorong-25a-brief.md).
+    - **Recommendation:** yes, done as recommended.
+108. **Lorong 25A's coarse outlines: re-solve the drive's positions and add the missing outlines?**
+    - **Evidence:** on Lorong 25A the source outlines are coarser than the frontages. Way 454254137 holds a four-storey temple and a row of link houses; way 454274536 a modern house, a seven-storey apartment block and part of a building site. A pair of ornate shophouses and a modern house between Centra Suites and the apartment block have no outline, and a small block behind the ECM Building (way 454254135) faces only the service alley. The frontages were matched to outlines by the corners they bracket in the frames, but the drive's positions trail by about 10 m, so a frontage may sit on its neighbour's outline.
+    - **Status:** modelled as matched; the shophouses and the alley block are left out.
+    - **Recommendation:** solve the frames' positions against the lane's corners before modelling Lorong 25A in detail, and draw outlines for the missing houses as authored footprints, as done for Lorong 11's west side.
+    - **Decision needed:** whether to do that, or leave the lane as photographed massing.
 
 ## Settled
 

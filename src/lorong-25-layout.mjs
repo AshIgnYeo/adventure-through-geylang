@@ -8,18 +8,18 @@
 import { way, laneFrame, laneLayout, laneUpper, laneReviews, laneSides } from './lane-house-layout.mjs';
 import { kv } from './sims-avenue-north-layout.mjs';
 
-const r2 = v => +v.toFixed(2);
-const spread = (W, n, w, m = .5) => Array.from({ length: n }, (_, i) => {
+export const r2 = v => +v.toFixed(2);
+export const spread = (W, n, w, m = .5) => Array.from({ length: n }, (_, i) => {
   const c = m + w / 2 + (n > 1 ? (W - 2 * m - w) * i / (n - 1) : (W - 2 * m - w) / 2);
   return [r2(c - w / 2), r2(c + w / 2)];
 });
-const grid = (us, bs, hh, panes = 2) => bs.flatMap(b => us.map(u => ({ u, h: [r2(b), r2(b + hh)], panes, out: .02 })));
-const floors = (n, h0, step) => Array.from({ length: n }, (_, k) => h0 + step * k);
-const span = (W, m = .03) => [m, r2(W - m)];
-const plain = (name, u, h, colour, out = .02, depth = .04) => ({ name, u, h, out, depth, colour });
+export const grid = (us, bs, hh, panes = 2) => bs.flatMap(b => us.map(u => ({ u, h: [r2(b), r2(b + hh)], panes, out: .02 })));
+export const floors = (n, h0, step) => Array.from({ length: n }, (_, k) => h0 + step * k);
+export const span = (W, m = .03) => [m, r2(W - m)];
+export const plain = (name, u, h, colour, out = .02, depth = .04) => ({ name, u, h, out, depth, colour });
 const note = ' It is seen in KartaView\'s drive of 16 May 2023 (open question 84), which shows no party walls to place a frame by, so it is modelled as photographed massing on its source outline: colours, storeys, roofs and main features as photographed, with openings placed by estimate.';
 
-const plot = ({ id, way: w, front, W, storeys, height = r2(storeys * 3.2 + .4), road = 'Lorong 25 Geylang', roof, colours, label, address, look, signs, frames, review, windows, blocks = [] }) => ({
+export const plot = ({ id, way: w, front, W, storeys, height = r2(storeys * 3.2 + .4), road = 'Lorong 25 Geylang', roof, colours, label, address, look, signs, frames, review, windows, blocks = [], upper }) => ({
   id, buildingIds: [w], kind: 'unnamed', unnamed: true, frontEdge: front, reviewRoad: road,
   review: { distance: review, pitch: height > 14 ? 34 : 18 }, shellInset: .3, ceiling: .2, fiveFootWay: .02, height, roof: roof ?? { type: 'flat', colour: '#9a9c98' },
   colours: { trim: colours.wall, frame: '#2e3032', glass: '#3a4a56', back: '#3a3836', floor: '#a8a296', pier: colours.wall, ...colours },
@@ -27,6 +27,7 @@ const plot = ({ id, way: w, front, W, storeys, height = r2(storeys * 3.2 + .4), 
   evidence: `KartaView panoramas of May 2023 show ${look}.${signs ? ' ' + signs : ''} Listings could not be checked (open question 84), so no name is given${signs ? ' and the lettering is not drawn' : ''}.${storeys > 1 ? ` Its height follows its ${storeys} storeys and carries about ±${storeys >= 5 ? 4 : 2} m.` : ''}` + note,
   sources: [way(w), ...frames.map(f => kv('8344809', f))],
   windows: windows ?? grid(spread(W, Math.max(1, Math.round((W - 1) / 3.2)), Math.min(1.5, W / 3)), floors(storeys - 1, 4.1, 3.2), 1.6), blocks,
+  ...(upper ? { upper } : {}),
 });
 
 // The terrace, Nos. 6-26 (ways 1225192324-1225192334). Each house fronts the lane on its short west end, about 5 m wide,
