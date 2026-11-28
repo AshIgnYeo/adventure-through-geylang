@@ -12,7 +12,8 @@ test("Lorong 22's west side comes in from the dated extension, with the lane's f
   const ids = new Set(sourceMap.buildings.map(b => b.id));
   for (const id of plots) assert.ok(ids.has(id), id);
   assert.deepEqual(lorong22.flatMap(p => p.buildingIds), plots);
-  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 22 Geylang').length, 4);
+  // Four ways on the west carriageway, and four on the east from the east extension (open question 104).
+  assert.equal(sourceMap.roads.filter(r => r.name === 'Lorong 22 Geylang').length, 8);
   const inStudy = studyArea(sourceMap), path = sourceMap.corridors.find(c => c.name === 'Lorong 22 Geylang').path.map(p => project(p, sourceMap.origin));
   for (let i = 1; i < path.length; i++) for (let k = 0; k <= 20; k++) assert.ok(inStudy([path[i - 1][0] + (path[i][0] - path[i - 1][0]) * k / 20, path[i - 1][1] + (path[i][1] - path[i - 1][1]) * k / 20], 3));
   for (const [id, n] of [['454438305', '36'], ['454438306', '34']]) assert.equal(building(id).street ?? 'Lorong 22 Geylang', 'Lorong 22 Geylang');

@@ -385,7 +385,7 @@ Started: 10 October 2026.
 
 98. **Lorong 22's west side, from Guillemard Road to Geylang Road: walk it from the dated extension?**
     - **Evidence:** the dated extension (question 81) reaches 103.8822 E, which takes in Lorong 22's four ways along its eastern edge but none of its east side. On its west side, the back half of the block shared with Lorong 20 holds about ten outlines set back 15-30 m from the lane, four of them addressed to Lorong 22 (among them Nos. 34 and 36, tagged eight levels) and one named Karma Kagyud Buddhist Centre near Guillemard Road. KartaView's drive of 16 May 2023 runs up the lane (sequence 8344809, frames 1035-1056).
-    - **Status:** done on the owner's instruction to carry on, on question 87's terms: ten plots as photographed massing, every building unnamed (question 84), with a corridor along the lane ([brief](lorong-22-brief.md)). The east side waits for an extract reaching further east. The commits stand apart.
+    - **Status:** done on the owner's instruction to carry on, on question 87's terms: ten plots as photographed massing, every building unnamed (question 84), with a corridor along the lane ([brief](lorong-22-brief.md)). The east side came in with question 104. The commits stand apart.
     - **Recommendation:** yes.
     - **Unlocks:** the block between Lorongs 20 and 22 complete, and a fourth lane from Geylang Road to Guillemard Road.
 
@@ -415,6 +415,28 @@ Started: 10 October 2026.
     - **Status:** done on the owner's instruction to carry on mapping, on question 87's terms: twelve plots as photographed massing, every building unnamed (question 84), with corridors along both carriageways ([brief](aljunied-road-brief.md)). The commits stand apart.
     - **Recommendation:** yes.
     - **Unlocks:** the block between Lorong 23 and Aljunied Road closed on all four sides.
+
+103. **What is left in the dated extension, and Guillemard Road's south side: hold it?**
+    - **Evidence:** surveyed on 28 November 2026 after the Aljunied Road walk (question 102). Every outline in the dated extension that stands within 15 m of a mapped road is now modelled, except:
+      - **South of Guillemard Road:** Guillemard Crescent, Guillemard Lane and Guillemard Close, with seventeen outlines (houses at Nos. 1-16, the Singapore Judo Association, Chen Li Presbyterian Church, the Kallang Fire Station and a condominium). They lie outside the Geylang lanes the study is about.
+      - **Waiting on photos:** the Singapore Badminton Hall (question 95) and the two blocks south of Lorong Bachok (question 93), both on the field page.
+      - **Small leftovers with no usable frames:** No. 57 on an unnamed stub east of Lorong 18's stub (way 454274542), and No. 30 and a large three-storey complex on Guillemard Road's north side west of Lorong 12 (ways 764372585 and 454438351), seen only past trees; the Geylang Chinese Methodist Church at the Lorong 22 corner lies beyond the extension's edge.
+      - **JCUS Block C** (way 304613525) at the north edge, which no lane reaches.
+    - **Status:** not modelled.
+    - **Recommendation:** hold Guillemard Road's south side as the study's southern edge. Add the leftovers to the field page if a site visit passes them.
+    - **Unlocks:** a settled southern edge.
+
+104. **Lorong 22's east side: take a narrow dated extract east of the extension, and walk it?**
+    - **Evidence:** question 98 walked only Lorong 22's west side, since the extension stops at 103.8822 E, where Lorong 22 is a pair of one-way carriageways. A dated download of 103.8822-103.8832 E, 1.3095-1.3135 N (28 November 2026) holds the southbound carriageway and seventeen outlines on the east side, many named in the source (Grandview Suites at No. 1, Seng Wah Hotel, Min Wah Hotel, Kim Tian Hotel, the Peoples Buddhist Study Society, the Char Yong (Dabu) Association, Prime Residence at No. 41), with the former Eastern Aerated Water Company at No. 404 Geylang Road at the north corner and No. 213 Guillemard Road at the south. KartaView's drive of 16 May 2023 up the lane (sequence 8344809) faces them across both carriageways.
+    - **Status:** done on the owner's standing instruction to carry on mapping, on question 81's terms: the narrow extract is kept as `public/osm-extension-east.osm` beside the other two, read after them, so each earlier file keeps its versions; nothing else in it is taken in. Seventeen plots as photographed massing, every building unnamed (question 84), with a corridor along the east carriageway ([brief](lorong-22-east-brief.md)). The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** Lorong 22 finished on both sides.
+
+105. **East of Lorong 22, Lorongs 24 to 27A: extend the study further east?**
+    - **Evidence:** a check download of 103.8822-103.8850 E, 1.3095-1.3155 N on 28 November 2026 (not kept) holds about 270 building outlines along Lorongs 24, 24A, 25, 25A, 26, 27 and 27A, Cassia Crescent and Pine Lane, a district as large again as everything walked since question 81. KartaView's 2023 drives reach at least some of it. The scene already holds about 600 outlines and takes about 17 s to build in software rendering (loading plan, 22 November).
+    - **Status:** not started.
+    - **Recommendation:** not yet. Do the loading plan's steps 4 and 5 (tiled map data and a tile loader) first, so the scene builds only what is near the walker, then extend east one or two lanes at a time.
+    - **Unlocks:** the rest of Geylang's numbered lanes.
 
 ## Settled
 
