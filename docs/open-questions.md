@@ -404,6 +404,12 @@ Started: 10 October 2026.
     - **Recommendation:** yes, as far as the drive shows them; the rest of Guillemard Road's south side would need a decision on how far south the map should go.
     - **Unlocks:** the four lanes' southern ends joined along Guillemard Road.
 
+101. **Lorongs 4, 6 and 8 south of the old edge: walk them to Guillemard Road from the dated extension?**
+    - **Evidence:** question 92 walked Lorongs 6 and 8 only to the retained extract's south edge (1.3110 N), and Lorong 4 not at all. The dated extension (question 81) holds Lorong 4's eight ways from Geylang Road's back lane to Guillemard Road, the southern ways of Lorongs 6 and 8, the back lane between Lorongs 6 and 8 (way 933315286), and the service road from Lorong 4 to Lorong 6 (ways 391004830 and 546908817), with about thirty outlines facing them: among them Oxley Hotel (No. 44 Lorong 6), Torie Ville, Aston Lodge, Swann Court, Canberlin Lodge and Familie Mans. Lorong 4's west side lies outside both extracts. KartaView's drive of 19 May 2023 runs along all three lanes (sequence 8344969).
+    - **Status:** done on the owner's instruction to carry on mapping, on question 87's terms: 32 plots as photographed massing, every building unnamed (question 84), with corridors along the three lanes and the service road ([brief](south-lanes-brief.md)). The commits stand apart.
+    - **Recommendation:** yes.
+    - **Unlocks:** the south-west corner of the study between Geylang Road and Guillemard Road complete, except Lorong 4's west side.
+
 ## Settled
 
 ### Twelfth batch, 17 October 2026
